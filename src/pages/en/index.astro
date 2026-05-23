@@ -1,0 +1,155 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+---
+
+<MainLayout
+  title="Caminha Guide — Camino de Santiago Coastal Route"
+  description="Essential guide for pilgrims and travellers in Caminha, Portugal. Find where to eat, where to stay, ferry crossings, and logistics for the Camino de Santiago Coastal Route."
+  lang="en"
+  schemaType="website"
+>
+
+  <!-- Hero -->
+  <section class="relative bg-forest-900 text-white overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-forest-950 via-forest-900 to-forest-700 opacity-90"></div>
+    <div class="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
+      <div class="max-w-3xl">
+        <p class="text-earth-300 text-sm font-semibold uppercase tracking-widest mb-4">
+          Camino de Santiago · Coastal Route · Portugal
+        </p>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white">
+          Your Guide to Caminha
+        </h1>
+        <p class="text-lg sm:text-xl text-slate-300 leading-relaxed mb-10 max-w-2xl">
+          Caminha is a jewel on the Portuguese Coastal Way — a medieval walled town at the mouth of the Minho River, your last stop in Portugal before crossing to Spain. Everything pilgrims need to know, in one place.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a
+            href="/en/caminha/where-to-eat/"
+            class="inline-flex items-center gap-2 bg-earth-500 hover:bg-earth-400 text-white font-semibold px-6 py-3 rounded-lg transition-colors no-underline text-sm"
+          >
+            Where to Eat
+          </a>
+          <a
+            href="/en/caminha/ferry-and-logistics/"
+            class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3 rounded-lg transition-colors no-underline text-sm border border-white/20"
+          >
+            Ferry Schedule
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick stats -->
+  <section class="bg-white border-b border-slate-200" aria-label="Key facts about Caminha">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <dl class="grid grid-cols-2 sm:grid-cols-4 divide-x divide-slate-200">
+        {[
+          { value: '41.9°N', label: 'Coordinates' },
+          { value: '~15 min', label: 'Ferry to Spain' },
+          { value: '€2.50', label: 'Ferry price' },
+          { value: '24 km', label: 'From Viana do Castelo' },
+        ].map(({ value, label }) => (
+          <div class="py-6 px-4 sm:px-8 text-center">
+            <dt class="text-2xl font-bold text-forest-700">{value}</dt>
+            <dd class="text-xs text-slate-500 mt-1">{label}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <!-- Category cards -->
+  <section class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
+    <h2 class="text-2xl sm:text-3xl font-bold text-forest-900 mb-3">Everything You Need in Caminha</h2>
+    <p class="text-slate-600 mb-10 max-w-2xl">
+      Whether you're arriving on foot along the coastal path or planning your rest day, this guide covers all the essentials.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Where to Eat -->
+      <article class="group rounded-2xl border border-slate-200 bg-white overflow-hidden hover:shadow-lg hover:border-forest-300 transition-all duration-200">
+        <div class="h-3 bg-gradient-to-r from-earth-400 to-earth-600"></div>
+        <div class="p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-2xl" aria-hidden="true">🍽️</span>
+            <h3 class="text-lg font-bold text-forest-900">Where to Eat</h3>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed mb-5">
+            From hearty pilgrim menus (menu do peregrino) to fresh Atlantic seafood and traditional pastéis de nata — Caminha punches well above its size for food.
+          </p>
+          <a
+            href="/en/caminha/where-to-eat/"
+            class="inline-flex items-center gap-1.5 text-sm font-semibold text-forest-700 group-hover:text-forest-900 no-underline hover:underline"
+          >
+            See restaurants →
+          </a>
+        </div>
+      </article>
+
+      <!-- Where to Stay -->
+      <article class="group rounded-2xl border border-slate-200 bg-white overflow-hidden hover:shadow-lg hover:border-forest-300 transition-all duration-200">
+        <div class="h-3 bg-gradient-to-r from-forest-400 to-forest-700"></div>
+        <div class="p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-2xl" aria-hidden="true">🛏️</span>
+            <h3 class="text-lg font-bold text-forest-900">Where to Stay</h3>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed mb-5">
+            Municipal pilgrim hostels, family-run guesthouses, and riverside camping — accommodation options for every budget and credential preference.
+          </p>
+          <a
+            href="/en/caminha/where-to-stay/"
+            class="inline-flex items-center gap-1.5 text-sm font-semibold text-forest-700 group-hover:text-forest-900 no-underline hover:underline"
+          >
+            See accommodation →
+          </a>
+        </div>
+      </article>
+
+      <!-- Ferry & Logistics -->
+      <article class="group rounded-2xl border border-slate-200 bg-white overflow-hidden hover:shadow-lg hover:border-forest-300 transition-all duration-200 sm:col-span-2 lg:col-span-1">
+        <div class="h-3 bg-gradient-to-r from-slate-400 to-slate-600"></div>
+        <div class="p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-2xl" aria-hidden="true">⛵</span>
+            <h3 class="text-lg font-bold text-forest-900">Ferry &amp; Logistics</h3>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed mb-5">
+            Cross the Minho River from Caminha to A Guarda, Spain. Timetables, prices, what to expect at the dock, and tips for a smooth border crossing.
+          </p>
+          <a
+            href="/en/caminha/ferry-and-logistics/"
+            class="inline-flex items-center gap-1.5 text-sm font-semibold text-forest-700 group-hover:text-forest-900 no-underline hover:underline"
+          >
+            Plan your crossing →
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- About Caminha section -->
+  <section class="bg-forest-50 border-y border-forest-100">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
+      <div class="max-w-3xl">
+        <h2 class="text-2xl sm:text-3xl font-bold text-forest-900 mb-6">About Caminha on the Coastal Camino</h2>
+        <div class="prose prose-slate max-w-none space-y-4 text-slate-700 text-base leading-relaxed">
+          <p>
+            Caminha (population ~7,000) sits at the confluence of the Coura and Minho rivers, facing the Spanish town of A Guarda across the water. Its 14th-century walls, fortified clock tower, and elegant Praça do Conselho make it one of the most charming stops on the entire Portuguese Coastal Camino.
+          </p>
+          <p>
+            For pilgrims walking the <strong>Caminho da Costa</strong> (Coastal Route), Caminha marks the transition from Portugal to Galicia, Spain. The ferry crossing — a short but memorable 15-minute boat ride — has been used by travellers and pilgrims for centuries. After crossing, pilgrims continue north through A Guarda and along the Galician coast toward Santiago de Compostela.
+          </p>
+          <p>
+            The town is also a practical overnight stop before the crossing, with a municipal pilgrim hostel, several guesthouses, and enough excellent restaurants to recover from the long coastal stage from Viana do Castelo.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</MainLayout>

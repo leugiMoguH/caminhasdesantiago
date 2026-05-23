@@ -1,0 +1,215 @@
+---
+/**
+ * BaseSEO — global meta, OG, Twitter Card, hreflang, and JSON-LD.
+ *
+ * schemaType controls JSON-LD output:
+ *   'website'      → WebSite (use on homepages only)
+ *   'localbusiness'→ LocalBusiness (restaurants, hostels)
+ *   'webpage'      → WebPage (default for all other pages)
+ */
+
+interface AlternateLang {
+  lang: string;   // e.g. 'en', 'es', 'x-default'
+  href: string;   // absolute URL
+}
+
+interface LocalBusinessData {
+  name: string;
+  description: string;
+  address: string;
+  telephone?: string;
+  url?: string;
+  priceRange?: string;
+  servesCuisine?: string;
+  openingHours?: string[];
+}
+
+interface Props {
+  title: string;
+  description: string;
+  language: 'en' | 'es';
+  canonicalURL: string;
+  ogImage?: string;
+  alternateLanguages: AlternateLang[];
+  schemaType?: 'website' | 'webpage' | 'localbusiness';
+  localBusinessData?: LocalBusinessData;
+}
+
+const {
+  title,
+  description,
+  language,
+  canonicalURL,
+  ogImage = '/images/og-default.jpg',
+  alternateLanguages,
+  schemaType = 'webpage',
+  localBusinessData,
+} = Astro.props;
+
+const SITE_URL = 'https://waytosantiagoguide.com';
+const SITE_NAME_EN = 'Caminha Guide — Camino de Santiago';
+const SITE_NAME_ES = 'Guía de Caminha — Camino de Santiago';
+const siteName = language === 'en' ? SITE_NAME_EN : SITE_NAME_ES;
+const fullTitle = title === siteName ? title : `${title} | ${siteName}`;
+const ogImageAbsolute = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogImage}`;
+const htmlLang = language === 'en' ? 'en-GB' : 'es-ES';
+
+// Build JSON-LD schema object based on page type
+let jsonLd: Record<string, unknown>;
+
+if (schemaType === 'website') {
+  jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: siteName,
+    url: SITE_URL,
+    description,
+    inLanguage: htmlLang,
+    publisher: {
+      '@type': 'Organization',
+      name: siteName,
+      url: SITE_URL,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${SITE_URL}/images/logo.png`,
+      },
+    },
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: `${SITE_URL}/${language}/search/?q={search_term_string}`,
+      },
+      'query-input': 'required name=search_term_string',
+    },
+  };
+} else if (schemaType === 'localbusiness' && localBusinessData) {
+  jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: localBusinessData.name,
+    description: localBusinessData.description,
+    url: localBusinessData.url ?? canonicalURL,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: localBusinessData.address,
+      addressLocality: 'Caminha',
+      addressRegion: 'Viana do Castelo',
+      postalCode: '4910',
+      addressCountry: 'PT',
+    },
+    ...(localBusinessData.telephone ? { telephone: localBusinessData.telephone } : {}),
+    ...(localBusinessData.priceRange ? { priceRange: localBusinessData.priceRange } : {}),
+    ...(localBusinessData.servesCuisine ? { servesCuisine: localBusinessData.servesCuisine } : {}),
+    ...(localBusinessData.openingHours ? { openingHours: localBusinessData.openingHours } : {}),
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 41.8772,
+      longitude: -8.8389,
+    },
+    containedInPlace: {
+      '@type': 'TouristDestination',
+      name: 'Caminha',
+      description: language === 'en'
+        ? 'Historic border town on the Camino de Santiago Coastal Route, northern Portugal.'
+        : 'Histórica ciudad fronteriza en el Camino de Santiago de la Costa, norte de Portugal.',
+    },
+  };
+} else {
+  // Default: WebPage + BreadcrumbList
+  const pathSegments = canonicalURL.replace(SITE_URL, '').split('/').filter(Boolean);
+  const breadcrumbItems = [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: `${SITE_URL}/${language}/`,
+    },
+    ...pathSegments.slice(1).map((seg, i) => ({
+      '@type': 'ListItem',
+      position: i + 2,
+      name: seg.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()),
+      item: `${SITE_URL}/${pathSegments.slice(0, i + 2).join('/')}/`,
+    })),
+  ];
+
+  jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebPage',
+        '@id': canonicalURL,
+        url: canonicalURL,
+        name: fullTitle,
+        description,
+        inLanguage: htmlLang,
+        isPartOf: { '@id': SITE_URL },
+        breadcrumb: { '@id': `${canonicalURL}#breadcrumb` },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${canonicalURL}#breadcrumb`,
+        itemListElement: breadcrumbItems,
+      },
+    ],
+  };
+}
+
+const jsonLdString = JSON.stringify(jsonLd);
+---
+
+<!-- Primary meta -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="generator" content={Astro.generator} />
+
+<!-- Canonical & hreflang -->
+<link rel="canonical" href={canonicalURL} />
+{alternateLanguages.map(({ lang, href }) => (
+  <link rel="alternate" hreflang={lang} href={href} />
+))}
+
+<!-- OpenGraph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content={siteName} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:image" content={ogImageAbsolute} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content={title} />
+<meta property="og:locale" content={htmlLang.replace('-', '_')} />
+{alternateLanguages
+  .filter(({ lang }) => lang !== 'x-default' && lang !== language)
+  .map(({ lang }) => (
+    <meta property="og:locale:alternate" content={lang === 'en' ? 'en_GB' : 'es_ES'} />
+  ))
+}
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImageAbsolute} />
+<meta name="twitter:image:alt" content={title} />
+
+<!-- Favicons -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content="#174d2b" />
+
+<!-- GEO / AI discovery hints -->
+<meta name="geo.region" content="PT-VC" />
+<meta name="geo.placename" content="Caminha, Portugal" />
+<meta name="geo.position" content="41.8772;-8.8389" />
+<meta name="ICBM" content="41.8772, -8.8389" />
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json" set:html={jsonLdString} />

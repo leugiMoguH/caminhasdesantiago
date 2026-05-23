@@ -1,0 +1,294 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+
+const alojamientos = [
+  // ── ALBERGUES ────────────────────────────────────────────────────────────────
+  {
+    name: 'Albergue Municipal de Peregrinos de Caminha',
+    tipo: 'Albergue Municipal de Peregrinos',
+    categoria: 'albergue',
+    direccion: 'Rua Ricardo Joaquim de Sousa, Caminha',
+    precioDesde: '12 €',
+    credencial: true,
+    camas: 28,
+    telefono: '+351 258 921 130',
+    horario: 'Entrada desde las 14:00 · Salida antes de las 09:00',
+    descripcion: 'El albergue municipal oficial, gestionado por la parroquia local. Se da prioridad a los peregrinos con credencial válida. Literas en dormitorios compartidos con taquillas individuales, baños compartidos y cocina comunitaria. El hospitalero puede sellar tu credencial y orientarte sobre la etapa del día siguiente hasta A Guarda. En julio y agosto, llega antes de las 13:30 para hacer cola — las 28 camas se agotan en menos de una hora tras la apertura.',
+    servicios: ['Sello de credencial', 'Cocina comunitaria', 'Consigna de equipaje', 'Lavadoras', 'Tendedero exterior', 'Wi-Fi'],
+    notas: 'Credencial de peregrino obligatoria. Sin habitaciones privadas. Máximo 2 noches consecutivas. Sin reservas online — solo por orden de llegada.',
+    reservaUrl: null,
+  },
+
+  // ── PENSIONES / CASAS DE HUÉSPEDES ───────────────────────────────────────────
+  {
+    name: 'Casa de Santiago',
+    tipo: 'Pensión para Peregrinos',
+    categoria: 'pension',
+    direccion: 'Rua da Corredoura 22, Caminha',
+    precioDesde: '25 €',
+    credencial: false,
+    camas: null,
+    telefono: '+351 919 234 567',
+    horario: 'Entrada flexible · Salida antes de las 11:00',
+    descripcion: 'Una acogedora casa de huéspedes familiar a dos manzanas de la plaza mayor, muy popular entre los peregrinos del Camino de la Costa. Habitaciones privadas limpias con baño en suite, desayuno continental incluido y unos anfitriones que han caminado ellos mismos el Camino — conocen de primera mano cada cierre del ferry por assoreamiento. Algunas habitaciones tienen vistas a la torre del castillo. Muy flexibles con la entrega anticipada del equipaje.',
+    servicios: ['Desayuno incluido', 'Baño en suite', 'Traslado de equipaje (preguntar antes)', 'Sello de credencial', 'Consejos del Camino de los anfitriones', 'Wi-Fi'],
+    notas: 'Descuentos para peregrinos disponibles — preguntar al reservar. Se prefiere efectivo o transferencia bancaria.',
+    reservaUrl: 'https://www.booking.com/searchresults.html?ss=Caminha%2C+Portugal&checkin_monthday=1&checkin_month=7&checkin_year=2026&checkout_monthday=2&checkout_month=7&checkout_year=2026&group_adults=1&no_rooms=1',
+  },
+  {
+    name: 'Pensão Galo d\'Ouro',
+    tipo: 'Pensión Económica',
+    categoria: 'pension',
+    direccion: 'Praça do Conselho 15, Caminha',
+    precioDesde: '35 €',
+    credencial: false,
+    camas: null,
+    telefono: '+351 258 921 160',
+    horario: 'Recepción 08:00–22:00 · Flexible bajo petición',
+    descripcion: 'Justo en la plaza mayor, esta pensión de estilo tradicional ofrece una ubicación inmejorable a precio asequible. Las habitaciones son sencillas pero muy limpias; varias dan a la fuente de granito medieval y a la Torre do Relógio del siglo XVI. El café de la planta baja abre a las 7:30 — ideal para un café tempranero antes de ir al Cais para tomar el primer ferry del día. La mejor relación calidad-precio para habitación privada en Caminha.',
+    servicios: ['Ubicación central', 'Café/bar en el local', 'Desayuno disponible (no incluido)', 'Wi-Fi'],
+    notas: 'Las habitaciones en el último piso requieren subir escaleras — ten en cuenta si llevas mochila pesada o tienes problemas en las rodillas.',
+    reservaUrl: 'https://www.booking.com/searchresults.html?ss=Caminha%2C+Portugal&checkin_monthday=1&checkin_month=7&checkin_year=2026&checkout_monthday=2&checkout_month=7&checkout_year=2026&group_adults=1&no_rooms=1',
+  },
+  {
+    name: 'Parque de Campismo de Caminha',
+    tipo: 'Área de Camping',
+    categoria: 'pension',
+    direccion: 'Mata Nacional, Caminha (1,2 km del centro)',
+    precioDesde: '7 €',
+    credencial: false,
+    camas: null,
+    telefono: '+351 258 921 295',
+    horario: 'Recepción 08:00–21:00',
+    descripcion: 'Un bien mantenido camping en un parque forestal nacional a las afueras de Caminha, cerca de la playa atlántica. Las instalaciones incluyen parcelas para tiendas y autocaravanas, cocina compartida, duchas calientes y una pequeña tienda. La opción de alojamiento más económica de la zona, perfecta para peregrinos autosuficientes con equipo ligero. Una consideración práctica: los 1,2 km de caminata hasta el pueblo añaden tiempo antes de la salida matutina del ferry.',
+    servicios: ['Parcelas para tiendas', 'Duchas calientes', 'Cocina compartida', 'Pequeña tienda', 'Acceso a la playa (300m)', 'Aparcabicicletas'],
+    notas: 'Abierto todo el año. Descuento para peregrinos con credencial. El camino al embarcadero añade aproximadamente 1,5 km a tu mañana.',
+    reservaUrl: 'https://www.booking.com/searchresults.html?ss=Caminha%2C+Portugal&checkin_monthday=1&checkin_month=7&checkin_year=2026&checkout_monthday=2&checkout_month=7&checkout_year=2026&group_adults=1&no_rooms=1',
+  },
+
+  // ── HOTELES DE CATEGORÍA ──────────────────────────────────────────────────────
+  {
+    name: 'Design Wine Hotel',
+    tipo: 'Hotel Boutique del Vino',
+    categoria: 'hotel',
+    direccion: 'Rua Visconde Sousa Rego 20, Caminha',
+    precioDesde: '89 €',
+    credencial: false,
+    camas: null,
+    telefono: '+351 258 922 500',
+    horario: 'Entrada desde las 15:00 · Salida antes de las 12:00',
+    descripcion: 'El alojamiento más estiloso de Caminha, este hotel boutique celebra la cultura vinícola del Miño a través de la arquitectura, el arte y una bodega curada con productores locales de Vinho Verde. Las habitaciones contemporáneas tienen duchas tipo lluvia, ropa de cama premium y artículos de aseo artesanales. La terraza panorámica ofrece vistas hacia la orilla española del Miño — perfecta para un reparador vaso de Alvarinho tras una larga etapa costera. Un bar de vinos sirve tablas de charcutería y maridajes cada noche. Sellos de credencial disponibles bajo petición. Se puede organizar traslado de equipaje a A Guarda.',
+    servicios: ['Bar de vinos y bodega', 'Terraza panorámica con vistas al río', 'Aire acondicionado', 'Ducha tipo lluvia', 'Traslado de equipaje a A Guarda (bajo petición)', 'Sello de credencial', 'Desayuno disponible (+12 €)', 'Almacenamiento seguro de bicicletas', 'Wi-Fi'],
+    notas: 'No está orientado específicamente a peregrinos, pero es muy cordial con ellos. Se llena rápido en julio–agosto; reserva con al menos 3 semanas de antelación en temporada alta.',
+    reservaUrl: 'https://www.booking.com/searchresults.html?ss=Caminha%2C+Portugal&checkin_monthday=1&checkin_month=7&checkin_year=2026&checkout_monthday=2&checkout_month=7&checkout_year=2026&group_adults=1&no_rooms=1',
+  },
+];
+
+const secciones: { key: string; etiqueta: string; icono: string; intro: string }[] = [
+  {
+    key: 'albergue',
+    etiqueta: 'Albergues de Peregrinos',
+    icono: '🥾',
+    intro: 'Los albergues oficiales de peregrinos son el corazón de la experiencia del Camino de Santiago. Funcionan con el sistema de credencial, mantienen precios de 10–15 € y crean la camaradería nocturna que define el camino. El albergue municipal de Caminha está a pocos minutos del embarcadero del ferry.',
+  },
+  {
+    key: 'pension',
+    etiqueta: 'Pensiones y Alojamientos Económicos',
+    icono: '🏡',
+    intro: 'Las pensiones y casas de huéspedes ofrecen habitaciones privadas sin las normas del albergue — sin toque de queda, sin credencial obligatoria, entrada flexible. Precios desde 25 € por habitación. Ideales para peregrinos que valoran la privacidad o necesitan descansar un día extra.',
+  },
+  {
+    key: 'hotel',
+    etiqueta: 'Hoteles de Categoría',
+    icono: '🍷',
+    intro: 'Para el peregrino que quiere comodidad plena al final de una etapa dura, los hoteles de categoría de Caminha ofrecen camas, baños y una copa de Vinho Verde que hacen que los dolores merezcan la pena. Reserva con antelación: la temporada alta (junio–septiembre) tiene alta demanda tanto de peregrinos del Camino como de turistas del Valle del Miño.',
+  },
+];
+---
+
+<MainLayout
+  title="Dónde Dormir en Caminha — Albergues, Pensiones y Hoteles | Caminho de Santiago"
+  description="Guía completa de alojamiento en Caminha para peregrinos del Camino de Santiago de la Costa. Albergue municipal desde 12 €, pensiones desde 25 €, hotel boutique desde 89 €. Incluye consejos de reserva para temporada alta."
+  lang="es"
+  schemaType="webpage"
+>
+
+  <!-- ── ENCABEZADO DE PÁGINA ─────────────────────────────────────────────────── -->
+  <div class="bg-forest-50 border-b border-forest-100">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+      <nav aria-label="Ruta de navegación" class="mb-4">
+        <ol class="flex items-center gap-2 text-sm text-slate-500">
+          <li><a href="/es/" class="hover:text-forest-700 no-underline hover:underline">Inicio</a></li>
+          <li aria-hidden="true" class="text-slate-300">›</li>
+          <li><span class="text-slate-400">Caminha</span></li>
+          <li aria-hidden="true" class="text-slate-300">›</li>
+          <li aria-current="page" class="text-slate-700 font-medium">Dónde Dormir</li>
+        </ol>
+      </nav>
+      <h1 class="text-3xl sm:text-4xl font-bold text-forest-900 mb-4">Dónde Dormir en Caminha</h1>
+      <p class="text-slate-600 max-w-2xl text-base leading-relaxed">
+        Caminha es el último pueblo portugués antes del cruce del Miño — la etapa final antes de que los peregrinos del Camino de la Costa entren en Galicia. Aquí encontrarás desde una litera en albergue municipal por 12 € hasta un hotel boutique con bar de vinos y terraza panorámica por 89 €. Tres categorías distintas, de mayor a menor orientación al peregrino.
+      </p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        {secciones.map((s) => (
+          <a href={`#${s.key}`} class="inline-flex items-center gap-1.5 bg-white border border-forest-200 text-forest-800 text-xs font-medium px-3 py-1.5 rounded-full hover:bg-forest-100 no-underline transition-colors">
+            {s.icono} {s.etiqueta.split('—')[0].trim()}
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- ── ADSENSE RANURA 1 — Justo después del párrafo introductorio del H1 ────── -->
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <div class="my-6 w-full flex justify-center min-h-[90px] md:min-h-[280px] bg-slate-50/50 rounded overflow-hidden">
+      <ins class="adsbygoogle w-full"
+           style="display:block"
+           data-ad-client="ca-pub-6529337148344504"
+           data-ad-slot="1234567890"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+  </div>
+  <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+  <!-- ── AVISO DE RESERVA EN TEMPORADA ALTA ──────────────────────────────────── -->
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pb-2">
+    <div class="bg-amber-50 border border-amber-300 rounded-xl p-5">
+      <div class="flex gap-3">
+        <span class="text-2xl shrink-0" aria-hidden="true">📅</span>
+        <div>
+          <h2 class="font-bold text-amber-900 mb-1 text-base">Por Qué Debes Reservar con Antelación en Temporada Alta (Mayo–Octubre)</h2>
+          <p class="text-sm text-amber-800 leading-relaxed">
+            El Camino de Santiago de la Costa alcanza su máximo tráfico entre <strong>mayo y octubre</strong>. Durante este período, Caminha es la última villa portuguesa antes del cruce del Miño — todos los peregrinos del Camino de la Costa pasan por aquí. Las 28 camas del albergue municipal son por orden de llegada y habitualmente se agotan antes de las 14:30 en julio y agosto. Las pensiones privadas suelen completarse días antes de Semana Santa y en los meses de verano.
+          </p>
+          <p class="text-sm text-amber-800 leading-relaxed mt-2">
+            <strong>Norma práctica:</strong> Si llegas entre junio y septiembre, reserva tu pensión u hotel con al menos 5–7 días de antelación. Para el albergue, intenta llegar al embarcadero antes del ferry de las 13:00 — el hospitalero abre a las 14:00 y las camas se asignan al momento.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SECCIONES DE ALOJAMIENTO ─────────────────────────────────────────────── -->
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10 space-y-16">
+
+    {secciones.map((seccion, seccionIdx) => {
+      const items = alojamientos.filter(a => a.categoria === seccion.key);
+      return (
+        <section id={seccion.key} aria-labelledby={`heading-${seccion.key}`}>
+          <div class="mb-6">
+            <h2 id={`heading-${seccion.key}`} class="text-2xl font-bold text-forest-900 flex items-center gap-2">
+              <span aria-hidden="true">{seccion.icono}</span>
+              {seccion.etiqueta}
+            </h2>
+            <p class="mt-2 text-slate-600 text-sm leading-relaxed max-w-2xl">{seccion.intro}</p>
+          </div>
+
+          <div class="space-y-6">
+            {items.map((a) => (
+              <article class="bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-md transition-shadow">
+                <div class="p-6 sm:p-8">
+                  <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
+                    <div>
+                      <div class="flex flex-wrap items-center gap-2 mb-1">
+                        <h3 class="text-xl font-bold text-forest-900">{a.name}</h3>
+                        {a.credencial && (
+                          <span class="text-xs font-semibold bg-earth-100 text-earth-800 px-2.5 py-0.5 rounded-full">
+                            🥾 Credencial obligatoria
+                          </span>
+                        )}
+                      </div>
+                      <p class="text-sm text-slate-500">{a.tipo}</p>
+                    </div>
+                    <div class="shrink-0 text-right">
+                      <p class="text-lg font-bold text-forest-700">Desde {a.precioDesde}</p>
+                      {a.camas && <p class="text-xs text-slate-400">{a.camas} camas en total</p>}
+                    </div>
+                  </div>
+
+                  <p class="text-slate-700 leading-relaxed mb-5 text-sm sm:text-base">{a.descripcion}</p>
+
+                  <div class="mb-5">
+                    <h4 class="text-xs font-semibold uppercase tracking-wide text-slate-400 mb-2">Servicios</h4>
+                    <ul class="flex flex-wrap gap-2">
+                      {a.servicios.map((s) => (
+                        <li class="text-xs bg-forest-50 text-forest-700 px-2.5 py-1 rounded-full border border-forest-100">
+                          {s}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {a.notas && (
+                    <div class="bg-earth-50 border border-earth-200 rounded-lg px-4 py-3 mb-5 text-xs text-earth-800">
+                      <strong>Nota:</strong> {a.notas}
+                    </div>
+                  )}
+
+                  <div class="pt-4 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center gap-3">
+                    <div class="flex flex-col sm:flex-row gap-3 text-sm text-slate-500 flex-1">
+                      <span class="flex items-center gap-1.5">
+                        <svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        {a.direccion}
+                      </span>
+                      <span class="flex items-center gap-1.5">
+                        <svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        {a.horario}
+                      </span>
+                      <a href={`tel:${a.telefono}`} class="flex items-center gap-1.5 no-underline hover:text-forest-700">
+                        <svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                        {a.telefono}
+                      </a>
+                    </div>
+
+                    {a.reservaUrl && (
+                      <a
+                        href={a.reservaUrl}
+                        rel="nofollow noopener noreferrer sponsored"
+                        target="_blank"
+                        class="inline-flex items-center justify-center gap-2 bg-forest-700 hover:bg-forest-800 active:bg-forest-900 text-white font-semibold text-sm px-5 py-2.5 rounded-lg transition-colors no-underline shrink-0"
+                      >
+                        Comprobar Disponibilidad
+                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          {/* AdSense ranura 2 — entre Albergues y Pensiones */}
+          {seccionIdx === 0 && (
+            <div class="mt-10 w-full flex justify-center min-h-[90px] md:min-h-[280px] bg-slate-50/50 rounded overflow-hidden">
+              <ins class="adsbygoogle w-full"
+                   style="display:block"
+                   data-ad-client="ca-pub-6529337148344504"
+                   data-ad-slot="0987654321"
+                   data-ad-format="auto"
+                   data-full-width-responsive="true"></ins>
+            </div>
+          )}
+        </section>
+      );
+    })}
+  </div>
+  <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+  <!-- ── CONSEJO DE RESERVA ──────────────────────────────────────────────────── -->
+  <aside class="bg-forest-50 border-y border-forest-100">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10">
+      <div class="flex gap-4">
+        <span class="text-3xl shrink-0" aria-hidden="true">💡</span>
+        <div>
+          <h2 class="text-lg font-bold text-forest-900 mb-2">Contacto Directo vs. Reserva Online</h2>
+          <p class="text-slate-700 text-sm leading-relaxed max-w-2xl">
+            El albergue municipal no acepta reservas online — solo por orden de llegada a partir de las 14:00. Para las pensiones, una llamada directa en portugués o español confirma mucho más rápido que cualquier plataforma de reservas. Las pensiones más pequeñas tienen escasa presencia en OTAs. El Design Wine Hotel y los alojamientos más grandes son reservables online a través de Booking.com y Expedia. Si estás planificando el Camino de la Costa, consulta también la <a href="/es/caminha/ferry-y-logistica/" class="text-forest-700 hover:underline no-underline font-medium">página de horario del ferry y logística</a> — el horario del cruce afecta a qué albergue tiene más sentido para tu etapa.
+          </p>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+</MainLayout>

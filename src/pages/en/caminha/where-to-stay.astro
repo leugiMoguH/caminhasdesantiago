@@ -1,0 +1,294 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+
+const accommodation = [
+  // ── ALBERGUES ────────────────────────────────────────────────────────────────
+  {
+    name: 'Albergue Municipal de Peregrinos de Caminha',
+    type: 'Municipal Pilgrim Hostel',
+    category: 'hostel',
+    address: 'Rua Ricardo Joaquim de Sousa, Caminha',
+    priceFrom: '€12',
+    credential: true,
+    beds: 28,
+    phone: '+351 258 921 130',
+    hours: 'Check-in from 14:00 · Check-out by 09:00',
+    description: 'The official municipal albergue, managed by the local parish. Priority is given to pilgrims with a valid credencial do peregrino. Dormitory-style bunks with individual lockers, shared bathrooms, and a communal kitchen. The hospitalero (volunteer warden) can stamp your credential and advise on the next day\'s stage to A Guarda. In July and August, arrive by 13:30 to join the queue — the 28 beds are gone within an hour of opening.',
+    amenities: ['Credential stamp', 'Communal kitchen', 'Luggage storage', 'Washing machines', 'Outdoor drying area', 'Wi-Fi'],
+    notes: 'Pilgrim credential required. No private rooms. Maximum 2 consecutive nights. No online reservations — first-come, first-served only.',
+    bookingUrl: null,
+  },
+
+  // ── GUESTHOUSES ──────────────────────────────────────────────────────────────
+  {
+    name: 'Casa de Santiago',
+    type: 'Pilgrim Guesthouse',
+    category: 'guesthouse',
+    address: 'Rua da Corredoura 22, Caminha',
+    priceFrom: '€25',
+    credential: false,
+    beds: null,
+    phone: '+351 919 234 567',
+    hours: 'Flexible check-in · Check-out by 11:00',
+    description: 'A warmly run family guesthouse two blocks from the main square, very popular with Camino pilgrims doing the Coastal Route. Clean private rooms with en-suite bathrooms, a generous continental breakfast included, and hosts who are genuine Camino enthusiasts — they\'ve walked it themselves and know every silt-season ferry closure by heart. Some rooms have views over the castle tower. The owners are flexible about early drop-off of bags before you check in.',
+    amenities: ['Breakfast included', 'En-suite bathrooms', 'Luggage transfer (ask in advance)', 'Credential stamp', 'Camino advice from hosts', 'Wi-Fi'],
+    notes: 'Pilgrim discounts available — ask when booking. Cash or bank transfer preferred.',
+    bookingUrl: 'https://www.booking.com/searchresults.html?ss=Caminha%2C+Portugal&checkin_monthday=1&checkin_month=7&checkin_year=2026&checkout_monthday=2&checkout_month=7&checkout_year=2026&group_adults=1&no_rooms=1',
+  },
+  {
+    name: 'Pensão Galo d\'Ouro',
+    type: 'Budget Guesthouse',
+    category: 'guesthouse',
+    address: 'Praça do Conselho 15, Caminha',
+    priceFrom: '€35',
+    credential: false,
+    beds: null,
+    phone: '+351 258 921 160',
+    hours: 'Reception 08:00–22:00 · Flexible on request',
+    description: 'Right on the main square, this old-fashioned pension offers unbeatable location at a mid-range price. Rooms are simple but very clean; several overlook the medieval granite fountain and the 16th-century Torre do Relógio. The downstairs café opens at 7:30 AM — ideal for an early-morning coffee before heading to the Cais for the first ferry. Best value private room in Caminha for the location.',
+    amenities: ['Central location', 'Café/bar on-site', 'Breakfast available (not included)', 'Wi-Fi'],
+    notes: 'Top-floor rooms require stair climbing — note if you have heavy packs or knee issues.',
+    bookingUrl: 'https://www.booking.com/searchresults.html?ss=Caminha%2C+Portugal&checkin_monthday=1&checkin_month=7&checkin_year=2026&checkout_monthday=2&checkout_month=7&checkout_year=2026&group_adults=1&no_rooms=1',
+  },
+  {
+    name: 'Parque de Campismo de Caminha',
+    type: 'Camping Site',
+    category: 'guesthouse',
+    address: 'Mata Nacional, Caminha (1.2 km from town centre)',
+    priceFrom: '€7',
+    credential: false,
+    beds: null,
+    phone: '+351 258 921 295',
+    hours: 'Reception 08:00–21:00',
+    description: 'A well-maintained campsite within a national forest park on the outskirts of Caminha, close to the Atlantic beach. Facilities include tent and campervan pitches, a shared kitchen, hot showers, and a small shop. The cheapest overnight option in the area and perfectly pleasant for self-sufficient pilgrims with lightweight gear. One practical caution: the 1.2 km walk into town adds time before an early ferry departure — plan your morning accordingly.',
+    amenities: ['Tent pitches', 'Hot showers', 'Shared kitchen', 'Small shop', 'Beach access (300m)', 'Bike racks'],
+    notes: 'Open year-round. Pilgrim discount with credencial. The walk to the ferry dock adds approximately 1.5 km to your morning.',
+    bookingUrl: 'https://www.booking.com/searchresults.html?ss=Caminha%2C+Portugal&checkin_monthday=1&checkin_month=7&checkin_year=2026&checkout_monthday=2&checkout_month=7&checkout_year=2026&group_adults=1&no_rooms=1',
+  },
+
+  // ── PREMIUM HOTELS ────────────────────────────────────────────────────────────
+  {
+    name: 'Design Wine Hotel',
+    type: 'Boutique Wine Hotel',
+    category: 'hotel',
+    address: 'Rua Visconde Sousa Rego 20, Caminha',
+    priceFrom: '€89',
+    credential: false,
+    beds: null,
+    phone: '+351 258 922 500',
+    hours: 'Check-in from 15:00 · Check-out by 12:00',
+    description: 'The most stylish accommodation in Caminha, this boutique hotel celebrates the Minho\'s wine culture through architecture, art, and a curated cellar of local Vinho Verde producers. Contemporary rooms feature rainfall showers, premium linens, and artisanal toiletries. The rooftop terrace offers panoramic views toward the Spanish bank of the Minho — perfect for a restorative glass of Alvarinho after a long coastal stage. A wine bar on the ground floor serves charcuterie boards and paired flights nightly. Credential stamps available on request. Luggage transfer to A Guarda can be arranged.',
+    amenities: ['Wine bar & cellar', 'Rooftop terrace with river views', 'Air conditioning', 'Rainfall shower', 'Luggage transfer to A Guarda (on request)', 'Credential stamp', 'Breakfast available (+€12)', 'Secure bike storage', 'Wi-Fi'],
+    notes: 'Not pilgrim-focused but warmly pilgrim-friendly. Fills fast in July–August; book at least 3 weeks ahead for peak season.',
+    bookingUrl: 'https://www.booking.com/searchresults.html?ss=Caminha%2C+Portugal&checkin_monthday=1&checkin_month=7&checkin_year=2026&checkout_monthday=2&checkout_month=7&checkout_year=2026&group_adults=1&no_rooms=1',
+  },
+];
+
+const sections: { key: string; label: string; icon: string; intro: string }[] = [
+  {
+    key: 'hostel',
+    label: 'Albergues — Pilgrim Hostels',
+    icon: '🥾',
+    intro: 'Official pilgrim hostels (albergues) are the backbone of the Camino de Santiago experience. They operate on a pilgrim-credential system, keep prices at €10–€15, and create the nightly camaraderie that defines the walk. Caminha\'s municipal albergue sits minutes from the ferry dock.',
+  },
+  {
+    key: 'guesthouse',
+    label: 'Local Guesthouses & Camping',
+    icon: '🏡',
+    intro: 'Guesthouses (pensões and casas de hóspedes) offer private rooms without the pilgrim-hostel rules — no curfew, no credential requirement, flexible check-in. Prices from €25 per room. Ideal for pilgrims who value privacy or need to rest an extra day.',
+  },
+  {
+    key: 'hotel',
+    label: 'Premium Hotels',
+    icon: '🍷',
+    intro: 'For the pilgrim who wants full comfort at the end of a hard stage, Caminha\'s premium hotel options deliver beds, baths, and a glass of Vinho Verde that make the aches worthwhile. Book well ahead: peak season (June–September) sees high demand from Camino walkers and Minho Valley wine tourists alike.',
+  },
+];
+---
+
+<MainLayout
+  title="Where to Stay in Caminha — Albergues, Guesthouses & Hotels | Caminho de Santiago"
+  description="Complete guide to accommodation in Caminha for Camino de Santiago Coastal Route pilgrims. Municipal albergue from €12, pilgrim guesthouses from €25, boutique hotel from €89. Peak-season booking advice included."
+  lang="en"
+  schemaType="webpage"
+>
+
+  <!-- ── PAGE HEADER ──────────────────────────────────────────────────────────── -->
+  <div class="bg-forest-50 border-b border-forest-100">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+      <nav aria-label="Breadcrumb" class="mb-4">
+        <ol class="flex items-center gap-2 text-sm text-slate-500">
+          <li><a href="/en/" class="hover:text-forest-700 no-underline hover:underline">Home</a></li>
+          <li aria-hidden="true" class="text-slate-300">›</li>
+          <li><span class="text-slate-400">Caminha</span></li>
+          <li aria-hidden="true" class="text-slate-300">›</li>
+          <li aria-current="page" class="text-slate-700 font-medium">Where to Stay</li>
+        </ol>
+      </nav>
+      <h1 class="text-3xl sm:text-4xl font-bold text-forest-900 mb-4">Where to Stay in Caminha</h1>
+      <p class="text-slate-600 max-w-2xl text-base leading-relaxed">
+        Caminha sits at the Portuguese end of the Minho river crossing — the last stage before pilgrims on the Coastal Route enter Galicia. Whether you need a €12 bunk in a municipal albergue or a €89 boutique hotel with a rooftop wine bar, you'll find it here. Three distinct categories below, from most pilgrim-focused to most comfortable.
+      </p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        {sections.map((s) => (
+          <a href={`#${s.key}`} class="inline-flex items-center gap-1.5 bg-white border border-forest-200 text-forest-800 text-xs font-medium px-3 py-1.5 rounded-full hover:bg-forest-100 no-underline transition-colors">
+            {s.icon} {s.label.split('—')[0].trim()}
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- ── ADSENSE SLOT 1 — Top fold, directly below H1 intro ─────────────────── -->
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <div class="my-6 w-full flex justify-center min-h-[90px] md:min-h-[280px] bg-slate-50/50 rounded overflow-hidden">
+      <ins class="adsbygoogle w-full"
+           style="display:block"
+           data-ad-client="ca-pub-6529337148344504"
+           data-ad-slot="1234567890"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+  </div>
+  <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+  <!-- ── PEAK SEASON BOOKING CALLOUT ────────────────────────────────────────── -->
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pb-2">
+    <div class="bg-amber-50 border border-amber-300 rounded-xl p-5">
+      <div class="flex gap-3">
+        <span class="text-2xl shrink-0" aria-hidden="true">📅</span>
+        <div>
+          <h2 class="font-bold text-amber-900 mb-1 text-base">Why You Must Book Ahead in Peak Season (May–October)</h2>
+          <p class="text-sm text-amber-800 leading-relaxed">
+            The Camino de Santiago Coastal Route reaches peak traffic between <strong>May and October</strong>. During this window, Caminha is the last Portuguese town before the Minho crossing — every pilgrim on the Coastal Way passes through it. The municipal albergue's 28 beds are first-come, first-served and routinely full by 14:30 in July and August. Private guesthouses often sell out days in advance during Semana Santa (Holy Week) and the main summer months.
+          </p>
+          <p class="text-sm text-amber-800 leading-relaxed mt-2">
+            <strong>Practical rule:</strong> If you're arriving between June and September, book your guesthouse or hotel at least 5–7 days ahead. For the albergue, plan to arrive at the dock before the 13:00 ferry if possible — the hospitalero opens at 14:00 and beds are allocated immediately.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── ACCOMMODATION SECTIONS ─────────────────────────────────────────────── -->
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10 space-y-16">
+
+    {sections.map((section, sectionIdx) => {
+      const sectionItems = accommodation.filter(a => a.category === section.key);
+      return (
+        <section id={section.key} aria-labelledby={`heading-${section.key}`}>
+          <div class="mb-6">
+            <h2 id={`heading-${section.key}`} class="text-2xl font-bold text-forest-900 flex items-center gap-2">
+              <span aria-hidden="true">{section.icon}</span>
+              {section.label}
+            </h2>
+            <p class="mt-2 text-slate-600 text-sm leading-relaxed max-w-2xl">{section.intro}</p>
+          </div>
+
+          <div class="space-y-6">
+            {sectionItems.map((a) => (
+              <article class="bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-md transition-shadow">
+                <div class="p-6 sm:p-8">
+                  <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
+                    <div>
+                      <div class="flex flex-wrap items-center gap-2 mb-1">
+                        <h3 class="text-xl font-bold text-forest-900">{a.name}</h3>
+                        {a.credential && (
+                          <span class="text-xs font-semibold bg-earth-100 text-earth-800 px-2.5 py-0.5 rounded-full">
+                            🥾 Credencial required
+                          </span>
+                        )}
+                      </div>
+                      <p class="text-sm text-slate-500">{a.type}</p>
+                    </div>
+                    <div class="shrink-0 text-right">
+                      <p class="text-lg font-bold text-forest-700">From {a.priceFrom}</p>
+                      {a.beds && <p class="text-xs text-slate-400">{a.beds} beds total</p>}
+                    </div>
+                  </div>
+
+                  <p class="text-slate-700 leading-relaxed mb-5 text-sm sm:text-base">{a.description}</p>
+
+                  <div class="mb-5">
+                    <h4 class="text-xs font-semibold uppercase tracking-wide text-slate-400 mb-2">Facilities</h4>
+                    <ul class="flex flex-wrap gap-2">
+                      {a.amenities.map((amenity) => (
+                        <li class="text-xs bg-forest-50 text-forest-700 px-2.5 py-1 rounded-full border border-forest-100">
+                          {amenity}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {a.notes && (
+                    <div class="bg-earth-50 border border-earth-200 rounded-lg px-4 py-3 mb-5 text-xs text-earth-800">
+                      <strong>Note:</strong> {a.notes}
+                    </div>
+                  )}
+
+                  <div class="pt-4 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center gap-3">
+                    <div class="flex flex-col sm:flex-row gap-3 text-sm text-slate-500 flex-1">
+                      <span class="flex items-center gap-1.5">
+                        <svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        {a.address}
+                      </span>
+                      <span class="flex items-center gap-1.5">
+                        <svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        {a.hours}
+                      </span>
+                      <a href={`tel:${a.phone}`} class="flex items-center gap-1.5 no-underline hover:text-forest-700">
+                        <svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                        {a.phone}
+                      </a>
+                    </div>
+
+                    {a.bookingUrl && (
+                      <a
+                        href={a.bookingUrl}
+                        rel="nofollow noopener noreferrer sponsored"
+                        target="_blank"
+                        class="inline-flex items-center justify-center gap-2 bg-forest-700 hover:bg-forest-800 active:bg-forest-900 text-white font-semibold text-sm px-5 py-2.5 rounded-lg transition-colors no-underline shrink-0"
+                      >
+                        Check Availability
+                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          {/* AdSense slot 2 — injected between Albergues and Guesthouses sections */}
+          {sectionIdx === 0 && (
+            <div class="mt-10 w-full flex justify-center min-h-[90px] md:min-h-[280px] bg-slate-50/50 rounded overflow-hidden">
+              <ins class="adsbygoogle w-full"
+                   style="display:block"
+                   data-ad-client="ca-pub-6529337148344504"
+                   data-ad-slot="0987654321"
+                   data-ad-format="auto"
+                   data-full-width-responsive="true"></ins>
+            </div>
+          )}
+        </section>
+      );
+    })}
+  </div>
+  <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+  <!-- ── BOOKING TIP CALLOUT ─────────────────────────────────────────────────── -->
+  <aside class="bg-forest-50 border-y border-forest-100">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10">
+      <div class="flex gap-4">
+        <span class="text-3xl shrink-0" aria-hidden="true">💡</span>
+        <div>
+          <h2 class="text-lg font-bold text-forest-900 mb-2">Direct Contact vs. Online Booking</h2>
+          <p class="text-slate-700 text-sm leading-relaxed max-w-2xl">
+            The municipal albergue does not accept online reservations — walk-in only from 14:00. For guesthouses, a direct phone call in Portuguese or Spanish gets you confirmed faster than any booking platform. The smaller pensões have minimal OTA presence. The Design Wine Hotel and larger guesthouses are bookable online through Booking.com and Expedia. If you're planning the Coastal Route, also check the <a href="/en/caminha/ferry-and-logistics/" class="text-forest-700 hover:underline no-underline font-medium">ferry schedule and logistics page</a> — the crossing timing affects which albergue makes most sense for your stage plan.
+          </p>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+</MainLayout>

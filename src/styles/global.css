@@ -1,0 +1,114 @@
+/*
+  Tailwind CSS v4 — configuration is CSS-first via @theme.
+  Replaces tailwind.config.mjs (Tailwind v3 syntax incompatible with Astro 6).
+  All custom tokens below generate utility classes identically to v3 config:
+    bg-forest-700  text-earth-500  border-stone-200  etc.
+*/
+@import "tailwindcss";
+
+@theme {
+  /* ── Typography ─────────────────────────────────────────── */
+  --font-family-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+  --font-family-serif: 'Georgia', 'Times New Roman', serif;
+
+  /* ── Forest Greens (primary brand) ──────────────────────── */
+  --color-forest-50:  #f0faf2;
+  --color-forest-100: #d8f0de;
+  --color-forest-200: #aadbb8;
+  --color-forest-300: #73bc88;
+  --color-forest-400: #449a5e;
+  --color-forest-500: #2d7a46;
+  --color-forest-600: #1f6035;
+  --color-forest-700: #174d2b;
+  --color-forest-800: #113c21;
+  --color-forest-900: #0b2e19;
+  --color-forest-950: #061a0e;
+
+  /* ── Earth Tones (accent / warmth) ──────────────────────── */
+  --color-earth-50:  #fdf8ef;
+  --color-earth-100: #f9eedb;
+  --color-earth-200: #f1d8b0;
+  --color-earth-300: #e7bc7e;
+  --color-earth-400: #da9a4d;
+  --color-earth-500: #cc7f2a;
+  --color-earth-600: #b4631e;
+  --color-earth-700: #944e1c;
+  --color-earth-800: #783f1d;
+  --color-earth-900: #62341a;
+  --color-earth-950: #351a0b;
+
+  /* ── Slate Grays (neutrals / UI chrome) ─────────────────── */
+  --color-slate-50:  #f8fafc;
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-300: #cbd5e1;
+  --color-slate-400: #94a3b8;
+  --color-slate-500: #64748b;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1e293b;
+  --color-slate-900: #0f172a;
+  --color-slate-950: #020617;
+
+  /* ── Spacing scale extensions ───────────────────────────── */
+  --spacing-18: 4.5rem;
+  --spacing-22: 5.5rem;
+
+  /* ── Border radius ──────────────────────────────────────── */
+  --radius-xl: 0.875rem;
+  --radius-2xl: 1.25rem;
+}
+
+/* ── Global base resets ─────────────────────────────────────── */
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    font-family: var(--font-family-sans);
+    background-color: var(--color-slate-50);
+    color: var(--color-slate-800);
+    line-height: 1.6;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--color-forest-900);
+  }
+
+  a {
+    color: var(--color-forest-600);
+    text-underline-offset: 3px;
+  }
+
+  a:hover {
+    color: var(--color-forest-800);
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-forest-500);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}

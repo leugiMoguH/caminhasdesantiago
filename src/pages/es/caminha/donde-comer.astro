@@ -1,0 +1,270 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+
+const restaurantes = [
+  // ── MENÚS DEL PEREGRINO (MENÚ DO PEREGRINO) ────────────────────────────────────
+  {
+    name: 'Tasca do Avô',
+    tipo: 'Cocina Casera Portuguesa · Solo Almuerzos',
+    direccion: 'Rua da Corredoura 8, Caminha',
+    precio: '€',
+    precioDetalle: 'Menú por 8 €',
+    menuPeregrino: true,
+    precioMenu: '8 €',
+    horario: 'Lun–Vie 12:00–15:00',
+    distanciaCamino: '280m del Camino (3 min a pie desde la plaza mayor)',
+    notaVegetariana: 'Habitualmente hay un plato principal vegetariano los viernes; limitado otros días — llamar con antelación.',
+    descripcion: 'El mejor almuerzo económico de Caminha, sin discusión. Un local pequeño y sin pretensiones muy apreciado por lugareños, pescadores y peregrinos. El menú del día cambia según lo que haya fresco en el mercado — siempre una o dos opciones generosas con pan casero y medio litro de vino de la casa incluido. A 8 € por tres platos con vino, este es el menú del peregrino definitivo de la villa. Solo efectivo, sin datáfono. Llega antes de las 12:30 o tendrás que hacer cola en la calle.',
+    destacados: ['El menú del peregrino más económico de la villa', 'Siempre lleno de lugareños — señal de calidad', 'Solo efectivo', 'Producto del mercado más fresco'],
+    telefono: null,
+    seccion: 'economico',
+  },
+  {
+    name: 'Restaurante O Barão',
+    tipo: 'Cocina Portuguesa Tradicional / Mariscos',
+    direccion: 'Praça do Conselho, Caminha',
+    precio: '€€',
+    precioDetalle: 'Menú 10 € / Carta 18–28 €',
+    menuPeregrino: true,
+    precioMenu: '10 €',
+    horario: 'Lun–Sáb 12:00–15:00, 19:00–22:00',
+    distanciaCamino: 'En la plaza mayor — 200m de las señales del Camino, directamente en ruta',
+    notaVegetariana: 'Apto para vegetarianos: pasta y platos de huevo siempre disponibles como alternativa al menú del peregrino bajo petición.',
+    descripcion: 'Situado en la histórica plaza mayor con terraza exterior, O Barão es el lugar más atmosférico para el almuerzo del peregrino en Caminha. El menú do peregrino incluye entrante (caldo verde o ensalada de atún), plato principal (bacalhau à brás o besugo a la plancha), pan, vino de la casa y postre. El pulpo a la plancha (polvo grelhado) de la carta es excepcional — si te das el capricho de una cena, pídelo. Muestra tu credencial para confirmar el precio del menú con descuento.',
+    destacados: ['Menú del peregrino 10 € con vino', 'Terraza exterior en la plaza histórica', 'Pescado fresco del Atlántico a diario', 'Credencial aceptada para descuento'],
+    telefono: '+351 258 921 234',
+    seccion: 'economico',
+  },
+  {
+    name: 'Pastelaria Central',
+    tipo: 'Café / Panadería',
+    direccion: 'Rua Ricardo Joaquim de Sousa 3, Caminha',
+    precio: '€',
+    precioDetalle: 'Menos de 5 € el desayuno',
+    menuPeregrino: false,
+    precioMenu: null,
+    horario: 'Todos los días 07:00–19:00',
+    distanciaCamino: '150m del Albergue Municipal, directamente entre el albergue y el embarcadero del ferry',
+    notaVegetariana: 'Todos los artículos del menú son aptos para vegetarianos. Opciones veganas: baguettes tostadas sin mantequilla (preguntar en el mostrador).',
+    descripcion: 'La parada matutina imprescindible antes de embarcar en el ferry o reanudar el Camino. Pastéis de nata recién horneados que rivalizan con cualquier cosa de Lisboa, café galão (café con leche portugués) bien cargado y bocadillos tostados bien rellenos. Abre a las 7:00 — suficientemente temprano para la salida del ferry a las 9:00. También preparan baguettes empaquetadas para llevar al camino. Un café y dos pastéis de nata salen por menos de 3,50 €.',
+    destacados: ['Abre a las 7:00 — imprescindible antes del ferry', 'Mejores pastéis de nata de Caminha', 'Bocadillos preparados para el Camino', 'Desayuno completo por menos de 4 €'],
+    telefono: '+351 258 921 100',
+    seccion: 'economico',
+  },
+
+  // ── GASTRONOMÍA TRADICIONAL DEL MIÑO ─────────────────────────────────────────
+  {
+    name: 'Petisco & Companhia',
+    tipo: 'Petiscos / Bar de Vinos',
+    direccion: 'Rua Visconde Sousa Rego 14, Caminha',
+    precio: '€€',
+    precioDetalle: '25–35 € por persona',
+    menuPeregrino: false,
+    precioMenu: null,
+    horario: 'Mar–Dom 12:00–23:00 (cocina cierra a las 22:00)',
+    distanciaCamino: '320m del Camino, 5 min a pie desde la plaza mayor hacia el río',
+    notaVegetariana: 'Excelente para vegetarianos: queijo da Serra, petiscos de setas y platos de verdura de temporada. Tablas de queso vegano disponibles.',
+    descripcion: 'Un moderno bar de vinos que sirve petiscos tradicionales del Miño (tapas portuguesas) — ideal para una cena tranquila tras un largo día en la ruta costera. La filosofía aquí es el maridaje: cada plato se construye alrededor de un productor local de Vinho Verde. Destacan el presunto de Vinhais (jamón curado de montaña), la alheira (embutido ahumado), el queijo da Serra con miel de castaño y las setas silvestres de temporada con aceite. El lugar más social de Caminha — conocerás a otros peregrinos planificando su cruce a A Guarda sobre una botella de Alvarinho. Terraza para perros.',
+    destacados: ['Excepcional selección de Vinho Verde', 'Perfecto para compartir', 'Terraza para perros', 'Tablas vegetarianas disponibles'],
+    telefono: '+351 910 456 789',
+    seccion: 'gastronomia',
+  },
+  {
+    name: 'Marisqueira A Lagosta',
+    tipo: 'Restaurante de Mariscos — Especialista en Arroz de Debulho',
+    direccion: 'Avenida Marginal, Caminha',
+    precio: '€€€',
+    precioDetalle: '35–55 € por persona',
+    menuPeregrino: false,
+    precioMenu: null,
+    horario: 'Mar–Dom 12:30–15:00, 19:30–22:30',
+    distanciaCamino: '600m del Camino, ribereño por la Avenida Marginal hacia el embarcadero del ferry',
+    notaVegetariana: 'Opciones vegetarianas limitadas — es un restaurante de mariscos dedicado. Plato de verduras a la plancha disponible bajo petición; el arroz puede hacerse sin marisco.',
+    descripcion: 'La opción de lujo en Caminha y visita obligada para quienes aman la gastronomía del río Miño. Esta marisquería ribereña lleva más de 30 años sirviendo los mejores mariscos de la región, con vistas panorámicas al estuario del Miño y a la costa gallega. El plato estrella es el <strong>arroz de debulho</strong> — un arroz denso y de sabor intensísimo cocinado con marisco fresco, una elaboración propia de este tramo de la costa del Miño que no encontrarás en la Galicia española. Pídelo para dos y llega con hambre. También sobresalientes: los percebes cuando están en temporada (otoño), las amêijoas à bulhão pato (almejas al ajillo con vino blanco) y el arroz de marisco. Reserva para cenar; para comer de lunes a viernes suele haber sitio sin reserva.',
+    destacados: ['Arroz de debulho exclusivo de la costa del Miño', 'Vistas panorámicas al estuario del Miño', 'Marisco vivo en vivero', 'Mejor restaurante de ocasiones especiales en Caminha', 'Percebes en temporada (otoño)'],
+    telefono: '+351 258 922 300',
+    seccion: 'gastronomia',
+  },
+];
+
+const secciones = [
+  {
+    key: 'economico',
+    etiqueta: 'Menús del Peregrino (Menú do Peregrino) — Menos de 10 €',
+    icono: '🥾',
+    intro: 'Estos restaurantes ofrecen el clásico menú do peregrino portugués: tres platos con pan y vino, servido al mediodía (normalmente 12:00–15:00) por 8–10 €. Muestra tu credencial do peregrino para confirmar la elegibilidad, aunque la mayoría no la pedirá. Todos están a menos de 350 metros de las señales del Camino en Caminha.',
+  },
+  {
+    key: 'gastronomia',
+    etiqueta: 'Gastronomía Tradicional del Miño — Arroz de Debulho y Pescado Fresco',
+    icono: '🐟',
+    intro: 'La región del Miño tiene su propia cocina, moldeada por la costa atlántica y el valle del río. Estas opciones van más allá del menú del peregrino y entran en la cocina auténtica de la zona — arroz de marisco, percebes frescos, maridajes con Vinho Verde y el intensamente sabroso arroz de debulho que no encontrarás en ningún otro lugar del Camino.',
+  },
+];
+---
+
+<MainLayout
+  title="Dónde Comer en Caminha — Menús del Peregrino, Mariscos del Miño y Vinho Verde"
+  description="Los mejores restaurantes en Caminha para peregrinos del Camino de Santiago. Menús del peregrino desde 8 €, arroz de debulho, bares de Vinho Verde y cafeterías con apertura temprana cerca del ferry. Incluye distancias al Camino."
+  lang="es"
+  schemaType="webpage"
+>
+
+  <!-- ── ENCABEZADO ──────────────────────────────────────────────────────────── -->
+  <div class="bg-earth-50 border-b border-earth-100">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+      <nav aria-label="Ruta de navegación" class="mb-4">
+        <ol class="flex items-center gap-2 text-sm text-slate-500">
+          <li><a href="/es/" class="hover:text-forest-700 no-underline hover:underline">Inicio</a></li>
+          <li aria-hidden="true" class="text-slate-300">›</li>
+          <li><span class="text-slate-400">Caminha</span></li>
+          <li aria-hidden="true" class="text-slate-300">›</li>
+          <li aria-current="page" class="text-slate-700 font-medium">Dónde Comer</li>
+        </ol>
+      </nav>
+      <h1 class="text-3xl sm:text-4xl font-bold text-forest-900 mb-4">Dónde Comer en Caminha</h1>
+      <p class="text-slate-600 max-w-2xl text-base leading-relaxed">
+        Caminha tiene una oferta gastronómica que supera las expectativas para una villa de su tamaño. Desde menús del peregrino por 8 € hasta el arroz de debulho — un arroz con marisco único en esta franja de la costa del Miño — el pueblo premia a los peregrinos que se toman tiempo para comer bien. Todos los establecimientos están a distancia a pie del Camino y del embarcadero. Se incluye la distancia desde las señales de ruta para cada local.
+      </p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <span class="inline-flex items-center gap-1.5 bg-earth-100 text-earth-800 text-xs font-medium px-3 py-1.5 rounded-full">
+          🥾 {restaurantes.filter(r => r.menuPeregrino).length} restaurantes con menú del peregrino
+        </span>
+        <span class="inline-flex items-center gap-1.5 bg-forest-100 text-forest-800 text-xs font-medium px-3 py-1.5 rounded-full">
+          🌿 Notas vegetarianas en cada local
+        </span>
+        <span class="inline-flex items-center gap-1.5 bg-slate-100 text-slate-700 text-xs font-medium px-3 py-1.5 rounded-full">
+          📍 Distancias al Camino incluidas
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── ADSENSE RANURA 1 — Fold alto, bajo párrafo H1 ──────────────────────── -->
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <div class="my-6 w-full flex justify-center min-h-[90px] md:min-h-[280px] bg-slate-50/50 rounded overflow-hidden">
+      <ins class="adsbygoogle w-full"
+           style="display:block"
+           data-ad-client="ca-pub-6529337148344504"
+           data-ad-slot="1234567891"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+  </div>
+  <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+  <!-- ── SECCIONES DE RESTAURANTES ──────────────────────────────────────────── -->
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10 space-y-16">
+
+    {secciones.map((seccion, seccionIdx) => {
+      const items = restaurantes.filter(r => r.seccion === seccion.key);
+      return (
+        <section id={seccion.key} aria-labelledby={`heading-${seccion.key}`}>
+          <div class="mb-6">
+            <h2 id={`heading-${seccion.key}`} class="text-2xl font-bold text-forest-900 flex items-center gap-2">
+              <span aria-hidden="true">{seccion.icono}</span>
+              {seccion.etiqueta}
+            </h2>
+            <p class="mt-2 text-slate-600 text-sm leading-relaxed max-w-2xl">{seccion.intro}</p>
+          </div>
+
+          <div class="space-y-6">
+            {items.map((r) => (
+              <article class="bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-md transition-shadow">
+                <div class="p-6 sm:p-8">
+                  <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
+                    <div>
+                      <div class="flex flex-wrap items-center gap-2 mb-1">
+                        <h3 class="text-xl font-bold text-forest-900">{r.name}</h3>
+                        {r.menuPeregrino && (
+                          <span class="inline-flex items-center bg-earth-100 text-earth-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">
+                            🥾 Menú peregrino {r.precioMenu}
+                          </span>
+                        )}
+                      </div>
+                      <p class="text-sm text-slate-500">{r.tipo}</p>
+                    </div>
+                    <div class="shrink-0 text-right">
+                      <span class="font-mono text-base font-bold text-forest-700 bg-forest-50 px-3 py-1 rounded-lg block">
+                        {r.precio}
+                      </span>
+                      <span class="text-xs text-slate-400 mt-0.5 block">{r.precioDetalle}</span>
+                    </div>
+                  </div>
+
+                  <p class="text-slate-700 leading-relaxed mb-4 text-sm sm:text-base" set:html={r.descripcion} />
+
+                  <!-- Distancia al Camino y nota vegetariana -->
+                  <div class="grid sm:grid-cols-2 gap-3 mb-5">
+                    <div class="flex items-start gap-2 bg-slate-50 rounded-lg px-3 py-2.5 text-xs text-slate-700">
+                      <span class="shrink-0 mt-0.5" aria-hidden="true">📍</span>
+                      <span><strong>Desde el Camino:</strong> {r.distanciaCamino}</span>
+                    </div>
+                    <div class="flex items-start gap-2 bg-forest-50 rounded-lg px-3 py-2.5 text-xs text-forest-800 border border-forest-100">
+                      <span class="shrink-0 mt-0.5" aria-hidden="true">🌿</span>
+                      <span><strong>Veg/Vegano:</strong> {r.notaVegetariana}</span>
+                    </div>
+                  </div>
+
+                  <ul class="flex flex-wrap gap-2 mb-5">
+                    {r.destacados.map((d) => (
+                      <li class="text-xs bg-earth-50 text-earth-700 px-2.5 py-1 rounded-full border border-earth-100">
+                        {d}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div class="pt-4 border-t border-slate-100 flex flex-col sm:flex-row gap-3 text-sm text-slate-500">
+                    <span class="flex items-center gap-1.5">
+                      <svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                      {r.direccion}
+                    </span>
+                    <span class="flex items-center gap-1.5">
+                      <svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                      {r.horario}
+                    </span>
+                    {r.telefono && (
+                      <a href={`tel:${r.telefono}`} class="flex items-center gap-1.5 no-underline hover:text-forest-700">
+                        <svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                        {r.telefono}
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          {/* AdSense ranura 2 — entre las dos categorías gastronómicas */}
+          {seccionIdx === 0 && (
+            <div class="mt-10 w-full flex justify-center min-h-[90px] md:min-h-[280px] bg-slate-50/50 rounded overflow-hidden">
+              <ins class="adsbygoogle w-full"
+                   style="display:block"
+                   data-ad-client="ca-pub-6529337148344504"
+                   data-ad-slot="0987654322"
+                   data-ad-format="auto"
+                   data-full-width-responsive="true"></ins>
+            </div>
+          )}
+        </section>
+      );
+    })}
+  </div>
+  <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+  <!-- ── CONSEJO PARA PEREGRINOS ─────────────────────────────────────────────── -->
+  <aside class="bg-forest-50 border-y border-forest-100">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10">
+      <div class="flex gap-4">
+        <span class="text-3xl shrink-0" aria-hidden="true">💡</span>
+        <div>
+          <h2 class="text-lg font-bold text-forest-900 mb-2">Consejo para Peregrinos: Cómo Funciona el Menú do Peregrino</h2>
+          <p class="text-slate-700 text-sm leading-relaxed max-w-2xl">
+            En Portugal, el <em>menú do peregrino</em> se sirve solo al mediodía — normalmente de 12:00 a 15:00. Por 8–10 € recibes tres platos: entrante (sopa o ensalada), plato principal (pescado o carne), postre o café y medio litro de vino de la casa o agua. El pan siempre está incluido. Mostrar tu <em>credencial do peregrino</em> (pasaporte del peregrino) confirma la elegibilidad, aunque la mayoría de los restaurantes de Caminha no la pedirán — las botas desgastadas lo dicen todo. Comprueba siempre el tablón del menú en el exterior antes de sentarte: el precio y los platos deben estar indicados. <strong>El lunes es el peor día para los menús del peregrino</strong> — muchos restaurantes pequeños cierran o tienen oferta reducida.
+          </p>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+</MainLayout>

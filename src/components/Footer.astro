@@ -1,0 +1,202 @@
+---
+interface Props {
+  lang: 'en' | 'es';
+}
+
+const { lang } = Astro.props;
+
+const year = new Date().getFullYear();
+
+const t = {
+  en: {
+    tagline: 'Your independent guide for pilgrims and travellers on the Camino de Santiago Coastal Route through Caminha, Portugal.',
+    explore: 'Explore Caminha',
+    home: 'Home',
+    eat: 'Where to Eat',
+    stay: 'Where to Stay',
+    ferry: 'Ferry & Logistics',
+    languages: 'Languages',
+    english: 'English',
+    spanish: 'Español',
+    legal: 'Legal',
+    privacy: 'Privacy Policy',
+    disclaimer: 'Disclaimer',
+    copyright: `© ${year} Caminha Guide. All rights reserved.`,
+    ferryDisclaimer: 'Ferry timetables and prices are subject to change without notice. Always verify schedules directly with the ferry operator before your crossing. This site is independently operated and has no affiliation with any transport provider.',
+    adsenseNotice: 'This site uses Google AdSense to display advertising. Ads help keep this guide free for pilgrims.',
+    independentNote: 'Independent guide — not affiliated with any Camino organisation or tourism board.',
+  },
+  es: {
+    tagline: 'Tu guía independiente para peregrinos y viajeros en el Camino de Santiago de la Costa, a través de Caminha, Portugal.',
+    explore: 'Explorar Caminha',
+    home: 'Inicio',
+    eat: 'Dónde Comer',
+    stay: 'Dónde Dormir',
+    ferry: 'Ferry y Logística',
+    languages: 'Idiomas',
+    english: 'English',
+    spanish: 'Español',
+    legal: 'Legal',
+    privacy: 'Política de Privacidad',
+    disclaimer: 'Aviso Legal',
+    copyright: `© ${year} Guía de Caminha. Todos los derechos reservados.`,
+    ferryDisclaimer: 'Los horarios y precios del ferry están sujetos a cambios sin previo aviso. Confirma siempre los horarios directamente con la naviera antes de tu travesía. Este sitio es independiente y no tiene ninguna afiliación con ningún proveedor de transporte.',
+    adsenseNotice: 'Este sitio utiliza Google AdSense para mostrar publicidad. Los anuncios ayudan a mantener esta guía gratuita para los peregrinos.',
+    independentNote: 'Guía independiente — sin afiliación con ninguna organización del Camino ni junta de turismo.',
+  },
+} as const;
+
+const text = t[lang];
+
+const navLinks =
+  lang === 'en'
+    ? [
+        { href: '/en/', label: text.home },
+        { href: '/en/caminha/where-to-eat/', label: text.eat },
+        { href: '/en/caminha/where-to-stay/', label: text.stay },
+        { href: '/en/caminha/ferry-and-logistics/', label: text.ferry },
+      ]
+    : [
+        { href: '/es/', label: text.home },
+        { href: '/es/caminha/donde-comer/', label: text.eat },
+        { href: '/es/caminha/donde-dormir/', label: text.stay },
+        { href: '/es/caminha/ferry-y-logistica/', label: text.ferry },
+      ];
+---
+
+<footer class="bg-forest-950 text-slate-300 mt-auto">
+
+  <!-- AdSense auto-ad zone — top of footer -->
+  <div
+    class="border-b border-forest-900 py-4 px-4 text-center"
+    aria-label="Advertisement"
+    role="complementary"
+  >
+    <!-- AdSense auto-ads: publisher tag is injected via MainLayout head -->
+    <!-- Manual ad unit slot (optional override): -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6529337148344504" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-format="auto"
+      data-full-width-responsive="true"
+      aria-hidden="true">
+    </ins>
+  </div>
+
+  <!-- Main footer content -->
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
+
+      <!-- Brand column -->
+      <div class="lg:col-span-2">
+        <a href={`/${lang}/`} class="flex items-center gap-2.5 no-underline mb-4">
+          <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-forest-600 text-white font-bold select-none">
+            C
+          </span>
+          <span class="font-bold text-white text-lg">Caminha Guide</span>
+        </a>
+        <p class="text-sm leading-relaxed text-slate-400 max-w-sm">
+          {text.tagline}
+        </p>
+        <p class="mt-3 text-xs text-slate-500 italic">{text.independentNote}</p>
+      </div>
+
+      <!-- Navigation column -->
+      <div>
+        <h2 class="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">
+          {text.explore}
+        </h2>
+        <ul class="space-y-2.5" role="list">
+          {navLinks.map(({ href, label }) => (
+            <li>
+              <a
+                href={href}
+                class="text-sm text-slate-300 hover:text-white transition-colors no-underline hover:underline"
+              >
+                {label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Languages + Legal column -->
+      <div class="space-y-8">
+        <div>
+          <h2 class="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">
+            {text.languages}
+          </h2>
+          <ul class="space-y-2.5" role="list">
+            <li>
+              <a href="/en/" hreflang="en" class="text-sm text-slate-300 hover:text-white transition-colors no-underline hover:underline flex items-center gap-2">
+                <span aria-hidden="true">🇬🇧</span> {text.english}
+              </a>
+            </li>
+            <li>
+              <a href="/es/" hreflang="es" class="text-sm text-slate-300 hover:text-white transition-colors no-underline hover:underline flex items-center gap-2">
+                <span aria-hidden="true">🇪🇸</span> {text.spanish}
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">
+            {text.legal}
+          </h2>
+          <ul class="space-y-2.5" role="list">
+            <li>
+              <a
+                href={`/${lang}/privacy/`}
+                class="text-sm text-slate-300 hover:text-white transition-colors no-underline hover:underline"
+              >
+                {text.privacy}
+              </a>
+            </li>
+            <li>
+              <a
+                href={`/${lang}/disclaimer/`}
+                class="text-sm text-slate-300 hover:text-white transition-colors no-underline hover:underline"
+              >
+                {text.disclaimer}
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Ferry disclaimer -->
+    <div class="mt-10 pt-8 border-t border-forest-900">
+      <div class="rounded-lg bg-forest-900/50 border border-forest-800 p-4">
+        <p class="text-xs text-slate-400 leading-relaxed">
+          <strong class="text-slate-300 font-semibold">⚠ {lang === 'en' ? 'Ferry Timetable Notice' : 'Aviso Horarios del Ferry'}:</strong>{' '}
+          {text.ferryDisclaimer}
+        </p>
+      </div>
+    </div>
+
+    <!-- AdSense notice + copyright -->
+    <div class="mt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <p class="text-xs text-slate-500">{text.copyright}</p>
+      <p class="text-xs text-slate-500 max-w-sm text-right">{text.adsenseNotice}</p>
+    </div>
+
+  </div>
+
+  <!-- AdSense auto-ad zone — bottom of footer -->
+  <div
+    class="border-t border-forest-900 py-2 px-4"
+    aria-label="Advertisement"
+    role="complementary"
+    aria-hidden="true"
+  >
+    <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-format="auto"
+      data-full-width-responsive="true">
+    </ins>
+  </div>
+
+</footer>

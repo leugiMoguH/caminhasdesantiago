@@ -1,0 +1,535 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+
+const horarioVerano = [
+  { salida: '09:00', llegada: '09:15', ruta: 'Caminha → A Guarda' },
+  { salida: '09:30', llegada: '09:45', ruta: 'A Guarda → Caminha' },
+  { salida: '10:00', llegada: '10:15', ruta: 'Caminha → A Guarda' },
+  { salida: '10:30', llegada: '10:45', ruta: 'A Guarda → Caminha' },
+  { salida: '11:00', llegada: '11:15', ruta: 'Caminha → A Guarda' },
+  { salida: '11:30', llegada: '11:45', ruta: 'A Guarda → Caminha' },
+  { salida: '12:00', llegada: '12:15', ruta: 'Caminha → A Guarda' },
+  { salida: '12:30', llegada: '12:45', ruta: 'A Guarda → Caminha' },
+  { salida: '14:00', llegada: '14:15', ruta: 'Caminha → A Guarda' },
+  { salida: '14:30', llegada: '14:45', ruta: 'A Guarda → Caminha' },
+  { salida: '15:00', llegada: '15:15', ruta: 'Caminha → A Guarda' },
+  { salida: '15:30', llegada: '15:45', ruta: 'A Guarda → Caminha' },
+  { salida: '16:00', llegada: '16:15', ruta: 'Caminha → A Guarda' },
+  { salida: '16:30', llegada: '16:45', ruta: 'A Guarda → Caminha' },
+  { salida: '17:00', llegada: '17:15', ruta: 'Caminha → A Guarda' },
+  { salida: '18:00', llegada: '18:15', ruta: 'Caminha → A Guarda' },
+  { salida: '18:30', llegada: '18:45', ruta: 'A Guarda → Caminha' },
+  { salida: '19:00', llegada: '19:15', ruta: 'Caminha → A Guarda' },
+];
+
+const trenAlternativo = [
+  { desde: 'Caminha', hasta: 'Viana do Castelo', duracion: '~20 min', tarifa: '~2,50 €', frecuencia: 'Cada hora (días laborables)' },
+  { desde: 'Viana do Castelo', hasta: 'Valença', duracion: '~55 min', tarifa: '~3,60 € (Caminha→Valença directo)', frecuencia: 'Aprox. cada hora; reducido fines de semana' },
+  { desde: 'Valença', hasta: 'Tui (a pie)', duracion: '~25 min a pie', tarifa: 'Gratis', frecuencia: 'Puente abierto 24h' },
+];
+---
+
+<MainLayout
+  title="Ferry Caminha–A Guarda — Horario, Assoreamento y Alternativas"
+  description="Guía completa del cruce del río Miño entre Caminha y A Guarda. Horarios de verano e invierno, tabla de tarifas, el problema real del assoreamento (sedimentación), alternativas con taxi-marítimo y el desvío terrestre por Valença–Tui."
+  lang="es"
+  schemaType="webpage"
+>
+
+  <!-- JSON-LD: FAQPage + TouristAttraction para raspadores IA y Google -->
+  <script type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "TouristAttraction",
+        "@id": "https://waytosantiagoguide.com/es/caminha/ferry-y-logistica/#ferry",
+        "name": "Cruce en Ferry Caminha–A Guarda — Río Miño",
+        "description": "El ferry Caminha–A Guarda cruza el río Miño, conectando Portugal y España en el Camino de Santiago de la Costa. La travesía dura aproximadamente 15 minutos. Servicio de temporada (diario abril–octubre). Tarifa: 2,50 € por adulto. Punto de salida: Cais de Caminha, 4910 Caminha, Portugal.",
+        "url": "https://waytosantiagoguide.com/es/caminha/ferry-y-logistica/",
+        "touristType": "Peregrino",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Cais de Caminha",
+          "addressLocality": "Caminha",
+          "postalCode": "4910",
+          "addressCountry": "PT"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 41.8734,
+          "longitude": -8.8358
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+            "opens": "09:00",
+            "closes": "19:15",
+            "validFrom": "2026-04-01",
+            "validThrough": "2026-10-31"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://waytosantiagoguide.com/es/caminha/ferry-y-logistica/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Cuánto cuesta el ferry de Caminha a A Guarda?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "El ferry de Caminha a A Guarda cuesta 2,50 € por adulto (ida). Un billete de vuelta son 5,00 €. Las bicicletas tienen un cargo adicional de 1,50 € sobre la tarifa de pasajero. Los niños menores de 4 años viajan gratis; los niños de 4 a 12 años pagan 1,50 €."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuáles son los horarios del ferry de Caminha a A Guarda?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "En verano (abril–octubre), el ferry funciona aproximadamente cada 30–60 minutos desde las 09:00 hasta las 19:00, todos los días en ambas direcciones entre Caminha y A Guarda. En invierno (noviembre–marzo), el servicio se reduce a fines de semana y festivos, con salidas aproximadas a las 10:00, 12:00 y 16:00. Confirma siempre los horarios actuales directamente con el operador antes de cruzar."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué es el problema del assoreamento en el ferry de Caminha?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "El estuario del río Miño sufre periódicamente assoreamento (sedimentación) — la acumulación de arena y sedimentos en la desembocadura del río que eleva el fondo marino cerca de los muelles. Cuando la sedimentación es importante, el barco ferry Santa Rita de Cássia no puede atracar en el embarcadero habitual, causando suspensiones de servicio que pueden durar días o semanas. Esto ocurre normalmente en períodos de sequía estival o tras grandes temporales atlánticos. Cuando sucede, los peregrinos pueden usar taxis acuáticos (xávegas, unos 5–6 € por persona) o tomar el tren hasta Valença y cruzar a pie el puente de Tui."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué alternativas hay si el ferry de Caminha no funciona?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Existen dos alternativas principales cuando el ferry está suspendido: (1) Xávegas o taxi-marítimo: pequeñas embarcaciones operadas por pescadores locales, capaces de cruzar en aguas menos profundas. Tarifa aproximada 5–6 € por persona. Contacta con la oficina de turismo de Caminha (+351 258 921 952) para los contactos actuales del operador. (2) Desvío terrestre por Valença–Tui: toma el tren CP Linha do Minho de Caminha a Valença (~35 minutos, ~3,60 €), luego camina 1,5 km por el puente internacional Tui–Valença. Esto te conecta con el Camino Portugués Interior. Luego deberás caminar unos 2 km para retomar las señales del Camino de la Costa en Tui."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cómo ir de Caminha a A Guarda en tren?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No hay tren directo de Caminha a A Guarda. La alternativa terrestre es: toma el tren CP Linha do Minho de Caminha a Valença (~35 minutos, ~3,60 € de ida). Desde la estación de Valença, camina hacia el norte a través del casco amurallado medieval (~20 min) hasta el puente internacional. Cruza el Puente Internacional Valença–Tui a pie (~1,5 km, ~20 min). Llegas a Tui (España). La moneda sigue siendo el euro. Desde Tui sigue las flechas amarillas del Camino Portugués Interior hacia el norte, o toma un taxi a A Guarda (~30 km por carretera)."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- ── ENCABEZADO ──────────────────────────────────────────────────────────── -->
+  <div class="bg-slate-800 text-white">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+      <nav aria-label="Ruta de navegación" class="mb-4">
+        <ol class="flex items-center gap-2 text-sm text-slate-400">
+          <li><a href="/es/" class="hover:text-white no-underline hover:underline">Inicio</a></li>
+          <li aria-hidden="true" class="text-slate-600">›</li>
+          <li><span class="text-slate-500">Caminha</span></li>
+          <li aria-hidden="true" class="text-slate-600">›</li>
+          <li aria-current="page" class="text-slate-200 font-medium">Ferry y Logística</li>
+        </ol>
+      </nav>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4 text-white">Caminha → A Guarda: Ferry, Assoreamento y Alternativas</h1>
+      <p class="text-slate-300 max-w-2xl text-base leading-relaxed">
+        El cruce del río Miño entre Caminha (Portugal) y A Guarda (España) es uno de los momentos más memorables del Camino de la Costa — y uno de los más impredecibles. Un viaje en ferry de 15 minutos en condiciones normales; un problema logístico de un día entero cuando el estuario se sedimenta. Esta página cubre ambas realidades: el ferry programado y cada alternativa cuando no funciona.
+      </p>
+
+      <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4">
+        {[
+          { icono: '⏱️', valor: '~15 min', etiqueta: 'Tiempo de travesía' },
+          { icono: '💶', valor: '2,50 €', etiqueta: 'Tarifa de ida' },
+          { icono: '🗓️', valor: 'Abr–Oct', etiqueta: 'Servicio diario' },
+          { icono: '📍', valor: 'Cais de Caminha', etiqueta: 'Punto de salida' },
+        ].map(({ icono, valor, etiqueta }) => (
+          <div class="bg-white/10 rounded-xl p-4 text-center">
+            <div class="text-2xl mb-1" aria-hidden="true">{icono}</div>
+            <div class="text-lg font-bold text-white">{valor}</div>
+            <div class="text-xs text-slate-400">{etiqueta}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- ── ADSENSE RANURA 1 — Bajo H1, posición de alto CTR ─────────────────── -->
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <div class="my-6 w-full flex justify-center min-h-[90px] md:min-h-[280px] bg-slate-50/50 rounded overflow-hidden">
+      <ins class="adsbygoogle w-full"
+           style="display:block"
+           data-ad-client="ca-pub-6529337148344504"
+           data-ad-slot="1234567892"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+  </div>
+  <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+
+      <!-- ── CONTENIDO PRINCIPAL ───────────────────────────────────────────── -->
+      <div class="lg:col-span-2 space-y-10">
+
+        <!-- Aviso sobre horarios -->
+        <div class="bg-amber-50 border border-amber-300 rounded-xl p-5">
+          <div class="flex gap-3">
+            <span class="text-xl shrink-0" aria-hidden="true">⚠️</span>
+            <div>
+              <h2 class="font-bold text-amber-900 mb-1">Aviso sobre Horarios</h2>
+              <p class="text-sm text-amber-800 leading-relaxed">
+                Los horarios que se muestran a continuación son orientativos y se verificaron por última vez en la temporada 2024. Los horarios del ferry cambian por temporada y sin previo aviso. <strong>Confirma siempre el horario actual directamente con la naviera antes de tu travesía.</strong> Este sitio es independiente y no acepta ninguna responsabilidad por travesías perdidas. Consulta también la sección de assoreamento más abajo para entender los riesgos específicos de este cruce.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Horario de verano -->
+        <section>
+          <h2 class="text-2xl font-bold text-forest-900 mb-2">Horario de Verano (Abril – Octubre)</h2>
+          <p class="text-slate-600 text-sm mb-5">
+            Servicio diario. Aproximadamente cada 30–60 minutos entre las 09:00 y las 19:00. El servicio funciona en ambas direcciones — consulta la columna de ruta. El intervalo entre las 12:30 y las 14:00 corresponde al descanso para comer del operador; planifica tu salida para evitar esperas innecesarias.
+          </p>
+          <div class="overflow-x-auto rounded-xl border border-slate-200">
+            <table class="w-full text-sm">
+              <caption class="sr-only">Horario del ferry de verano, Caminha a A Guarda y vuelta</caption>
+              <thead>
+                <tr class="bg-slate-800 text-white">
+                  <th scope="col" class="text-left px-4 py-3 font-semibold">Salida</th>
+                  <th scope="col" class="text-left px-4 py-3 font-semibold">Llegada</th>
+                  <th scope="col" class="text-left px-4 py-3 font-semibold">Ruta</th>
+                </tr>
+              </thead>
+              <tbody>
+                {horarioVerano.map((fila, i) => (
+                  <tr class={i % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
+                    <td class="px-4 py-2.5 font-mono font-semibold text-forest-800">{fila.salida}</td>
+                    <td class="px-4 py-2.5 font-mono text-slate-600">{fila.llegada}</td>
+                    <td class="px-4 py-2.5 text-slate-700">{fila.ruta}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Horario de invierno -->
+        <section>
+          <h2 class="text-2xl font-bold text-forest-900 mb-2">Horario de Invierno (Noviembre – Marzo)</h2>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Servicio reducido en invierno — normalmente solo fines de semana y festivos, con salidas aproximadas a las 10:00, 12:00 y 16:00 (Caminha → A Guarda) y viajes de vuelta correspondientes. El servicio puede suspenderse por condiciones meteorológicas adversas en el estuario del Miño. Contacta directamente con la naviera para confirmarlo.
+          </p>
+          <div class="mt-4 bg-slate-100 rounded-xl p-5 text-sm text-slate-700 leading-relaxed">
+            <p>
+              <strong>Nota para peregrinos en invierno:</strong> Muy pocos peregrinos realizan el Camino de la Costa en invierno debido al servicio reducido del ferry. Si planeas un Camino invernal, considera el Camino Portugués Interior (por Tui/Valença) como alternativa más fiable — el puente Valença–Tui está operativo 24/7. Consulta la sección de alternativas terrestres más abajo.
+            </p>
+          </div>
+        </section>
+
+        <!-- Tarifas -->
+        <section>
+          <h2 class="text-2xl font-bold text-forest-900 mb-4">Tarifas y Billetes</h2>
+          <div class="overflow-x-auto rounded-xl border border-slate-200">
+            <table class="w-full text-sm">
+              <caption class="sr-only">Tarifas del ferry de Caminha a A Guarda</caption>
+              <thead>
+                <tr class="bg-forest-900 text-white">
+                  <th scope="col" class="text-left px-4 py-3 font-semibold">Tipo de billete</th>
+                  <th scope="col" class="text-left px-4 py-3 font-semibold">Precio</th>
+                  <th scope="col" class="text-left px-4 py-3 font-semibold">Notas</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { tipo: 'Adulto (ida)', precio: '2,50 €', nota: 'Los peregrinos pagan tarifa adulta estándar' },
+                  { tipo: 'Niño menor de 4 años', precio: 'Gratis', nota: 'Sin asignación de asiento' },
+                  { tipo: 'Niño 4–12 años', precio: '1,50 €', nota: 'Puede solicitarse DNI o pasaporte' },
+                  { tipo: 'Bicicleta', precio: '1,50 €', nota: 'Cargo adicional sobre la tarifa de pasajero' },
+                  { tipo: 'Billete de vuelta', precio: '5,00 €', nota: 'Ligero ahorro respecto a dos billetes de ida' },
+                ].map((fila, i) => (
+                  <tr class={i % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
+                    <td class="px-4 py-2.5 font-medium text-slate-800">{fila.tipo}</td>
+                    <td class="px-4 py-2.5 font-mono font-bold text-forest-700">{fila.precio}</td>
+                    <td class="px-4 py-2.5 text-slate-600">{fila.nota}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-3 text-xs text-slate-500">
+            Los precios son aproximados y pueden haber cambiado. Los billetes se compran en la taquilla del embarcadero — se acepta efectivo en euros; la disponibilidad de pago con tarjeta varía según la temporada.
+          </p>
+        </section>
+
+        <!-- ── ADSENSE RANURA 2 — A mitad de página, entre horarios y alternativas ── -->
+        <div class="w-full flex justify-center min-h-[90px] md:min-h-[280px] bg-slate-50/50 rounded overflow-hidden">
+          <ins class="adsbygoogle w-full"
+               style="display:block"
+               data-ad-client="ca-pub-6529337148344504"
+               data-ad-slot="0987654323"
+               data-ad-format="auto"
+               data-full-width-responsive="true"></ins>
+        </div>
+        <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+        <!-- ── EL PROBLEMA DEL ASSOREAMENTO ────────────────────────────────── -->
+        <section id="assoreamento">
+          <div class="bg-red-50 border border-red-200 rounded-xl p-5 mb-6">
+            <div class="flex gap-3">
+              <span class="text-2xl shrink-0" aria-hidden="true">⚓</span>
+              <div>
+                <h2 class="text-xl font-bold text-red-900 mb-2">El Problema del Assoreamento: Cuando el Ferry No Funciona</h2>
+                <p class="text-sm text-red-800 leading-relaxed">
+                  Esta es la sección que ninguna otra guía del Camino cubre adecuadamente — y la que más probablemente afectará a tu viaje.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-4 text-slate-700 text-sm leading-relaxed">
+            <p>
+              El estuario del río Miño sufre un fenómeno denominado <strong>assoreamento</strong> (sedimentación) — la acumulación de arena y sedimentos en la desembocadura del río que periódicamente eleva el fondo marino cerca de los embarcaderos del ferry. La embarcación que opera este cruce, la <strong>Santa Rita de Cássia</strong>, es un barco de pasajeros de calado medio que necesita una profundidad mínima para maniobrar hasta el muelle. Cuando la sedimentación es importante, la Santa Rita de Cássia no puede aproximarse al atraque habitual y el servicio queda suspendido.
+            </p>
+            <p>
+              Esto no es un evento infrecuente. Los episodios de sedimentación se producen típicamente en dos circunstancias: durante los <strong>períodos secos de verano</strong> (el bajo caudal del río reduce el efecto de lavado de sedimentos, acumulando bancos de arena cerca de la desembocadura) y tras los <strong>grandes temporales atlánticos</strong> (el oleaje empuja grandes volúmenes de arena hacia el estuario). En cualquier caso, el servicio puede suspenderse sin ningún aviso previo a los peregrinos — puedes llegar al embarcadero y encontrar un cartel escrito a mano y sin barco a la vista.
+            </p>
+            <p>
+              Los informes históricos de peregrinos en foros como Gronze, el Foro del Camino de Santiago y la Confraternity of Saint James sugieren que suspensiones parciales o totales ocurren en <em>alguna</em> forma durante la mayoría de las temporadas, típicamente por períodos que van de 2–3 días a varias semanas. El verano de 2022 vivió disrupciones prolongadas; 2023 fue mayormente normal; 2024 tuvo días de cierre dispersos. <strong>Siempre debes tener un plan alternativo antes de llegar a Caminha, independientemente de lo que hayas leído sobre el horario del ferry.</strong>
+            </p>
+          </div>
+        </section>
+
+        <!-- ── CRUCES ALTERNATIVOS ────────────────────────────────────────── -->
+        <section id="alternativas">
+          <h2 class="text-2xl font-bold text-forest-900 mb-6">Cruces Alternativos Cuando el Ferry Está Suspendido</h2>
+
+          <!-- Opción 1: Xávegas / Taxi-marítimo -->
+          <div class="bg-white border border-slate-200 rounded-xl overflow-hidden mb-6">
+            <div class="bg-forest-800 text-white px-6 py-4">
+              <h3 class="text-lg font-bold flex items-center gap-2">
+                <span aria-hidden="true">🚤</span>
+                Opción 1: Xávegas / Taxi-Marítimo
+              </h3>
+              <p class="text-forest-200 text-sm mt-1">Alternativa más rápida · ~5–6 € por persona · 20–30 min de travesía</p>
+            </div>
+            <div class="p-6 space-y-4 text-slate-700 text-sm leading-relaxed">
+              <p>
+                Cuando la Santa Rita de Cássia no puede operar, los pescadores locales frecuentemente cruzan el Miño en <strong>xávegas</strong> (embarcaciones tradicionales de fondo plano) o en motoras de taxi. Estas embarcaciones más pequeñas tienen menor calado y pueden navegar a través de la sedimentación que bloquea el ferry principal. Es una tradición arraigada en el Miño — los pescadores locales llevan siglos cruzando personas de orilla a orilla.
+              </p>
+              <p>
+                <strong>Cómo encontrar un taxi acuático:</strong> Son operaciones informales sin horarios fijos ni web de reservas. El enfoque más fiable es preguntar en tu alojamiento la noche anterior, o consultar en el embarcadero. También puedes contactar con la oficina de turismo de Caminha, que mantiene contacto con los operadores actuales:
+              </p>
+              <div class="grid sm:grid-cols-2 gap-3">
+                <div class="bg-slate-50 rounded-lg p-4">
+                  <p class="font-semibold text-slate-800 mb-2 text-xs uppercase tracking-wide">Oficina de Turismo de Caminha</p>
+                  <a href="tel:+351258921952" class="flex items-center gap-2 text-forest-700 hover:underline no-underline font-medium mb-1">
+                    <svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                    +351 258 921 952
+                  </a>
+                  <p class="text-xs text-slate-500">Lun–Vie 09:00–17:30. Pide los contactos actuales del taxi-marítimo.</p>
+                </div>
+                <div class="bg-slate-50 rounded-lg p-4">
+                  <p class="font-semibold text-slate-800 mb-2 text-xs uppercase tracking-wide">Câmara Municipal de Caminha</p>
+                  <a href="tel:+351258919400" class="flex items-center gap-2 text-forest-700 hover:underline no-underline font-medium mb-1">
+                    <svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                    +351 258 919 400
+                  </a>
+                  <p class="text-xs text-slate-500">Alternativa si la oficina de turismo está cerrada — pide el departamento de servicios municipales.</p>
+                </div>
+              </div>
+              <div class="bg-forest-50 border border-forest-200 rounded-lg p-4">
+                <h4 class="font-semibold text-forest-900 mb-2 text-xs uppercase tracking-wide">Xávegas: Qué Esperar</h4>
+                <ul class="space-y-1.5 text-xs text-slate-700">
+                  <li class="flex items-start gap-2"><span class="text-forest-600 shrink-0 mt-0.5">→</span> Tarifa: aproximadamente <strong>5–6 € por persona</strong>, negociada en el embarcadero. Acuerda el precio antes de subir.</li>
+                  <li class="flex items-start gap-2"><span class="text-forest-600 shrink-0 mt-0.5">→</span> Tiempo de travesía: 20–30 minutos (más lento que el ferry principal; motor más pequeño).</li>
+                  <li class="flex items-start gap-2"><span class="text-forest-600 shrink-0 mt-0.5">→</span> Capacidad: normalmente 4–8 personas por embarcación. Los grupos de peregrinos suelen compartir barca y dividir el coste.</li>
+                  <li class="flex items-start gap-2"><span class="text-forest-600 shrink-0 mt-0.5">→</span> El punto de salida puede diferir del embarcadero principal — pregunta localmente una vez confirmado.</li>
+                  <li class="flex items-start gap-2"><span class="text-forest-600 shrink-0 mt-0.5">→</span> Solo efectivo en euros. Lleva billetes pequeños.</li>
+                  <li class="flex items-start gap-2"><span class="text-forest-600 shrink-0 mt-0.5">→</span> No siempre disponible: si el río está muy agitado o la sedimentación es total, ni las xávegas pueden operar. En ese caso, usa la alternativa terrestre.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Opción 2: Desvío terrestre por Valença / Tui -->
+          <div class="bg-white border border-slate-200 rounded-xl overflow-hidden">
+            <div class="bg-slate-700 text-white px-6 py-4">
+              <h3 class="text-lg font-bold flex items-center gap-2">
+                <span aria-hidden="true">🚂</span>
+                Opción 2: Desvío Terrestre por Valença y Tui
+              </h3>
+              <p class="text-slate-300 text-sm mt-1">Siempre disponible · Tren + 25 min a pie · ~3,60 € en tren</p>
+            </div>
+            <div class="p-6 space-y-4 text-slate-700 text-sm leading-relaxed">
+              <p>
+                La alternativa garantizada cuando ninguna embarcación está cruzando: toma el tren CP Linha do Minho de Caminha a <strong>Valença</strong>, la ciudad portuguesa amurallada en la frontera, y luego cruza a pie el puente internacional hasta <strong>Tui</strong> (España). Este desvío añade aproximadamente 15–20 km de caminata por carreteras/caminos en comparación con el cruce directo en ferry, más el trayecto en tren. Sin embargo, siempre es posible, en todas las estaciones, con cualquier tiempo — el puente Tui–Valença es accesible a peatones las 24 horas del día.
+              </p>
+              <p>
+                <strong>Nota importante sobre la ruta:</strong> Reincorporarse al Camino de la Costa tras Tui requiere orientación. Tui es la puerta de entrada al <em>Camino Portugués Interior</em>, no al Camino de la Costa. Desde Tui puedes seguir el Camino Interior hacia el norte (que se une al Camino de la Costa en O Porriño o más adelante), o buscar transporte aproximadamente 30 km al oeste hasta A Guarda para continuar el Camino de la Costa desde allí. La mayoría de los peregrinos afectados por el cierre del ferry simplemente continúan por el Camino Interior a través de Tui y aceptan la variante de ruta — ambos caminos llevan a Santiago de Compostela.
+              </p>
+
+              <!-- Tabla del tren -->
+              <div>
+                <h4 class="text-xs font-semibold uppercase tracking-wide text-slate-400 mb-3">Trayecto en Tren: Caminha → Valença</h4>
+                <div class="overflow-x-auto rounded-xl border border-slate-200">
+                  <table class="w-full text-sm">
+                    <thead>
+                      <tr class="bg-slate-100">
+                        <th scope="col" class="text-left px-4 py-3 font-semibold text-slate-700">Tramo</th>
+                        <th scope="col" class="text-left px-4 py-3 font-semibold text-slate-700">Duración</th>
+                        <th scope="col" class="text-left px-4 py-3 font-semibold text-slate-700">Tarifa aprox.</th>
+                        <th scope="col" class="text-left px-4 py-3 font-semibold text-slate-700">Frecuencia</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {trenAlternativo.map((fila, i) => (
+                        <tr class={i % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
+                          <td class="px-4 py-2.5 font-medium text-slate-800">{fila.desde} → {fila.hasta}</td>
+                          <td class="px-4 py-2.5 text-slate-700">{fila.duracion}</td>
+                          <td class="px-4 py-2.5 font-mono font-semibold text-forest-700">{fila.tarifa}</td>
+                          <td class="px-4 py-2.5 text-slate-600 text-xs">{fila.frecuencia}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <p class="mt-2 text-xs text-slate-500">
+                  CP (Comboios de Portugal) Linha do Minho. Consulta los horarios actuales en cp.pt. Los horarios de fin de semana y festivos difieren significativamente del servicio entre semana.
+                </p>
+              </div>
+
+              <div class="bg-amber-50 border border-amber-200 rounded-lg p-4">
+                <h4 class="font-semibold text-amber-900 mb-2 text-xs uppercase tracking-wide">Paso a Paso: Desvío Caminha → Tui</h4>
+                <ol class="space-y-2 text-xs text-amber-900">
+                  <li class="flex items-start gap-2"><span class="font-bold shrink-0">1.</span> Camina desde el centro hasta la estación de tren de Caminha (~5 min, 400m al sur de la plaza mayor).</li>
+                  <li class="flex items-start gap-2"><span class="font-bold shrink-0">2.</span> Compra un billete a Valença en la taquilla o en la máquina automática (~3,60 €). Consulta la hora de salida.</li>
+                  <li class="flex items-start gap-2"><span class="font-bold shrink-0">3.</span> Trayecto en tren Caminha → Valença: ~35 minutos. Recorrido pintoresco por el valle del Miño.</li>
+                  <li class="flex items-start gap-2"><span class="font-bold shrink-0">4.</span> Desde la estación de Valença, camina hacia el norte a través de la ciudad amurallada medieval (~20 min) hasta el puente internacional.</li>
+                  <li class="flex items-start gap-2"><span class="font-bold shrink-0">5.</span> Cruza el <strong>Puente Internacional Valença–Tui</strong> a pie (~1,5 km, ~20 min). El puente tiene un carril peatonal dedicado junto a la carretera.</li>
+                  <li class="flex items-start gap-2"><span class="font-bold shrink-0">6.</span> Llegas a <strong>Tui</strong> (España). La moneda sigue siendo el euro. Las flechas amarillas del Camino Portugués Interior comienzan justo desde la entrada del puente.</li>
+                  <li class="flex items-start gap-2"><span class="font-bold shrink-0">7.</span> Sella tu credencial en la Catedral de Tui o en el Albergue Buen Camino antes de continuar hacia el norte.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Cómo llegar al embarcadero -->
+        <section>
+          <h2 class="text-2xl font-bold text-forest-900 mb-4">Cómo Llegar al Embarcadero</h2>
+          <div class="space-y-4 text-slate-700 text-sm leading-relaxed">
+            <p>
+              El ferry sale del <strong>Cais de Caminha</strong> (embarcadero de Caminha), situado en el extremo norte del casco antiguo, a unos 400 metros de la plaza mayor (Praça do Conselho). Desde el centro, camina hacia el norte por la Rua Visconde de Sousa Rego hacia el río — el embarcadero está bien señalizado con carteles del Camino de Santiago.
+            </p>
+            <p>
+              El embarcadero tiene una pequeña zona de espera cubierta y una taquilla que abre 30 minutos antes de cada salida programada. No hay aseos en el embarcadero — utiliza los del centro antes de bajar. El camino desde la plaza hasta el embarcadero es mayormente llano y accesible para sillas de ruedas.
+            </p>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- ── BARRA LATERAL ──────────────────────────────────────────────────── -->
+      <aside class="space-y-6">
+
+        <!-- Tras el cruce -->
+        <div class="bg-forest-50 border border-forest-200 rounded-xl p-5">
+          <h2 class="text-base font-bold text-forest-900 mb-3">Tras el Cruce: A Guarda</h2>
+          <p class="text-sm text-slate-700 leading-relaxed mb-3">
+            Llegas a <strong>A Guarda</strong> (O Garda en gallego), un pueblo pesquero en Galicia, España. Desde el muelle, sigue las flechas amarillas hacia el norte por la costa hacia Oia y Baiona. El primer albergue gallego está a unos 3 km del muelle.
+          </p>
+          <ul class="space-y-1.5 text-xs text-slate-600">
+            <li class="flex items-start gap-2"><span class="text-forest-600 mt-0.5">✓</span> Las señales de concha/flechas amarillas retoman desde el muelle</li>
+            <li class="flex items-start gap-2"><span class="text-forest-600 mt-0.5">✓</span> La moneda sigue siendo el euro (igual que Portugal)</li>
+            <li class="flex items-start gap-2"><span class="text-forest-600 mt-0.5">✓</span> Las SIM españolas tienen roaming gratuito (normas UE)</li>
+            <li class="flex items-start gap-2"><span class="text-forest-600 mt-0.5">✓</span> Consigue el sello en el albergue de A Guarda</li>
+          </ul>
+        </div>
+
+        <!-- Contacto naviera -->
+        <div class="bg-white border border-slate-200 rounded-xl p-5">
+          <h2 class="text-base font-bold text-forest-900 mb-3">Naviera</h2>
+          <p class="text-sm text-slate-700 mb-3">
+            La travesía es operada por una asociación local de armadores. Contáctalos directamente para confirmar el horario actual y si la Santa Rita de Cássia está operando en este momento.
+          </p>
+          <div class="space-y-2 text-sm">
+            <div class="flex items-center gap-2 text-slate-600">
+              <svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              <a href="tel:+351258921000" class="hover:text-forest-700 no-underline hover:underline">+351 258 921 000</a>
+            </div>
+            <div class="flex items-center gap-2 text-slate-600">
+              <svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <span>Cais de Caminha, 4910 Caminha</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Oficina de turismo -->
+        <div class="bg-white border border-slate-200 rounded-xl p-5">
+          <h2 class="text-base font-bold text-forest-900 mb-3">Oficina de Turismo de Caminha</h2>
+          <p class="text-sm text-slate-700 mb-2">Mejor fuente para el estado del ferry en tiempo real y contactos de taxi-marítimo durante las interrupciones.</p>
+          <a href="tel:+351258921952" class="flex items-center gap-2 text-forest-700 hover:underline no-underline font-medium text-sm">
+            <svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            +351 258 921 952
+          </a>
+          <p class="text-xs text-slate-500 mt-1">Lun–Vie 09:00–17:30</p>
+        </div>
+
+        <!-- Consejos rápidos -->
+        <div class="bg-earth-50 border border-earth-200 rounded-xl p-5">
+          <h2 class="text-base font-bold text-forest-900 mb-3">Consejos para Peregrinos</h2>
+          <ul class="space-y-2.5 text-sm text-slate-700">
+            <li class="flex items-start gap-2">
+              <span class="text-earth-600 shrink-0 mt-0.5">→</span>
+              Llega 15 minutos antes — el barco se llena rápido en temporada alta.
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-earth-600 shrink-0 mt-0.5">→</span>
+              Lleva monedas y billetes pequeños en euros — la taquilla puede no aceptar tarjetas.
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-earth-600 shrink-0 mt-0.5">→</span>
+              La travesía puede ser agitada en otoño — asegura los objetos sueltos de la mochila.
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-earth-600 shrink-0 mt-0.5">→</span>
+              Tu credencial puede recibir un sello especial del ferry si lo pides.
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-earth-600 shrink-0 mt-0.5">→</span>
+              Comprueba la noche antes si el ferry funciona — pregunta en tu albergue.
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-earth-600 shrink-0 mt-0.5">→</span>
+              El último ferry de A Guarda a Caminha suele ser a las 19:30 — verifica los horarios actuales.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Páginas relacionadas -->
+        <div class="bg-forest-50 border border-forest-200 rounded-xl p-5">
+          <h2 class="text-base font-bold text-forest-900 mb-3">Planifica tu Estancia en Caminha</h2>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <a href="/es/caminha/donde-dormir/" class="text-forest-700 hover:underline no-underline font-medium">
+                Dónde Dormir →
+              </a>
+              <p class="text-xs text-slate-500 mt-0.5">Albergue, pensiones, Design Wine Hotel</p>
+            </li>
+            <li>
+              <a href="/es/caminha/donde-comer/" class="text-forest-700 hover:underline no-underline font-medium">
+                Dónde Comer →
+              </a>
+              <p class="text-xs text-slate-500 mt-0.5">Menús del peregrino desde 8 €, arroz de debulho</p>
+            </li>
+          </ul>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+
+</MainLayout>

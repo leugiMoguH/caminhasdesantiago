@@ -1,0 +1,99 @@
+---
+import BaseSEO from '../components/BaseSEO.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+/**
+ * Path-to-alternate URL mapping.
+ * Add new routes here when creating new pages.
+ */
+const PATH_MAP: Record<string, { en: string; es: string }> = {
+  '/en/':                                    { en: '/en/',                                    es: '/es/' },
+  '/es/':                                    { en: '/en/',                                    es: '/es/' },
+  '/en/caminha/where-to-eat/':               { en: '/en/caminha/where-to-eat/',               es: '/es/caminha/donde-comer/' },
+  '/es/caminha/donde-comer/':                { en: '/en/caminha/where-to-eat/',               es: '/es/caminha/donde-comer/' },
+  '/en/caminha/where-to-stay/':              { en: '/en/caminha/where-to-stay/',              es: '/es/caminha/donde-dormir/' },
+  '/es/caminha/donde-dormir/':               { en: '/en/caminha/where-to-stay/',              es: '/es/caminha/donde-dormir/' },
+  '/en/caminha/ferry-and-logistics/':        { en: '/en/caminha/ferry-and-logistics/',        es: '/es/caminha/ferry-y-logistica/' },
+  '/es/caminha/ferry-y-logistica/':          { en: '/en/caminha/ferry-and-logistics/',        es: '/es/caminha/ferry-y-logistica/' },
+};
+
+interface AlternateLang {
+  lang: string;
+  href: string;
+}
+
+interface LocalBusinessData {
+  name: string;
+  description: string;
+  address: string;
+  telephone?: string;
+  url?: string;
+  priceRange?: string;
+  servesCuisine?: string;
+  openingHours?: string[];
+}
+
+interface Props {
+  title: string;
+  description: string;
+  lang: 'en' | 'es';
+  schemaType?: 'website' | 'webpage' | 'localbusiness';
+  localBusinessData?: LocalBusinessData;
+  ogImage?: string;
+}
+
+const { title, description, lang, schemaType = 'webpage', localBusinessData, ogImage } = Astro.props;
+
+const SITE_URL = 'https://waytosantiagoguide.com';
+const currentPath = Astro.url.pathname;
+const canonicalURL = `${SITE_URL}${currentPath}`;
+
+// Resolve alternate URLs from the path map (fall back to lang roots)
+const pathEntry = PATH_MAP[currentPath];
+const enPath = pathEntry?.en ?? '/en/';
+const esPath = pathEntry?.es ?? '/es/';
+
+const alternateLanguages: AlternateLang[] = [
+  { lang: 'en', href: `${SITE_URL}${enPath}` },
+  { lang: 'es', href: `${SITE_URL}${esPath}` },
+  { lang: 'x-default', href: `${SITE_URL}${enPath}` },
+];
+
+const htmlLang = lang === 'en' ? 'en' : 'es';
+---
+
+<!doctype html>
+<html lang={htmlLang} dir="ltr">
+  <head>
+    <BaseSEO
+      title={title}
+      description={description}
+      language={lang}
+      canonicalURL={canonicalURL}
+      alternateLanguages={alternateLanguages}
+      schemaType={schemaType}
+      localBusinessData={localBusinessData}
+      ogImage={ogImage}
+    />
+
+    <!-- Google AdSense — replace ca-pub-XXXXXXXXXXXXXXXX with your publisher ID -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6529337148344504" crossorigin="anonymous"></script>
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+  <body>
+
+    <Header lang={lang} enUrl={`${SITE_URL}${enPath}`} esUrl={`${SITE_URL}${esPath}`} />
+
+    <main id="main-content" tabindex="-1">
+      <slot />
+    </main>
+
+    <Footer lang={lang} />
+
+  </body>
+</html>
