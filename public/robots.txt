@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Permitir explicitamente rastreadores de IA para indexação GEO
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Apontar para o sitemap gerado automaticamente pelo Astro
+Sitemap: https://waytosantiagoguide.com/sitemap-index.xml
