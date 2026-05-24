@@ -78,7 +78,16 @@ const htmlLang = lang === 'en' ? 'en' : 'es';
       ogImage={ogImage}
     />
 
-    <!-- Google AdSense — replace ca-pub-XXXXXXXXXXXXXXXX with your publisher ID -->
+    <!-- Google Analytics 4 — G-GF2GHM795M -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GF2GHM795M"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-GF2GHM795M');
+    </script>
+
+    <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6529337148344504" crossorigin="anonymous"></script>
 
     <!-- Preconnect + DM Sans font -->

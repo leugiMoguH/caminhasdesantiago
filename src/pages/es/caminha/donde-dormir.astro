@@ -33,7 +33,7 @@ const alojamientos = [
     descripcion: 'Una acogedora casa de huéspedes familiar a dos manzanas de la plaza mayor, muy popular entre los peregrinos del Camino de la Costa. Habitaciones privadas limpias con baño en suite, desayuno continental incluido y unos anfitriones que han caminado ellos mismos el Camino — conocen de primera mano cada cierre del ferry por assoreamiento. Algunas habitaciones tienen vistas a la torre del castillo. Muy flexibles con la entrega anticipada del equipaje.',
     servicios: ['Desayuno incluido', 'Baño en suite', 'Traslado de equipaje (preguntar antes)', 'Sello de credencial', 'Consejos del Camino de los anfitriones', 'Wi-Fi'],
     notas: 'Descuentos para peregrinos disponibles — preguntar al reservar. Se prefiere efectivo o transferencia bancaria.',
-    reservaUrl: 'https://www.booking.com/searchresults.html?ss=Caminha%2C+Portugal&checkin_monthday=1&checkin_month=7&checkin_year=2026&checkout_monthday=2&checkout_month=7&checkout_year=2026&group_adults=1&no_rooms=1',
+    reservaUrl: 'https://www.booking.com/city/pt/caminha.html?aid=7968251',
   },
   {
     name: 'Pensão Galo d\'Ouro',
@@ -48,7 +48,7 @@ const alojamientos = [
     descripcion: 'Justo en la plaza mayor, esta pensión de estilo tradicional ofrece una ubicación inmejorable a precio asequible. Las habitaciones son sencillas pero muy limpias; varias dan a la fuente de granito medieval y a la Torre do Relógio del siglo XVI. El café de la planta baja abre a las 7:30 — ideal para un café tempranero antes de ir al Cais para tomar el primer ferry del día. La mejor relación calidad-precio para habitación privada en Caminha.',
     servicios: ['Ubicación central', 'Café/bar en el local', 'Desayuno disponible (no incluido)', 'Wi-Fi'],
     notas: 'Las habitaciones en el último piso requieren subir escaleras — ten en cuenta si llevas mochila pesada o tienes problemas en las rodillas.',
-    reservaUrl: 'https://www.booking.com/searchresults.html?ss=Caminha%2C+Portugal&checkin_monthday=1&checkin_month=7&checkin_year=2026&checkout_monthday=2&checkout_month=7&checkout_year=2026&group_adults=1&no_rooms=1',
+    reservaUrl: 'https://www.booking.com/city/pt/caminha.html?aid=7968251',
   },
   {
     name: 'Parque de Campismo de Caminha',
@@ -63,7 +63,41 @@ const alojamientos = [
     descripcion: 'Un bien mantenido camping en un parque forestal nacional a las afueras de Caminha, cerca de la playa atlántica. Las instalaciones incluyen parcelas para tiendas y autocaravanas, cocina compartida, duchas calientes y una pequeña tienda. La opción de alojamiento más económica de la zona, perfecta para peregrinos autosuficientes con equipo ligero. Una consideración práctica: los 1,2 km de caminata hasta el pueblo añaden tiempo antes de la salida matutina del ferry.',
     servicios: ['Parcelas para tiendas', 'Duchas calientes', 'Cocina compartida', 'Pequeña tienda', 'Acceso a la playa (300m)', 'Aparcabicicletas'],
     notas: 'Abierto todo el año. Descuento para peregrinos con credencial. El camino al embarcadero añade aproximadamente 1,5 km a tu mañana.',
-    reservaUrl: 'https://www.booking.com/searchresults.html?ss=Caminha%2C+Portugal&checkin_monthday=1&checkin_month=7&checkin_year=2026&checkout_monthday=2&checkout_month=7&checkout_year=2026&group_adults=1&no_rooms=1',
+    reservaUrl: 'https://www.booking.com/city/pt/caminha.html?aid=7968251',
+  },
+
+  // ── ALBERGUES ADICIONALES ─────────────────────────────────────────────────────
+  {
+    name: 'Pousada de Juventude de Caminha',
+    tipo: 'Albergue Juvenil — Red Movijovem · Abierto a Todas las Edades',
+    categoria: 'albergue',
+    direccion: 'Rua Visconde Sousa Rego, Caminha (cerca del paseo fluvial)',
+    precioDesde: '15 €',
+    credencial: false,
+    camas: 40,
+    telefono: '+351 707 203 030',
+    horario: 'Recepción 09:00–12:00 · 18:00–23:00 · Flexible para peregrinos en temporada alta',
+    descripcion: 'Parte de la red nacional Movijovem de albergues juveniles portugueses, la Pousada de Juventude de Caminha acoge peregrinos y viajeros de todas las edades durante todo el año. A diferencia del albergue municipal, no se exige credencial de peregrino y la reserva online está disponible a través del portal Movijovem (+351 707 203 030) y las principales plataformas de reserva. Las instalaciones incluyen dormitorios separados por género, un número limitado de habitaciones privadas básicas, cocina compartida, lavandería y salón comunitario. Situada cerca del paseo fluvial, a unos 10 minutos a pie de la plaza mayor y 12 minutos del embarcadero del Cais. Una opción práctica para acompañantes no peregrinos, llegadas tardías que perdieron plaza en el albergue municipal, o peregrinos sin credencial.',
+    servicios: ['Reserva online disponible', 'Sin credencial obligatoria', 'Cocina compartida', 'Lavandería', 'Salón comunitario', 'Habitaciones privadas disponibles', 'Wi-Fi'],
+    notas: 'Reserva con antelación en julio–agosto — la red Movijovem se llena en todo el norte de Portugal en temporada alta. Sello de credencial disponible informalmente — preguntar en recepción.',
+    reservaUrl: 'https://www.booking.com/city/pt/caminha.html?aid=7968251',
+  },
+
+  // ── ALOJAMIENTOS ADICIONALES ──────────────────────────────────────────────────
+  {
+    name: 'Quinta do Deão — Turismo Rural',
+    tipo: 'Casa Rural · Turismo de Habitação',
+    categoria: 'pension',
+    direccion: 'Lugar de Vilar, Caminha (2,2 km del centro, en el trazado señalizado del Camino)',
+    precioDesde: '50 €',
+    credencial: false,
+    camas: null,
+    telefono: '+351 258 722 190',
+    horario: 'Entrada flexible · Salida antes de las 11:00',
+    descripcion: 'Una tradicional casa de piedra del Miño registrada bajo el esquema portugués de "Turismo de Habitação" — la categoría de alojamiento rural que combina el carácter auténtico del campo con la hospitalidad de los anfitriones. Las habitaciones privadas con baño en suite dan a un patio de granito con jardín y pequeño viñedo, con vistas al valle del Miño y las colinas de la Serra de Arga. La propiedad se encuentra directamente en el trazado señalizado del Camino de la Costa entre Moledo y Caminha — los peregrinos pueden incorporarse o retomar las flechas amarillas desde la misma puerta. Los propietarios son residentes veteranos del valle del Miño con profundo conocimiento de las etapas del Camino, el comportamiento estacional del estuario del Miño y qué operadores de taxi acuático están activos. El desayuno continental con miel regional, queso local, pan fresco y mermeladas caseras está incluido. Planifica bien la mañana: los 2,2 km hasta el embarcadero del Cais tardan unos 25–30 minutos — sal antes de las 08:30 para tomar el ferry de las 09:00.',
+    servicios: ['Desayuno incluido', 'Baño en suite', 'Señales del Camino desde la puerta', 'Jardín con viñedo', 'Vistas al valle del Miño', 'Asesoramiento local sobre el Camino', 'Wi-Fi', 'Almuerzo para llevar bajo petición'],
+    notas: 'La caminata hasta Caminha es por el trazado señalizado del Camino — los 2,2 km se hacen en ruta, sin desvío. Reserva directa o a través de Booking.com. Se prefiere efectivo o transferencia bancaria.',
+    reservaUrl: 'https://www.booking.com/city/pt/caminha.html?aid=7968251',
   },
 
   // ── HOTELES DE CATEGORÍA ──────────────────────────────────────────────────────
@@ -80,7 +114,7 @@ const alojamientos = [
     descripcion: 'El alojamiento más estiloso de Caminha, este hotel boutique celebra la cultura vinícola del Miño a través de la arquitectura, el arte y una bodega curada con productores locales de Vinho Verde. Las habitaciones contemporáneas tienen duchas tipo lluvia, ropa de cama premium y artículos de aseo artesanales. La terraza panorámica ofrece vistas hacia la orilla española del Miño — perfecta para un reparador vaso de Alvarinho tras una larga etapa costera. Un bar de vinos sirve tablas de charcutería y maridajes cada noche. Sellos de credencial disponibles bajo petición. Se puede organizar traslado de equipaje a A Guarda.',
     servicios: ['Bar de vinos y bodega', 'Terraza panorámica con vistas al río', 'Aire acondicionado', 'Ducha tipo lluvia', 'Traslado de equipaje a A Guarda (bajo petición)', 'Sello de credencial', 'Desayuno disponible (+12 €)', 'Almacenamiento seguro de bicicletas', 'Wi-Fi'],
     notas: 'No está orientado específicamente a peregrinos, pero es muy cordial con ellos. Se llena rápido en julio–agosto; reserva con al menos 3 semanas de antelación en temporada alta.',
-    reservaUrl: 'https://www.booking.com/searchresults.html?ss=Caminha%2C+Portugal&checkin_monthday=1&checkin_month=7&checkin_year=2026&checkout_monthday=2&checkout_month=7&checkout_year=2026&group_adults=1&no_rooms=1',
+    reservaUrl: 'https://www.booking.com/city/pt/caminha.html?aid=7968251',
   },
 ];
 
@@ -286,6 +320,70 @@ const secciones: { key: string; etiqueta: string; intro: string }[] = [
     })}
   </div>
   <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+  <!-- ── TIENDAS ESENCIALES PARA PEREGRINOS ─────────────────────────────────────── -->
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pb-12">
+    <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+      <div class="bg-gradient-to-r from-slate-800 to-forest-900 px-6 py-5">
+        <h2 class="text-lg font-bold text-white tracking-tight flex items-center gap-2.5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-earth-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+          Tiendas Esenciales en el Centro de Caminha
+        </h2>
+        <p class="text-slate-300 text-sm mt-1">Establecimientos a distancia a pie de la plaza mayor para peregrinos que necesitan reabastecerse antes o después del cruce del Miño.</p>
+      </div>
+      <div class="p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+        <div class="bg-forest-50 border border-forest-100 rounded-xl p-4">
+          <div class="flex items-center gap-2 mb-2">
+            <div class="h-7 w-7 rounded-lg bg-forest-700 flex items-center justify-center shrink-0">
+              <svg class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+            </div>
+            <p class="font-bold text-forest-900 text-sm">Pingo Doce</p>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed">Supermercado completo — fruta fresca, charcutería, pan, bebidas isotónicas y comida para el camino. Mejor opción de reabastecimiento del pueblo para peregrinos autosuficientes.</p>
+          <p class="text-xs text-slate-500 mt-2 font-medium">Rua 5 de Outubro, Caminha · ~350m de la plaza mayor</p>
+          <p class="text-xs text-slate-400 mt-0.5">Lun–Sáb 08:00–21:00 · Dom 09:00–19:00</p>
+        </div>
+
+        <div class="bg-slate-50 border border-slate-100 rounded-xl p-4">
+          <div class="flex items-center gap-2 mb-2">
+            <div class="h-7 w-7 rounded-lg bg-slate-700 flex items-center justify-center shrink-0">
+              <svg class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+            </div>
+            <p class="font-bold text-slate-800 text-sm">Lidl Caminha</p>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed">Supermercado de descuento en las afueras. Ideal para comida energética a granel, protector solar económico, botiquín básico y barritas de energía a mejor precio que las tiendas del centro.</p>
+          <p class="text-xs text-slate-500 mt-2 font-medium">EN-301, afueras · ~1,1 km de la plaza mayor</p>
+          <p class="text-xs text-slate-400 mt-0.5">Lun–Sáb 08:00–21:00 · Dom 09:00–19:00</p>
+        </div>
+
+        <div class="bg-red-50 border border-red-100 rounded-xl p-4">
+          <div class="flex items-center gap-2 mb-2">
+            <div class="h-7 w-7 rounded-lg bg-red-600 flex items-center justify-center shrink-0">
+              <svg class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <p class="font-bold text-red-900 text-sm">Farmácia Central</p>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed">Farmacia central para kits anti-ampollas, ibuprofeno, sobres de electrolitos, vendas compresivas, crema antifúngica y protector solar. Se habla inglés y español en temporada alta.</p>
+          <p class="text-xs text-slate-500 mt-2 font-medium">Praça do Conselho, Caminha · En la plaza mayor</p>
+          <p class="text-xs text-slate-400 mt-0.5">Lun–Vie 09:00–19:00 · Sáb 09:00–13:00</p>
+        </div>
+
+        <div class="bg-earth-50 border border-earth-100 rounded-xl p-4">
+          <div class="flex items-center gap-2 mb-2">
+            <div class="h-7 w-7 rounded-lg bg-earth-600 flex items-center justify-center shrink-0">
+              <svg class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+            </div>
+            <p class="font-bold text-earth-900 text-sm">Equipamiento</p>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed">Para calcetines de emergencia, chubasqueros y bastones de marcha, busca las tiendas de artículos deportivos en Rua Visconde Sousa Rego. Surtido completo en Viana do Castelo (25 km al sur) si las tiendas de Caminha no tienen tu talla.</p>
+          <p class="text-xs text-slate-500 mt-2 font-medium">Rua Visconde Sousa Rego · Centro histórico</p>
+          <p class="text-xs text-slate-400 mt-0.5">Horario variable · La mayoría Lun–Sáb</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
 
   <!-- ── CONSEJO DE RESERVA ──────────────────────────────────────────────────── -->
   <aside class="bg-gradient-to-b from-forest-50 to-white border-y border-forest-100/60">
