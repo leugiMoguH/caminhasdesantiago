@@ -104,6 +104,29 @@ Pages live at:
 - [ ] **Expanded Location Coverage** — A Guarda (ES), Oia, Baiona, Vigo stages of the Coastal Route
 - [ ] **Interactive Stage Map** — SVG or Leaflet-based map showing Caminha position on the Coastal Route
 
+---
+
+## Future Backlog Checklist — Audit 2026-05-24
+
+### 🔴 Critical Gaps (fix before next deploy)
+
+- [ ] **OG Image Missing** — `/public/images/og-default.jpg` does not exist. Referenced in all pages. Without it, WhatsApp/Facebook/iMessage link previews show no image. Create 1200×630 JPEG (≤ 300 KB). Suggestion: Caminha riverside photo or branded design with scallop shell + "Way to Santiago Guide" on forest-green background. See `/public/images/README.md`.
+- [ ] **logo.png Missing** — `BaseSEO.astro` JSON-LD schema references `${SITE_URL}/images/logo.png` for the `publisher.logo` object. File does not exist; structured data will fail Google's validator. Create 512×512 or 200×60 PNG.
+- [ ] **apple-touch-icon.png / favicon-32x32.png Missing** — Referenced in `BaseSEO.astro` `<head>`. Currently the inline SVG favicon works, but these are needed for iOS home screen saves and high-DPI browsers.
+
+### 🟡 Minor Gaps
+
+- [ ] **`site.webmanifest` Missing** — Referenced in `BaseSEO.astro`. Create `/public/site.webmanifest` with `name`, `short_name`, `icons`, `theme_color: "#174d2b"`, `display: "standalone"` for PWA capability.
+- [ ] **Root `index.astro` redirect** — `/src/pages/index.astro` currently redirects to `/en/`. Add an HTTP `<meta http-equiv="refresh">` fallback and verify that the 301 redirect is honoured at the CDN/host level for SEO.
+
+### 🟢 High-Yield Pilgrim Utility Features
+
+- [ ] **Quick-Dial Button Layout (mobile)** — Add a sticky or above-fold section on `ferry-and-logistics.astro` / `ferry-y-logistica.astro` with large `tel:` anchor buttons for: Ferry Operator (+351 258 921 000), Caminha Tourist Office (+351 258 921 952), and Emergency (112). Tailwind pattern: `<a href="tel:+351258921000" class="flex items-center gap-3 bg-forest-700 text-white rounded-xl px-5 py-4 text-lg font-bold active:scale-95 transition-transform">📞 Call Ferry</a>`. Zero JS, pure HTML, works offline. Highest-utility mobile feature for pilgrims on the trail.
+
+- [ ] **Interactive Pilgrim Pack Checklist** — Add a `PackChecklist.astro` component (standalone island or progressive-enhancement) to the landing page or a new `/en/caminha/pack-checklist/` route. Items: Pilgrim passport (credencial), rain poncho, trekking poles, blister kit, cash (ferry accepts cash), power bank. Use `localStorage` to persist checked state across visits. No framework needed — vanilla `<input type="checkbox">` with an inline `<script>` for persistence. High engagement + repeat-visit driver.
+
+- [ ] **Dynamic Emergency / Conditions Banner** — Add a `ConditionsBanner.astro` component at top of `ferry-and-logistics.astro`. Hardcoded but easily-updated seasonal warnings: summer heat advisory, winter fog/tide warnings, Holy Week surge notice. Pattern: `const ACTIVE_BANNER = null` (null = no banner shown). When set, renders a dismissible `role="alert"` bar in `earth-500` (warning) or `red-600` (emergency). Dismissed state stored in `sessionStorage`. Gives the site a "live" feel and prevents pilgrim complaints about unexpected ferry closures.
+
 ## Key External Contacts
 
 - **Caminha Tourist Office:** +351 258 921 952 (Mon–Fri 09:00–17:30)

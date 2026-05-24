@@ -40,17 +40,19 @@ const {
   description,
   language,
   canonicalURL,
-  ogImage = '/images/og-default.jpg',
+  ogImage = '/images/og-default.png',
   alternateLanguages,
   schemaType = 'webpage',
   localBusinessData,
 } = Astro.props;
 
 const SITE_URL = 'https://waytosantiagoguide.com';
-const SITE_NAME_EN = 'Caminha Guide — Camino de Santiago';
-const SITE_NAME_ES = 'Guía de Caminha — Camino de Santiago';
+const SITE_NAME_EN = 'Way to Santiago Guide';
+const SITE_NAME_ES = 'Guía Camino de Santiago';
 const siteName = language === 'en' ? SITE_NAME_EN : SITE_NAME_ES;
-const fullTitle = title === siteName ? title : `${title} | ${siteName}`;
+const fullTitle = (title === siteName || title.startsWith(siteName + ' |') || title.startsWith(siteName + '|'))
+  ? title
+  : `${title} | ${siteName}`;
 const ogImageAbsolute = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogImage}`;
 const htmlLang = language === 'en' ? 'en-GB' : 'es-ES';
 
