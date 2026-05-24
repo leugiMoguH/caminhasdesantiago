@@ -1,0 +1,321 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+---
+
+<MainLayout
+  title="Servicios Útiles para Peregrinos en Caminha — Farmacias, Tiendas de Equipo y Emergencias"
+  description="Guía hiperlocal de servicios para peregrinos en Caminha. Farmacias de servicio (turno rotativo), tiendas de botas y equipo, cajeros y contactos de emergencia para el Camino de la Costa."
+  lang="es"
+  schemaType="webpage"
+>
+
+  <!-- ── CABECERA HERO ─────────────────────────────────────────────────────────── -->
+  <div class="bg-gradient-to-br from-slate-800 via-slate-800 to-forest-950 text-white">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+      <nav aria-label="Migas de pan" class="mb-5">
+        <ol class="flex items-center gap-2 text-sm text-slate-400">
+          <li><a href="/es/" class="hover:text-white no-underline hover:underline transition-colors">Inicio</a></li>
+          <li aria-hidden="true" class="text-slate-600">›</li>
+          <li><span class="text-slate-500">Caminha</span></li>
+          <li aria-hidden="true" class="text-slate-600">›</li>
+          <li aria-current="page" class="text-slate-200 font-medium">Servicios Útiles</li>
+        </ol>
+      </nav>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4 text-white tracking-tight">Servicios Útiles para Peregrinos en Caminha</h1>
+      <p class="text-slate-300 max-w-2xl text-base leading-relaxed">
+        Infraestructura práctica para peregrinos en el centro histórico de Caminha — tiendas de equipo, farmacias de turno rotativo, cajeros automáticos y qué hacer cuando el material falla en el camino.
+      </p>
+      <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-4">
+        {[
+          { icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>`, value: 'Farmacia de Turno', label: 'Sistema de revezamiento diario' },
+          { icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>`, value: 'Equipo y Ropa', label: 'En el centro histórico' },
+          { icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>`, value: 'Cajeros Disponibles', label: 'Centro urbano y bancos' },
+        ].map(({ icon, value, label }) => (
+          <div class="bg-white/10 backdrop-blur-sm border border-white/10 rounded-2xl p-4 text-center hover:bg-white/15 transition-colors">
+            <div class="flex justify-center mb-2 text-earth-400" aria-hidden="true" set:html={icon} />
+            <div class="text-base font-bold text-white">{value}</div>
+            <div class="text-xs text-slate-400 mt-0.5">{label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CONTENIDO PRINCIPAL ──────────────────────────────────────────────────── -->
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+      <div class="lg:col-span-2 space-y-12">
+
+        <!-- ── EQUIPO Y ROPA ──────────────────────────────────────────────────── -->
+        <section id="tiendas-equipo" aria-labelledby="gear-heading-es">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-forest-100 border border-forest-200">
+              <svg class="h-5 w-5 text-forest-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+              </svg>
+            </div>
+            <h2 id="gear-heading-es" class="text-2xl font-bold text-forest-900 tracking-tight">Equipamiento y Ropa para Peregrinos</h2>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed mb-6">
+            Caminha es un pueblo medieval pequeño, no un centro comercial de deportes al aire libre — pero los peregrinos que llegan con botas destrozadas o equipo empapado no están sin opciones. El centro histórico tiene varias tiendas donde se puede conseguir material de reemplazo esencial antes del cruce a España.
+          </p>
+
+          <div class="space-y-5">
+
+            <!-- Tiendas de ropa y calzado -->
+            <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+              <div class="bg-gradient-to-r from-forest-800 to-forest-900 text-white px-6 py-4 flex gap-3 items-center">
+                <div class="shrink-0 flex h-9 w-9 items-center justify-center rounded-lg bg-forest-700/60">
+                  <svg class="h-5 w-5 text-earth-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-base font-bold">Tiendas de Ropa y Calzado Tradicionales</h3>
+                  <p class="text-forest-300 text-sm">Centro histórico de Caminha — Rua Direita y calles adyacentes</p>
+                </div>
+              </div>
+              <div class="p-6 space-y-4 text-slate-700 text-sm leading-relaxed">
+                <p>
+                  Las principales calles peatonales del centro histórico de Caminha — especialmente <strong>Rua Direita</strong> (la calle comercial principal, desde la torre del reloj hacia el río) y las calles secundarias de la <strong>Praça do Conselho</strong> — cuentan con varias tiendas tradicionales de ropa y artículos de uso general.
+                </p>
+                <p>
+                  No son tiendas especializadas en deporte al aire libre, pero ofrecen de manera fiable los artículos que resuelven las emergencias de equipo más comunes del peregrino:
+                </p>
+                <ul class="space-y-2 text-sm">
+                  {[
+                    { item: 'Calcetines gruesos de algodón o lana', note: 'No específicos para senderismo, pero adecuados para la etapa final hasta la frontera' },
+                    { item: 'Chubasqueros (capas de chuva)', note: 'Ponchos ligeros desechables o reutilizables, disponibles de forma estacional' },
+                    { item: 'Fundas de plástico para mochilas', note: 'Cubres básicos impermeables — en tiendas de variedades, a veces bolsas de basura grandes' },
+                    { item: 'Sandalias y zapatillas de tela', note: 'Si las botas han fallado completamente, la mayoría de tiendas de ropa tienen calzado casual de bajo coste' },
+                    { item: 'Protector solar, repelente de insectos, tiritas', note: 'Disponibles en farmacias y algunas tiendas de variedades' },
+                  ].map(({ item, note }) => (
+                    <li class="flex items-start gap-2.5">
+                      <span class="text-forest-600 shrink-0 font-bold mt-0.5">→</span>
+                      <span><strong>{item}</strong> — {note}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div class="bg-amber-50 border border-amber-200 rounded-xl p-4">
+                  <p class="font-semibold text-amber-900 text-xs uppercase tracking-wider mb-2">Consejo del Peregrino</p>
+                  <p class="text-xs text-amber-800 leading-relaxed">
+                    Para calzado de senderismo real o equipo técnico (bastones, botas impermeables, calcetines de merino), el Decathlon más cercano está en <strong>Viana do Castelo</strong> (~24 km al sur, accesible en tren CP Minho en ~20 minutos). Si planeas un día de descanso en Caminha antes del cruce, una excursión de ida y vuelta a Viana ese mismo día es factible — los trenes circulan aproximadamente cada hora en días laborables.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cuidado de botas -->
+            <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+              <div class="bg-gradient-to-r from-slate-700 to-slate-800 text-white px-6 py-4 flex gap-3 items-center">
+                <div class="shrink-0 flex h-9 w-9 items-center justify-center rounded-lg bg-slate-600/60">
+                  <svg class="h-5 w-5 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-base font-bold">Cuidado de Botas y Gestión de Ampollas</h3>
+                  <p class="text-slate-300 text-sm">Qué hacer cuando el calzado y los pies fallan antes de la frontera</p>
+                </div>
+              </div>
+              <div class="p-6 space-y-3 text-slate-700 text-sm leading-relaxed">
+                <p>
+                  Caminha no tiene zapatero ni tienda especializada en reparación de equipo outdoor en el centro. Para reparaciones estructurales de botas (separación de suela, hebillas rotas), las opciones en Caminha son limitadas — la solución práctica suele ser la sustitución, no la reparación.
+                </p>
+                <div class="grid sm:grid-cols-2 gap-3">
+                  <div class="bg-forest-50 border border-forest-200 rounded-xl p-4">
+                    <p class="font-semibold text-forest-900 mb-2 text-xs uppercase tracking-wider">Material para ampollas</p>
+                    <p class="text-xs text-slate-700 leading-relaxed">Los apósitos Compeed, crema antiséptica y vendas están disponibles en todas las farmacias de Caminha. Pide específicamente <em>"Compeed"</em> o <em>"pensos para bolhas"</em>.</p>
+                  </div>
+                  <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+                    <p class="font-semibold text-slate-800 mb-2 text-xs uppercase tracking-wider">Adhesivo para botas</p>
+                    <p class="text-xs text-slate-700 leading-relaxed">Las ferreterías de Caminha tienen adhesivo de contacto (Cola C200 / Pattex) — una solución temporal para la separación de suela que aguanta un último día de marcha.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ── FARMÁCIAS DE SERVIÇO ────────────────────────────────────────────── -->
+        <section id="farmacias" aria-labelledby="pharmacy-heading-es">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-red-100 border border-red-200">
+              <svg class="h-5 w-5 text-red-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+            </div>
+            <h2 id="pharmacy-heading-es" class="text-2xl font-bold text-forest-900 tracking-tight">Farmacias — Sistema de Revezamiento</h2>
+          </div>
+
+          <!-- Caja de aviso principal -->
+          <div class="rounded-2xl overflow-hidden shadow-md border border-red-200 mb-6">
+            <div class="bg-gradient-to-r from-red-700 to-red-800 px-6 py-5 flex gap-4 items-start">
+              <div class="shrink-0 flex h-11 w-11 items-center justify-center rounded-xl bg-red-900/50 border border-red-600">
+                <svg class="h-6 w-6 text-red-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+                </svg>
+              </div>
+              <div>
+                <span class="text-xs font-bold uppercase tracking-widest text-red-300 bg-red-900/40 px-2 py-0.5 rounded-full border border-red-700 mb-2 inline-block">Info Crítica del Peregrino</span>
+                <h3 class="text-lg font-bold text-white">Farmácias de Serviço — Horario de Turno Rotativo</h3>
+                <p class="text-red-200 text-sm mt-1">No todas las farmacias de Caminha están abiertas todos los días — esto es lo que los peregrinos suelen ignorar.</p>
+              </div>
+            </div>
+            <div class="bg-red-50 p-6 space-y-4 text-slate-700 text-sm leading-relaxed">
+              <p>
+                Las farmacias portuguesas operan un <strong>sistema de revezamento</strong> (turno rotativo) obligatorio, gestionado por la asociación local de farmacias (<em>Associação Nacional das Farmácias</em>). En cualquier día o noche, solo una farmacia del municipio de Caminha está designada como <strong>Farmácia de Serviço</strong> — la farmacia de guardia obligada a estar abierta y atendida, incluidos fines de semana, festivos y de madrugada.
+              </p>
+              <p>
+                <strong>Esto significa que no puedes asumir que una farmacia está abierta solo porque la ves.</strong> Una farmacia cerrada mostrará en la puerta un aviso con la farmacia de turno ese día, incluida su dirección y teléfono. Sin embargo, esto requiere que encuentres primero la farmacia cerrada.
+              </p>
+              <p>
+                La forma más fiable de encontrar la farmacia de turno antes de necesitarla es <strong>preguntar en tu albergue o pensión la noche anterior</strong> — los hospitaleros suelen saberlo, o pueden consultarlo en la línea SNS24 o la web de la ANF (<em>anf.pt</em>).
+              </p>
+            </div>
+          </div>
+
+          <!-- Área de cobertura -->
+          <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm mb-5">
+            <div class="bg-gradient-to-r from-forest-800 to-forest-900 text-white px-6 py-4">
+              <h3 class="text-base font-bold">Área de Cobertura — Caminha y Alrededores</h3>
+              <p class="text-forest-300 text-sm mt-0.5">La rotación cubre varias localidades — conocer las opciones cercanas puede ser crítico de noche o en festivos</p>
+            </div>
+            <div class="p-6 space-y-4">
+              <div class="grid sm:grid-cols-3 gap-4">
+
+                <div class="bg-forest-50 border border-forest-200 rounded-xl p-4">
+                  <div class="flex items-center gap-2 mb-3">
+                    <div class="h-7 w-7 flex items-center justify-center rounded-lg bg-forest-700 text-white text-xs font-bold">1</div>
+                    <p class="font-bold text-forest-900 text-sm">Caminha (Centro)</p>
+                  </div>
+                  <p class="text-xs text-slate-700 leading-relaxed mb-2">
+                    Caminha tiene farmacias en el centro histórico, principalmente en <strong>Rua Direita</strong> y la zona de la plaza principal. La farmacia de turno rota entre ellas.
+                  </p>
+                  <p class="text-xs text-forest-700 font-medium">~0 km del albergue</p>
+                </div>
+
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+                  <div class="flex items-center gap-2 mb-3">
+                    <div class="h-7 w-7 flex items-center justify-center rounded-lg bg-slate-600 text-white text-xs font-bold">2</div>
+                    <p class="font-bold text-slate-900 text-sm">Vila Praia de Âncora</p>
+                  </div>
+                  <p class="text-xs text-slate-700 leading-relaxed mb-2">
+                    La localidad costera de Vila Praia de Âncora (~8 km al sur de Caminha, directamente en la ruta del Camino desde Viana) también participa en el mismo turno rotativo. Si ninguna farmacia de Caminha está de turno, puede estarlo Âncora.
+                  </p>
+                  <p class="text-xs text-slate-500 font-medium">~8 km al sur — taxi o autobús</p>
+                </div>
+
+                <div class="bg-earth-50 border border-earth-200 rounded-xl p-4">
+                  <div class="flex items-center gap-2 mb-3">
+                    <div class="h-7 w-7 flex items-center justify-center rounded-lg bg-earth-700 text-white text-xs font-bold">3</div>
+                    <p class="font-bold text-earth-900 text-sm">Seixas (Caminha)</p>
+                  </div>
+                  <p class="text-xs text-slate-700 leading-relaxed mb-2">
+                    Seixas es una freguesia del municipio de Caminha, al sur del centro urbano. Su farmacia también participa en la rotación y puede ser la farmacia de servicio designada algunos días.
+                  </p>
+                  <p class="text-xs text-earth-700 font-medium">~2 km al sur — a pie</p>
+                </div>
+
+              </div>
+
+              <div class="bg-amber-50 border border-amber-200 rounded-xl p-4">
+                <h4 class="font-semibold text-amber-900 text-xs uppercase tracking-wider mb-3">Cómo Encontrar la Farmacia de Turno</h4>
+                <ol class="space-y-2 text-xs text-amber-900">
+                  <li class="flex items-start gap-2.5"><span class="font-bold shrink-0 w-4">1.</span> Pregunta al hospitalero de tu albergue la tarde anterior — lo comprueban habitualmente para los peregrinos.</li>
+                  <li class="flex items-start gap-2.5"><span class="font-bold shrink-0 w-4">2.</span> Llama al SNS24 (línea de salud nacional): <strong class="font-bold">808 24 24 24</strong> — te indicarán la farmacia abierta más cercana.</li>
+                  <li class="flex items-start gap-2.5"><span class="font-bold shrink-0 w-4">3.</span> Consulta la puerta de cualquier farmacia cerrada — mostrará el nombre y dirección de la farmacia de turno.</li>
+                  <li class="flex items-start gap-2.5"><span class="font-bold shrink-0 w-4">4.</span> Visita <strong>farmaciasdeplantao.pt</strong> o busca "farmácia de serviço Caminha" en Google — la rota se publica en línea y se actualiza diariamente.</li>
+                  <li class="flex items-start gap-2.5"><span class="font-bold shrink-0 w-4">5.</span> Para situaciones médicas urgentes fuera de horario: Centro de Saúde de Caminha (horario laborable). Para emergencias, llama al <strong>112</strong>.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <!-- Qué tienen las farmacias para peregrinos -->
+          <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+            <h3 class="font-bold text-forest-900 mb-4 text-base">Qué Tienen las Farmacias Portuguesas para Peregrinos</h3>
+            <div class="grid sm:grid-cols-2 gap-3">
+              {[
+                { cat: 'Ampollas', items: 'Compeed (pensos para bolhas), Hansaplast, apósitos hidrocoloides' },
+                { cat: 'Analgésicos', items: 'Ibuprofeno, paracetamol — ambos sin receta' },
+                { cat: 'Crema muscular', items: 'Voltaren gel, Dolorac, sprays refrescantes para rodillas y pantorrillas' },
+                { cat: 'Quemaduras solares', items: 'Aftersun, gel de aloe vera, protector solar de alta protección' },
+                { cat: 'Higiene del pie', items: 'Crema antimicótica (clotrimazol), polvos de talco, desodorante de pies' },
+                { cat: 'Cuidado de heridas', items: 'Solución antiséptica (Betadine), gasa estéril, esparadrapo médico' },
+              ].map(({ cat, items }) => (
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-3.5">
+                  <p class="font-semibold text-slate-800 text-xs uppercase tracking-wider mb-1">{cat}</p>
+                  <p class="text-xs text-slate-600 leading-relaxed">{items}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- ── BARRA LATERAL ──────────────────────────────────────────────────────── -->
+      <aside class="space-y-5">
+
+        <div class="bg-red-50 border border-red-200 rounded-2xl p-5 shadow-sm">
+          <h2 class="text-base font-bold text-red-900 mb-3 tracking-tight">Contactos de Emergencia</h2>
+          <ul class="space-y-3 text-sm">
+            {[
+              { label: 'Emergencias (todos los servicios)', number: '112', note: 'Policía, ambulancia, bomberos' },
+              { label: 'SNS24 Línea de Salud', number: '808 24 24 24', note: 'Farmacia de turno, consejo médico' },
+              { label: 'Centro de Saúde de Caminha', number: '+351 258 919 440', note: 'Lun–Vie en horario laboral' },
+              { label: 'Oficina de Turismo de Caminha', number: '+351 258 921 952', note: 'Información práctica local' },
+            ].map(({ label, number, note }) => (
+              <li>
+                <p class="font-semibold text-slate-800 text-xs mb-0.5">{label}</p>
+                <a href={`tel:${number.replace(/\s/g, '')}`} class="text-forest-700 font-bold hover:underline no-underline text-base cursor-pointer">{number}</a>
+                <p class="text-xs text-slate-500 mt-0.5">{note}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+          <h2 class="text-base font-bold text-forest-900 mb-3 tracking-tight">Cajeros Automáticos (Multibanco)</h2>
+          <p class="text-sm text-slate-700 leading-relaxed mb-3">
+            Caminha tiene varios cajeros Multibanco en el centro. La mayor concentración está en torno a la <strong>Praça do Conselho</strong> y sus calles de acceso. Las sucursales de CGD y Millennium BCP tienen cajeros exteriores accesibles fuera del horario bancario.
+          </p>
+          <p class="text-xs text-slate-500">El efectivo es imprescindible para el ferry y las tarifas del taxi marítimo.</p>
+        </div>
+
+        <div class="bg-forest-50 border border-forest-200 rounded-2xl p-5 shadow-sm">
+          <h2 class="text-base font-bold text-forest-900 mb-3 tracking-tight">Otras Guías del Peregrino</h2>
+          <ul class="space-y-3 text-sm">
+            <li>
+              <a href="/es/caminha/ferry-y-logistica/" class="text-forest-700 hover:underline no-underline font-medium cursor-pointer flex items-center gap-1 group">
+                Ferry y Logística
+                <svg class="h-3.5 w-3.5 text-earth-500 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+              </a>
+              <p class="text-xs text-slate-500 mt-0.5">Alertas de assoreamento, contactos de taxi marítimo</p>
+            </li>
+            <li>
+              <a href="/es/caminha/donde-dormir/" class="text-forest-700 hover:underline no-underline font-medium cursor-pointer flex items-center gap-1 group">
+                Dónde Dormir
+                <svg class="h-3.5 w-3.5 text-earth-500 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+              </a>
+              <p class="text-xs text-slate-500 mt-0.5">Albergue, pensiones, hotel boutique</p>
+            </li>
+            <li>
+              <a href="/es/caminha/donde-comer/" class="text-forest-700 hover:underline no-underline font-medium cursor-pointer flex items-center gap-1 group">
+                Dónde Comer
+                <svg class="h-3.5 w-3.5 text-earth-500 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+              </a>
+              <p class="text-xs text-slate-500 mt-0.5">Menús del peregrino desde 8 €</p>
+            </li>
+          </ul>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+
+</MainLayout>

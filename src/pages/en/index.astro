@@ -3,56 +3,110 @@ import MainLayout from '../../layouts/MainLayout.astro';
 ---
 
 <MainLayout
-  title="Way to Santiago Guide | Ultimate Caminho Coastal Route Planner"
-  description="The definitive, hyper-local guide for the Camino de Santiago Coastal Route. Live ferry updates, verified water taxi contacts, pilgrim hostels, and traditional dining in Caminha."
+  title="Way to Santiago Guide | Camino Coastal Route — Caminha, Portugal"
+  description="The definitive hyper-local guide for pilgrims on the Camino de Santiago Coastal Route. Live ferry warnings, verified water taxi contacts, pilgrim hostels, and dining in Caminha."
   lang="en"
   schemaType="website"
   ogImage="/images/og-default.jpg"
 >
 
-  <!-- Hero -->
-  <section class="relative bg-forest-900 text-white overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-forest-950 via-forest-900 to-forest-700 opacity-90"></div>
-    <div class="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
-      <div class="max-w-3xl">
-        <p class="text-earth-300 text-sm font-semibold uppercase tracking-widest mb-4">
-          Camino de Santiago · Coastal Route · Portugal
-        </p>
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white">
-          Your Guide to Caminha
-        </h1>
-        <p class="text-lg sm:text-xl text-slate-300 leading-relaxed mb-10 max-w-2xl">
-          Caminha is a jewel on the Portuguese Coastal Way — a medieval walled town at the mouth of the Minho River, your last stop in Portugal before crossing to Spain. Everything pilgrims need to know, in one place.
-        </p>
-        <div class="flex flex-wrap gap-4">
-          <a
-            href="/en/caminha/where-to-eat/"
-            class="inline-flex items-center gap-2 bg-earth-500 hover:bg-earth-400 text-white font-semibold px-6 py-3 rounded-lg transition-colors no-underline text-sm"
-          >
-            Where to Eat
-          </a>
-          <a
-            href="/en/caminha/ferry-and-logistics/"
-            class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3 rounded-lg transition-colors no-underline text-sm border border-white/20"
-          >
-            Ferry Schedule
-          </a>
-        </div>
+  <!-- ── HERO WITH IMAGE BACKGROUND ─────────────────────────────────────────── -->
+  <section class="relative min-h-[88svh] flex items-end overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/images/og-default.jpg"
+        alt="Coastal path near Caminha, Portugal — Camino de Santiago"
+        class="w-full h-full object-cover object-center"
+        fetchpriority="high"
+        decoding="async"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/10"></div>
+    </div>
+
+    <div class="relative w-full mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16 pt-32">
+      <p class="text-earth-300 text-xs font-bold uppercase tracking-widest mb-3">
+        Camino de Santiago · Coastal Route · Caminha, Portugal
+      </p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white mb-5 max-w-3xl">
+        Walking the Camino<br class="hidden sm:inline" /> Coastal Route?
+      </h1>
+      <p class="text-lg sm:text-xl text-slate-200 leading-relaxed mb-8 max-w-2xl">
+        Your hyper-local pilgrim guide to Caminha — the last Portuguese town before Spain. Ferry crossings, where to sleep, where to eat, and everything in between.
+      </p>
+
+      <!-- Primary Mobile Action Buttons — large tap targets -->
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a
+          href="/en/caminha/ferry-and-logistics/"
+          class="inline-flex items-center justify-center gap-3 bg-earth-500 hover:bg-earth-400 active:bg-earth-600 text-white font-bold px-7 py-4 rounded-2xl transition-colors no-underline text-base min-h-[56px] shadow-lg"
+        >
+          <svg class="h-5 w-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M22 18H2l4-8h12l4 8z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 2v8"/>
+          </svg>
+          Cross the River Now (Ferry)
+        </a>
+        <a
+          href="/en/caminha/where-to-stay/"
+          class="inline-flex items-center justify-center gap-3 bg-white/15 hover:bg-white/25 active:bg-white/30 backdrop-blur-sm text-white font-bold px-7 py-4 rounded-2xl transition-colors no-underline text-base border border-white/30 min-h-[56px]"
+        >
+          <svg class="h-5 w-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 12V7a2 2 0 012-2h14a2 2 0 012 2v5M3 12v5a1 1 0 001 1h16a1 1 0 001-1v-5M3 12h18M7 12V9h4v3"/>
+          </svg>
+          Find Your Stay (Hotels)
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Quick stats -->
+  <!-- ── LIVE PILGRIM WARNING BANNER (dismissible) ───────────────────────────── -->
+  <div
+    id="ferry-warning-banner"
+    class="bg-gradient-to-r from-amber-600 to-orange-600 text-white shadow-md"
+    role="alert"
+    aria-live="polite"
+  >
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-4 flex items-start gap-4">
+      <div class="shrink-0 flex h-10 w-10 items-center justify-center rounded-xl bg-white/15 border border-white/20 mt-0.5">
+        <svg class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+        </svg>
+      </div>
+      <div class="flex-1 min-w-0">
+        <p class="font-bold text-sm mb-1 flex flex-wrap items-center gap-2">
+          <span class="bg-white/20 text-white text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border border-white/30">Live Ferry Status</span>
+          Siltation Warning — Check Before You Go
+        </p>
+        <p class="text-sm text-white/90 leading-relaxed">
+          The Caminha ferry (Santa Rita de Cássia) is subject to seasonal <strong>assoreamento</strong> (river siltation) that can suspend service without notice — even in peak season.
+          <strong>Verify crossing status the night before</strong> and ask your albergue about water taxi (Xávegas) alternatives.
+          <a href="/en/caminha/ferry-and-logistics/#assoreamento" class="underline font-semibold ml-1 hover:text-white/80">Full details →</a>
+        </p>
+      </div>
+      <button
+        type="button"
+        id="dismiss-ferry-warning"
+        class="shrink-0 flex h-8 w-8 items-center justify-center rounded-lg bg-white/15 hover:bg-white/30 transition-colors border border-white/20 cursor-pointer"
+        aria-label="Dismiss ferry warning"
+      >
+        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- ── QUICK STATS STRIP ───────────────────────────────────────────────────── -->
   <section class="bg-white border-b border-slate-200" aria-label="Key facts about Caminha">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
       <dl class="grid grid-cols-2 sm:grid-cols-4 divide-x divide-slate-200">
         {[
-          { value: '41.9°N', label: 'Coordinates' },
           { value: '~15 min', label: 'Ferry to Spain' },
           { value: '€2.50', label: 'Ferry price' },
           { value: '24 km', label: 'From Viana do Castelo' },
+          { value: 'Apr–Oct', label: 'Daily service' },
         ].map(({ value, label }) => (
-          <div class="py-6 px-4 sm:px-8 text-center">
+          <div class="py-5 px-4 sm:px-8 text-center">
             <dt class="text-2xl font-bold text-forest-700">{value}</dt>
             <dd class="text-xs text-slate-500 mt-1">{label}</dd>
           </div>
@@ -61,92 +115,112 @@ import MainLayout from '../../layouts/MainLayout.astro';
     </div>
   </section>
 
-  <!-- Category cards -->
-  <section class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
-    <h2 class="text-2xl sm:text-3xl font-bold text-forest-900 mb-3">Everything You Need in Caminha</h2>
-    <p class="text-slate-600 mb-10 max-w-2xl">
-      Whether you're arriving on foot along the coastal path or planning your rest day, this guide covers all the essentials.
+  <!-- ── 4-CARD GRID ─────────────────────────────────────────────────────────── -->
+  <section class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-14">
+    <h2 class="text-2xl sm:text-3xl font-bold text-forest-900 mb-2">Everything You Need in Caminha</h2>
+    <p class="text-slate-600 mb-8 max-w-2xl">
+      The complete pilgrim toolkit — from crossing the river to finding a pharmacy.
     </p>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-      <!-- Where to Eat -->
-      <article class="group rounded-2xl border border-slate-200 bg-white overflow-hidden hover:shadow-lg hover:border-forest-300 transition-all duration-200">
-        <div class="h-3 bg-gradient-to-r from-earth-400 to-earth-600"></div>
-        <div class="p-6">
-          <div class="flex items-center gap-3 mb-4">
-            <span class="text-2xl" aria-hidden="true">🍽️</span>
-            <h3 class="text-lg font-bold text-forest-900">Where to Eat</h3>
-          </div>
-          <p class="text-slate-600 text-sm leading-relaxed mb-5">
-            From hearty pilgrim menus (menu do peregrino) to fresh Atlantic seafood and traditional pastéis de nata — Caminha punches well above its size for food.
-          </p>
-          <a
-            href="/en/caminha/where-to-eat/"
-            class="inline-flex items-center gap-1.5 text-sm font-semibold text-forest-700 group-hover:text-forest-900 no-underline hover:underline"
-          >
-            See restaurants →
-          </a>
-        </div>
-      </article>
-
-      <!-- Where to Stay -->
-      <article class="group rounded-2xl border border-slate-200 bg-white overflow-hidden hover:shadow-lg hover:border-forest-300 transition-all duration-200">
-        <div class="h-3 bg-gradient-to-r from-forest-400 to-forest-700"></div>
-        <div class="p-6">
-          <div class="flex items-center gap-3 mb-4">
-            <span class="text-2xl" aria-hidden="true">🛏️</span>
-            <h3 class="text-lg font-bold text-forest-900">Where to Stay</h3>
-          </div>
-          <p class="text-slate-600 text-sm leading-relaxed mb-5">
-            Municipal pilgrim hostels, family-run guesthouses, and riverside camping — accommodation options for every budget and credential preference.
-          </p>
-          <a
-            href="/en/caminha/where-to-stay/"
-            class="inline-flex items-center gap-1.5 text-sm font-semibold text-forest-700 group-hover:text-forest-900 no-underline hover:underline"
-          >
-            See accommodation →
-          </a>
-        </div>
-      </article>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
 
       <!-- Ferry & Logistics -->
-      <article class="group rounded-2xl border border-slate-200 bg-white overflow-hidden hover:shadow-lg hover:border-forest-300 transition-all duration-200 sm:col-span-2 lg:col-span-1">
-        <div class="h-3 bg-gradient-to-r from-slate-400 to-slate-600"></div>
-        <div class="p-6">
-          <div class="flex items-center gap-3 mb-4">
-            <span class="text-2xl" aria-hidden="true">⛵</span>
-            <h3 class="text-lg font-bold text-forest-900">Ferry &amp; Logistics</h3>
-          </div>
-          <p class="text-slate-600 text-sm leading-relaxed mb-5">
-            Cross the Minho River from Caminha to A Guarda, Spain. Timetables, prices, what to expect at the dock, and tips for a smooth border crossing.
-          </p>
-          <a
-            href="/en/caminha/ferry-and-logistics/"
-            class="inline-flex items-center gap-1.5 text-sm font-semibold text-forest-700 group-hover:text-forest-900 no-underline hover:underline"
-          >
-            Plan your crossing →
-          </a>
+      <a
+        href="/en/caminha/ferry-and-logistics/"
+        class="group relative rounded-3xl bg-gradient-to-br from-slate-800 to-slate-900 text-white overflow-hidden min-h-[190px] flex flex-col justify-end p-7 no-underline shadow-xl hover:shadow-2xl hover:-translate-y-1 active:translate-y-0 transition-all duration-200"
+      >
+        <div class="absolute top-6 right-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 border border-white/15">
+          <svg class="h-7 w-7 text-earth-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <circle cx="12" cy="5" r="3"/>
+            <line x1="12" y1="22" x2="12" y2="8"/>
+            <path d="M5 12H2a10 10 0 0020 0h-3"/>
+          </svg>
         </div>
-      </article>
+        <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-1.5">Critical Info</p>
+        <h3 class="text-xl font-bold text-white leading-tight">Ferry &amp; Logistics</h3>
+        <p class="text-sm text-slate-300 mt-1.5 leading-relaxed">Timetables, siltation risks, water taxi alternatives &amp; Valença detour.</p>
+        <div class="mt-4 flex items-center gap-1.5 text-earth-300 text-sm font-semibold">
+          Plan your crossing
+          <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+
+      <!-- Where to Stay -->
+      <a
+        href="/en/caminha/where-to-stay/"
+        class="group relative rounded-3xl bg-gradient-to-br from-forest-800 to-forest-950 text-white overflow-hidden min-h-[190px] flex flex-col justify-end p-7 no-underline shadow-xl hover:shadow-2xl hover:-translate-y-1 active:translate-y-0 transition-all duration-200"
+      >
+        <div class="absolute top-6 right-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 border border-white/15">
+          <svg class="h-7 w-7 text-earth-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 12V7a2 2 0 012-2h14a2 2 0 012 2v5M3 12v5a1 1 0 001 1h16a1 1 0 001-1v-5M3 12h18M7 12V9h4v3"/>
+          </svg>
+        </div>
+        <p class="text-xs font-bold uppercase tracking-widest text-forest-400 mb-1.5">Accommodations</p>
+        <h3 class="text-xl font-bold text-white leading-tight">Where to Stay</h3>
+        <p class="text-sm text-forest-200 mt-1.5 leading-relaxed">Municipal albergue, guesthouses &amp; boutique hotels — all budgets.</p>
+        <div class="mt-4 flex items-center gap-1.5 text-earth-300 text-sm font-semibold">
+          Find a bed
+          <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+
+      <!-- Where to Eat -->
+      <a
+        href="/en/caminha/where-to-eat/"
+        class="group relative rounded-3xl bg-gradient-to-br from-earth-700 to-earth-900 text-white overflow-hidden min-h-[190px] flex flex-col justify-end p-7 no-underline shadow-xl hover:shadow-2xl hover:-translate-y-1 active:translate-y-0 transition-all duration-200"
+      >
+        <div class="absolute top-6 right-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 border border-white/15">
+          <svg class="h-7 w-7 text-earth-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 2v20"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 2c0 4 4 4 4 8s-4 4-4 8"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16 2v6a2 2 0 004 0V2M18 8v14"/>
+          </svg>
+        </div>
+        <p class="text-xs font-bold uppercase tracking-widest text-earth-300 mb-1.5">Food &amp; Dining</p>
+        <h3 class="text-xl font-bold text-white leading-tight">Where to Eat</h3>
+        <p class="text-sm text-earth-100 mt-1.5 leading-relaxed">Pilgrim menus from €8, fresh Atlantic seafood &amp; traditional pastéis.</p>
+        <div class="mt-4 flex items-center gap-1.5 text-earth-200 text-sm font-semibold">
+          See restaurants
+          <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+
+      <!-- Useful Services -->
+      <a
+        href="/en/caminha/useful-services/"
+        class="group relative rounded-3xl bg-gradient-to-br from-slate-600 to-slate-900 text-white overflow-hidden min-h-[190px] flex flex-col justify-end p-7 no-underline shadow-xl hover:shadow-2xl hover:-translate-y-1 active:translate-y-0 transition-all duration-200"
+      >
+        <div class="absolute top-6 right-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 border border-white/15">
+          <svg class="h-7 w-7 text-slate-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+        </div>
+        <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-1.5">Pilgrim Services</p>
+        <h3 class="text-xl font-bold text-white leading-tight">Useful Services</h3>
+        <p class="text-sm text-slate-300 mt-1.5 leading-relaxed">Duty pharmacies (rotating schedule), gear &amp; boot shops, ATMs.</p>
+        <div class="mt-4 flex items-center gap-1.5 text-earth-300 text-sm font-semibold">
+          See services
+          <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </div>
+      </a>
 
     </div>
   </section>
 
-  <!-- About Caminha section -->
+  <!-- ── ABOUT CAMINHA ───────────────────────────────────────────────────────── -->
   <section class="bg-forest-50 border-y border-forest-100">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-14">
       <div class="max-w-3xl">
-        <h2 class="text-2xl sm:text-3xl font-bold text-forest-900 mb-6">About Caminha on the Coastal Camino</h2>
-        <div class="prose prose-slate max-w-none space-y-4 text-slate-700 text-base leading-relaxed">
+        <h2 class="text-2xl sm:text-3xl font-bold text-forest-900 mb-5">About Caminha on the Coastal Camino</h2>
+        <div class="space-y-4 text-slate-700 text-base leading-relaxed">
           <p>
             Caminha (population ~7,000) sits at the confluence of the Coura and Minho rivers, facing the Spanish town of A Guarda across the water. Its 14th-century walls, fortified clock tower, and elegant Praça do Conselho make it one of the most charming stops on the entire Portuguese Coastal Camino.
           </p>
           <p>
-            For pilgrims walking the <strong>Caminho da Costa</strong> (Coastal Route), Caminha marks the transition from Portugal to Galicia, Spain. The ferry crossing — a short but memorable 15-minute boat ride — has been used by travellers and pilgrims for centuries. After crossing, pilgrims continue north through A Guarda and along the Galician coast toward Santiago de Compostela.
+            For pilgrims walking the <strong>Caminho da Costa</strong> (Coastal Route), Caminha marks the transition from Portugal to Galicia, Spain. The ferry crossing — a short but memorable 15-minute boat ride — has been used by travellers and pilgrims for centuries. After crossing, pilgrims continue north through A Guarda along the Galician coast toward Santiago de Compostela.
           </p>
           <p>
-            The town is also a practical overnight stop before the crossing, with a municipal pilgrim hostel, several guesthouses, and enough excellent restaurants to recover from the long coastal stage from Viana do Castelo.
+            The town is a practical overnight stop before the crossing, with a municipal pilgrim hostel, several guesthouses, and enough excellent restaurants to recover from the long coastal stage from Viana do Castelo.
           </p>
         </div>
       </div>
@@ -154,3 +228,18 @@ import MainLayout from '../../layouts/MainLayout.astro';
   </section>
 
 </MainLayout>
+
+<script is:inline>
+  (function () {
+    var banner = document.getElementById('ferry-warning-banner');
+    var btn = document.getElementById('dismiss-ferry-warning');
+    if (!banner || !btn) return;
+    if (sessionStorage.getItem('ferryWarningDismissed')) {
+      banner.style.display = 'none';
+    }
+    btn.addEventListener('click', function () {
+      banner.style.display = 'none';
+      sessionStorage.setItem('ferryWarningDismissed', '1');
+    });
+  })();
+</script>

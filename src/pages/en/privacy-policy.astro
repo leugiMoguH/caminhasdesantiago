@@ -1,0 +1,175 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+---
+
+<MainLayout
+  title="Privacy Policy — Way to Santiago Guide"
+  description="Privacy policy for waytosantiagoguide.com. Information on affiliate links, advertising, and analytics data collection."
+  lang="en"
+  schemaType="webpage"
+>
+
+  <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-14">
+
+    <nav aria-label="Breadcrumb" class="mb-8">
+      <ol class="flex items-center gap-2 text-sm text-slate-500">
+        <li><a href="/en/" class="hover:text-forest-700 no-underline hover:underline transition-colors">Home</a></li>
+        <li aria-hidden="true" class="text-slate-400">›</li>
+        <li aria-current="page" class="text-slate-700 font-medium">Privacy Policy</li>
+      </ol>
+    </nav>
+
+    <h1 class="text-3xl sm:text-4xl font-bold text-forest-900 mb-3 tracking-tight">Privacy Policy</h1>
+    <p class="text-slate-500 text-sm mb-10">Last updated: May 2026</p>
+
+    <div class="prose-like space-y-8 text-slate-700 text-base leading-relaxed">
+
+      <!-- Intro -->
+      <section>
+        <p>
+          This privacy policy explains how <strong>waytosantiagoguide.com</strong> (the "Site") collects, uses, and discloses information about visitors. By using the Site, you agree to the practices described here.
+        </p>
+      </section>
+
+      <!-- Affiliate Disclosure -->
+      <section>
+        <h2 class="text-xl font-bold text-forest-900 mb-3">Affiliate Link Disclosure</h2>
+        <div class="bg-earth-50 border border-earth-200 rounded-2xl p-5">
+          <p class="text-sm leading-relaxed">
+            <strong>We use Booking.com affiliate links.</strong> If you book accommodation through links on this site, we earn a commission at no extra cost to you. This helps us maintain and improve the guide.
+          </p>
+          <ul class="mt-3 space-y-2 text-sm">
+            <li class="flex items-start gap-2"><span class="text-earth-600 shrink-0 font-bold mt-0.5">→</span> Affiliate links are marked with <code class="bg-earth-100 px-1 rounded text-xs">rel="nofollow noopener noreferrer sponsored"</code></li>
+            <li class="flex items-start gap-2"><span class="text-earth-600 shrink-0 font-bold mt-0.5">→</span> The price you pay is identical whether or not you use our links</li>
+            <li class="flex items-start gap-2"><span class="text-earth-600 shrink-0 font-bold mt-0.5">→</span> We only link to properties we believe are relevant and useful to pilgrims</li>
+            <li class="flex items-start gap-2"><span class="text-earth-600 shrink-0 font-bold mt-0.5">→</span> Booking.com's own privacy policy governs your booking transaction at <a href="https://www.booking.com/content/privacy.html" rel="noopener noreferrer nofollow" class="text-forest-700 hover:underline" target="_blank">booking.com/content/privacy.html</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Analytics -->
+      <section>
+        <h2 class="text-xl font-bold text-forest-900 mb-3">Analytics — Google Analytics</h2>
+        <p>
+          We use <strong>Google Analytics 4 (GA4)</strong> to understand how visitors use the Site. This service collects anonymous usage data including:
+        </p>
+        <ul class="mt-3 space-y-1.5 text-sm list-inside">
+          {[
+            'Pages visited and time spent on each page',
+            'Approximate geographic location (country/city level)',
+            'Device type, browser, and operating system',
+            'How visitors arrive at the Site (search engine, direct link, social media)',
+            'Interactions with content (scroll depth, clicks on links)',
+          ].map((item) => (
+            <li class="flex items-start gap-2"><span class="text-forest-600 shrink-0 font-bold mt-0.5">→</span>{item}</li>
+          ))}
+        </ul>
+        <p class="mt-4">
+          Google Analytics does <strong>not</strong> collect personally identifiable information (names, email addresses, credit card numbers). IP addresses are anonymised by default under GDPR settings. Analytics data is used solely to improve the content and usefulness of this site.
+        </p>
+        <p class="mt-3">
+          Google's data processing is governed by their privacy policy at <a href="https://policies.google.com/privacy" rel="noopener noreferrer nofollow" class="text-forest-700 hover:underline" target="_blank">policies.google.com/privacy</a>. You can opt out of Google Analytics tracking using the <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener noreferrer nofollow" class="text-forest-700 hover:underline" target="_blank">Google Analytics Opt-out Browser Add-on</a>.
+        </p>
+      </section>
+
+      <!-- Advertising (AdSense) -->
+      <section>
+        <h2 class="text-xl font-bold text-forest-900 mb-3">Advertising — Google AdSense</h2>
+        <p>
+          This Site displays advertisements served by <strong>Google AdSense</strong>. Google uses cookies to show ads based on your prior visits to this and other websites. You can opt out of personalised advertising by visiting <a href="https://adssettings.google.com" rel="noopener noreferrer nofollow" class="text-forest-700 hover:underline" target="_blank">adssettings.google.com</a>.
+        </p>
+      </section>
+
+      <!-- Cookies -->
+      <section>
+        <h2 class="text-xl font-bold text-forest-900 mb-3">Cookies</h2>
+        <p>
+          The Site uses the following cookies:
+        </p>
+        <div class="mt-4 overflow-x-auto rounded-xl border border-slate-200">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="bg-slate-100 border-b border-slate-200">
+                <th scope="col" class="text-left px-4 py-3 font-semibold text-slate-700 text-xs uppercase tracking-wider">Cookie</th>
+                <th scope="col" class="text-left px-4 py-3 font-semibold text-slate-700 text-xs uppercase tracking-wider">Provider</th>
+                <th scope="col" class="text-left px-4 py-3 font-semibold text-slate-700 text-xs uppercase tracking-wider">Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { name: '_ga, _ga_*', provider: 'Google Analytics', purpose: 'Distinguish unique visitors; track session data' },
+                { name: 'ferryWarningDismissed', provider: 'This site (sessionStorage)', purpose: 'Remember if visitor dismissed the ferry status banner' },
+                { name: 'Google Ads cookies', provider: 'Google AdSense', purpose: 'Serve and measure advertising performance' },
+              ].map((row, i) => (
+                <tr class={i % 2 === 0 ? 'bg-white' : 'bg-slate-50/70'}>
+                  <td class="px-4 py-3 font-mono text-xs text-slate-700">{row.name}</td>
+                  <td class="px-4 py-3 text-xs text-slate-700">{row.provider}</td>
+                  <td class="px-4 py-3 text-xs text-slate-600">{row.purpose}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-4 text-sm">
+          You can disable cookies in your browser settings. Note that disabling cookies may affect the functionality of third-party services (analytics, advertising) but will not affect your ability to read content on this Site.
+        </p>
+      </section>
+
+      <!-- Third parties -->
+      <section>
+        <h2 class="text-xl font-bold text-forest-900 mb-3">Third-Party Services</h2>
+        <p>This Site integrates the following third-party services, each governed by their own privacy policies:</p>
+        <ul class="mt-3 space-y-2 text-sm">
+          {[
+            { name: 'Booking.com', url: 'https://www.booking.com/content/privacy.html', note: 'Accommodation booking affiliate platform' },
+            { name: 'Google Analytics 4', url: 'https://policies.google.com/privacy', note: 'Anonymous visitor analytics' },
+            { name: 'Google AdSense', url: 'https://policies.google.com/privacy', note: 'Display advertising' },
+            { name: 'Google Fonts', url: 'https://policies.google.com/privacy', note: 'Typography (DM Sans) served via Google CDN' },
+          ].map(({ name, url, note }) => (
+            <li class="flex items-start gap-2">
+              <span class="text-forest-600 shrink-0 font-bold mt-0.5">→</span>
+              <span><strong>{name}</strong> — {note}. <a href={url} rel="noopener noreferrer nofollow" class="text-forest-700 hover:underline" target="_blank">Privacy policy ↗</a></span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <!-- Data retention -->
+      <section>
+        <h2 class="text-xl font-bold text-forest-900 mb-3">Data We Do Not Collect</h2>
+        <p>
+          This Site does <strong>not</strong> collect, store, or process: names, email addresses, phone numbers, payment information, or any other personally identifiable information. There is no registration, login, or user account system on this Site.
+        </p>
+      </section>
+
+      <!-- GDPR -->
+      <section>
+        <h2 class="text-xl font-bold text-forest-900 mb-3">Your Rights (GDPR)</h2>
+        <p>
+          If you are located in the European Economic Area, you have rights under GDPR including the right to access, rectify, and erase data held about you. As this Site does not collect personal data directly, these rights primarily apply to data held by our third-party service providers (Google, Booking.com).
+        </p>
+        <p class="mt-3">
+          For questions about this privacy policy, contact us at: <strong>info@waytosantiagoguide.com</strong>
+        </p>
+      </section>
+
+      <!-- Changes -->
+      <section>
+        <h2 class="text-xl font-bold text-forest-900 mb-3">Changes to This Policy</h2>
+        <p>
+          We may update this privacy policy from time to time. The "Last updated" date at the top of this page reflects the most recent revision. Continued use of the Site after changes constitutes acceptance of the updated policy.
+        </p>
+      </section>
+
+    </div>
+
+    <!-- Language switcher -->
+    <div class="mt-12 pt-6 border-t border-slate-200">
+      <p class="text-sm text-slate-500">
+        También disponible en: <a href="/es/politica-de-privacidad/" class="text-forest-700 hover:underline no-underline font-medium">Política de Privacidad (Español)</a>
+      </p>
+    </div>
+
+  </div>
+
+</MainLayout>
