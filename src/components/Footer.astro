@@ -22,6 +22,7 @@ const t = {
     privacy: 'Privacy Policy',
     disclaimer: 'Disclaimer',
     copyright: `© ${year} Caminha Guide. All rights reserved.`,
+    ferryDisclaimerLabel: 'Ferry Timetable Notice',
     ferryDisclaimer: 'Ferry timetables and prices are subject to change without notice. Always verify schedules directly with the ferry operator before your crossing. This site is independently operated and has no affiliation with any transport provider.',
     adsenseNotice: 'This site uses Google AdSense to display advertising. Ads help keep this guide free for pilgrims.',
     independentNote: 'Independent guide — not affiliated with any Camino organisation or tourism board.',
@@ -40,6 +41,7 @@ const t = {
     privacy: 'Política de Privacidad',
     disclaimer: 'Aviso Legal',
     copyright: `© ${year} Guía de Caminha. Todos los derechos reservados.`,
+    ferryDisclaimerLabel: 'Aviso Horarios del Ferry',
     ferryDisclaimer: 'Los horarios y precios del ferry están sujetos a cambios sin previo aviso. Confirma siempre los horarios directamente con la naviera antes de tu travesía. Este sitio es independiente y no tiene ninguna afiliación con ningún proveedor de transporte.',
     adsenseNotice: 'Este sitio utiliza Google AdSense para mostrar publicidad. Los anuncios ayudan a mantener esta guía gratuita para los peregrinos.',
     independentNote: 'Guía independiente — sin afiliación con ninguna organización del Camino ni junta de turismo.',
@@ -66,34 +68,40 @@ const navLinks =
 
 <footer class="bg-forest-950 text-slate-300 mt-auto">
 
-  <!-- AdSense auto-ad zone — top of footer -->
+  <!-- AdSense zone — top of footer, integrated stone tones -->
   <div
-    class="border-b border-forest-900 py-4 px-4 text-center"
+    class="border-b border-forest-900/80 py-5 px-4"
     aria-label="Advertisement"
     role="complementary"
   >
-    <!-- AdSense auto-ads: publisher tag is injected via MainLayout head -->
-    <!-- Manual ad unit slot (optional override): -->
-    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6529337148344504" data-ad-slot="5066435511" data-ad-format="auto" data-full-width-responsive="true"></ins>
-    <ins class="adsbygoogle"
-      style="display:block"
-      data-ad-format="auto"
-      data-full-width-responsive="true"
-      aria-hidden="true">
-    </ins>
+    <div class="mx-auto max-w-6xl flex justify-center">
+      <div class="w-full adsense-placeholder flex items-center justify-center bg-forest-900/30 border border-forest-800/50 min-h-[90px] md:min-h-[90px] rounded-xl overflow-hidden">
+        <ins class="adsbygoogle w-full" style="display:block" data-ad-client="ca-pub-6529337148344504" data-ad-slot="5066435511" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      </div>
+    </div>
   </div>
 
   <!-- Main footer content -->
-  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-14">
     <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
 
       <!-- Brand column -->
       <div class="lg:col-span-2">
-        <a href={`/${lang}/`} class="flex items-center gap-2.5 no-underline mb-4">
-          <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-forest-600 text-white font-bold select-none">
-            C
+        <a href={`/${lang}/`} class="flex items-center gap-3 no-underline mb-5 group cursor-pointer">
+          <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-forest-600 group-hover:bg-forest-500 transition-colors shrink-0">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <g stroke="#da9a4d" stroke-width="1.4" stroke-linecap="round">
+                <line x1="12" y1="18" x2="12" y2="5"/>
+                <line x1="12" y1="18" x2="7.5" y2="5.5"/>
+                <line x1="12" y1="18" x2="4" y2="8.5"/>
+                <line x1="12" y1="18" x2="16.5" y2="5.5"/>
+                <line x1="12" y1="18" x2="20" y2="8.5"/>
+              </g>
+              <path d="M4 8.5 Q5 3.5 12 3.5 Q19 3.5 20 8.5" stroke="#da9a4d" stroke-width="1.4" fill="none"/>
+              <circle cx="12" cy="18" r="1.5" fill="#da9a4d"/>
+            </svg>
           </span>
-          <span class="font-bold text-white text-lg">Caminha Guide</span>
+          <span class="font-bold text-white text-lg tracking-tight">Caminha Guide</span>
         </a>
         <p class="text-sm leading-relaxed text-slate-400 max-w-sm">
           {text.tagline}
@@ -103,16 +111,19 @@ const navLinks =
 
       <!-- Navigation column -->
       <div>
-        <h2 class="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">
+        <h2 class="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-5">
           {text.explore}
         </h2>
-        <ul class="space-y-2.5" role="list">
+        <ul class="space-y-3" role="list">
           {navLinks.map(({ href, label }) => (
             <li>
               <a
                 href={href}
-                class="text-sm text-slate-300 hover:text-white transition-colors no-underline hover:underline"
+                class="text-sm text-slate-400 hover:text-white transition-colors duration-200 no-underline hover:translate-x-0.5 inline-flex items-center gap-1.5 group cursor-pointer"
               >
+                <svg class="h-3 w-3 text-earth-500 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                </svg>
                 {label}
               </a>
             </li>
@@ -123,41 +134,48 @@ const navLinks =
       <!-- Languages + Legal column -->
       <div class="space-y-8">
         <div>
-          <h2 class="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">
+          <h2 class="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-5">
             {text.languages}
           </h2>
-          <ul class="space-y-2.5" role="list">
+          <ul class="space-y-3" role="list">
             <li>
-              <a href="/en/" hreflang="en" class="text-sm text-slate-300 hover:text-white transition-colors no-underline hover:underline flex items-center gap-2">
-                <span aria-hidden="true">🇬🇧</span> {text.english}
+              <a href="/en/" hreflang="en" class="text-sm text-slate-400 hover:text-white transition-colors duration-200 no-underline flex items-center gap-2.5 cursor-pointer group">
+                <!-- UK flag SVG -->
+                <svg width="20" height="14" viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg" class="rounded-sm shrink-0 opacity-80 group-hover:opacity-100 transition-opacity" aria-hidden="true">
+                  <rect width="60" height="40" fill="#012169"/>
+                  <path d="M0,0 L60,40 M60,0 L0,40" stroke="white" stroke-width="8"/>
+                  <path d="M0,0 L60,40 M60,0 L0,40" stroke="#C8102E" stroke-width="5"/>
+                  <path d="M30,0 V40 M0,20 H60" stroke="white" stroke-width="12"/>
+                  <path d="M30,0 V40 M0,20 H60" stroke="#C8102E" stroke-width="7"/>
+                </svg>
+                {text.english}
               </a>
             </li>
             <li>
-              <a href="/es/" hreflang="es" class="text-sm text-slate-300 hover:text-white transition-colors no-underline hover:underline flex items-center gap-2">
-                <span aria-hidden="true">🇪🇸</span> {text.spanish}
+              <a href="/es/" hreflang="es" class="text-sm text-slate-400 hover:text-white transition-colors duration-200 no-underline flex items-center gap-2.5 cursor-pointer group">
+                <!-- Spain flag SVG -->
+                <svg width="20" height="14" viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg" class="rounded-sm shrink-0 opacity-80 group-hover:opacity-100 transition-opacity" aria-hidden="true">
+                  <rect width="60" height="40" fill="#c60b1e"/>
+                  <rect y="10" width="60" height="20" fill="#ffc400"/>
+                </svg>
+                {text.spanish}
               </a>
             </li>
           </ul>
         </div>
 
         <div>
-          <h2 class="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">
+          <h2 class="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-5">
             {text.legal}
           </h2>
-          <ul class="space-y-2.5" role="list">
+          <ul class="space-y-3" role="list">
             <li>
-              <a
-                href={`/${lang}/privacy/`}
-                class="text-sm text-slate-300 hover:text-white transition-colors no-underline hover:underline"
-              >
+              <a href={`/${lang}/privacy/`} class="text-sm text-slate-400 hover:text-white transition-colors duration-200 no-underline cursor-pointer">
                 {text.privacy}
               </a>
             </li>
             <li>
-              <a
-                href={`/${lang}/disclaimer/`}
-                class="text-sm text-slate-300 hover:text-white transition-colors no-underline hover:underline"
-              >
+              <a href={`/${lang}/disclaimer/`} class="text-sm text-slate-400 hover:text-white transition-colors duration-200 no-underline cursor-pointer">
                 {text.disclaimer}
               </a>
             </li>
@@ -168,35 +186,41 @@ const navLinks =
     </div>
 
     <!-- Ferry disclaimer -->
-    <div class="mt-10 pt-8 border-t border-forest-900">
-      <div class="rounded-lg bg-forest-900/50 border border-forest-800 p-4">
+    <div class="mt-12 pt-8 border-t border-forest-900/80">
+      <div class="rounded-xl bg-forest-900/60 border border-forest-800/60 p-5 flex gap-3">
+        <!-- Warning triangle SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-earth-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+        </svg>
         <p class="text-xs text-slate-400 leading-relaxed">
-          <strong class="text-slate-300 font-semibold">⚠ {lang === 'en' ? 'Ferry Timetable Notice' : 'Aviso Horarios del Ferry'}:</strong>{' '}
+          <strong class="text-slate-300 font-semibold">{text.ferryDisclaimerLabel}:</strong>{' '}
           {text.ferryDisclaimer}
         </p>
       </div>
     </div>
 
     <!-- AdSense notice + copyright -->
-    <div class="mt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-      <p class="text-xs text-slate-500">{text.copyright}</p>
-      <p class="text-xs text-slate-500 max-w-sm text-right">{text.adsenseNotice}</p>
+    <div class="mt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+      <p class="text-xs text-slate-600">{text.copyright}</p>
+      <p class="text-xs text-slate-600 max-w-sm sm:text-right">{text.adsenseNotice}</p>
     </div>
 
   </div>
 
-  <!-- AdSense auto-ad zone — bottom of footer -->
+  <!-- AdSense zone — bottom of footer -->
   <div
-    class="border-t border-forest-900 py-2 px-4"
+    class="border-t border-forest-900/80 py-3 px-4"
     aria-label="Advertisement"
     role="complementary"
     aria-hidden="true"
   >
-    <ins class="adsbygoogle"
-      style="display:block"
-      data-ad-format="auto"
-      data-full-width-responsive="true">
-    </ins>
+    <div class="mx-auto max-w-6xl">
+      <ins class="adsbygoogle w-full"
+        style="display:block"
+        data-ad-format="auto"
+        data-full-width-responsive="true">
+      </ins>
+    </div>
   </div>
 
 </footer>

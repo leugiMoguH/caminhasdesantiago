@@ -27,6 +27,29 @@ const trainAlternative = [
   { from: 'Viana do Castelo', to: 'Valença', duration: '~55 min', approxFare: '€3.60 (Caminha→Valença direct)', frequency: 'Roughly hourly on weekdays; reduced weekends' },
   { from: 'Valença', to: 'Tui (walk)', duration: '~25 min on foot', approxFare: 'Free', frequency: 'Bridge open 24/7' },
 ];
+
+const faqItems = [
+  {
+    question: 'How much does the Caminha to A Guarda ferry cost?',
+    answer: 'The ferry from Caminha to A Guarda costs €2.50 per adult one-way. A return ticket is €5.00. Bicycles incur an additional €1.50 charge on top of the passenger fare. Children under 4 travel free; children 4–12 pay €1.50.',
+  },
+  {
+    question: 'What are the ferry times from Caminha to A Guarda?',
+    answer: 'In summer (April–October), the ferry runs approximately every 30–60 minutes from 09:00 to 19:00, daily in both directions. In winter (November–March), service is reduced to weekends and public holidays only, with departures around 10:00, 12:00, and 16:00. Always verify current times directly with the ferry operator before your crossing.',
+  },
+  {
+    question: 'What is the assoreamento problem with the Caminha ferry?',
+    answer: 'The Minho river estuary periodically suffers from assoreamento (siltation) — the gradual build-up of sand and sediment at the river mouth. When siltation is severe, the Santa Rita de Cássia ferry boat cannot approach the standard dock, causing service suspensions that can last days or weeks. When this happens, pilgrims can use Xávegas water taxis (€5–6 per person) or take the overland train to Valença and walk across the Tui bridge.',
+  },
+  {
+    question: 'What are the alternatives if the Caminha ferry is not running?',
+    answer: 'Two main alternatives exist: (1) Xávegas or taxi-marítimo: smaller water taxis operated by local fishermen, able to cross in shallower water. Rate approximately €5–6 per person. Contact the Caminha tourist office (+351 258 921 952) for current operator contacts. (2) Overland via Valença–Tui: take the CP Minho line train from Caminha to Valença (~35 minutes, ~€3.60), then walk 1.5 km across the international Tui–Valença bridge.',
+  },
+  {
+    question: 'How do I get from Caminha to A Guarda by train?',
+    answer: 'There is no direct train from Caminha to A Guarda. The overland alternative is: take the CP Minho line train from Caminha to Valença (~35 minutes, ~€3.60 one-way). From Valença station, walk to the Tui–Valença international bridge (approx 1 km) and cross on foot into Tui, Spain (~25 minutes walk). From Tui, follow the Camino Portugués Interior waymarks. Note: this route changes you from the Coastal Route to the Interior Route.',
+  },
+];
 ---
 
 <MainLayout
@@ -36,7 +59,7 @@ const trainAlternative = [
   schemaType="webpage"
 >
 
-  <!-- JSON-LD: FAQPage + TouristAttraction schema for AI scrapers and Google -->
+  <!-- JSON-LD: FAQPage + TouristAttraction schema -->
   <script type="application/ld+json" is:inline>
   {
     "@context": "https://schema.org",
@@ -104,7 +127,7 @@ const trainAlternative = [
             "name": "What are the alternatives if the Caminha ferry is not running?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Two main alternatives exist when the standard ferry is suspended: (1) Xávegas or taxi-marítimo: smaller water taxis operated by local fishermen, able to cross in shallower water. Rate approximately €5–6 per person. Contact the Caminha tourist office (+351 258 921 952) for current operator contacts. (2) Overland via Valença–Tui: take the CP Minho line train from Caminha to Valença (~35 minutes, ~€3.60), then walk 1.5 km across the international Tui–Valença bridge. This connects you to the Portuguese Interior Camino route. You will then need to walk approximately 2 km to rejoin the Coastal Route waymarks in Tui."
+              "text": "Two main alternatives exist when the standard ferry is suspended: (1) Xávegas or taxi-marítimo: smaller water taxis operated by local fishermen, able to cross in shallower water. Rate approximately €5–6 per person. Contact the Caminha tourist office (+351 258 921 952) for current operator contacts. (2) Overland via Valença–Tui: take the CP Minho line train from Caminha to Valença (~35 minutes, ~€3.60), then walk 1.5 km across the international Tui–Valença bridge. This connects you to the Portuguese Interior Camino route."
             }
           },
           {
@@ -121,44 +144,60 @@ const trainAlternative = [
   }
   </script>
 
-  <!-- ── HEADER ─────────────────────────────────────────────────────────────── -->
-  <div class="bg-slate-800 text-white">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-      <nav aria-label="Breadcrumb" class="mb-4">
+  <!-- ── HERO HEADER ──────────────────────────────────────────────────────────── -->
+  <div class="bg-gradient-to-br from-slate-800 via-slate-800 to-forest-950 text-white">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+      <nav aria-label="Breadcrumb" class="mb-5">
         <ol class="flex items-center gap-2 text-sm text-slate-400">
-          <li><a href="/en/" class="hover:text-white no-underline hover:underline">Home</a></li>
+          <li><a href="/en/" class="hover:text-white no-underline hover:underline transition-colors">Home</a></li>
           <li aria-hidden="true" class="text-slate-600">›</li>
           <li><span class="text-slate-500">Caminha</span></li>
           <li aria-hidden="true" class="text-slate-600">›</li>
           <li aria-current="page" class="text-slate-200 font-medium">Ferry &amp; Logistics</li>
         </ol>
       </nav>
-      <h1 class="text-3xl sm:text-4xl font-bold mb-4 text-white">Caminha → A Guarda: Ferry, Siltation &amp; Alternatives</h1>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4 text-white tracking-tight">Caminha → A Guarda: Ferry, Siltation &amp; Alternatives</h1>
       <p class="text-slate-300 max-w-2xl text-base leading-relaxed">
-        The Minho river crossing between Caminha (Portugal) and A Guarda (Spain) is one of the most memorable moments on the Coastal Route — and one of the most unpredictable. A 15-minute ferry ride in normal conditions; a full-day logistics problem when the estuary silts up. This page covers both realities: the scheduled ferry and every alternative when it doesn't run.
+        The Minho river crossing between Caminha (Portugal) and A Guarda (Spain) is one of the most memorable moments on the Coastal Route — and one of the most unpredictable. A 15-minute ferry ride in normal conditions; a full-day logistics problem when the estuary silts up.
       </p>
 
-      <!-- Key facts strip -->
+      <!-- Key facts strip with SVG icons -->
       <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4">
         {[
-          { icon: '⏱️', value: '~15 min', label: 'Crossing time' },
-          { icon: '💶', value: '€2.50', label: 'One-way fare' },
-          { icon: '🗓️', value: 'Apr–Oct', label: 'Daily service' },
-          { icon: '📍', value: 'Cais de Caminha', label: 'Departure point' },
+          {
+            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
+            value: '~15 min',
+            label: 'Crossing time',
+          },
+          {
+            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg>`,
+            value: '€2.50',
+            label: 'One-way fare',
+          },
+          {
+            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`,
+            value: 'Apr–Oct',
+            label: 'Daily service',
+          },
+          {
+            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>`,
+            value: 'Cais de Caminha',
+            label: 'Departure point',
+          },
         ].map(({ icon, value, label }) => (
-          <div class="bg-white/10 rounded-xl p-4 text-center">
-            <div class="text-2xl mb-1" aria-hidden="true">{icon}</div>
+          <div class="bg-white/10 backdrop-blur-sm border border-white/10 rounded-2xl p-4 text-center hover:bg-white/15 transition-colors">
+            <div class="flex justify-center mb-2 text-earth-400" aria-hidden="true" set:html={icon} />
             <div class="text-lg font-bold text-white">{value}</div>
-            <div class="text-xs text-slate-400">{label}</div>
+            <div class="text-xs text-slate-400 mt-0.5">{label}</div>
           </div>
         ))}
       </div>
     </div>
   </div>
 
-  <!-- ── ADSENSE SLOT 1 — Below H1, high-CTR fold position ─────────────────── -->
+  <!-- ── ADSENSE SLOT 1 ──────────────────────────────────────────────────────── -->
   <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-    <div class="my-6 w-full flex justify-center min-h-[90px] md:min-h-[280px] bg-slate-50/50 rounded overflow-hidden">
+    <div class="my-6 adsense-placeholder">
       <ins class="adsbygoogle w-full"
            style="display:block"
            data-ad-client="ca-pub-6529337148344504"
@@ -172,44 +211,46 @@ const trainAlternative = [
   <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
 
-      <!-- ── MAIN CONTENT ─────────────────────────────────────────────────────── -->
+      <!-- ── MAIN CONTENT ────────────────────────────────────────────────────────── -->
       <div class="lg:col-span-2 space-y-10">
 
         <!-- Timetable disclaimer -->
-        <div class="bg-amber-50 border border-amber-300 rounded-xl p-5">
-          <div class="flex gap-3">
-            <span class="text-xl shrink-0" aria-hidden="true">⚠️</span>
-            <div>
-              <h2 class="font-bold text-amber-900 mb-1">Timetable Disclaimer</h2>
-              <p class="text-sm text-amber-800 leading-relaxed">
-                The timetables below are indicative only and were last verified in the 2024 season. Ferry schedules change seasonally and without advance notice. <strong>Always verify the current timetable directly with the ferry operator before your crossing.</strong> This site is independently operated and accepts no liability for missed crossings. See the siltation section below for disruption risks specific to this crossing.
-              </p>
-            </div>
+        <div class="bg-amber-50 border border-amber-300/70 rounded-2xl p-5 flex gap-4 shadow-sm">
+          <div class="shrink-0 flex h-10 w-10 items-center justify-center rounded-xl bg-amber-100 border border-amber-200">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-amber-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+            </svg>
+          </div>
+          <div>
+            <h2 class="font-bold text-amber-900 mb-1.5">Timetable Disclaimer</h2>
+            <p class="text-sm text-amber-800 leading-relaxed">
+              The timetables below are indicative only and were last verified in the 2024 season. Ferry schedules change seasonally and without advance notice. <strong>Always verify the current timetable directly with the ferry operator before your crossing.</strong> This site is independently operated and accepts no liability for missed crossings.
+            </p>
           </div>
         </div>
 
         <!-- Summer timetable -->
         <section>
-          <h2 class="text-2xl font-bold text-forest-900 mb-2">Summer Timetable (April – October)</h2>
-          <p class="text-slate-600 text-sm mb-5">
-            Daily service. Approximately every 30–60 minutes between 09:00 and 19:00. The service runs in both directions — check the direction column. The gap between 12:30 and 14:00 corresponds to the operator's lunch break; plan your departure accordingly to avoid waiting.
+          <h2 class="text-2xl font-bold text-forest-900 mb-2 tracking-tight">Summer Timetable (April – October)</h2>
+          <p class="text-slate-600 text-sm mb-5 leading-relaxed">
+            Daily service. Approximately every 30–60 minutes between 09:00 and 19:00. The gap between 12:30 and 14:00 is the operator's lunch break — plan your departure accordingly.
           </p>
-          <div class="overflow-x-auto rounded-xl border border-slate-200">
+          <div class="overflow-x-auto rounded-2xl border border-slate-200 shadow-sm">
             <table class="w-full text-sm">
               <caption class="sr-only">Summer ferry timetable, Caminha to A Guarda and return</caption>
               <thead>
-                <tr class="bg-slate-800 text-white">
-                  <th scope="col" class="text-left px-4 py-3 font-semibold">Departs</th>
-                  <th scope="col" class="text-left px-4 py-3 font-semibold">Arrives</th>
-                  <th scope="col" class="text-left px-4 py-3 font-semibold">Route</th>
+                <tr class="bg-forest-900 text-white">
+                  <th scope="col" class="text-left px-5 py-3.5 font-semibold text-xs uppercase tracking-wider">Departs</th>
+                  <th scope="col" class="text-left px-5 py-3.5 font-semibold text-xs uppercase tracking-wider">Arrives</th>
+                  <th scope="col" class="text-left px-5 py-3.5 font-semibold text-xs uppercase tracking-wider">Route</th>
                 </tr>
               </thead>
               <tbody>
                 {summerSchedule.map((row, i) => (
-                  <tr class={i % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
-                    <td class="px-4 py-2.5 font-mono font-semibold text-forest-800">{row.departs}</td>
-                    <td class="px-4 py-2.5 font-mono text-slate-600">{row.arrives}</td>
-                    <td class="px-4 py-2.5 text-slate-700">{row.direction}</td>
+                  <tr class={i % 2 === 0 ? 'bg-white' : 'bg-slate-50/70'}>
+                    <td class="px-5 py-3 font-mono font-bold text-forest-800 text-sm">{row.departs}</td>
+                    <td class="px-5 py-3 font-mono text-slate-500 text-sm">{row.arrives}</td>
+                    <td class="px-5 py-3 text-slate-700 text-sm">{row.direction}</td>
                   </tr>
                 ))}
               </tbody>
@@ -219,28 +260,26 @@ const trainAlternative = [
 
         <!-- Winter timetable -->
         <section>
-          <h2 class="text-2xl font-bold text-forest-900 mb-2">Winter Timetable (November – March)</h2>
+          <h2 class="text-2xl font-bold text-forest-900 mb-2 tracking-tight">Winter Timetable (November – March)</h2>
           <p class="text-slate-600 text-sm leading-relaxed">
-            Reduced service in winter — typically weekends and public holidays only, with departures at approximately 10:00, 12:00, and 16:00 (Caminha → A Guarda) and corresponding return trips. Service may be suspended entirely during adverse weather conditions on the Minho estuary. Contact the operator directly to confirm.
+            Reduced service in winter — typically weekends and public holidays only, with departures at approximately 10:00, 12:00, and 16:00 (Caminha → A Guarda) and corresponding return trips. Service may be suspended entirely during adverse weather. Contact the operator directly to confirm.
           </p>
-          <div class="mt-4 bg-slate-100 rounded-xl p-5 text-sm text-slate-700 leading-relaxed">
-            <p>
-              <strong>Winter pilgrim note:</strong> Very few pilgrims walk the Coastal Route in winter due to the reduced ferry service. If you plan a winter Camino, consider the Portuguese Interior Route (via Tui/Valença) as a more reliable alternative — the Valença–Tui bridge operates 24/7 and is always accessible on foot. See the overland alternative section below for details.
-            </p>
+          <div class="mt-4 bg-slate-100/80 border border-slate-200 rounded-2xl p-5 text-sm text-slate-700 leading-relaxed">
+            <strong>Winter pilgrim note:</strong> Very few pilgrims walk the Coastal Route in winter due to the reduced ferry service. If you plan a winter Camino, consider the Portuguese Interior Route (via Tui/Valença) as a more reliable alternative — the Valença–Tui bridge operates 24/7 and is always accessible on foot.
           </div>
         </section>
 
         <!-- Fares -->
         <section>
-          <h2 class="text-2xl font-bold text-forest-900 mb-4">Fares &amp; Tickets</h2>
-          <div class="overflow-x-auto rounded-xl border border-slate-200">
+          <h2 class="text-2xl font-bold text-forest-900 mb-5 tracking-tight">Fares &amp; Tickets</h2>
+          <div class="overflow-x-auto rounded-2xl border border-slate-200 shadow-sm">
             <table class="w-full text-sm">
               <caption class="sr-only">Ferry fares from Caminha to A Guarda</caption>
               <thead>
                 <tr class="bg-forest-900 text-white">
-                  <th scope="col" class="text-left px-4 py-3 font-semibold">Ticket Type</th>
-                  <th scope="col" class="text-left px-4 py-3 font-semibold">Price</th>
-                  <th scope="col" class="text-left px-4 py-3 font-semibold">Notes</th>
+                  <th scope="col" class="text-left px-5 py-3.5 font-semibold text-xs uppercase tracking-wider">Ticket Type</th>
+                  <th scope="col" class="text-left px-5 py-3.5 font-semibold text-xs uppercase tracking-wider">Price</th>
+                  <th scope="col" class="text-left px-5 py-3.5 font-semibold text-xs uppercase tracking-wider">Notes</th>
                 </tr>
               </thead>
               <tbody>
@@ -251,22 +290,22 @@ const trainAlternative = [
                   { type: 'Bicycle', price: '€1.50', note: 'Additional charge on top of passenger fare' },
                   { type: 'Return ticket', price: '€5.00', note: 'Slight saving vs two singles' },
                 ].map((row, i) => (
-                  <tr class={i % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
-                    <td class="px-4 py-2.5 font-medium text-slate-800">{row.type}</td>
-                    <td class="px-4 py-2.5 font-mono font-bold text-forest-700">{row.price}</td>
-                    <td class="px-4 py-2.5 text-slate-600">{row.note}</td>
+                  <tr class={i % 2 === 0 ? 'bg-white' : 'bg-slate-50/70'}>
+                    <td class="px-5 py-3 font-medium text-slate-800">{row.type}</td>
+                    <td class="px-5 py-3 font-mono font-bold text-forest-700">{row.price}</td>
+                    <td class="px-5 py-3 text-slate-600">{row.note}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
           <p class="mt-3 text-xs text-slate-500">
-            Prices are approximate and may have changed. Tickets are purchased at the dock kiosk — cash (euros) accepted; card payment availability varies by season.
+            Prices are approximate and may have changed. Tickets purchased at the dock kiosk — cash (euros) accepted; card payment availability varies by season.
           </p>
         </section>
 
-        <!-- ── ADSENSE SLOT 2 — Mid-page, between timetables and alternatives ── -->
-        <div class="w-full flex justify-center min-h-[90px] md:min-h-[280px] bg-slate-50/50 rounded overflow-hidden">
+        <!-- ── ADSENSE SLOT 2 ─────────────────────────────────────────────────── -->
+        <div class="adsense-placeholder">
           <ins class="adsbygoogle w-full"
                style="display:block"
                data-ad-client="ca-pub-6529337148344504"
@@ -276,118 +315,145 @@ const trainAlternative = [
         </div>
         <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
-        <!-- ── THE ASSOREAMENTO PROBLEM ──────────────────────────────────────── -->
+        <!-- ── THE ASSOREAMENTO PROBLEM — Status Warning Card ──────────────────── -->
         <section id="assoreamento">
-          <div class="bg-red-50 border border-red-200 rounded-xl p-5 mb-6">
-            <div class="flex gap-3">
-              <span class="text-2xl shrink-0" aria-hidden="true">⚓</span>
+          <!-- Dramatic warning card -->
+          <div class="rounded-2xl overflow-hidden shadow-lg border border-red-200">
+            <!-- Header band -->
+            <div class="bg-gradient-to-r from-red-700 to-red-800 px-6 py-5 flex gap-4 items-start">
+              <div class="shrink-0 flex h-12 w-12 items-center justify-center rounded-xl bg-red-900/50 border border-red-600">
+                <!-- Anchor SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-red-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                  <circle cx="12" cy="5" r="3"/>
+                  <line x1="12" y1="22" x2="12" y2="8"/>
+                  <path d="M5 12H2a10 10 0 0020 0h-3"/>
+                </svg>
+              </div>
               <div>
-                <h2 class="text-xl font-bold text-red-900 mb-2">The Assoreamento Problem: When the Ferry Doesn't Run</h2>
-                <p class="text-sm text-red-800 leading-relaxed">
-                  This is the section no other Camino guide covers adequately — and it's the one most likely to affect your journey.
-                </p>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="text-xs font-bold uppercase tracking-widest text-red-300 bg-red-900/40 px-2 py-0.5 rounded-full border border-red-700">Disruption Risk</span>
+                </div>
+                <h2 class="text-xl font-bold text-white">The Assoreamento Problem: When the Ferry Doesn't Run</h2>
+                <p class="text-red-200 text-sm mt-1">This is the section no other Camino guide covers adequately — and it's the one most likely to affect your journey.</p>
               </div>
             </div>
-          </div>
 
-          <div class="space-y-4 text-slate-700 text-sm leading-relaxed">
-            <p>
-              The Minho river estuary is subject to a phenomenon called <strong>assoreamento</strong> (siltation) — the accumulation of sand and sediment at the river mouth that periodically raises the seabed near the ferry docks. The ferry vessel that operates this crossing, the <strong>Santa Rita de Cássia</strong>, is a medium-draught passenger boat that requires a minimum water depth to manoeuvre safely to the dock. When assoreamento is significant, the Santa Rita de Cássia cannot approach the standard berth, and the service is suspended.
-            </p>
-            <p>
-              This is not a rare event. Siltation episodes typically occur in two circumstances: during <strong>dry summer periods</strong> (low river discharge reduces the sediment-flushing effect, causing sandbanks to build up near the mouth) and following <strong>major Atlantic storm systems</strong> (wave action from the ocean pushes large volumes of sand into the estuary). In either case, the service can be suspended with zero advance notice to pilgrims — you may arrive at the dock to find a handwritten sign and no boat in sight.
-            </p>
-            <p>
-              Historical pilgrim reports on forums like Gronze, Camino de Santiago Forum, and the Confraternity of Saint James suggest that partial or full suspension occurs in <em>some</em> form during most Camino seasons, typically for periods ranging from 2–3 days to several weeks. The summer of 2022 saw extended disruption; 2023 was largely normal; 2024 had scattered closure days. <strong>You should always have a backup plan before reaching Caminha, regardless of what you read about the ferry schedule.</strong>
-            </p>
+            <!-- Body -->
+            <div class="bg-red-50 border-t-0 p-6 space-y-4 text-slate-700 text-sm leading-relaxed">
+              <p>
+                The Minho river estuary is subject to a phenomenon called <strong>assoreamento</strong> (siltation) — the accumulation of sand and sediment at the river mouth that periodically raises the seabed near the ferry docks. The ferry vessel that operates this crossing, the <strong>Santa Rita de Cássia</strong>, is a medium-draught passenger boat that requires a minimum water depth to manoeuvre safely to the dock. When assoreamento is significant, the Santa Rita de Cássia cannot approach the standard berth, and the service is suspended.
+              </p>
+              <p>
+                This is not a rare event. Siltation episodes typically occur during <strong>dry summer periods</strong> (low river discharge reduces the sediment-flushing effect, causing sandbanks to build up near the mouth) and following <strong>major Atlantic storm systems</strong> (wave action from the ocean pushes large volumes of sand into the estuary). In either case, the service can be suspended with zero advance notice — you may arrive at the dock to find a handwritten sign and no boat in sight.
+              </p>
+              <p>
+                Historical pilgrim reports suggest that partial or full suspension occurs in <em>some</em> form during most Camino seasons, typically for periods ranging from 2–3 days to several weeks. <strong>You should always have a backup plan before reaching Caminha, regardless of what you read about the ferry schedule.</strong>
+              </p>
+            </div>
           </div>
         </section>
 
         <!-- ── ALTERNATIVE CROSSINGS ─────────────────────────────────────────── -->
         <section id="alternatives">
-          <h2 class="text-2xl font-bold text-forest-900 mb-6">Alternative Crossings When the Ferry is Suspended</h2>
+          <h2 class="text-2xl font-bold text-forest-900 mb-6 tracking-tight">Alternative Crossings When the Ferry is Suspended</h2>
 
-          <!-- Option 1: Xávegas / Taxi-marítimo -->
-          <div class="bg-white border border-slate-200 rounded-xl overflow-hidden mb-6">
-            <div class="bg-forest-800 text-white px-6 py-4">
-              <h3 class="text-lg font-bold flex items-center gap-2">
-                <span aria-hidden="true">🚤</span>
-                Option 1: Xávegas / Taxi-Marítimo (Water Taxi)
-              </h3>
-              <p class="text-forest-200 text-sm mt-1">Fastest alternative · ~€5–6 per person · 20–30 min crossing</p>
+          <!-- Option 1: Xávegas -->
+          <div class="bg-white border border-slate-200/80 rounded-2xl overflow-hidden mb-6 shadow-sm">
+            <div class="bg-gradient-to-r from-forest-800 to-forest-900 text-white px-6 py-4 flex gap-3 items-start">
+              <div class="shrink-0 flex h-9 w-9 items-center justify-center rounded-lg bg-forest-700/60">
+                <!-- Boat SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-earth-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M22 18H2l4-8h12l4 8z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 2v8"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h8"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold">Option 1: Xávegas / Taxi-Marítimo (Water Taxi)</h3>
+                <p class="text-forest-300 text-sm mt-0.5">Fastest alternative · ~€5–6 per person · 20–30 min crossing</p>
+              </div>
             </div>
             <div class="p-6 space-y-4 text-slate-700 text-sm leading-relaxed">
               <p>
-                When the Santa Rita de Cássia cannot operate, local fishermen often run informal <strong>Xávegas</strong> (traditional flat-bottomed wooden fishing boats) or motorised water taxis across the Minho. These smaller vessels have a shallower draught and can navigate through the siltation that grounds the main ferry. This is a long-standing tradition along the Minho — local fishermen have been ferrying people across the river for centuries.
+                When the Santa Rita de Cássia cannot operate, local fishermen often run informal <strong>Xávegas</strong> (traditional flat-bottomed wooden fishing boats) or motorised water taxis across the Minho. These smaller vessels have a shallower draught and can navigate through the siltation that grounds the main ferry.
               </p>
               <p>
-                <strong>How to find a water taxi:</strong> These are informal operations and do not have fixed departure times or a booking website. The most reliable approach is to ask at your accommodation the evening before, or enquire at the dock. Alternatively, contact the Caminha tourist office, who maintain contact with current operators:
+                <strong>How to find a water taxi:</strong> These are informal operations with no fixed departure times or booking website. Ask at your accommodation the evening before, or enquire at the dock. Alternatively, contact the Caminha tourist office:
               </p>
               <div class="grid sm:grid-cols-2 gap-3">
-                <div class="bg-slate-50 rounded-lg p-4">
-                  <p class="font-semibold text-slate-800 mb-2 text-xs uppercase tracking-wide">Caminha Tourist Office</p>
-                  <a href="tel:+351258921952" class="flex items-center gap-2 text-forest-700 hover:underline no-underline font-medium mb-1">
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+                  <p class="font-semibold text-slate-800 mb-2 text-xs uppercase tracking-wider">Caminha Tourist Office</p>
+                  <a href="tel:+351258921952" class="flex items-center gap-2 text-forest-700 hover:underline no-underline font-medium mb-1 cursor-pointer">
                     <svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
                     +351 258 921 952
                   </a>
-                  <p class="text-xs text-slate-500">Mon–Fri 09:00–17:30. Ask for the current taxi-marítimo operator contacts.</p>
+                  <p class="text-xs text-slate-500">Mon–Fri 09:00–17:30. Ask for current taxi-marítimo operator contacts.</p>
                 </div>
-                <div class="bg-slate-50 rounded-lg p-4">
-                  <p class="font-semibold text-slate-800 mb-2 text-xs uppercase tracking-wide">Câmara Municipal de Caminha</p>
-                  <a href="tel:+351258919400" class="flex items-center gap-2 text-forest-700 hover:underline no-underline font-medium mb-1">
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+                  <p class="font-semibold text-slate-800 mb-2 text-xs uppercase tracking-wider">Câmara Municipal de Caminha</p>
+                  <a href="tel:+351258919400" class="flex items-center gap-2 text-forest-700 hover:underline no-underline font-medium mb-1 cursor-pointer">
                     <svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
                     +351 258 919 400
                   </a>
-                  <p class="text-xs text-slate-500">Fallback if tourist office is closed — ask for the municipal services department.</p>
+                  <p class="text-xs text-slate-500">Fallback if tourist office is closed — ask for municipal services.</p>
                 </div>
               </div>
-              <div class="bg-forest-50 border border-forest-200 rounded-lg p-4">
-                <h4 class="font-semibold text-forest-900 mb-2 text-xs uppercase tracking-wide">Xávegas: What to Expect</h4>
-                <ul class="space-y-1.5 text-xs text-slate-700">
-                  <li class="flex items-start gap-2"><span class="text-forest-600 shrink-0 mt-0.5">→</span> Rate: approximately <strong>€5–6 per person</strong>, negotiated at the dock. Agree the price before boarding.</li>
-                  <li class="flex items-start gap-2"><span class="text-forest-600 shrink-0 mt-0.5">→</span> Crossing time: 20–30 minutes (slower than the main ferry; smaller engine).</li>
-                  <li class="flex items-start gap-2"><span class="text-forest-600 shrink-0 mt-0.5">→</span> Capacity: typically 4–8 persons per boat. Groups of pilgrims often share a boat and split the cost.</li>
-                  <li class="flex items-start gap-2"><span class="text-forest-600 shrink-0 mt-0.5">→</span> The departure point may differ from the main ferry dock — ask locally once confirmed.</li>
-                  <li class="flex items-start gap-2"><span class="text-forest-600 shrink-0 mt-0.5">→</span> Cash only in euros. Carry small denominations.</li>
-                  <li class="flex items-start gap-2"><span class="text-forest-600 shrink-0 mt-0.5">→</span> Not always available: if the river is very rough or siltation is total, even Xávegas may not operate. In that case, use the overland alternative below.</li>
+              <div class="bg-forest-50 border border-forest-200 rounded-xl p-4">
+                <h4 class="font-semibold text-forest-900 mb-3 text-xs uppercase tracking-wider">Xávegas: What to Expect</h4>
+                <ul class="space-y-2 text-xs text-slate-700">
+                  <li class="flex items-start gap-2"><span class="text-forest-600 shrink-0 font-bold mt-0.5">→</span> Rate: approximately <strong>€5–6 per person</strong>, negotiated at the dock. Agree the price before boarding.</li>
+                  <li class="flex items-start gap-2"><span class="text-forest-600 shrink-0 font-bold mt-0.5">→</span> Crossing time: 20–30 minutes (slower than the main ferry; smaller engine).</li>
+                  <li class="flex items-start gap-2"><span class="text-forest-600 shrink-0 font-bold mt-0.5">→</span> Capacity: typically 4–8 persons per boat. Groups of pilgrims often share a boat and split the cost.</li>
+                  <li class="flex items-start gap-2"><span class="text-forest-600 shrink-0 font-bold mt-0.5">→</span> The departure point may differ from the main ferry dock — ask locally once confirmed.</li>
+                  <li class="flex items-start gap-2"><span class="text-forest-600 shrink-0 font-bold mt-0.5">→</span> Cash only in euros. Carry small denominations.</li>
+                  <li class="flex items-start gap-2"><span class="text-forest-600 shrink-0 font-bold mt-0.5">→</span> Not always available: if the river is very rough or siltation is total, even Xávegas may not operate. In that case, use the overland alternative below.</li>
                 </ul>
               </div>
             </div>
           </div>
 
-          <!-- Option 2: Overland via Valença / Tui -->
-          <div class="bg-white border border-slate-200 rounded-xl overflow-hidden">
-            <div class="bg-slate-700 text-white px-6 py-4">
-              <h3 class="text-lg font-bold flex items-center gap-2">
-                <span aria-hidden="true">🚂</span>
-                Option 2: Overland Detour via Valença and Tui
-              </h3>
-              <p class="text-slate-300 text-sm mt-1">Always available · Train + 25 min walk · ~€3.60 by train</p>
+          <!-- Option 2: Overland -->
+          <div class="bg-white border border-slate-200/80 rounded-2xl overflow-hidden shadow-sm">
+            <div class="bg-gradient-to-r from-slate-700 to-slate-800 text-white px-6 py-4 flex gap-3 items-start">
+              <div class="shrink-0 flex h-9 w-9 items-center justify-center rounded-lg bg-slate-600/60">
+                <!-- Train SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                  <rect x="4" y="3" width="16" height="14" rx="3"/>
+                  <path stroke-linecap="round" d="M4 11h16"/>
+                  <path stroke-linecap="round" d="M8 17l-2 4M16 17l2 4"/>
+                  <circle cx="8.5" cy="14.5" r="0.5" fill="currentColor"/>
+                  <circle cx="15.5" cy="14.5" r="0.5" fill="currentColor"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold">Option 2: Overland Detour via Valença and Tui</h3>
+                <p class="text-slate-300 text-sm mt-0.5">Always available · Train + 25 min walk · ~€3.60 by train</p>
+              </div>
             </div>
             <div class="p-6 space-y-4 text-slate-700 text-sm leading-relaxed">
               <p>
-                The guaranteed alternative when no boat is crossing: take the CP Minho line train from Caminha to <strong>Valença</strong>, the fortified Portuguese border town, then walk across the international bridge into <strong>Tui</strong> (Spain). This detour adds approximately 15–20 km of road/path walking compared to a direct ferry crossing, plus the train journey. However, it is always possible, in all seasons, in all weather conditions — the Tui–Valença bridge is pedestrian-accessible 24 hours a day.
+                The guaranteed alternative when no boat is crossing: take the CP Minho line train from Caminha to <strong>Valença</strong>, the fortified Portuguese border town, then walk across the international bridge into <strong>Tui</strong> (Spain). This detour adds approximately 15–20 km of road/path walking compared to a direct ferry crossing, but it is always possible, in all seasons and all weather — the Tui–Valença bridge is pedestrian-accessible 24 hours a day.
               </p>
               <p>
-                <strong>Important route note:</strong> Rejoining the Coastal Route after Tui requires navigation. Tui is the gateway to the <em>Camino Portugués Interior</em> (Portuguese Interior Way), not the Coastal Route. From Tui, you can either follow the Interior Way north (which merges with the Coastal Route at O Porriño or further north), or arrange transport approximately 30 km west back to A Guarda to continue the Coastal Route from there. Most pilgrims caught by the ferry closure simply continue on the Interior Way through Tui and accept the route variation — both routes lead to Santiago de Compostela.
+                <strong>Important route note:</strong> Tui is the gateway to the <em>Camino Portugués Interior</em>, not the Coastal Route. Most pilgrims caught by the ferry closure simply continue on the Interior Way and accept the route variation — both routes lead to Santiago de Compostela.
               </p>
 
               <!-- Train route table -->
               <div>
-                <h4 class="text-xs font-semibold uppercase tracking-wide text-slate-400 mb-3">Train Journey: Caminha → Valença</h4>
+                <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-3">Train Journey: Caminha → Valença</h4>
                 <div class="overflow-x-auto rounded-xl border border-slate-200">
                   <table class="w-full text-sm">
                     <thead>
-                      <tr class="bg-slate-100">
-                        <th scope="col" class="text-left px-4 py-3 font-semibold text-slate-700">Segment</th>
-                        <th scope="col" class="text-left px-4 py-3 font-semibold text-slate-700">Duration</th>
-                        <th scope="col" class="text-left px-4 py-3 font-semibold text-slate-700">Approx Fare</th>
-                        <th scope="col" class="text-left px-4 py-3 font-semibold text-slate-700">Frequency</th>
+                      <tr class="bg-slate-100 border-b border-slate-200">
+                        <th scope="col" class="text-left px-4 py-3 font-semibold text-slate-700 text-xs uppercase tracking-wider">Segment</th>
+                        <th scope="col" class="text-left px-4 py-3 font-semibold text-slate-700 text-xs uppercase tracking-wider">Duration</th>
+                        <th scope="col" class="text-left px-4 py-3 font-semibold text-slate-700 text-xs uppercase tracking-wider">Approx Fare</th>
+                        <th scope="col" class="text-left px-4 py-3 font-semibold text-slate-700 text-xs uppercase tracking-wider">Frequency</th>
                       </tr>
                     </thead>
                     <tbody>
                       {trainAlternative.map((row, i) => (
-                        <tr class={i % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
+                        <tr class={i % 2 === 0 ? 'bg-white' : 'bg-slate-50/70'}>
                           <td class="px-4 py-2.5 font-medium text-slate-800">{row.from} → {row.to}</td>
                           <td class="px-4 py-2.5 text-slate-700">{row.duration}</td>
                           <td class="px-4 py-2.5 font-mono font-semibold text-forest-700">{row.approxFare}</td>
@@ -402,25 +468,25 @@ const trainAlternative = [
                 </p>
               </div>
 
-              <div class="bg-amber-50 border border-amber-200 rounded-lg p-4">
-                <h4 class="font-semibold text-amber-900 mb-2 text-xs uppercase tracking-wide">Step-by-Step: Overland Caminha → Tui</h4>
+              <div class="bg-amber-50 border border-amber-200 rounded-xl p-4">
+                <h4 class="font-semibold text-amber-900 mb-3 text-xs uppercase tracking-wider">Step-by-Step: Overland Caminha → Tui</h4>
                 <ol class="space-y-2 text-xs text-amber-900">
-                  <li class="flex items-start gap-2"><span class="font-bold shrink-0">1.</span> Walk from town centre to Caminha railway station (~5 min, 400m south of the main square).</li>
-                  <li class="flex items-start gap-2"><span class="font-bold shrink-0">2.</span> Buy a ticket to Valença at the station window or vending machine (~€3.60). Check departure time.</li>
-                  <li class="flex items-start gap-2"><span class="font-bold shrink-0">3.</span> Train journey Caminha → Valença: ~35 minutes. Scenic journey along the Minho valley.</li>
-                  <li class="flex items-start gap-2"><span class="font-bold shrink-0">4.</span> From Valença station, walk north through the medieval walled city (~20 min) to reach the international bridge.</li>
-                  <li class="flex items-start gap-2"><span class="font-bold shrink-0">5.</span> Cross the <strong>Ponte Internacional Valença–Tui</strong> on foot (~1.5 km, ~20 min). The bridge has a dedicated pedestrian path alongside the road.</li>
-                  <li class="flex items-start gap-2"><span class="font-bold shrink-0">6.</span> You arrive in <strong>Tui</strong> (Spain). Currency stays euros. The Camino Portugués Interior yellow arrows begin immediately from the bridge entrance.</li>
-                  <li class="flex items-start gap-2"><span class="font-bold shrink-0">7.</span> Get your credential stamped at Tui Cathedral or the Albergue Buen Camino before continuing north.</li>
+                  <li class="flex items-start gap-2.5"><span class="font-bold shrink-0 w-4">1.</span> Walk from town centre to Caminha railway station (~5 min, 400m south of the main square).</li>
+                  <li class="flex items-start gap-2.5"><span class="font-bold shrink-0 w-4">2.</span> Buy a ticket to Valença at the station window or vending machine (~€3.60). Check departure time.</li>
+                  <li class="flex items-start gap-2.5"><span class="font-bold shrink-0 w-4">3.</span> Train journey Caminha → Valença: ~35 minutes. Scenic journey along the Minho valley.</li>
+                  <li class="flex items-start gap-2.5"><span class="font-bold shrink-0 w-4">4.</span> From Valença station, walk north through the medieval walled city (~20 min) to reach the international bridge.</li>
+                  <li class="flex items-start gap-2.5"><span class="font-bold shrink-0 w-4">5.</span> Cross the <strong>Ponte Internacional Valença–Tui</strong> on foot (~1.5 km, ~20 min). The bridge has a dedicated pedestrian path.</li>
+                  <li class="flex items-start gap-2.5"><span class="font-bold shrink-0 w-4">6.</span> You arrive in <strong>Tui</strong> (Spain). Currency stays euros. The Camino Portugués Interior yellow arrows begin immediately from the bridge entrance.</li>
+                  <li class="flex items-start gap-2.5"><span class="font-bold shrink-0 w-4">7.</span> Get your credential stamped at Tui Cathedral or the Albergue Buen Camino before continuing north.</li>
                 </ol>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- How to get to the dock -->
+        <!-- Getting to the dock -->
         <section>
-          <h2 class="text-2xl font-bold text-forest-900 mb-4">Getting to the Ferry Dock</h2>
+          <h2 class="text-2xl font-bold text-forest-900 mb-4 tracking-tight">Getting to the Ferry Dock</h2>
           <div class="space-y-4 text-slate-700 text-sm leading-relaxed">
             <p>
               The ferry departs from <strong>Cais de Caminha</strong> (Caminha Dock), located on the northern edge of the old town, approximately 400 metres from the main square (Praça do Conselho). From the town centre, walk north along Rua Visconde de Sousa Rego toward the river — the dock is clearly signposted.
@@ -431,98 +497,145 @@ const trainAlternative = [
           </div>
         </section>
 
+        <!-- ── FAQ ACCORDION ──────────────────────────────────────────────────── -->
+        <section id="faq" aria-labelledby="faq-heading">
+          <h2 id="faq-heading" class="text-2xl font-bold text-forest-900 mb-6 tracking-tight">Frequently Asked Questions</h2>
+          <div class="space-y-3" id="faq-list">
+            {faqItems.map((item, idx) => (
+              <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+                <button
+                  type="button"
+                  class="w-full flex items-center justify-between gap-4 px-6 py-4 text-left hover:bg-forest-50/50 transition-colors duration-150 cursor-pointer"
+                  aria-expanded="false"
+                  data-accordion-btn
+                  aria-controls={`faq-answer-${idx}`}
+                  id={`faq-btn-${idx}`}
+                >
+                  <span class="text-sm font-semibold text-forest-900 leading-snug">{item.question}</span>
+                  <svg
+                    class="h-5 w-5 text-slate-400 shrink-0 transition-transform duration-260"
+                    data-accordion-chevron
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    aria-hidden="true"
+                  >
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div
+                  id={`faq-answer-${idx}`}
+                  role="region"
+                  aria-labelledby={`faq-btn-${idx}`}
+                  class="accordion-content"
+                >
+                  <div>
+                    <div class="px-6 pb-5 pt-1 text-sm text-slate-700 leading-relaxed border-t border-slate-100">
+                      {item.answer}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
       </div>
 
-      <!-- ── SIDEBAR ────────────────────────────────────────────────────────── -->
-      <aside class="space-y-6">
+      <!-- ── SIDEBAR ──────────────────────────────────────────────────────────── -->
+      <aside class="space-y-5">
 
         <!-- After crossing -->
-        <div class="bg-forest-50 border border-forest-200 rounded-xl p-5">
-          <h2 class="text-base font-bold text-forest-900 mb-3">After the Crossing: A Guarda</h2>
+        <div class="bg-forest-50 border border-forest-200 rounded-2xl p-5 shadow-sm">
+          <h2 class="text-base font-bold text-forest-900 mb-3 tracking-tight">After the Crossing: A Guarda</h2>
           <p class="text-sm text-slate-700 leading-relaxed mb-3">
             You arrive in <strong>A Guarda</strong> (O Garda in Galician), a fishing town in Galicia, Spain. From the dock, follow the yellow arrows north along the coast toward Oia and Baiona. The first Galician albergue is approximately 3 km from the dock.
           </p>
-          <ul class="space-y-1.5 text-xs text-slate-600">
-            <li class="flex items-start gap-2"><span class="text-forest-600 mt-0.5">✓</span> Yellow shell/arrow waymarks resume from the dock</li>
-            <li class="flex items-start gap-2"><span class="text-forest-600 mt-0.5">✓</span> Currency switches to euros (same as Portugal)</li>
-            <li class="flex items-start gap-2"><span class="text-forest-600 mt-0.5">✓</span> Spanish SIM cards roam freely (EU rules)</li>
-            <li class="flex items-start gap-2"><span class="text-forest-600 mt-0.5">✓</span> Get your credential stamped at the A Guarda albergue</li>
+          <ul class="space-y-2 text-xs text-slate-600">
+            <li class="flex items-start gap-2">
+              <svg class="h-3.5 w-3.5 text-forest-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Yellow shell/arrow waymarks resume from the dock
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="h-3.5 w-3.5 text-forest-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Currency switches to euros (same as Portugal)
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="h-3.5 w-3.5 text-forest-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Spanish SIM cards roam freely (EU rules)
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="h-3.5 w-3.5 text-forest-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Get your credential stamped at the A Guarda albergue
+            </li>
           </ul>
         </div>
 
         <!-- Operator contact -->
-        <div class="bg-white border border-slate-200 rounded-xl p-5">
-          <h2 class="text-base font-bold text-forest-900 mb-3">Ferry Operator</h2>
+        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+          <h2 class="text-base font-bold text-forest-900 mb-3 tracking-tight">Ferry Operator</h2>
           <p class="text-sm text-slate-700 mb-3">
             The crossing is operated by a local fishermen's association. Contact them directly to confirm the current timetable and whether the Santa Rita de Cássia is currently running.
           </p>
           <div class="space-y-2 text-sm">
             <div class="flex items-center gap-2 text-slate-600">
-              <svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-              <a href="tel:+351258921000" class="hover:text-forest-700 no-underline hover:underline">+351 258 921 000</a>
+              <svg class="h-4 w-4 shrink-0 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              <a href="tel:+351258921000" class="hover:text-forest-700 no-underline hover:underline cursor-pointer">+351 258 921 000</a>
             </div>
             <div class="flex items-center gap-2 text-slate-600">
-              <svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <svg class="h-4 w-4 shrink-0 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
               <span>Cais de Caminha, 4910 Caminha</span>
             </div>
           </div>
         </div>
 
         <!-- Tourist Office -->
-        <div class="bg-white border border-slate-200 rounded-xl p-5">
-          <h2 class="text-base font-bold text-forest-900 mb-3">Caminha Tourist Office</h2>
-          <p class="text-sm text-slate-700 mb-2">Best source for real-time ferry status and water taxi operator contacts during disruptions.</p>
-          <a href="tel:+351258921952" class="flex items-center gap-2 text-forest-700 hover:underline no-underline font-medium text-sm">
+        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+          <h2 class="text-base font-bold text-forest-900 mb-3 tracking-tight">Caminha Tourist Office</h2>
+          <p class="text-sm text-slate-700 mb-3">Best source for real-time ferry status and water taxi operator contacts during disruptions.</p>
+          <a href="tel:+351258921952" class="flex items-center gap-2 text-forest-700 hover:underline no-underline font-medium text-sm cursor-pointer">
             <svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
             +351 258 921 952
           </a>
           <p class="text-xs text-slate-500 mt-1">Mon–Fri 09:00–17:30</p>
         </div>
 
-        <!-- Quick tips -->
-        <div class="bg-earth-50 border border-earth-200 rounded-xl p-5">
-          <h2 class="text-base font-bold text-forest-900 mb-3">Pilgrim Tips</h2>
-          <ul class="space-y-2.5 text-sm text-slate-700">
-            <li class="flex items-start gap-2">
-              <span class="text-earth-600 shrink-0 mt-0.5">→</span>
-              Arrive 15 minutes early — the boat fills quickly in high season.
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-earth-600 shrink-0 mt-0.5">→</span>
-              Carry small change in euros — the kiosk may not accept cards.
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-earth-600 shrink-0 mt-0.5">→</span>
-              Crossing can be choppy in autumn — secure loose items on your pack.
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-earth-600 shrink-0 mt-0.5">→</span>
-              Your credencial gets a special ferry stamp on request.
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-earth-600 shrink-0 mt-0.5">→</span>
-              Check the ferry is running the evening before — ask at your albergue.
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-earth-600 shrink-0 mt-0.5">→</span>
-              Last ferry from A Guarda back to Caminha is typically 19:30 — verify current times.
-            </li>
+        <!-- Pilgrim tips -->
+        <div class="bg-earth-50 border border-earth-200 rounded-2xl p-5 shadow-sm">
+          <h2 class="text-base font-bold text-forest-900 mb-3 tracking-tight">Pilgrim Tips</h2>
+          <ul class="space-y-3 text-sm text-slate-700">
+            {[
+              'Arrive 15 minutes early — the boat fills quickly in high season.',
+              'Carry small change in euros — the kiosk may not accept cards.',
+              'Crossing can be choppy in autumn — secure loose items on your pack.',
+              'Your credencial gets a special ferry stamp on request.',
+              'Check the ferry is running the evening before — ask at your albergue.',
+              'Last ferry from A Guarda back to Caminha is typically 19:30 — verify current times.',
+            ].map((tip) => (
+              <li class="flex items-start gap-2.5">
+                <svg class="h-4 w-4 text-earth-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                {tip}
+              </li>
+            ))}
           </ul>
         </div>
 
         <!-- Related pages -->
-        <div class="bg-forest-50 border border-forest-200 rounded-xl p-5">
-          <h2 class="text-base font-bold text-forest-900 mb-3">Plan Your Stay in Caminha</h2>
-          <ul class="space-y-2 text-sm">
+        <div class="bg-forest-50 border border-forest-200 rounded-2xl p-5 shadow-sm">
+          <h2 class="text-base font-bold text-forest-900 mb-3 tracking-tight">Plan Your Stay in Caminha</h2>
+          <ul class="space-y-3 text-sm">
             <li>
-              <a href="/en/caminha/where-to-stay/" class="text-forest-700 hover:underline no-underline font-medium">
-                Where to Stay →
+              <a href="/en/caminha/where-to-stay/" class="text-forest-700 hover:underline no-underline font-medium cursor-pointer flex items-center gap-1 group">
+                Where to Stay
+                <svg class="h-3.5 w-3.5 text-earth-500 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
               </a>
               <p class="text-xs text-slate-500 mt-0.5">Albergue, guesthouses, Design Wine Hotel</p>
             </li>
             <li>
-              <a href="/en/caminha/where-to-eat/" class="text-forest-700 hover:underline no-underline font-medium">
-                Where to Eat →
+              <a href="/en/caminha/where-to-eat/" class="text-forest-700 hover:underline no-underline font-medium cursor-pointer flex items-center gap-1 group">
+                Where to Eat
+                <svg class="h-3.5 w-3.5 text-earth-500 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
               </a>
               <p class="text-xs text-slate-500 mt-0.5">Pilgrim menus from €8, arroz de debulho</p>
             </li>
@@ -534,3 +647,33 @@ const trainAlternative = [
   </div>
 
 </MainLayout>
+
+<script>
+  // FAQ accordion with smooth CSS grid animation
+  const buttons = document.querySelectorAll('[data-accordion-btn]');
+
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      const contentId = btn.getAttribute('aria-controls');
+      const content = document.getElementById(contentId!);
+      const chevron = btn.querySelector('[data-accordion-chevron]');
+
+      // Close all others
+      buttons.forEach((otherBtn) => {
+        if (otherBtn === btn) return;
+        const otherId = otherBtn.getAttribute('aria-controls');
+        const otherContent = document.getElementById(otherId!);
+        const otherChevron = otherBtn.querySelector('[data-accordion-chevron]');
+        otherBtn.setAttribute('aria-expanded', 'false');
+        otherContent?.classList.remove('open');
+        otherChevron?.classList.remove('rotate-180');
+      });
+
+      // Toggle this one
+      btn.setAttribute('aria-expanded', String(!expanded));
+      content?.classList.toggle('open', !expanded);
+      chevron?.classList.toggle('rotate-180', !expanded);
+    });
+  });
+</script>

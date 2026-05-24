@@ -84,23 +84,20 @@ const alojamientos = [
   },
 ];
 
-const secciones: { key: string; etiqueta: string; icono: string; intro: string }[] = [
+const secciones: { key: string; etiqueta: string; intro: string }[] = [
   {
     key: 'albergue',
     etiqueta: 'Albergues de Peregrinos',
-    icono: '🥾',
     intro: 'Los albergues oficiales de peregrinos son el corazón de la experiencia del Camino de Santiago. Funcionan con el sistema de credencial, mantienen precios de 10–15 € y crean la camaradería nocturna que define el camino. El albergue municipal de Caminha está a pocos minutos del embarcadero del ferry.',
   },
   {
     key: 'pension',
     etiqueta: 'Pensiones y Alojamientos Económicos',
-    icono: '🏡',
     intro: 'Las pensiones y casas de huéspedes ofrecen habitaciones privadas sin las normas del albergue — sin toque de queda, sin credencial obligatoria, entrada flexible. Precios desde 25 € por habitación. Ideales para peregrinos que valoran la privacidad o necesitan descansar un día extra.',
   },
   {
     key: 'hotel',
     etiqueta: 'Hoteles de Categoría',
-    icono: '🍷',
     intro: 'Para el peregrino que quiere comodidad plena al final de una etapa dura, los hoteles de categoría de Caminha ofrecen camas, baños y una copa de Vinho Verde que hacen que los dolores merezcan la pena. Reserva con antelación: la temporada alta (junio–septiembre) tiene alta demanda tanto de peregrinos del Camino como de turistas del Valle del Miño.',
   },
 ];
@@ -114,34 +111,34 @@ const secciones: { key: string; etiqueta: string; icono: string; intro: string }
 >
 
   <!-- ── ENCABEZADO DE PÁGINA ─────────────────────────────────────────────────── -->
-  <div class="bg-forest-50 border-b border-forest-100">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-      <nav aria-label="Ruta de navegación" class="mb-4">
+  <div class="bg-gradient-to-b from-forest-50 to-white border-b border-forest-100/60">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+      <nav aria-label="Ruta de navegación" class="mb-5">
         <ol class="flex items-center gap-2 text-sm text-slate-500">
-          <li><a href="/es/" class="hover:text-forest-700 no-underline hover:underline">Inicio</a></li>
+          <li><a href="/es/" class="hover:text-forest-700 no-underline hover:underline transition-colors">Inicio</a></li>
           <li aria-hidden="true" class="text-slate-300">›</li>
           <li><span class="text-slate-400">Caminha</span></li>
           <li aria-hidden="true" class="text-slate-300">›</li>
           <li aria-current="page" class="text-slate-700 font-medium">Dónde Dormir</li>
         </ol>
       </nav>
-      <h1 class="text-3xl sm:text-4xl font-bold text-forest-900 mb-4">Dónde Dormir en Caminha</h1>
+      <h1 class="text-3xl sm:text-4xl font-bold text-forest-900 mb-4 tracking-tight">Dónde Dormir en Caminha</h1>
       <p class="text-slate-600 max-w-2xl text-base leading-relaxed">
-        Caminha es el último pueblo portugués antes del cruce del Miño — la etapa final antes de que los peregrinos del Camino de la Costa entren en Galicia. Aquí encontrarás desde una litera en albergue municipal por 12 € hasta un hotel boutique con bar de vinos y terraza panorámica por 89 €. Tres categorías distintas, de mayor a menor orientación al peregrino.
+        Caminha es el último pueblo portugués antes del cruce del Miño — la etapa final antes de que los peregrinos del Camino de la Costa entren en Galicia. Aquí encontrarás desde una litera en albergue municipal por 12 € hasta un hotel boutique con bar de vinos y terraza panorámica por 89 €.
       </p>
-      <div class="mt-6 flex flex-wrap gap-3">
+      <div class="mt-6 flex flex-wrap gap-2.5">
         {secciones.map((s) => (
-          <a href={`#${s.key}`} class="inline-flex items-center gap-1.5 bg-white border border-forest-200 text-forest-800 text-xs font-medium px-3 py-1.5 rounded-full hover:bg-forest-100 no-underline transition-colors">
-            {s.icono} {s.etiqueta.split('—')[0].trim()}
+          <a href={`#${s.key}`} class="inline-flex items-center gap-1.5 bg-white border border-forest-200 text-forest-800 text-xs font-medium px-3.5 py-2 rounded-full hover:bg-forest-50 hover:border-forest-300 no-underline transition-all duration-200 shadow-sm cursor-pointer">
+            {s.etiqueta.split('—')[0].trim()}
           </a>
         ))}
       </div>
     </div>
   </div>
 
-  <!-- ── ADSENSE RANURA 1 — Justo después del párrafo introductorio del H1 ────── -->
+  <!-- ── ADSENSE RANURA 1 ───────────────────────────────────────────────────── -->
   <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-    <div class="my-6 w-full flex justify-center min-h-[90px] md:min-h-[280px] bg-slate-50/50 rounded overflow-hidden">
+    <div class="my-6 adsense-placeholder">
       <ins class="adsbygoogle w-full"
            style="display:block"
            data-ad-client="ca-pub-6529337148344504"
@@ -153,14 +150,21 @@ const secciones: { key: string; etiqueta: string; icono: string; intro: string }
   <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
   <!-- ── AVISO DE RESERVA EN TEMPORADA ALTA ──────────────────────────────────── -->
-  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pb-2">
-    <div class="bg-amber-50 border border-amber-300 rounded-xl p-5">
-      <div class="flex gap-3">
-        <span class="text-2xl shrink-0" aria-hidden="true">📅</span>
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pb-4">
+    <div class="bg-gradient-to-br from-amber-50 to-earth-50 border border-amber-300/70 rounded-2xl p-6 shadow-sm">
+      <div class="flex gap-4">
+        <div class="shrink-0 flex h-10 w-10 items-center justify-center rounded-xl bg-earth-100 border border-earth-200">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-earth-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+            <line x1="16" y1="2" x2="16" y2="6"/>
+            <line x1="8" y1="2" x2="8" y2="6"/>
+            <line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+        </div>
         <div>
-          <h2 class="font-bold text-amber-900 mb-1 text-base">Por Qué Debes Reservar con Antelación en Temporada Alta (Mayo–Octubre)</h2>
+          <h2 class="font-bold text-amber-900 mb-2 text-base">Reserva con Antelación: Temporada Alta Mayo–Octubre</h2>
           <p class="text-sm text-amber-800 leading-relaxed">
-            El Camino de Santiago de la Costa alcanza su máximo tráfico entre <strong>mayo y octubre</strong>. Durante este período, Caminha es la última villa portuguesa antes del cruce del Miño — todos los peregrinos del Camino de la Costa pasan por aquí. Las 28 camas del albergue municipal son por orden de llegada y habitualmente se agotan antes de las 14:30 en julio y agosto. Las pensiones privadas suelen completarse días antes de Semana Santa y en los meses de verano.
+            El Camino de Santiago de la Costa alcanza su máximo tráfico entre <strong>mayo y octubre</strong>. Las 28 camas del albergue municipal son por orden de llegada y habitualmente se agotan antes de las 14:30 en julio y agosto. Las pensiones privadas suelen completarse días antes de Semana Santa y en los meses de verano.
           </p>
           <p class="text-sm text-amber-800 leading-relaxed mt-2">
             <strong>Norma práctica:</strong> Si llegas entre junio y septiembre, reserva tu pensión u hotel con al menos 5–7 días de antelación. Para el albergue, intenta llegar al embarcadero antes del ferry de las 13:00 — el hospitalero abre a las 14:00 y las camas se asignan al momento.
@@ -177,43 +181,45 @@ const secciones: { key: string; etiqueta: string; icono: string; intro: string }
       const items = alojamientos.filter(a => a.categoria === seccion.key);
       return (
         <section id={seccion.key} aria-labelledby={`heading-${seccion.key}`}>
-          <div class="mb-6">
-            <h2 id={`heading-${seccion.key}`} class="text-2xl font-bold text-forest-900 flex items-center gap-2">
-              <span aria-hidden="true">{seccion.icono}</span>
+          <div class="mb-8">
+            <h2 id={`heading-${seccion.key}`} class="text-2xl font-bold text-forest-900 tracking-tight">
               {seccion.etiqueta}
             </h2>
             <p class="mt-2 text-slate-600 text-sm leading-relaxed max-w-2xl">{seccion.intro}</p>
           </div>
 
-          <div class="space-y-6">
+          <div class="grid grid-cols-1 gap-6">
             {items.map((a) => (
-              <article class="bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-md transition-shadow">
+              <article class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 shadow-sm">
                 <div class="p-6 sm:p-8">
-                  <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
+                  <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-5">
                     <div>
-                      <div class="flex flex-wrap items-center gap-2 mb-1">
-                        <h3 class="text-xl font-bold text-forest-900">{a.name}</h3>
+                      <div class="flex flex-wrap items-center gap-2 mb-1.5">
+                        <h3 class="text-xl font-bold text-forest-900 tracking-tight">{a.name}</h3>
                         {a.credencial && (
-                          <span class="text-xs font-semibold bg-earth-100 text-earth-800 px-2.5 py-0.5 rounded-full">
-                            🥾 Credencial obligatoria
+                          <span class="inline-flex items-center gap-1 text-xs font-semibold bg-earth-100 text-earth-800 px-2.5 py-1 rounded-full border border-earth-200">
+                            <svg class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            Credencial obligatoria
                           </span>
                         )}
                       </div>
-                      <p class="text-sm text-slate-500">{a.tipo}</p>
+                      <p class="text-sm text-slate-500 font-medium">{a.tipo}</p>
                     </div>
                     <div class="shrink-0 text-right">
-                      <p class="text-lg font-bold text-forest-700">Desde {a.precioDesde}</p>
-                      {a.camas && <p class="text-xs text-slate-400">{a.camas} camas en total</p>}
+                      <p class="text-xl font-bold text-forest-700">Desde {a.precioDesde}</p>
+                      {a.camas && <p class="text-xs text-slate-400 mt-0.5">{a.camas} camas en total</p>}
                     </div>
                   </div>
 
-                  <p class="text-slate-700 leading-relaxed mb-5 text-sm sm:text-base">{a.descripcion}</p>
+                  <p class="text-slate-700 leading-relaxed mb-6 text-sm sm:text-base">{a.descripcion}</p>
 
-                  <div class="mb-5">
-                    <h4 class="text-xs font-semibold uppercase tracking-wide text-slate-400 mb-2">Servicios</h4>
+                  <div class="mb-6">
+                    <h4 class="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">Servicios</h4>
                     <ul class="flex flex-wrap gap-2">
                       {a.servicios.map((s) => (
-                        <li class="text-xs bg-forest-50 text-forest-700 px-2.5 py-1 rounded-full border border-forest-100">
+                        <li class="text-xs bg-forest-50 text-forest-700 px-3 py-1.5 rounded-full border border-forest-100 font-medium">
                           {s}
                         </li>
                       ))}
@@ -221,23 +227,26 @@ const secciones: { key: string; etiqueta: string; icono: string; intro: string }
                   </div>
 
                   {a.notas && (
-                    <div class="bg-earth-50 border border-earth-200 rounded-lg px-4 py-3 mb-5 text-xs text-earth-800">
-                      <strong>Nota:</strong> {a.notas}
+                    <div class="bg-earth-50 border border-earth-200/70 rounded-xl px-4 py-3 mb-6 flex gap-2.5 text-xs text-earth-800">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-earth-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                      </svg>
+                      <span><strong>Nota:</strong> {a.notas}</span>
                     </div>
                   )}
 
-                  <div class="pt-4 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center gap-3">
-                    <div class="flex flex-col sm:flex-row gap-3 text-sm text-slate-500 flex-1">
+                  <div class="pt-5 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center gap-4">
+                    <div class="flex flex-col sm:flex-row gap-3 text-sm text-slate-500 flex-1 flex-wrap">
                       <span class="flex items-center gap-1.5">
-                        <svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        <svg class="h-4 w-4 shrink-0 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                         {a.direccion}
                       </span>
                       <span class="flex items-center gap-1.5">
-                        <svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        <svg class="h-4 w-4 shrink-0 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                         {a.horario}
                       </span>
-                      <a href={`tel:${a.telefono}`} class="flex items-center gap-1.5 no-underline hover:text-forest-700">
-                        <svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                      <a href={`tel:${a.telefono}`} class="flex items-center gap-1.5 no-underline hover:text-forest-700 transition-colors cursor-pointer">
+                        <svg class="h-4 w-4 shrink-0 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
                         {a.telefono}
                       </a>
                     </div>
@@ -247,10 +256,12 @@ const secciones: { key: string; etiqueta: string; icono: string; intro: string }
                         href={a.reservaUrl}
                         rel="nofollow noopener noreferrer sponsored"
                         target="_blank"
-                        class="inline-flex items-center justify-center gap-2 bg-forest-700 hover:bg-forest-800 active:bg-forest-900 text-white font-semibold text-sm px-5 py-2.5 rounded-lg transition-colors no-underline shrink-0"
+                        class="inline-flex items-center justify-center gap-2 bg-earth-500 hover:bg-earth-600 active:bg-earth-700 text-white font-semibold text-sm px-6 py-3 rounded-xl transition-all duration-200 no-underline shrink-0 shadow-sm hover:shadow-md cursor-pointer group"
                       >
                         Comprobar Disponibilidad
-                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                        <svg class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                        </svg>
                       </a>
                     )}
                   </div>
@@ -261,7 +272,7 @@ const secciones: { key: string; etiqueta: string; icono: string; intro: string }
 
           {/* AdSense ranura 2 — entre Albergues y Pensiones */}
           {seccionIdx === 0 && (
-            <div class="mt-10 w-full flex justify-center min-h-[90px] md:min-h-[280px] bg-slate-50/50 rounded overflow-hidden">
+            <div class="mt-10 adsense-placeholder">
               <ins class="adsbygoogle w-full"
                    style="display:block"
                    data-ad-client="ca-pub-6529337148344504"
@@ -277,12 +288,16 @@ const secciones: { key: string; etiqueta: string; icono: string; intro: string }
   <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
   <!-- ── CONSEJO DE RESERVA ──────────────────────────────────────────────────── -->
-  <aside class="bg-forest-50 border-y border-forest-100">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10">
+  <aside class="bg-gradient-to-b from-forest-50 to-white border-y border-forest-100/60">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
       <div class="flex gap-4">
-        <span class="text-3xl shrink-0" aria-hidden="true">💡</span>
+        <div class="shrink-0 flex h-10 w-10 items-center justify-center rounded-xl bg-forest-100 border border-forest-200">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-forest-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+          </svg>
+        </div>
         <div>
-          <h2 class="text-lg font-bold text-forest-900 mb-2">Contacto Directo vs. Reserva Online</h2>
+          <h2 class="text-lg font-bold text-forest-900 mb-2 tracking-tight">Contacto Directo vs. Reserva Online</h2>
           <p class="text-slate-700 text-sm leading-relaxed max-w-2xl">
             El albergue municipal no acepta reservas online — solo por orden de llegada a partir de las 14:00. Para las pensiones, una llamada directa en portugués o español confirma mucho más rápido que cualquier plataforma de reservas. Las pensiones más pequeñas tienen escasa presencia en OTAs. El Design Wine Hotel y los alojamientos más grandes son reservables online a través de Booking.com y Expedia. Si estás planificando el Camino de la Costa, consulta también la <a href="/es/caminha/ferry-y-logistica/" class="text-forest-700 hover:underline no-underline font-medium">página de horario del ferry y logística</a> — el horario del cruce afecta a qué albergue tiene más sentido para tu etapa.
           </p>
