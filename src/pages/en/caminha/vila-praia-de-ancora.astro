@@ -243,77 +243,84 @@ const hotels = [
     </div>
   </div>
 
-  <!-- ── SCHEMA: ItemList ───────────────────────────────────────────────────── -->
+  <!-- ── SCHEMA ───────────────────────────────────────────────────────────── -->
   <script type="application/ld+json" is:inline>{`
-    [
-      {
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "name": "Restaurants in Vila Praia de Âncora — Camino de Santiago Coastal Route",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "item": {
-              "@type": "Restaurant",
-              "name": "Fortaleza Restaurante",
-              "address": { "@type": "PostalAddress", "streetAddress": "Avenida Dr. Ramos Pereira 81", "addressLocality": "Vila Praia de Âncora", "addressCountry": "PT" },
-              "servesCuisine": ["Seafood", "Mediterranean"]
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ItemList",
+          "name": "Restaurants in Vila Praia de Âncora — Camino de Santiago Coastal Route",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": "Restaurant",
+                "name": "Fortaleza Restaurante",
+                "address": { "@type": "PostalAddress", "streetAddress": "Avenida Dr. Ramos Pereira 81", "addressLocality": "Vila Praia de Âncora", "addressCountry": "PT" },
+                "servesCuisine": ["Seafood", "Mediterranean"]
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@type": "Restaurant",
+                "name": "Restaurante Vitória Mar",
+                "address": { "@type": "PostalAddress", "streetAddress": "Avenida Dr. Luis Ramos Pereira 100", "addressLocality": "Vila Praia de Âncora", "addressCountry": "PT" },
+                "servesCuisine": ["Seafood", "Mediterranean"]
+              }
             }
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "item": {
-              "@type": "Restaurant",
-              "name": "Restaurante Vitória Mar",
-              "address": { "@type": "PostalAddress", "streetAddress": "Avenida Dr. Luis Ramos Pereira 100", "addressLocality": "Vila Praia de Âncora", "addressCountry": "PT" },
-              "servesCuisine": ["Seafood", "Mediterranean"]
+          ]
+        },
+        {
+          "@type": "ItemList",
+          "name": "Hotels in Vila Praia de Âncora — Camino de Santiago Coastal Route",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": "Hotel",
+                "name": "BLUE ANCORA HOTEL",
+                "address": { "@type": "PostalAddress", "addressLocality": "Vila Praia de Âncora", "addressCountry": "PT" }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@type": "Hotel",
+                "name": "Hotel Meira",
+                "address": { "@type": "PostalAddress", "addressLocality": "Vila Praia de Âncora", "addressCountry": "PT" }
+              }
             }
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "item": {
-              "@type": "Hotel",
-              "name": "BLUE ANCORA HOTEL",
-              "address": { "@type": "PostalAddress", "addressLocality": "Vila Praia de Âncora", "addressCountry": "PT" }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Is there an albergue in Vila Praia de Âncora for pilgrims?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Vila Praia de Âncora does not have a pilgrim albergue. Accommodation options are hotels (BLUE ANCORA HOTEL, Hotel Meira — both bookable on Booking.com). Pilgrims on an albergue budget continue to Caminha (8 km north) where the municipal albergue and two private albergues are available."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Where can pilgrims eat in Vila Praia de Âncora?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Two verified restaurants are on the beachfront avenue: Fortaleza Restaurante (Avenida Dr. Ramos Pereira 81) and Restaurante Vitória Mar (Avenida Dr. Luis Ramos Pereira 100). Both serve Atlantic seafood. For early morning breakfast before continuing north, pilgrims typically wait until Caminha where pastelarias open from 07:00–08:00."
+              }
             }
-          },
-          {
-            "@type": "ListItem",
-            "position": 4,
-            "item": {
-              "@type": "Hotel",
-              "name": "Hotel Meira",
-              "address": { "@type": "PostalAddress", "addressLocality": "Vila Praia de Âncora", "addressCountry": "PT" }
-            }
-          }
-        ]
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Is there an albergue in Vila Praia de Âncora for pilgrims?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No. Vila Praia de Âncora does not have a pilgrim albergue. Accommodation options are hotels (BLUE ANCORA HOTEL, Hotel Meira — both bookable on Booking.com). Pilgrims on an albergue budget continue to Caminha (8 km north) where the municipal albergue and two private albergues are available."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Where can pilgrims eat in Vila Praia de Âncora?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Two verified restaurants are on the beachfront avenue: Fortaleza Restaurante (Avenida Dr. Ramos Pereira 81) and Restaurante Vitória Mar (Avenida Dr. Luis Ramos Pereira 100). Both serve Atlantic seafood. For early morning breakfast before continuing north, pilgrims typically wait until Caminha where pastelarias open from 07:00–08:00."
-            }
-          }
-        ]
-      }
-    ]
+          ]
+        }
+      ]
+    }
   `}</script>
 
 </MainLayout>

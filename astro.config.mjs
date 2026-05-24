@@ -7,7 +7,17 @@ export default defineConfig({
   site: 'https://waytosantiagoguide.com',
   output: 'static',
   trailingSlash: 'always',
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      filter: (page) =>
+        page !== 'https://waytosantiagoguide.com/' &&
+        page !== 'https://waytosantiagoguide.com/en/sitemap/',
+      serialize(item) {
+        item.lastmod = new Date().toISOString().split('T')[0];
+        return item;
+      },
+    }),
+  ],
   vite: {
     plugins: [tailwindcss()],
   },

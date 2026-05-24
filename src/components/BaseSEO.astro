@@ -31,7 +31,7 @@ interface Props {
   canonicalURL: string;
   ogImage?: string;
   alternateLanguages: AlternateLang[];
-  schemaType?: 'website' | 'webpage' | 'localbusiness';
+  schemaType?: 'website' | 'webpage' | 'localbusiness' | 'none';
   localBusinessData?: LocalBusinessData;
 }
 
@@ -58,9 +58,11 @@ const ogImageAbsolute = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogI
 const htmlLang = language === 'en' ? 'en-GB' : language === 'es' ? 'es-ES' : 'pt-PT';
 
 // Build JSON-LD schema object based on page type
-let jsonLd: Record<string, unknown>;
+let jsonLd: Record<string, unknown> | undefined;
 
-if (schemaType === 'website') {
+if (schemaType === 'none') {
+  // Page manages its own JSON-LD — BaseSEO emits nothing
+} else if (schemaType === 'website') {
   const navItems = language === 'es'
     ? [
         { name: 'Dónde Comer',       url: `${SITE_URL}/es/caminha/donde-comer/` },
@@ -98,14 +100,6 @@ if (schemaType === 'website') {
         '@type': 'ImageObject',
         url: `${SITE_URL}/images/logo.png`,
       },
-    },
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: {
-        '@type': 'EntryPoint',
-        urlTemplate: `${SITE_URL}/${language}/search/?q={search_term_string}`,
-      },
-      'query-input': 'required name=search_term_string',
     },
     hasPart: navItems.map((item) => ({
       '@type': 'SiteNavigationElement',
@@ -147,20 +141,26 @@ if (schemaType === 'website') {
   };
 } else {
   // Default: WebPage + BreadcrumbList
+  // SEGMENT_URL_OVERRIDES maps path segments that have no real page to a real URL.
+  // Segments present in the map but with no entry for the current language are skipped.
+  const SEGMENT_URL_OVERRIDES: Record<string, Partial<Record<string, string>>> = {
+    caminha: { en: `${SITE_URL}/en/caminha-guide/` },
+  };
   const pathSegments = canonicalURL.replace(SITE_URL, '').split('/').filter(Boolean);
-  const breadcrumbItems = [
-    {
-      '@type': 'ListItem',
-      position: 1,
-      name: 'Home',
-      item: `${SITE_URL}/${language}/`,
-    },
-    ...pathSegments.slice(1).map((seg, i) => ({
-      '@type': 'ListItem',
-      position: i + 2,
+  const resolvedSegments = pathSegments.slice(1).flatMap((seg, i) => {
+    if (seg in SEGMENT_URL_OVERRIDES) {
+      const override = SEGMENT_URL_OVERRIDES[seg][language];
+      if (!override) return [];
+      return [{ name: 'Caminha Guide', item: override }];
+    }
+    return [{
       name: seg.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()),
       item: `${SITE_URL}/${pathSegments.slice(0, i + 2).join('/')}/`,
-    })),
+    }];
+  });
+  const breadcrumbItems = [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/${language}/` },
+    ...resolvedSegments.map((seg, i) => ({ '@type': 'ListItem', position: i + 2, ...seg })),
   ];
 
   jsonLd = {
@@ -185,7 +185,7 @@ if (schemaType === 'website') {
   };
 }
 
-const jsonLdString = JSON.stringify(jsonLd);
+const jsonLdString = jsonLd ? JSON.stringify(jsonLd) : undefined;
 ---
 
 <!-- Primary meta -->
@@ -215,7 +215,11 @@ const jsonLdString = JSON.stringify(jsonLd);
 <meta property="og:image:alt" content={title} />
 <meta property="og:locale" content={htmlLang.replace('-', '_')} />
 {alternateLanguages
-  .filter(({ lang }) => lang !== 'x-default' && lang !== language)
+  .filter(({ lang, href }) => {
+    if (lang === 'x-default' || lang === language) return false;
+    // Skip when this alternate points to a home-page fallback (no real translation exists)
+    return href !== `${SITE_URL}/en/` && href !== `${SITE_URL}/es/` && href !== `${SITE_URL}/pt/`;
+  })
   .map(({ lang }) => (
     <meta property="og:locale:alternate" content={lang === 'en' ? 'en_GB' : lang === 'es' ? 'es_ES' : 'pt_PT'} />
   ))
@@ -242,4 +246,4 @@ const jsonLdString = JSON.stringify(jsonLd);
 <meta name="ICBM" content="41.8772, -8.8389" />
 
 <!-- JSON-LD Structured Data -->
-<script type="application/ld+json" set:html={jsonLdString} />
+{jsonLdString && <script type="application/ld+json" set:html={jsonLdString} />}
