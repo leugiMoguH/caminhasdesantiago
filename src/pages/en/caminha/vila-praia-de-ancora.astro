@@ -1,0 +1,319 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+
+const restaurants = [
+  {
+    name: 'Fortaleza Restaurante',
+    cuisine: 'Seafood · Mediterranean',
+    address: 'Avenida Dr. Ramos Pereira 81, Vila Praia de Âncora',
+    locationContext: 'Beachfront avenue in Vila Praia de Âncora',
+    knownFor: 'Fresh Atlantic seafood on the main beachfront dining avenue',
+    pilgrimContext: 'Beachfront dinner or lunch; convenient if stopping overnight',
+    mapsUrl: 'https://www.google.com/maps/search/?q=Fortaleza+Restaurante+Vila+Praia+de+Ancora',
+  },
+  {
+    name: 'Restaurante Vitória Mar',
+    cuisine: 'Seafood · Mediterranean',
+    address: 'Avenida Dr. Luis Ramos Pereira 100, Vila Praia de Âncora',
+    locationContext: 'Beachfront avenue in Vila Praia de Âncora',
+    knownFor: 'Seafood on the main beachfront avenue; consistently well-reviewed',
+    pilgrimContext: 'Alternative beachfront option; useful if stopping overnight before continuing to Caminha',
+    mapsUrl: 'https://www.google.com/maps/search/?q=Restaurante+Vitoria+Mar+Vila+Praia+de+Ancora',
+  },
+];
+
+const hotels = [
+  {
+    name: 'BLUE ANCORA HOTEL',
+    type: 'Hotel',
+    positioning: 'Coastal, 3-minute walk from Vila Praia de Âncora beach',
+    differentiators: ['Seasonal outdoor pool', 'Sea-view rooms with balconies'],
+    bookingUrl: 'https://www.booking.com/hotel/pt/blue-ancora.html?aid=7968251',
+  },
+  {
+    name: 'Hotel Meira',
+    type: 'Hotel — 4 Star',
+    positioning: 'Near beach, wind-protected valley',
+    differentiators: ['Swimming pool', 'Breakfast buffet included'],
+    bookingUrl: 'https://www.booking.com/hotel/pt/hotelmeiravilapraiaancora.html?aid=7968251',
+  },
+];
+---
+
+<MainLayout
+  title="Vila Praia de Âncora — Restaurants & Hotels | Caminho de Santiago"
+  description="Restaurants and hotels in Vila Praia de Âncora on the Camino de Santiago Coastal Route. Beachfront seafood dining and beach hotels, 8 km south of Caminha."
+  lang="en"
+  schemaType="webpage"
+>
+
+  <!-- ── PAGE HEADER ──────────────────────────────────────────────────────────── -->
+  <div class="bg-gradient-to-b from-earth-50 to-white border-b border-earth-100/60">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+      <nav aria-label="Breadcrumb" class="mb-5">
+        <ol class="flex items-center gap-2 text-sm text-slate-500">
+          <li><a href="/en/" class="hover:text-forest-700 no-underline hover:underline transition-colors">Home</a></li>
+          <li aria-hidden="true" class="text-slate-300">›</li>
+          <li><a href="/en/caminha-guide/" class="hover:text-forest-700 no-underline hover:underline transition-colors">Caminha</a></li>
+          <li aria-hidden="true" class="text-slate-300">›</li>
+          <li aria-current="page" class="text-slate-700 font-medium">Vila Praia de Âncora</li>
+        </ol>
+      </nav>
+      <h1 class="text-3xl sm:text-4xl font-bold text-forest-900 mb-4 tracking-tight">Vila Praia de Âncora</h1>
+      <p class="text-slate-600 max-w-2xl text-base leading-relaxed">
+        Coastal town 8 km south of Caminha on the Camino Coastal Route. Pilgrims stopping here overnight find beachfront seafood restaurants and hotels with pools — a quieter alternative to Caminha before the final push to the Minho crossing.
+      </p>
+      <div class="mt-6 flex flex-wrap gap-2.5">
+        <a href="#restaurants" class="inline-flex items-center gap-1.5 bg-white border border-earth-200 text-earth-800 text-xs font-medium px-3.5 py-2 rounded-full hover:bg-earth-50 hover:border-earth-300 no-underline transition-all duration-200 shadow-sm cursor-pointer">
+          Restaurants
+        </a>
+        <a href="#hotels" class="inline-flex items-center gap-1.5 bg-white border border-forest-200 text-forest-800 text-xs font-medium px-3.5 py-2 rounded-full hover:bg-forest-50 hover:border-forest-300 no-underline transition-all duration-200 shadow-sm cursor-pointer">
+          Hotels
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── ADSENSE SLOT 1 ──────────────────────────────────────────────────────── -->
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <div class="my-6">
+      <ins class="adsbygoogle w-full"
+           style="display:block"
+           data-ad-client="ca-pub-6529337148344504"
+           data-ad-slot="2297179243"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+  </div>
+  <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+  <!-- ── RESTAURANTS ─────────────────────────────────────────────────────────── -->
+  <div id="restaurants" class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10">
+    <div class="mb-6 pb-4 border-b border-slate-200">
+      <h2 class="text-2xl font-bold text-forest-900 tracking-tight">Restaurants</h2>
+      <p class="text-slate-600 text-sm mt-1 leading-relaxed max-w-2xl">
+        Both verified restaurants are on the main beachfront avenue. No cafés or pastelarias are listed for VPA — pilgrims needing an early breakfast before continuing north should plan to eat in Caminha.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 gap-5">
+      {restaurants.map((r) => (
+        <article class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 shadow-sm">
+          <div class="p-6 sm:p-8">
+            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-3">
+              <div>
+                <h3 class="text-xl font-bold text-forest-900 tracking-tight mb-0.5">{r.name}</h3>
+                <p class="text-sm text-slate-500 font-medium">{r.cuisine}</p>
+              </div>
+              <span class="text-xs bg-forest-50 text-forest-700 px-3 py-1.5 rounded-full border border-forest-100 font-medium shrink-0 self-start whitespace-nowrap">{r.pilgrimContext}</span>
+            </div>
+            <p class="text-slate-700 text-sm leading-relaxed mb-4">{r.knownFor}</p>
+            <div class="flex flex-wrap items-center gap-3 text-sm text-slate-500 pt-4 border-t border-slate-100">
+              <span class="flex items-center gap-1.5">
+                <svg class="h-4 w-4 shrink-0 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+                {r.address}
+              </span>
+              <a href={r.mapsUrl} rel="noopener noreferrer" target="_blank" class="ml-auto inline-flex items-center gap-1.5 text-xs text-forest-600 hover:text-forest-800 font-medium no-underline hover:underline transition-colors">
+                <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                </svg>
+                View on Maps
+              </a>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+
+  <!-- ── ADSENSE SLOT 2 ──────────────────────────────────────────────────────── -->
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-2">
+    <ins class="adsbygoogle w-full"
+         style="display:block"
+         data-ad-client="ca-pub-6529337148344504"
+         data-ad-slot="8017929699"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+  </div>
+  <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+  <!-- ── HOTELS ──────────────────────────────────────────────────────────────── -->
+  <div id="hotels" class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10">
+    <div class="mb-6 pb-4 border-b border-slate-200">
+      <h2 class="text-2xl font-bold text-forest-900 tracking-tight">Hotels</h2>
+      <p class="text-slate-600 text-sm mt-1 leading-relaxed max-w-2xl">
+        Both hotels are bookable on Booking.com. No albergue or municipal pilgrim hostel exists in Vila Praia de Âncora — pilgrims on a hostel budget continue north to Caminha or south to the next stage.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 gap-5">
+      {hotels.map((h) => (
+        <article class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 shadow-sm">
+          <div class="p-6 sm:p-8">
+            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
+              <div>
+                <h3 class="text-xl font-bold text-forest-900 tracking-tight mb-0.5">{h.name}</h3>
+                <p class="text-sm text-slate-500 font-medium">{h.type}</p>
+              </div>
+            </div>
+            <p class="text-sm text-slate-600 leading-relaxed mb-4">{h.positioning}</p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              {h.differentiators.map((d) => (
+                <span class="text-xs bg-forest-50 text-forest-700 px-3 py-1.5 rounded-full border border-forest-100 font-medium">{d}</span>
+              ))}
+            </div>
+            <div class="pt-4 border-t border-slate-100">
+              <a
+                href={h.bookingUrl}
+                rel="nofollow noopener noreferrer sponsored"
+                target="_blank"
+                class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-earth-500 to-earth-600 hover:from-earth-600 hover:to-earth-700 active:scale-[0.98] text-white font-bold text-sm px-6 py-3.5 rounded-xl transition-all duration-200 no-underline shadow-md hover:shadow-lg cursor-pointer group"
+              >
+                Check Availability &amp; Prices
+                <svg class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+
+  <!-- ── CTA: INTERNAL LOOP ─────────────────────────────────────────────────── -->
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pb-10">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+      <a href="/en/caminha-guide/" class="flex items-center gap-4 bg-white border border-forest-200 rounded-2xl p-5 hover:shadow-md hover:border-forest-300 transition-all no-underline group">
+        <div class="shrink-0 flex h-10 w-10 items-center justify-center rounded-xl bg-forest-50 border border-forest-100">
+          <svg class="h-5 w-5 text-forest-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
+          </svg>
+        </div>
+        <div>
+          <p class="text-sm font-bold text-forest-900 group-hover:text-forest-700">Caminha Guide</p>
+          <p class="text-xs text-slate-500">Full overview — stay, eat, ferry &amp; services</p>
+        </div>
+      </a>
+      <a href="/en/caminha/seixas/" class="flex items-center gap-4 bg-white border border-forest-200 rounded-2xl p-5 hover:shadow-md hover:border-forest-300 transition-all no-underline group">
+        <div class="shrink-0 flex h-10 w-10 items-center justify-center rounded-xl bg-forest-50 border border-forest-100">
+          <svg class="h-5 w-5 text-forest-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+        </div>
+        <div>
+          <p class="text-sm font-bold text-forest-900 group-hover:text-forest-700">Seixas</p>
+          <p class="text-xs text-slate-500">Next stage north — albergue &amp; hotel</p>
+        </div>
+      </a>
+      <a href="/en/caminha/where-to-eat/" class="flex items-center gap-4 bg-white border border-earth-200 rounded-2xl p-5 hover:shadow-md hover:border-earth-300 transition-all no-underline group">
+        <div class="shrink-0 flex h-10 w-10 items-center justify-center rounded-xl bg-earth-50 border border-earth-100">
+          <svg class="h-5 w-5 text-earth-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+          </svg>
+        </div>
+        <div>
+          <p class="text-sm font-bold text-earth-900 group-hover:text-earth-700">Where to Eat</p>
+          <p class="text-xs text-slate-500">All restaurants in Caminha &amp; VPA</p>
+        </div>
+      </a>
+      <a href="/en/caminha/ferry-and-logistics/" class="flex items-center gap-4 bg-white border border-slate-200 rounded-2xl p-5 hover:shadow-md hover:border-slate-300 transition-all no-underline group">
+        <div class="shrink-0 flex h-10 w-10 items-center justify-center rounded-xl bg-slate-50 border border-slate-100">
+          <svg class="h-5 w-5 text-slate-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+          </svg>
+        </div>
+        <div>
+          <p class="text-sm font-bold text-slate-900 group-hover:text-slate-700">Ferry &amp; Logistics</p>
+          <p class="text-xs text-slate-500">Minho crossing — schedule &amp; alternatives</p>
+        </div>
+      </a>
+      <a href="/en/caminha/useful-services/" class="flex items-center gap-4 bg-white border border-slate-200 rounded-2xl p-5 hover:shadow-md hover:border-slate-300 transition-all no-underline group">
+        <div class="shrink-0 flex h-10 w-10 items-center justify-center rounded-xl bg-slate-50 border border-slate-100">
+          <svg class="h-5 w-5 text-slate-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+          </svg>
+        </div>
+        <div>
+          <p class="text-sm font-bold text-slate-900 group-hover:text-slate-700">Pilgrim Services</p>
+          <p class="text-xs text-slate-500">Pharmacies, gear &amp; ATMs in Caminha</p>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- ── SCHEMA: ItemList ───────────────────────────────────────────────────── -->
+  <script type="application/ld+json" is:inline>{`
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Restaurants in Vila Praia de Âncora — Camino de Santiago Coastal Route",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "Restaurant",
+              "name": "Fortaleza Restaurante",
+              "address": { "@type": "PostalAddress", "streetAddress": "Avenida Dr. Ramos Pereira 81", "addressLocality": "Vila Praia de Âncora", "addressCountry": "PT" },
+              "servesCuisine": ["Seafood", "Mediterranean"]
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "Restaurant",
+              "name": "Restaurante Vitória Mar",
+              "address": { "@type": "PostalAddress", "streetAddress": "Avenida Dr. Luis Ramos Pereira 100", "addressLocality": "Vila Praia de Âncora", "addressCountry": "PT" },
+              "servesCuisine": ["Seafood", "Mediterranean"]
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "Hotel",
+              "name": "BLUE ANCORA HOTEL",
+              "address": { "@type": "PostalAddress", "addressLocality": "Vila Praia de Âncora", "addressCountry": "PT" }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@type": "Hotel",
+              "name": "Hotel Meira",
+              "address": { "@type": "PostalAddress", "addressLocality": "Vila Praia de Âncora", "addressCountry": "PT" }
+            }
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is there an albergue in Vila Praia de Âncora for pilgrims?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Vila Praia de Âncora does not have a pilgrim albergue. Accommodation options are hotels (BLUE ANCORA HOTEL, Hotel Meira — both bookable on Booking.com). Pilgrims on an albergue budget continue to Caminha (8 km north) where the municipal albergue and two private albergues are available."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where can pilgrims eat in Vila Praia de Âncora?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Two verified restaurants are on the beachfront avenue: Fortaleza Restaurante (Avenida Dr. Ramos Pereira 81) and Restaurante Vitória Mar (Avenida Dr. Luis Ramos Pereira 100). Both serve Atlantic seafood. For early morning breakfast before continuing north, pilgrims typically wait until Caminha where pastelarias open from 07:00–08:00."
+            }
+          }
+        ]
+      }
+    ]
+  `}</script>
+
+</MainLayout>

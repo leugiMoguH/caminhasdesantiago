@@ -10,12 +10,15 @@ interface Restaurante {
   direccion: string;
   contextoUbicacion: string;
   conocidoPor: string;
+  contextoPeregrino: string;
+  urlMaps: string;
 }
 
 interface Cafe {
   nombre: string;
   direccion: string;
   utilidad: string;
+  urlMaps: string;
 }
 
 const restaurantes: Restaurante[] = [
@@ -26,6 +29,8 @@ const restaurantes: Restaurante[] = [
     direccion: 'Praça do Conselheiro Silva Torres 24/26, Caminha',
     contextoUbicacion: 'En la plaza principal (Praça Conselheiro Silva Torres)',
     conocidoPor: 'Local histórico en la plaza principal; marisco portugués de temporada y cocina tradicional',
+    contextoPeregrino: 'Opción central para sentarse; adecuado para almorzar o cenar en la plaza mayor',
+    urlMaps: 'https://www.google.com/maps/search/?q=Restaurante+Baptista+Caminha',
   },
   {
     nombre: 'Muralha de Caminha',
@@ -34,6 +39,8 @@ const restaurantes: Restaurante[] = [
     direccion: 'Praça de Espanha, Caminha',
     contextoUbicacion: 'Junto a las murallas medievales históricas',
     conocidoPor: 'Terraza exterior frente a las murallas de la ciudad; cocina regional del Miño',
+    contextoPeregrino: 'Terraza exterior tras la llegada; ideal para cenar al principio de la tarde',
+    urlMaps: 'https://www.google.com/maps/search/?q=Muralha+de+Caminha',
   },
   {
     nombre: 'Solar do Pescado',
@@ -42,6 +49,8 @@ const restaurantes: Restaurante[] = [
     direccion: 'Rua Visconde Sousa Rego 85, Caminha',
     contextoUbicacion: 'Calle principal hacia el río y el embarcadero del ferry',
     conocidoPor: 'Marisco atlántico fresco en la ruta hacia el ferry',
+    contextoPeregrino: 'En la ruta al embarcadero del ferry; buena parada para comer antes del cruce',
+    urlMaps: 'https://www.google.com/maps/search/?q=Solar+do+Pescado+Caminha',
   },
   {
     nombre: 'Casa Almeida',
@@ -50,14 +59,18 @@ const restaurantes: Restaurante[] = [
     direccion: 'Praça Conselheiro Silva Torres, Caminha',
     contextoUbicacion: 'En la plaza principal',
     conocidoPor: 'Café y restaurante en la plaza principal; menú portugués tradicional',
+    contextoPeregrino: 'Parada flexible en la plaza mayor; apta para comidas ligeras o café a cualquier hora',
+    urlMaps: 'https://www.google.com/maps/search/?q=Casa+Almeida+Caminha',
   },
   {
     nombre: 'O Chafariz',
     zona: 'caminha',
     cocina: 'Europea · Portuguesa',
-    direccion: 'Centro urbano de Caminha',
+    direccion: '',
     contextoUbicacion: 'Centro urbano',
     conocidoPor: 'Cocina portuguesa tradicional con numerosa clientela local',
+    contextoPeregrino: 'Buena opción para una cena tradicional en el centro; popular entre los locales',
+    urlMaps: 'https://www.google.com/maps/search/?q=O+Chafariz+Caminha',
   },
   {
     nombre: 'Fortaleza Restaurante',
@@ -66,6 +79,8 @@ const restaurantes: Restaurante[] = [
     direccion: 'Avenida Dr. Ramos Pereira 81, Vila Praia de Âncora',
     contextoUbicacion: 'Paseo marítimo de Vila Praia de Âncora',
     conocidoPor: 'Marisco atlántico fresco en el principal paseo gastronómico frente al mar',
+    contextoPeregrino: 'Comida o cena junto al mar en Vila Praia de Âncora; conveniente si se pernocta aquí',
+    urlMaps: 'https://www.google.com/maps/search/?q=Fortaleza+Restaurante+Vila+Praia+de+Ancora',
   },
   {
     nombre: 'Restaurante Vitória Mar',
@@ -74,6 +89,8 @@ const restaurantes: Restaurante[] = [
     direccion: 'Avenida Dr. Luis Ramos Pereira 100, Vila Praia de Âncora',
     contextoUbicacion: 'Paseo marítimo de Vila Praia de Âncora',
     conocidoPor: 'Marisco en el principal paseo frente al mar; valorado de forma consistente',
+    contextoPeregrino: 'Alternativa frente al mar en VPA; útil si Fortaleza está lleno',
+    urlMaps: 'https://www.google.com/maps/search/?q=Restaurante+Vitoria+Mar+Vila+Praia+de+Ancora',
   },
 ];
 
@@ -82,16 +99,13 @@ const cafes: Cafe[] = [
     nombre: 'Pastelaria Caminhense',
     direccion: 'Rua São João 35, Caminha',
     utilidad: 'Ubicación central; pastelería con servicio en mostrador, ideal para un café rápido antes de la salida',
+    urlMaps: 'https://www.google.com/maps/search/?q=Pastelaria+Caminhense+Caminha',
   },
   {
     nombre: 'Pastelaria Riviera',
-    direccion: 'Centro urbano de Caminha',
+    direccion: '',
     utilidad: 'Pastelería en el centro; café y pasteles para llevar',
-  },
-  {
-    nombre: 'A Cabana — Café Pastelaria',
-    direccion: 'Caminha',
-    utilidad: 'Café-pastelería en Caminha; servicio en mostrador adecuado para salidas tempranas',
+    urlMaps: 'https://www.google.com/maps/search/?q=Pastelaria+Riviera+Caminha',
   },
 ];
 
@@ -161,25 +175,36 @@ const zonas: Zona[] = ['caminha', 'vpa'];
             {items.map((r) => (
               <article class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 shadow-sm">
                 <div class="p-6 sm:p-8">
-                  <div class="mb-4">
-                    <h3 class="text-xl font-bold text-forest-900 tracking-tight mb-0.5">{r.nombre}</h3>
-                    <p class="text-sm text-slate-500 font-medium">{r.cocina}</p>
+                  <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-3">
+                    <div>
+                      <h3 class="text-xl font-bold text-forest-900 tracking-tight mb-0.5">{r.nombre}</h3>
+                      <p class="text-sm text-slate-500 font-medium">{r.cocina}</p>
+                    </div>
+                    <span class="text-xs bg-forest-50 text-forest-700 px-3 py-1.5 rounded-full border border-forest-100 font-medium shrink-0 self-start whitespace-nowrap">{r.contextoPeregrino}</span>
                   </div>
                   <p class="text-slate-700 text-sm leading-relaxed mb-4">{r.conocidoPor}</p>
-                  <div class="flex flex-col sm:flex-row gap-3 text-sm text-slate-500 pt-4 border-t border-slate-100">
-                    <span class="flex items-center gap-1.5">
-                      <svg class="h-4 w-4 shrink-0 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                      </svg>
-                      {r.direccion}
-                    </span>
+                  <div class="flex flex-wrap items-center gap-3 text-sm text-slate-500 pt-4 border-t border-slate-100">
+                    {r.direccion && (
+                      <span class="flex items-center gap-1.5">
+                        <svg class="h-4 w-4 shrink-0 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                        {r.direccion}
+                      </span>
+                    )}
                     <span class="flex items-center gap-1.5 text-xs text-slate-400">
                       <svg class="h-4 w-4 shrink-0 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                       </svg>
                       {r.contextoUbicacion}
                     </span>
+                    <a href={r.urlMaps} rel="noopener noreferrer" target="_blank" class="ml-auto inline-flex items-center gap-1.5 text-xs text-forest-600 hover:text-forest-800 font-medium no-underline hover:underline transition-colors">
+                      <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                      </svg>
+                      Ver en Maps
+                    </a>
                   </div>
                 </div>
               </article>
@@ -189,6 +214,35 @@ const zonas: Zona[] = ['caminha', 'vpa'];
       );
     })}
   </div>
+
+  <!-- ── CTA: BUCLE INTERNO ─────────────────────────────────────────────────── -->
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pb-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <a href="/es/caminha/donde-dormir/" class="flex items-center gap-4 bg-white border border-forest-200 rounded-2xl p-5 hover:shadow-md hover:border-forest-300 transition-all no-underline group">
+        <div class="shrink-0 flex h-10 w-10 items-center justify-center rounded-xl bg-forest-50 border border-forest-100">
+          <svg class="h-5 w-5 text-forest-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+          </svg>
+        </div>
+        <div>
+          <p class="text-sm font-bold text-forest-900 group-hover:text-forest-700">Dónde Dormir</p>
+          <p class="text-xs text-slate-500">Albergues, pensiones y hoteles en Caminha, VPA y Seixas</p>
+        </div>
+      </a>
+      <a href="/es/caminha/ferry-y-logistica/" class="flex items-center gap-4 bg-white border border-earth-200 rounded-2xl p-5 hover:shadow-md hover:border-earth-300 transition-all no-underline group">
+        <div class="shrink-0 flex h-10 w-10 items-center justify-center rounded-xl bg-earth-50 border border-earth-100">
+          <svg class="h-5 w-5 text-earth-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+          </svg>
+        </div>
+        <div>
+          <p class="text-sm font-bold text-earth-900 group-hover:text-earth-700">Ferry y Logística</p>
+          <p class="text-xs text-slate-500">Horarios, tarifas y alternativas para el cruce del Miño</p>
+        </div>
+      </a>
+    </div>
+  </div>
+
   <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
   <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-2">
@@ -212,17 +266,25 @@ const zonas: Zona[] = ['caminha', 'vpa'];
       {cafes.map((c) => (
         <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm">
           <h3 class="text-base font-bold text-forest-900 mb-1">{c.nombre}</h3>
-          <p class="text-xs text-slate-500 mb-3 flex items-center gap-1.5">
-            <svg class="h-3.5 w-3.5 shrink-0 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-            </svg>
-            {c.direccion}
-          </p>
+          {c.direccion && (
+            <p class="text-xs text-slate-500 mb-3 flex items-center gap-1.5">
+              <svg class="h-3.5 w-3.5 shrink-0 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+              {c.direccion}
+            </p>
+          )}
           <p class="text-xs text-amber-700 font-medium bg-amber-50 border border-amber-100 rounded-lg px-3 py-2 mb-3">
             Abre pronto (generalmente hacia las 07:00–08:00, puede variar)
           </p>
-          <p class="text-sm text-slate-600 leading-relaxed">{c.utilidad}</p>
+          <p class="text-sm text-slate-600 leading-relaxed mb-4">{c.utilidad}</p>
+          <a href={c.urlMaps} rel="noopener noreferrer" target="_blank" class="mt-auto inline-flex items-center gap-1.5 text-xs text-forest-600 hover:text-forest-800 font-medium no-underline hover:underline transition-colors">
+            <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+            </svg>
+            Ver en Maps
+          </a>
         </div>
       ))}
     </div>
@@ -248,5 +310,22 @@ const zonas: Zona[] = ['caminha', 'vpa'];
       </div>
     </div>
   </aside>
+
+  <!-- ── BOOKING CTA ────────────────────────────────────────────────────────── -->
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10">
+    <div class="bg-gradient-to-r from-earth-50 to-amber-50 border border-earth-200/60 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center gap-6">
+      <div class="flex-1">
+        <h2 class="text-lg font-bold text-earth-900 mb-1 tracking-tight">¿Necesitas alojamiento en Caminha?</h2>
+        <p class="text-sm text-slate-600 leading-relaxed">Albergues desde 12 €, pensiones y hoteles de 4 estrellas — todo reservable en Booking.com.</p>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+        <a href="https://www.booking.com/searchresults.html?ss=Caminha%2C+Portugal&aid=7968251" rel="nofollow noopener noreferrer sponsored" target="_blank" class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-earth-500 to-earth-600 hover:from-earth-600 hover:to-earth-700 active:scale-[0.98] text-white font-bold text-sm px-6 py-3.5 rounded-xl transition-all duration-200 no-underline shadow-md hover:shadow-lg cursor-pointer group">
+          Ver Disponibilidad
+          <svg class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        </a>
+        <a href="/es/caminha/donde-dormir/" class="inline-flex items-center justify-center gap-2 bg-white border border-earth-200 text-earth-800 font-semibold text-sm px-5 py-3.5 rounded-xl hover:bg-earth-50 hover:border-earth-300 no-underline transition-all duration-200">Ver todas las opciones →</a>
+      </div>
+    </div>
+  </div>
 
 </MainLayout>

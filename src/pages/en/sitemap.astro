@@ -1,0 +1,97 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const sections = [
+  {
+    heading: 'English — Caminha & Coastal Route',
+    links: [
+      { href: '/en/', label: 'Home (English)' },
+      { href: '/en/caminha-guide/', label: 'Caminha Guide — Overview' },
+      { href: '/en/caminha/where-to-eat/', label: 'Where to Eat in Caminha & Vila Praia de Âncora' },
+      { href: '/en/caminha/where-to-stay/', label: 'Where to Stay — Caminha, VPA & Seixas' },
+      { href: '/en/caminha/ferry-and-logistics/', label: 'Ferry & Logistics — Caminha to A Guarda' },
+      { href: '/en/caminha/useful-services/', label: 'Useful Services — Pharmacies, Gear & ATMs' },
+      { href: '/en/caminha/vila-praia-de-ancora/', label: 'Vila Praia de Âncora — Restaurants & Hotels' },
+      { href: '/en/caminha/seixas/', label: 'Seixas — Accommodation & Pilgrim Info' },
+      { href: '/en/caminha/pilgrim-guide/', label: 'Pilgrim Guide — Coastal Route via Caminha' },
+      { href: '/en/privacy-policy/', label: 'Privacy Policy' },
+    ],
+  },
+  {
+    heading: 'Español — Caminha y Ruta Costera',
+    links: [
+      { href: '/es/', label: 'Inicio (Español)' },
+      { href: '/es/caminha/donde-comer/', label: 'Dónde Comer en Caminha' },
+      { href: '/es/caminha/donde-dormir/', label: 'Dónde Dormir — Caminha, VPA y Seixas' },
+      { href: '/es/caminha/ferry-y-logistica/', label: 'Ferry y Logística — Caminha a A Guarda' },
+      { href: '/es/caminha/servicios-utiles/', label: 'Servicios Útiles — Farmacias, Tiendas y ATMs' },
+      { href: '/es/politica-de-privacidad/', label: 'Política de Privacidad' },
+    ],
+  },
+  {
+    heading: 'Português — Caminha e Rota Costeira',
+    links: [
+      { href: '/pt/', label: 'Início (Português)' },
+      { href: '/pt/caminha/onde-comer/', label: 'Onde Comer em Caminha' },
+      { href: '/pt/caminha/onde-ficar/', label: 'Onde Ficar — Caminha, VPA e Seixas' },
+      { href: '/pt/caminha/ferry-e-logistica/', label: 'Ferry e Logística — Caminha para A Guarda' },
+      { href: '/pt/caminha/servicos-uteis/', label: 'Serviços Úteis — Farmácias, Lojas e ATMs' },
+      { href: '/pt/politica-de-privacidade/', label: 'Política de Privacidade' },
+    ],
+  },
+];
+---
+
+<MainLayout
+  title="Sitemap | Way to Santiago Guide — Caminha"
+  description="Full page index for the Camino de Santiago Coastal Route guide covering Caminha, Vila Praia de Âncora, and Seixas. Available in English, Spanish, and Portuguese."
+  lang="en"
+  schemaType="webpage"
+>
+
+  <div class="bg-gradient-to-b from-slate-50 to-white border-b border-slate-100/60">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+      <nav aria-label="Breadcrumb" class="mb-5">
+        <ol class="flex items-center gap-2 text-sm text-slate-500">
+          <li><a href="/en/" class="hover:text-forest-700 no-underline hover:underline transition-colors">Home</a></li>
+          <li aria-hidden="true" class="text-slate-300">›</li>
+          <li aria-current="page" class="text-slate-700 font-medium">Sitemap</li>
+        </ol>
+      </nav>
+      <h1 class="text-3xl sm:text-4xl font-bold text-forest-900 mb-3 tracking-tight">Sitemap</h1>
+      <p class="text-slate-600 text-base leading-relaxed max-w-2xl">
+        All pages on this site, indexed by language. Coverage: Caminha, Vila Praia de Âncora, and Seixas — the final Portuguese stages of the Camino de Santiago Coastal Route.
+      </p>
+    </div>
+  </div>
+
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 space-y-12">
+    {sections.map((section) => (
+      <section aria-labelledby={`heading-${section.heading.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}`}>
+        <h2
+          id={`heading-${section.heading.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}`}
+          class="text-xl font-bold text-forest-900 mb-4 pb-3 border-b border-slate-200 tracking-tight"
+        >
+          {section.heading}
+        </h2>
+        <ul class="space-y-2">
+          {section.links.map(({ href, label }) => (
+            <li>
+              <a
+                href={href}
+                class="inline-flex items-center gap-2 text-sm text-forest-700 hover:text-forest-900 hover:underline no-underline font-medium transition-colors"
+              >
+                <svg class="h-3.5 w-3.5 text-earth-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                </svg>
+                {label}
+              </a>
+              <span class="ml-6 text-xs text-slate-400 font-mono">{href}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+  </div>
+
+</MainLayout>

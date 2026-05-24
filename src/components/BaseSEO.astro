@@ -27,7 +27,7 @@ interface LocalBusinessData {
 interface Props {
   title: string;
   description: string;
-  language: 'en' | 'es';
+  language: 'en' | 'es' | 'pt';
   canonicalURL: string;
   ogImage?: string;
   alternateLanguages: AlternateLang[];
@@ -49,17 +49,40 @@ const {
 const SITE_URL = 'https://waytosantiagoguide.com';
 const SITE_NAME_EN = 'Way to Santiago Guide';
 const SITE_NAME_ES = 'Guía Camino de Santiago';
-const siteName = language === 'en' ? SITE_NAME_EN : SITE_NAME_ES;
+const SITE_NAME_PT = 'Guia Caminho de Santiago';
+const siteName = language === 'en' ? SITE_NAME_EN : language === 'es' ? SITE_NAME_ES : SITE_NAME_PT;
 const fullTitle = (title === siteName || title.startsWith(siteName + ' |') || title.startsWith(siteName + '|'))
   ? title
   : `${title} | ${siteName}`;
 const ogImageAbsolute = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogImage}`;
-const htmlLang = language === 'en' ? 'en-GB' : 'es-ES';
+const htmlLang = language === 'en' ? 'en-GB' : language === 'es' ? 'es-ES' : 'pt-PT';
 
 // Build JSON-LD schema object based on page type
 let jsonLd: Record<string, unknown>;
 
 if (schemaType === 'website') {
+  const navItems = language === 'es'
+    ? [
+        { name: 'Dónde Comer',       url: `${SITE_URL}/es/caminha/donde-comer/` },
+        { name: 'Dónde Dormir',      url: `${SITE_URL}/es/caminha/donde-dormir/` },
+        { name: 'Ferry y Logística', url: `${SITE_URL}/es/caminha/ferry-y-logistica/` },
+        { name: 'Servicios Útiles',  url: `${SITE_URL}/es/caminha/servicios-utiles/` },
+      ]
+    : language === 'pt'
+    ? [
+        { name: 'Onde Comer',        url: `${SITE_URL}/pt/caminha/onde-comer/` },
+        { name: 'Onde Ficar',        url: `${SITE_URL}/pt/caminha/onde-ficar/` },
+        { name: 'Ferry e Logística', url: `${SITE_URL}/pt/caminha/ferry-e-logistica/` },
+        { name: 'Serviços Úteis',    url: `${SITE_URL}/pt/caminha/servicos-uteis/` },
+      ]
+    : [
+        { name: 'Caminha Guide',     url: `${SITE_URL}/en/caminha-guide/` },
+        { name: 'Where to Eat',      url: `${SITE_URL}/en/caminha/where-to-eat/` },
+        { name: 'Where to Stay',     url: `${SITE_URL}/en/caminha/where-to-stay/` },
+        { name: 'Ferry & Logistics', url: `${SITE_URL}/en/caminha/ferry-and-logistics/` },
+        { name: 'Useful Services',   url: `${SITE_URL}/en/caminha/useful-services/` },
+      ];
+
   jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
@@ -84,6 +107,11 @@ if (schemaType === 'website') {
       },
       'query-input': 'required name=search_term_string',
     },
+    hasPart: navItems.map((item) => ({
+      '@type': 'SiteNavigationElement',
+      name: item.name,
+      url: item.url,
+    })),
   };
 } else if (schemaType === 'localbusiness' && localBusinessData) {
   jsonLd = {
@@ -189,7 +217,7 @@ const jsonLdString = JSON.stringify(jsonLd);
 {alternateLanguages
   .filter(({ lang }) => lang !== 'x-default' && lang !== language)
   .map(({ lang }) => (
-    <meta property="og:locale:alternate" content={lang === 'en' ? 'en_GB' : 'es_ES'} />
+    <meta property="og:locale:alternate" content={lang === 'en' ? 'en_GB' : lang === 'es' ? 'es_ES' : 'pt_PT'} />
   ))
 }
 

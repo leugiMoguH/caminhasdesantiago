@@ -1,0 +1,268 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+
+const accommodations = [
+  {
+    name: 'Albergue de São Bento',
+    type: 'Pilgrim Hostel',
+    positioning: 'Beachfront in Seixas parish, 1 km from Pedras Ruivas Beach',
+    differentiators: ['Beachfront setting', 'Pilgrim dinners available; shared kitchen'],
+    bookingUrl: 'https://www.booking.com/hotel/pt/albergue-de-sao-bento.html?aid=7968251',
+  },
+  {
+    name: 'Rinoterra Minho',
+    type: 'Country Hotel',
+    address: 'Rua da Costa 15, Seixas, Caminha',
+    positioning: 'Rural, Seixas parish, river and mountain views',
+    differentiators: ['Spa and wellness centre', 'Tennis; Portuguese restaurant on site'],
+    bookingUrl: 'https://www.booking.com/hotel/pt/rinoterra-minho.html?aid=7968251',
+  },
+];
+---
+
+<MainLayout
+  title="Seixas — Accommodation & Pilgrim Info | Caminho de Santiago"
+  description="Accommodation and pilgrim information for Seixas parish on the Camino de Santiago Coastal Route. Beachfront albergue and country hotel, 2 km south of Caminha."
+  lang="en"
+  schemaType="webpage"
+>
+
+  <!-- ── PAGE HEADER ──────────────────────────────────────────────────────────── -->
+  <div class="bg-gradient-to-b from-forest-50 to-white border-b border-forest-100/60">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+      <nav aria-label="Breadcrumb" class="mb-5">
+        <ol class="flex items-center gap-2 text-sm text-slate-500">
+          <li><a href="/en/" class="hover:text-forest-700 no-underline hover:underline transition-colors">Home</a></li>
+          <li aria-hidden="true" class="text-slate-300">›</li>
+          <li><a href="/en/caminha-guide/" class="hover:text-forest-700 no-underline hover:underline transition-colors">Caminha</a></li>
+          <li aria-hidden="true" class="text-slate-300">›</li>
+          <li aria-current="page" class="text-slate-700 font-medium">Seixas</li>
+        </ol>
+      </nav>
+      <h1 class="text-3xl sm:text-4xl font-bold text-forest-900 mb-4 tracking-tight">Seixas</h1>
+      <p class="text-slate-600 max-w-2xl text-base leading-relaxed">
+        The parish immediately south of Caminha town, on the Camino Coastal waymarked path. Low density — one pilgrim hostel and one country hotel, both bookable on Booking.com. No restaurants in Seixas: pilgrims walk to Caminha (approximately 15–20 minutes) for meals.
+      </p>
+      <div class="mt-6 flex flex-wrap gap-2.5">
+        <a href="#accommodation" class="inline-flex items-center gap-1.5 bg-white border border-forest-200 text-forest-800 text-xs font-medium px-3.5 py-2 rounded-full hover:bg-forest-50 hover:border-forest-300 no-underline transition-all duration-200 shadow-sm cursor-pointer">
+          Accommodation
+        </a>
+        <a href="#pharmacy" class="inline-flex items-center gap-1.5 bg-white border border-earth-200 text-earth-800 text-xs font-medium px-3.5 py-2 rounded-full hover:bg-earth-50 hover:border-earth-300 no-underline transition-all duration-200 shadow-sm cursor-pointer">
+          Pharmacy
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── ADSENSE SLOT 1 ──────────────────────────────────────────────────────── -->
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <div class="my-6">
+      <ins class="adsbygoogle w-full"
+           style="display:block"
+           data-ad-client="ca-pub-6529337148344504"
+           data-ad-slot="2297179243"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+  </div>
+  <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+  <!-- ── CALLOUT: NO RESTAURANTS ───────────────────────────────────────────── -->
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pb-4">
+    <div class="bg-amber-50 border border-amber-300/70 rounded-2xl p-5 flex gap-4 shadow-sm">
+      <div class="shrink-0 flex h-10 w-10 items-center justify-center rounded-xl bg-amber-100 border border-amber-200">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-amber-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="font-bold text-amber-900 mb-1 text-sm">No Restaurants in Seixas</h2>
+        <p class="text-sm text-amber-800 leading-relaxed">
+          Seixas has no dedicated restaurant infrastructure. Pilgrims staying here walk to Caminha (approximately 15–20 minutes on foot) for all meals. The pilgrim hostel and the country hotel both offer dinner options on site — confirm availability when booking.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── ACCOMMODATION ──────────────────────────────────────────────────────── -->
+  <div id="accommodation" class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10">
+    <div class="mb-6 pb-4 border-b border-slate-200">
+      <h2 class="text-2xl font-bold text-forest-900 tracking-tight">Accommodation in Seixas</h2>
+      <p class="text-slate-600 text-sm mt-1 leading-relaxed max-w-2xl">
+        Two options on the waymarked Coastal Route path: a beachfront pilgrim hostel and a rural country hotel with full facilities.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 gap-5">
+      {accommodations.map((a) => (
+        <article class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 shadow-sm">
+          <div class="p-6 sm:p-8">
+            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
+              <div>
+                <h3 class="text-xl font-bold text-forest-900 tracking-tight mb-0.5">{a.name}</h3>
+                <p class="text-sm text-slate-500 font-medium">{a.type}</p>
+              </div>
+            </div>
+            <p class="text-sm text-slate-600 leading-relaxed mb-4">{a.positioning}</p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              {a.differentiators.map((d) => (
+                <span class="text-xs bg-forest-50 text-forest-700 px-3 py-1.5 rounded-full border border-forest-100 font-medium">{d}</span>
+              ))}
+            </div>
+            <div class="pt-4 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center gap-4">
+              {a.address && (
+                <div class="flex items-center gap-1.5 text-sm text-slate-500 flex-1">
+                  <svg class="h-4 w-4 shrink-0 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  </svg>
+                  {a.address}
+                </div>
+              )}
+              <a
+                href={a.bookingUrl}
+                rel="nofollow noopener noreferrer sponsored"
+                target="_blank"
+                class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-earth-500 to-earth-600 hover:from-earth-600 hover:to-earth-700 active:scale-[0.98] text-white font-bold text-sm px-6 py-3.5 rounded-xl transition-all duration-200 no-underline shrink-0 shadow-md hover:shadow-lg cursor-pointer group"
+              >
+                Check Availability &amp; Prices
+                <svg class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+
+  <!-- ── PHARMACY NOTE ───────────────────────────────────────────────────────── -->
+  <div id="pharmacy" class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pb-10">
+    <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+      <h2 class="text-lg font-bold text-forest-900 mb-3 tracking-tight">Pharmacy in Seixas</h2>
+      <p class="text-slate-700 text-sm leading-relaxed mb-3">
+        Seixas has one pharmacy participating in the Caminha municipality duty rotation: <strong>Farmácia Sousa</strong> on Avenida Joaquim Maria Portela, Seixas — approximately 2 km south of Caminha town centre (walkable).
+      </p>
+      <p class="text-slate-600 text-sm leading-relaxed">
+        The duty pharmacy rota rotates daily across Caminha town, Vila Praia de Âncora, and Seixas. For the current duty pharmacy, ask at your albergue or call <strong>SNS24: 808 24 24 24</strong>. See the full <a href="/en/caminha/useful-services/#pharmacies" class="text-forest-700 hover:underline no-underline font-medium">pharmacy rotation guide</a> for details.
+      </p>
+    </div>
+  </div>
+
+  <!-- ── CTA: INTERNAL LOOP ─────────────────────────────────────────────────── -->
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pb-10">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+      <a href="/en/caminha/vila-praia-de-ancora/" class="flex items-center gap-4 bg-white border border-earth-200 rounded-2xl p-5 hover:shadow-md hover:border-earth-300 transition-all no-underline group">
+        <div class="shrink-0 flex h-10 w-10 items-center justify-center rounded-xl bg-earth-50 border border-earth-100">
+          <svg class="h-5 w-5 text-earth-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+        </div>
+        <div>
+          <p class="text-sm font-bold text-earth-900 group-hover:text-earth-700">Vila Praia de Âncora</p>
+          <p class="text-xs text-slate-500">Previous stage south — restaurants &amp; hotels</p>
+        </div>
+      </a>
+      <a href="/en/caminha/where-to-eat/" class="flex items-center gap-4 bg-white border border-earth-200 rounded-2xl p-5 hover:shadow-md hover:border-earth-300 transition-all no-underline group">
+        <div class="shrink-0 flex h-10 w-10 items-center justify-center rounded-xl bg-earth-50 border border-earth-100">
+          <svg class="h-5 w-5 text-earth-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+          </svg>
+        </div>
+        <div>
+          <p class="text-sm font-bold text-earth-900 group-hover:text-earth-700">Where to Eat</p>
+          <p class="text-xs text-slate-500">Restaurants in Caminha — 15 min walk</p>
+        </div>
+      </a>
+      <a href="/en/caminha/where-to-stay/" class="flex items-center gap-4 bg-white border border-forest-200 rounded-2xl p-5 hover:shadow-md hover:border-forest-300 transition-all no-underline group">
+        <div class="shrink-0 flex h-10 w-10 items-center justify-center rounded-xl bg-forest-50 border border-forest-100">
+          <svg class="h-5 w-5 text-forest-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+          </svg>
+        </div>
+        <div>
+          <p class="text-sm font-bold text-forest-900 group-hover:text-forest-700">Where to Stay</p>
+          <p class="text-xs text-slate-500">All accommodation — Caminha, VPA &amp; Seixas</p>
+        </div>
+      </a>
+      <a href="/en/caminha/ferry-and-logistics/" class="flex items-center gap-4 bg-white border border-slate-200 rounded-2xl p-5 hover:shadow-md hover:border-slate-300 transition-all no-underline group">
+        <div class="shrink-0 flex h-10 w-10 items-center justify-center rounded-xl bg-slate-50 border border-slate-100">
+          <svg class="h-5 w-5 text-slate-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+          </svg>
+        </div>
+        <div>
+          <p class="text-sm font-bold text-slate-900 group-hover:text-slate-700">Ferry &amp; Logistics</p>
+          <p class="text-xs text-slate-500">Minho crossing — schedule &amp; alternatives</p>
+        </div>
+      </a>
+      <a href="/en/caminha/useful-services/" class="flex items-center gap-4 bg-white border border-slate-200 rounded-2xl p-5 hover:shadow-md hover:border-slate-300 transition-all no-underline group">
+        <div class="shrink-0 flex h-10 w-10 items-center justify-center rounded-xl bg-slate-50 border border-slate-100">
+          <svg class="h-5 w-5 text-slate-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+          </svg>
+        </div>
+        <div>
+          <p class="text-sm font-bold text-slate-900 group-hover:text-slate-700">Pilgrim Services</p>
+          <p class="text-xs text-slate-500">Pharmacies, gear &amp; ATMs in Caminha</p>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- ── SCHEMA ─────────────────────────────────────────────────────────────── -->
+  <script type="application/ld+json" is:inline>{`
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Accommodation in Seixas — Camino de Santiago Coastal Route",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "Hostel",
+              "name": "Albergue de São Bento",
+              "description": "Beachfront pilgrim hostel in Seixas parish. Pilgrim dinners available, shared kitchen.",
+              "address": { "@type": "PostalAddress", "addressLocality": "Seixas, Caminha", "addressCountry": "PT" }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "Hotel",
+              "name": "Rinoterra Minho",
+              "description": "Country hotel in Seixas parish with river and mountain views. Spa, tennis, Portuguese restaurant.",
+              "address": { "@type": "PostalAddress", "streetAddress": "Rua da Costa 15", "addressLocality": "Seixas, Caminha", "addressCountry": "PT" }
+            }
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Are there restaurants in Seixas on the Camino Coastal Route?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Seixas has no dedicated restaurant infrastructure. Pilgrims staying in Seixas walk to Caminha (approximately 15–20 minutes on foot) for all meals. The Albergue de São Bento and Rinoterra Minho both offer on-site dinner options — confirm availability when booking."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What accommodation is available in Seixas for pilgrims?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Two options: Albergue de São Bento (beachfront pilgrim hostel, bookable on Booking.com, pilgrim dinners available) and Rinoterra Minho (country hotel with spa and restaurant). Both are on the waymarked Coastal Route path and bookable online."
+            }
+          }
+        ]
+      }
+    ]
+  `}</script>
+
+</MainLayout>

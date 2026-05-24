@@ -16,7 +16,7 @@ import MainLayout from '../../../layouts/MainLayout.astro';
         <ol class="flex items-center gap-2 text-sm text-slate-400">
           <li><a href="/en/" class="hover:text-white no-underline hover:underline transition-colors">Home</a></li>
           <li aria-hidden="true" class="text-slate-600">›</li>
-          <li><span class="text-slate-500">Caminha</span></li>
+          <li><a href="/en/caminha-guide/" class="hover:text-white no-underline hover:underline transition-colors text-slate-500 hover:text-white">Caminha</a></li>
           <li aria-hidden="true" class="text-slate-600">›</li>
           <li aria-current="page" class="text-slate-200 font-medium">Useful Services</li>
         </ol>
@@ -344,6 +344,13 @@ import MainLayout from '../../../layouts/MainLayout.astro';
           <h2 class="text-base font-bold text-forest-900 mb-3 tracking-tight">Other Pilgrim Guides</h2>
           <ul class="space-y-3 text-sm">
             <li>
+              <a href="/en/caminha-guide/" class="text-forest-700 hover:underline no-underline font-medium cursor-pointer flex items-center gap-1 group">
+                Caminha Guide (Overview)
+                <svg class="h-3.5 w-3.5 text-earth-500 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+              </a>
+              <p class="text-xs text-slate-500 mt-0.5">All clusters — ferry, stay, eat, services</p>
+            </li>
+            <li>
               <a href="/en/caminha/ferry-and-logistics/" class="text-forest-700 hover:underline no-underline font-medium cursor-pointer flex items-center gap-1 group">
                 Ferry &amp; Logistics
                 <svg class="h-3.5 w-3.5 text-earth-500 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
@@ -370,5 +377,47 @@ import MainLayout from '../../../layouts/MainLayout.astro';
       </aside>
     </div>
   </div>
+
+  <!-- ── SCHEMA: FAQPage ────────────────────────────────────────────────────── -->
+  <script type="application/ld+json" is:inline>{`
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I find the duty pharmacy (farmácia de serviço) in Caminha?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ask your albergue hospitalero the evening before — they check this regularly for pilgrims. Call Linha 1400 (Serviço Nacional de Farmácias, free call) or SNS24 (808 24 24 24) for the nearest open pharmacy. Any closed pharmacy door displays the current duty pharmacy address. Check farmaciasdeplantao.pt or search 'farmácia de serviço Caminha' on Google."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are there gear shops for pilgrims in Caminha?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The historical centre has specialist pilgrim shops including Dorigem no Caminho (Rua São João 27) and Dorigem Shop (Rua 16 de Setembro 17) for technical apparel and accessories. Cool Caminha and Forte Store (both on Rua 16 de Setembro) offer general and outdoor clothing. Loja da Amizade stocks emergency rain ponchos at local prices. For proper trekking gear, the nearest Decathlon is in Viana do Castelo (~20 min by train)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where are the ATMs in Caminha?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Caminha has several Multibanco ATMs concentrated around Praça do Conselho and the streets leading to it. CGD (Caixa Geral de Depósitos) and Millennium BCP branches have exterior ATMs accessible outside banking hours. Cash is essential for the ferry crossing (€2.50) and water taxi fares (€5–6)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What emergency number should pilgrims call in Caminha?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Call 112 for all emergencies (police, ambulance, fire). For non-emergency health advice and to find the duty pharmacy, call SNS24: 808 24 24 24. Caminha Health Centre (+351 258 919 440) is open Monday–Friday during business hours. The Caminha tourist office (+351 258 921 952) can help with practical local information including water taxi contacts."
+          }
+        }
+      ]
+    }
+  `}</script>
 
 </MainLayout>

@@ -34,7 +34,7 @@ const alojamentos: Alojamento[] = [
     zona: 'caminha',
     categoria: 'albergue',
     tipo: 'Albergue Privado de Peregrinos',
-    morada: 'Perto da Igreja Matriz de Caminha, zona ribeirinha',
+    morada: '',
     localizacao: 'Centro de Caminha, na rota do Caminho junto ao rio',
     diferenciais: ['Reserva online antecipada disponível', 'Bar e cafetaria no alojamento'],
     reservaUrl: 'https://www.booking.com/hotel/pt/albergue-santiago-de-caminha.html?aid=7968251',
@@ -44,7 +44,7 @@ const alojamentos: Alojamento[] = [
     zona: 'caminha',
     categoria: 'albergue',
     tipo: 'Albergue Privado de Peregrinos',
-    morada: 'Centro urbano de Caminha (a 450 m do Convento de Santo António)',
+    morada: '',
     localizacao: 'Centro histórico, casa histórica de 1882',
     diferenciais: ['Jantar de peregrinos opcional (suplemento de 12 €)', 'Cozinha comunitária; reserva antecipada disponível'],
     reservaUrl: 'https://www.booking.com/hotel/pt/bom-caminha-private-albergue-amp-guest-house.html?aid=7968251',
@@ -64,7 +64,7 @@ const alojamentos: Alojamento[] = [
     zona: 'caminha',
     categoria: 'hotel',
     tipo: 'Hotel',
-    morada: 'Caminha (a 1,5 km da Praia de Pedras Ruivas)',
+    morada: '',
     localizacao: 'Centro urbano, edifício histórico do século XVIII',
     diferenciais: ['Piscina interior', 'Bar de vinhos e restaurante no hotel'],
     reservaUrl: 'https://www.booking.com/hotel/pt/design.html?aid=7968251',
@@ -74,7 +74,7 @@ const alojamentos: Alojamento[] = [
     zona: 'caminha',
     categoria: 'hotel',
     tipo: 'Hotel — 4 Estrelas',
-    morada: 'Caminha (perto da Foz do Minho / costa atlântica)',
+    morada: '',
     localizacao: 'Perto da foz do rio e da praia atlântica',
     diferenciais: ['2 piscinas exteriores', 'Spa e instalações de bem-estar'],
     reservaUrl: 'https://www.booking.com/hotel/pt/porta-do-sol-caminha.html?aid=7968251',
@@ -86,7 +86,7 @@ const alojamentos: Alojamento[] = [
     zona: 'vpa',
     categoria: 'hotel',
     tipo: 'Hotel',
-    morada: 'Vila Praia de Âncora (a 3 min a pé da praia)',
+    morada: '',
     localizacao: 'Zona costeira, a 3 minutos a pé da Praia de Vila Praia de Âncora',
     diferenciais: ['Piscina exterior de época', 'Quartos com vista para o mar e varanda'],
     reservaUrl: 'https://www.booking.com/hotel/pt/blue-ancora.html?aid=7968251',
@@ -96,7 +96,7 @@ const alojamentos: Alojamento[] = [
     zona: 'vpa',
     categoria: 'hotel',
     tipo: 'Hotel — 4 Estrelas',
-    morada: 'Vila Praia de Âncora (a 2 min a pé da praia)',
+    morada: '',
     localizacao: 'Perto da praia, num vale protegido do vento',
     diferenciais: ['Piscina', 'Buffet de pequeno-almoço incluído'],
     reservaUrl: 'https://www.booking.com/hotel/pt/hotelmeiravilapraiaancora.html?aid=7968251',
@@ -108,7 +108,7 @@ const alojamentos: Alojamento[] = [
     zona: 'seixas',
     categoria: 'albergue',
     tipo: 'Albergue de Peregrinos',
-    morada: 'Seixas, Caminha (perto da Praia de Pedras Ruivas)',
+    morada: '',
     localizacao: 'Frente ao mar na freguesia de Seixas, a 1 km da Praia de Pedras Ruivas',
     diferenciais: ['Localização frente ao mar', 'Jantares de peregrinos disponíveis; cozinha comunitária'],
     reservaUrl: 'https://www.booking.com/hotel/pt/albergue-de-sao-bento.html?aid=7968251',
@@ -134,7 +134,7 @@ const zonas: { chave: Zona; etiqueta: string; intro: string }[] = [
   {
     chave: 'vpa',
     etiqueta: 'Vila Praia de Âncora',
-    intro: 'Localidade costeira a 7 km a sul de Caminha, na rota do Caminho. Hotéis de praia com piscinas — alternativa mais tranquila para peregrinos que preferem chegar cedo e continuar para norte na manhã seguinte.',
+    intro: 'Localidade costeira a 8 km a sul de Caminha, na rota do Caminho. Hotéis de praia com piscinas — alternativa mais tranquila para peregrinos que preferem chegar cedo e continuar para norte na manhã seguinte.',
   },
   {
     chave: 'seixas',
@@ -171,7 +171,7 @@ const etiquetaCategoria: Record<Categoria, string> = {
       </nav>
       <h1 class="text-3xl sm:text-4xl font-bold text-forest-900 mb-4 tracking-tight">Onde Ficar</h1>
       <p class="text-slate-600 max-w-2xl text-base leading-relaxed">
-        Alojamento verificado em três zonas da Rota Costeira Portuguesa: Caminha (localidade de travessia do rio), Vila Praia de Âncora (costeira, 7 km a sul) e Seixas (freguesia na rota a sul de Caminha). Todos os hotéis ligam diretamente ao Booking.com.
+        Alojamento verificado em três zonas da Rota Costeira Portuguesa: Caminha (localidade de travessia do rio), Vila Praia de Âncora (costeira, 8 km a sul) e Seixas (freguesia na rota a sul de Caminha). Todos os hotéis ligam diretamente ao Booking.com.
       </p>
       <div class="mt-6 flex flex-wrap gap-2.5">
         {zonas.map((z) => (
@@ -260,13 +260,15 @@ const etiquetaCategoria: Record<Categoria, string> = {
                         )}
 
                         <div class="pt-4 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center gap-4">
-                          <div class="flex items-center gap-1.5 text-sm text-slate-500 flex-1">
-                            <svg class="h-4 w-4 shrink-0 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                            </svg>
-                            {a.morada}
-                          </div>
+                          {a.morada && (
+                            <div class="flex items-center gap-1.5 text-sm text-slate-500 flex-1">
+                              <svg class="h-4 w-4 shrink-0 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                              </svg>
+                              {a.morada}
+                            </div>
+                          )}
 
                           {a.reservaUrl ? (
                             <a
@@ -294,7 +296,7 @@ const etiquetaCategoria: Record<Categoria, string> = {
             );
           })}
 
-          {zonaIdx === 0 && (
+          {zonaIdx === 1 && (
             <div class="mt-6">
               <ins class="adsbygoogle w-full"
                    style="display:block"
@@ -321,11 +323,39 @@ const etiquetaCategoria: Record<Categoria, string> = {
         <div>
           <h2 class="text-lg font-bold text-forest-900 mb-2 tracking-tight">Albergue Municipal vs. Albergues Privados</h2>
           <p class="text-slate-700 text-sm leading-relaxed max-w-2xl">
-            O albergue municipal é apenas de admissão direta a partir das 14:00 e requer uma <em>credencial do peregrino</em> válida. Os dois albergues privados listados (Albergue Santiago e Bom Caminha) aceitam reservas antecipadas no Booking.com e não exigem credencial. Consulte a página de ferry e logística para a travessia de Caminha para A Guarda: <a href="/en/caminha/ferry-and-logistics/" class="text-forest-700 hover:underline no-underline font-medium">horários do ferry e logística</a>.
+            O albergue municipal é apenas de admissão direta a partir das 14:00 e requer uma <em>credencial do peregrino</em> válida. Os dois albergues privados listados (Albergue Santiago e Bom Caminha) aceitam reservas antecipadas no Booking.com e não exigem credencial. Consulte a página de ferry e logística para a travessia de Caminha para A Guarda: <a href="/pt/caminha/ferry-e-logistica/" class="text-forest-700 hover:underline no-underline font-medium">horários do ferry e logística</a>.
           </p>
         </div>
       </div>
     </div>
   </aside>
+
+  <!-- ── LOOP CTA INTERNO ───────────────────────────────────────────────────── -->
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <a href="/pt/caminha/onde-comer/" class="flex items-center gap-4 bg-white border border-earth-200 rounded-2xl p-5 hover:shadow-md hover:border-earth-300 transition-all no-underline group">
+        <div class="shrink-0 flex h-10 w-10 items-center justify-center rounded-xl bg-earth-50 border border-earth-100">
+          <svg class="h-5 w-5 text-earth-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+          </svg>
+        </div>
+        <div>
+          <p class="text-sm font-bold text-earth-900 group-hover:text-earth-700">Onde Comer</p>
+          <p class="text-xs text-slate-500">Restaurantes e cafés verificados em Caminha &amp; Vila Praia de Âncora</p>
+        </div>
+      </a>
+      <a href="/pt/caminha/ferry-e-logistica/" class="flex items-center gap-4 bg-white border border-forest-200 rounded-2xl p-5 hover:shadow-md hover:border-forest-300 transition-all no-underline group">
+        <div class="shrink-0 flex h-10 w-10 items-center justify-center rounded-xl bg-forest-50 border border-forest-100">
+          <svg class="h-5 w-5 text-forest-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+          </svg>
+        </div>
+        <div>
+          <p class="text-sm font-bold text-forest-900 group-hover:text-forest-700">Ferry e Logística</p>
+          <p class="text-xs text-slate-500">Horários, tarifas &amp; alternativas para a travessia do Minho</p>
+        </div>
+      </a>
+    </div>
+  </div>
 
 </MainLayout>
