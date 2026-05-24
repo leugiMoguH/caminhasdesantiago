@@ -1,32 +1,245 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
 ---
+
 <MainLayout
-  title="Guia de Caminha — Caminho de Santiago Rota Costeira"
-  description="Guia independente para peregrinos e viajantes na Rota Costeira do Caminho de Santiago em Caminha, Portugal."
+  title="Guia do Caminho de Santiago | Rota Costeira — Caminha, Portugal"
+  description="O guia hiperlocal definitivo para peregrinos da Rota Costeira do Caminho de Santiago. Alertas do ferry, táxis fluviais, albergues e restaurantes em Caminha."
   lang="pt"
-  schemaType="webpage"
+  schemaType="website"
+  ogImage="/images/og-default.png"
 >
-  <div class="bg-gradient-to-b from-forest-50 to-white">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-20">
-      <h1 class="text-3xl sm:text-4xl font-bold text-forest-900 mb-4 tracking-tight">Guia de Caminha</h1>
-      <p class="text-slate-600 max-w-2xl text-base leading-relaxed mb-8">
-        Guia independente para peregrinos e viajantes na Rota Costeira do Caminho de Santiago através de Caminha, Vila Praia de Âncora e Seixas, Portugal.
+
+  <!-- ── HERO COM IMAGEM DE FUNDO ────────────────────────────────────────────── -->
+  <section class="relative min-h-[88svh] flex items-end overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/images/og-default.png"
+        alt="Caminho costeiro perto de Caminha, Portugal — Caminho de Santiago"
+        class="w-full h-full object-cover object-center"
+        fetchpriority="high"
+        decoding="async"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/10"></div>
+    </div>
+
+    <div class="relative w-full mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16 pt-32">
+      <p class="text-earth-300 text-xs font-bold uppercase tracking-widest mb-3">
+        Caminho de Santiago · Rota Costeira · Caminha, Portugal
       </p>
-      <div class="flex flex-wrap gap-4">
-        <a href="/pt/caminha/onde-ficar/" class="inline-flex items-center gap-2 bg-forest-700 hover:bg-forest-800 text-white font-semibold text-sm px-5 py-3 rounded-xl no-underline transition-colors">
-          Onde Ficar
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white mb-5 max-w-3xl">
+        A fazer o Caminho<br class="hidden sm:inline" /> da Costa?
+      </h1>
+      <p class="text-lg sm:text-xl text-slate-200 leading-relaxed mb-8 max-w-2xl">
+        O teu guia hiperlocal de peregrino para Caminha — a última vila portuguesa antes de Espanha. Ferry, onde dormir, onde comer e tudo o que precisas.
+      </p>
+
+      <!-- Botões de Ação Principais — grandes para toque em móvel -->
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a
+          href="/pt/caminha/ferry-e-logistica/"
+          class="inline-flex items-center justify-center gap-3 bg-earth-500 hover:bg-earth-400 active:bg-earth-600 text-white font-bold px-7 py-4 rounded-2xl transition-colors no-underline text-base min-h-[56px] shadow-lg"
+        >
+          <svg class="h-5 w-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M22 18H2l4-8h12l4 8z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 2v8"/>
+          </svg>
+          Atravessar o Rio Agora (Ferry)
         </a>
-        <a href="/pt/caminha/onde-comer/" class="inline-flex items-center gap-2 bg-earth-500 hover:bg-earth-600 text-white font-semibold text-sm px-5 py-3 rounded-xl no-underline transition-colors">
-          Onde Comer
-        </a>
-        <a href="/pt/caminha/ferry-e-logistica/" class="inline-flex items-center gap-2 bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 font-semibold text-sm px-5 py-3 rounded-xl no-underline transition-colors">
-          Ferry e Logística
-        </a>
-        <a href="/pt/caminha/servicos-uteis/" class="inline-flex items-center gap-2 bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 font-semibold text-sm px-5 py-3 rounded-xl no-underline transition-colors">
-          Serviços Úteis
+        <a
+          href="/pt/caminha/onde-ficar/"
+          class="inline-flex items-center justify-center gap-3 bg-white/15 hover:bg-white/25 active:bg-white/30 backdrop-blur-sm text-white font-bold px-7 py-4 rounded-2xl transition-colors no-underline text-base border border-white/30 min-h-[56px]"
+        >
+          <svg class="h-5 w-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 12V7a2 2 0 012-2h14a2 2 0 012 2v5M3 12v5a1 1 0 001 1h16a1 1 0 001-1v-5M3 12h18M7 12V9h4v3"/>
+          </svg>
+          Encontrar Alojamento (Hotéis)
         </a>
       </div>
     </div>
+  </section>
+
+  <!-- ── BANNER DE ALERTA DO PEREGRINO (descartável) ────────────────────────── -->
+  <div
+    id="ferry-warning-banner"
+    class="bg-gradient-to-r from-amber-600 to-orange-600 text-white shadow-md"
+    role="alert"
+    aria-live="polite"
+  >
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-4 flex items-start gap-4">
+      <div class="shrink-0 flex h-10 w-10 items-center justify-center rounded-xl bg-white/15 border border-white/20 mt-0.5">
+        <svg class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+        </svg>
+      </div>
+      <div class="flex-1 min-w-0">
+        <p class="font-bold text-sm mb-1 flex flex-wrap items-center gap-2">
+          <span class="bg-white/20 text-white text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border border-white/30">Estado do Ferry</span>
+          Alerta de Assoreamento — Verifica Antes de Sair
+        </p>
+        <p class="text-sm text-white/90 leading-relaxed">
+          O ferry de Caminha (Santa Rita de Cássia) está sujeito a <strong>assoreamento</strong> sazonal (deposição de sedimentos) que pode suspender o serviço sem aviso — mesmo em época alta.
+          <strong>Verifica o estado da travessia na noite anterior</strong> e pergunta no teu albergue sobre táxis fluviais (Xávegas) como alternativa.
+          <a href="/pt/caminha/ferry-e-logistica/#assoreamento" class="underline font-semibold ml-1 hover:text-white/80">Mais informação →</a>
+        </p>
+      </div>
+      <button
+        type="button"
+        id="dismiss-ferry-warning"
+        class="shrink-0 flex h-8 w-8 items-center justify-center rounded-lg bg-white/15 hover:bg-white/30 transition-colors border border-white/20 cursor-pointer"
+        aria-label="Fechar alerta do ferry"
+      >
+        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
   </div>
+
+  <!-- ── ESTATÍSTICAS RÁPIDAS ────────────────────────────────────────────────── -->
+  <section class="bg-white border-b border-slate-200" aria-label="Dados essenciais sobre Caminha">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <dl class="grid grid-cols-2 sm:grid-cols-4 divide-x divide-slate-200">
+        {[
+          { value: '~15 min', label: 'Ferry para Espanha' },
+          { value: '2,50 €', label: 'Preço do ferry' },
+          { value: '24 km', label: 'De Viana do Castelo' },
+          { value: 'Abr–Out', label: 'Serviço diário' },
+        ].map(({ value, label }) => (
+          <div class="py-5 px-4 sm:px-8 text-center">
+            <dt class="text-2xl font-bold text-forest-700">{value}</dt>
+            <dd class="text-xs text-slate-500 mt-1">{label}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <!-- ── GRELHA DE 4 CARTÕES ─────────────────────────────────────────────────── -->
+  <section class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-14">
+    <h2 class="text-2xl sm:text-3xl font-bold text-forest-900 mb-2">Tudo o que Precisas em Caminha</h2>
+    <p class="text-slate-600 mb-8 max-w-2xl">
+      O kit completo do peregrino — desde atravessar o rio até encontrar uma farmácia.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+
+      <!-- Ferry e Logística -->
+      <a
+        href="/pt/caminha/ferry-e-logistica/"
+        class="group relative rounded-3xl bg-gradient-to-br from-slate-800 to-slate-900 text-white overflow-hidden min-h-[190px] flex flex-col justify-end p-7 no-underline shadow-xl hover:shadow-2xl hover:-translate-y-1 active:translate-y-0 transition-all duration-200"
+      >
+        <div class="absolute top-6 right-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 border border-white/15">
+          <svg class="h-7 w-7 text-earth-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <circle cx="12" cy="5" r="3"/>
+            <line x1="12" y1="22" x2="12" y2="8"/>
+            <path d="M5 12H2a10 10 0 0020 0h-3"/>
+          </svg>
+        </div>
+        <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-1.5">Informação Crítica</p>
+        <h3 class="text-xl font-bold text-white leading-tight">Ferry e Logística</h3>
+        <p class="text-sm text-slate-300 mt-1.5 leading-relaxed">Horários, riscos de assoreamento, táxis fluviais e desvio por Valença.</p>
+        <div class="mt-4 flex items-center gap-1.5 text-earth-300 text-sm font-semibold">
+          Planear a travessia
+          <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+
+      <!-- Onde Ficar -->
+      <a
+        href="/pt/caminha/onde-ficar/"
+        class="group relative rounded-3xl bg-gradient-to-br from-forest-800 to-forest-950 text-white overflow-hidden min-h-[190px] flex flex-col justify-end p-7 no-underline shadow-xl hover:shadow-2xl hover:-translate-y-1 active:translate-y-0 transition-all duration-200"
+      >
+        <div class="absolute top-6 right-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 border border-white/15">
+          <svg class="h-7 w-7 text-earth-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 12V7a2 2 0 012-2h14a2 2 0 012 2v5M3 12v5a1 1 0 001 1h16a1 1 0 001-1v-5M3 12h18M7 12V9h4v3"/>
+          </svg>
+        </div>
+        <p class="text-xs font-bold uppercase tracking-widest text-forest-400 mb-1.5">Alojamento</p>
+        <h3 class="text-xl font-bold text-white leading-tight">Onde Ficar</h3>
+        <p class="text-sm text-forest-200 mt-1.5 leading-relaxed">Albergue municipal, pensões e hotéis boutique — todos os orçamentos.</p>
+        <div class="mt-4 flex items-center gap-1.5 text-earth-300 text-sm font-semibold">
+          Encontrar cama
+          <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+
+      <!-- Onde Comer -->
+      <a
+        href="/pt/caminha/onde-comer/"
+        class="group relative rounded-3xl bg-gradient-to-br from-earth-700 to-earth-900 text-white overflow-hidden min-h-[190px] flex flex-col justify-end p-7 no-underline shadow-xl hover:shadow-2xl hover:-translate-y-1 active:translate-y-0 transition-all duration-200"
+      >
+        <div class="absolute top-6 right-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 border border-white/15">
+          <svg class="h-7 w-7 text-earth-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 2v20"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 2c0 4 4 4 4 8s-4 4-4 8"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16 2v6a2 2 0 004 0V2M18 8v14"/>
+          </svg>
+        </div>
+        <p class="text-xs font-bold uppercase tracking-widest text-earth-300 mb-1.5">Gastronomia</p>
+        <h3 class="text-xl font-bold text-white leading-tight">Onde Comer</h3>
+        <p class="text-sm text-earth-100 mt-1.5 leading-relaxed">Menus de peregrino a partir de 8 €, marisco atlântico fresco e pastéis de nata.</p>
+        <div class="mt-4 flex items-center gap-1.5 text-earth-200 text-sm font-semibold">
+          Ver restaurantes
+          <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+
+      <!-- Serviços Úteis -->
+      <a
+        href="/pt/caminha/servicos-uteis/"
+        class="group relative rounded-3xl bg-gradient-to-br from-slate-600 to-slate-900 text-white overflow-hidden min-h-[190px] flex flex-col justify-end p-7 no-underline shadow-xl hover:shadow-2xl hover:-translate-y-1 active:translate-y-0 transition-all duration-200"
+      >
+        <div class="absolute top-6 right-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 border border-white/15">
+          <svg class="h-7 w-7 text-slate-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+        </div>
+        <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-1.5">Serviços do Peregrino</p>
+        <h3 class="text-xl font-bold text-white leading-tight">Serviços Úteis</h3>
+        <p class="text-sm text-slate-300 mt-1.5 leading-relaxed">Farmácias de serviço (rotação), lojas de equipamento e multibanco.</p>
+        <div class="mt-4 flex items-center gap-1.5 text-earth-300 text-sm font-semibold">
+          Ver serviços
+          <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ── SOBRE CAMINHA ────────────────────────────────────────────────────────── -->
+  <section class="bg-forest-50 border-y border-forest-100">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-14">
+      <div class="max-w-3xl">
+        <h2 class="text-2xl sm:text-3xl font-bold text-forest-900 mb-5">Caminha no Caminho da Costa</h2>
+        <div class="space-y-4 text-slate-700 text-base leading-relaxed">
+          <p>
+            Caminha (cerca de 7.000 habitantes) situa-se na confluência dos rios Coura e Minho, em frente à vila espanhola de A Guarda do outro lado da água. As suas muralhas do século XIV, a torre do relógio e a elegante Praça do Conselho tornam-na numa das paragens mais encantadoras de todo o Caminho Português da Costa.
+          </p>
+          <p>
+            Para os peregrinos que percorrem o <strong>Caminho da Costa</strong>, Caminha marca a transição de Portugal para a Galiza. A travessia de ferry — uma curta mas memorável viagem de 15 minutos — tem sido utilizada por viajantes e peregrinos durante séculos. Após a travessia, os peregrinos continuam para norte por A Guarda ao longo da costa galega em direção a Santiago de Compostela.
+          </p>
+          <p>
+            A vila é uma paragem prática para pernoitar antes da travessia, com um albergue municipal de peregrinos, várias pensões e excelentes restaurantes para recuperar forças após a longa etapa costeira de Viana do Castelo.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </MainLayout>
+
+<script is:inline>
+  (function () {
+    var banner = document.getElementById('ferry-warning-banner');
+    var btn = document.getElementById('dismiss-ferry-warning');
+    if (!banner || !btn) return;
+    if (sessionStorage.getItem('ferryWarningDismissed')) {
+      banner.style.display = 'none';
+    }
+    btn.addEventListener('click', function () {
+      banner.style.display = 'none';
+      sessionStorage.setItem('ferryWarningDismissed', '1');
+    });
+  })();
+</script>
