@@ -127,6 +127,34 @@ Pages live at:
 
 - [ ] **Dynamic Emergency / Conditions Banner** — Add a `ConditionsBanner.astro` component at top of `ferry-and-logistics.astro`. Hardcoded but easily-updated seasonal warnings: summer heat advisory, winter fog/tide warnings, Holy Week surge notice. Pattern: `const ACTIVE_BANNER = null` (null = no banner shown). When set, renders a dismissible `role="alert"` bar in `earth-500` (warning) or `red-600` (emergency). Dismissed state stored in `sessionStorage`. Gives the site a "live" feel and prevents pilgrim complaints about unexpected ferry closures.
 
+## Phase 3 Monetization Update — 2026-05-24
+
+### Completed in this session
+
+- **[T1] Accommodation Grid Expansion** (`where-to-stay.astro` / `donde-dormir.astro`)
+  - Added: `Albergue Santiago de Caminha` (Rua Direita 95) — private hostel with advance booking, `aid=7968251`
+  - Added: `Litis Hotel` — mid-range central, `aid=7968251`
+  - Added: `Hotel Porta do Sol` — spa/pool coastal hotel, `aid=7968251`
+  - Added: `Rinoterra Minho` (Seixas) — luxury rural retreat, `aid=7968251`
+  - Municipal albergue retains `bookingUrl: null` with explicit "no reservations" notes
+  - CTA buttons upgraded: gradient `from-earth-500 to-earth-600`, `shadow-md`, text "Check Availability & Prices" / "Ver Disponibilidad y Precios"
+  - All commercial links: `rel="nofollow noopener noreferrer sponsored"`
+
+- **[T2] AdSense Injection** (`useful-services.astro` / `servicios-utiles.astro`)
+  - Slot `2297179243` injected below hero on both services pages
+  - Slot `8017929699` injected mid-content between gear and pharmacy sections on both services pages
+  - All 8 content pages now have AdSense coverage
+
+- **[T3] Pharmacy Data Injection** (`useful-services.astro` / `servicios-utiles.astro`)
+  - Named pharmacies added: `Farmácia Torres` (Praça Conselheiro Silva Torres), `Farmácia Beirão Rendeiro` (Rua da Corredoura), `Farmácia Sousa` (Seixas)
+  - Vila Praia de Âncora expanded with: `Farmácia Moderna` (Rua 31 de Janeiro), `Farmácia Brito` (Praça da República)
+  - Official advisory added: "Linha 1400 (Serviço Nacional de Farmácias)" + full rotation system notice
+
+- **[T4] Gear Stores Grid** (`useful-services.astro` / `servicios-utiles.astro`)
+  - Replaced generic gear description with real verified stores: `Dorigem no Caminho` (Rua São João 27), `Dorigem Shop` (Rua 16 de Setembro 17), `Cool Caminha` (CC Atlantic, Loja 19), `Forte Store` (Rua 16 de Setembro 20), `Loja da Amizade`
+
+---
+
 ## Key External Contacts
 
 - **Caminha Tourist Office:** +351 258 921 952 (Mon–Fri 09:00–17:30)

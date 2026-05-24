@@ -100,7 +100,69 @@ const alojamientos = [
     reservaUrl: 'https://www.booking.com/city/pt/caminha.html?aid=7968251',
   },
 
+  // ── ALBERGUE PRIVADO ─────────────────────────────────────────────────────────
+  {
+    name: 'Albergue de Peregrinos Santiago de Caminha',
+    tipo: 'Albergue Privado · Reserva Anticipada Disponible',
+    categoria: 'albergue',
+    direccion: 'Rua Direita 95, Caminha',
+    precioDesde: '14 €',
+    credencial: false,
+    camas: 20,
+    telefono: '+351 967 450 230',
+    horario: 'Entrada desde las 13:00 · Salida antes de las 09:30',
+    descripcion: 'La ventaja clave sobre el albergue municipal: puedes reservar tu cama con antelación. Para peregrinos que llegan tarde, caminan en grupo o viajan en temporada alta cuando el albergue municipal de 28 camas se llena en menos de una hora, el Albergue Santiago en Rua Direita es el albergue privado con reserva disponible en el centro de Caminha. A pie de la calle principal peatonal, a pocos minutos del embarcadero y la plaza mayor. Literas con taquillas individuales, baños compartidos, cocina comunitaria, lavandería y patio exterior. Sello de credencial disponible.',
+    servicios: ['Reserva online disponible', 'Sello de credencial', 'Cocina comunitaria', 'Lavandería', 'Taquillas individuales', 'Patio exterior', 'Wi-Fi', 'Sin credencial obligatoria'],
+    notas: 'Único albergue privado reservable del centro de Caminha. Reserva abajo para garantizar tu cama — el albergue municipal solo acepta orden de llegada y se llena antes de las 14:30 en verano.',
+    reservaUrl: 'https://www.booking.com/city/pt/caminha.html?aid=7968251',
+  },
+
   // ── HOTELES DE CATEGORÍA ──────────────────────────────────────────────────────
+  {
+    name: 'Litis Hotel',
+    tipo: 'Hotel Central · Peregrino-Amigable',
+    categoria: 'hotel',
+    direccion: 'Centro de Caminha (cerca de Praça do Conselho)',
+    precioDesde: '55 €',
+    credencial: false,
+    camas: null,
+    telefono: '+351 258 920 010',
+    horario: 'Entrada desde las 14:00 · Salida antes de las 12:00',
+    descripcion: 'La opción más práctica de gama media en Caminha — el Litis está en pleno centro, a minutos del embarcadero del ferry, el albergue municipal, los supermercados y los restaurantes. Habitaciones limpias y modernas sin el precio boutique. El hotel atiende tanto a grupos de peregrinos como a caminantes en solitario con eficiencia: consigna de equipaje antes del check-in, salida anticipada para el ferry de las 09:00 y sello de credencial bajo petición. Consistentemente la mejor valoración gama media por la combinación de ubicación central, precio honesto y servicio sin complicaciones.',
+    servicios: ['Ubicación central', 'Sello de credencial', 'Salida anticipada', 'Consigna de equipaje', 'Aire acondicionado', 'Baño en suite', 'Wi-Fi'],
+    notas: 'Popular entre grupos del Camino — se llena rápido en julio–agosto. Los peregrinos en solitario deben reservar con 3–5 días de antelación en temporada alta.',
+    reservaUrl: 'https://www.booking.com/hotel/pt/litis-caminha.html?aid=7968251',
+  },
+  {
+    name: 'Hotel Porta do Sol',
+    tipo: 'Hotel Costero · Spa y Piscina',
+    categoria: 'hotel',
+    direccion: 'Caminha (cerca de Foz / Playa Atlántica)',
+    precioDesde: '75 €',
+    credencial: false,
+    camas: null,
+    telefono: '+351 258 722 040',
+    horario: 'Entrada desde las 15:00 · Salida antes de las 12:00',
+    descripcion: 'Situado cerca de la Foz — donde el Miño encuentra el Atlántico — el Hotel Porta do Sol es la opción de recuperación premium para peregrinos que completan la exigente etapa costera. La piscina exterior y el spa completo con sauna, jacuzzi y masajes son el atractivo principal: después de días de asfalto y sendero, el contraste es transformador. Habitaciones modernas con vistas al mar o al río, la mayoría con balcón. Restaurante con pescado fresco del Atlántico y desayuno bufé generoso.',
+    servicios: ['Piscina exterior', 'Spa y sauna', 'Habitaciones con vistas', 'Balcones', 'Restaurante', 'Desayuno bufé', 'Traslado de equipaje', 'Parking', 'Wi-Fi'],
+    notas: 'Reserva anticipada muy recomendable — es la opción hotelera más demandada por peregrinos que quieren un día de recuperación completo antes del cruce a España.',
+    reservaUrl: 'https://www.booking.com/hotel/pt/porta-do-sol-caminha.html?aid=7968251',
+  },
+  {
+    name: 'Rinoterra Minho',
+    tipo: 'Retiro Rural de Lujo · Turismo de Habitação',
+    categoria: 'hotel',
+    direccion: 'Seixas, Caminha (3 km al sur del centro)',
+    precioDesde: '110 €',
+    credencial: false,
+    camas: null,
+    telefono: '+351 258 730 100',
+    horario: 'Entrada desde las 15:00 · Salida antes de las 12:00',
+    descripcion: 'El alojamiento rural más prestigioso de la zona de Caminha. Rinoterra Minho se encuentra en la freguesia de Seixas rodeado de viñedos del Valle del Miño y pinar. Esta casa solariega restaurada ofrece suites con mobiliario antiguo, jardín con terraza, piscina privada y una bodega curada exclusivamente con productores locales de Vinho Verde. Los peregrinos internacionales que desean celebrar la última etapa portuguesa con auténtico lujo no encontrarán nada comparable en este tramo de la ruta. Traslado disponible desde Caminha; el regreso a pie son aproximadamente 35 minutos por la senda del Camino.',
+    servicios: ['Piscina privada', 'Bodega de Vinho Verde', 'Jardín con terraza', 'Suites', 'Desayuno con productos locales', 'Traslado aeropuerto', 'Wi-Fi', 'Vistas al Valle del Miño'],
+    notas: 'Propiedad boutique premium — menos de 10 habitaciones. Reserva con al menos 4 semanas de antelación en temporada alta. Ideal para peregrinos internacionales que celebran el final del Camino portugués.',
+    reservaUrl: 'https://www.booking.com/hotel/pt/rinoterra-minho.html?aid=7968251',
+  },
   {
     name: 'Design Wine Hotel',
     tipo: 'Hotel Boutique del Vino',
@@ -290,9 +352,9 @@ const secciones: { key: string; etiqueta: string; intro: string }[] = [
                         href={a.reservaUrl}
                         rel="nofollow noopener noreferrer sponsored"
                         target="_blank"
-                        class="inline-flex items-center justify-center gap-2 bg-earth-500 hover:bg-earth-600 active:bg-earth-700 text-white font-semibold text-sm px-6 py-3 rounded-xl transition-all duration-200 no-underline shrink-0 shadow-sm hover:shadow-md cursor-pointer group"
+                        class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-earth-500 to-earth-600 hover:from-earth-600 hover:to-earth-700 active:scale-[0.98] text-white font-bold text-sm px-6 py-3.5 rounded-xl transition-all duration-200 no-underline shrink-0 shadow-md hover:shadow-lg cursor-pointer group"
                       >
-                        Comprobar Disponibilidad
+                        Ver Disponibilidad y Precios
                         <svg class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
                         </svg>

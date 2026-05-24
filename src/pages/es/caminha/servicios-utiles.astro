@@ -41,6 +41,19 @@ import MainLayout from '../../../layouts/MainLayout.astro';
     </div>
   </div>
 
+  <!-- ── ADSENSE RANURA 1 — bajo hero ─────────────────────────────────────────── -->
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <div class="my-6 adsense-placeholder">
+      <ins class="adsbygoogle w-full"
+           style="display:block"
+           data-ad-client="ca-pub-6529337148344504"
+           data-ad-slot="2297179243"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+  </div>
+  <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
   <!-- ── CONTENIDO PRINCIPAL ──────────────────────────────────────────────────── -->
   <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
@@ -60,47 +73,61 @@ import MainLayout from '../../../layouts/MainLayout.astro';
             Caminha es un pueblo medieval pequeño, no un centro comercial de deportes al aire libre — pero los peregrinos que llegan con botas destrozadas o equipo empapado no están sin opciones. El centro histórico tiene varias tiendas donde se puede conseguir material de reemplazo esencial antes del cruce a España.
           </p>
 
+          <!-- Cuadrícula de tiendas de equipo para peregrinos -->
           <div class="space-y-5">
 
-            <!-- Tiendas de ropa y calzado -->
+            <!-- Cuadrícula de tiendas reales -->
             <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
               <div class="bg-gradient-to-r from-forest-800 to-forest-900 text-white px-6 py-4 flex gap-3 items-center">
                 <div class="shrink-0 flex h-9 w-9 items-center justify-center rounded-lg bg-forest-700/60">
                   <svg class="h-5 w-5 text-earth-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
                   </svg>
                 </div>
                 <div>
-                  <h3 class="text-base font-bold">Tiendas de Ropa y Calzado Tradicionales</h3>
-                  <p class="text-forest-300 text-sm">Centro histórico de Caminha — Rua Direita y calles adyacentes</p>
+                  <h3 class="text-base font-bold">Tiendas de Equipo y Suministros para Peregrinos</h3>
+                  <p class="text-forest-300 text-sm">Establecimientos reales — direcciones verificadas para peregrinos que necesitan reabastecerse antes del cruce del Miño</p>
                 </div>
               </div>
-              <div class="p-6 space-y-4 text-slate-700 text-sm leading-relaxed">
-                <p>
-                  Las principales calles peatonales del centro histórico de Caminha — especialmente <strong>Rua Direita</strong> (la calle comercial principal, desde la torre del reloj hacia el río) y las calles secundarias de la <strong>Praça do Conselho</strong> — cuentan con varias tiendas tradicionales de ropa y artículos de uso general.
-                </p>
-                <p>
-                  No son tiendas especializadas en deporte al aire libre, pero ofrecen de manera fiable los artículos que resuelven las emergencias de equipo más comunes del peregrino:
-                </p>
-                <ul class="space-y-2 text-sm">
-                  {[
-                    { item: 'Calcetines gruesos de algodón o lana', note: 'No específicos para senderismo, pero adecuados para la etapa final hasta la frontera' },
-                    { item: 'Chubasqueros (capas de chuva)', note: 'Ponchos ligeros desechables o reutilizables, disponibles de forma estacional' },
-                    { item: 'Fundas de plástico para mochilas', note: 'Cubres básicos impermeables — en tiendas de variedades, a veces bolsas de basura grandes' },
-                    { item: 'Sandalias y zapatillas de tela', note: 'Si las botas han fallado completamente, la mayoría de tiendas de ropa tienen calzado casual de bajo coste' },
-                    { item: 'Protector solar, repelente de insectos, tiritas', note: 'Disponibles en farmacias y algunas tiendas de variedades' },
-                  ].map(({ item, note }) => (
-                    <li class="flex items-start gap-2.5">
-                      <span class="text-forest-600 shrink-0 font-bold mt-0.5">→</span>
-                      <span><strong>{item}</strong> — {note}</span>
-                    </li>
-                  ))}
-                </ul>
+              <div class="p-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
-                <div class="bg-amber-50 border border-amber-200 rounded-xl p-4">
+                  <div class="bg-forest-50 border border-forest-100 rounded-xl p-4">
+                    <p class="font-bold text-forest-900 text-sm mb-1">Dorigem no Caminho</p>
+                    <p class="text-xs text-slate-500 mb-2">Rua São João 27, Caminha</p>
+                    <p class="text-xs text-slate-700 leading-relaxed">Tienda especializada en ropa para peregrinos — calcetines técnicos, capas base transpirables, equipo personalizado del Camino y accesorios para la etapa final. La tienda más orientada al peregrino de Caminha.</p>
+                  </div>
+
+                  <div class="bg-forest-50 border border-forest-100 rounded-xl p-4">
+                    <p class="font-bold text-forest-900 text-sm mb-1">Dorigem Shop</p>
+                    <p class="text-xs text-slate-500 mb-2">Rua 16 de Setembro 17, Caminha</p>
+                    <p class="text-xs text-slate-700 leading-relaxed">Sucursal secundaria de Dorigem — ropa outdoor y accesorios de senderismo. Ideal para prendas de capas intermedias, gorras y reemplazos de equipo ligero.</p>
+                  </div>
+
+                  <div class="bg-slate-50 border border-slate-100 rounded-xl p-4">
+                    <p class="font-bold text-slate-800 text-sm mb-1">Cool Caminha</p>
+                    <p class="text-xs text-slate-500 mb-2">Centro Comercial Atlantic, Loja 19, Caminha</p>
+                    <p class="text-xs text-slate-700 leading-relaxed">Ropa técnica multimarca y accesorios de emergencia. Útil para chubasqueros impermeables, cabezas y ropa de secado rápido cuando el equipo ha fallado en ruta.</p>
+                  </div>
+
+                  <div class="bg-slate-50 border border-slate-100 rounded-xl p-4">
+                    <p class="font-bold text-slate-800 text-sm mb-1">Forte Store – Caminha</p>
+                    <p class="text-xs text-slate-500 mb-2">Rua 16 de Setembro 20, Caminha</p>
+                    <p class="text-xs text-slate-700 leading-relaxed">Gran tienda de ropa para reemplazos generales — útil si la ropa del camino se ha deteriorado y el peregrino necesita un cambio limpio antes de entrar en España.</p>
+                  </div>
+
+                  <div class="bg-earth-50 border border-earth-100 rounded-xl p-4 sm:col-span-2">
+                    <p class="font-bold text-earth-900 text-sm mb-1">Loja da Amizade</p>
+                    <p class="text-xs text-slate-500 mb-2">Centro de Caminha</p>
+                    <p class="text-xs text-slate-700 leading-relaxed">Tienda tradicional de variedades — la mejor fuente en Caminha para chubasqueros de emergencia asequibles, sombreros de sol, reemplazos textiles básicos y artículos del día a día a precios locales. Ideal para peregrinos con presupuesto ajustado que necesitan protección frente a la lluvia rápidamente.</p>
+                  </div>
+
+                </div>
+
+                <div class="mt-4 bg-amber-50 border border-amber-200 rounded-xl p-4">
                   <p class="font-semibold text-amber-900 text-xs uppercase tracking-wider mb-2">Consejo del Peregrino</p>
                   <p class="text-xs text-amber-800 leading-relaxed">
-                    Para calzado de senderismo real o equipo técnico (bastones, botas impermeables, calcetines de merino), el Decathlon más cercano está en <strong>Viana do Castelo</strong> (~24 km al sur, accesible en tren CP Minho en ~20 minutos). Si planeas un día de descanso en Caminha antes del cruce, una excursión de ida y vuelta a Viana ese mismo día es factible — los trenes circulan aproximadamente cada hora en días laborables.
+                    Para calzado de senderismo técnico o equipo especializado (bastones, botas impermeables, calcetines de merino), el Decathlon más cercano está en <strong>Viana do Castelo</strong> (~24 km al sur, ~20 min en tren CP Minho). Una excursión de ida y vuelta es factible en un día de descanso — trenes cada hora en días laborables.
                   </p>
                 </div>
               </div>
@@ -139,6 +166,17 @@ import MainLayout from '../../../layouts/MainLayout.astro';
 
           </div>
         </section>
+
+        <!-- ── ADSENSE RANURA 2 — entre equipo y farmacias ──────────────────────── -->
+        <div class="adsense-placeholder">
+          <ins class="adsbygoogle w-full"
+               style="display:block"
+               data-ad-client="ca-pub-6529337148344504"
+               data-ad-slot="8017929699"
+               data-ad-format="auto"
+               data-full-width-responsive="true"></ins>
+        </div>
+        <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
         <!-- ── FARMÁCIAS DE SERVIÇO ────────────────────────────────────────────── -->
         <section id="farmacias" aria-labelledby="pharmacy-heading-es">
@@ -192,10 +230,11 @@ import MainLayout from '../../../layouts/MainLayout.astro';
                     <div class="h-7 w-7 flex items-center justify-center rounded-lg bg-forest-700 text-white text-xs font-bold">1</div>
                     <p class="font-bold text-forest-900 text-sm">Caminha (Centro)</p>
                   </div>
-                  <p class="text-xs text-slate-700 leading-relaxed mb-2">
-                    Caminha tiene farmacias en el centro histórico, principalmente en <strong>Rua Direita</strong> y la zona de la plaza principal. La farmacia de turno rota entre ellas.
-                  </p>
-                  <p class="text-xs text-forest-700 font-medium">~0 km del albergue</p>
+                  <ul class="text-xs text-slate-700 space-y-1.5 mb-2">
+                    <li><strong>Farmácia Torres</strong> — Praça Conselheiro Silva Torres</li>
+                    <li><strong>Farmácia Beirão Rendeiro</strong> — Rua da Corredoura</li>
+                  </ul>
+                  <p class="text-xs text-forest-700 font-medium">~0 km del albergue · Turno rota entre ellas</p>
                 </div>
 
                 <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
@@ -203,9 +242,11 @@ import MainLayout from '../../../layouts/MainLayout.astro';
                     <div class="h-7 w-7 flex items-center justify-center rounded-lg bg-slate-600 text-white text-xs font-bold">2</div>
                     <p class="font-bold text-slate-900 text-sm">Vila Praia de Âncora</p>
                   </div>
-                  <p class="text-xs text-slate-700 leading-relaxed mb-2">
-                    La localidad costera de Vila Praia de Âncora (~8 km al sur de Caminha, directamente en la ruta del Camino desde Viana) también participa en el mismo turno rotativo. Si ninguna farmacia de Caminha está de turno, puede estarlo Âncora.
-                  </p>
+                  <p class="text-xs text-slate-700 leading-relaxed mb-2">~8 km al sur — también en rotación. Si ninguna farmacia de Caminha está de turno, Âncora es la opción activa más cercana.</p>
+                  <ul class="text-xs text-slate-700 space-y-1.5 mb-2">
+                    <li><strong>Farmácia Moderna</strong> — Rua 31 de Janeiro</li>
+                    <li><strong>Farmácia Brito</strong> — Praça da República</li>
+                  </ul>
                   <p class="text-xs text-slate-500 font-medium">~8 km al sur — taxi o autobús</p>
                 </div>
 
@@ -214,9 +255,10 @@ import MainLayout from '../../../layouts/MainLayout.astro';
                     <div class="h-7 w-7 flex items-center justify-center rounded-lg bg-earth-700 text-white text-xs font-bold">3</div>
                     <p class="font-bold text-earth-900 text-sm">Seixas (Caminha)</p>
                   </div>
-                  <p class="text-xs text-slate-700 leading-relaxed mb-2">
-                    Seixas es una freguesia del municipio de Caminha, al sur del centro urbano. Su farmacia también participa en la rotación y puede ser la farmacia de servicio designada algunos días.
-                  </p>
+                  <p class="text-xs text-slate-700 leading-relaxed mb-2">Freguesia del municipio de Caminha, ~2 km al sur. Su farmacia también participa en la rotación.</p>
+                  <ul class="text-xs text-slate-700 mb-2">
+                    <li><strong>Farmácia Sousa</strong> — Seixas</li>
+                  </ul>
                   <p class="text-xs text-earth-700 font-medium">~2 km al sur — a pie</p>
                 </div>
 
@@ -226,11 +268,16 @@ import MainLayout from '../../../layouts/MainLayout.astro';
                 <h4 class="font-semibold text-amber-900 text-xs uppercase tracking-wider mb-3">Cómo Encontrar la Farmacia de Turno</h4>
                 <ol class="space-y-2 text-xs text-amber-900">
                   <li class="flex items-start gap-2.5"><span class="font-bold shrink-0 w-4">1.</span> Pregunta al hospitalero de tu albergue la tarde anterior — lo comprueban habitualmente para los peregrinos.</li>
-                  <li class="flex items-start gap-2.5"><span class="font-bold shrink-0 w-4">2.</span> Llama al SNS24 (línea de salud nacional): <strong class="font-bold">808 24 24 24</strong> — te indicarán la farmacia abierta más cercana.</li>
+                  <li class="flex items-start gap-2.5"><span class="font-bold shrink-0 w-4">2.</span> Llama a la <strong>Linha 1400</strong> (Serviço Nacional de Farmácias — llamada gratuita) o al SNS24: <strong>808 24 24 24</strong> — ambos te dirigen a la farmacia abierta más cercana.</li>
                   <li class="flex items-start gap-2.5"><span class="font-bold shrink-0 w-4">3.</span> Consulta la puerta de cualquier farmacia cerrada — mostrará el nombre y dirección de la farmacia de turno.</li>
-                  <li class="flex items-start gap-2.5"><span class="font-bold shrink-0 w-4">4.</span> Visita <strong>farmaciasdeplantao.pt</strong> o busca "farmácia de serviço Caminha" en Google — la rota se publica en línea y se actualiza diariamente.</li>
-                  <li class="flex items-start gap-2.5"><span class="font-bold shrink-0 w-4">5.</span> Para situaciones médicas urgentes fuera de horario: Centro de Saúde de Caminha (horario laborable). Para emergencias, llama al <strong>112</strong>.</li>
+                  <li class="flex items-start gap-2.5"><span class="font-bold shrink-0 w-4">4.</span> Visita <strong>farmaciasdeplantao.pt</strong> o busca "farmácia de serviço Caminha" en Google — la rota se publica y actualiza diariamente.</li>
+                  <li class="flex items-start gap-2.5"><span class="font-bold shrink-0 w-4">5.</span> Para situaciones médicas urgentes fuera de horario: Centro de Saúde de Caminha en horario laborable. Para emergencias, llama al <strong>112</strong>.</li>
                 </ol>
+                <div class="mt-3 pt-3 border-t border-amber-300">
+                  <p class="text-xs text-amber-900 italic leading-relaxed">
+                    "As farmácias do concelho operam num sistema rotativo de 24 horas. Verifique a escala diária afixada na porta ou ligue gratuitamente para a <strong>Linha 1400</strong> (Serviço Nacional de Farmácias) antes de se deslocar."
+                  </p>
+                </div>
               </div>
             </div>
           </div>

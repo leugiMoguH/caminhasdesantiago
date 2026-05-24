@@ -100,7 +100,69 @@ const accommodation = [
     bookingUrl: 'https://www.booking.com/city/pt/caminha.html?aid=7968251',
   },
 
+  // ── PRIVATE PILGRIM HOSTEL ────────────────────────────────────────────────────
+  {
+    name: 'Albergue de Peregrinos Santiago de Caminha',
+    type: 'Private Pilgrim Hostel · Advance Booking Available',
+    category: 'hostel',
+    address: 'Rua Direita 95, Caminha',
+    priceFrom: '€14',
+    credential: false,
+    beds: 20,
+    phone: '+351 967 450 230',
+    hours: 'Check-in from 13:00 · Check-out by 09:30',
+    description: 'The critical advantage over the municipal albergue: you can book your bed in advance. For pilgrims arriving late, walking in a group, or travelling in peak season when the 28-bed municipal hostel fills within an hour of opening, Albergue Santiago on Rua Direita is both essential backup and first choice. Located on Caminha\'s main pedestrian street — walking distance from the ferry dock and main square. Dormitory bunks with individual lockers, shared bathrooms, communal kitchen, laundry, and an outdoor pilgrim patio. Credential stamps on request. Unlike the municipal albergue, your bed can be secured days in advance.',
+    amenities: ['Advance online booking', 'Credential stamp', 'Communal kitchen', 'Laundry', 'Individual lockers', 'Outdoor patio', 'Wi-Fi', 'No credencial required'],
+    notes: 'Only bookable private pilgrim hostel in Caminha town centre. Book below to guarantee your bed — municipal albergue is walk-in only and fills by 14:30 in summer.',
+    bookingUrl: 'https://www.booking.com/city/pt/caminha.html?aid=7968251',
+  },
+
   // ── PREMIUM HOTELS ────────────────────────────────────────────────────────────
+  {
+    name: 'Litis Hotel',
+    type: 'Central Hotel · Pilgrim-Friendly',
+    category: 'hotel',
+    address: 'Caminha Town Centre (near Praça do Conselho)',
+    priceFrom: '€55',
+    credential: false,
+    beds: null,
+    phone: '+351 258 920 010',
+    hours: 'Check-in from 14:00 · Check-out by 12:00',
+    description: 'The most practical mid-range choice in Caminha — Litis sits at the heart of the town centre, minutes from the ferry dock, municipal albergue, supermarkets, and restaurants. Clean, modern rooms without the boutique premium. The hotel handles both pilgrim groups and solo walkers efficiently: luggage storage before check-in, early check-out for 09:00 ferry departures, credential stamps on request. Consistently the best-reviewed mid-range option for the combination of central location, honest price, and no-fuss pilgrim service.',
+    amenities: ['Central location', 'Credential stamp', 'Early check-out option', 'Luggage storage', 'Air conditioning', 'En-suite bathrooms', 'Wi-Fi'],
+    notes: 'Popular with Camino groups — fills quickly in July–August. Solo pilgrims should book 3–5 days ahead in peak season.',
+    bookingUrl: 'https://www.booking.com/hotel/pt/litis-caminha.html?aid=7968251',
+  },
+  {
+    name: 'Hotel Porta do Sol',
+    type: 'Coastal Hotel · Spa & Pool',
+    category: 'hotel',
+    address: 'Caminha (near Foz / Atlantic Beach)',
+    priceFrom: '€75',
+    credential: false,
+    beds: null,
+    phone: '+351 258 722 040',
+    hours: 'Check-in from 15:00 · Check-out by 12:00',
+    description: 'Positioned near the Foz — where the Minho meets the Atlantic — Hotel Porta do Sol is the premium recovery option for pilgrims completing the demanding coastal leg. The outdoor pool and full spa with sauna, jacuzzi, and massage treatments are the headline: after days of tarmac and trail, the contrast is transformative. Modern rooms with sea or river views, most with balconies. Restaurant serves fresh Atlantic catch and a generous breakfast buffet. Most pilgrims who stay describe it as the best decision of their whole Camino.',
+    amenities: ['Outdoor pool', 'Spa & sauna', 'Sea/river view rooms', 'Balconies', 'Restaurant', 'Breakfast buffet', 'Luggage transfer', 'Parking', 'Wi-Fi'],
+    notes: 'Advance booking strongly recommended — consistently the most-demanded hotel for pilgrims wanting a full recovery day before the Spain crossing.',
+    bookingUrl: 'https://www.booking.com/hotel/pt/porta-do-sol-caminha.html?aid=7968251',
+  },
+  {
+    name: 'Rinoterra Minho',
+    type: 'Luxury Rural Retreat · Turismo de Habitação',
+    category: 'hotel',
+    address: 'Seixas, Caminha (3 km south of town centre)',
+    priceFrom: '€110',
+    credential: false,
+    beds: null,
+    phone: '+351 258 730 100',
+    hours: 'Check-in from 15:00 · Check-out by 12:00',
+    description: 'The most prestigious rural stay in the Caminha area. Rinoterra Minho sits in the Seixas parish surrounded by Minho Valley vineyards and pine forest. This restored manor offers suites with antique furnishings, terrace garden, private pool, and a curated cellar focused exclusively on local Vinho Verde producers. International pilgrims completing the final Portuguese stage who want genuine luxury will find nothing comparable on this stretch of the route. Transfer from Caminha available; return walk takes approx. 35 minutes on the Camino path.',
+    amenities: ['Private pool', 'Vinho Verde cellar', 'Terrace garden', 'Suite accommodation', 'Local breakfast', 'Airport transfer', 'Wi-Fi', 'Minho valley views'],
+    notes: 'Premium boutique property — fewer than 10 rooms. Book at least 4 weeks ahead in peak season. Best for international pilgrims celebrating the end of the Portuguese Camino.',
+    bookingUrl: 'https://www.booking.com/hotel/pt/rinoterra-minho.html?aid=7968251',
+  },
   {
     name: 'Design Wine Hotel',
     type: 'Boutique Wine Hotel',
@@ -293,9 +355,9 @@ const sections: { key: string; label: string; intro: string }[] = [
                         href={a.bookingUrl}
                         rel="nofollow noopener noreferrer sponsored"
                         target="_blank"
-                        class="inline-flex items-center justify-center gap-2 bg-earth-500 hover:bg-earth-600 active:bg-earth-700 text-white font-semibold text-sm px-6 py-3 rounded-xl transition-all duration-200 no-underline shrink-0 shadow-sm hover:shadow-md cursor-pointer group"
+                        class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-earth-500 to-earth-600 hover:from-earth-600 hover:to-earth-700 active:scale-[0.98] text-white font-bold text-sm px-6 py-3.5 rounded-xl transition-all duration-200 no-underline shrink-0 shadow-md hover:shadow-lg cursor-pointer group"
                       >
-                        Check Availability
+                        Check Availability &amp; Prices
                         <svg class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
                         </svg>
