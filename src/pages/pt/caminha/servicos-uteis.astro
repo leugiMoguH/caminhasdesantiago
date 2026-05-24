@@ -1,0 +1,358 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+---
+
+<MainLayout
+  title="Serviços para Peregrinos em Caminha — Farmácias, Lojas de Equipamento e Contactos de Emergência"
+  description="Guia hiperlocal de serviços para peregrinos em Caminha. Farmácias de serviço em rotação, lojas de equipamento e reparação de botas, Multibanco e contactos de emergência para o Caminho Costeiro."
+  lang="pt"
+  schemaType="webpage"
+>
+
+  <div class="bg-gradient-to-br from-slate-800 via-slate-800 to-forest-950 text-white">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+      <nav aria-label="Rasto de navegação" class="mb-5">
+        <ol class="flex items-center gap-2 text-sm text-slate-400">
+          <li><a href="/pt/" class="hover:text-white no-underline hover:underline transition-colors">Início</a></li>
+          <li aria-hidden="true" class="text-slate-600">›</li>
+          <li><span class="text-slate-500">Caminha</span></li>
+          <li aria-hidden="true" class="text-slate-600">›</li>
+          <li aria-current="page" class="text-slate-200 font-medium">Serviços Úteis</li>
+        </ol>
+      </nav>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4 text-white tracking-tight">Serviços Úteis para Peregrinos em Caminha</h1>
+      <p class="text-slate-300 max-w-2xl text-base leading-relaxed">
+        Infraestrutura prática para peregrinos no centro histórico de Caminha — lojas de equipamento, farmácias em rotação, Multibanco e o que fazer quando o equipamento falha em rota.
+      </p>
+      <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-4">
+        {[
+          { icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>`, value: 'Farmácia de Serviço', label: 'Rotação diária' },
+          { icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>`, value: 'Equipamento', label: 'No centro histórico' },
+          { icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>`, value: 'Multibanco', label: 'Centro urbano e bancos' },
+        ].map(({ icon, value, label }) => (
+          <div class="bg-white/10 backdrop-blur-sm border border-white/10 rounded-2xl p-4 text-center hover:bg-white/15 transition-colors">
+            <div class="flex justify-center mb-2 text-earth-400" aria-hidden="true" set:html={icon} />
+            <div class="text-base font-bold text-white">{value}</div>
+            <div class="text-xs text-slate-400 mt-0.5">{label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <div class="my-6 adsense-placeholder">
+      <ins class="adsbygoogle w-full"
+           style="display:block"
+           data-ad-client="ca-pub-6529337148344504"
+           data-ad-slot="2297179243"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+  </div>
+  <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+      <div class="lg:col-span-2 space-y-12">
+
+        <!-- GEAR SECTION -->
+        <section id="lojas-equipamento" aria-labelledby="equipamento-heading">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-forest-100 border border-forest-200">
+              <svg class="h-5 w-5 text-forest-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+              </svg>
+            </div>
+            <h2 id="equipamento-heading" class="text-2xl font-bold text-forest-900 tracking-tight">Equipamento e Vestuário</h2>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed mb-6">
+            Caminha é uma pequena cidade medieval, não um centro de retalho de equipamento outdoor — mas os peregrinos que chegam com botas destruídas ou equipamento encharcado não ficam sem opções. O centro histórico tem algumas lojas onde é possível adquirir kit de substituição essencial antes da travessia para Espanha.
+          </p>
+
+          <div class="space-y-5">
+
+            <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+              <div class="bg-gradient-to-r from-forest-800 to-forest-900 text-white px-6 py-4 flex gap-3 items-center">
+                <div class="shrink-0 flex h-9 w-9 items-center justify-center rounded-lg bg-forest-700/60">
+                  <svg class="h-5 w-5 text-earth-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-base font-bold">Lojas de Equipamento e Material para Peregrinos em Caminha</h3>
+                  <p class="text-forest-300 text-sm">Lojas reais — moradas verificadas para peregrinos que precisam de reabastecer antes da travessia do Minho</p>
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+                  <div class="bg-forest-50 border border-forest-100 rounded-xl p-4">
+                    <p class="font-bold text-forest-900 text-sm mb-1">Dorigem no Caminho</p>
+                    <p class="text-xs text-slate-500 mb-2">Rua São João 27, Caminha</p>
+                    <p class="text-xs text-slate-700 leading-relaxed">Loja especializada em vestuário para peregrinos — meias técnicas, camisolas de base respiráveis, equipamento personalizado do Caminho e acessórios para a etapa final. A loja mais dedicada a peregrinos na cidade.</p>
+                  </div>
+
+                  <div class="bg-forest-50 border border-forest-100 rounded-xl p-4">
+                    <p class="font-bold text-forest-900 text-sm mb-1">Dorigem Shop</p>
+                    <p class="text-xs text-slate-500 mb-2">Rua 16 de Setembro 17, Caminha</p>
+                    <p class="text-xs text-slate-700 leading-relaxed">Filial secundária da Dorigem — roupa outdoor e acessórios de trilho. Boa para peças de camadas, bonés e substituições de equipamento leve.</p>
+                  </div>
+
+                  <div class="bg-slate-50 border border-slate-100 rounded-xl p-4">
+                    <p class="font-bold text-slate-800 text-sm mb-1">Cool Caminha</p>
+                    <p class="text-xs text-slate-500 mb-2">Centro Comercial Atlantic, Loja 19, Caminha</p>
+                    <p class="text-xs text-slate-700 leading-relaxed">Vestuário técnico multimarca e acessórios de emergência. Útil para impermeáveis, chapéus e roupa de secagem rápida quando o kit falhou a meio do percurso.</p>
+                  </div>
+
+                  <div class="bg-slate-50 border border-slate-100 rounded-xl p-4">
+                    <p class="font-bold text-slate-800 text-sm mb-1">Forte Store – Caminha</p>
+                    <p class="text-xs text-slate-500 mb-2">Rua 16 de Setembro 20, Caminha</p>
+                    <p class="text-xs text-slate-700 leading-relaxed">Grande loja de vestuário para substituições gerais — útil se o vestuário de trilho se deteriorou e os peregrinos precisam de uma muda limpa antes de entrar em Espanha.</p>
+                  </div>
+
+                  <div class="bg-earth-50 border border-earth-100 rounded-xl p-4 sm:col-span-2">
+                    <p class="font-bold text-earth-900 text-sm mb-1">Loja da Amizade</p>
+                    <p class="text-xs text-slate-500 mb-2">Centro urbano de Caminha</p>
+                    <p class="text-xs text-slate-700 leading-relaxed">Loja geral tradicional — a melhor fonte na cidade para capas de chuva de emergência acessíveis, chapéus de sol, substituições básicas de têxteis e utilidades do quotidiano a preços locais. Ideal para peregrinos com orçamento limitado que precisam de proteção da chuva rapidamente.</p>
+                  </div>
+
+                </div>
+
+                <div class="mt-4 bg-amber-50 border border-amber-200 rounded-xl p-4">
+                  <p class="font-semibold text-amber-900 text-xs uppercase tracking-wider mb-2">Dica para Peregrinos</p>
+                  <p class="text-xs text-amber-800 leading-relaxed">
+                    Para calçado de trilho adequado ou equipamento técnico (bastões de trekking, botas impermeáveis, meias de merino), o Decathlon mais próximo fica em <strong>Viana do Castelo</strong> (~24 km a sul, ~20 min de comboio pela Linha do Minho). Uma ida e volta no mesmo dia é viável num dia de descanso — os comboios circulam aproximadamente de hora em hora nos dias úteis.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+              <div class="bg-gradient-to-r from-slate-700 to-slate-800 text-white px-6 py-4 flex gap-3 items-center">
+                <div class="shrink-0 flex h-9 w-9 items-center justify-center rounded-lg bg-slate-600/60">
+                  <svg class="h-5 w-5 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-base font-bold">Cuidados com Botas e Gestão de Bolhas</h3>
+                  <p class="text-slate-300 text-sm">O que fazer quando os pés e o calçado falham antes da fronteira</p>
+                </div>
+              </div>
+              <div class="p-6 space-y-3 text-slate-700 text-sm leading-relaxed">
+                <p>
+                  Caminha não tem um sapateiro dedicado ou loja de reparação de equipamento outdoor no centro histórico. Para reparação estrutural de botas (separação da sola, fivelas partidas), as opções em Caminha são limitadas — a resolução prática é normalmente substituição, não reparação.
+                </p>
+                <div class="grid sm:grid-cols-2 gap-3">
+                  <div class="bg-forest-50 border border-forest-200 rounded-xl p-4">
+                    <p class="font-semibold text-forest-900 mb-2 text-xs uppercase tracking-wider">Produtos para bolhas</p>
+                    <p class="text-xs text-slate-700 leading-relaxed">Pensos Compeed para bolhas, creme antisséptico e ligaduras estão disponíveis em todas as farmácias de Caminha. Peça especificamente <em>"Compeed"</em> ou <em>"pensos para bolhas"</em>.</p>
+                  </div>
+                  <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+                    <p class="font-semibold text-slate-800 mb-2 text-xs uppercase tracking-wider">Adesivo para botas</p>
+                    <p class="text-xs text-slate-700 leading-relaxed">As lojas de ferragens em Caminha têm cola de contacto (Cola C200 / Pattex) — uma solução temporária para separação da sola que aguenta para um último dia de caminhada.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <div class="adsense-placeholder">
+          <ins class="adsbygoogle w-full"
+               style="display:block"
+               data-ad-client="ca-pub-6529337148344504"
+               data-ad-slot="8017929699"
+               data-ad-format="auto"
+               data-full-width-responsive="true"></ins>
+        </div>
+        <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+        <!-- PHARMACIES SECTION -->
+        <section id="farmacias" aria-labelledby="farmacia-heading">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-red-100 border border-red-200">
+              <svg class="h-5 w-5 text-red-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+            </div>
+            <h2 id="farmacia-heading" class="text-2xl font-bold text-forest-900 tracking-tight">Farmácias — Sistema de Rotação de Serviço</h2>
+          </div>
+
+          <div class="rounded-2xl overflow-hidden shadow-md border border-red-200 mb-6">
+            <div class="bg-gradient-to-r from-red-700 to-red-800 px-6 py-5 flex gap-4 items-start">
+              <div class="shrink-0 flex h-11 w-11 items-center justify-center rounded-xl bg-red-900/50 border border-red-600">
+                <svg class="h-6 w-6 text-red-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+                </svg>
+              </div>
+              <div>
+                <span class="text-xs font-bold uppercase tracking-widest text-red-300 bg-red-900/40 px-2 py-0.5 rounded-full border border-red-700 mb-2 inline-block">Informação Crítica para Peregrinos</span>
+                <h3 class="text-lg font-bold text-white">Farmácias de Serviço — Escala de Turnos Rotativos</h3>
+                <p class="text-red-200 text-sm mt-1">Nem todas as farmácias em Caminha estão abertas todos os dias — é a coisa que os peregrinos consistentemente perdem.</p>
+              </div>
+            </div>
+            <div class="bg-red-50 p-6 space-y-4 text-slate-700 text-sm leading-relaxed">
+              <p>
+                As farmácias portuguesas operam um <strong>sistema de revezamento</strong> (rotação de serviço) obrigatório, administrado pela associação local de farmácias (<em>Associação Nacional das Farmácias</em>). Em qualquer dia e noite, apenas uma farmácia no município de Caminha é designada como <strong>Farmácia de Serviço</strong> — a farmácia de turno com obrigação de estar aberta e com pessoal, incluindo fins de semana, feriados e durante a noite.
+              </p>
+              <p>
+                <strong>Isto significa que não pode assumir que uma farmácia está aberta só porque a consegue ver.</strong> Uma farmácia fechada exibirá um aviso na janela indicando qual a farmácia de turno nesse dia, incluindo a sua morada e número de telefone. No entanto, isto requer que encontre primeiro a farmácia fechada.
+              </p>
+              <p>
+                A forma mais fiável de encontrar a farmácia de serviço atual antes de precisar dela é <strong>perguntar no seu albergue ou pensão na noite anterior</strong> — os hospitaleiros sabem normalmente, ou podem verificar via linha SNS24 ou o site da ANF (<em>anf.pt</em>).
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm mb-5">
+            <div class="bg-gradient-to-r from-forest-800 to-forest-900 text-white px-6 py-4">
+              <h3 class="text-base font-bold">Área de Cobertura da Farmácia de Serviço — Caminha e Arredores</h3>
+              <p class="text-forest-300 text-sm mt-0.5">A rotação cobre várias localidades — conhecer as opções próximas pode ser crucial à noite ou nos feriados</p>
+            </div>
+            <div class="p-6 space-y-4">
+              <div class="grid sm:grid-cols-3 gap-4">
+
+                <div class="bg-forest-50 border border-forest-200 rounded-xl p-4">
+                  <div class="flex items-center gap-2 mb-3">
+                    <div class="h-7 w-7 flex items-center justify-center rounded-lg bg-forest-700 text-white text-xs font-bold">1</div>
+                    <p class="font-bold text-forest-900 text-sm">Caminha (Centro)</p>
+                  </div>
+                  <ul class="text-xs text-slate-700 space-y-1.5 mb-2">
+                    <li><strong>Farmácia Torres</strong> — Praça Conselheiro Silva Torres</li>
+                    <li><strong>Farmácia Beirão Rendeiro</strong> — Rua da Corredoura</li>
+                  </ul>
+                  <p class="text-xs text-forest-700 font-medium">~0 km do albergue · Serviço rota entre estas</p>
+                </div>
+
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+                  <div class="flex items-center gap-2 mb-3">
+                    <div class="h-7 w-7 flex items-center justify-center rounded-lg bg-slate-600 text-white text-xs font-bold">2</div>
+                    <p class="font-bold text-slate-900 text-sm">Vila Praia de Âncora</p>
+                  </div>
+                  <p class="text-xs text-slate-700 leading-relaxed mb-2">~8 km a sul — também na rotação de serviço. Quando nenhuma farmácia de Caminha está aberta, Âncora é a opção ativa mais próxima.</p>
+                  <ul class="text-xs text-slate-700 space-y-1.5 mb-2">
+                    <li><strong>Farmácia Moderna</strong> — Rua 31 de Janeiro</li>
+                    <li><strong>Farmácia Brito</strong> — Praça da República</li>
+                  </ul>
+                  <p class="text-xs text-slate-500 font-medium">~8 km a sul — táxi ou autocarro</p>
+                </div>
+
+                <div class="bg-earth-50 border border-earth-200 rounded-xl p-4">
+                  <div class="flex items-center gap-2 mb-3">
+                    <div class="h-7 w-7 flex items-center justify-center rounded-lg bg-earth-700 text-white text-xs font-bold">3</div>
+                    <p class="font-bold text-earth-900 text-sm">Seixas (Caminha)</p>
+                  </div>
+                  <p class="text-xs text-slate-700 leading-relaxed mb-2">Freguesia do município de Caminha, ~2 km a sul. A sua farmácia também participa na rotação.</p>
+                  <ul class="text-xs text-slate-700 mb-2">
+                    <li><strong>Farmácia Sousa</strong> — Avenida Joaquim Maria Portela, Seixas</li>
+                  </ul>
+                  <p class="text-xs text-earth-700 font-medium">~2 km a sul — a pé</p>
+                </div>
+
+              </div>
+
+              <div class="bg-amber-50 border border-amber-200 rounded-xl p-4">
+                <h4 class="font-semibold text-amber-900 text-xs uppercase tracking-wider mb-3">Como Encontrar a Farmácia de Serviço</h4>
+                <ol class="space-y-2 text-xs text-amber-900">
+                  <li class="flex items-start gap-2.5"><span class="font-bold shrink-0 w-4">1.</span> Pergunte ao hospitaleiro do seu albergue na noite anterior — verificam isto regularmente para os peregrinos.</li>
+                  <li class="flex items-start gap-2.5"><span class="font-bold shrink-0 w-4">2.</span> Ligue para a <strong>Linha 1400</strong> (Serviço Nacional de Farmácias — chamada gratuita) ou SNS24: <strong>808 24 24 24</strong> — ambos indicam a farmácia aberta mais próxima.</li>
+                  <li class="flex items-start gap-2.5"><span class="font-bold shrink-0 w-4">3.</span> Consulte a porta de qualquer farmácia fechada — apresenta o nome e a morada da farmácia de serviço atual.</li>
+                  <li class="flex items-start gap-2.5"><span class="font-bold shrink-0 w-4">4.</span> Visite <strong>farmaciasdeplantao.pt</strong> ou pesquise "farmácia de serviço Caminha" no Google — a escala é publicada e atualizada diariamente.</li>
+                  <li class="flex items-start gap-2.5"><span class="font-bold shrink-0 w-4">5.</span> Para situações médicas urgentes fora de horas: o Centro de Saúde de Caminha está aberto durante o horário de expediente. Para emergências, ligue para o <strong>112</strong>.</li>
+                </ol>
+                <div class="mt-3 pt-3 border-t border-amber-300">
+                  <p class="text-xs text-amber-900 italic leading-relaxed">
+                    "As farmácias do concelho operam num sistema rotativo de 24 horas. Verifique a escala diária afixada na porta ou ligue gratuitamente para a <strong>Linha 1400</strong> (Serviço Nacional de Farmácias) antes de se deslocar."
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+            <h3 class="font-bold text-forest-900 mb-4 text-base">O Que as Farmácias Portuguesas Têm para Peregrinos</h3>
+            <div class="grid sm:grid-cols-2 gap-3">
+              {[
+                { cat: 'Bolhas', items: 'Compeed (pensos para bolhas), Hansaplast, pensos de hidrocoloide' },
+                { cat: 'Analgésicos', items: 'Ibuprofeno, paracetamol — ambos disponíveis sem receita' },
+                { cat: 'Creme muscular', items: 'Gel Voltaren, Bengay (Dolorac), sprays refrigerantes para joelhos e gémeos' },
+                { cat: 'Queimadura solar', items: 'Aftersun, gel de aloe vera, creme solar de alto índice' },
+                { cat: 'Higiene dos pés', items: 'Creme para pé de atleta (clotrimazol), talco, desodorizante para pés' },
+                { cat: 'Cuidados com feridas', items: 'Solução antisséptica (Betadine), gaze estéril, fita médica' },
+              ].map(({ cat, items }) => (
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-3.5">
+                  <p class="font-semibold text-slate-800 text-xs uppercase tracking-wider mb-1">{cat}</p>
+                  <p class="text-xs text-slate-600 leading-relaxed">{items}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="space-y-5">
+
+        <div class="bg-red-50 border border-red-200 rounded-2xl p-5 shadow-sm">
+          <h2 class="text-base font-bold text-red-900 mb-3 tracking-tight">Contactos de Emergência</h2>
+          <ul class="space-y-3 text-sm">
+            {[
+              { label: 'Emergência (todos os serviços)', number: '112', note: 'Polícia, ambulância, bombeiros' },
+              { label: 'Linha SNS24', number: '808 24 24 24', note: 'Encontrar farmácia de serviço, aconselhamento médico' },
+              { label: 'Centro de Saúde de Caminha', number: '+351 258 919 440', note: 'Seg–Sex horário de expediente' },
+              { label: 'Posto de Turismo de Caminha', number: '+351 258 921 952', note: 'Informações locais práticas' },
+            ].map(({ label, number, note }) => (
+              <li>
+                <p class="font-semibold text-slate-800 text-xs mb-0.5">{label}</p>
+                <a href={`tel:${number.replace(/\s/g, '')}`} class="text-forest-700 font-bold hover:underline no-underline text-base cursor-pointer">{number}</a>
+                <p class="text-xs text-slate-500 mt-0.5">{note}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+          <h2 class="text-base font-bold text-forest-900 mb-3 tracking-tight">Multibanco</h2>
+          <p class="text-sm text-slate-700 leading-relaxed mb-3">
+            Caminha tem vários ATM Multibanco no centro urbano. A maior concentração está em redor da <strong>Praça do Conselho</strong> e nas ruas adjacentes. As agências da CGD (Caixa Geral de Depósitos) e Millennium BCP na cidade têm ATM exteriores acessíveis fora do horário bancário.
+          </p>
+          <p class="text-xs text-slate-500">O dinheiro é essencial para a travessia de ferry e as tarifas de táxi fluvial.</p>
+        </div>
+
+        <div class="bg-forest-50 border border-forest-200 rounded-2xl p-5 shadow-sm">
+          <h2 class="text-base font-bold text-forest-900 mb-3 tracking-tight">Outros Guias para Peregrinos</h2>
+          <ul class="space-y-3 text-sm">
+            <li>
+              <a href="/pt/caminha/ferry-e-logistica/" class="text-forest-700 hover:underline no-underline font-medium cursor-pointer flex items-center gap-1 group">
+                Ferry e Logística
+                <svg class="h-3.5 w-3.5 text-earth-500 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+              </a>
+              <p class="text-xs text-slate-500 mt-0.5">Avisos de assoreamento, contactos de táxi fluvial</p>
+            </li>
+            <li>
+              <a href="/pt/caminha/onde-ficar/" class="text-forest-700 hover:underline no-underline font-medium cursor-pointer flex items-center gap-1 group">
+                Onde Ficar
+                <svg class="h-3.5 w-3.5 text-earth-500 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+              </a>
+              <p class="text-xs text-slate-500 mt-0.5">Albergue, pensões, hotel boutique</p>
+            </li>
+            <li>
+              <a href="/pt/caminha/onde-comer/" class="text-forest-700 hover:underline no-underline font-medium cursor-pointer flex items-center gap-1 group">
+                Onde Comer
+                <svg class="h-3.5 w-3.5 text-earth-500 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+              </a>
+              <p class="text-xs text-slate-500 mt-0.5">Menus de peregrino a partir de €8</p>
+            </li>
+          </ul>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+
+</MainLayout>
