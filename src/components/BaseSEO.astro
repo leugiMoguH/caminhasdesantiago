@@ -88,6 +88,7 @@ if (schemaType === 'none') {
   jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
+    '@id': `${SITE_URL}/#website`,
     name: siteName,
     url: SITE_URL,
     description,
@@ -173,7 +174,7 @@ if (schemaType === 'none') {
         name: fullTitle,
         description,
         inLanguage: htmlLang,
-        isPartOf: { '@id': SITE_URL },
+        isPartOf: { '@id': `${SITE_URL}/#website` },
         breadcrumb: { '@id': `${canonicalURL}#breadcrumb` },
       },
       {
