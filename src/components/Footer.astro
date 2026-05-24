@@ -1,6 +1,6 @@
 ---
 interface Props {
-  lang: 'en' | 'es';
+  lang: 'en' | 'es' | 'pt';
 }
 
 const { lang } = Astro.props;
@@ -18,6 +18,7 @@ const t = {
     languages: 'Languages',
     english: 'English',
     spanish: 'Español',
+    portuguese: 'Português',
     legal: 'Legal',
     privacy: 'Privacy Policy',
     disclaimer: 'Disclaimer',
@@ -37,6 +38,7 @@ const t = {
     languages: 'Idiomas',
     english: 'English',
     spanish: 'Español',
+    portuguese: 'Português',
     legal: 'Legal',
     privacy: 'Política de Privacidad',
     disclaimer: 'Aviso Legal',
@@ -45,6 +47,26 @@ const t = {
     ferryDisclaimer: 'Los horarios y precios del ferry están sujetos a cambios sin previo aviso. Confirma siempre los horarios directamente con la naviera antes de tu travesía. Este sitio es independiente y no tiene ninguna afiliación con ningún proveedor de transporte.',
     adsenseNotice: 'Este sitio utiliza Google AdSense para mostrar publicidad. Los anuncios ayudan a mantener esta guía gratuita para los peregrinos.',
     independentNote: 'Guía independiente — sin afiliación con ninguna organización del Camino ni junta de turismo.',
+  },
+  pt: {
+    tagline: 'O seu guia independente para peregrinos e viajantes na Rota Costeira do Caminho de Santiago, através de Caminha, Portugal.',
+    explore: 'Explorar Caminha',
+    home: 'Início',
+    eat: 'Onde Comer',
+    stay: 'Onde Ficar',
+    ferry: 'Ferry e Logística',
+    languages: 'Idiomas',
+    english: 'English',
+    spanish: 'Español',
+    portuguese: 'Português',
+    legal: 'Legal',
+    privacy: 'Política de Privacidade',
+    disclaimer: 'Aviso Legal',
+    copyright: `© ${year} Guia de Caminha. Todos os direitos reservados.`,
+    ferryDisclaimerLabel: 'Aviso sobre Horários do Ferry',
+    ferryDisclaimer: 'Os horários e preços do ferry estão sujeitos a alterações sem aviso prévio. Verifique sempre os horários diretamente com o operador do ferry antes da sua travessia. Este site é operado de forma independente e não tem qualquer afiliação com nenhum fornecedor de transporte.',
+    adsenseNotice: 'Este site utiliza Google AdSense para exibir publicidade. Os anúncios ajudam a manter este guia gratuito para os peregrinos.',
+    independentNote: 'Guia independente — sem afiliação com nenhuma organização do Caminho ou junta de turismo.',
   },
 } as const;
 
@@ -58,11 +80,17 @@ const navLinks =
         { href: '/en/caminha/where-to-stay/', label: text.stay },
         { href: '/en/caminha/ferry-and-logistics/', label: text.ferry },
       ]
-    : [
+    : lang === 'es'
+    ? [
         { href: '/es/', label: text.home },
         { href: '/es/caminha/donde-comer/', label: text.eat },
         { href: '/es/caminha/donde-dormir/', label: text.stay },
         { href: '/es/caminha/ferry-y-logistica/', label: text.ferry },
+      ]
+    : [
+        { href: '/pt/', label: text.home },
+        { href: '/pt/caminha/onde-comer/', label: text.eat },
+        { href: '/pt/caminha/onde-ficar/', label: text.stay },
       ];
 ---
 
@@ -140,7 +168,6 @@ const navLinks =
           <ul class="space-y-3" role="list">
             <li>
               <a href="/en/" hreflang="en" class="text-sm text-slate-400 hover:text-white transition-colors duration-200 no-underline flex items-center gap-2.5 cursor-pointer group">
-                <!-- UK flag SVG -->
                 <svg width="20" height="14" viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg" class="rounded-sm shrink-0 opacity-80 group-hover:opacity-100 transition-opacity" aria-hidden="true">
                   <rect width="60" height="40" fill="#012169"/>
                   <path d="M0,0 L60,40 M60,0 L0,40" stroke="white" stroke-width="8"/>
@@ -153,12 +180,21 @@ const navLinks =
             </li>
             <li>
               <a href="/es/" hreflang="es" class="text-sm text-slate-400 hover:text-white transition-colors duration-200 no-underline flex items-center gap-2.5 cursor-pointer group">
-                <!-- Spain flag SVG -->
                 <svg width="20" height="14" viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg" class="rounded-sm shrink-0 opacity-80 group-hover:opacity-100 transition-opacity" aria-hidden="true">
                   <rect width="60" height="40" fill="#c60b1e"/>
                   <rect y="10" width="60" height="20" fill="#ffc400"/>
                 </svg>
                 {text.spanish}
+              </a>
+            </li>
+            <li>
+              <a href="/pt/" hreflang="pt" class="text-sm text-slate-400 hover:text-white transition-colors duration-200 no-underline flex items-center gap-2.5 cursor-pointer group">
+                <svg width="20" height="14" viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg" class="rounded-sm shrink-0 opacity-80 group-hover:opacity-100 transition-opacity" aria-hidden="true">
+                  <rect width="60" height="40" fill="#006600"/>
+                  <rect x="18" width="42" height="40" fill="#FF0000"/>
+                  <circle cx="18" cy="20" r="8" fill="#FFD700" stroke="#003399" stroke-width="1.5"/>
+                </svg>
+                {text.portuguese}
               </a>
             </li>
           </ul>

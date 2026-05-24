@@ -4,94 +4,94 @@ import MainLayout from '../../../layouts/MainLayout.astro';
 type Zona = 'caminha' | 'vpa';
 
 interface Restaurante {
-  nombre: string;
+  nome: string;
   zona: Zona;
-  cocina: string;
-  direccion: string;
-  contextoUbicacion: string;
-  conocidoPor: string;
+  cozinha: string;
+  morada: string;
+  contextoLocalizacao: string;
+  conhecidoPor: string;
 }
 
 interface Cafe {
-  nombre: string;
-  direccion: string;
-  utilidad: string;
+  nome: string;
+  morada: string;
+  utilidade: string;
 }
 
 const restaurantes: Restaurante[] = [
   {
-    nombre: 'Restaurante Baptista',
+    nome: 'Restaurante Baptista',
     zona: 'caminha',
-    cocina: 'Portuguesa · Marisco',
-    direccion: 'Praça do Conselheiro Silva Torres 24/26, Caminha',
-    contextoUbicacion: 'En la plaza principal (Praça Conselheiro Silva Torres)',
-    conocidoPor: 'Local histórico en la plaza principal; marisco portugués de temporada y cocina tradicional',
+    cozinha: 'Portuguesa · Marisco',
+    morada: 'Praça do Conselheiro Silva Torres 24/26, Caminha',
+    contextoLocalizacao: 'Na praça principal (Praça Conselheiro Silva Torres)',
+    conhecidoPor: 'Local histórico na praça principal; marisco português de época e cozinha tradicional',
   },
   {
-    nombre: 'Muralha de Caminha',
+    nome: 'Muralha de Caminha',
     zona: 'caminha',
-    cocina: 'Mediterránea · Europea',
-    direccion: 'Praça de Espanha, Caminha',
-    contextoUbicacion: 'Junto a las murallas medievales históricas',
-    conocidoPor: 'Terraza exterior frente a las murallas de la ciudad; cocina regional del Miño',
+    cozinha: 'Mediterrânea · Europeia',
+    morada: 'Praça de Espanha, Caminha',
+    contextoLocalizacao: 'Junto às muralhas medievais históricas',
+    conhecidoPor: 'Esplanada exterior frente às muralhas da cidade; cozinha regional do Minho',
   },
   {
-    nombre: 'Solar do Pescado',
+    nome: 'Solar do Pescado',
     zona: 'caminha',
-    cocina: 'Marisco · Mediterránea',
-    direccion: 'Rua Visconde Sousa Rego 85, Caminha',
-    contextoUbicacion: 'Calle principal hacia el río y el embarcadero del ferry',
-    conocidoPor: 'Marisco atlántico fresco en la ruta hacia el ferry',
+    cozinha: 'Marisco · Mediterrânea',
+    morada: 'Rua Visconde Sousa Rego 85, Caminha',
+    contextoLocalizacao: 'Rua principal em direção ao rio e ao cais do ferry',
+    conhecidoPor: 'Marisco atlântico fresco na rota para o ferry',
   },
   {
-    nombre: 'Casa Almeida',
+    nome: 'Casa Almeida',
     zona: 'caminha',
-    cocina: 'Café · Europea · Portuguesa',
-    direccion: 'Praça Conselheiro Silva Torres, Caminha',
-    contextoUbicacion: 'En la plaza principal',
-    conocidoPor: 'Café y restaurante en la plaza principal; menú portugués tradicional',
+    cozinha: 'Café · Europeia · Portuguesa',
+    morada: 'Praça Conselheiro Silva Torres, Caminha',
+    contextoLocalizacao: 'Na praça principal',
+    conhecidoPor: 'Café e restaurante na praça principal; menu português tradicional',
   },
   {
-    nombre: 'O Chafariz',
+    nome: 'O Chafariz',
     zona: 'caminha',
-    cocina: 'Europea · Portuguesa',
-    direccion: 'Centro urbano de Caminha',
-    contextoUbicacion: 'Centro urbano',
-    conocidoPor: 'Cocina portuguesa tradicional con numerosa clientela local',
+    cozinha: 'Europeia · Portuguesa',
+    morada: 'Centro urbano de Caminha',
+    contextoLocalizacao: 'Centro urbano',
+    conhecidoPor: 'Cozinha portuguesa tradicional com numerosa clientela local',
   },
   {
-    nombre: 'Fortaleza Restaurante',
+    nome: 'Fortaleza Restaurante',
     zona: 'vpa',
-    cocina: 'Marisco · Mediterránea',
-    direccion: 'Avenida Dr. Ramos Pereira 81, Vila Praia de Âncora',
-    contextoUbicacion: 'Paseo marítimo de Vila Praia de Âncora',
-    conocidoPor: 'Marisco atlántico fresco en el principal paseo gastronómico frente al mar',
+    cozinha: 'Marisco · Mediterrânea',
+    morada: 'Avenida Dr. Ramos Pereira 81, Vila Praia de Âncora',
+    contextoLocalizacao: 'Passeio marítimo de Vila Praia de Âncora',
+    conhecidoPor: 'Marisco atlântico fresco no principal passeio gastronómico frente ao mar',
   },
   {
-    nombre: 'Restaurante Vitória Mar',
+    nome: 'Restaurante Vitória Mar',
     zona: 'vpa',
-    cocina: 'Marisco · Mediterránea',
-    direccion: 'Avenida Dr. Luis Ramos Pereira 100, Vila Praia de Âncora',
-    contextoUbicacion: 'Paseo marítimo de Vila Praia de Âncora',
-    conocidoPor: 'Marisco en el principal paseo frente al mar; valorado de forma consistente',
+    cozinha: 'Marisco · Mediterrânea',
+    morada: 'Avenida Dr. Luis Ramos Pereira 100, Vila Praia de Âncora',
+    contextoLocalizacao: 'Passeio marítimo de Vila Praia de Âncora',
+    conhecidoPor: 'Marisco no principal passeio frente ao mar; consistentemente bem avaliado',
   },
 ];
 
 const cafes: Cafe[] = [
   {
-    nombre: 'Pastelaria Caminhense',
-    direccion: 'Rua São João 35, Caminha',
-    utilidad: 'Ubicación central; pastelería con servicio en mostrador, ideal para un café rápido antes de la salida',
+    nome: 'Pastelaria Caminhense',
+    morada: 'Rua São João 35, Caminha',
+    utilidade: 'Localização central; pastelaria com serviço ao balcão, ideal para um café rápido antes da partida',
   },
   {
-    nombre: 'Pastelaria Riviera',
-    direccion: 'Centro urbano de Caminha',
-    utilidad: 'Pastelería en el centro; café y pasteles para llevar',
+    nome: 'Pastelaria Riviera',
+    morada: 'Centro urbano de Caminha',
+    utilidade: 'Pastelaria no centro; café e pastéis para levar',
   },
   {
-    nombre: 'A Cabana — Café Pastelaria',
-    direccion: 'Caminha',
-    utilidad: 'Café-pastelería en Caminha; servicio en mostrador adecuado para salidas tempranas',
+    nome: 'A Cabana — Café Pastelaria',
+    morada: 'Caminha',
+    utilidade: 'Café-pastelaria em Caminha; serviço ao balcão adequado para saídas matinais',
   },
 ];
 
@@ -103,33 +103,33 @@ const zonas: Zona[] = ['caminha', 'vpa'];
 ---
 
 <MainLayout
-  title="Dónde Comer en Caminha y Vila Praia de Âncora | Camino de Santiago"
-  description="Restaurantes y cafeterías verificados en Caminha y Vila Praia de Âncora para peregrinos de la Ruta Costera del Camino de Santiago. Marisco portugués tradicional, desayunos tempranos y gastronomía local."
-  lang="es"
+  title="Onde Comer em Caminha e Vila Praia de Âncora | Caminho de Santiago"
+  description="Restaurantes e cafés verificados em Caminha e Vila Praia de Âncora para peregrinos da Rota Costeira do Caminho de Santiago. Marisco português tradicional, pequenos-almoços antecipados e gastronomia local."
+  lang="pt"
   schemaType="webpage"
 >
 
   <div class="bg-gradient-to-b from-earth-50 to-white border-b border-earth-100/60">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 md:py-20">
-      <nav aria-label="Ruta de navegación" class="mb-5">
+      <nav aria-label="Rasto de navegação" class="mb-5">
         <ol class="flex items-center gap-2 text-sm text-slate-500">
-          <li><a href="/es/" class="hover:text-forest-700 no-underline hover:underline transition-colors">Inicio</a></li>
+          <li><a href="/pt/" class="hover:text-forest-700 no-underline hover:underline transition-colors">Início</a></li>
           <li aria-hidden="true" class="text-slate-300">›</li>
           <li><span class="text-slate-400">Caminha</span></li>
           <li aria-hidden="true" class="text-slate-300">›</li>
-          <li aria-current="page" class="text-slate-700 font-medium">Dónde Comer</li>
+          <li aria-current="page" class="text-slate-700 font-medium">Onde Comer</li>
         </ol>
       </nav>
-      <h1 class="text-3xl sm:text-4xl font-bold text-forest-900 mb-4 tracking-tight">Dónde Comer</h1>
+      <h1 class="text-3xl sm:text-4xl font-bold text-forest-900 mb-4 tracking-tight">Onde Comer</h1>
       <p class="text-slate-600 max-w-2xl text-base leading-relaxed">
-        Restaurantes verificados en Caminha y Vila Praia de Âncora. Todos los establecimientos están confirmados en Google Maps y TripAdvisor. Seixas no dispone de infraestructura gastronómica propia — los peregrinos que se alojan allí van a Caminha a cenar.
+        Restaurantes verificados em Caminha e Vila Praia de Âncora. Todos os estabelecimentos estão confirmados no Google Maps e TripAdvisor. Seixas não tem infraestrutura gastronómica própria — os peregrinos alojados lá vão a Caminha jantar.
       </p>
       <div class="mt-6 flex flex-wrap gap-2.5">
         <a href="#restaurantes" class="inline-flex items-center gap-1.5 bg-white border border-earth-200 text-earth-800 text-xs font-medium px-3.5 py-2 rounded-full hover:bg-earth-50 hover:border-earth-300 no-underline transition-all duration-200 shadow-sm cursor-pointer">
           Restaurantes
         </a>
-        <a href="#desayuno-temprano" class="inline-flex items-center gap-1.5 bg-white border border-earth-200 text-earth-800 text-xs font-medium px-3.5 py-2 rounded-full hover:bg-earth-50 hover:border-earth-300 no-underline transition-all duration-200 shadow-sm cursor-pointer">
-          Desayuno Temprano y Cafeterías
+        <a href="#pequeno-almoco" class="inline-flex items-center gap-1.5 bg-white border border-earth-200 text-earth-800 text-xs font-medium px-3.5 py-2 rounded-full hover:bg-earth-50 hover:border-earth-300 no-underline transition-all duration-200 shadow-sm cursor-pointer">
+          Pequeno-Almoço Antecipado e Cafés
         </a>
       </div>
     </div>
@@ -151,9 +151,9 @@ const zonas: Zona[] = ['caminha', 'vpa'];
     {zonas.map((zona) => {
       const items = restaurantes.filter(r => r.zona === zona);
       return (
-        <section aria-labelledby={`encabezado-${zona}`}>
+        <section aria-labelledby={`cabecalho-${zona}`}>
           <div class="mb-6 pb-4 border-b border-slate-200">
-            <h2 id={`encabezado-${zona}`} class="text-2xl font-bold text-forest-900 tracking-tight">
+            <h2 id={`cabecalho-${zona}`} class="text-2xl font-bold text-forest-900 tracking-tight">
               {etiquetasZona[zona]}
             </h2>
           </div>
@@ -162,23 +162,23 @@ const zonas: Zona[] = ['caminha', 'vpa'];
               <article class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 shadow-sm">
                 <div class="p-6 sm:p-8">
                   <div class="mb-4">
-                    <h3 class="text-xl font-bold text-forest-900 tracking-tight mb-0.5">{r.nombre}</h3>
-                    <p class="text-sm text-slate-500 font-medium">{r.cocina}</p>
+                    <h3 class="text-xl font-bold text-forest-900 tracking-tight mb-0.5">{r.nome}</h3>
+                    <p class="text-sm text-slate-500 font-medium">{r.cozinha}</p>
                   </div>
-                  <p class="text-slate-700 text-sm leading-relaxed mb-4">{r.conocidoPor}</p>
+                  <p class="text-slate-700 text-sm leading-relaxed mb-4">{r.conhecidoPor}</p>
                   <div class="flex flex-col sm:flex-row gap-3 text-sm text-slate-500 pt-4 border-t border-slate-100">
                     <span class="flex items-center gap-1.5">
                       <svg class="h-4 w-4 shrink-0 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                       </svg>
-                      {r.direccion}
+                      {r.morada}
                     </span>
                     <span class="flex items-center gap-1.5 text-xs text-slate-400">
                       <svg class="h-4 w-4 shrink-0 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                       </svg>
-                      {r.contextoUbicacion}
+                      {r.contextoLocalizacao}
                     </span>
                   </div>
                 </div>
@@ -201,33 +201,33 @@ const zonas: Zona[] = ['caminha', 'vpa'];
   </div>
   <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
-  <div id="desayuno-temprano" class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10">
+  <div id="pequeno-almoco" class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10">
     <div class="mb-6 pb-4 border-b border-slate-200">
-      <h2 class="text-2xl font-bold text-forest-900 tracking-tight mb-1">Desayuno Temprano y Cafeterías — Caminha</h2>
+      <h2 class="text-2xl font-bold text-forest-900 tracking-tight mb-1">Pequeno-Almoço Antecipado e Cafés — Caminha</h2>
       <p class="text-slate-600 text-sm leading-relaxed max-w-2xl">
-        Pastelerías en el centro de Caminha útiles para salidas antes del ferry. Los horarios pueden variar según la temporada — confirma directamente en el establecimiento o pregunta en tu alojamiento.
+        Pastelarias no centro de Caminha úteis para saídas antes do ferry. Os horários podem variar consoante a época — confirme diretamente no estabelecimento ou pergunte no seu alojamento.
       </p>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
       {cafes.map((c) => (
         <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm">
-          <h3 class="text-base font-bold text-forest-900 mb-1">{c.nombre}</h3>
+          <h3 class="text-base font-bold text-forest-900 mb-1">{c.nome}</h3>
           <p class="text-xs text-slate-500 mb-3 flex items-center gap-1.5">
             <svg class="h-3.5 w-3.5 shrink-0 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
             </svg>
-            {c.direccion}
+            {c.morada}
           </p>
           <p class="text-xs text-amber-700 font-medium bg-amber-50 border border-amber-100 rounded-lg px-3 py-2 mb-3">
-            Abre pronto (generalmente hacia las 07:00–08:00, puede variar)
+            Abre cedo (geralmente por volta das 07:00–08:00, pode variar)
           </p>
-          <p class="text-sm text-slate-600 leading-relaxed">{c.utilidad}</p>
+          <p class="text-sm text-slate-600 leading-relaxed">{c.utilidade}</p>
         </div>
       ))}
     </div>
     <p class="mt-6 text-xs text-slate-400 leading-relaxed max-w-xl">
-      Los horarios indicados son aproximados. Confirma siempre con el establecimiento, especialmente fuera de temporada alta (junio–septiembre). No hay cafeterías en Seixas — los peregrinos alojados allí caminan hasta Caminha (aprox. 15–20 min) para el café de la mañana.
+      Os horários indicados são aproximados. Confirme sempre com o estabelecimento, especialmente fora da época alta (junho–setembro). Não há cafés em Seixas — os peregrinos alojados lá caminham até Caminha (aprox. 15–20 min) para o café da manhã.
     </p>
   </div>
 
@@ -240,9 +240,9 @@ const zonas: Zona[] = ['caminha', 'vpa'];
           </svg>
         </div>
         <div>
-          <h2 class="text-lg font-bold text-forest-900 mb-2 tracking-tight">Menús de Peregrino</h2>
+          <h2 class="text-lg font-bold text-forest-900 mb-2 tracking-tight">Menus de Peregrino</h2>
           <p class="text-slate-700 text-sm leading-relaxed max-w-2xl">
-            En Portugal, el <em>menú do peregrino</em> se sirve normalmente solo en el almuerzo (12:00–15:00) por 8–12 €. Incluye primer plato, segundo, postre o café y vino o agua de la casa. Mostrar una <em>credencial do peregrino</em> puede confirmar la elegibilidad, aunque la mayoría de restaurantes en Caminha no la exigen. Muchos locales pequeños cierran los lunes. Consulta la pizarra del menú en el exterior antes de sentarte.
+            Em Portugal, o <em>menu do peregrino</em> serve-se normalmente apenas ao almoço (12:00–15:00) por 8–12 €. Inclui primeiro prato, segundo, sobremesa ou café e vinho ou água da casa. Mostrar uma <em>credencial do peregrino</em> pode confirmar a elegibilidade, embora a maioria dos restaurantes em Caminha não a exija. Muitos estabelecimentos pequenos fecham às segundas-feiras. Consulte o quadro do menu no exterior antes de se sentar.
           </p>
         </div>
       </div>

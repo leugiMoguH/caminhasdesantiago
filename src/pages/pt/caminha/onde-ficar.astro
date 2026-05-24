@@ -2,180 +2,180 @@
 import MainLayout from '../../../layouts/MainLayout.astro';
 
 type Zona = 'caminha' | 'vpa' | 'seixas';
-type Categoria = 'albergue' | 'hotel' | 'pension';
+type Categoria = 'albergue' | 'hotel' | 'pensao';
 
-interface Alojamiento {
-  nombre: string;
+interface Alojamento {
+  nome: string;
   zona: Zona;
   categoria: Categoria;
   tipo: string;
-  direccion: string;
-  ubicacion: string;
-  diferenciadores: string[];
+  morada: string;
+  localizacao: string;
+  diferenciais: string[];
   reservaUrl: string | null;
   nota?: string;
 }
 
-const alojamientos: Alojamiento[] = [
+const alojamentos: Alojamento[] = [
   // ── CAMINHA ────────────────────────────────────────────────────────────────────
   {
-    nombre: 'Albergue Municipal de Peregrinos de Caminha',
+    nome: 'Albergue Municipal de Peregrinos de Caminha',
     zona: 'caminha',
     categoria: 'albergue',
     tipo: 'Albergue Municipal de Peregrinos',
-    direccion: 'Rua Ricardo Joaquim de Sousa, Caminha',
-    ubicacion: 'Centro urbano, a pocos minutos del embarcadero del ferry',
-    diferenciadores: ['Albergue municipal oficial', 'Credencial de peregrino obligatoria'],
+    morada: 'Rua Ricardo Joaquim de Sousa, Caminha',
+    localizacao: 'Centro urbano, a poucos minutos do cais do ferry',
+    diferenciais: ['Albergue municipal oficial', 'Credencial de peregrino obrigatória'],
     reservaUrl: null,
-    nota: 'Solo admisión directa — sin reservas online. Abre a las 14:00. Por orden de llegada. Se requiere credencial válida. Máximo 2 noches consecutivas.',
+    nota: 'Só admissão direta — sem reservas online. Abre às 14:00. Por ordem de chegada. Credencial válida obrigatória. Máximo 2 noites consecutivas.',
   },
   {
-    nombre: 'Albergue Santiago de Caminha',
+    nome: 'Albergue Santiago de Caminha',
     zona: 'caminha',
     categoria: 'albergue',
     tipo: 'Albergue Privado de Peregrinos',
-    direccion: 'Cerca de la Igreja Matriz de Caminha, zona ribereña',
-    ubicacion: 'Centro de Caminha, en la ruta del Camino junto al río',
-    diferenciadores: ['Reserva online anticipada disponible', 'Bar y cafetería en el alojamiento'],
+    morada: 'Perto da Igreja Matriz de Caminha, zona ribeirinha',
+    localizacao: 'Centro de Caminha, na rota do Caminho junto ao rio',
+    diferenciais: ['Reserva online antecipada disponível', 'Bar e cafetaria no alojamento'],
     reservaUrl: 'https://www.booking.com/hotel/pt/albergue-santiago-de-caminha.html?aid=7968251',
   },
   {
-    nombre: 'Bom Caminha — Albergue Privado para Peregrinos',
+    nome: 'Bom Caminha — Albergue Privado para Peregrinos',
     zona: 'caminha',
     categoria: 'albergue',
     tipo: 'Albergue Privado de Peregrinos',
-    direccion: 'Centro urbano de Caminha (a 450 m del Convento de Santo António)',
-    ubicacion: 'Casco antiguo, casa histórica de 1882',
-    diferenciadores: ['Cena de peregrinos opcional (suplemento de 12 €)', 'Cocina comunitaria; reserva anticipada disponible'],
+    morada: 'Centro urbano de Caminha (a 450 m do Convento de Santo António)',
+    localizacao: 'Centro histórico, casa histórica de 1882',
+    diferenciais: ['Jantar de peregrinos opcional (suplemento de 12 €)', 'Cozinha comunitária; reserva antecipada disponível'],
     reservaUrl: 'https://www.booking.com/hotel/pt/bom-caminha-private-albergue-amp-guest-house.html?aid=7968251',
   },
   {
-    nombre: 'Litos AL',
+    nome: 'Litos AL',
     zona: 'caminha',
-    categoria: 'pension',
-    tipo: 'Casa de Huéspedes',
-    direccion: 'Largo Senhora da Agonia 13, Caminha',
-    ubicacion: 'Centro urbano, cerca del paseo fluvial',
-    diferenciadores: ['Desayuno incluido', 'Habitaciones con aire acondicionado'],
+    categoria: 'pensao',
+    tipo: 'Casa de Hóspedes',
+    morada: 'Largo Senhora da Agonia 13, Caminha',
+    localizacao: 'Centro urbano, perto do passeio ribeirinho',
+    diferenciais: ['Pequeno-almoço incluído', 'Quartos com ar condicionado'],
     reservaUrl: 'https://www.booking.com/hotel/pt/litos-al.html?aid=7968251',
   },
   {
-    nombre: 'Design & Wine Hotel',
+    nome: 'Design & Wine Hotel',
     zona: 'caminha',
     categoria: 'hotel',
     tipo: 'Hotel',
-    direccion: 'Caminha (a 1,5 km de la Playa de Pedras Ruivas)',
-    ubicacion: 'Centro urbano, edificio histórico del siglo XVIII',
-    diferenciadores: ['Piscina interior', 'Bar de vinos y restaurante en el hotel'],
+    morada: 'Caminha (a 1,5 km da Praia de Pedras Ruivas)',
+    localizacao: 'Centro urbano, edifício histórico do século XVIII',
+    diferenciais: ['Piscina interior', 'Bar de vinhos e restaurante no hotel'],
     reservaUrl: 'https://www.booking.com/hotel/pt/design.html?aid=7968251',
   },
   {
-    nombre: 'Hotel Porta do Sol Conference & SPA',
+    nome: 'Hotel Porta do Sol Conference & SPA',
     zona: 'caminha',
     categoria: 'hotel',
-    tipo: 'Hotel — 4 Estrellas',
-    direccion: 'Caminha (cerca de la Foz do Minho / costa atlántica)',
-    ubicacion: 'Cerca de la desembocadura del río y la playa atlántica',
-    diferenciadores: ['2 piscinas exteriores', 'Spa y instalaciones de bienestar'],
+    tipo: 'Hotel — 4 Estrelas',
+    morada: 'Caminha (perto da Foz do Minho / costa atlântica)',
+    localizacao: 'Perto da foz do rio e da praia atlântica',
+    diferenciais: ['2 piscinas exteriores', 'Spa e instalações de bem-estar'],
     reservaUrl: 'https://www.booking.com/hotel/pt/porta-do-sol-caminha.html?aid=7968251',
   },
 
   // ── VILA PRAIA DE ÂNCORA ───────────────────────────────────────────────────────
   {
-    nombre: 'BLUE ANCORA HOTEL',
+    nome: 'BLUE ANCORA HOTEL',
     zona: 'vpa',
     categoria: 'hotel',
     tipo: 'Hotel',
-    direccion: 'Vila Praia de Âncora (a 3 min andando de la playa)',
-    ubicacion: 'Zona costera, a 3 minutos a pie de la Playa de Vila Praia de Âncora',
-    diferenciadores: ['Piscina exterior de temporada', 'Habitaciones con vistas al mar y balcón'],
+    morada: 'Vila Praia de Âncora (a 3 min a pé da praia)',
+    localizacao: 'Zona costeira, a 3 minutos a pé da Praia de Vila Praia de Âncora',
+    diferenciais: ['Piscina exterior de época', 'Quartos com vista para o mar e varanda'],
     reservaUrl: 'https://www.booking.com/hotel/pt/blue-ancora.html?aid=7968251',
   },
   {
-    nombre: 'Hotel Meira',
+    nome: 'Hotel Meira',
     zona: 'vpa',
     categoria: 'hotel',
-    tipo: 'Hotel — 4 Estrellas',
-    direccion: 'Vila Praia de Âncora (a 2 min andando de la playa)',
-    ubicacion: 'Cerca de la playa, en un valle protegido del viento',
-    diferenciadores: ['Piscina', 'Buffet de desayuno incluido'],
+    tipo: 'Hotel — 4 Estrelas',
+    morada: 'Vila Praia de Âncora (a 2 min a pé da praia)',
+    localizacao: 'Perto da praia, num vale protegido do vento',
+    diferenciais: ['Piscina', 'Buffet de pequeno-almoço incluído'],
     reservaUrl: 'https://www.booking.com/hotel/pt/hotelmeiravilapraiaancora.html?aid=7968251',
   },
 
   // ── SEIXAS ─────────────────────────────────────────────────────────────────────
   {
-    nombre: 'Albergue de São Bento',
+    nome: 'Albergue de São Bento',
     zona: 'seixas',
     categoria: 'albergue',
     tipo: 'Albergue de Peregrinos',
-    direccion: 'Seixas, Caminha (cerca de la Playa de Pedras Ruivas)',
-    ubicacion: 'Frente al mar en la parroquia de Seixas, a 1 km de la Playa de Pedras Ruivas',
-    diferenciadores: ['Ubicación frente al mar', 'Cenas de peregrinos disponibles; cocina comunitaria'],
+    morada: 'Seixas, Caminha (perto da Praia de Pedras Ruivas)',
+    localizacao: 'Frente ao mar na freguesia de Seixas, a 1 km da Praia de Pedras Ruivas',
+    diferenciais: ['Localização frente ao mar', 'Jantares de peregrinos disponíveis; cozinha comunitária'],
     reservaUrl: 'https://www.booking.com/hotel/pt/albergue-de-sao-bento.html?aid=7968251',
   },
   {
-    nombre: 'Rinoterra Minho',
+    nome: 'Rinoterra Minho',
     zona: 'seixas',
     categoria: 'hotel',
     tipo: 'Hotel Rural',
-    direccion: 'Rua da Costa 15, Seixas, Caminha',
-    ubicacion: 'Rural, parroquia de Seixas, vistas al río y a la montaña',
-    diferenciadores: ['Spa y centro de bienestar', 'Tenis; restaurante de cocina portuguesa'],
+    morada: 'Rua da Costa 15, Seixas, Caminha',
+    localizacao: 'Rural, freguesia de Seixas, vistas para o rio e para a montanha',
+    diferenciais: ['Spa e centro de bem-estar', 'Ténis; restaurante de cozinha portuguesa'],
     reservaUrl: 'https://www.booking.com/hotel/pt/rinoterra-minho.html?aid=7968251',
   },
 ];
 
-const zonas: { clave: Zona; etiqueta: string; intro: string }[] = [
+const zonas: { chave: Zona; etiqueta: string; intro: string }[] = [
   {
-    clave: 'caminha',
+    chave: 'caminha',
     etiqueta: 'Caminha',
-    intro: 'La principal localidad de cruce en la Ruta Costera Portuguesa — última etapa antes de cruzar el río Miño hacia Galicia. Albergues, pensiones y hoteles, todos a poca distancia a pie del embarcadero del ferry.',
+    intro: 'A principal localidade de travessia na Rota Costeira Portuguesa — última etapa antes de cruzar o rio Minho para a Galiza. Albergues, pensões e hotéis, todos a poucos minutos a pé do cais do ferry.',
   },
   {
-    clave: 'vpa',
+    chave: 'vpa',
     etiqueta: 'Vila Praia de Âncora',
-    intro: 'Localidad costera a 7 km al sur de Caminha, en la ruta del Camino. Hoteles de playa con piscinas — alternativa más tranquila para peregrinos que prefieren llegar pronto y continuar hacia el norte a la mañana siguiente.',
+    intro: 'Localidade costeira a 7 km a sul de Caminha, na rota do Caminho. Hotéis de praia com piscinas — alternativa mais tranquila para peregrinos que preferem chegar cedo e continuar para norte na manhã seguinte.',
   },
   {
-    clave: 'seixas',
+    chave: 'seixas',
     etiqueta: 'Seixas',
-    intro: 'La parroquia inmediatamente al sur del casco urbano de Caminha, en el camino señalizado de la Ruta Costera. Densidad baja — un albergue de peregrinos y un hotel rural, ambos reservables en Booking.com.',
+    intro: 'A freguesia imediatamente a sul do centro urbano de Caminha, no caminho sinalizado da Rota Costeira. Baixa densidade — um albergue de peregrinos e um hotel rural, ambos reserváveis no Booking.com.',
   },
 ];
 
-const ordenCategorias: Categoria[] = ['albergue', 'pension', 'hotel'];
+const ordemCategorias: Categoria[] = ['albergue', 'pensao', 'hotel'];
 const etiquetaCategoria: Record<Categoria, string> = {
   albergue: 'Albergues',
-  pension: 'Pensiones',
-  hotel: 'Hoteles',
+  pensao: 'Pensões',
+  hotel: 'Hotéis',
 };
 ---
 
 <MainLayout
-  title="Dónde Dormir en Caminha, Vila Praia de Âncora y Seixas | Camino de Santiago"
-  description="Guía de alojamiento verificado para peregrinos de la Ruta Costera del Camino de Santiago. Albergues, pensiones y hoteles en Caminha, Vila Praia de Âncora y Seixas — todos reservables en Booking.com."
-  lang="es"
+  title="Onde Ficar em Caminha, Vila Praia de Âncora e Seixas | Caminho de Santiago"
+  description="Guia de alojamento verificado para peregrinos da Rota Costeira do Caminho de Santiago. Albergues, pensões e hotéis em Caminha, Vila Praia de Âncora e Seixas — todos reserváveis no Booking.com."
+  lang="pt"
   schemaType="webpage"
 >
 
   <div class="bg-gradient-to-b from-forest-50 to-white border-b border-forest-100/60">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 md:py-20">
-      <nav aria-label="Ruta de navegación" class="mb-5">
+      <nav aria-label="Rasto de navegação" class="mb-5">
         <ol class="flex items-center gap-2 text-sm text-slate-500">
-          <li><a href="/es/" class="hover:text-forest-700 no-underline hover:underline transition-colors">Inicio</a></li>
+          <li><a href="/pt/" class="hover:text-forest-700 no-underline hover:underline transition-colors">Início</a></li>
           <li aria-hidden="true" class="text-slate-300">›</li>
           <li><span class="text-slate-400">Caminha</span></li>
           <li aria-hidden="true" class="text-slate-300">›</li>
-          <li aria-current="page" class="text-slate-700 font-medium">Dónde Dormir</li>
+          <li aria-current="page" class="text-slate-700 font-medium">Onde Ficar</li>
         </ol>
       </nav>
-      <h1 class="text-3xl sm:text-4xl font-bold text-forest-900 mb-4 tracking-tight">Dónde Dormir</h1>
+      <h1 class="text-3xl sm:text-4xl font-bold text-forest-900 mb-4 tracking-tight">Onde Ficar</h1>
       <p class="text-slate-600 max-w-2xl text-base leading-relaxed">
-        Alojamiento verificado en tres zonas de la Ruta Costera Portuguesa: Caminha (localidad de cruce del río), Vila Praia de Âncora (costera, 7 km al sur) y Seixas (parroquia en ruta al sur de Caminha). Todos los hoteles enlazan directamente con Booking.com.
+        Alojamento verificado em três zonas da Rota Costeira Portuguesa: Caminha (localidade de travessia do rio), Vila Praia de Âncora (costeira, 7 km a sul) e Seixas (freguesia na rota a sul de Caminha). Todos os hotéis ligam diretamente ao Booking.com.
       </p>
       <div class="mt-6 flex flex-wrap gap-2.5">
         {zonas.map((z) => (
-          <a href={`#zona-${z.clave}`} class="inline-flex items-center gap-1.5 bg-white border border-forest-200 text-forest-800 text-xs font-medium px-3.5 py-2 rounded-full hover:bg-forest-50 hover:border-forest-300 no-underline transition-all duration-200 shadow-sm cursor-pointer">
+          <a href={`#zona-${z.chave}`} class="inline-flex items-center gap-1.5 bg-white border border-forest-200 text-forest-800 text-xs font-medium px-3.5 py-2 rounded-full hover:bg-forest-50 hover:border-forest-300 no-underline transition-all duration-200 shadow-sm cursor-pointer">
             {z.etiqueta}
           </a>
         ))}
@@ -207,9 +207,9 @@ const etiquetaCategoria: Record<Categoria, string> = {
           </svg>
         </div>
         <div>
-          <h2 class="font-bold text-amber-900 mb-2 text-base">Reserva con antelación: temporada alta mayo–octubre</h2>
+          <h2 class="font-bold text-amber-900 mb-2 text-base">Reserve com antecedência: época alta maio–outubro</h2>
           <p class="text-sm text-amber-800 leading-relaxed">
-            La Ruta Costera alcanza su punto álgido entre mayo y octubre. El albergue municipal de Caminha funciona solo con admisión directa y se llena rápidamente en las tardes de verano. Los albergues privados y hoteles admiten reservas anticipadas — usa los enlaces que aparecen a continuación para comprobar disponibilidad.
+            A Rota Costeira atinge o seu pico entre maio e outubro. O albergue municipal de Caminha funciona apenas com admissão direta e esgota rapidamente nas tardes de verão. Os albergues privados e hotéis aceitam reservas antecipadas — use os links abaixo para verificar disponibilidade.
           </p>
         </div>
       </div>
@@ -219,17 +219,17 @@ const etiquetaCategoria: Record<Categoria, string> = {
   <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10 space-y-20">
 
     {zonas.map((zona, zonaIdx) => {
-      const itemsZona = alojamientos.filter(a => a.zona === zona.clave);
+      const itemsZona = alojamentos.filter(a => a.zona === zona.chave);
       return (
-        <section id={`zona-${zona.clave}`} aria-labelledby={`encabezado-zona-${zona.clave}`}>
+        <section id={`zona-${zona.chave}`} aria-labelledby={`cabecalho-zona-${zona.chave}`}>
           <div class="mb-8 pb-4 border-b border-slate-200">
-            <h2 id={`encabezado-zona-${zona.clave}`} class="text-2xl font-bold text-forest-900 tracking-tight mb-1">
+            <h2 id={`cabecalho-zona-${zona.chave}`} class="text-2xl font-bold text-forest-900 tracking-tight mb-1">
               {zona.etiqueta}
             </h2>
             <p class="text-slate-600 text-sm leading-relaxed max-w-2xl">{zona.intro}</p>
           </div>
 
-          {ordenCategorias.map((cat) => {
+          {ordemCategorias.map((cat) => {
             const catItems = itemsZona.filter(a => a.categoria === cat);
             if (catItems.length === 0) return null;
             return (
@@ -240,12 +240,12 @@ const etiquetaCategoria: Record<Categoria, string> = {
                     <article class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 shadow-sm">
                       <div class="p-6 sm:p-8">
                         <div class="mb-4">
-                          <h4 class="text-xl font-bold text-forest-900 tracking-tight mb-0.5">{a.nombre}</h4>
+                          <h4 class="text-xl font-bold text-forest-900 tracking-tight mb-0.5">{a.nome}</h4>
                           <p class="text-sm text-slate-500 font-medium">{a.tipo}</p>
                         </div>
 
                         <div class="flex flex-wrap gap-2 mb-4">
-                          {a.diferenciadores.map((d) => (
+                          {a.diferenciais.map((d) => (
                             <span class="text-xs bg-forest-50 text-forest-700 px-3 py-1.5 rounded-full border border-forest-100 font-medium">{d}</span>
                           ))}
                         </div>
@@ -265,7 +265,7 @@ const etiquetaCategoria: Record<Categoria, string> = {
                               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                             </svg>
-                            {a.direccion}
+                            {a.morada}
                           </div>
 
                           {a.reservaUrl ? (
@@ -275,14 +275,14 @@ const etiquetaCategoria: Record<Categoria, string> = {
                               target="_blank"
                               class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-earth-500 to-earth-600 hover:from-earth-600 hover:to-earth-700 active:scale-[0.98] text-white font-bold text-sm px-6 py-3.5 rounded-xl transition-all duration-200 no-underline shrink-0 shadow-md hover:shadow-lg cursor-pointer group"
                             >
-                              Consultar Disponibilidad y Precios
+                              Ver Disponibilidade e Preços
                               <svg class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
                               </svg>
                             </a>
                           ) : (
                             <span class="inline-flex items-center gap-2 bg-slate-100 text-slate-500 font-semibold text-sm px-5 py-3 rounded-xl shrink-0">
-                              Solo admisión directa
+                              Só admissão direta
                             </span>
                           )}
                         </div>
@@ -321,7 +321,7 @@ const etiquetaCategoria: Record<Categoria, string> = {
         <div>
           <h2 class="text-lg font-bold text-forest-900 mb-2 tracking-tight">Albergue Municipal vs. Albergues Privados</h2>
           <p class="text-slate-700 text-sm leading-relaxed max-w-2xl">
-            El albergue municipal es solo de admisión directa a partir de las 14:00 y requiere una <em>credencial del peregrino</em> válida. Los dos albergues privados listados (Albergue Santiago y Bom Caminha) admiten reservas anticipadas en Booking.com y no requieren credencial. Consulta la página de ferry y logística para el cruce de Caminha a A Guarda: <a href="/es/caminha/ferry-y-logistica/" class="text-forest-700 hover:underline no-underline font-medium">horarios del ferry y logística</a>.
+            O albergue municipal é apenas de admissão direta a partir das 14:00 e requer uma <em>credencial do peregrino</em> válida. Os dois albergues privados listados (Albergue Santiago e Bom Caminha) aceitam reservas antecipadas no Booking.com e não exigem credencial. Consulte a página de ferry e logística para a travessia de Caminha para A Guarda: <a href="/en/caminha/ferry-and-logistics/" class="text-forest-700 hover:underline no-underline font-medium">horários do ferry e logística</a>.
           </p>
         </div>
       </div>
