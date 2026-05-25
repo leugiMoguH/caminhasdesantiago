@@ -91,6 +91,7 @@ const navLinks =
         { href: '/pt/', label: text.home },
         { href: '/pt/caminha/onde-comer/', label: text.eat },
         { href: '/pt/caminha/onde-ficar/', label: text.stay },
+        { href: '/pt/caminha/ferry-e-logistica/', label: text.ferry },
       ];
 ---
 
@@ -207,13 +208,8 @@ const navLinks =
           </h2>
           <ul class="space-y-3" role="list">
             <li>
-              <a href={`/${lang}/privacy/`} class="text-sm text-slate-400 hover:text-white transition-colors duration-200 no-underline cursor-pointer">
+              <a href={lang === 'en' ? '/en/privacy-policy/' : lang === 'es' ? '/es/politica-de-privacidad/' : '/pt/politica-de-privacidade/'} class="text-sm text-slate-400 hover:text-white transition-colors duration-200 no-underline cursor-pointer">
                 {text.privacy}
-              </a>
-            </li>
-            <li>
-              <a href={`/${lang}/disclaimer/`} class="text-sm text-slate-400 hover:text-white transition-colors duration-200 no-underline cursor-pointer">
-                {text.disclaimer}
               </a>
             </li>
           </ul>

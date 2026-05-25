@@ -56,13 +56,32 @@ const faqItems = [
   title="Ferry Caminha–A Guarda — Horários, Alternativas e Avisos de Assoreamento"
   description="Guia completo para a travessia do rio Minho Caminha–A Guarda. Horários de verão/inverno, tabela de tarifas, a história real do assoreamento sazonal, alternativas de táxi fluvial Xávegas, e o desvio terrestre via Valença–Tui."
   lang="pt"
-  schemaType="webpage"
+  schemaType="none"
 >
 
+  <!-- JSON-LD: unified @graph -->
   <script type="application/ld+json" is:inline>
   {
     "@context": "https://schema.org",
     "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://waytosantiagoguide.com/pt/caminha/ferry-e-logistica/#webpage",
+        "url": "https://waytosantiagoguide.com/pt/caminha/ferry-e-logistica/",
+        "name": "Ferry Caminha–A Guarda — Horários, Alternativas e Avisos de Assoreamento | Guia Caminho de Santiago",
+        "description": "Guia completo para a travessia do rio Minho Caminha–A Guarda. Horários de verão/inverno, tabela de tarifas, a história real do assoreamento sazonal, alternativas de táxi fluvial Xávegas, e o desvio terrestre via Valença–Tui.",
+        "inLanguage": "pt-PT",
+        "isPartOf": { "@id": "https://waytosantiagoguide.com/#website" },
+        "breadcrumb": { "@id": "https://waytosantiagoguide.com/pt/caminha/ferry-e-logistica/#breadcrumb" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://waytosantiagoguide.com/pt/caminha/ferry-e-logistica/#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://waytosantiagoguide.com/pt/" },
+          { "@type": "ListItem", "position": 2, "name": "Ferry e Logística", "item": "https://waytosantiagoguide.com/pt/caminha/ferry-e-logistica/" }
+        ]
+      },
       {
         "@type": "TouristAttraction",
         "@id": "https://waytosantiagoguide.com/pt/caminha/ferry-e-logistica/#ferry",

@@ -79,14 +79,32 @@ const datosClave = [
   title="Ferry Caminha–A Guarda — Horario, Assoreamento y Alternativas"
   description="Guía completa del cruce del río Miño entre Caminha y A Guarda. Horarios de verano e invierno, tabla de tarifas, el problema real del assoreamento (sedimentación), alternativas con taxi-marítimo y el desvío terrestre por Valença–Tui."
   lang="es"
-  schemaType="webpage"
+  schemaType="none"
 >
 
-  <!-- JSON-LD: FAQPage + TouristAttraction -->
+  <!-- JSON-LD: unified @graph -->
   <script type="application/ld+json" is:inline>
   {
     "@context": "https://schema.org",
     "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://waytosantiagoguide.com/es/caminha/ferry-y-logistica/#webpage",
+        "url": "https://waytosantiagoguide.com/es/caminha/ferry-y-logistica/",
+        "name": "Ferry Caminha–A Guarda — Horario, Assoreamento y Alternativas | Guía Camino de Santiago",
+        "description": "Guía completa del cruce del río Miño entre Caminha y A Guarda. Horarios de verano e invierno, tabla de tarifas, el problema real del assoreamento (sedimentación), alternativas con taxi-marítimo y el desvío terrestre por Valença–Tui.",
+        "inLanguage": "es-ES",
+        "isPartOf": { "@id": "https://waytosantiagoguide.com/#website" },
+        "breadcrumb": { "@id": "https://waytosantiagoguide.com/es/caminha/ferry-y-logistica/#breadcrumb" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://waytosantiagoguide.com/es/caminha/ferry-y-logistica/#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://waytosantiagoguide.com/es/" },
+          { "@type": "ListItem", "position": 2, "name": "Ferry y Logística", "item": "https://waytosantiagoguide.com/es/caminha/ferry-y-logistica/" }
+        ]
+      },
       {
         "@type": "TouristAttraction",
         "@id": "https://waytosantiagoguide.com/es/caminha/ferry-y-logistica/#ferry",

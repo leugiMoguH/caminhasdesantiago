@@ -56,14 +56,33 @@ const faqItems = [
   title="Caminha to A Guarda Ferry — Schedule, Alternatives & Siltation Warnings"
   description="Complete guide to the Caminha–A Guarda Minho river crossing. Summer/winter timetables, fare table, the real story on seasonal siltation (assoreamento), Xávegas water taxi alternatives, and the overland train detour via Valença–Tui."
   lang="en"
-  schemaType="webpage"
+  schemaType="none"
 >
 
-  <!-- JSON-LD: FAQPage + TouristAttraction schema -->
+  <!-- JSON-LD: unified @graph -->
   <script type="application/ld+json" is:inline>
   {
     "@context": "https://schema.org",
     "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://waytosantiagoguide.com/en/caminha/ferry-and-logistics/#webpage",
+        "url": "https://waytosantiagoguide.com/en/caminha/ferry-and-logistics/",
+        "name": "Caminha to A Guarda Ferry — Schedule, Alternatives & Siltation Warnings | Way to Santiago Guide",
+        "description": "Complete guide to the Caminha–A Guarda Minho river crossing. Summer/winter timetables, fare table, the real story on seasonal siltation (assoreamento), Xávegas water taxi alternatives, and the overland train detour via Valença–Tui.",
+        "inLanguage": "en-GB",
+        "isPartOf": { "@id": "https://waytosantiagoguide.com/#website" },
+        "breadcrumb": { "@id": "https://waytosantiagoguide.com/en/caminha/ferry-and-logistics/#breadcrumb" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://waytosantiagoguide.com/en/caminha/ferry-and-logistics/#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://waytosantiagoguide.com/en/" },
+          { "@type": "ListItem", "position": 2, "name": "Caminha Guide", "item": "https://waytosantiagoguide.com/en/caminha-guide/" },
+          { "@type": "ListItem", "position": 3, "name": "Ferry & Logistics", "item": "https://waytosantiagoguide.com/en/caminha/ferry-and-logistics/" }
+        ]
+      },
       {
         "@type": "TouristAttraction",
         "@id": "https://waytosantiagoguide.com/en/caminha/ferry-and-logistics/#ferry",

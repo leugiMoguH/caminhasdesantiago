@@ -155,8 +155,181 @@ const categoryLabel: Record<Category, string> = {
   title="Where to Stay in Caminha, Vila Praia de Âncora & Seixas | Caminho de Santiago"
   description="Verified accommodation guide for Camino de Santiago Coastal Route pilgrims. Albergues, guesthouses, and hotels in Caminha, Vila Praia de Âncora, and Seixas — all bookable on Booking.com."
   lang="en"
-  schemaType="webpage"
+  schemaType="none"
 >
+
+  <!-- ── JSON-LD: unified @graph ──────────────────────────────────────────── -->
+  <script type="application/ld+json" is:inline>{`
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://waytosantiagoguide.com/en/caminha/where-to-stay/#webpage",
+          "url": "https://waytosantiagoguide.com/en/caminha/where-to-stay/",
+          "name": "Where to Stay in Caminha, Vila Praia de Âncora & Seixas | Caminho de Santiago | Way to Santiago Guide",
+          "description": "Verified accommodation guide for Camino de Santiago Coastal Route pilgrims. Albergues, guesthouses, and hotels in Caminha, Vila Praia de Âncora, and Seixas — all bookable on Booking.com.",
+          "inLanguage": "en-GB",
+          "isPartOf": { "@id": "https://waytosantiagoguide.com/#website" },
+          "breadcrumb": { "@id": "https://waytosantiagoguide.com/en/caminha/where-to-stay/#breadcrumb" }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://waytosantiagoguide.com/en/caminha/where-to-stay/#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://waytosantiagoguide.com/en/" },
+            { "@type": "ListItem", "position": 2, "name": "Caminha Guide", "item": "https://waytosantiagoguide.com/en/caminha-guide/" },
+            { "@type": "ListItem", "position": 3, "name": "Where to Stay", "item": "https://waytosantiagoguide.com/en/caminha/where-to-stay/" }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://waytosantiagoguide.com/en/caminha/where-to-stay/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Can I book the municipal albergue in Caminha in advance?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. The Albergue Municipal de Peregrinos de Caminha is walk-in only, opening at 14:00 on a first-come, first-served basis. A valid credencial do peregrino is required. Maximum stay is 2 consecutive nights. Private albergues (Albergue Santiago, Bom Caminha) are bookable online in advance via Booking.com."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is there accommodation near the Caminha ferry dock?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. The municipal albergue and most guesthouses in Caminha are within 5–10 minutes walk of the ferry dock (Cais de Caminha). The town centre is compact — all accommodation listed is walkable to the departure point."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What types of accommodation are available in Caminha for pilgrims?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Caminha offers: municipal albergue (walk-in, credencial required), private albergues (advance booking available), guesthouses, and hotels. The wider area includes beach hotels in Vila Praia de Âncora (8 km south) and a beachfront albergue plus country hotel in Seixas."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "When should I book accommodation in Caminha for the Coastal Camino?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The Coastal Route peaks May–October. Private albergues and hotels should be booked 1–2 weeks in advance in peak season (July–August). The municipal albergue cannot be booked and fills on summer afternoons — arrive before 15:00 during peak season."
+              }
+            }
+          ]
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://waytosantiagoguide.com/en/caminha/where-to-stay/#list",
+          "name": "Accommodation in Caminha, Vila Praia de Âncora & Seixas — Camino de Santiago Coastal Route",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": "Hostel",
+                "name": "Albergue Municipal de Peregrinos de Caminha",
+                "description": "Official municipal pilgrim hostel in Caminha town centre, minutes from the ferry dock. Walk-in only from 14:00, credencial required.",
+                "address": { "@type": "PostalAddress", "streetAddress": "Rua Ricardo Joaquim de Sousa", "addressLocality": "Caminha", "addressCountry": "PT" }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@type": "Hostel",
+                "name": "Albergue Santiago de Caminha",
+                "description": "Private pilgrim hostel in central Caminha, bookable online. Bar and coffee shop on site.",
+                "address": { "@type": "PostalAddress", "addressLocality": "Caminha", "addressCountry": "PT" }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@type": "Hostel",
+                "name": "Bom Caminha — Private Albergue for Pilgrims",
+                "description": "Private albergue in restored 1882 townhouse in Caminha old town. Optional pilgrim dinner, communal kitchen, advance booking available.",
+                "address": { "@type": "PostalAddress", "addressLocality": "Caminha", "addressCountry": "PT" }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "item": {
+                "@type": "LodgingBusiness",
+                "name": "Litos AL",
+                "description": "Guest house in central Caminha near waterfront. Breakfast included, air-conditioned rooms.",
+                "address": { "@type": "PostalAddress", "streetAddress": "Largo Senhora da Agonia 13", "addressLocality": "Caminha", "addressCountry": "PT" }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "item": {
+                "@type": "Hotel",
+                "name": "Design & Wine Hotel",
+                "description": "Hotel in 18th-century building in Caminha town centre. Indoor pool, wine bar.",
+                "address": { "@type": "PostalAddress", "addressLocality": "Caminha", "addressCountry": "PT" }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "item": {
+                "@type": "Hotel",
+                "name": "Hotel Porta do Sol Conference & SPA",
+                "description": "4-star hotel near river mouth and Atlantic beach in Caminha. Two outdoor pools, spa.",
+                "address": { "@type": "PostalAddress", "addressLocality": "Caminha", "addressCountry": "PT" }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 7,
+              "item": {
+                "@type": "Hotel",
+                "name": "BLUE ANCORA HOTEL",
+                "description": "Hotel in Vila Praia de Âncora, 3-minute walk from beach. Seasonal outdoor pool, sea-view rooms.",
+                "address": { "@type": "PostalAddress", "addressLocality": "Vila Praia de Âncora", "addressCountry": "PT" }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 8,
+              "item": {
+                "@type": "Hotel",
+                "name": "Hotel Meira",
+                "description": "4-star hotel in Vila Praia de Âncora near beach. Swimming pool, breakfast buffet included.",
+                "address": { "@type": "PostalAddress", "addressLocality": "Vila Praia de Âncora", "addressCountry": "PT" }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 9,
+              "item": {
+                "@type": "Hostel",
+                "name": "Albergue de São Bento",
+                "description": "Beachfront pilgrim hostel in Seixas parish. Pilgrim dinners available, shared kitchen.",
+                "address": { "@type": "PostalAddress", "addressLocality": "Seixas, Caminha", "addressCountry": "PT" }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 10,
+              "item": {
+                "@type": "Hotel",
+                "name": "Rinoterra Minho",
+                "description": "Country hotel in Seixas parish with river and mountain views. Spa, tennis, Portuguese restaurant.",
+                "address": { "@type": "PostalAddress", "streetAddress": "Rua da Costa 15", "addressLocality": "Seixas, Caminha", "addressCountry": "PT" }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  `}</script>
 
   <!-- ── PAGE HEADER ──────────────────────────────────────────────────────────── -->
   <div class="bg-gradient-to-b from-forest-50 to-white border-b border-forest-100/60">
@@ -352,155 +525,5 @@ const categoryLabel: Record<Category, string> = {
     </div>
   </div>
 
-  <!-- ── SCHEMA: FAQPage + ItemList (LodgingBusiness) ──────────────────────── -->
-  <script type="application/ld+json" is:inline>{`
-    [
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Can I book the municipal albergue in Caminha in advance?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No. The Albergue Municipal de Peregrinos de Caminha is walk-in only, opening at 14:00 on a first-come, first-served basis. A valid credencial do peregrino is required. Maximum stay is 2 consecutive nights. Private albergues (Albergue Santiago, Bom Caminha) are bookable online in advance via Booking.com."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is there accommodation near the Caminha ferry dock?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. The municipal albergue and most guesthouses in Caminha are within 5–10 minutes walk of the ferry dock (Cais de Caminha). The town centre is compact — all accommodation listed is walkable to the departure point."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What types of accommodation are available in Caminha for pilgrims?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Caminha offers: municipal albergue (walk-in, credencial required), private albergues (advance booking available), guesthouses, and hotels. The wider area includes beach hotels in Vila Praia de Âncora (8 km south) and a beachfront albergue plus country hotel in Seixas."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "When should I book accommodation in Caminha for the Coastal Camino?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The Coastal Route peaks May–October. Private albergues and hotels should be booked 1–2 weeks in advance in peak season (July–August). The municipal albergue cannot be booked and fills on summer afternoons — arrive before 15:00 during peak season."
-            }
-          }
-        ]
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "name": "Accommodation in Caminha, Vila Praia de Âncora & Seixas — Camino de Santiago Coastal Route",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "item": {
-              "@type": "Hostel",
-              "name": "Albergue Municipal de Peregrinos de Caminha",
-              "description": "Official municipal pilgrim hostel in Caminha town centre, minutes from the ferry dock. Walk-in only from 14:00, credencial required.",
-              "address": { "@type": "PostalAddress", "streetAddress": "Rua Ricardo Joaquim de Sousa", "addressLocality": "Caminha", "addressCountry": "PT" }
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "item": {
-              "@type": "Hostel",
-              "name": "Albergue Santiago de Caminha",
-              "description": "Private pilgrim hostel in central Caminha, bookable online. Bar and coffee shop on site.",
-              "address": { "@type": "PostalAddress", "addressLocality": "Caminha", "addressCountry": "PT" }
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "item": {
-              "@type": "Hostel",
-              "name": "Bom Caminha — Private Albergue for Pilgrims",
-              "description": "Private albergue in restored 1882 townhouse in Caminha old town. Optional pilgrim dinner, communal kitchen, advance booking available.",
-              "address": { "@type": "PostalAddress", "addressLocality": "Caminha", "addressCountry": "PT" }
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 4,
-            "item": {
-              "@type": "LodgingBusiness",
-              "name": "Litos AL",
-              "description": "Guest house in central Caminha near waterfront. Breakfast included, air-conditioned rooms.",
-              "address": { "@type": "PostalAddress", "streetAddress": "Largo Senhora da Agonia 13", "addressLocality": "Caminha", "addressCountry": "PT" }
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 5,
-            "item": {
-              "@type": "Hotel",
-              "name": "Design & Wine Hotel",
-              "description": "Hotel in 18th-century building in Caminha town centre. Indoor pool, wine bar.",
-              "address": { "@type": "PostalAddress", "addressLocality": "Caminha", "addressCountry": "PT" }
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 6,
-            "item": {
-              "@type": "Hotel",
-              "name": "Hotel Porta do Sol Conference & SPA",
-              "description": "4-star hotel near river mouth and Atlantic beach in Caminha. Two outdoor pools, spa.",
-              "address": { "@type": "PostalAddress", "addressLocality": "Caminha", "addressCountry": "PT" }
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 7,
-            "item": {
-              "@type": "Hotel",
-              "name": "BLUE ANCORA HOTEL",
-              "description": "Hotel in Vila Praia de Âncora, 3-minute walk from beach. Seasonal outdoor pool, sea-view rooms.",
-              "address": { "@type": "PostalAddress", "addressLocality": "Vila Praia de Âncora", "addressCountry": "PT" }
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 8,
-            "item": {
-              "@type": "Hotel",
-              "name": "Hotel Meira",
-              "description": "4-star hotel in Vila Praia de Âncora near beach. Swimming pool, breakfast buffet included.",
-              "address": { "@type": "PostalAddress", "addressLocality": "Vila Praia de Âncora", "addressCountry": "PT" }
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 9,
-            "item": {
-              "@type": "Hostel",
-              "name": "Albergue de São Bento",
-              "description": "Beachfront pilgrim hostel in Seixas parish. Pilgrim dinners available, shared kitchen.",
-              "address": { "@type": "PostalAddress", "addressLocality": "Seixas, Caminha", "addressCountry": "PT" }
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 10,
-            "item": {
-              "@type": "Hotel",
-              "name": "Rinoterra Minho",
-              "description": "Country hotel in Seixas parish with river and mountain views. Spa, tennis, Portuguese restaurant.",
-              "address": { "@type": "PostalAddress", "streetAddress": "Rua da Costa 15", "addressLocality": "Seixas, Caminha", "addressCountry": "PT" }
-            }
-          }
-        ]
-      }
-    ]
-  `}</script>
 
 </MainLayout>
