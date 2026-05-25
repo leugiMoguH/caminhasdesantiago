@@ -65,6 +65,19 @@ const faqItems = [
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "Organization",
+        "@id": "https://waytosantiagoguide.com/#organization",
+        "name": "Way to Santiago Guide",
+        "url": "https://waytosantiagoguide.com",
+        "logo": { "@type": "ImageObject", "url": "https://waytosantiagoguide.com/logo.png" }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://waytosantiagoguide.com/#website",
+        "url": "https://waytosantiagoguide.com",
+        "name": "Way to Santiago Guide"
+      },
+      {
         "@type": "WebPage",
         "@id": "https://waytosantiagoguide.com/pt/caminha/ferry-e-logistica/#webpage",
         "url": "https://waytosantiagoguide.com/pt/caminha/ferry-e-logistica/",
@@ -72,6 +85,7 @@ const faqItems = [
         "description": "Guia completo para a travessia do rio Minho Caminha–A Guarda. Horários de verão/inverno, tabela de tarifas, a história real do assoreamento sazonal, alternativas de táxi fluvial Xávegas, e o desvio terrestre via Valença–Tui.",
         "inLanguage": "pt-PT",
         "isPartOf": { "@id": "https://waytosantiagoguide.com/#website" },
+        "about": { "@id": "https://waytosantiagoguide.com/#organization" },
         "breadcrumb": { "@id": "https://waytosantiagoguide.com/pt/caminha/ferry-e-logistica/#breadcrumb" }
       },
       {
@@ -115,6 +129,7 @@ const faqItems = [
       {
         "@type": "FAQPage",
         "@id": "https://waytosantiagoguide.com/pt/caminha/ferry-e-logistica/#faq",
+        "mainEntityOfPage": { "@id": "https://waytosantiagoguide.com/pt/caminha/ferry-e-logistica/#webpage" },
         "mainEntity": [
           {
             "@type": "Question",

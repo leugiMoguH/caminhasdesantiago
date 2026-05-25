@@ -54,6 +54,41 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
     {
+      '@type': 'Organization',
+      '@id': `${SITE_URL}/#organization`,
+      name: 'Way to Santiago Guide',
+      url: SITE_URL,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${SITE_URL}/logo.png`,
+      },
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: 'Way to Santiago Guide',
+    },
+    {
+      '@type': 'WebPage',
+      '@id': `${SITE_URL}/en/caminha-guide/#webpage`,
+      url: `${SITE_URL}/en/caminha-guide/`,
+      name: 'Caminha Coastal Camino Guide — Accommodation, Food, Ferry & Services | Way to Santiago Guide',
+      description: 'Complete pilgrim guide to Caminha on the Camino de Santiago Coastal Route. Ferry crossing schedules, where to stay, where to eat, and pilgrim services — all in one place.',
+      inLanguage: 'en-GB',
+      isPartOf: { '@id': `${SITE_URL}/#website` },
+      about: { '@id': `${SITE_URL}/#organization` },
+      breadcrumb: { '@id': `${SITE_URL}/en/caminha-guide/#breadcrumb` },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${SITE_URL}/en/caminha-guide/#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/en/` },
+        { '@type': 'ListItem', position: 2, name: 'Caminha Guide', item: `${SITE_URL}/en/caminha-guide/` },
+      ],
+    },
+    {
       '@type': 'TouristDestination',
       '@id': `${SITE_URL}/en/caminha-guide/#destination`,
       name: 'Caminha',
@@ -85,26 +120,9 @@ const jsonLd = {
       },
     },
     {
-      '@type': 'WebPage',
-      '@id': `${SITE_URL}/en/caminha-guide/`,
-      url: `${SITE_URL}/en/caminha-guide/`,
-      name: 'Caminha Coastal Camino Guide — Accommodation, Food, Ferry & Services | Way to Santiago Guide',
-      description: 'Complete pilgrim guide to Caminha on the Camino de Santiago Coastal Route. Ferry crossing schedules, where to stay, where to eat, and pilgrim services — all in one place.',
-      inLanguage: 'en-GB',
-      isPartOf: { '@id': `${SITE_URL}/#website` },
-      breadcrumb: { '@id': `${SITE_URL}/en/caminha-guide/#breadcrumb` },
-    },
-    {
-      '@type': 'BreadcrumbList',
-      '@id': `${SITE_URL}/en/caminha-guide/#breadcrumb`,
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/en/` },
-        { '@type': 'ListItem', position: 2, name: 'Caminha Guide', item: `${SITE_URL}/en/caminha-guide/` },
-      ],
-    },
-    {
       '@type': 'FAQPage',
       '@id': `${SITE_URL}/en/caminha-guide/#faq`,
+      mainEntityOfPage: { '@id': `${SITE_URL}/en/caminha-guide/#webpage` },
       mainEntity: [
         {
           '@type': 'Question',

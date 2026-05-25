@@ -57,6 +57,49 @@ const fullTitle = (title === siteName || title.startsWith(siteName + ' |') || ti
 const ogImageAbsolute = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogImage}`;
 const htmlLang = language === 'en' ? 'en-GB' : language === 'es' ? 'es-ES' : 'pt-PT';
 
+const ORG_ID = `${SITE_URL}/#organization`;
+const WEBSITE_ID = `${SITE_URL}/#website`;
+
+const orgNode = {
+  '@type': 'Organization',
+  '@id': ORG_ID,
+  name: SITE_NAME_EN,
+  url: SITE_URL,
+  logo: {
+    '@type': 'ImageObject',
+    url: `${SITE_URL}/logo.png`,
+  },
+};
+
+const websiteNode = {
+  '@type': 'WebSite',
+  '@id': WEBSITE_ID,
+  url: SITE_URL,
+  name: SITE_NAME_EN,
+};
+
+// SEGMENT_URL_OVERRIDES maps path segments with no real page to a real URL.
+// Segments present but with no entry for the current language are skipped.
+const SEGMENT_URL_OVERRIDES: Record<string, Partial<Record<string, string>>> = {
+  caminha: { en: `${SITE_URL}/en/caminha-guide/` },
+};
+const pathSegments = canonicalURL.replace(SITE_URL, '').split('/').filter(Boolean);
+const resolvedSegments = pathSegments.slice(1).flatMap((seg, i) => {
+  if (seg in SEGMENT_URL_OVERRIDES) {
+    const override = SEGMENT_URL_OVERRIDES[seg][language];
+    if (!override) return [];
+    return [{ name: 'Caminha Guide', item: override }];
+  }
+  return [{
+    name: seg.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()),
+    item: `${SITE_URL}/${pathSegments.slice(0, i + 2).join('/')}/`,
+  }];
+});
+const breadcrumbItems = [
+  { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/${language}/` },
+  ...resolvedSegments.map((seg, i) => ({ '@type': 'ListItem', position: i + 2, ...seg })),
+];
+
 // Build JSON-LD schema object based on page type
 let jsonLd: Record<string, unknown> | undefined;
 
@@ -87,94 +130,103 @@ if (schemaType === 'none') {
 
   jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'WebSite',
-    '@id': `${SITE_URL}/#website`,
-    name: siteName,
-    url: SITE_URL,
-    description,
-    inLanguage: htmlLang,
-    publisher: {
-      '@type': 'Organization',
-      name: siteName,
-      url: SITE_URL,
-      logo: {
-        '@type': 'ImageObject',
-        url: `${SITE_URL}/logo.png`,
+    '@graph': [
+      orgNode,
+      {
+        '@type': 'WebSite',
+        '@id': WEBSITE_ID,
+        url: SITE_URL,
+        name: SITE_NAME_EN,
+        description,
+        inLanguage: htmlLang,
+        publisher: { '@id': ORG_ID },
+        hasPart: navItems.map((item) => ({
+          '@type': 'SiteNavigationElement',
+          name: item.name,
+          url: item.url,
+        })),
       },
-    },
-    hasPart: navItems.map((item) => ({
-      '@type': 'SiteNavigationElement',
-      name: item.name,
-      url: item.url,
-    })),
+      {
+        '@type': 'WebPage',
+        '@id': `${canonicalURL}#webpage`,
+        url: canonicalURL,
+        name: fullTitle,
+        inLanguage: htmlLang,
+        isPartOf: { '@id': WEBSITE_ID },
+        about: { '@id': ORG_ID },
+      },
+    ],
   };
 } else if (schemaType === 'localbusiness' && localBusinessData) {
   jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: localBusinessData.name,
-    description: localBusinessData.description,
-    url: localBusinessData.url ?? canonicalURL,
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: localBusinessData.address,
-      addressLocality: 'Caminha',
-      addressRegion: 'Viana do Castelo',
-      postalCode: '4910',
-      addressCountry: 'PT',
-    },
-    ...(localBusinessData.telephone ? { telephone: localBusinessData.telephone } : {}),
-    ...(localBusinessData.priceRange ? { priceRange: localBusinessData.priceRange } : {}),
-    ...(localBusinessData.servesCuisine ? { servesCuisine: localBusinessData.servesCuisine } : {}),
-    ...(localBusinessData.openingHours ? { openingHours: localBusinessData.openingHours } : {}),
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: 41.8772,
-      longitude: -8.8389,
-    },
-    containedInPlace: {
-      '@type': 'TouristDestination',
-      name: 'Caminha',
-      description: language === 'en'
-        ? 'Historic border town on the Camino de Santiago Coastal Route, northern Portugal.'
-        : 'Histórica ciudad fronteriza en el Camino de Santiago de la Costa, norte de Portugal.',
-    },
-  };
-} else {
-  // Default: WebPage + BreadcrumbList
-  // SEGMENT_URL_OVERRIDES maps path segments that have no real page to a real URL.
-  // Segments present in the map but with no entry for the current language are skipped.
-  const SEGMENT_URL_OVERRIDES: Record<string, Partial<Record<string, string>>> = {
-    caminha: { en: `${SITE_URL}/en/caminha-guide/` },
-  };
-  const pathSegments = canonicalURL.replace(SITE_URL, '').split('/').filter(Boolean);
-  const resolvedSegments = pathSegments.slice(1).flatMap((seg, i) => {
-    if (seg in SEGMENT_URL_OVERRIDES) {
-      const override = SEGMENT_URL_OVERRIDES[seg][language];
-      if (!override) return [];
-      return [{ name: 'Caminha Guide', item: override }];
-    }
-    return [{
-      name: seg.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()),
-      item: `${SITE_URL}/${pathSegments.slice(0, i + 2).join('/')}/`,
-    }];
-  });
-  const breadcrumbItems = [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/${language}/` },
-    ...resolvedSegments.map((seg, i) => ({ '@type': 'ListItem', position: i + 2, ...seg })),
-  ];
-
-  jsonLd = {
-    '@context': 'https://schema.org',
     '@graph': [
+      orgNode,
+      websiteNode,
       {
         '@type': 'WebPage',
-        '@id': canonicalURL,
+        '@id': `${canonicalURL}#webpage`,
         url: canonicalURL,
         name: fullTitle,
         description,
         inLanguage: htmlLang,
-        isPartOf: { '@id': `${SITE_URL}/#website` },
+        isPartOf: { '@id': WEBSITE_ID },
+        about: { '@id': ORG_ID },
+        breadcrumb: { '@id': `${canonicalURL}#breadcrumb` },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${canonicalURL}#breadcrumb`,
+        itemListElement: breadcrumbItems,
+      },
+      {
+        '@type': 'LocalBusiness',
+        name: localBusinessData.name,
+        description: localBusinessData.description,
+        url: localBusinessData.url ?? canonicalURL,
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: localBusinessData.address,
+          addressLocality: 'Caminha',
+          addressRegion: 'Viana do Castelo',
+          postalCode: '4910',
+          addressCountry: 'PT',
+        },
+        ...(localBusinessData.telephone ? { telephone: localBusinessData.telephone } : {}),
+        ...(localBusinessData.priceRange ? { priceRange: localBusinessData.priceRange } : {}),
+        ...(localBusinessData.servesCuisine ? { servesCuisine: localBusinessData.servesCuisine } : {}),
+        ...(localBusinessData.openingHours ? { openingHours: localBusinessData.openingHours } : {}),
+        geo: {
+          '@type': 'GeoCoordinates',
+          latitude: 41.8772,
+          longitude: -8.8389,
+        },
+        containedInPlace: {
+          '@type': 'TouristDestination',
+          name: 'Caminha',
+          description: language === 'en'
+            ? 'Historic border town on the Camino de Santiago Coastal Route, northern Portugal.'
+            : 'Histórica ciudad fronteriza en el Camino de Santiago de la Costa, norte de Portugal.',
+        },
+      },
+    ],
+  };
+} else {
+  // Default: Organization + WebSite + WebPage + BreadcrumbList
+  jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      orgNode,
+      websiteNode,
+      {
+        '@type': 'WebPage',
+        '@id': `${canonicalURL}#webpage`,
+        url: canonicalURL,
+        name: fullTitle,
+        description,
+        inLanguage: htmlLang,
+        isPartOf: { '@id': WEBSITE_ID },
+        about: { '@id': ORG_ID },
         breadcrumb: { '@id': `${canonicalURL}#breadcrumb` },
       },
       {

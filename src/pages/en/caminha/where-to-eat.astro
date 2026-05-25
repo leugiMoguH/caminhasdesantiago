@@ -367,6 +367,19 @@ const zones: Zone[] = ['caminha', 'vpa'];
       "@context": "https://schema.org",
       "@graph": [
         {
+          "@type": "Organization",
+          "@id": "https://waytosantiagoguide.com/#organization",
+          "name": "Way to Santiago Guide",
+          "url": "https://waytosantiagoguide.com",
+          "logo": { "@type": "ImageObject", "url": "https://waytosantiagoguide.com/logo.png" }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://waytosantiagoguide.com/#website",
+          "url": "https://waytosantiagoguide.com",
+          "name": "Way to Santiago Guide"
+        },
+        {
           "@type": "WebPage",
           "@id": "https://waytosantiagoguide.com/en/caminha/where-to-eat/#webpage",
           "url": "https://waytosantiagoguide.com/en/caminha/where-to-eat/",
@@ -374,6 +387,7 @@ const zones: Zone[] = ['caminha', 'vpa'];
           "description": "Verified restaurants and cafés in Caminha and Vila Praia de Âncora for Camino de Santiago Coastal Route pilgrims. Traditional Portuguese seafood, early breakfast spots, and local dining.",
           "inLanguage": "en-GB",
           "isPartOf": { "@id": "https://waytosantiagoguide.com/#website" },
+          "about": { "@id": "https://waytosantiagoguide.com/#organization" },
           "breadcrumb": { "@id": "https://waytosantiagoguide.com/en/caminha/where-to-eat/#breadcrumb" }
         },
         {
@@ -388,6 +402,7 @@ const zones: Zone[] = ['caminha', 'vpa'];
         {
           "@type": "FAQPage",
           "@id": "https://waytosantiagoguide.com/en/caminha/where-to-eat/#faq",
+          "mainEntityOfPage": { "@id": "https://waytosantiagoguide.com/en/caminha/where-to-eat/#webpage" },
           "mainEntity": [
             {
               "@type": "Question",
@@ -426,6 +441,7 @@ const zones: Zone[] = ['caminha', 'vpa'];
         {
           "@type": "ItemList",
           "@id": "https://waytosantiagoguide.com/en/caminha/where-to-eat/#list",
+          "mainEntityOfPage": { "@id": "https://waytosantiagoguide.com/en/caminha/where-to-eat/#webpage" },
           "name": "Restaurants in Caminha and Vila Praia de Âncora — Camino de Santiago Coastal Route",
           "itemListElement": [
             {

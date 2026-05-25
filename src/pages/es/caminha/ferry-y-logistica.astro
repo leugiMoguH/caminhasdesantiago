@@ -88,6 +88,19 @@ const datosClave = [
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "Organization",
+        "@id": "https://waytosantiagoguide.com/#organization",
+        "name": "Way to Santiago Guide",
+        "url": "https://waytosantiagoguide.com",
+        "logo": { "@type": "ImageObject", "url": "https://waytosantiagoguide.com/logo.png" }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://waytosantiagoguide.com/#website",
+        "url": "https://waytosantiagoguide.com",
+        "name": "Way to Santiago Guide"
+      },
+      {
         "@type": "WebPage",
         "@id": "https://waytosantiagoguide.com/es/caminha/ferry-y-logistica/#webpage",
         "url": "https://waytosantiagoguide.com/es/caminha/ferry-y-logistica/",
@@ -95,6 +108,7 @@ const datosClave = [
         "description": "Guía completa del cruce del río Miño entre Caminha y A Guarda. Horarios de verano e invierno, tabla de tarifas, el problema real del assoreamento (sedimentación), alternativas con taxi-marítimo y el desvío terrestre por Valença–Tui.",
         "inLanguage": "es-ES",
         "isPartOf": { "@id": "https://waytosantiagoguide.com/#website" },
+        "about": { "@id": "https://waytosantiagoguide.com/#organization" },
         "breadcrumb": { "@id": "https://waytosantiagoguide.com/es/caminha/ferry-y-logistica/#breadcrumb" }
       },
       {
@@ -138,6 +152,7 @@ const datosClave = [
       {
         "@type": "FAQPage",
         "@id": "https://waytosantiagoguide.com/es/caminha/ferry-y-logistica/#faq",
+        "mainEntityOfPage": { "@id": "https://waytosantiagoguide.com/es/caminha/ferry-y-logistica/#webpage" },
         "mainEntity": [
           {
             "@type": "Question",

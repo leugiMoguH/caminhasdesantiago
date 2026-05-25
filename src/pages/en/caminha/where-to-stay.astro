@@ -164,6 +164,19 @@ const categoryLabel: Record<Category, string> = {
       "@context": "https://schema.org",
       "@graph": [
         {
+          "@type": "Organization",
+          "@id": "https://waytosantiagoguide.com/#organization",
+          "name": "Way to Santiago Guide",
+          "url": "https://waytosantiagoguide.com",
+          "logo": { "@type": "ImageObject", "url": "https://waytosantiagoguide.com/logo.png" }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://waytosantiagoguide.com/#website",
+          "url": "https://waytosantiagoguide.com",
+          "name": "Way to Santiago Guide"
+        },
+        {
           "@type": "WebPage",
           "@id": "https://waytosantiagoguide.com/en/caminha/where-to-stay/#webpage",
           "url": "https://waytosantiagoguide.com/en/caminha/where-to-stay/",
@@ -171,6 +184,7 @@ const categoryLabel: Record<Category, string> = {
           "description": "Verified accommodation guide for Camino de Santiago Coastal Route pilgrims. Albergues, guesthouses, and hotels in Caminha, Vila Praia de Âncora, and Seixas — all bookable on Booking.com.",
           "inLanguage": "en-GB",
           "isPartOf": { "@id": "https://waytosantiagoguide.com/#website" },
+          "about": { "@id": "https://waytosantiagoguide.com/#organization" },
           "breadcrumb": { "@id": "https://waytosantiagoguide.com/en/caminha/where-to-stay/#breadcrumb" }
         },
         {
@@ -185,6 +199,7 @@ const categoryLabel: Record<Category, string> = {
         {
           "@type": "FAQPage",
           "@id": "https://waytosantiagoguide.com/en/caminha/where-to-stay/#faq",
+          "mainEntityOfPage": { "@id": "https://waytosantiagoguide.com/en/caminha/where-to-stay/#webpage" },
           "mainEntity": [
             {
               "@type": "Question",
@@ -223,6 +238,7 @@ const categoryLabel: Record<Category, string> = {
         {
           "@type": "ItemList",
           "@id": "https://waytosantiagoguide.com/en/caminha/where-to-stay/#list",
+          "mainEntityOfPage": { "@id": "https://waytosantiagoguide.com/en/caminha/where-to-stay/#webpage" },
           "name": "Accommodation in Caminha, Vila Praia de Âncora & Seixas — Camino de Santiago Coastal Route",
           "itemListElement": [
             {
