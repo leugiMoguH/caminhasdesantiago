@@ -71,12 +71,29 @@ const enPath = pathEntry?.en ?? '/en/';
 const esPath = pathEntry?.es ?? '/es/';
 const ptPath = pathEntry?.pt ?? '/pt/';
 
-const alternateLanguages: AlternateLang[] = [
-  { lang: 'en', href: `${SITE_URL}${enPath}` },
-  { lang: 'es', href: `${SITE_URL}${esPath}` },
-  { lang: 'pt', href: `${SITE_URL}${ptPath}` },
-  { lang: 'x-default', href: `${SITE_URL}${enPath}` },
-];
+// EN-only pages have no real ES/PT equivalent. They must NOT emit es/pt
+// hreflang (would be non-reciprocal — /es/ and /pt/ do not point back).
+// Emit only self en + x-default for these.
+const NO_TRANSLATION = new Set([
+  '/en/caminha-guide/',
+  '/en/caminha/vila-praia-de-ancora/',
+  '/en/caminha/seixas/',
+  '/en/caminha/pilgrim-guide/',
+  '/en/sitemap/',
+]);
+const hasTranslations = !NO_TRANSLATION.has(currentPath);
+
+const alternateLanguages: AlternateLang[] = hasTranslations
+  ? [
+      { lang: 'en', href: `${SITE_URL}${enPath}` },
+      { lang: 'es', href: `${SITE_URL}${esPath}` },
+      { lang: 'pt', href: `${SITE_URL}${ptPath}` },
+      { lang: 'x-default', href: `${SITE_URL}${enPath}` },
+    ]
+  : [
+      { lang: 'en', href: `${SITE_URL}${enPath}` },
+      { lang: 'x-default', href: `${SITE_URL}${enPath}` },
+    ];
 
 const htmlLang = lang === 'en' ? 'en' : lang === 'es' ? 'es' : 'pt';
 ---

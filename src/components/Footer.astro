@@ -12,9 +12,11 @@ const t = {
     tagline: 'Your independent guide for pilgrims and travellers on the Camino de Santiago Coastal Route through Caminha, Portugal.',
     explore: 'Explore Caminha',
     home: 'Home',
+    guide: 'Caminha Guide',
     eat: 'Where to Eat',
     stay: 'Where to Stay',
     ferry: 'Ferry & Logistics',
+    services: 'Useful Services',
     languages: 'Languages',
     english: 'English',
     spanish: 'Español',
@@ -32,9 +34,11 @@ const t = {
     tagline: 'Tu guía independiente para peregrinos y viajeros en el Camino de Santiago de la Costa, a través de Caminha, Portugal.',
     explore: 'Explorar Caminha',
     home: 'Inicio',
+    guide: 'Guía de Caminha',
     eat: 'Dónde Comer',
     stay: 'Dónde Dormir',
     ferry: 'Ferry y Logística',
+    services: 'Servicios Útiles',
     languages: 'Idiomas',
     english: 'English',
     spanish: 'Español',
@@ -52,9 +56,11 @@ const t = {
     tagline: 'O seu guia independente para peregrinos e viajantes na Rota Costeira do Caminho de Santiago, através de Caminha, Portugal.',
     explore: 'Explorar Caminha',
     home: 'Início',
+    guide: 'Guia de Caminha',
     eat: 'Onde Comer',
     stay: 'Onde Ficar',
     ferry: 'Ferry e Logística',
+    services: 'Serviços Úteis',
     languages: 'Idiomas',
     english: 'English',
     spanish: 'Español',
@@ -76,9 +82,11 @@ const navLinks =
   lang === 'en'
     ? [
         { href: '/en/', label: text.home },
+        { href: '/en/caminha-guide/', label: text.guide },
         { href: '/en/caminha/where-to-eat/', label: text.eat },
         { href: '/en/caminha/where-to-stay/', label: text.stay },
         { href: '/en/caminha/ferry-and-logistics/', label: text.ferry },
+        { href: '/en/caminha/useful-services/', label: text.services },
       ]
     : lang === 'es'
     ? [
@@ -86,12 +94,14 @@ const navLinks =
         { href: '/es/caminha/donde-comer/', label: text.eat },
         { href: '/es/caminha/donde-dormir/', label: text.stay },
         { href: '/es/caminha/ferry-y-logistica/', label: text.ferry },
+        { href: '/es/caminha/servicios-utiles/', label: text.services },
       ]
     : [
         { href: '/pt/', label: text.home },
         { href: '/pt/caminha/onde-comer/', label: text.eat },
         { href: '/pt/caminha/onde-ficar/', label: text.stay },
         { href: '/pt/caminha/ferry-e-logistica/', label: text.ferry },
+        { href: '/pt/caminha/servicos-uteis/', label: text.services },
       ];
 ---
 

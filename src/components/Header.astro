@@ -11,6 +11,7 @@ const { lang, enUrl, esUrl, ptUrl } = Astro.props;
 const t = {
   en: {
     home: 'Home',
+    guide: 'Caminha Guide',
     whereToEat: 'Where to Eat',
     whereToStay: 'Where to Stay',
     ferry: 'Ferry & Logistics',
@@ -20,6 +21,7 @@ const t = {
   },
   es: {
     home: 'Inicio',
+    guide: 'Guía de Caminha',
     whereToEat: 'Dónde Comer',
     whereToStay: 'Dónde Dormir',
     ferry: 'Ferry y Logística',
@@ -29,6 +31,7 @@ const t = {
   },
   pt: {
     home: 'Início',
+    guide: 'Guia de Caminha',
     whereToEat: 'Onde Comer',
     whereToStay: 'Onde Ficar',
     ferry: 'Ferry e Logística',
@@ -44,6 +47,7 @@ const baseNav =
   lang === 'en'
     ? [
         { href: '/en/', label: text.home },
+        { href: '/en/caminha-guide/', label: text.guide },
         { href: '/en/caminha/where-to-eat/', label: text.whereToEat },
         { href: '/en/caminha/where-to-stay/', label: text.whereToStay },
         { href: '/en/caminha/ferry-and-logistics/', label: text.ferry },
