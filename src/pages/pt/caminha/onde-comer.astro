@@ -123,6 +123,26 @@ const zonas: Zona[] = ['caminha', 'vpa'];
   schemaType="webpage"
 >
 
+  <!-- ── JSON-LD: ItemList de restaurantes (paridade com EN where-to-eat) ───── -->
+  <script type="application/ld+json" is:inline set:html={`
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "@id": "https://waytosantiagoguide.com/pt/caminha/onde-comer/#list",
+      "mainEntityOfPage": { "@id": "https://waytosantiagoguide.com/pt/caminha/onde-comer/#webpage" },
+      "name": "Restaurantes em Caminha e Vila Praia de Âncora — Caminho de Santiago da Costa",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "item": { "@type": "Restaurant", "name": "Restaurante Baptista", "address": { "@type": "PostalAddress", "streetAddress": "Praça do Conselheiro Silva Torres 24/26", "addressLocality": "Caminha", "addressCountry": "PT" }, "servesCuisine": ["Portuguese", "Seafood"] } },
+        { "@type": "ListItem", "position": 2, "item": { "@type": "Restaurant", "name": "Muralha de Caminha", "address": { "@type": "PostalAddress", "streetAddress": "Praça de Espanha", "addressLocality": "Caminha", "addressCountry": "PT" }, "servesCuisine": ["Mediterranean", "European"] } },
+        { "@type": "ListItem", "position": 3, "item": { "@type": "Restaurant", "name": "Solar do Pescado", "address": { "@type": "PostalAddress", "streetAddress": "Rua Visconde Sousa Rego 85", "addressLocality": "Caminha", "addressCountry": "PT" }, "servesCuisine": ["Seafood", "Mediterranean"] } },
+        { "@type": "ListItem", "position": 4, "item": { "@type": "Restaurant", "name": "Casa Almeida", "address": { "@type": "PostalAddress", "streetAddress": "Praça Conselheiro Silva Torres", "addressLocality": "Caminha", "addressCountry": "PT" }, "servesCuisine": ["Portuguese", "European"] } },
+        { "@type": "ListItem", "position": 5, "item": { "@type": "Restaurant", "name": "O Chafariz", "address": { "@type": "PostalAddress", "addressLocality": "Caminha", "addressCountry": "PT" }, "servesCuisine": ["Portuguese", "European"] } },
+        { "@type": "ListItem", "position": 6, "item": { "@type": "Restaurant", "name": "Fortaleza Restaurante", "address": { "@type": "PostalAddress", "streetAddress": "Avenida Dr. Ramos Pereira 81", "addressLocality": "Vila Praia de Âncora", "addressCountry": "PT" }, "servesCuisine": ["Seafood", "Mediterranean"] } },
+        { "@type": "ListItem", "position": 7, "item": { "@type": "Restaurant", "name": "Restaurante Vitória Mar", "address": { "@type": "PostalAddress", "streetAddress": "Avenida Dr. Luis Ramos Pereira 100", "addressLocality": "Vila Praia de Âncora", "addressCountry": "PT" }, "servesCuisine": ["Seafood", "Mediterranean"] } }
+      ]
+    }
+  `} />
+
   <div class="bg-gradient-to-b from-earth-50 to-white border-b border-earth-100/60">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 md:py-20">
       <nav aria-label="Rasto de navegação" class="mb-5">

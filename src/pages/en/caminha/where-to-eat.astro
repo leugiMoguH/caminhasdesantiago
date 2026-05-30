@@ -362,7 +362,7 @@ const zones: Zone[] = ['caminha', 'vpa'];
   </div>
 
   <!-- ── JSON-LD: unified @graph ──────────────────────────────────────────── -->
-  <script type="application/ld+json" is:inline>{`
+  <script type="application/ld+json" is:inline set:html={`
     {
       "@context": "https://schema.org",
       "@graph": [
@@ -518,6 +518,6 @@ const zones: Zone[] = ['caminha', 'vpa'];
         }
       ]
     }
-  `}</script>
+  `} />
 
 </MainLayout>

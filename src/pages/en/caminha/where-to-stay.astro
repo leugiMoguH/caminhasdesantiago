@@ -159,7 +159,7 @@ const categoryLabel: Record<Category, string> = {
 >
 
   <!-- ── JSON-LD: unified @graph ──────────────────────────────────────────── -->
-  <script type="application/ld+json" is:inline>{`
+  <script type="application/ld+json" is:inline set:html={`
     {
       "@context": "https://schema.org",
       "@graph": [
@@ -345,7 +345,7 @@ const categoryLabel: Record<Category, string> = {
         }
       ]
     }
-  `}</script>
+  `} />
 
   <!-- ── PAGE HEADER ──────────────────────────────────────────────────────────── -->
   <div class="bg-gradient-to-b from-forest-50 to-white border-b border-forest-100/60">

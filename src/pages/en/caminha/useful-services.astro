@@ -379,7 +379,7 @@ import MainLayout from '../../../layouts/MainLayout.astro';
   </div>
 
   <!-- ── SCHEMA: FAQPage ────────────────────────────────────────────────────── -->
-  <script type="application/ld+json" is:inline>{`
+  <script type="application/ld+json" is:inline set:html={`
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
@@ -418,6 +418,6 @@ import MainLayout from '../../../layouts/MainLayout.astro';
         }
       ]
     }
-  `}</script>
+  `} />
 
 </MainLayout>
