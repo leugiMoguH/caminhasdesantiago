@@ -1,0 +1,258 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const SITE_URL = 'https://waytosantiagoguide.com';
+
+const clusters = [
+  {
+    id: 'alojamiento',
+    label: 'Alojamiento',
+    href: '/es/caminha/donde-dormir/',
+    tagline: 'Albergue municipal, albergues privados y hoteles',
+    description: 'Albergues desde 12 €, pensiones y hoteles de 4 estrellas en tres zonas: Caminha, Vila Praia de Âncora y Seixas. Opciones sin reserva y reservables por adelantado.',
+    icon: `<svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12V7a2 2 0 012-2h14a2 2 0 012 2v5M3 12v5a1 1 0 001 1h16a1 1 0 001-1v-5M3 12h18M7 12V9h4v3"/></svg>`,
+  },
+  {
+    id: 'comida',
+    label: 'Dónde Comer',
+    href: '/es/caminha/donde-comer/',
+    tagline: 'Menús de peregrino desde 8 €, marisco atlántico',
+    description: 'Restaurantes y cafeterías en Caminha y Vila Praia de Âncora. Marisco, cocina portuguesa tradicional y pastelerías con desayuno temprano antes del ferry.',
+    icon: `<svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2v20"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 2c0 4 4 4 4 8s-4 4-4 8"/><path stroke-linecap="round" stroke-linejoin="round" d="M16 2v6a2 2 0 004 0V2M18 8v14"/></svg>`,
+  },
+  {
+    id: 'ferry',
+    label: 'Ferry y Logística',
+    href: '/es/caminha/ferry-y-logistica/',
+    tagline: 'Cruce del río Miño — horarios y asoreamiento',
+    description: 'Guía completa del cruce en ferry Caminha–A Guarda. Horarios de verano/invierno, tarifas de 2,50 €, riesgo estacional de asoreamiento (assoreamento) y la alternativa terrestre por Valença–Tui.',
+    icon: `<svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M22 18H2l4-8h12l4 8z"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 2v8"/></svg>`,
+  },
+  {
+    id: 'servicios',
+    label: 'Servicios Útiles',
+    href: '/es/caminha/servicios-utiles/',
+    tagline: 'Farmacias, tiendas de equipamiento, cajeros',
+    description: 'Sistema de farmacia de guardia (farmácia de serviço), tiendas de equipamiento y reparación de botas, cajeros automáticos y contactos de emergencia antes del cruce a España.',
+    icon: `<svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>`,
+  },
+];
+
+const faqItems = [
+  {
+    q: '¿Dónde está Caminha en el Camino de Santiago?',
+    a: 'Caminha es la última localidad portuguesa del Camino de Santiago de la Costa (Caminho da Costa), situada en la desembocadura del río Miño, 24 km al norte de Viana do Castelo. Está justo enfrente de A Guarda, Galicia (España), y los peregrinos cruzan en ferry para continuar hacia el norte rumbo a Santiago de Compostela.',
+  },
+  {
+    q: '¿Cómo cruzan los peregrinos de Caminha a España?',
+    a: 'El cruce habitual es el ferry Caminha–A Guarda (Santa Rita de Cássia), una travesía de 15 minutos por 2,50 € por adulto. El asoreamiento estacional (assoreamento) puede suspender el servicio sin previo aviso — los taxis acuáticos (Xávegas, 5–6 €) y el tren terrestre hasta Valença para luego caminar a Tui son las alternativas principales.',
+  },
+  {
+    q: '¿Hay albergue municipal en Caminha?',
+    a: 'Sí. El Albergue Municipal de Peregrinos de Caminha está en el centro, a pocos minutos del embarcadero del ferry. Solo admisión directa (abre a las 14:00), requiere credencial do peregrino válida y funciona por orden de llegada, con un máximo de 2 noches consecutivas. Los albergues privados (Albergue Santiago, Bom Caminha) se reservan por adelantado en Booking.com.',
+  },
+  {
+    q: '¿Cuáles son las mejores zonas para alojarse cerca de Caminha en el Camino de la Costa?',
+    a: 'Tres zonas sirven a los peregrinos: Caminha (punto de cruce, la mayoría de albergues), Vila Praia de Âncora (localidad costera 8 km al sur, hoteles de playa) y Seixas (parroquia al sur de Caminha, un albergue y un hotel rural). La mayoría se aloja en Caminha para estar cerca del embarcadero.',
+  },
+];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': `${SITE_URL}/#organization`,
+      name: 'Way to Santiago Guide',
+      url: SITE_URL,
+      logo: { '@type': 'ImageObject', url: `${SITE_URL}/logo.png` },
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: 'Way to Santiago Guide',
+    },
+    {
+      '@type': 'WebPage',
+      '@id': `${SITE_URL}/es/guia-de-caminha/#webpage`,
+      url: `${SITE_URL}/es/guia-de-caminha/`,
+      name: 'Guía de Caminha en el Camino de Santiago de la Costa — Alojamiento, Comida, Ferry y Servicios',
+      description: 'Guía completa del peregrino para Caminha en el Camino de Santiago de la Costa. Horarios del ferry, dónde dormir, dónde comer y servicios para peregrinos — todo verificado y en un solo lugar.',
+      inLanguage: 'es-ES',
+      isPartOf: { '@id': `${SITE_URL}/#website` },
+      about: { '@id': `${SITE_URL}/#organization` },
+      breadcrumb: { '@id': `${SITE_URL}/es/guia-de-caminha/#breadcrumb` },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${SITE_URL}/es/guia-de-caminha/#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE_URL}/es/` },
+        { '@type': 'ListItem', position: 2, name: 'Guía de Caminha', item: `${SITE_URL}/es/guia-de-caminha/` },
+      ],
+    },
+    {
+      '@type': 'TouristDestination',
+      '@id': `${SITE_URL}/es/guia-de-caminha/#destination`,
+      name: 'Caminha',
+      description: 'Histórica localidad fronteriza del norte de Portugal en el Camino de Santiago de la Costa (Caminho da Costa). Los peregrinos cruzan el río Miño en ferry hasta A Guarda, España. Última etapa portuguesa antes de Galicia.',
+      url: `${SITE_URL}/es/guia-de-caminha/`,
+      touristType: 'Peregrino',
+      geo: { '@type': 'GeoCoordinates', latitude: 41.8772, longitude: -8.8389 },
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Caminha',
+        addressRegion: 'Viana do Castelo',
+        postalCode: '4910',
+        addressCountry: 'PT',
+      },
+      containedInPlace: { '@type': 'Country', name: 'Portugal' },
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${SITE_URL}/es/guia-de-caminha/#faq`,
+      mainEntityOfPage: { '@id': `${SITE_URL}/es/guia-de-caminha/#webpage` },
+      mainEntity: faqItems.map((item) => ({
+        '@type': 'Question',
+        name: item.q,
+        acceptedAnswer: { '@type': 'Answer', text: item.a },
+      })),
+    },
+  ],
+};
+---
+
+<MainLayout
+  title="Guía de Caminha en el Camino de Santiago de la Costa — Alojamiento, Comida, Ferry y Servicios"
+  description="Guía completa del peregrino para Caminha en el Camino de Santiago de la Costa. Cruce en ferry, dónde dormir, dónde comer y servicios — todo verificado y en un solo lugar."
+  lang="es"
+  schemaType="none"
+>
+
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+
+  <!-- ── HERO ──────────────────────────────────────────────────────────────────── -->
+  <div class="bg-gradient-to-b from-forest-50 to-white border-b border-forest-100/60">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+      <nav aria-label="Ruta de navegación" class="mb-5">
+        <ol class="flex items-center gap-2 text-sm text-slate-500">
+          <li><a href="/es/" class="hover:text-forest-700 no-underline hover:underline transition-colors">Inicio</a></li>
+          <li aria-hidden="true" class="text-slate-300">›</li>
+          <li aria-current="page" class="text-slate-700 font-medium">Guía de Caminha</li>
+        </ol>
+      </nav>
+
+      <p class="text-earth-600 text-xs font-bold uppercase tracking-widest mb-3">
+        Camino de Santiago · Ruta de la Costa · Caminha, Portugal
+      </p>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-forest-900 mb-4 tracking-tight leading-tight max-w-3xl">
+        Caminha — La Guía Completa del Camino de la Costa
+      </h1>
+      <p class="text-slate-600 max-w-2xl text-base leading-relaxed mb-8">
+        La última localidad portuguesa antes de España. Cruce en ferry, alojamiento, restauración y servicios para peregrinos — todo verificado para el Caminho da Costa.
+      </p>
+
+      <dl class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        {[
+          { value: '~15 min', label: 'Ferry a España' },
+          { value: '€2,50', label: 'Tarifa del ferry' },
+          { value: '24 km', label: 'Desde Viana do Castelo' },
+          { value: 'Abr–Oct', label: 'Ferry diario' },
+        ].map(({ value, label }) => (
+          <div class="bg-white border border-forest-100 rounded-2xl px-4 py-4 text-center shadow-sm">
+            <dt class="text-xl font-bold text-forest-700">{value}</dt>
+            <dd class="text-xs text-slate-500 mt-0.5">{label}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </div>
+
+  <!-- ── NAVEGACIÓN POR CLÚSTERES ──────────────────────────────────────────────── -->
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-4 border-b border-slate-100">
+    <div class="flex flex-wrap gap-2">
+      {clusters.map((c) => (
+        <a href={`#cluster-${c.id}`} class="inline-flex items-center gap-1.5 bg-white border border-forest-200 text-forest-800 text-xs font-medium px-3.5 py-2 rounded-full hover:bg-forest-50 hover:border-forest-300 no-underline transition-all duration-200 shadow-sm">
+          {c.label}
+        </a>
+      ))}
+    </div>
+  </div>
+
+  <!-- ── AVISO DE ASOREAMIENTO ─────────────────────────────────────────────────── -->
+  <div class="bg-gradient-to-r from-amber-600 to-orange-600 text-white" role="alert">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-3 flex items-center gap-3">
+      <svg class="h-5 w-5 shrink-0 text-white/90" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+      </svg>
+      <p class="text-sm text-white/95 leading-relaxed">
+        <strong>Riesgo de asoreamiento del ferry:</strong> el ferry de Caminha puede suspenderse sin previo aviso por <em>assoreamento</em>. Confirma el estado la noche anterior.
+        <a href="/es/caminha/ferry-y-logistica/" class="underline font-semibold ml-1 hover:text-white/80">Más detalles →</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- ── SECCIONES DE CLÚSTERES ────────────────────────────────────────────────── -->
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-14 space-y-12">
+    {clusters.map((c) => (
+      <section id={`cluster-${c.id}`} aria-labelledby={`cluster-${c.id}-heading`}>
+        <div class="flex items-center gap-3 mb-5">
+          <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-forest-100 border border-forest-200 text-forest-700">
+            <Fragment set:html={c.icon} />
+          </div>
+          <h2 id={`cluster-${c.id}-heading`} class="text-2xl font-bold text-forest-900 tracking-tight">{c.label}</h2>
+        </div>
+        <p class="text-slate-600 text-sm leading-relaxed mb-5 max-w-2xl">{c.description}</p>
+        <a
+          href={c.href}
+          class="group inline-flex items-center gap-3 bg-gradient-to-br from-forest-800 to-forest-950 text-white rounded-2xl px-7 py-4 no-underline shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-200 font-bold"
+        >
+          {c.tagline}
+          <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </a>
+      </section>
+    ))}
+  </div>
+
+  <!-- ── SOBRE CAMINHA ─────────────────────────────────────────────────────────── -->
+  <section class="bg-forest-50 border-y border-forest-100">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-14">
+      <div class="max-w-3xl">
+        <h2 class="text-2xl sm:text-3xl font-bold text-forest-900 mb-5">Sobre Caminha en el Camino de la Costa</h2>
+        <div class="space-y-4 text-slate-700 text-base leading-relaxed">
+          <p>
+            Caminha (unos 7.000 habitantes) se sitúa en la confluencia de los ríos Coura y Miño, frente a la localidad española de A Guarda. Sus murallas del siglo XIV, la torre del reloj fortificada y la elegante Praça do Conselho la convierten en una de las paradas más distintivas del Camino Portugués de la Costa.
+          </p>
+          <p>
+            Para los peregrinos que recorren el <strong>Caminho da Costa</strong>, Caminha marca la transición de Portugal a Galicia. El cruce en ferry —un trayecto breve pero memorable de 15 minutos— se ha utilizado durante siglos. Tras cruzar, los peregrinos continúan hacia el norte por A Guarda a lo largo de la costa gallega rumbo a Santiago de Compostela.
+          </p>
+          <p>
+            Es una parada práctica para pasar la noche antes del cruce, con albergue municipal de peregrinos, albergues privados, pensiones y restaurantes suficientes para reponerse tras la larga etapa costera desde Viana do Castelo (24 km).
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ───────────────────────────────────────────────────────────────────── -->
+  <section class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-14" aria-labelledby="guide-faq-heading">
+    <h2 id="guide-faq-heading" class="text-2xl font-bold text-forest-900 mb-6 tracking-tight">Preguntas Frecuentes</h2>
+    <div class="space-y-3 max-w-3xl">
+      {faqItems.map((item) => (
+        <details class="group bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+          <summary class="flex items-center justify-between gap-4 px-6 py-4 cursor-pointer hover:bg-forest-50/50 transition-colors list-none">
+            <span class="text-sm font-semibold text-forest-900 leading-snug">{item.q}</span>
+            <svg class="h-5 w-5 text-slate-400 shrink-0 transition-transform duration-200 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </summary>
+          <div class="px-6 pb-5 pt-1 text-sm text-slate-700 leading-relaxed border-t border-slate-100">
+            {item.a}
+          </div>
+        </details>
+      ))}
+    </div>
+  </section>
+
+</MainLayout>

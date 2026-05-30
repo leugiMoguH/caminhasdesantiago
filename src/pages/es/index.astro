@@ -13,15 +13,19 @@ import MainLayout from '../../layouts/MainLayout.astro';
   <!-- ── HERO CON IMAGEN DE FONDO ────────────────────────────────────────────── -->
   <section class="relative min-h-[88svh] flex items-end overflow-hidden">
     <div class="absolute inset-0">
-      <img
-        src="/images/og-default.png"
-        alt="Camino costero cerca de Caminha, Portugal — Camino de Santiago"
-        class="w-full h-full object-cover object-center"
-        width="1424"
-        height="752"
-        fetchpriority="high"
-        decoding="async"
-      />
+      <picture class="block w-full h-full">
+        <source srcset="/images/og-default.avif" type="image/avif" />
+        <source srcset="/images/og-default.webp" type="image/webp" />
+        <img
+          src="/images/og-default.png"
+          alt="Camino costero cerca de Caminha, Portugal — Camino de Santiago"
+          class="w-full h-full object-cover object-center"
+          width="1424"
+          height="752"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </picture>
       <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/10"></div>
     </div>
 

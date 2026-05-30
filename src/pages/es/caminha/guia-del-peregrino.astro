@@ -1,0 +1,303 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+
+const faqItems = [
+  {
+    question: '¿Qué recorrido sigue el Camino de Santiago de la Costa por esta zona?',
+    answer: 'La Ruta de la Costa (Via da Costa) entra desde Vila Praia de Âncora, pasa por Seixas y termina en Caminha — la última localidad portuguesa antes del cruce del río Miño hacia Galicia, España. Desde Caminha, los peregrinos cruzan en ferry (o taxi acuático) hasta A Guarda y continúan hacia el norte por la costa gallega.',
+  },
+  {
+    question: '¿Necesito credencial de peregrino (credencial do peregrino) para hacer la Ruta de la Costa?',
+    answer: 'Sí. La credencial es obligatoria para el albergue municipal de Caminha (solo admisión directa, credencial válida obligatoria). También se necesita para recoger sellos en iglesias, albergues y oficinas de turismo a lo largo de la ruta, requeridos para obtener la Compostela en Santiago. Los albergues privados de Caminha no la exigen para reservar, pero la sellan si la tienes.',
+  },
+  {
+    question: '¿Cuál es la mejor época del año para recorrer la Ruta de la Costa por Caminha?',
+    answer: 'De mayo a octubre ofrece las condiciones más fiables: ferry diario, muchas horas de luz y albergues abiertos. Julio y agosto son temporada alta — reserva albergues privados y hoteles con antelación. El albergue municipal no se puede reservar. De noviembre a marzo el ferry se reduce (solo fines de semana y festivos) y la infraestructura para peregrinos disminuye notablemente.',
+  },
+  {
+    question: '¿Cómo cruzo de Portugal a España en la Ruta de la Costa?',
+    answer: 'El cruce principal es en ferry desde el Cais de Caminha hasta A Guarda (2,50 € por adulto, unos 15 minutos). En verano (abril–octubre) el ferry funciona a diario de 09:00 a 19:00. Está sujeto a asoreamiento estacional (assoreamento) que puede suspender el servicio sin aviso — confirma siempre la noche anterior. Alternativas: taxis acuáticos Xávegas (5–6 € por persona) o el tren terrestre de Caminha a Valença y luego cruzar a pie el puente de Tui.',
+  },
+];
+
+const guideLinks = [
+  { href: '/es/guia-de-caminha/', label: 'Guía de Caminha', sub: 'Todos los clústeres' },
+  { href: '/es/caminha/ferry-y-logistica/', label: 'Ferry y Logística', sub: 'Horarios, tarifas, asoreamiento, alternativas' },
+  { href: '/es/caminha/donde-dormir/', label: 'Dónde Dormir', sub: 'Albergues, pensiones, hoteles' },
+  { href: '/es/caminha/donde-comer/', label: 'Dónde Comer', sub: 'Restaurantes y cafeterías' },
+  { href: '/es/caminha/servicios-utiles/', label: 'Servicios Útiles', sub: 'Farmacias, tiendas, cajeros' },
+];
+---
+
+<MainLayout
+  title="Guía del Peregrino — Camino de Santiago de la Costa por Caminha"
+  description="Guía práctica del peregrino para el Camino de Santiago de la Costa por Caminha. Contexto de la ruta, credencial, temporada y el cruce del río Miño hacia España."
+  lang="es"
+  schemaType="webpage"
+>
+
+  <!-- ── CABECERA ──────────────────────────────────────────────────────────────── -->
+  <div class="bg-gradient-to-br from-forest-900 via-forest-900 to-forest-950 text-white">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+      <nav aria-label="Ruta de navegación" class="mb-5">
+        <ol class="flex items-center gap-2 text-sm text-forest-300">
+          <li><a href="/es/" class="hover:text-white no-underline hover:underline transition-colors">Inicio</a></li>
+          <li aria-hidden="true" class="text-forest-600">›</li>
+          <li><a href="/es/guia-de-caminha/" class="hover:text-white no-underline hover:underline transition-colors">Caminha</a></li>
+          <li aria-hidden="true" class="text-forest-600">›</li>
+          <li aria-current="page" class="text-forest-200 font-medium">Guía del Peregrino</li>
+        </ol>
+      </nav>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4 text-white tracking-tight">Guía del Peregrino — Ruta de la Costa por Caminha</h1>
+      <p class="text-forest-300 max-w-2xl text-base leading-relaxed">
+        Preparación práctica para las últimas etapas portuguesas y el cruce del río Miño. Contexto de la ruta, credencial, temporada y qué hacer cuando el ferry no funciona.
+      </p>
+
+      <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4">
+        {[
+          { value: 'VPA → Seixas → Caminha', label: 'Últimas etapas en Portugal' },
+          { value: 'Abr – Oct', label: 'Temporada de ferry diario' },
+          { value: '€2,50', label: 'Tarifa del ferry' },
+          { value: '~15 min', label: 'Cruce del Miño' },
+        ].map(({ value, label }) => (
+          <div class="bg-white/10 backdrop-blur-sm border border-white/10 rounded-2xl p-4 text-center hover:bg-white/15 transition-colors">
+            <div class="text-sm font-bold text-white leading-tight">{value}</div>
+            <div class="text-xs text-forest-400 mt-1">{label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- ── NAVEGACIÓN ANCLAS ─────────────────────────────────────────────────────── -->
+  <div class="border-b border-slate-100 bg-white sticky top-0 z-10">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <nav aria-label="Secciones de la página" class="flex flex-wrap gap-x-6 gap-y-1 py-3 text-xs font-medium text-slate-500 overflow-x-auto">
+        <a href="#contexto" class="hover:text-forest-700 no-underline whitespace-nowrap">Contexto de la Ruta</a>
+        <a href="#preparacion" class="hover:text-forest-700 no-underline whitespace-nowrap">Preparación</a>
+        <a href="#cruce" class="hover:text-forest-700 no-underline whitespace-nowrap">Logística del Cruce</a>
+        <a href="#faq" class="hover:text-forest-700 no-underline whitespace-nowrap">FAQ</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ── PRINCIPAL + LATERAL ───────────────────────────────────────────────────── -->
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+
+      <div class="lg:col-span-2 space-y-10">
+
+        <section id="contexto" aria-labelledby="contexto-heading">
+          <h2 id="contexto-heading" class="text-2xl font-bold text-forest-900 mb-4 tracking-tight">Contexto de la Ruta</h2>
+          <div class="space-y-4 text-slate-700 text-sm leading-relaxed">
+            <p>
+              El <strong>Camino de Santiago de la Costa</strong> (portugués: <em>Caminho Português da Costa</em>) sigue la costa atlántica de Portugal desde Oporto hacia el norte, pasando por Viana do Castelo, Vila Praia de Âncora y Caminha, antes de cruzar el río Miño hacia Galicia, España.
+            </p>
+            <p>
+              Las últimas etapas portuguesas antes del cruce atraviesan tres zonas cubiertas por esta guía:
+            </p>
+            <ul class="space-y-3 pl-0">
+              <li class="flex items-start gap-3">
+                <span class="shrink-0 h-6 w-6 flex items-center justify-center rounded-full bg-earth-100 text-earth-800 text-xs font-bold mt-0.5">1</span>
+                <div>
+                  <strong class="text-forest-700">Vila Praia de Âncora</strong> — localidad costera 8 km al sur de Caminha. Hoteles de playa, restaurantes frente al mar. Sin albergue. Parada útil para peregrinos que prefieren llegar temprano a Caminha el día del cruce.
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="shrink-0 h-6 w-6 flex items-center justify-center rounded-full bg-earth-100 text-earth-800 text-xs font-bold mt-0.5">2</span>
+                <div>
+                  <strong class="text-forest-700">Seixas</strong> — parroquia inmediatamente al sur de Caminha en el camino señalizado. Un albergue frente al mar (Albergue de São Bento) y un hotel rural (Rinoterra Minho). Sin restaurantes — los peregrinos caminan a Caminha para comer.
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="shrink-0 h-6 w-6 flex items-center justify-center rounded-full bg-forest-700 text-white text-xs font-bold mt-0.5">3</span>
+                <div>
+                  <strong class="text-slate-800">Caminha</strong> — la localidad del cruce. Albergue municipal, dos albergues privados, pensiones y hoteles. Restauración completa, farmacias, tiendas de equipamiento, cajeros. El ferry a A Guarda sale del Cais de Caminha.
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="preparacion" aria-labelledby="preparacion-heading">
+          <h2 id="preparacion-heading" class="text-2xl font-bold text-forest-900 mb-4 tracking-tight">Preparación</h2>
+          <div class="space-y-4">
+            <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+              <h3 class="font-bold text-forest-900 text-base mb-3">Credencial del Peregrino (Credencial do Peregrino)</h3>
+              <div class="space-y-3 text-slate-700 text-sm leading-relaxed">
+                <p>
+                  La <em>credencial</em> es el pasaporte del peregrino — un documento que se sella en albergues, iglesias y oficinas de turismo a lo largo de la ruta. Cumple dos funciones: (1) prueba de peregrinación requerida para obtener la Compostela en Santiago, y (2) acceso a los albergues municipales que la exigen como condición de entrada.
+                </p>
+                <p>
+                  El <strong>Albergue Municipal de Peregrinos de Caminha</strong> requiere credencial válida — solo admisión directa desde las 14:00. Los albergues privados no la exigen para reservar, pero la sellan. Recoge sellos en cada parada y en las iglesias principales de la ruta.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+              <h3 class="font-bold text-forest-900 text-base mb-3">Temporada</h3>
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div class="bg-forest-50 border border-forest-100 rounded-xl p-4">
+                  <p class="font-semibold text-forest-900 text-xs uppercase tracking-wider mb-2">Mayo – Octubre (Alta)</p>
+                  <ul class="text-xs text-slate-700 space-y-1.5">
+                    <li>• Ferry diario (abr–oct)</li>
+                    <li>• Todos los albergues y hoteles abiertos</li>
+                    <li>• Reserva alojamiento privado 1–2 semanas antes en julio–agosto</li>
+                    <li>• Albergue municipal sin reserva — llega antes de las 15:00 en temporada alta</li>
+                  </ul>
+                </div>
+                <div class="bg-slate-50 border border-slate-100 rounded-xl p-4">
+                  <p class="font-semibold text-slate-800 text-xs uppercase tracking-wider mb-2">Noviembre – Marzo (Baja)</p>
+                  <ul class="text-xs text-slate-700 space-y-1.5">
+                    <li>• Ferry solo fines de semana y festivos</li>
+                    <li>• Disponibilidad reducida de albergues</li>
+                    <li>• Considera la Ruta Interior por Valença–Tui como cruce más fiable</li>
+                    <li>• Menos peregrinos; algunos restaurantes con horario reducido</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="cruce" aria-labelledby="cruce-heading">
+          <h2 id="cruce-heading" class="text-2xl font-bold text-forest-900 mb-4 tracking-tight">Logística del Cruce</h2>
+          <div class="space-y-4 text-slate-700 text-sm leading-relaxed">
+            <p>
+              El cruce del río Miño es el momento decisivo de esta ruta — un trayecto de ferry de 15 minutos desde Caminha (Portugal) hasta A Guarda (España) que separa las secciones portuguesa y gallega del Camino de la Costa.
+            </p>
+
+            <div class="grid sm:grid-cols-3 gap-3">
+              {[
+                { label: 'Tarifa', value: '€2,50 adulto ida' },
+                { label: 'Duración', value: '~15 min' },
+                { label: 'Temporada', value: 'Diario abr–oct; fines de semana nov–mar' },
+              ].map(({ label, value }) => (
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 text-center">
+                  <p class="text-xs text-slate-500 uppercase tracking-wider mb-1">{label}</p>
+                  <p class="font-bold text-slate-800 text-sm">{value}</p>
+                </div>
+              ))}
+            </div>
+
+            <div class="bg-red-50 border border-red-200 rounded-2xl p-5">
+              <div class="flex gap-3 items-start">
+                <div class="shrink-0 flex h-9 w-9 items-center justify-center rounded-xl bg-red-100 border border-red-200">
+                  <svg class="h-5 w-5 text-red-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-bold text-red-900 text-sm mb-1">Riesgo de asoreamiento — Confirma siempre antes del día del cruce</h3>
+                  <p class="text-xs text-red-800 leading-relaxed">
+                    El ferry está sujeto a <em>assoreamento</em> recurrente (sedimentación de la desembocadura) que puede suspender el servicio sin aviso. No es raro: ocurre de algún modo en la mayoría de temporadas. Pregunta siempre en tu alojamiento la noche anterior si el ferry funciona. Consulta la <a href="/es/caminha/ferry-y-logistica/" class="font-medium hover:underline no-underline text-red-900">guía completa de ferry y logística</a> para alternativas en taxi acuático y el rodeo terrestre por Valença–Tui.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-forest-50 border border-forest-100 rounded-2xl p-5">
+              <h3 class="font-bold text-forest-900 text-sm mb-3">Tras el cruce: A Guarda</h3>
+              <p class="text-xs text-slate-700 leading-relaxed mb-3">
+                Llegas a <strong>A Guarda</strong> (O Garda en gallego), un pueblo pesquero de Galicia. Las flechas amarillas del Camino continúan desde el muelle hacia el norte por la costa rumbo a Oia y Baiona. La moneda sigue siendo el euro. Sella tu credencial en el albergue o la oficina de turismo de A Guarda.
+              </p>
+              <a href="/es/caminha/ferry-y-logistica/" class="inline-flex items-center gap-1.5 text-sm font-semibold text-forest-700 hover:underline no-underline">
+                Guía completa del ferry — horarios, tarifas, alternativas
+                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section id="faq" aria-labelledby="faq-heading">
+          <h2 id="faq-heading" class="text-2xl font-bold text-forest-900 mb-6 tracking-tight">Preguntas Frecuentes</h2>
+          <div class="space-y-4">
+            {faqItems.map((item) => (
+              <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+                <h3 class="font-bold text-forest-900 text-sm mb-2 leading-snug">{item.question}</h3>
+                <p class="text-sm text-slate-700 leading-relaxed">{item.answer}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+      </div>
+
+      <!-- ── LATERAL ───────────────────────────────────────────────────────────── -->
+      <aside class="space-y-5">
+        <div class="bg-forest-50 border border-forest-200 rounded-2xl p-5 shadow-sm">
+          <h2 class="text-base font-bold text-forest-900 mb-3 tracking-tight">Lista del Peregrino — Caminha</h2>
+          <ul class="space-y-2.5 text-sm text-slate-700">
+            {[
+              'Credencial sellada en cada parada',
+              'Efectivo en euros — el quiosco del ferry puede no aceptar tarjeta',
+              'Confirma el estado del ferry la noche anterior',
+              'Albergue municipal: llega antes de las 15:00 en temporada alta',
+              'Medicación con receta: abastécete antes del cruce (las farmacias españolas usan otras marcas)',
+              'Últimos cajeros antes de España: Praça do Conselho, Caminha',
+            ].map((item) => (
+              <li class="flex items-start gap-2.5">
+                <svg class="h-4 w-4 text-forest-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-xs leading-relaxed">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+          <h2 class="text-base font-bold text-forest-900 mb-3 tracking-tight">Contactos Clave</h2>
+          <ul class="space-y-3 text-sm">
+            <li>
+              <p class="font-semibold text-slate-800 text-xs mb-0.5">Oficina de Turismo de Caminha</p>
+              <a href="tel:+351258921952" class="text-forest-700 font-bold hover:underline no-underline">+351 258 921 952</a>
+              <p class="text-xs text-slate-500 mt-0.5">Estado del ferry, contactos de taxi acuático, info local</p>
+            </li>
+            <li>
+              <p class="font-semibold text-slate-800 text-xs mb-0.5">SNS24 (Salud / Farmacia)</p>
+              <a href="tel:80824242424" class="text-forest-700 font-bold hover:underline no-underline">808 24 24 24</a>
+              <p class="text-xs text-slate-500 mt-0.5">Localiza la farmacia de guardia; consejo médico</p>
+            </li>
+            <li>
+              <p class="font-semibold text-slate-800 text-xs mb-0.5">Emergencias</p>
+              <a href="tel:112" class="text-red-700 font-bold hover:underline no-underline">112</a>
+              <p class="text-xs text-slate-500 mt-0.5">Policía, ambulancia, bomberos</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-forest-50 border border-forest-200 rounded-2xl p-5 shadow-sm">
+          <h2 class="text-base font-bold text-forest-900 mb-3 tracking-tight">Guías de Caminha</h2>
+          <ul class="space-y-3 text-sm">
+            {guideLinks.map(({ href, label, sub }) => (
+              <li>
+                <a href={href} class="text-forest-700 hover:underline no-underline font-medium cursor-pointer flex items-center gap-1 group">
+                  {label}
+                  <svg class="h-3.5 w-3.5 text-earth-500 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                </a>
+                <p class="text-xs text-slate-500 mt-0.5">{sub}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- ── SCHEMA: FAQPage ────────────────────────────────────────────────────────── -->
+  <script type="application/ld+json" is:inline set:html={`
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        ${faqItems.map((item) => `{
+          "@type": "Question",
+          "name": ${JSON.stringify(item.question)},
+          "acceptedAnswer": { "@type": "Answer", "text": ${JSON.stringify(item.answer)} }
+        }`).join(',')}
+      ]
+    }
+  `} />
+
+</MainLayout>

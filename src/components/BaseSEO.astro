@@ -81,7 +81,11 @@ const websiteNode = {
 // SEGMENT_URL_OVERRIDES maps path segments with no real page to a real URL.
 // Segments present but with no entry for the current language are skipped.
 const SEGMENT_URL_OVERRIDES: Record<string, Partial<Record<string, string>>> = {
-  caminha: { en: `${SITE_URL}/en/caminha-guide/` },
+  caminha: {
+    en: `${SITE_URL}/en/caminha-guide/`,
+    es: `${SITE_URL}/es/guia-de-caminha/`,
+    pt: `${SITE_URL}/pt/guia-de-caminha/`,
+  },
 };
 const pathSegments = canonicalURL.replace(SITE_URL, '').split('/').filter(Boolean);
 const resolvedSegments = pathSegments.slice(1).flatMap((seg, i) => {

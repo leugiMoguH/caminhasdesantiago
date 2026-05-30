@@ -24,10 +24,14 @@ const PATH_MAP: Record<string, { en: string; es: string; pt: string }> = {
   '/en/caminha/useful-services/':            { en: '/en/caminha/useful-services/',            es: '/es/caminha/servicios-utiles/',          pt: '/pt/caminha/servicos-uteis/' },
   '/es/caminha/servicios-utiles/':           { en: '/en/caminha/useful-services/',            es: '/es/caminha/servicios-utiles/',          pt: '/pt/caminha/servicos-uteis/' },
   '/pt/caminha/servicos-uteis/':             { en: '/en/caminha/useful-services/',            es: '/es/caminha/servicios-utiles/',          pt: '/pt/caminha/servicos-uteis/' },
-  '/en/caminha-guide/':                      { en: '/en/caminha-guide/',                      es: '/es/',                                    pt: '/pt/' },
+  '/en/caminha-guide/':                      { en: '/en/caminha-guide/',                      es: '/es/guia-de-caminha/',                    pt: '/pt/guia-de-caminha/' },
+  '/es/guia-de-caminha/':                    { en: '/en/caminha-guide/',                      es: '/es/guia-de-caminha/',                    pt: '/pt/guia-de-caminha/' },
+  '/pt/guia-de-caminha/':                    { en: '/en/caminha-guide/',                      es: '/es/guia-de-caminha/',                    pt: '/pt/guia-de-caminha/' },
   '/en/caminha/vila-praia-de-ancora/':       { en: '/en/caminha/vila-praia-de-ancora/',        es: '/es/',                                    pt: '/pt/' },
   '/en/caminha/seixas/':                     { en: '/en/caminha/seixas/',                      es: '/es/',                                    pt: '/pt/' },
-  '/en/caminha/pilgrim-guide/':              { en: '/en/caminha/pilgrim-guide/',               es: '/es/',                                    pt: '/pt/' },
+  '/en/caminha/pilgrim-guide/':              { en: '/en/caminha/pilgrim-guide/',               es: '/es/caminha/guia-del-peregrino/',         pt: '/pt/caminha/guia-do-peregrino/' },
+  '/es/caminha/guia-del-peregrino/':         { en: '/en/caminha/pilgrim-guide/',               es: '/es/caminha/guia-del-peregrino/',         pt: '/pt/caminha/guia-do-peregrino/' },
+  '/pt/caminha/guia-do-peregrino/':          { en: '/en/caminha/pilgrim-guide/',               es: '/es/caminha/guia-del-peregrino/',         pt: '/pt/caminha/guia-do-peregrino/' },
   '/en/sitemap/':                            { en: '/en/sitemap/',                             es: '/es/',                                    pt: '/pt/' },
   '/en/privacy-policy/':                     { en: '/en/privacy-policy/',                      es: '/es/politica-de-privacidad/',             pt: '/pt/politica-de-privacidade/' },
   '/es/politica-de-privacidad/':             { en: '/en/privacy-policy/',                      es: '/es/politica-de-privacidad/',             pt: '/pt/politica-de-privacidade/' },
@@ -75,10 +79,8 @@ const ptPath = pathEntry?.pt ?? '/pt/';
 // hreflang (would be non-reciprocal — /es/ and /pt/ do not point back).
 // Emit only self en + x-default for these.
 const NO_TRANSLATION = new Set([
-  '/en/caminha-guide/',
   '/en/caminha/vila-praia-de-ancora/',
   '/en/caminha/seixas/',
-  '/en/caminha/pilgrim-guide/',
   '/en/sitemap/',
   '/404/',
   '/404',

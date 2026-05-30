@@ -10,6 +10,8 @@ const SITE_URL = 'https://waytosantiagoguide.com';
 // No fallback to a language homepage.
 const TRANSLATION_GROUPS = [
   { en: '/en/', es: '/es/', pt: '/pt/' },
+  { en: '/en/caminha-guide/',               es: '/es/guia-de-caminha/',          pt: '/pt/guia-de-caminha/' },
+  { en: '/en/caminha/pilgrim-guide/',       es: '/es/caminha/guia-del-peregrino/', pt: '/pt/caminha/guia-do-peregrino/' },
   { en: '/en/caminha/where-to-eat/',        es: '/es/caminha/donde-comer/',      pt: '/pt/caminha/onde-comer/' },
   { en: '/en/caminha/where-to-stay/',       es: '/es/caminha/donde-dormir/',     pt: '/pt/caminha/onde-ficar/' },
   { en: '/en/caminha/ferry-and-logistics/', es: '/es/caminha/ferry-y-logistica/', pt: '/pt/caminha/ferry-e-logistica/' },
