@@ -33,6 +33,7 @@ interface Props {
   alternateLanguages: AlternateLang[];
   schemaType?: 'website' | 'webpage' | 'localbusiness' | 'none';
   localBusinessData?: LocalBusinessData;
+  noindex?: boolean;
 }
 
 const {
@@ -44,7 +45,15 @@ const {
   alternateLanguages,
   schemaType = 'webpage',
   localBusinessData,
+  noindex = false,
 } = Astro.props;
+
+// og:type — 'website' only for site homepages; content pages are 'article'.
+const ogType = schemaType === 'website' ? 'website' : 'article';
+// Robots — utility/non-indexable pages (e.g. 404) get noindex but stay followable.
+const robotsContent = noindex
+  ? 'noindex, follow'
+  : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
 
 const SITE_URL = 'https://waytosantiagoguide.com';
 const SITE_NAME_EN = 'Way to Santiago Guide';
@@ -251,7 +260,7 @@ const jsonLdString = jsonLd ? JSON.stringify(jsonLd) : undefined;
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <title>{fullTitle}</title>
 <meta name="description" content={description} />
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="robots" content={robotsContent} />
 <meta name="generator" content={Astro.generator} />
 
 <!-- Canonical & hreflang -->
@@ -261,7 +270,7 @@ const jsonLdString = jsonLd ? JSON.stringify(jsonLd) : undefined;
 ))}
 
 <!-- OpenGraph -->
-<meta property="og:type" content="website" />
+<meta property="og:type" content={ogType} />
 <meta property="og:site_name" content={siteName} />
 <meta property="og:title" content={fullTitle} />
 <meta property="og:description" content={description} />

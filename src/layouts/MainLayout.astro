@@ -61,9 +61,10 @@ interface Props {
   schemaType?: 'website' | 'webpage' | 'localbusiness' | 'none';
   localBusinessData?: LocalBusinessData;
   ogImage?: string;
+  noindex?: boolean;
 }
 
-const { title, description, lang, schemaType = 'webpage', localBusinessData, ogImage } = Astro.props;
+const { title, description, lang, schemaType = 'webpage', localBusinessData, ogImage, noindex = false } = Astro.props;
 
 const SITE_URL = 'https://waytosantiagoguide.com';
 const currentPath = Astro.url.pathname;
@@ -85,9 +86,15 @@ const NO_TRANSLATION = new Set([
   '/404/',
   '/404',
 ]);
+// 404 is a non-indexed utility route (served with HTTP 404). It has no
+// canonical translations — emit no hreflang at all to avoid a non-reciprocal
+// pair pointing at a home page.
+const isUtilityRoute = currentPath === '/404/' || currentPath === '/404';
 const hasTranslations = !NO_TRANSLATION.has(currentPath);
 
-const alternateLanguages: AlternateLang[] = hasTranslations
+const alternateLanguages: AlternateLang[] = isUtilityRoute
+  ? []
+  : hasTranslations
   ? [
       { lang: 'en', href: `${SITE_URL}${enPath}` },
       { lang: 'es', href: `${SITE_URL}${esPath}` },
@@ -114,6 +121,7 @@ const htmlLang = lang === 'en' ? 'en' : lang === 'es' ? 'es' : 'pt';
       schemaType={schemaType}
       localBusinessData={localBusinessData}
       ogImage={ogImage}
+      noindex={noindex}
     />
 
     <!-- Google Analytics 4 — G-GF2GHM795M -->
