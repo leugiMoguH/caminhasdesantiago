@@ -60,6 +60,7 @@ const graph = buildClusterGraph({
     address: { '@type': 'PostalAddress', addressLocality: data.name, addressRegion: data.region, addressCountry: data.country },
   },
   faq: t.faq,
+  dateModified: data.lastVerified,
 });
 const ferry = ferryPath(lang);
 const hub = hubPath(lang);

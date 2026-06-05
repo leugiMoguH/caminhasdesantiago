@@ -20,10 +20,12 @@ export async function getStaticPaths() {
     getCollection('logistics', (e) => e.data.sourceVerified),
   ]);
   const ordered = stages.sort((a, b) => a.data.order - b.data.order);
+  const lastmod = ordered.reduce((m, s) => (s.data.lastVerified > m ? s.data.lastVerified : m), '');
   return LANGS.map((lang) => ({
     params: { lang },
     props: {
       lang,
+      lastmod,
       stages: ordered.map((s) => ({
         url: stagePath(lang, s.id),
         label: s.data.i18n[lang].h1,
@@ -37,7 +39,7 @@ export async function getStaticPaths() {
 
 type StageCard = { url: string; label: string; distanceKm: number; difficulty: 'easy' | 'moderate' | 'hard' };
 type Link = { url: string; label: string };
-const { lang, stages, logistics } = Astro.props as { lang: Lang; stages: StageCard[]; logistics: Link[] };
+const { lang, stages, logistics, lastmod } = Astro.props as { lang: Lang; stages: StageCard[]; logistics: Link[]; lastmod: string };
 const ui = UI[lang];
 const PAGE_PATH = hubPath(lang);
 const i18nUrls = { en: `${SITE_URL}${hubPath('en')}`, es: `${SITE_URL}${hubPath('es')}`, pt: `${SITE_URL}${hubPath('pt')}` };
@@ -70,6 +72,7 @@ const graph = buildClusterGraph({
       url: `${SITE_URL}${s.url}`,
     })),
   },
+  dateModified: lastmod,
 });
 const ferry = ferryPath(lang);
 ---

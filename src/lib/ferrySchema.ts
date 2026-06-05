@@ -58,6 +58,7 @@ export function buildFerryGraph(f: FerryData, lang: Lang, pagePath: string) {
         isPartOf: { '@id': `${SITE_URL}/#website` },
         about: { '@id': `${SITE_URL}/#organization` },
         breadcrumb: { '@id': `${pageUrl}#breadcrumb` },
+        dateModified: f.lastVerified,
       },
       {
         '@type': 'BreadcrumbList',

@@ -84,6 +84,7 @@ const graph = buildClusterGraph({
   breadcrumb,
   entity: { '@type': 'TouristTrip', name: t.h1, description: t.lead, touristType: 'Pilgrim' },
   faq: t.faq,
+  dateModified: data.lastVerified,
 });
 const ferry = ferryPath(lang);
 const guide = caminhaGuidePath(lang);
