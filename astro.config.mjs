@@ -17,6 +17,13 @@ const TRANSLATION_GROUPS = [
   { en: '/en/caminha/ferry-and-logistics/', es: '/es/caminha/ferry-y-logistica/', pt: '/pt/caminha/ferry-e-logistica/' },
   { en: '/en/caminha/useful-services/',     es: '/es/caminha/servicios-utiles/', pt: '/pt/caminha/servicos-uteis/' },
   { en: '/en/privacy-policy/',              es: '/es/politica-de-privacidad/',   pt: '/pt/politica-de-privacidade/' },
+  // Caminho da Costa cluster (Phase 3) — slugs identical across languages
+  { en: '/en/caminho-da-costa/',                          es: '/es/caminho-da-costa/',                          pt: '/pt/caminho-da-costa/' },
+  { en: '/en/caminho-da-costa/viana-do-castelo-caminha/', es: '/es/caminho-da-costa/viana-do-castelo-caminha/', pt: '/pt/caminho-da-costa/viana-do-castelo-caminha/' },
+  { en: '/en/caminho-da-costa/caminha-a-guarda/',         es: '/es/caminho-da-costa/caminha-a-guarda/',         pt: '/pt/caminho-da-costa/caminha-a-guarda/' },
+  { en: '/en/destino/a-guarda/',                          es: '/es/destino/a-guarda/',                          pt: '/pt/destino/a-guarda/' },
+  { en: '/en/logistica/getting-there/',                   es: '/es/logistica/getting-there/',                   pt: '/pt/logistica/getting-there/' },
+  { en: '/en/logistica/overland-detour/',                 es: '/es/logistica/overland-detour/',                 pt: '/pt/logistica/overland-detour/' },
 ];
 
 // Build URL → xhtml:link[] lookup. Includes x-default → EN.

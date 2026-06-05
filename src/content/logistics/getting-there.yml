@@ -1,0 +1,95 @@
+topic: getting-there
+relatedStageSlugs:
+  - viana-do-castelo-caminha
+relatedTownSlugs: []
+sourceVerified: true
+lastVerified: "2026-06-06"
+sources:
+  - https://www.happyrail.com/en/trains-in-europe/porto-to-viana-do-castelo
+  - https://moovitapp.com/index/en/public_transit-line-l_minho-Porto-1904-855275-28793233-16
+  - https://www.cp.pt/
+i18n:
+  en:
+    metaTitle: "How to Get to the Portuguese Coastal Camino: Porto to Viana & Caminha (2026)"
+    metaDescription: "Reaching the northern Portuguese Coastal Camino from Porto: the CP Linha do Minho train to Viana do Castelo (~84 min) and on to Caminha, plus Porto Airport connections. Step-by-step."
+    h1: "Getting to the coastal start: Porto → Viana do Castelo / Caminha"
+    lead: "Most pilgrims joining the northern stretch of the Portuguese Coastal Camino arrive from Porto. The simplest link is the CP Linha do Minho railway, which runs up the coast through Viana do Castelo and Caminha to the Spanish border."
+    sections:
+      - heading: "By train (Linha do Minho)"
+        body: "CP trains run from Porto-Campanhã up the Minho line to Viana do Castelo in about 84 minutes, with roughly 12 services a day; the same line continues to Caminha and Valença. Buy tickets at the station or on cp.pt and check times, as weekend and holiday schedules differ from weekdays."
+      - heading: "From Porto Airport"
+        body: "From Porto Airport (OPO), take the Metro (Line E, violet) toward the city and change to a Linha do Minho train at Porto-Campanhã. Regional buses also serve Viana do Castelo and Caminha from the Porto area."
+      - heading: "Where to start walking"
+        body: "Start in Viana do Castelo for the classic ~27.8 km coastal stage to Caminha, or start in Caminha itself if you only want the final Portuguese town before the Minho crossing into Spain."
+    howTo:
+      - name: "Get to Porto-Campanhã station"
+        text: "From central Porto or Porto Airport (Metro Line E), make your way to Porto-Campanhã, the main station for northbound regional trains."
+      - name: "Board a Linha do Minho train"
+        text: "Take a CP Minho line train toward Viana do Castelo, Caminha or Valença. Check the timetable at cp.pt and buy your ticket at the station window or machine."
+      - name: "Ride to Viana do Castelo or Caminha"
+        text: "Porto-Campanhã to Viana do Castelo takes about 84 minutes; the same line continues north to Caminha. Confirm your stop before boarding."
+      - name: "Start the coastal stage"
+        text: "From Viana do Castelo, follow the Senda Litoral north for the ~27.8 km stage to Caminha, or begin directly in Caminha for the river crossing."
+    faq:
+      - q: "How do I get from Porto to Viana do Castelo for the Coastal Camino?"
+        a: "Take a CP Linha do Minho train from Porto-Campanhã to Viana do Castelo — about 84 minutes, with roughly 12 services a day. The same line also reaches Caminha and Valença."
+      - q: "How do I get from Porto Airport to the coastal start?"
+        a: "From Porto Airport, take Metro Line E toward the city and change to a Linha do Minho train at Porto-Campanhã for Viana do Castelo or Caminha."
+      - q: "Should I start in Viana do Castelo or Caminha?"
+        a: "Start in Viana do Castelo for the full ~27.8 km coastal stage to Caminha, or start in Caminha if you only want the last Portuguese town before crossing the Minho to A Guarda."
+  es:
+    metaTitle: "Cómo Llegar al Camino Portugués de la Costa: Oporto a Viana y Caminha (2026)"
+    metaDescription: "Llegar al tramo norte del Camino Portugués de la Costa desde Oporto: tren CP Linha do Minho a Viana do Castelo (~84 min) y hasta Caminha, más conexiones del aeropuerto de Oporto. Paso a paso."
+    h1: "Llegar al inicio costero: Oporto → Viana do Castelo / Caminha"
+    lead: "La mayoría de los peregrinos que se incorporan al tramo norte del Camino Portugués de la Costa llegan desde Oporto. El enlace más sencillo es el ferrocarril CP Linha do Minho, que sube por la costa pasando por Viana do Castelo y Caminha hasta la frontera española."
+    sections:
+      - heading: "En tren (Linha do Minho)"
+        body: "Los trenes CP salen de Oporto-Campanhã por la línea del Miño hasta Viana do Castelo en unos 84 minutos, con unas 12 frecuencias diarias; la misma línea continúa a Caminha y Valença. Compra los billetes en la estación o en cp.pt y consulta horarios, ya que los fines de semana y festivos difieren de los días laborables."
+      - heading: "Desde el aeropuerto de Oporto"
+        body: "Desde el aeropuerto de Oporto (OPO), toma el Metro (Línea E, violeta) hacia la ciudad y cambia a un tren de la Linha do Minho en Oporto-Campanhã. También hay autobuses regionales a Viana do Castelo y Caminha desde la zona de Oporto."
+      - heading: "Dónde empezar a caminar"
+        body: "Empieza en Viana do Castelo para la clásica etapa costera de ~27,8 km hasta Caminha, o empieza en la propia Caminha si solo quieres el último pueblo portugués antes del cruce del Miño a España."
+    howTo:
+      - name: "Llega a la estación de Oporto-Campanhã"
+        text: "Desde el centro de Oporto o el aeropuerto (Metro Línea E), dirígete a Oporto-Campanhã, la estación principal de trenes regionales hacia el norte."
+      - name: "Sube a un tren de la Linha do Minho"
+        text: "Toma un tren CP de la línea del Miño hacia Viana do Castelo, Caminha o Valença. Consulta el horario en cp.pt y compra el billete en la taquilla o máquina."
+      - name: "Viaja a Viana do Castelo o Caminha"
+        text: "Oporto-Campanhã a Viana do Castelo dura unos 84 minutos; la misma línea continúa hacia Caminha. Confirma tu parada antes de subir."
+      - name: "Comienza la etapa costera"
+        text: "Desde Viana do Castelo, sigue la Senda Litoral hacia el norte en la etapa de ~27,8 km hasta Caminha, o empieza directamente en Caminha para el cruce del río."
+    faq:
+      - q: "¿Cómo llego de Oporto a Viana do Castelo para el Camino de la Costa?"
+        a: "Toma un tren CP Linha do Minho de Oporto-Campanhã a Viana do Castelo — unos 84 minutos, con unas 12 frecuencias diarias. La misma línea llega también a Caminha y Valença."
+      - q: "¿Cómo llego del aeropuerto de Oporto al inicio costero?"
+        a: "Desde el aeropuerto, toma el Metro Línea E hacia la ciudad y cambia a un tren de la Linha do Minho en Oporto-Campanhã hacia Viana do Castelo o Caminha."
+      - q: "¿Debo empezar en Viana do Castelo o en Caminha?"
+        a: "Empieza en Viana do Castelo para la etapa costera completa de ~27,8 km hasta Caminha, o en Caminha si solo quieres el último pueblo portugués antes de cruzar el Miño hasta A Guarda."
+  pt:
+    metaTitle: "Como Chegar ao Caminho Português da Costa: Porto a Viana e Caminha (2026)"
+    metaDescription: "Chegar ao troço norte do Caminho Português da Costa a partir do Porto: comboio CP Linha do Minho para Viana do Castelo (~84 min) e até Caminha, mais ligações do aeroporto do Porto. Passo a passo."
+    h1: "Chegar ao início costeiro: Porto → Viana do Castelo / Caminha"
+    lead: "A maioria dos peregrinos que se juntam ao troço norte do Caminho Português da Costa chega a partir do Porto. A ligação mais simples é a Linha do Minho da CP, que sobe pela costa passando por Viana do Castelo e Caminha até à fronteira espanhola."
+    sections:
+      - heading: "De comboio (Linha do Minho)"
+        body: "Os comboios da CP partem do Porto-Campanhã pela Linha do Minho até Viana do Castelo em cerca de 84 minutos, com cerca de 12 frequências diárias; a mesma linha continua para Caminha e Valença. Compre os bilhetes na estação ou em cp.pt e confirme horários, pois fins de semana e feriados diferem dos dias úteis."
+      - heading: "Do aeroporto do Porto"
+        body: "Do aeroporto do Porto (OPO), apanhe o Metro (Linha E, violeta) em direção à cidade e mude para um comboio da Linha do Minho no Porto-Campanhã. Há também autocarros regionais para Viana do Castelo e Caminha a partir da zona do Porto."
+      - heading: "Onde começar a caminhar"
+        body: "Comece em Viana do Castelo para a clássica etapa costeira de ~27,8 km até Caminha, ou comece na própria Caminha se quiser apenas a última vila portuguesa antes da travessia do Minho para Espanha."
+    howTo:
+      - name: "Chegue à estação do Porto-Campanhã"
+        text: "Do centro do Porto ou do aeroporto (Metro Linha E), dirija-se ao Porto-Campanhã, a principal estação de comboios regionais para norte."
+      - name: "Apanhe um comboio da Linha do Minho"
+        text: "Apanhe um comboio CP da Linha do Minho em direção a Viana do Castelo, Caminha ou Valença. Confirme o horário em cp.pt e compre o bilhete na bilheteira ou máquina."
+      - name: "Viaje até Viana do Castelo ou Caminha"
+        text: "Porto-Campanhã a Viana do Castelo demora cerca de 84 minutos; a mesma linha continua para Caminha. Confirme a sua paragem antes de embarcar."
+      - name: "Comece a etapa costeira"
+        text: "De Viana do Castelo, siga a Senda Litoral para norte na etapa de ~27,8 km até Caminha, ou comece diretamente em Caminha para a travessia do rio."
+    faq:
+      - q: "Como chego do Porto a Viana do Castelo para o Caminho da Costa?"
+        a: "Apanhe um comboio CP Linha do Minho do Porto-Campanhã para Viana do Castelo — cerca de 84 minutos, com cerca de 12 frequências diárias. A mesma linha chega também a Caminha e Valença."
+      - q: "Como chego do aeroporto do Porto ao início costeiro?"
+        a: "Do aeroporto, apanhe o Metro Linha E em direção à cidade e mude para um comboio da Linha do Minho no Porto-Campanhã para Viana do Castelo ou Caminha."
+      - q: "Devo começar em Viana do Castelo ou em Caminha?"
+        a: "Comece em Viana do Castelo para a etapa costeira completa de ~27,8 km até Caminha, ou em Caminha se quiser apenas a última vila portuguesa antes de atravessar o Minho até A Guarda."

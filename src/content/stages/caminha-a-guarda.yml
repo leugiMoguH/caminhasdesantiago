@@ -1,0 +1,76 @@
+route: coastal
+order: 2
+from: Caminha
+to: A Guarda
+distanceKm: 2
+difficulty: easy
+terrain: "The Minho river crossing is made by boat (the official ferry is suspended, so a water taxi is used), followed by roughly 1.5 km on foot from the Camposancos / A Pasaxe landing on the Spanish bank to the centre of A Guarda."
+prevSlug: viana-do-castelo-caminha
+townSlugs:
+  - a-guarda
+logisticsSlugs:
+  - overland-detour
+sourceVerified: true
+lastVerified: "2026-06-06"
+sources:
+  - https://xacobeotransfer.com/en/how-does-the-ferry-boat-between-caminha-a-guarda-work/
+  - https://wisepilgrim.com/en/places/portugal/camino-portugues/water-taxi-from-caminha-to-a-guarda
+  - https://pilgrimsofthecoast.com/en/portuguese-coastal-camino-ferry-guide/
+i18n:
+  en:
+    metaTitle: "Caminha to A Guarda: The Minho Crossing — Boat, Cost & Walk (2026)"
+    metaDescription: "How the Caminha to A Guarda stage works in 2026: the official ferry is suspended, so you cross the Minho by water taxi, then walk ~1.5 km into A Guarda. Costs, landing point and the overland alternative."
+    h1: "Caminha → A Guarda (the Minho crossing)"
+    lead: "This short stage is really a river crossing. There is no bridge at Caminha, so you cross the Minho by boat and walk a little over a kilometre into A Guarda on the Spanish bank."
+    sections:
+      - heading: "How you cross"
+        body: "The scheduled Santa Rita de Cássia ferry has been suspended since 2023 because of river-mouth siltation. The operating crossing is the Xacobeo Transfer water taxi, approximately €6 per person (€8 with a bicycle); local fishermen also run informal boats at about €5–6. There is no fixed timetable, so confirm a crossing the evening before."
+      - heading: "The walk into A Guarda"
+        body: "Water taxis land at Camposancos / A Pasaxe on the Spanish side, roughly 1.5 km south of A Guarda town centre — about a 20-minute flat walk where the yellow Camino arrows resume. Remember Spain is one hour ahead of Portugal."
+      - heading: "If no boat is running"
+        body: "When weather or siltation stops all boats, the guaranteed alternative is the overland detour: train from Caminha to Valença, then cross the Tui–Valença bridge on foot. This switches you to the Camino Portugués Interior."
+    faq:
+      - q: "How do you cross from Caminha to A Guarda?"
+        a: "By boat across the Minho river. The official ferry is suspended, so the crossing is made by the Xacobeo Transfer water taxi (~€6, €8 with a bike) or informal fishermen's boats (~€5–6). There is no bridge at Caminha."
+      - q: "How far is it from the landing to A Guarda?"
+        a: "Water taxis land at Camposancos / A Pasaxe, about 1.5 km — roughly a 20-minute flat walk — south of A Guarda town centre, where the Camino waymarks resume."
+      - q: "What if no boat is crossing?"
+        a: "Take the overland detour: a train from Caminha to Valença, then walk across the Tui–Valença international bridge into Spain. This connects you to the Camino Portugués Interior."
+  es:
+    metaTitle: "Caminha a A Guarda: El Cruce del Miño — Barco, Precio y Caminata (2026)"
+    metaDescription: "Cómo funciona la etapa Caminha–A Guarda en 2026: el ferry oficial está suspendido, así que se cruza el Miño en taxi-marítimo y se camina ~1,5 km hasta A Guarda. Precios, punto de desembarco y la alternativa terrestre."
+    h1: "Caminha → A Guarda (el cruce del Miño)"
+    lead: "Esta etapa corta es en realidad un cruce de río. No hay puente en Caminha, así que se cruza el Miño en barco y se camina algo más de un kilómetro hasta A Guarda, en la orilla española."
+    sections:
+      - heading: "Cómo se cruza"
+        body: "El ferry regular Santa Rita de Cássia está suspendido desde 2023 por la sedimentación de la desembocadura. El cruce en funcionamiento es el taxi-marítimo Xacobeo Transfer, unos 6 € por persona (8 € con bicicleta); pescadores locales también operan barcas informales por unos 5–6 €. No hay horario fijo, así que confirma el cruce la tarde anterior."
+      - heading: "La caminata hasta A Guarda"
+        body: "Los taxis-marítimos desembarcan en Camposancos / A Pasaxe, en el lado español, a unos 1,5 km al sur del centro de A Guarda — unos 20 minutos de caminata llana donde reaparecen las flechas amarillas. Recuerda que España va una hora por delante de Portugal."
+      - heading: "Si no hay barco"
+        body: "Cuando el tiempo o la sedimentación detienen los barcos, la alternativa garantizada es el desvío terrestre: tren de Caminha a Valença y cruzar a pie el puente Tui–Valença. Esto te pasa al Camino Portugués Interior."
+    faq:
+      - q: "¿Cómo se cruza de Caminha a A Guarda?"
+        a: "En barco por el río Miño. El ferry oficial está suspendido, así que el cruce se hace en el taxi-marítimo Xacobeo Transfer (~6 €, 8 € con bici) o en barcas de pescadores (~5–6 €). No hay puente en Caminha."
+      - q: "¿Qué distancia hay del desembarco a A Guarda?"
+        a: "Los taxis-marítimos desembarcan en Camposancos / A Pasaxe, a unos 1,5 km — unos 20 minutos de caminata llana — al sur del centro de A Guarda, donde reaparecen las señales del Camino."
+      - q: "¿Qué hago si no hay barco?"
+        a: "Toma el desvío terrestre: un tren de Caminha a Valença y luego cruza a pie el puente internacional Tui–Valença. Esto te conecta con el Camino Portugués Interior."
+  pt:
+    metaTitle: "Caminha a A Guarda: A Travessia do Minho — Barco, Preço e Caminhada (2026)"
+    metaDescription: "Como funciona a etapa Caminha–A Guarda em 2026: o ferry oficial está suspenso, por isso atravessa-se o Minho de táxi fluvial e caminha-se ~1,5 km até A Guarda. Preços, ponto de desembarque e a alternativa terrestre."
+    h1: "Caminha → A Guarda (a travessia do Minho)"
+    lead: "Esta etapa curta é, na verdade, uma travessia de rio. Não há ponte em Caminha, por isso atravessa-se o Minho de barco e caminha-se pouco mais de um quilómetro até A Guarda, na margem espanhola."
+    sections:
+      - heading: "Como se atravessa"
+        body: "O ferry regular Santa Rita de Cássia está suspenso desde 2023 devido ao assoreamento da foz. A travessia em funcionamento é o táxi fluvial Xacobeo Transfer, cerca de 6 € por pessoa (8 € com bicicleta); pescadores locais também operam barcos informais por cerca de 5–6 €. Não há horário fixo, por isso confirme a travessia na véspera."
+      - heading: "A caminhada até A Guarda"
+        body: "Os táxis fluviais desembarcam em Camposancos / A Pasaxe, no lado espanhol, a cerca de 1,5 km a sul do centro de A Guarda — cerca de 20 minutos de caminhada plana, onde recomeçam as setas amarelas. Lembre-se de que a Espanha está uma hora à frente de Portugal."
+      - heading: "Se não houver barco"
+        body: "Quando o tempo ou o assoreamento impedem os barcos, a alternativa garantida é o desvio terrestre: comboio de Caminha para Valença e atravessar a pé a ponte Tui–Valença. Isto passa-o para o Caminho Português Interior."
+    faq:
+      - q: "Como se atravessa de Caminha para A Guarda?"
+        a: "De barco pelo rio Minho. O ferry oficial está suspenso, por isso a travessia faz-se no táxi fluvial Xacobeo Transfer (~6 €, 8 € com bicicleta) ou em barcos de pescadores (~5–6 €). Não há ponte em Caminha."
+      - q: "Qual a distância do desembarque até A Guarda?"
+        a: "Os táxis fluviais desembarcam em Camposancos / A Pasaxe, a cerca de 1,5 km — cerca de 20 minutos de caminhada plana — a sul do centro de A Guarda, onde recomeçam as marcas do Caminho."
+      - q: "E se não houver barco?"
+        a: "Faça o desvio terrestre: um comboio de Caminha para Valença e depois atravesse a pé a ponte internacional Tui–Valença. Isto liga-o ao Caminho Português Interior."

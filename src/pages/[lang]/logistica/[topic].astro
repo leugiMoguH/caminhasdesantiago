@@ -1,0 +1,157 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+import { getCollection } from 'astro:content';
+import { buildClusterGraph } from '../../../lib/clusterSchema';
+import {
+  UI,
+  LANGS,
+  logisticsPath,
+  stagePath,
+  townPath,
+  hubPath,
+  ferryPath,
+  i18nUrlsFor,
+  type Lang,
+} from '../../../lib/clusterRoutes';
+
+type Link = { url: string; label: string };
+
+export async function getStaticPaths() {
+  const [logistics, stages, towns] = await Promise.all([
+    getCollection('logistics', (e) => e.data.sourceVerified),
+    getCollection('stages', (e) => e.data.sourceVerified),
+    getCollection('towns', (e) => e.data.sourceVerified),
+  ]);
+  const stageById = new Map(stages.map((s) => [s.id, s]));
+  const townById = new Map(towns.map((t) => [t.id, t]));
+
+  return logistics.flatMap((item) =>
+    LANGS.map((lang) => {
+      const d = item.data;
+      const stageLinks: Link[] = d.relatedStageSlugs
+        .map((s: string) => {
+          const e = stageById.get(s);
+          return e ? { url: stagePath(lang, s), label: e.data.i18n[lang].h1 } : null;
+        })
+        .filter((x: Link | null): x is Link => x !== null);
+      const townLinks: Link[] = d.relatedTownSlugs
+        .map((s: string) => {
+          const e = townById.get(s);
+          return e ? { url: townPath(lang, s), label: e.data.name } : null;
+        })
+        .filter((x: Link | null): x is Link => x !== null);
+      return { params: { lang, topic: item.id }, props: { lang, data: d, stageLinks, townLinks } };
+    }),
+  );
+}
+
+const { lang, data, stageLinks, townLinks } = Astro.props as {
+  lang: Lang;
+  data: any;
+  stageLinks: Link[];
+  townLinks: Link[];
+};
+const t = data.i18n[lang];
+const ui = UI[lang];
+const slug = Astro.params.topic as string;
+const PAGE_PATH = logisticsPath(lang, slug);
+const i18nUrls = i18nUrlsFor(logisticsPath, slug);
+
+const breadcrumb = [
+  { name: ui.home, item: `/${lang}/` },
+  { name: ui.routeHub, item: hubPath(lang) },
+  { name: t.h1, item: PAGE_PATH },
+];
+const graph = buildClusterGraph({
+  lang,
+  pagePath: PAGE_PATH,
+  title: t.metaTitle,
+  description: t.metaDescription,
+  breadcrumb,
+  faq: t.faq,
+  howTo: t.howTo,
+  howToName: t.h1,
+});
+const ferry = ferryPath(lang);
+const hub = hubPath(lang);
+---
+
+<MainLayout title={t.metaTitle} description={t.metaDescription} lang={lang} schemaType="none" i18nUrls={i18nUrls}>
+  <script type="application/ld+json" set:html={JSON.stringify(graph)} />
+
+  <div class="bg-gradient-to-br from-slate-700 to-slate-900 text-white">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+      <nav aria-label="Breadcrumb" class="mb-5">
+        <ol class="flex flex-wrap items-center gap-2 text-sm text-slate-400">
+          <li><a href={`/${lang}/`} class="hover:text-white no-underline hover:underline">{ui.home}</a></li>
+          <li aria-hidden="true" class="text-slate-600">›</li>
+          <li><a href={hub} class="hover:text-white no-underline hover:underline">{ui.routeHub}</a></li>
+          <li aria-hidden="true" class="text-slate-600">›</li>
+          <li aria-current="page" class="text-slate-200 font-medium">{t.h1}</li>
+        </ol>
+      </nav>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4 tracking-tight">{t.h1}</h1>
+      <p class="text-slate-300 text-base leading-relaxed max-w-2xl">{t.lead}</p>
+    </div>
+  </div>
+
+  <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 space-y-10">
+    <!-- Sections -->
+    {t.sections.map((s: { heading: string; body: string }) => (
+      <section>
+        <h2 class="text-2xl font-bold text-forest-900 mb-3 tracking-tight">{s.heading}</h2>
+        <p class="text-slate-700 leading-relaxed">{s.body}</p>
+      </section>
+    ))}
+
+    <!-- HowTo -->
+    {t.howTo.length > 0 && (
+      <section>
+        <h2 class="text-2xl font-bold text-forest-900 mb-5 tracking-tight">{ui.howToHeading}</h2>
+        <ol class="space-y-4">
+          {t.howTo.map((step: { name: string; text: string }, i: number) => (
+            <li class="flex gap-4 bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+              <span class="shrink-0 flex h-8 w-8 items-center justify-center rounded-full bg-forest-700 text-white font-bold text-sm">{i + 1}</span>
+              <div>
+                <p class="font-semibold text-forest-900">{step.name}</p>
+                <p class="text-sm text-slate-700 leading-relaxed mt-1">{step.text}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </section>
+    )}
+
+    <!-- Related -->
+    <section class="bg-forest-50 border border-forest-200 rounded-2xl p-6">
+      <h2 class="text-base font-bold text-forest-900 mb-3">{ui.relatedLinks}</h2>
+      <ul class="space-y-2 text-sm">
+        {stageLinks.map((x) => (
+          <li><a href={x.url} class="text-forest-700 hover:underline no-underline font-medium">{x.label}</a></li>
+        ))}
+        {townLinks.map((x) => (
+          <li><a href={x.url} class="text-forest-700 hover:underline no-underline font-medium">{x.label}</a></li>
+        ))}
+        <li><a href={ferry} class="text-forest-700 hover:underline no-underline font-medium">{ui.crossingLink}</a></li>
+        <li><a href={hub} class="text-slate-600 hover:underline no-underline">{ui.backToRoute}</a></li>
+      </ul>
+    </section>
+
+    <!-- FAQ -->
+    {t.faq.length > 0 && (
+      <section>
+        <h2 class="text-2xl font-bold text-forest-900 mb-5 tracking-tight">{ui.faqHeading}</h2>
+        <div class="space-y-3">
+          {t.faq.map((f: { q: string; a: string }) => (
+            <details class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+              <summary class="px-6 py-4 font-semibold text-forest-900 cursor-pointer">{f.q}</summary>
+              <div class="px-6 pb-5 text-sm text-slate-700 leading-relaxed border-t border-slate-100 pt-3">{f.a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <p class="text-xs text-slate-400">{ui.sourcesNote}: {data.sources.join(' · ')}</p>
+  </div>
+</MainLayout>

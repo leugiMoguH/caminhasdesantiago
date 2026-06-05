@@ -62,9 +62,12 @@ interface Props {
   localBusinessData?: LocalBusinessData;
   ogImage?: string;
   noindex?: boolean;
+  // Override hreflang + language-switcher URLs for routes not in PATH_MAP
+  // (dynamic cluster pages supply their own en/es/pt absolute URLs).
+  i18nUrls?: { en: string; es: string; pt: string };
 }
 
-const { title, description, lang, schemaType = 'webpage', localBusinessData, ogImage, noindex = false } = Astro.props;
+const { title, description, lang, schemaType = 'webpage', localBusinessData, ogImage, noindex = false, i18nUrls } = Astro.props;
 
 const SITE_URL = 'https://waytosantiagoguide.com';
 const currentPath = Astro.url.pathname;
@@ -92,8 +95,19 @@ const NO_TRANSLATION = new Set([
 const isUtilityRoute = currentPath === '/404/' || currentPath === '/404';
 const hasTranslations = !NO_TRANSLATION.has(currentPath);
 
+const enUrlFull = i18nUrls?.en ?? `${SITE_URL}${enPath}`;
+const esUrlFull = i18nUrls?.es ?? `${SITE_URL}${esPath}`;
+const ptUrlFull = i18nUrls?.pt ?? `${SITE_URL}${ptPath}`;
+
 const alternateLanguages: AlternateLang[] = isUtilityRoute
   ? []
+  : i18nUrls
+  ? [
+      { lang: 'en', href: i18nUrls.en },
+      { lang: 'es', href: i18nUrls.es },
+      { lang: 'pt', href: i18nUrls.pt },
+      { lang: 'x-default', href: i18nUrls.en },
+    ]
   : hasTranslations
   ? [
       { lang: 'en', href: `${SITE_URL}${enPath}` },
@@ -147,7 +161,7 @@ const htmlLang = lang === 'en' ? 'en' : lang === 'es' ? 'es' : 'pt';
   </head>
   <body>
 
-    <Header lang={lang} enUrl={`${SITE_URL}${enPath}`} esUrl={`${SITE_URL}${esPath}`} ptUrl={`${SITE_URL}${ptPath}`} />
+    <Header lang={lang} enUrl={enUrlFull} esUrl={esUrlFull} ptUrl={ptUrlFull} />
 
     <main id="main-content" tabindex="-1">
       <slot />

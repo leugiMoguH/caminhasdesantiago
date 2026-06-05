@@ -1,0 +1,192 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+import { getCollection } from 'astro:content';
+import { buildClusterGraph } from '../../../lib/clusterSchema';
+import {
+  UI,
+  LANGS,
+  stagePath,
+  townPath,
+  logisticsPath,
+  hubPath,
+  ferryPath,
+  caminhaGuidePath,
+  i18nUrlsFor,
+  type Lang,
+} from '../../../lib/clusterRoutes';
+
+type Link = { url: string; label: string };
+
+export async function getStaticPaths() {
+  const [stages, towns, logistics] = await Promise.all([
+    getCollection('stages', (e) => e.data.sourceVerified),
+    getCollection('towns', (e) => e.data.sourceVerified),
+    getCollection('logistics', (e) => e.data.sourceVerified),
+  ]);
+  const stageById = new Map(stages.map((s) => [s.id, s]));
+  const townById = new Map(towns.map((t) => [t.id, t]));
+  const logById = new Map(logistics.map((l) => [l.id, l]));
+
+  return stages.flatMap((stage) =>
+    LANGS.map((lang) => {
+      const d = stage.data;
+      const stageLink = (slug: string): Link | null => {
+        const e = stageById.get(slug);
+        return e ? { url: stagePath(lang, slug), label: e.data.i18n[lang].h1 } : null;
+      };
+      const townLink = (slug: string): Link | null => {
+        const e = townById.get(slug);
+        return e ? { url: townPath(lang, slug), label: e.data.name } : null;
+      };
+      const logLink = (slug: string): Link | null => {
+        const e = logById.get(slug);
+        return e ? { url: logisticsPath(lang, slug), label: e.data.i18n[lang].h1 } : null;
+      };
+      return {
+        params: { lang, stage: stage.id },
+        props: {
+          lang,
+          data: d,
+          prev: d.prevSlug ? stageLink(d.prevSlug) : null,
+          next: d.nextSlug ? stageLink(d.nextSlug) : null,
+          towns: d.townSlugs.map(townLink).filter((x): x is Link => x !== null),
+          logistics: d.logisticsSlugs.map(logLink).filter((x): x is Link => x !== null),
+        },
+      };
+    }),
+  );
+}
+
+const { lang, data, prev, next, towns, logistics } = Astro.props as {
+  lang: Lang;
+  data: any;
+  prev: Link | null;
+  next: Link | null;
+  towns: Link[];
+  logistics: Link[];
+};
+const t = data.i18n[lang];
+const ui = UI[lang];
+const slug = Astro.params.stage as string;
+const PAGE_PATH = stagePath(lang, slug);
+const i18nUrls = i18nUrlsFor(stagePath, slug);
+
+const breadcrumb = [
+  { name: ui.home, item: `/${lang}/` },
+  { name: ui.routeHub, item: hubPath(lang) },
+  { name: t.h1, item: PAGE_PATH },
+];
+const graph = buildClusterGraph({
+  lang,
+  pagePath: PAGE_PATH,
+  title: t.metaTitle,
+  description: t.metaDescription,
+  breadcrumb,
+  entity: { '@type': 'TouristTrip', name: t.h1, description: t.lead, touristType: 'Pilgrim' },
+  faq: t.faq,
+});
+const ferry = ferryPath(lang);
+const guide = caminhaGuidePath(lang);
+const hub = hubPath(lang);
+---
+
+<MainLayout title={t.metaTitle} description={t.metaDescription} lang={lang} schemaType="none" i18nUrls={i18nUrls}>
+  <script type="application/ld+json" set:html={JSON.stringify(graph)} />
+
+  <!-- Hero -->
+  <div class="bg-gradient-to-br from-slate-800 via-slate-800 to-forest-950 text-white">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+      <nav aria-label="Breadcrumb" class="mb-5">
+        <ol class="flex flex-wrap items-center gap-2 text-sm text-slate-400">
+          <li><a href={`/${lang}/`} class="hover:text-white no-underline hover:underline">{ui.home}</a></li>
+          <li aria-hidden="true" class="text-slate-600">›</li>
+          <li><a href={hub} class="hover:text-white no-underline hover:underline">{ui.routeHub}</a></li>
+          <li aria-hidden="true" class="text-slate-600">›</li>
+          <li aria-current="page" class="text-slate-200 font-medium">{t.h1}</li>
+        </ol>
+      </nav>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4 tracking-tight">{t.h1}</h1>
+      <p class="text-slate-300 text-base leading-relaxed max-w-2xl">{t.lead}</p>
+      <div class="mt-7 grid grid-cols-2 sm:grid-cols-3 gap-3">
+        <div class="bg-white/10 border border-white/10 rounded-2xl p-4 text-center">
+          <div class="text-lg font-bold">{data.distanceKm} km</div>
+          <div class="text-xs text-slate-400 mt-0.5">{ui.distance}</div>
+        </div>
+        <div class="bg-white/10 border border-white/10 rounded-2xl p-4 text-center">
+          <div class="text-lg font-bold">{ui.difficultyLabel[data.difficulty as 'easy' | 'moderate' | 'hard']}</div>
+          <div class="text-xs text-slate-400 mt-0.5">{ui.difficulty}</div>
+        </div>
+        {data.ascentM && (
+          <div class="bg-white/10 border border-white/10 rounded-2xl p-4 text-center">
+            <div class="text-lg font-bold">~{data.ascentM} m</div>
+            <div class="text-xs text-slate-400 mt-0.5">↑</div>
+          </div>
+        )}
+      </div>
+    </div>
+  </div>
+
+  <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 space-y-10">
+    <!-- Terrain -->
+    <section>
+      <p class="text-slate-700 text-sm leading-relaxed bg-slate-50 border border-slate-200 rounded-2xl p-5">{data.terrain}</p>
+    </section>
+
+    <!-- Sections -->
+    {t.sections.map((s: { heading: string; body: string }) => (
+      <section>
+        <h2 class="text-2xl font-bold text-forest-900 mb-3 tracking-tight">{s.heading}</h2>
+        <p class="text-slate-700 leading-relaxed">{s.body}</p>
+      </section>
+    ))}
+
+    <!-- Prev / Next -->
+    <nav class="grid sm:grid-cols-2 gap-4">
+      {prev && (
+        <a href={prev.url} class="block bg-white border border-slate-200 rounded-2xl p-5 no-underline hover:border-forest-300 shadow-sm">
+          <span class="text-xs uppercase tracking-wider text-slate-500">← {ui.prevStage}</span>
+          <span class="block font-semibold text-forest-800 mt-1">{prev.label}</span>
+        </a>
+      )}
+      {next && (
+        <a href={next.url} class="block bg-white border border-slate-200 rounded-2xl p-5 no-underline hover:border-forest-300 shadow-sm sm:text-right">
+          <span class="text-xs uppercase tracking-wider text-slate-500">{ui.nextStage} →</span>
+          <span class="block font-semibold text-forest-800 mt-1">{next.label}</span>
+        </a>
+      )}
+    </nav>
+
+    <!-- Related links -->
+    <section class="bg-forest-50 border border-forest-200 rounded-2xl p-6">
+      <h2 class="text-base font-bold text-forest-900 mb-3">{ui.relatedLinks}</h2>
+      <ul class="space-y-2 text-sm">
+        {towns.map((x) => (
+          <li><a href={x.url} class="text-forest-700 hover:underline no-underline font-medium">{x.label}</a></li>
+        ))}
+        {logistics.map((x) => (
+          <li><a href={x.url} class="text-forest-700 hover:underline no-underline font-medium">{x.label}</a></li>
+        ))}
+        <li><a href={ferry} class="text-forest-700 hover:underline no-underline font-medium">{ui.crossingLink}</a></li>
+        <li><a href={guide} class="text-forest-700 hover:underline no-underline font-medium">{ui.caminhaGuide}</a></li>
+        <li><a href={hub} class="text-slate-600 hover:underline no-underline">{ui.backToRoute}</a></li>
+      </ul>
+    </section>
+
+    <!-- FAQ -->
+    {t.faq.length > 0 && (
+      <section>
+        <h2 class="text-2xl font-bold text-forest-900 mb-5 tracking-tight">{ui.faqHeading}</h2>
+        <div class="space-y-3">
+          {t.faq.map((f: { q: string; a: string }) => (
+            <details class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+              <summary class="px-6 py-4 font-semibold text-forest-900 cursor-pointer">{f.q}</summary>
+              <div class="px-6 pb-5 text-sm text-slate-700 leading-relaxed border-t border-slate-100 pt-3">{f.a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <p class="text-xs text-slate-400">{ui.sourcesNote}: {data.sources.join(' · ')}</p>
+  </div>
+</MainLayout>

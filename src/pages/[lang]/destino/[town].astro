@@ -1,0 +1,157 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+import { getCollection } from 'astro:content';
+import { buildClusterGraph } from '../../../lib/clusterSchema';
+import {
+  UI,
+  LANGS,
+  townPath,
+  stagePath,
+  hubPath,
+  ferryPath,
+  i18nUrlsFor,
+  type Lang,
+} from '../../../lib/clusterRoutes';
+
+type Link = { url: string; label: string };
+
+export async function getStaticPaths() {
+  const [towns, stages] = await Promise.all([
+    getCollection('towns', (e) => e.data.sourceVerified),
+    getCollection('stages', (e) => e.data.sourceVerified),
+  ]);
+  const stageById = new Map(stages.map((s) => [s.id, s]));
+
+  return towns.flatMap((town) =>
+    LANGS.map((lang) => {
+      const d = town.data;
+      const st = stageById.get(d.onStageSlug);
+      const stage: Link | null = st
+        ? { url: stagePath(lang, d.onStageSlug), label: st.data.i18n[lang].h1 }
+        : null;
+      return { params: { lang, town: town.id }, props: { lang, data: d, stage } };
+    }),
+  );
+}
+
+const { lang, data, stage } = Astro.props as { lang: Lang; data: any; stage: Link | null };
+const t = data.i18n[lang];
+const ui = UI[lang];
+const slug = Astro.params.town as string;
+const PAGE_PATH = townPath(lang, slug);
+const i18nUrls = i18nUrlsFor(townPath, slug);
+
+const breadcrumb = [
+  { name: ui.home, item: `/${lang}/` },
+  { name: ui.routeHub, item: hubPath(lang) },
+  { name: data.name, item: PAGE_PATH },
+];
+const graph = buildClusterGraph({
+  lang,
+  pagePath: PAGE_PATH,
+  title: t.metaTitle,
+  description: t.metaDescription,
+  breadcrumb,
+  entity: {
+    '@type': 'TouristDestination',
+    name: data.name,
+    description: t.lead,
+    geo: { '@type': 'GeoCoordinates', latitude: data.geo.lat, longitude: data.geo.lng },
+    address: { '@type': 'PostalAddress', addressLocality: data.name, addressRegion: data.region, addressCountry: data.country },
+  },
+  faq: t.faq,
+});
+const ferry = ferryPath(lang);
+const hub = hubPath(lang);
+---
+
+<MainLayout title={t.metaTitle} description={t.metaDescription} lang={lang} schemaType="none" i18nUrls={i18nUrls}>
+  <script type="application/ld+json" set:html={JSON.stringify(graph)} />
+
+  <div class="bg-gradient-to-br from-forest-800 to-forest-950 text-white">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+      <nav aria-label="Breadcrumb" class="mb-5">
+        <ol class="flex flex-wrap items-center gap-2 text-sm text-forest-300">
+          <li><a href={`/${lang}/`} class="hover:text-white no-underline hover:underline">{ui.home}</a></li>
+          <li aria-hidden="true" class="text-forest-600">›</li>
+          <li><a href={hub} class="hover:text-white no-underline hover:underline">{ui.routeHub}</a></li>
+          <li aria-hidden="true" class="text-forest-600">›</li>
+          <li aria-current="page" class="text-white font-medium">{data.name}</li>
+        </ol>
+      </nav>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4 tracking-tight">{t.h1}</h1>
+      <p class="text-forest-100 text-base leading-relaxed max-w-2xl">{t.lead}</p>
+    </div>
+  </div>
+
+  <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 space-y-10">
+    <!-- Accommodation -->
+    {data.accommodations.length > 0 && (
+      <section>
+        <h2 class="text-2xl font-bold text-forest-900 mb-5 tracking-tight">{ui.stayHeading}</h2>
+        <div class="grid sm:grid-cols-2 gap-4">
+          {data.accommodations.map((a: { name: string; type: string; beds?: number; priceEUR?: string; openSeason?: string; url?: string }) => (
+            <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+              <p class="font-bold text-forest-900">{a.name}</p>
+              <p class="text-xs text-slate-500 mt-1">
+                {a.beds && <span>{a.beds} beds</span>}
+                {a.priceEUR && <span> · €{a.priceEUR}</span>}
+                {a.openSeason && <span> · {a.openSeason}</span>}
+              </p>
+              {a.url && (
+                <a href={a.url} rel="nofollow noopener noreferrer" target="_blank" class="text-sm text-forest-700 hover:underline no-underline mt-2 inline-block">Details →</a>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- Sections -->
+    {t.sections.map((s: { heading: string; body: string }) => (
+      <section>
+        <h2 class="text-2xl font-bold text-forest-900 mb-3 tracking-tight">{s.heading}</h2>
+        <p class="text-slate-700 leading-relaxed">{s.body}</p>
+      </section>
+    ))}
+
+    <!-- Services -->
+    {data.services.length > 0 && (
+      <section>
+        <h2 class="text-xl font-bold text-forest-900 mb-3 tracking-tight">{ui.servicesHeading}</h2>
+        <ul class="flex flex-wrap gap-2">
+          {data.services.map((s: string) => (
+            <li class="bg-slate-100 border border-slate-200 text-slate-700 text-sm rounded-full px-3 py-1">{s}</li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    <!-- Related -->
+    <section class="bg-forest-50 border border-forest-200 rounded-2xl p-6">
+      <h2 class="text-base font-bold text-forest-900 mb-3">{ui.relatedLinks}</h2>
+      <ul class="space-y-2 text-sm">
+        {stage && <li><a href={stage.url} class="text-forest-700 hover:underline no-underline font-medium">{stage.label}</a></li>}
+        <li><a href={ferry} class="text-forest-700 hover:underline no-underline font-medium">{ui.crossingLink}</a></li>
+        <li><a href={hub} class="text-slate-600 hover:underline no-underline">{ui.backToRoute}</a></li>
+      </ul>
+    </section>
+
+    <!-- FAQ -->
+    {t.faq.length > 0 && (
+      <section>
+        <h2 class="text-2xl font-bold text-forest-900 mb-5 tracking-tight">{ui.faqHeading}</h2>
+        <div class="space-y-3">
+          {t.faq.map((f: { q: string; a: string }) => (
+            <details class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+              <summary class="px-6 py-4 font-semibold text-forest-900 cursor-pointer">{f.q}</summary>
+              <div class="px-6 pb-5 text-sm text-slate-700 leading-relaxed border-t border-slate-100 pt-3">{f.a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <p class="text-xs text-slate-400">{ui.sourcesNote}: {data.sources.join(' · ')}</p>
+  </div>
+</MainLayout>

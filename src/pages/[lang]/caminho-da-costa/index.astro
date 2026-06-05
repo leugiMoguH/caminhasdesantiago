@@ -1,0 +1,117 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+import { getCollection } from 'astro:content';
+import { buildClusterGraph } from '../../../lib/clusterSchema';
+import {
+  UI,
+  LANGS,
+  hubPath,
+  stagePath,
+  logisticsPath,
+  ferryPath,
+  i18nUrlsFor,
+  SITE_URL,
+  type Lang,
+} from '../../../lib/clusterRoutes';
+
+export async function getStaticPaths() {
+  const [stages, logistics] = await Promise.all([
+    getCollection('stages', (e) => e.data.sourceVerified),
+    getCollection('logistics', (e) => e.data.sourceVerified),
+  ]);
+  const ordered = stages.sort((a, b) => a.data.order - b.data.order);
+  return LANGS.map((lang) => ({
+    params: { lang },
+    props: {
+      lang,
+      stages: ordered.map((s) => ({
+        url: stagePath(lang, s.id),
+        label: s.data.i18n[lang].h1,
+        distanceKm: s.data.distanceKm,
+        difficulty: s.data.difficulty,
+      })),
+      logistics: logistics.map((l) => ({ url: logisticsPath(lang, l.id), label: l.data.i18n[lang].h1 })),
+    },
+  }));
+}
+
+type StageCard = { url: string; label: string; distanceKm: number; difficulty: 'easy' | 'moderate' | 'hard' };
+type Link = { url: string; label: string };
+const { lang, stages, logistics } = Astro.props as { lang: Lang; stages: StageCard[]; logistics: Link[] };
+const ui = UI[lang];
+const PAGE_PATH = hubPath(lang);
+const i18nUrls = { en: `${SITE_URL}${hubPath('en')}`, es: `${SITE_URL}${hubPath('es')}`, pt: `${SITE_URL}${hubPath('pt')}` };
+
+const title =
+  lang === 'en'
+    ? 'Portuguese Coastal Camino — North Cluster Guide (Viana to Galicia, 2026)'
+    : lang === 'es'
+      ? 'Camino Portugués de la Costa — Guía del Tramo Norte (Viana a Galicia, 2026)'
+      : 'Caminho Português da Costa — Guia do Troço Norte (Viana à Galiza, 2026)';
+const description = ui.routeHubTagline;
+
+const breadcrumb = [
+  { name: ui.home, item: `/${lang}/` },
+  { name: ui.routeHub, item: PAGE_PATH },
+];
+const graph = buildClusterGraph({
+  lang,
+  pagePath: PAGE_PATH,
+  title,
+  description,
+  breadcrumb,
+  entity: {
+    '@type': 'ItemList',
+    name: ui.routeHub,
+    itemListElement: stages.map((s, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: s.label,
+      url: `${SITE_URL}${s.url}`,
+    })),
+  },
+});
+const ferry = ferryPath(lang);
+---
+
+<MainLayout title={title} description={description} lang={lang} schemaType="none" i18nUrls={i18nUrls}>
+  <script type="application/ld+json" set:html={JSON.stringify(graph)} />
+
+  <div class="bg-gradient-to-br from-slate-800 via-slate-800 to-forest-950 text-white">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-14 md:py-20">
+      <nav aria-label="Breadcrumb" class="mb-5">
+        <ol class="flex items-center gap-2 text-sm text-slate-400">
+          <li><a href={`/${lang}/`} class="hover:text-white no-underline hover:underline">{ui.home}</a></li>
+          <li aria-hidden="true" class="text-slate-600">›</li>
+          <li aria-current="page" class="text-slate-200 font-medium">{ui.routeHub}</li>
+        </ol>
+      </nav>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4 tracking-tight">{ui.routeHub}</h1>
+      <p class="text-slate-300 text-base leading-relaxed max-w-2xl">{ui.routeHubTagline}</p>
+    </div>
+  </div>
+
+  <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 space-y-10">
+    <section>
+      <h2 class="text-2xl font-bold text-forest-900 mb-5 tracking-tight">{ui.stagesHeading}</h2>
+      <div class="space-y-3">
+        {stages.map((s) => (
+          <a href={s.url} class="flex items-center justify-between gap-4 bg-white border border-slate-200 rounded-2xl p-5 no-underline hover:border-forest-300 shadow-sm">
+            <span class="font-semibold text-forest-800">{s.label}</span>
+            <span class="text-xs text-slate-500 shrink-0">{s.distanceKm} km · {ui.difficultyLabel[s.difficulty]}</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="bg-forest-50 border border-forest-200 rounded-2xl p-6">
+      <h2 class="text-base font-bold text-forest-900 mb-3">{ui.logisticsHeading}</h2>
+      <ul class="space-y-2 text-sm">
+        {logistics.map((x) => (
+          <li><a href={x.url} class="text-forest-700 hover:underline no-underline font-medium">{x.label}</a></li>
+        ))}
+        <li><a href={ferry} class="text-forest-700 hover:underline no-underline font-medium">{ui.crossingLink}</a></li>
+      </ul>
+    </section>
+  </div>
+</MainLayout>

@@ -1,0 +1,76 @@
+route: coastal
+order: 1
+from: Viana do Castelo
+to: Caminha
+distanceKm: 27.8
+ascentM: 100
+difficulty: moderate
+terrain: "Mostly flat coastal walking on the Senda Litoral boardwalk and minor roads. Surfaces are roughly 16.5 km asphalt, 8.5 km cobblestone and 3 km footpath, with one modest climb of about 100 m mid-stage."
+nextSlug: caminha-a-guarda
+townSlugs: []
+logisticsSlugs:
+  - getting-there
+sourceVerified: true
+lastVerified: "2026-06-06"
+sources:
+  - https://walkthecaminoportugues.com/coastal-route/viana-do-castelo-to-caminha/
+  - https://stingynomads.com/portuguese-coastal-camino-stages/
+  - https://www.alltrails.com/trail/portugal/viana-do-castelo/camino-portugues-coastal-viana-do-castelo-to-vila-praia-de-ancora
+i18n:
+  en:
+    metaTitle: "Viana do Castelo to Caminha: Coastal Camino Stage — Distance, Terrain & Map (2026)"
+    metaDescription: "The Viana do Castelo to Caminha stage of the Portuguese Coastal Camino: ~27.8 km of flat coastal walking, terrain and surfaces, what to expect, and how the day ends at the Minho river crossing."
+    h1: "Viana do Castelo → Caminha"
+    lead: "One of the longest flat days on the Portuguese Coastal Camino — about 27.8 km following the Atlantic shoreline north from Viana do Castelo to Caminha, the last Portuguese town before the crossing into Spain."
+    sections:
+      - heading: "Distance and difficulty"
+        body: "Roughly 27.8 km (sources vary between about 26.6 and 27.8 km). There are no hard climbs — one modest rise of around 100 m mid-stage — but the length and long cobblestone sections make it a moderate day. Allow 6–8 hours at a steady pace."
+      - heading: "Terrain and surfaces"
+        body: "Much of the route runs on the Senda Litoral, the coastal boardwalk and seafront paths, joined by minor roads. Surfaces break down to roughly 16.5 km of asphalt, 8.5 km of cobblestone and 3 km of footpath, so cushioned footwear helps on the harder sections."
+      - heading: "Ending in Caminha"
+        body: "The stage ends in Caminha at the mouth of the Minho river, facing A Guarda (Spain) across the water. Plan your onward crossing before arriving — the official ferry has been suspended, so most pilgrims continue by water taxi or take the overland detour."
+    faq:
+      - q: "How long is the Viana do Castelo to Caminha stage?"
+        a: "About 27.8 km on the Coastal Route, though some guides measure it at roughly 26.6 km. It is mostly flat, with one modest climb of around 100 m, and typically takes 6–8 hours."
+      - q: "Is the Viana do Castelo to Caminha stage hard?"
+        a: "It is rated moderate — not because of climbing, but because of its length and long cobblestone sections. With reasonable fitness it is comfortable, but cushioned footwear is recommended."
+      - q: "What happens at the end of the stage in Caminha?"
+        a: "Caminha sits on the Minho river opposite A Guarda, Spain. The official ferry is suspended, so the crossing is now made by water taxi, or you can take the overland detour via Valença and Tui."
+  es:
+    metaTitle: "Viana do Castelo a Caminha: Etapa del Camino de la Costa — Distancia y Terreno (2026)"
+    metaDescription: "La etapa Viana do Castelo–Caminha del Camino Portugués de la Costa: ~27,8 km de caminata costera llana, terreno y superficies, qué esperar y cómo termina el día en el cruce del río Miño."
+    h1: "Viana do Castelo → Caminha"
+    lead: "Uno de los días llanos más largos del Camino Portugués de la Costa — unos 27,8 km siguiendo la costa atlántica hacia el norte desde Viana do Castelo hasta Caminha, el último pueblo portugués antes del cruce a España."
+    sections:
+      - heading: "Distancia y dificultad"
+        body: "Aproximadamente 27,8 km (las fuentes varían entre unos 26,6 y 27,8 km). No hay subidas duras — solo un repecho moderado de unos 100 m a mitad de etapa — pero la longitud y los largos tramos de adoquín la convierten en una jornada moderada. Calcula 6–8 horas a buen ritmo."
+      - heading: "Terreno y superficies"
+        body: "Gran parte del recorrido va por la Senda Litoral, el paseo marítimo y caminos costeros, combinados con carreteras secundarias. Las superficies son aproximadamente 16,5 km de asfalto, 8,5 km de adoquín y 3 km de sendero, así que un calzado amortiguado ayuda en los tramos más duros."
+      - heading: "Final en Caminha"
+        body: "La etapa termina en Caminha, en la desembocadura del río Miño, frente a A Guarda (España). Planifica el cruce antes de llegar: el ferry oficial está suspendido, así que la mayoría de los peregrinos continúan en taxi-marítimo o toman el desvío terrestre."
+    faq:
+      - q: "¿Cuántos kilómetros tiene la etapa Viana do Castelo–Caminha?"
+        a: "Unos 27,8 km por la Ruta de la Costa, aunque algunas guías la miden en torno a 26,6 km. Es mayormente llana, con un repecho moderado de unos 100 m, y suele tardar 6–8 horas."
+      - q: "¿Es difícil la etapa Viana do Castelo–Caminha?"
+        a: "Se considera moderada — no por el desnivel, sino por su longitud y los largos tramos de adoquín. Con una forma física razonable es cómoda, pero se recomienda calzado amortiguado."
+      - q: "¿Qué ocurre al final de la etapa en Caminha?"
+        a: "Caminha está en el río Miño, frente a A Guarda (España). El ferry oficial está suspendido, así que el cruce se hace ahora en taxi-marítimo, o puedes tomar el desvío terrestre por Valença y Tui."
+  pt:
+    metaTitle: "Viana do Castelo a Caminha: Etapa do Caminho da Costa — Distância e Terreno (2026)"
+    metaDescription: "A etapa Viana do Castelo–Caminha do Caminho Português da Costa: ~27,8 km de caminhada costeira plana, terreno e pisos, o que esperar e como o dia termina na travessia do rio Minho."
+    h1: "Viana do Castelo → Caminha"
+    lead: "Um dos dias planos mais longos do Caminho Português da Costa — cerca de 27,8 km seguindo a costa atlântica para norte, de Viana do Castelo até Caminha, a última vila portuguesa antes da travessia para Espanha."
+    sections:
+      - heading: "Distância e dificuldade"
+        body: "Aproximadamente 27,8 km (as fontes variam entre cerca de 26,6 e 27,8 km). Não há subidas duras — apenas uma rampa moderada de cerca de 100 m a meio da etapa — mas a extensão e os longos troços de calçada tornam-na um dia moderado. Conte com 6–8 horas a bom ritmo."
+      - heading: "Terreno e pisos"
+        body: "Grande parte do percurso segue a Senda Litoral, o passadiço costeiro e caminhos junto ao mar, combinados com estradas secundárias. Os pisos são cerca de 16,5 km de asfalto, 8,5 km de calçada e 3 km de trilho, por isso calçado amortecido ajuda nos troços mais duros."
+      - heading: "Fim em Caminha"
+        body: "A etapa termina em Caminha, na foz do rio Minho, em frente a A Guarda (Espanha). Planeie a travessia antes de chegar: o ferry oficial está suspenso, por isso a maioria dos peregrinos segue de táxi fluvial ou faz o desvio terrestre."
+    faq:
+      - q: "Qual a distância da etapa Viana do Castelo–Caminha?"
+        a: "Cerca de 27,8 km pela Rota da Costa, embora alguns guias a meçam em torno de 26,6 km. É maioritariamente plana, com uma rampa moderada de cerca de 100 m, e demora normalmente 6–8 horas."
+      - q: "A etapa Viana do Castelo–Caminha é difícil?"
+        a: "É considerada moderada — não pelo desnível, mas pela extensão e pelos longos troços de calçada. Com forma física razoável é confortável, mas recomenda-se calçado amortecido."
+      - q: "O que acontece no fim da etapa, em Caminha?"
+        a: "Caminha fica no rio Minho, em frente a A Guarda (Espanha). O ferry oficial está suspenso, por isso a travessia faz-se agora de táxi fluvial, ou pode tomar o desvio terrestre via Valença e Tui."

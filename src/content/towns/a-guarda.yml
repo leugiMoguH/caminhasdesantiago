@@ -1,0 +1,91 @@
+name: A Guarda
+country: ES
+region: Pontevedra (Galicia)
+onStageSlug: caminha-a-guarda
+geo:
+  lat: 41.9026
+  lng: -8.8730
+accommodations:
+  - name: Albergue de Peregrinos de A Guarda
+    type: municipal-albergue
+    beds: 36
+    priceEUR: "10"
+    openSeason: All year
+    url: https://www.wisepilgrim.com/en/accommodations/camino-portugues/a-guarda/albergue-de-peregrinos-de-a-guarda
+  - name: Albergue O Peirao
+    type: private-albergue
+    beds: 16
+    priceEUR: "15–17"
+    openSeason: 1 Apr – 30 Oct
+    url: https://wisepilgrim.com/en/accommodations/camino-portugues/a-guarda/albergue-o-peirao
+services:
+  - Pilgrim albergues (municipal + private)
+  - Credential stamp (sello)
+  - Restaurants and cafés
+  - Supermarkets
+  - ATMs
+  - Pharmacy
+sourceVerified: true
+lastVerified: "2026-06-06"
+sources:
+  - https://www.wisepilgrim.com/en/accommodations/camino-portugues/a-guarda/albergue-de-peregrinos-de-a-guarda
+  - https://viajecaminodesantiago.com/en/portuguese-way-along-the-coast/pilgrims-hostel-in-a-guarda/
+  - https://wisepilgrim.com/en/accommodations/camino-portugues/a-guarda/albergue-o-peirao
+i18n:
+  en:
+    metaTitle: "A Guarda for Pilgrims — Albergues, Services & the Coastal Camino (2026)"
+    metaDescription: "A Guarda, Galicia: the first Spanish town on the Portuguese Coastal Camino after the Minho crossing. Pilgrim albergues (municipal 36 beds €10, O Peirao 16 beds), services, and onward route."
+    h1: "A Guarda"
+    lead: "A Guarda (O Garda) is the first Spanish town on the Portuguese Coastal Camino, reached by crossing the Minho river from Caminha. A working fishing town in Pontevedra, Galicia, it is the natural overnight stop after the crossing."
+    sections:
+      - heading: "Where pilgrims stay"
+        body: "The municipal Albergue de Peregrinos de A Guarda has 36 beds at €10, open all year, on the site of the old Manuel Rodríguez Sinde school, with laundry, kitchen/fridge, dining room and Wi‑Fi. The private Albergue O Peirao has 16 beds at €15–17 and opens 1 April to 30 October."
+      - heading: "Services in town"
+        body: "As a town of around 10,000, A Guarda has restaurants and cafés, supermarkets, ATMs and a pharmacy. Get your credential stamped at the albergue, and remember Spain runs one hour ahead of Portugal."
+      - heading: "Continuing the Camino"
+        body: "From A Guarda the yellow arrows lead north along the Galician coast toward Oia and Baiona. The first stretch follows the shoreline before climbing inland."
+    faq:
+      - q: "Where can pilgrims stay in A Guarda?"
+        a: "The municipal Albergue de Peregrinos de A Guarda (36 beds, €10, open all year) and the private Albergue O Peirao (16 beds, €15–17, open 1 April–30 October) both serve Camino pilgrims."
+      - q: "How do you reach A Guarda on the Coastal Camino?"
+        a: "By crossing the Minho river from Caminha, Portugal — currently by water taxi, as the official ferry is suspended — then walking about 1.5 km from the Camposancos landing into A Guarda."
+      - q: "Does A Guarda have shops and ATMs?"
+        a: "Yes. A Guarda is a town of roughly 10,000 with restaurants, supermarkets, ATMs and a pharmacy, plus credential stamps at the pilgrim albergue."
+  es:
+    metaTitle: "A Guarda para Peregrinos — Albergues, Servicios y el Camino de la Costa (2026)"
+    metaDescription: "A Guarda, Galicia: el primer pueblo español del Camino Portugués de la Costa tras el cruce del Miño. Albergues (municipal 36 plazas 10 €, O Peirao 16 plazas), servicios y ruta de continuación."
+    h1: "A Guarda"
+    lead: "A Guarda (O Garda) es el primer pueblo español del Camino Portugués de la Costa, al que se llega cruzando el río Miño desde Caminha. Villa pesquera de Pontevedra (Galicia), es la parada natural para pernoctar tras el cruce."
+    sections:
+      - heading: "Dónde duermen los peregrinos"
+        body: "El Albergue de Peregrinos de A Guarda (municipal) tiene 36 plazas a 10 €, abierto todo el año, en el antiguo colegio Manuel Rodríguez Sinde, con lavandería, cocina/nevera, comedor y Wi‑Fi. El Albergue O Peirao (privado) tiene 16 plazas a 15–17 € y abre del 1 de abril al 30 de octubre."
+      - heading: "Servicios en el pueblo"
+        body: "Como localidad de unos 10.000 habitantes, A Guarda cuenta con restaurantes y cafeterías, supermercados, cajeros y farmacia. Sella tu credencial en el albergue y recuerda que España va una hora por delante de Portugal."
+      - heading: "Continuar el Camino"
+        body: "Desde A Guarda las flechas amarillas llevan hacia el norte por la costa gallega rumbo a Oia y Baiona. El primer tramo sigue la línea de costa antes de subir hacia el interior."
+    faq:
+      - q: "¿Dónde pueden alojarse los peregrinos en A Guarda?"
+        a: "El Albergue de Peregrinos de A Guarda (municipal, 36 plazas, 10 €, todo el año) y el Albergue O Peirao (privado, 16 plazas, 15–17 €, del 1 de abril al 30 de octubre)."
+      - q: "¿Cómo se llega a A Guarda en el Camino de la Costa?"
+        a: "Cruzando el río Miño desde Caminha (Portugal) — actualmente en taxi-marítimo, ya que el ferry oficial está suspendido — y caminando unos 1,5 km desde el desembarco de Camposancos hasta A Guarda."
+      - q: "¿Tiene A Guarda tiendas y cajeros?"
+        a: "Sí. A Guarda es un pueblo de unos 10.000 habitantes con restaurantes, supermercados, cajeros y farmacia, además de sellos en el albergue de peregrinos."
+  pt:
+    metaTitle: "A Guarda para Peregrinos — Albergues, Serviços e o Caminho da Costa (2026)"
+    metaDescription: "A Guarda, Galiza: a primeira vila espanhola do Caminho Português da Costa após a travessia do Minho. Albergues (municipal 36 camas 10 €, O Peirao 16 camas), serviços e percurso seguinte."
+    h1: "A Guarda"
+    lead: "A Guarda (O Garda) é a primeira vila espanhola do Caminho Português da Costa, alcançada atravessando o rio Minho a partir de Caminha. Vila piscatória de Pontevedra (Galiza), é a paragem natural para pernoitar após a travessia."
+    sections:
+      - heading: "Onde os peregrinos ficam"
+        body: "O Albergue de Peregrinos de A Guarda (municipal) tem 36 camas a 10 €, aberto todo o ano, no antigo colégio Manuel Rodríguez Sinde, com lavandaria, cozinha/frigorífico, sala de refeições e Wi‑Fi. O Albergue O Peirao (privado) tem 16 camas a 15–17 € e abre de 1 de abril a 30 de outubro."
+      - heading: "Serviços na vila"
+        body: "Como localidade de cerca de 10.000 habitantes, A Guarda tem restaurantes e cafés, supermercados, multibancos e farmácia. Carimbe a sua credencial no albergue e lembre-se de que a Espanha está uma hora à frente de Portugal."
+      - heading: "Continuar o Caminho"
+        body: "A partir de A Guarda as setas amarelas seguem para norte pela costa galega em direção a Oia e Baiona. O primeiro troço acompanha a linha de costa antes de subir para o interior."
+    faq:
+      - q: "Onde podem ficar os peregrinos em A Guarda?"
+        a: "O Albergue de Peregrinos de A Guarda (municipal, 36 camas, 10 €, todo o ano) e o Albergue O Peirao (privado, 16 camas, 15–17 €, de 1 de abril a 30 de outubro)."
+      - q: "Como se chega a A Guarda no Caminho da Costa?"
+        a: "Atravessando o rio Minho a partir de Caminha (Portugal) — atualmente de táxi fluvial, já que o ferry oficial está suspenso — e caminhando cerca de 1,5 km desde o desembarque de Camposancos até A Guarda."
+      - q: "A Guarda tem lojas e multibancos?"
+        a: "Sim. A Guarda é uma vila de cerca de 10.000 habitantes com restaurantes, supermercados, multibancos e farmácia, além de carimbos no albergue de peregrinos."

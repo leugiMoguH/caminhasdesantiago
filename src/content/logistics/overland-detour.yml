@@ -1,0 +1,95 @@
+topic: overland-detour
+relatedStageSlugs:
+  - caminha-a-guarda
+relatedTownSlugs: []
+sourceVerified: true
+lastVerified: "2026-06-06"
+sources:
+  - https://pilgrimsofthecoast.com/en/portuguese-coastal-camino-ferry-guide/
+  - https://wisepilgrim.com/en/places/portugal/camino-portugues/water-taxi-from-caminha-to-a-guarda
+  - https://www.cp.pt/
+i18n:
+  en:
+    metaTitle: "Caminha Ferry Closed? The Valença–Tui Overland Detour (2026)"
+    metaDescription: "When no boat crosses the Minho at Caminha, the guaranteed alternative is the overland detour: train Caminha → Valença, then walk across the Tui–Valença bridge into Spain. Step-by-step."
+    h1: "The Valença–Tui overland detour"
+    lead: "When weather or siltation stops every boat at Caminha, this is the crossing that always works: a short train to Valença, then over the international bridge to Tui on foot. It switches you from the Coastal to the Interior route, but both reach Santiago."
+    sections:
+      - heading: "When to use it"
+        body: "Use the detour whenever no water taxi is running — in bad weather, in winter, or during heavy siltation. The Tui–Valença bridge is open to pedestrians 24 hours a day, so unlike the boat it is never cancelled."
+      - heading: "What it changes"
+        body: "Crossing at Tui puts you on the Camino Portugués Interior rather than the Coastal Route. Most pilgrims caught by a closure simply continue on the Interior Way north toward O Porriño and Santiago."
+    howTo:
+      - name: "Walk to Caminha station"
+        text: "From the town centre, walk about 5 minutes (roughly 400 m south of the main square) to Caminha railway station."
+      - name: "Take the train to Valença"
+        text: "Board a CP Linha do Minho train to Valença. The journey takes about 35 minutes; buy tickets at the station window or machine and check departure times at cp.pt."
+      - name: "Walk through Valença to the bridge"
+        text: "From Valença station, walk north through the walled fortress town to the international bridge — roughly 20 minutes."
+      - name: "Cross the Tui–Valença bridge on foot"
+        text: "Cross the Ponte Internacional on its pedestrian path (about 1.5 km) into Tui, Spain. The currency stays euros; Spain is one hour ahead."
+      - name: "Pick up the Interior route in Tui"
+        text: "From the bridge, the Camino Portugués Interior yellow arrows begin immediately. Get your credential stamped at Tui Cathedral before continuing north."
+    faq:
+      - q: "Is the Valença–Tui bridge always open?"
+        a: "Yes. The Tui–Valença international bridge has a pedestrian path and is open 24 hours a day, all year — which is why it is the reliable fallback when boats are not crossing at Caminha."
+      - q: "How long does the overland detour take?"
+        a: "Roughly 35 minutes by train from Caminha to Valença, plus about 20 minutes to walk to the bridge and another 20 minutes to cross into Tui."
+      - q: "Does the detour change my route?"
+        a: "Yes. Crossing at Tui moves you from the Camino Portugués Coastal Route to the Interior Route. Both lead to Santiago de Compostela."
+  es:
+    metaTitle: "¿Ferry de Caminha Cerrado? El Desvío Terrestre Valença–Tui (2026)"
+    metaDescription: "Cuando ningún barco cruza el Miño en Caminha, la alternativa garantizada es el desvío terrestre: tren Caminha → Valença y cruzar a pie el puente Tui–Valença. Paso a paso."
+    h1: "El desvío terrestre Valença–Tui"
+    lead: "Cuando el tiempo o la sedimentación detienen todos los barcos en Caminha, este es el cruce que siempre funciona: un tren corto a Valença y luego el puente internacional hasta Tui a pie. Te pasa de la Costa al Interior, pero ambos llegan a Santiago."
+    sections:
+      - heading: "Cuándo usarlo"
+        body: "Usa el desvío siempre que no haya taxi-marítimo — con mal tiempo, en invierno o con fuerte sedimentación. El puente Tui–Valença está abierto a peatones 24 horas, así que, a diferencia del barco, nunca se cancela."
+      - heading: "Qué cambia"
+        body: "Cruzar en Tui te sitúa en el Camino Portugués Interior en lugar de la Ruta de la Costa. La mayoría de los peregrinos afectados por un cierre continúan por el Interior hacia O Porriño y Santiago."
+    howTo:
+      - name: "Camina a la estación de Caminha"
+        text: "Desde el centro, camina unos 5 minutos (unos 400 m al sur de la plaza principal) hasta la estación de tren de Caminha."
+      - name: "Toma el tren a Valença"
+        text: "Sube a un tren CP Linha do Minho hacia Valença. El trayecto dura unos 35 minutos; compra el billete en la taquilla o máquina y consulta horarios en cp.pt."
+      - name: "Cruza Valença hasta el puente"
+        text: "Desde la estación de Valença, camina hacia el norte por la ciudad fortificada hasta el puente internacional — unos 20 minutos."
+      - name: "Cruza a pie el puente Tui–Valença"
+        text: "Cruza el Puente Internacional por su paso peatonal (unos 1,5 km) hasta Tui, España. La moneda sigue siendo el euro; España va una hora por delante."
+      - name: "Retoma la ruta Interior en Tui"
+        text: "Desde el puente, las flechas amarillas del Camino Portugués Interior empiezan de inmediato. Sella tu credencial en la Catedral de Tui antes de seguir hacia el norte."
+    faq:
+      - q: "¿El puente Valença–Tui está siempre abierto?"
+        a: "Sí. El puente internacional Tui–Valença tiene paso peatonal y está abierto 24 horas, todo el año — por eso es la alternativa fiable cuando no hay barcos en Caminha."
+      - q: "¿Cuánto dura el desvío terrestre?"
+        a: "Unos 35 minutos en tren de Caminha a Valença, más unos 20 minutos para llegar al puente y otros 20 para cruzar hasta Tui."
+      - q: "¿El desvío cambia mi ruta?"
+        a: "Sí. Cruzar en Tui te pasa de la Ruta de la Costa al Camino Portugués Interior. Ambos llevan a Santiago de Compostela."
+  pt:
+    metaTitle: "Ferry de Caminha Fechado? O Desvio Terrestre Valença–Tui (2026)"
+    metaDescription: "Quando nenhum barco atravessa o Minho em Caminha, a alternativa garantida é o desvio terrestre: comboio Caminha → Valença e atravessar a pé a ponte Tui–Valença. Passo a passo."
+    h1: "O desvio terrestre Valença–Tui"
+    lead: "Quando o tempo ou o assoreamento param todos os barcos em Caminha, esta é a travessia que funciona sempre: um comboio curto até Valença e depois a ponte internacional até Tui a pé. Passa-o da Costa para o Interior, mas ambos chegam a Santiago."
+    sections:
+      - heading: "Quando usar"
+        body: "Use o desvio sempre que não haja táxi fluvial — com mau tempo, no inverno ou com forte assoreamento. A ponte Tui–Valença está aberta a peões 24 horas, por isso, ao contrário do barco, nunca é cancelada."
+      - heading: "O que muda"
+        body: "Atravessar em Tui coloca-o no Caminho Português Interior em vez da Rota da Costa. A maioria dos peregrinos apanhados por um encerramento continua pelo Interior em direção a O Porriño e Santiago."
+    howTo:
+      - name: "Caminhe até à estação de Caminha"
+        text: "Do centro da vila, caminhe cerca de 5 minutos (cerca de 400 m a sul da praça principal) até à estação ferroviária de Caminha."
+      - name: "Apanhe o comboio para Valença"
+        text: "Apanhe um comboio CP Linha do Minho para Valença. A viagem demora cerca de 35 minutos; compre o bilhete na bilheteira ou máquina e confirme horários em cp.pt."
+      - name: "Atravesse Valença até à ponte"
+        text: "Da estação de Valença, caminhe para norte pela cidade fortificada até à ponte internacional — cerca de 20 minutos."
+      - name: "Atravesse a pé a ponte Tui–Valença"
+        text: "Atravesse a Ponte Internacional pelo passadiço pedonal (cerca de 1,5 km) até Tui, Espanha. A moeda continua a ser o euro; a Espanha está uma hora à frente."
+      - name: "Retome a rota Interior em Tui"
+        text: "Da ponte, as setas amarelas do Caminho Português Interior começam de imediato. Carimbe a credencial na Catedral de Tui antes de seguir para norte."
+    faq:
+      - q: "A ponte Valença–Tui está sempre aberta?"
+        a: "Sim. A ponte internacional Tui–Valença tem passadiço pedonal e está aberta 24 horas, todo o ano — por isso é a alternativa fiável quando não há barcos em Caminha."
+      - q: "Quanto demora o desvio terrestre?"
+        a: "Cerca de 35 minutos de comboio de Caminha para Valença, mais cerca de 20 minutos a pé até à ponte e outros 20 para atravessar até Tui."
+      - q: "O desvio muda o meu percurso?"
+        a: "Sim. Atravessar em Tui passa-o da Rota da Costa para o Caminho Português Interior. Ambos levam a Santiago de Compostela."

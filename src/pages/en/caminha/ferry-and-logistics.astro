@@ -1,195 +1,53 @@
 ---
 import MainLayout from '../../../layouts/MainLayout.astro';
+import { getEntry } from 'astro:content';
+import { buildFerryGraph } from '../../../lib/ferrySchema';
 
-const summerSchedule = [
-  { departs: '09:00', arrives: '09:15', direction: 'Caminha → A Guarda' },
-  { departs: '09:30', arrives: '09:45', direction: 'A Guarda → Caminha' },
-  { departs: '10:00', arrives: '10:15', direction: 'Caminha → A Guarda' },
-  { departs: '10:30', arrives: '10:45', direction: 'A Guarda → Caminha' },
-  { departs: '11:00', arrives: '11:15', direction: 'Caminha → A Guarda' },
-  { departs: '11:30', arrives: '11:45', direction: 'A Guarda → Caminha' },
-  { departs: '12:00', arrives: '12:15', direction: 'Caminha → A Guarda' },
-  { departs: '12:30', arrives: '12:45', direction: 'A Guarda → Caminha' },
-  { departs: '14:00', arrives: '14:15', direction: 'Caminha → A Guarda' },
-  { departs: '14:30', arrives: '14:45', direction: 'A Guarda → Caminha' },
-  { departs: '15:00', arrives: '15:15', direction: 'Caminha → A Guarda' },
-  { departs: '15:30', arrives: '15:45', direction: 'A Guarda → Caminha' },
-  { departs: '16:00', arrives: '16:15', direction: 'Caminha → A Guarda' },
-  { departs: '16:30', arrives: '16:45', direction: 'A Guarda → Caminha' },
-  { departs: '17:00', arrives: '17:15', direction: 'Caminha → A Guarda' },
-  { departs: '18:00', arrives: '18:15', direction: 'Caminha → A Guarda' },
-  { departs: '18:30', arrives: '18:45', direction: 'A Guarda → Caminha' },
-  { departs: '19:00', arrives: '19:15', direction: 'Caminha → A Guarda' },
-];
+const LANG = 'en' as const;
+const PAGE_PATH = '/en/caminha/ferry-and-logistics/';
 
-const trainAlternative = [
-  { from: 'Caminha', to: 'Viana do Castelo', duration: '~20 min', approxFare: '€2.50', frequency: 'Hourly (weekdays)' },
-  { from: 'Viana do Castelo', to: 'Valença', duration: '~55 min', approxFare: '€3.60 (Caminha→Valença direct)', frequency: 'Roughly hourly on weekdays; reduced weekends' },
-  { from: 'Valença', to: 'Tui (walk)', duration: '~25 min on foot', approxFare: 'Free', frequency: 'Bridge open 24/7' },
-];
+// Single source of truth — all ferry facts come from src/content/crossing/ferry.yml
+const entry = await getEntry('crossing', 'caminha-a-guarda');
+const f = entry!.data;
+const t = f.i18n[LANG];
 
-const faqItems = [
-  {
-    question: 'How much does the Caminha to A Guarda ferry cost?',
-    answer: 'The ferry from Caminha to A Guarda costs €2.50 per adult one-way. A return ticket is €5.00. Bicycles incur an additional €1.50 charge on top of the passenger fare. Children under 4 travel free; children 4–12 pay €1.50.',
-  },
-  {
-    question: 'What are the ferry times from Caminha to A Guarda?',
-    answer: 'In summer (April–October), the ferry runs approximately every 30–60 minutes from 09:00 to 19:00, daily in both directions. In winter (November–March), service is reduced to weekends and public holidays only, with departures around 10:00, 12:00, and 16:00. Always verify current times directly with the ferry operator before your crossing.',
-  },
-  {
-    question: 'What is the assoreamento problem with the Caminha ferry?',
-    answer: 'The Minho river estuary periodically suffers from assoreamento (siltation) — the gradual build-up of sand and sediment at the river mouth. When siltation is severe, the Santa Rita de Cássia ferry boat cannot approach the standard dock, causing service suspensions that can last days or weeks. When this happens, pilgrims can use Xávegas water taxis (€5–6 per person) or take the overland train to Valença and walk across the Tui bridge.',
-  },
-  {
-    question: 'What are the alternatives if the Caminha ferry is not running?',
-    answer: 'Two main alternatives exist: (1) Xávegas or taxi-marítimo: smaller water taxis operated by local fishermen, able to cross in shallower water. Rate approximately €5–6 per person. Contact the Caminha tourist office (+351 258 921 952) for current operator contacts. (2) Overland via Valença–Tui: take the CP Minho line train from Caminha to Valença (~35 minutes, ~€3.60), then walk 1.5 km across the international Tui–Valença bridge.',
-  },
-  {
-    question: 'How do I get from Caminha to A Guarda by train?',
-    answer: 'There is no direct train from Caminha to A Guarda. The overland alternative is: take the CP Minho line train from Caminha to Valença (~35 minutes, ~€3.60 one-way). From Valença station, walk to the Tui–Valença international bridge (approx 1 km) and cross on foot into Tui, Spain (~25 minutes walk). From Tui, follow the Camino Portugués Interior waymarks. Note: this route changes you from the Coastal Route to the Interior Route.',
-  },
+// Map shared facts into this page's existing template shapes (prose stays inline).
+const summerSchedule = f.summerSchedule;
+const trainAlternative = t.trainDetour.map((r) => ({
+  from: r.from,
+  to: r.to,
+  duration: r.duration,
+  approxFare: r.fare,
+  frequency: r.frequency,
+}));
+const faqItems = t.faq.map((x) => ({ question: x.q, answer: x.a }));
+const fares = f.officialFerry.fares.map((row) => ({
+  type: t.fareLabels[row.key],
+  price: row.priceEUR === 0 ? 'Free' : `€${row.priceEUR.toFixed(2)}`,
+  note: t.fareNotes[row.key],
+}));
+
+// Key-fact icons stay in the template; values/labels come from data.
+const FACT_ICONS = [
+  `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
+  `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg>`,
+  `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`,
+  `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>`,
 ];
+const keyFacts = t.keyFacts.map((kf, i) => ({ icon: FACT_ICONS[i], value: kf.value, label: kf.label }));
+
+const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
 ---
 
 <MainLayout
-  title="Caminha to A Guarda Ferry — Schedule, Alternatives & Siltation Warnings"
-  description="Complete guide to the Caminha–A Guarda Minho river crossing. Summer/winter timetables, fare table, the real story on seasonal siltation (assoreamento), Xávegas water taxi alternatives, and the overland train detour via Valença–Tui."
+  title={t.metaTitle}
+  description={t.metaDescription}
   lang="en"
   schemaType="none"
 >
 
-  <!-- JSON-LD: unified @graph -->
-  <script type="application/ld+json" is:inline>
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://waytosantiagoguide.com/#organization",
-        "name": "Way to Santiago Guide",
-        "url": "https://waytosantiagoguide.com",
-        "logo": { "@type": "ImageObject", "url": "https://waytosantiagoguide.com/logo.png" }
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://waytosantiagoguide.com/#website",
-        "url": "https://waytosantiagoguide.com",
-        "name": "Way to Santiago Guide"
-      },
-      {
-        "@type": "WebPage",
-        "@id": "https://waytosantiagoguide.com/en/caminha/ferry-and-logistics/#webpage",
-        "url": "https://waytosantiagoguide.com/en/caminha/ferry-and-logistics/",
-        "name": "Caminha to A Guarda Ferry — Schedule, Alternatives & Siltation Warnings | Way to Santiago Guide",
-        "description": "Complete guide to the Caminha–A Guarda Minho river crossing. Summer/winter timetables, fare table, the real story on seasonal siltation (assoreamento), Xávegas water taxi alternatives, and the overland train detour via Valença–Tui.",
-        "inLanguage": "en-GB",
-        "isPartOf": { "@id": "https://waytosantiagoguide.com/#website" },
-        "about": { "@id": "https://waytosantiagoguide.com/#organization" },
-        "breadcrumb": { "@id": "https://waytosantiagoguide.com/en/caminha/ferry-and-logistics/#breadcrumb" }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://waytosantiagoguide.com/en/caminha/ferry-and-logistics/#breadcrumb",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://waytosantiagoguide.com/en/" },
-          { "@type": "ListItem", "position": 2, "name": "Caminha Guide", "item": "https://waytosantiagoguide.com/en/caminha-guide/" },
-          { "@type": "ListItem", "position": 3, "name": "Ferry & Logistics", "item": "https://waytosantiagoguide.com/en/caminha/ferry-and-logistics/" }
-        ]
-      },
-      {
-        "@type": "TouristAttraction",
-        "@id": "https://waytosantiagoguide.com/en/caminha/ferry-and-logistics/#ferry",
-        "name": "Caminha to A Guarda Ferry Crossing — Minho River",
-        "description": "The Caminha–A Guarda ferry crosses the Minho River, connecting Portugal and Spain on the Camino de Santiago Coastal Route. The crossing takes approximately 15 minutes. Operated seasonally (April–October daily service). Fare: €2.50 per adult one-way. Departure point: Cais de Caminha, 4910 Caminha, Portugal.",
-        "url": "https://waytosantiagoguide.com/en/caminha/ferry-and-logistics/",
-        "touristType": "Pilgrim",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Cais de Caminha",
-          "addressLocality": "Caminha",
-          "postalCode": "4910",
-          "addressCountry": "PT"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 41.8734,
-          "longitude": -8.8358
-        },
-        "openingHoursSpecification": [
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-            "opens": "09:00",
-            "closes": "19:15",
-            "validFrom": "2026-04-01",
-            "validThrough": "2026-10-31"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://waytosantiagoguide.com/en/caminha/ferry-and-logistics/#faq",
-        "mainEntityOfPage": { "@id": "https://waytosantiagoguide.com/en/caminha/ferry-and-logistics/#webpage" },
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How much does the Caminha to A Guarda ferry cost?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The ferry from Caminha to A Guarda costs €2.50 per adult one-way. A return ticket is €5.00. Bicycles incur an additional €1.50 charge on top of the passenger fare. Children under 4 travel free; children 4–12 pay €1.50."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What are the ferry times from Caminha to A Guarda?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "In summer (April–October), the ferry runs approximately every 30–60 minutes from 09:00 to 19:00, daily in both directions between Caminha and A Guarda. In winter (November–March), service is reduced to weekends and public holidays only, with departures around 10:00, 12:00, and 16:00. Always verify current times directly with the ferry operator before your crossing."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What is the assoreamento problem with the Caminha ferry?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The Minho river estuary periodically suffers from assoreamento (siltation) — the gradual build-up of sand and sediment at the river mouth. When siltation is severe, the Santa Rita de Cássia ferry boat cannot approach the standard dock, causing service suspensions that can last days or weeks. This typically occurs after dry periods (low river flow) or following major Atlantic storms that shift the estuary sandbanks. When this happens, pilgrims can use Xávegas water taxis (smaller flat-bottomed boats, €5–6 per person) or take the overland train to Valença and walk across the Tui bridge."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What are the alternatives if the Caminha ferry is not running?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Two main alternatives exist when the standard ferry is suspended: (1) Xávegas or taxi-marítimo: smaller water taxis operated by local fishermen, able to cross in shallower water. Rate approximately €5–6 per person. Contact the Caminha tourist office (+351 258 921 952) for current operator contacts. (2) Overland via Valença–Tui: take the CP Minho line train from Caminha to Valença (~35 minutes, ~€3.60), then walk 1.5 km across the international Tui–Valença bridge. This connects you to the Portuguese Interior Camino route."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How do I get from Caminha to A Guarda by train?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "There is no direct train from Caminha to A Guarda. The overland alternative is: take the CP Minho line train from Caminha to Valença (~35 minutes, ~€3.60 one-way). From Valença station, walk to the Tui–Valença international bridge (approx 1 km) and cross on foot into Tui, Spain (~25 minutes walk). From Tui, follow the Camino Portugués Interior waymarks, or take a taxi to A Guarda (approx 30 km by road). Note: this route changes you from the Coastal Route to the Interior Route."
-            }
-          }
-        ]
-      },
-      {
-        "@type": "SpecialAnnouncement",
-        "@id": "https://waytosantiagoguide.com/en/caminha/ferry-and-logistics/#siltation-warning",
-        "name": "Caminha–A Guarda Ferry: Seasonal Siltation (Assoreamento) Disruption Risk",
-        "text": "The Caminha–A Guarda ferry (Santa Rita de Cássia) is subject to recurring seasonal assoreamento (river mouth siltation) that can suspend service without advance notice, including during peak pilgrim season (April–October). When the service is suspended, alternatives include Xávegas water taxis (€5–6 per person) operated by local fishermen, or the overland train from Caminha to Valença then walking across the Tui–Valença bridge. Pilgrims should verify crossing status the evening before departure.",
-        "datePosted": "2026-01-01",
-        "url": "https://waytosantiagoguide.com/en/caminha/ferry-and-logistics/#assoreamento",
-        "spatialCoverage": {
-          "@type": "Place",
-          "name": "Caminha, Portugal",
-          "geo": { "@type": "GeoCoordinates", "latitude": 41.8734, "longitude": -8.8358 }
-        }
-      }
-    ]
-  }
-  </script>
+  <!-- JSON-LD: generated from ferry.yml (single source of truth — UI and schema cannot diverge) -->
+  <script type="application/ld+json" set:html={JSON.stringify(ferryGraph)} />
 
   <!-- ── HERO HEADER ──────────────────────────────────────────────────────────── -->
   <div class="bg-gradient-to-br from-slate-800 via-slate-800 to-forest-950 text-white">
@@ -210,28 +68,7 @@ const faqItems = [
 
       <!-- Key facts strip with SVG icons -->
       <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4">
-        {[
-          {
-            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
-            value: '~15 min',
-            label: 'Crossing time',
-          },
-          {
-            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg>`,
-            value: '€2.50',
-            label: 'One-way fare',
-          },
-          {
-            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`,
-            value: 'Apr–Oct',
-            label: 'Daily service',
-          },
-          {
-            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>`,
-            value: 'Cais de Caminha',
-            label: 'Departure point',
-          },
-        ].map(({ icon, value, label }) => (
+        {keyFacts.map(({ icon, value, label }) => (
           <div class="bg-white/10 backdrop-blur-sm border border-white/10 rounded-2xl p-4 text-center hover:bg-white/15 transition-colors">
             <div class="flex justify-center mb-2 text-earth-400" aria-hidden="true" set:html={icon} />
             <div class="text-lg font-bold text-white">{value}</div>
@@ -317,13 +154,7 @@ const faqItems = [
                 </tr>
               </thead>
               <tbody>
-                {[
-                  { type: 'Adult (one-way)', price: '€2.50', note: 'Pilgrims pay standard adult fare' },
-                  { type: 'Child under 4', price: 'Free', note: 'No seat allocation' },
-                  { type: 'Child 4–12', price: '€1.50', note: 'ID or passport may be requested' },
-                  { type: 'Bicycle', price: '€1.50', note: 'Additional charge on top of passenger fare' },
-                  { type: 'Return ticket', price: '€5.00', note: 'Slight saving vs two singles' },
-                ].map((row, i) => (
+                {fares.map((row, i) => (
                   <tr class={i % 2 === 0 ? 'bg-white' : 'bg-slate-50/70'}>
                     <td class="px-5 py-3 font-medium text-slate-800">{row.type}</td>
                     <td class="px-5 py-3 font-mono font-bold text-forest-700">{row.price}</td>
