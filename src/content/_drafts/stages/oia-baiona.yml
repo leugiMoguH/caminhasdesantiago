@@ -1,0 +1,49 @@
+# DRAFT — verify facts + complete es/pt before moving to src/content/stages/
+route: coastal
+order: 4
+from: Oia
+to: Baiona
+distanceKm: 18
+difficulty: moderate # TODO verify
+terrain: "TODO — verify surfaces and profile against gronze.com + stingynomads."
+prevSlug: a-guarda-oia
+nextSlug: baiona-vigo
+townSlugs: []
+logisticsSlugs: []
+sourceVerified: false # flip to true after verification — build-gated
+lastVerified: "TODO"
+sources:
+  - https://stingynomads.com/portuguese-coastal-camino-stages/
+  # TODO add: gronze.com stage page + one more source
+i18n:
+  en:
+    metaTitle: "Oia to Baiona (18 km): Coastal Camino Stage Guide (2026)"
+    metaDescription: "TODO"
+    h1: "Oia → Baiona"
+    lead: "TODO"
+    sections:
+      - heading: "Distance and difficulty"
+        body: "TODO"
+      - heading: "Route and variants"
+        body: "TODO"
+      - heading: "The stage, section by section"
+        body: "TODO"
+      - heading: "Arriving in Baiona"
+        body: "TODO"
+    faq:
+      - q: "How long is the Oia to Baiona stage?"
+        a: "TODO"
+  es:
+    metaTitle: "TODO"
+    metaDescription: "TODO"
+    h1: "Oia → Baiona"
+    lead: "TODO"
+    sections: []
+    faq: []
+  pt:
+    metaTitle: "TODO"
+    metaDescription: "TODO"
+    h1: "Oia → Baiona"
+    lead: "TODO"
+    sections: []
+    faq: []

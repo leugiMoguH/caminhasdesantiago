@@ -1,0 +1,49 @@
+# DRAFT — verify facts + complete es/pt before moving to src/content/stages/
+route: coastal
+order: 8
+from: Pontevedra
+to: Caldas de Reis
+distanceKm: 21
+difficulty: moderate # TODO verify
+terrain: "TODO — verify surfaces and profile against gronze.com + stingynomads."
+prevSlug: redondela-pontevedra
+nextSlug: caldas-de-reis-padron
+townSlugs: []
+logisticsSlugs: []
+sourceVerified: false # flip to true after verification — build-gated
+lastVerified: "TODO"
+sources:
+  - https://stingynomads.com/portuguese-coastal-camino-stages/
+  # TODO add: gronze.com stage page + one more source
+i18n:
+  en:
+    metaTitle: "Pontevedra to Caldas de Reis (21 km): Coastal Camino Stage Guide (2026)"
+    metaDescription: "TODO"
+    h1: "Pontevedra → Caldas de Reis"
+    lead: "TODO"
+    sections:
+      - heading: "Distance and difficulty"
+        body: "TODO"
+      - heading: "Route and variants"
+        body: "TODO"
+      - heading: "The stage, section by section"
+        body: "TODO"
+      - heading: "Arriving in Caldas de Reis"
+        body: "TODO"
+    faq:
+      - q: "How long is the Pontevedra to Caldas de Reis stage?"
+        a: "TODO"
+  es:
+    metaTitle: "TODO"
+    metaDescription: "TODO"
+    h1: "Pontevedra → Caldas de Reis"
+    lead: "TODO"
+    sections: []
+    faq: []
+  pt:
+    metaTitle: "TODO"
+    metaDescription: "TODO"
+    h1: "Pontevedra → Caldas de Reis"
+    lead: "TODO"
+    sections: []
+    faq: []

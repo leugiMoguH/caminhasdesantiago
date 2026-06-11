@@ -7,6 +7,7 @@ const i18nBlock = z.object({
   metaDescription: z.string(),
   breadcrumb: z.array(z.object({ name: z.string(), item: z.string() })),
   keyFacts: z.array(z.object({ value: z.string(), label: z.string() })),
+  operatorLabels: z.record(z.string()),
   fareLabels: z.record(z.string()),
   fareNotes: z.record(z.string()),
   tips: z.array(z.string()),
@@ -46,11 +47,33 @@ const crossing = defineCollection({
       bikeEUR: z.number(),
       note: z.string(),
     }),
+    // Licensed water-taxi operators running the daily crossing (current season).
+    scheduledOperators: z.array(
+      z.object({
+        name: z.string(),
+        frequency: z.string(),
+        hours: z.string(),
+        adultEUR: z.number(),
+        bikeEUR: z.number(),
+        phone: z.string().optional(),
+        url: z.string().url().optional(),
+        booking: z.enum(['online', 'phone-or-dock']),
+        note: z.string().optional(),
+      }),
+    ),
     officialFerry: z.object({
       vessel: z.string(),
-      suspendedSince: z.string(),
+      stoppedSince: z.string(),
       fares: z.array(z.object({ key: z.string(), priceEUR: z.number() })),
     }),
+    // Announced municipal replacement ferry (not yet operating).
+    upcomingFerry: z.object({
+      expectedSeason: z.string(),
+      capacityPassengers: z.string(),
+      status: z.literal('announced'),
+      note: z.string(),
+    }),
+    // Legacy informal fishermen water taxis — fallback reference only.
     operators: z.array(z.object({ name: z.string(), phone: z.string() })),
     contacts: z.object({
       touristOfficePhone: z.string(),
@@ -58,9 +81,6 @@ const crossing = defineCollection({
       ferryOperatorPhone: z.string(),
       ferryOperatorAddress: z.string(),
     }),
-    summerSchedule: z.array(
-      z.object({ departs: z.string(), arrives: z.string(), direction: z.string() }),
-    ),
     i18n: z.object({ en: i18nBlock, es: i18nBlock, pt: i18nBlock }),
   }),
 });

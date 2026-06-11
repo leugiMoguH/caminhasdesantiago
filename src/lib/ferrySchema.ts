@@ -9,19 +9,19 @@ const SITE_NAME = 'Way to Santiago Guide';
 const LANG_TAG: Record<Lang, string> = { en: 'en-GB', es: 'es-ES', pt: 'pt-PT' };
 const TOURIST_TYPE: Record<Lang, string> = { en: 'Pilgrim', es: 'Peregrino', pt: 'Peregrino' };
 
-const SUSPENSION_TEXT: Record<Lang, (f: FerryData) => string> = {
+const STATUS_TEXT: Record<Lang, (f: FerryData) => string> = {
   en: (f) =>
-    `The official ${f.officialFerry.vessel} ferry has been suspended since ${f.officialFerry.suspendedSince} due to assoreamento (Minho river-mouth siltation). The operating crossing is the ${f.currentCrossing.operator} water taxi, approximately €${f.currentCrossing.adultEUR} per adult one-way (€${f.currentCrossing.bikeEUR} with a bicycle). Departure point: ${f.route.fromDock}, ${f.route.fromPostalCode} ${f.route.fromTown}, Portugal.`,
+    `The Caminha–A Guarda crossing operates daily via licensed water taxis: Taxi Boat Peregrinos (every 30 minutes, 07:00–17:00) and ${f.currentCrossing.operator} (hourly, online booking). €${f.currentCrossing.adultEUR} per adult one-way, ~${f.crossingMinutes} minutes. The historical ${f.officialFerry.vessel} ferry stopped in ${f.officialFerry.stoppedSince}; a new municipal ferry (${f.upcomingFerry.capacityPassengers} passengers) is announced for ${f.upcomingFerry.expectedSeason}. Departure point: ${f.route.fromDock}, ${f.route.fromPostalCode} ${f.route.fromTown}, Portugal.`,
   es: (f) =>
-    `El ferry oficial ${f.officialFerry.vessel} está suspendido desde ${f.officialFerry.suspendedSince} por el assoreamento (sedimentación de la desembocadura del Miño). El cruce en funcionamiento es el taxi-marítimo ${f.currentCrossing.operator}, aproximadamente ${f.currentCrossing.adultEUR} € por adulto (ida), u ${f.currentCrossing.bikeEUR} € con bicicleta. Punto de salida: ${f.route.fromDock}, ${f.route.fromPostalCode} ${f.route.fromTown}, Portugal.`,
+    `El cruce Caminha–A Guarda funciona a diario mediante taxi-barco autorizado: Taxi Boat Peregrinos (cada 30 minutos, 07:00–17:00) y ${f.currentCrossing.operator} (cada hora, reserva online). ${f.currentCrossing.adultEUR} € por adulto (ida), ~${f.crossingMinutes} minutos. El ferry histórico ${f.officialFerry.vessel} dejó de operar en ${f.officialFerry.stoppedSince}; hay un nuevo ferry municipal (${f.upcomingFerry.capacityPassengers} pasajeros) anunciado para el verano de 2026. Punto de salida: ${f.route.fromDock}, ${f.route.fromPostalCode} ${f.route.fromTown}, Portugal.`,
   pt: (f) =>
-    `O ferry oficial ${f.officialFerry.vessel} está suspenso desde ${f.officialFerry.suspendedSince} devido ao assoreamento (sedimentação da foz do rio Minho). A travessia em funcionamento é o táxi fluvial ${f.currentCrossing.operator}, aproximadamente €${f.currentCrossing.adultEUR} por adulto (ida), ou €${f.currentCrossing.bikeEUR} com bicicleta. Ponto de partida: ${f.route.fromDock}, ${f.route.fromPostalCode} ${f.route.fromTown}, Portugal.`,
+    `A travessia Caminha–A Guarda funciona diariamente através de táxis fluviais licenciados: Taxi Boat Peregrinos (de 30 em 30 minutos, 07:00–17:00) e ${f.currentCrossing.operator} (de hora em hora, reserva online). €${f.currentCrossing.adultEUR} por adulto (ida), ~${f.crossingMinutes} minutos. O ferry histórico ${f.officialFerry.vessel} parou em ${f.officialFerry.stoppedSince}; está anunciado um novo ferry municipal (${f.upcomingFerry.capacityPassengers} passageiros) para o verão de 2026. Ponto de partida: ${f.route.fromDock}, ${f.route.fromPostalCode} ${f.route.fromTown}, Portugal.`,
 };
 
 const ANNOUNCE_NAME: Record<Lang, string> = {
-  en: 'Caminha–A Guarda Ferry: Suspended — Use Water Taxi or Overland Detour',
-  es: 'Ferry Caminha–A Guarda: Suspendido — Usa Taxi-Marítimo o Desvío Terrestre',
-  pt: 'Ferry Caminha–A Guarda: Suspenso — Use Táxi Fluvial ou Desvio Terrestre',
+  en: 'Caminha–A Guarda Crossing: Water Taxis Operating Daily — New Ferry Expected Summer 2026',
+  es: 'Cruce Caminha–A Guarda: Taxi-Barco Diario en Funcionamiento — Nuevo Ferry Previsto Verano 2026',
+  pt: 'Travessia Caminha–A Guarda: Táxis Fluviais Diários em Funcionamento — Novo Ferry Previsto Verão 2026',
 };
 
 /**
@@ -79,7 +79,7 @@ export function buildFerryGraph(f: FerryData, lang: Lang, pagePath: string) {
             : lang === 'es'
               ? 'Cruce Caminha–A Guarda — Río Miño'
               : 'Travessia Caminha–A Guarda — Rio Minho',
-        description: SUSPENSION_TEXT[lang](f),
+        description: STATUS_TEXT[lang](f),
         url: pageUrl,
         touristType: TOURIST_TYPE[lang],
         address: {
@@ -105,9 +105,9 @@ export function buildFerryGraph(f: FerryData, lang: Lang, pagePath: string) {
         '@type': 'SpecialAnnouncement',
         '@id': `${pageUrl}#status`,
         name: ANNOUNCE_NAME[lang],
-        text: SUSPENSION_TEXT[lang](f),
+        text: STATUS_TEXT[lang](f),
         datePosted: f.lastVerified,
-        url: `${pageUrl}#assoreamento`,
+        url: `${pageUrl}#operators`,
         spatialCoverage: {
           '@type': 'Place',
           name: `${f.route.fromTown}, Portugal`,

@@ -1,0 +1,49 @@
+# DRAFT — verify facts + complete es/pt before moving to src/content/stages/
+route: coastal
+order: 7
+from: Redondela
+to: Pontevedra
+distanceKm: 19.5
+difficulty: moderate # TODO verify
+terrain: "TODO — verify surfaces and profile against gronze.com + stingynomads."
+prevSlug: vigo-redondela
+nextSlug: pontevedra-caldas-de-reis
+townSlugs: []
+logisticsSlugs: []
+sourceVerified: false # flip to true after verification — build-gated
+lastVerified: "TODO"
+sources:
+  - https://stingynomads.com/portuguese-coastal-camino-stages/
+  # TODO add: gronze.com stage page + one more source
+i18n:
+  en:
+    metaTitle: "Redondela to Pontevedra (19.5 km): Coastal Camino Stage Guide (2026)"
+    metaDescription: "TODO"
+    h1: "Redondela → Pontevedra"
+    lead: "TODO"
+    sections:
+      - heading: "Distance and difficulty"
+        body: "TODO"
+      - heading: "Route and variants"
+        body: "TODO"
+      - heading: "The stage, section by section"
+        body: "TODO"
+      - heading: "Arriving in Pontevedra"
+        body: "TODO"
+    faq:
+      - q: "How long is the Redondela to Pontevedra stage?"
+        a: "TODO"
+  es:
+    metaTitle: "TODO"
+    metaDescription: "TODO"
+    h1: "Redondela → Pontevedra"
+    lead: "TODO"
+    sections: []
+    faq: []
+  pt:
+    metaTitle: "TODO"
+    metaDescription: "TODO"
+    h1: "Redondela → Pontevedra"
+    lead: "TODO"
+    sections: []
+    faq: []

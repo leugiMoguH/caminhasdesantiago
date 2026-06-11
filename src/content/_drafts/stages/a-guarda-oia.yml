@@ -1,0 +1,53 @@
+# DRAFT — verify facts + complete es/pt before moving to src/content/stages/
+route: coastal
+order: 3
+from: A Guarda
+to: Oia
+distanceKm: 13
+ascentM: 200
+difficulty: easy
+terrain: "Coastal paths, quiet roads and short rocky sections along the open Atlantic shore; gentle undulation, no sustained climbs."
+prevSlug: caminha-a-guarda
+nextSlug: oia-baiona
+townSlugs:
+  - a-guarda
+logisticsSlugs: []
+sourceVerified: false # flip to true after verification — build-gated
+lastVerified: "TODO"
+sources:
+  - https://stingynomads.com/portuguese-coastal-camino-stages/
+  # TODO add: gronze.com stage page, pilgrim.es or galiwonders stage page
+i18n:
+  en:
+    metaTitle: "A Guarda to Oia (13 km): Coastal Camino Stage Guide (2026)"
+    metaDescription: "TODO — distance, the clifftop Atlantic walking, Oia monastery, where to sleep."
+    h1: "A Guarda → Oia"
+    lead: "TODO — first full Galician stage; wild Atlantic coastline from A Guarda to the monastery at Oia."
+    sections:
+      - heading: "Distance and difficulty"
+        body: "TODO ~13 km, easy, 3–4 hours; verify ascent."
+      - heading: "Route and variants"
+        body: "TODO official line along the PO-552 corridor vs shoreline paths."
+      - heading: "The stage, section by section"
+        body: "TODO A Guarda exit, fishing hamlets, coastal chapels, arrival at Mosteiro de Santa María de Oia."
+      - heading: "Arriving in Oia"
+        body: "TODO small village around the monastery; limited beds — verify albergue/pension options before publishing."
+    faq:
+      - q: "How long is the A Guarda to Oia stage?"
+        a: "TODO"
+      - q: "Where can I sleep in Oia?"
+        a: "TODO — verified accommodations only."
+  es:
+    metaTitle: "TODO"
+    metaDescription: "TODO"
+    h1: "A Guarda → Oia"
+    lead: "TODO"
+    sections: []
+    faq: []
+  pt:
+    metaTitle: "TODO"
+    metaDescription: "TODO"
+    h1: "A Guarda → Oia"
+    lead: "TODO"
+    sections: []
+    faq: []

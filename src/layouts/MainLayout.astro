@@ -33,6 +33,7 @@ const PATH_MAP: Record<string, { en: string; es: string; pt: string }> = {
   '/es/caminha/guia-del-peregrino/':         { en: '/en/caminha/pilgrim-guide/',               es: '/es/caminha/guia-del-peregrino/',         pt: '/pt/caminha/guia-do-peregrino/' },
   '/pt/caminha/guia-do-peregrino/':          { en: '/en/caminha/pilgrim-guide/',               es: '/es/caminha/guia-del-peregrino/',         pt: '/pt/caminha/guia-do-peregrino/' },
   '/en/sitemap/':                            { en: '/en/sitemap/',                             es: '/es/',                                    pt: '/pt/' },
+  '/en/caminha-ferry-status/':               { en: '/en/caminha-ferry-status/',                es: '/es/',                                    pt: '/pt/' },
   '/en/privacy-policy/':                     { en: '/en/privacy-policy/',                      es: '/es/politica-de-privacidad/',             pt: '/pt/politica-de-privacidade/' },
   '/es/politica-de-privacidad/':             { en: '/en/privacy-policy/',                      es: '/es/politica-de-privacidad/',             pt: '/pt/politica-de-privacidade/' },
   '/pt/politica-de-privacidade/':            { en: '/en/privacy-policy/',                      es: '/es/politica-de-privacidad/',             pt: '/pt/politica-de-privacidade/' },
@@ -85,6 +86,7 @@ const ptPath = pathEntry?.pt ?? '/pt/';
 const NO_TRANSLATION = new Set([
   '/en/caminha/vila-praia-de-ancora/',
   '/en/caminha/seixas/',
+  '/en/caminha-ferry-status/',
   '/en/sitemap/',
   '/404/',
   '/404',

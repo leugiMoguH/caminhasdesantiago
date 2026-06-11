@@ -11,7 +11,17 @@ const entry = await getEntry('crossing', 'caminha-a-guarda');
 const f = entry!.data;
 const t = f.i18n[LANG];
 
-const horarioVerano = f.summerSchedule.map((r) => ({ salida: r.departs, llegada: r.arrives, ruta: r.direction }));
+const ol = t.operatorLabels;
+const operadores = f.scheduledOperators.map((op) => ({
+  nombre: op.name,
+  frecuencia: ol[op.frequency] ?? op.frequency,
+  horario: op.hours,
+  precio: `${op.adultEUR} €`,
+  bici: `${op.bikeEUR} €`,
+  reserva: ol[op.booking] ?? op.booking,
+  telefono: op.phone,
+  url: op.url,
+}));
 const trenAlternativo = t.trainDetour.map((r) => ({ desde: r.from, hasta: r.to, duracion: r.duration, tarifa: r.fare, frecuencia: r.frequency }));
 const preguntasFrecuentes = t.faq.map((x) => ({ pregunta: x.q, respuesta: x.a }));
 const fares = f.officialFerry.fares.map((row) => ({
@@ -58,9 +68,9 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
           <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
           Camino de la Costa
         </div>
-        <h1 class="text-3xl sm:text-4xl font-bold mb-4 text-white leading-tight">Caminha → A Guarda: Ferry, Assoreamento y Alternativas</h1>
+        <h1 class="text-3xl sm:text-4xl font-bold mb-4 text-white leading-tight">Caminha → A Guarda: Ferry y Taxi-Barco — Qué Funciona en 2026</h1>
         <p class="text-slate-300 text-base leading-relaxed">
-          El cruce del río Miño entre Caminha (Portugal) y A Guarda (España) es uno de los momentos más memorables del Camino de la Costa — y uno de los más impredecibles. Un viaje en ferry de 15 minutos en condiciones normales; un problema logístico de un día entero cuando el estuario se sedimenta. Esta página cubre ambas realidades.
+          El cruce del río Miño entre Caminha (Portugal) y A Guarda (España) funciona a diario. Dos servicios de taxi-barco autorizados sustituyeron al antiguo ferry: hay salidas cada 30 minutos en temporada, la travesía dura unos 10 minutos y hay un nuevo ferry municipal previsto para el verano de 2026. Esta página cubre operadores, precios, reservas y la alternativa terrestre.
         </p>
       </div>
 
@@ -92,57 +102,76 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
             </div>
             <div>
-              <h2 class="font-bold text-amber-900 mb-1">Aviso sobre Horarios</h2>
+              <h2 class="font-bold text-amber-900 mb-1">Verificado en junio de 2026</h2>
               <p class="text-sm text-amber-800 leading-relaxed">
-                Los horarios que se muestran son orientativos y se verificaron por última vez en la temporada 2024. Los horarios del ferry cambian por temporada y sin previo aviso. <strong>Confirma siempre el horario actual directamente con la naviera antes de tu travesía.</strong> Consulta también la sección de assoreamento más abajo para entender los riesgos específicos de este cruce.
+                Los horarios de los operadores reflejan la temporada 2026 y varían con la marea y el tiempo. <strong>Confirma las salidas del día directamente con el operador antes de tu travesía</strong> — por teléfono, online o en el muelle. Este sitio es independiente y no asume responsabilidad por travesías perdidas.
               </p>
             </div>
           </div>
         </div>
 
-        <!-- Horario de verano -->
-        <section>
-          <h2 class="text-2xl font-bold text-forest-900 mb-2">Horario de Verano (Abril – Octubre)</h2>
+        <!-- Operadores -->
+        <section id="operators">
+          <h2 class="text-2xl font-bold text-forest-900 mb-2">Quién Opera el Cruce Hoy</h2>
           <p class="text-slate-600 text-sm mb-5 leading-relaxed">
-            Servicio diario. Aproximadamente cada 30–60 minutos entre las 09:00 y las 19:00. El servicio funciona en ambas direcciones. El intervalo entre las 12:30 y las 14:00 corresponde al descanso del operador — planifica tu salida para evitar esperas innecesarias.
+            Dos servicios de taxi-barco autorizados operan el cruce Caminha–A Guarda a diario. Los meses más fiables son de abril a octubre; fuera de esa ventana hay menos salidas y se cancelan con más facilidad por el tiempo. Los barcos son pequeños — a veces unos seis pasajeros — así que reserva con antelación en los meses de mayor afluencia.
           </p>
           <div class="overflow-x-auto rounded-2xl border border-slate-200 shadow-sm">
             <table class="w-full text-sm">
-              <caption class="sr-only">Horario del ferry de verano, Caminha a A Guarda y vuelta</caption>
+              <caption class="sr-only">Operadores de taxi-barco del cruce Caminha–A Guarda</caption>
               <thead>
                 <tr class="bg-slate-800 text-white">
-                  <th scope="col" class="text-left px-4 py-3 text-xs font-semibold uppercase tracking-wider">Salida</th>
-                  <th scope="col" class="text-left px-4 py-3 text-xs font-semibold uppercase tracking-wider">Llegada</th>
-                  <th scope="col" class="text-left px-4 py-3 text-xs font-semibold uppercase tracking-wider">Ruta</th>
+                  <th scope="col" class="text-left px-4 py-3 text-xs font-semibold uppercase tracking-wider">Operador</th>
+                  <th scope="col" class="text-left px-4 py-3 text-xs font-semibold uppercase tracking-wider">Frecuencia</th>
+                  <th scope="col" class="text-left px-4 py-3 text-xs font-semibold uppercase tracking-wider">Horario</th>
+                  <th scope="col" class="text-left px-4 py-3 text-xs font-semibold uppercase tracking-wider">Precio</th>
+                  <th scope="col" class="text-left px-4 py-3 text-xs font-semibold uppercase tracking-wider">Con bici</th>
+                  <th scope="col" class="text-left px-4 py-3 text-xs font-semibold uppercase tracking-wider">Reserva</th>
                 </tr>
               </thead>
               <tbody>
-                {horarioVerano.map((fila, i) => (
+                {operadores.map((fila, i) => (
                   <tr class={i % 2 === 0 ? 'bg-white' : 'bg-slate-50/70'}>
-                    <td class="px-4 py-2.5 font-mono font-semibold text-forest-800">{fila.salida}</td>
-                    <td class="px-4 py-2.5 font-mono text-slate-600">{fila.llegada}</td>
-                    <td class="px-4 py-2.5 text-slate-700">{fila.ruta}</td>
+                    <td class="px-4 py-2.5 font-medium text-slate-800">
+                      {fila.url ? <a href={fila.url} rel="noopener" target="_blank" class="text-forest-700 hover:underline no-underline font-semibold">{fila.nombre}</a> : fila.nombre}
+                    </td>
+                    <td class="px-4 py-2.5 text-slate-700">{fila.frecuencia}</td>
+                    <td class="px-4 py-2.5 font-mono text-slate-700">{fila.horario}</td>
+                    <td class="px-4 py-2.5 font-mono font-semibold text-forest-700">{fila.precio}</td>
+                    <td class="px-4 py-2.5 font-mono text-slate-700">{fila.bici}</td>
+                    <td class="px-4 py-2.5 text-slate-600 text-xs">
+                      {fila.reserva}
+                      {fila.telefono && <a href={`tel:${fila.telefono}`} class="block text-forest-700 font-semibold no-underline hover:underline mt-0.5">{fila.telefono}</a>}
+                    </td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
+          <p class="mt-3 text-xs text-slate-500">
+            Los barcos funcionan con hora portuguesa. España va una hora por delante — una salida a las 10:00 llega hacia las 11:10 hora local española. Los horarios se ajustan a la marea; los operadores publican las salidas del día en sus webs y en el muelle.
+          </p>
         </section>
 
-        <!-- Horario de invierno -->
-        <section>
-          <h2 class="text-2xl font-bold text-forest-900 mb-2">Horario de Invierno (Noviembre – Marzo)</h2>
-          <p class="text-slate-600 text-sm leading-relaxed mb-4">
-            Servicio reducido — normalmente solo fines de semana y festivos, con salidas aproximadas a las 10:00, 12:00 y 16:00 (Caminha → A Guarda) y viajes de vuelta correspondientes. El servicio puede suspenderse por condiciones meteorológicas adversas en el estuario del Miño.
-          </p>
-          <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 text-sm text-slate-700 leading-relaxed">
-            <strong>Nota para peregrinos en invierno:</strong> Muy pocos peregrinos realizan el Camino de la Costa en invierno debido al servicio reducido del ferry. Si planeas un Camino invernal, considera el Camino Portugués Interior (por Tui/Valença) como alternativa más fiable — el puente Valença–Tui está operativo 24/7.
+        <!-- Nuevo ferry oficial -->
+        <section id="new-ferry">
+          <h2 class="text-2xl font-bold text-forest-900 mb-2">Nuevo Ferry Oficial (Verano 2026)</h2>
+          <div class="bg-forest-50 border border-forest-200 rounded-2xl p-5 text-sm text-slate-700 leading-relaxed space-y-3">
+            <p>
+              La Câmara Municipal de Caminha ha anunciado un <strong>nuevo ferry municipal para el verano de 2026</strong>: una embarcación de poco calado con capacidad para unos <strong>50–60 pasajeros</strong>, diseñada para el estuario sedimentado que dejó fuera de servicio al barco antiguo. El municipio ha presupuestado la reparación del muelle y el dragado (~30.000–40.000 €).
+            </p>
+            <p>
+              <strong>Estado: anunciado, aún no operativo.</strong> El ferry histórico, el <em>Santa Rita de Cássia</em>, dejó de operar en 2020 y será desguazado. Hasta que el nuevo barco entre en servicio, los taxi-barco de la tabla anterior son el cruce operativo.
+            </p>
           </div>
         </section>
 
         <!-- Tarifas -->
         <section>
-          <h2 class="text-2xl font-bold text-forest-900 mb-4">Tarifas y Billetes</h2>
+          <h2 class="text-2xl font-bold text-forest-900 mb-4">Tarifas Históricas del Ferry Oficial (Referencia)</h2>
+          <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+            Solo como referencia — eran las tarifas del Santa Rita de Cássia antes de dejar de operar en 2020. Los precios actuales del taxi-barco están en la tabla de operadores. Las tarifas del nuevo ferry de 2026 no se han anunciado.
+          </p>
           <div class="overflow-x-auto rounded-2xl border border-slate-200 shadow-sm">
             <table class="w-full text-sm">
               <caption class="sr-only">Tarifas del ferry de Caminha a A Guarda</caption>
@@ -164,9 +193,6 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
               </tbody>
             </table>
           </div>
-          <p class="mt-3 text-xs text-slate-500">
-            Precios aproximados — pueden haber cambiado. Billetes en la taquilla del embarcadero. Se acepta efectivo en euros; la disponibilidad de pago con tarjeta varía según temporada.
-          </p>
         </section>
 
         
@@ -181,24 +207,24 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
               </div>
               <div class="flex-1 min-w-0">
                 <div class="flex flex-wrap items-center gap-2 mb-1">
-                  <h2 class="text-xl font-bold text-white">El Problema del Assoreamento</h2>
+                  <h2 class="text-xl font-bold text-white">Assoreamento: Por Qué Paró el Ferry Antiguo</h2>
                   <span class="inline-flex items-center gap-1 bg-red-900/60 border border-red-400/40 text-red-100 text-xs font-semibold px-2.5 py-0.5 rounded-full">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
-                    Riesgo de Interrupción
+                    Contexto
                   </span>
                 </div>
-                <p class="text-red-100 text-sm">Lo que ninguna otra guía cubre adecuadamente — y lo que más puede afectar a tu viaje.</p>
+                <p class="text-red-100 text-sm">La historia de la sedimentación explica por qué cambió el cruce — y por qué los barcos actuales son pequeños y de poco calado.</p>
               </div>
             </div>
             <div class="bg-white p-6 space-y-4 text-slate-700 text-sm leading-relaxed">
               <p>
-                El estuario del río Miño sufre un fenómeno denominado <strong>assoreamento</strong> (sedimentación) — la acumulación de arena y sedimentos en la desembocadura del río que periódicamente eleva el fondo marino cerca de los embarcaderos. La embarcación <strong>Santa Rita de Cássia</strong> necesita una profundidad mínima para maniobrar hasta el muelle. Cuando la sedimentación es importante, no puede aproximarse al atraque habitual y el servicio queda suspendido sin aviso previo.
+                El estuario del río Miño sufre <strong>assoreamento</strong> (sedimentación) — la acumulación de arena y sedimentos en la desembocadura que periódicamente eleva el fondo cerca de los muelles. El ferry antiguo, el <strong>Santa Rita de Cássia</strong> (en servicio desde 1995), era un barco de calado medio que necesitaba una profundidad mínima para atracar. Dejó de operar en <strong>2020</strong>; incluso tras finalizar las obras del muelle gallego en 2023, la sedimentación lo mantuvo parado, y el barco será desguazado.
               </p>
               <p>
-                Esto no es un evento infrecuente. Los episodios se producen durante los <strong>períodos secos de verano</strong> (el bajo caudal del río reduce el efecto de lavado de sedimentos) y tras los <strong>grandes temporales atlánticos</strong> (el oleaje empuja grandes volúmenes de arena hacia el estuario). Puedes llegar al embarcadero y encontrar un cartel escrito a mano y sin barco a la vista.
+                Por eso el cruce actual funciona con <strong>taxi-barcos pequeños y de poco calado</strong> — pasan sobre los bancos de arena que vencieron al ferry — y por eso el sustituto anunciado para 2026 es específicamente un diseño de calado reducido. Los episodios de sedimentación siguen afectando al estuario tras veranos secos y grandes temporales atlánticos, así que salidas concretas pueden cancelarse con poco aviso incluso en temporada.
               </p>
               <p>
-                Informes históricos en foros como Gronze y la Confraternity of Saint James sugieren que suspensiones parciales o totales ocurren <em>en alguna forma</em> durante la mayoría de las temporadas, típicamente por períodos de 2–3 días a varias semanas. <strong>Siempre debes tener un plan alternativo antes de llegar a Caminha, independientemente de lo que hayas leído sobre el horario del ferry.</strong>
+                Conclusión práctica: <strong>el cruce funciona a diario, pero confirma siempre los barcos del día</strong> — online con Xacobeo Transfer, por teléfono con Taxi Boat Peregrinos, o en tu albergue la noche anterior. Si el tiempo o el río detienen todo, el desvío terrestre de más abajo siempre está disponible.
               </p>
             </div>
           </div>
@@ -206,7 +232,7 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
 
         <!-- ── CRUCES ALTERNATIVOS ────────────────────────────────────────── -->
         <section id="alternativas">
-          <h2 class="text-2xl font-bold text-forest-900 mb-6">Cruces Alternativos Cuando el Ferry Está Suspendido</h2>
+          <h2 class="text-2xl font-bold text-forest-900 mb-6">Opciones de Respaldo Cuando Ningún Barco Cruza</h2>
 
           <!-- Opción 1: Xávegas / Taxi-marítimo -->
           <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 mb-6">
@@ -215,16 +241,16 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
                 <div class="shrink-0 bg-white/15 rounded-xl p-2">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19c-2.667-1.333-4-3-4-5 0-2 .667-3.333 2-4"/></svg>
                 </div>
-                Opción 1: Xávegas / Taxi-Marítimo
+                Opción 1: Barcas de Pescadores Informales (Recurso Heredado)
               </h3>
-              <p class="text-forest-200 text-sm mt-2 ml-11">Alternativa más rápida · ~5–6 € por persona · 20–30 min de travesía</p>
+              <p class="text-forest-200 text-sm mt-2 ml-11">Solo relevante si ambos operadores autorizados no están disponibles · ~5–6 € por persona</p>
             </div>
             <div class="p-6 space-y-4 text-slate-700 text-sm leading-relaxed">
               <p>
-                Cuando la Santa Rita de Cássia no puede operar, los pescadores locales frecuentemente cruzan el Miño en <strong>xávegas</strong> (embarcaciones tradicionales de fondo plano) o en motoras de taxi. Estas embarcaciones más pequeñas tienen menor calado y pueden navegar a través de la sedimentación que bloquea el ferry principal.
+                Antes de que los taxi-barco autorizados asumieran el cruce, los pescadores locales cruzaban el Miño en <strong>xávegas</strong> (embarcaciones tradicionales de fondo plano) y motoras informales. Algunos todavía lo hacen. Trátalo como un recurso de respaldo: en 2026, tu primera opción es <strong>Taxi Boat Peregrinos o Xacobeo Transfer</strong> (tabla anterior) — las barcas de pescadores solo importan el día excepcional en que ambos servicios regulares fallen pero el río siga siendo navegable.
               </p>
               <p>
-                <strong>Cómo encontrar un taxi acuático:</strong> Son operaciones informales sin horarios fijos ni web de reservas. El método más fiable es preguntar al hospitalero o al dueño de tu alojamiento la noche anterior — ellos suelen saber qué operadores están activos y pueden hacer el contacto por ti. También puedes ir directamente al <strong>Cais da Rua dos Pescadores</strong> (el muelle de los pescadores, contiguo al embarcadero del ferry) y preguntar a los propios pescadores. La oficina de turismo de Caminha también puede facilitarte los contactos actuales:
+                <strong>Cómo encontrar una:</strong> pregunta al hospitalero o al dueño de tu alojamiento la noche anterior, acércate al <strong>Cais da Rua dos Pescadores</strong> (el muelle de los pescadores, contiguo al embarcadero principal) o llama a la oficina de turismo de Caminha para los contactos actuales:
               </p>
 
               <!-- Operadores conocidos -->
@@ -466,18 +492,21 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
 
         <!-- Naviera -->
         <div class="bg-white border border-slate-200 rounded-2xl p-5">
-          <h2 class="text-base font-bold text-forest-900 mb-3">Naviera</h2>
-          <p class="text-sm text-slate-700 mb-3">
-            La travesía es operada por una asociación local de armadores. Contáctalos directamente para confirmar el horario actual y si la Santa Rita de Cássia está operando.
-          </p>
-          <div class="space-y-2 text-sm">
-            <a href="tel:+351258921000" class="flex items-center gap-2 text-forest-700 hover:underline no-underline cursor-pointer">
-              <svg class="h-4 w-4 shrink-0 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-              +351 258 921 000
-            </a>
-            <div class="flex items-center gap-2 text-slate-600">
+          <h2 class="text-base font-bold text-forest-900 mb-3">Operadores del Cruce</h2>
+          <div class="space-y-3 text-sm">
+            <div>
+              <p class="font-semibold text-slate-800">Taxi Boat Peregrinos</p>
+              <a href="tel:+351913254110" class="text-forest-700 hover:underline no-underline font-medium cursor-pointer">+351 913 254 110</a>
+              <p class="text-xs text-slate-500">Cada 30 min, 07:00–17:00 · 6 € (7 € bici)</p>
+            </div>
+            <div>
+              <p class="font-semibold text-slate-800">Xacobeo Transfer</p>
+              <a href="https://xacobeotransfer.com" rel="noopener" target="_blank" class="text-forest-700 hover:underline no-underline font-medium cursor-pointer">xacobeotransfer.com</a>
+              <p class="text-xs text-slate-500">Cada hora, 07:30–15:30 · 6 € (8 € bici) · reserva online</p>
+            </div>
+            <div class="flex items-center gap-2 text-slate-600 pt-1 border-t border-slate-100">
               <svg class="h-4 w-4 shrink-0 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-              <span>Cais de Caminha, 4910 Caminha</span>
+              <span class="text-xs">Cais de Caminha, 4910 Caminha</span>
             </div>
           </div>
         </div>
@@ -497,14 +526,7 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
         <div class="bg-earth-50 border border-earth-200 rounded-2xl p-5">
           <h2 class="text-base font-bold text-forest-900 mb-4">Consejos para Peregrinos</h2>
           <ul class="space-y-2.5 text-sm text-slate-700">
-            {[
-              'Llega 15 minutos antes — el barco se llena rápido en temporada alta.',
-              'Lleva monedas y billetes pequeños en euros — la taquilla puede no aceptar tarjetas.',
-              'La travesía puede ser agitada en otoño — asegura los objetos sueltos de la mochila.',
-              'Tu credencial puede recibir un sello especial del ferry si lo pides.',
-              'Comprueba la noche antes si el ferry funciona — pregunta en tu albergue.',
-              'El último ferry de A Guarda a Caminha suele ser a las 19:30 — verifica los horarios actuales.',
-            ].map(consejo => (
+            {t.tips.map(consejo => (
               <li class="flex items-start gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-earth-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                 {consejo}

@@ -168,6 +168,9 @@ const hub = hubPath(lang);
           <li><a href={x.url} class="text-forest-700 hover:underline no-underline font-medium">{x.label}</a></li>
         ))}
         <li><a href={ferry} class="text-forest-700 hover:underline no-underline font-medium">{ui.crossingLink}</a></li>
+        {lang === 'en' && (
+          <li><a href="/en/caminha-ferry-status/" class="text-forest-700 hover:underline no-underline font-medium">Live crossing status (updated monthly)</a></li>
+        )}
         <li><a href={guide} class="text-forest-700 hover:underline no-underline font-medium">{ui.caminhaGuide}</a></li>
         <li><a href={hub} class="text-slate-600 hover:underline no-underline">{ui.backToRoute}</a></li>
       </ul>

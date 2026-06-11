@@ -1,0 +1,264 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import { getEntry } from 'astro:content';
+
+const PAGE_PATH = '/en/caminha-ferry-status/';
+const SITE_URL = 'https://waytosantiagoguide.com';
+const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
+
+// All facts from the crossing single source of truth.
+const entry = await getEntry('crossing', 'caminha-a-guarda');
+const f = entry!.data;
+const t = f.i18n.en;
+const ol = t.operatorLabels;
+
+const STATUS_MONTH = 'June 2026'; // bump on each monthly review
+const LAST_VERIFIED = f.lastVerified;
+
+const operators = f.scheduledOperators.map((op) => ({
+  name: op.name,
+  schedule: `${ol[op.frequency] ?? op.frequency}, ${op.hours}`,
+  price: `€${op.adultEUR} (€${op.bikeEUR} with bike)`,
+  booking: ol[op.booking] ?? op.booking,
+  phone: op.phone,
+  url: op.url,
+  notes: op.note ?? '—',
+}));
+
+// Changelog — newest first. Append entries on each update; never rewrite history.
+const changelog = [
+  {
+    date: 'June 2026',
+    text: 'Water taxis fully operational. Taxi Boat Peregrinos running every 30 minutes (07:00–17:00); Xacobeo Transfer roughly hourly (07:30–15:30) with online booking. Crossing daily, including Mondays.',
+  },
+  {
+    date: 'May 2026',
+    text: 'Câmara de Caminha confirms work continues on the new river link with Galicia; longer-term ambition for an international bridge stated publicly.',
+  },
+  {
+    date: 'December 2025',
+    text: 'New municipal ferry announced for summer 2026: shallow-draught vessel, ~50–60 passengers. Dock repair and dredging budgeted (~€30–40k). Santa Rita de Cássia to be dismantled.',
+  },
+  {
+    date: '2023',
+    text: 'Dock works on the Galician side completed, but river-mouth siltation keeps the official ferry grounded. Licensed water taxis carry all crossing traffic.',
+  },
+  {
+    date: 'April 2022',
+    text: 'Xacobeo Transfer begins operating the crossing with backing from the Xunta de Galicia, Concello da Guarda and Câmara de Caminha.',
+  },
+  {
+    date: '2020',
+    text: 'Official ferry Santa Rita de Cássia (in service since 1995) stops running due to assoreamento — siltation at the Minho river mouth.',
+  },
+];
+
+const faq = [
+  {
+    q: 'Is the Caminha to A Guarda ferry running right now?',
+    a: 'The old official ferry is not running (stopped 2020, being dismantled), but the crossing itself operates daily via two licensed water-taxi services: Taxi Boat Peregrinos (every 30 minutes, 07:00–17:00) and Xacobeo Transfer (roughly hourly, 07:30–15:30). A new municipal ferry is expected in summer 2026.',
+  },
+  {
+    q: 'Can I cross with a bike?',
+    a: 'Yes. Both operators carry bicycles: €7 total with Taxi Boat Peregrinos, €8 with Xacobeo Transfer.',
+  },
+  {
+    q: 'Do I need a booking?',
+    a: 'Not strictly, but recommended April–October — some boats carry only about six passengers. Xacobeo Transfer sells tickets online; Taxi Boat Peregrinos takes bookings on +351 913 254 110 or at the dock.',
+  },
+  {
+    q: 'What happens if no boat crosses on my day?',
+    a: 'Use the overland detour: CP Minho line train from Caminha to Valença (~35 min, ~€3.60), then walk across the Tui–Valença international bridge into Spain. This connects to the Camino Portugués Interior.',
+  },
+];
+
+const graph = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': `${PAGE_URL}#webpage`,
+      url: PAGE_URL,
+      name: 'Caminha–A Guarda Crossing: Live Status',
+      description:
+        'Monthly-verified status of the Caminha to A Guarda crossing on the Portuguese Coastal Camino: which boats are running, schedules, prices and the new 2026 ferry.',
+      inLanguage: 'en-GB',
+      dateModified: LAST_VERIFIED,
+      breadcrumb: { '@id': `${PAGE_URL}#breadcrumb` },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${PAGE_URL}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/en/` },
+        { '@type': 'ListItem', position: 2, name: 'Ferry & Logistics', item: `${SITE_URL}/en/caminha/ferry-and-logistics/` },
+        { '@type': 'ListItem', position: 3, name: 'Crossing Status', item: PAGE_URL },
+      ],
+    },
+    {
+      '@type': 'SpecialAnnouncement',
+      '@id': `${PAGE_URL}#status`,
+      name: 'Caminha–A Guarda crossing operating daily via water taxi services',
+      text: `Status verified ${STATUS_MONTH}: crossing operates daily. Taxi Boat Peregrinos every 30 minutes (07:00–17:00, €6); Xacobeo Transfer hourly (07:30–15:30, €6, online booking). New municipal ferry announced for summer 2026.`,
+      datePosted: LAST_VERIFIED,
+      url: PAGE_URL,
+      spatialCoverage: {
+        '@type': 'Place',
+        name: 'Caminha, Portugal',
+        geo: { '@type': 'GeoCoordinates', latitude: f.geo.lat, longitude: f.geo.lng },
+      },
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${PAGE_URL}#faq`,
+      mainEntityOfPage: { '@id': `${PAGE_URL}#webpage` },
+      mainEntity: faq.map((item) => ({
+        '@type': 'Question',
+        name: item.q,
+        acceptedAnswer: { '@type': 'Answer', text: item.a },
+      })),
+    },
+  ],
+};
+---
+
+<MainLayout
+  title={`Caminha–A Guarda Crossing: Live Status (${STATUS_MONTH}) — What's Running`}
+  description={`Verified ${STATUS_MONTH}: the Caminha to A Guarda crossing runs daily via water taxi — every 30 min from 07:00, €6. Operator table, booking links, full changelog since 2020, and the new ferry expected this summer.`}
+  lang="en"
+  schemaType="none"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(graph)} />
+
+  <!-- Hero -->
+  <div class="bg-gradient-to-br from-slate-800 via-slate-800 to-forest-950 text-white">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+      <nav aria-label="Breadcrumb" class="mb-5">
+        <ol class="flex flex-wrap items-center gap-2 text-sm text-slate-400">
+          <li><a href="/en/" class="hover:text-white no-underline hover:underline">Home</a></li>
+          <li aria-hidden="true" class="text-slate-600">›</li>
+          <li><a href="/en/caminha/ferry-and-logistics/" class="hover:text-white no-underline hover:underline">Ferry &amp; Logistics</a></li>
+          <li aria-hidden="true" class="text-slate-600">›</li>
+          <li aria-current="page" class="text-slate-200 font-medium">Crossing Status</li>
+        </ol>
+      </nav>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4 tracking-tight">Caminha–A Guarda Crossing: Live Status ({STATUS_MONTH})</h1>
+      <div class="inline-flex items-center gap-2 bg-green-600/20 border border-green-500/40 text-green-300 font-semibold text-sm px-4 py-2 rounded-full">
+        <span class="h-2.5 w-2.5 rounded-full bg-green-400 inline-block" aria-hidden="true"></span>
+        Operating daily via water taxi services
+      </div>
+      <p class="text-slate-300 text-base leading-relaxed max-w-2xl mt-5">
+        This page tracks what is actually crossing the Minho between Caminha (Portugal) and A Guarda (Spain), verified monthly against operator schedules, municipal announcements and pilgrim reports. Last verified: <strong class="text-white">{LAST_VERIFIED}</strong>.
+      </p>
+    </div>
+  </div>
+
+  <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 space-y-12">
+
+    <!-- Status overview -->
+    <section>
+      <h2 class="text-2xl font-bold text-forest-900 mb-3 tracking-tight">Status Overview</h2>
+      <ul class="space-y-2 text-sm text-slate-700 bg-slate-50 border border-slate-200 rounded-2xl p-5">
+        <li><strong>Crossing:</strong> operating daily, including Mondays. ~10 minutes, €6 per person one-way.</li>
+        <li><strong>Old official ferry (Santa Rita de Cássia):</strong> stopped 2020, will be dismantled. Not coming back.</li>
+        <li><strong>New municipal ferry:</strong> announced for summer 2026 (~50–60 passengers, shallow draught). Not yet operating.</li>
+        <li><strong>Backup:</strong> train Caminha → Valença + walk across the Tui bridge — always available.</li>
+      </ul>
+    </section>
+
+    <!-- Operators table -->
+    <section id="operators">
+      <h2 class="text-2xl font-bold text-forest-900 mb-4 tracking-tight">Who Is Crossing Right Now</h2>
+      <div class="overflow-x-auto rounded-2xl border border-slate-200 shadow-sm">
+        <table class="w-full text-sm">
+          <caption class="sr-only">Operators currently running the Caminha to A Guarda crossing</caption>
+          <thead>
+            <tr class="bg-forest-900 text-white">
+              <th scope="col" class="text-left px-5 py-3.5 font-semibold text-xs uppercase tracking-wider">Operator</th>
+              <th scope="col" class="text-left px-5 py-3.5 font-semibold text-xs uppercase tracking-wider">Schedule</th>
+              <th scope="col" class="text-left px-5 py-3.5 font-semibold text-xs uppercase tracking-wider">Price</th>
+              <th scope="col" class="text-left px-5 py-3.5 font-semibold text-xs uppercase tracking-wider">Booking</th>
+              <th scope="col" class="text-left px-5 py-3.5 font-semibold text-xs uppercase tracking-wider">Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            {operators.map((row, i) => (
+              <tr class={i % 2 === 0 ? 'bg-white' : 'bg-slate-50/70'}>
+                <td class="px-5 py-3 font-medium text-slate-800">
+                  {row.url ? <a href={row.url} rel="noopener" target="_blank" class="text-forest-700 hover:underline no-underline font-semibold">{row.name}</a> : row.name}
+                </td>
+                <td class="px-5 py-3 text-slate-700">{row.schedule}</td>
+                <td class="px-5 py-3 font-mono font-bold text-forest-700">{row.price}</td>
+                <td class="px-5 py-3 text-slate-600 text-xs">
+                  {row.booking}
+                  {row.phone && <a href={`tel:${row.phone}`} class="block text-forest-700 font-semibold no-underline hover:underline mt-0.5">{row.phone}</a>}
+                </td>
+                <td class="px-5 py-3 text-slate-600 text-xs">{row.notes}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-3 text-xs text-slate-500">
+        Schedules flex with tide and weather; off-season (November–March) departures are fewer and cancel more easily. Boats run on Portuguese time — Spain is one hour ahead on arrival.
+      </p>
+    </section>
+
+    <!-- Changelog -->
+    <section id="updates">
+      <h2 class="text-2xl font-bold text-forest-900 mb-4 tracking-tight">Latest Updates</h2>
+      <ol class="relative border-l-2 border-forest-200 ml-2 space-y-6">
+        {changelog.map((c) => (
+          <li class="ml-6">
+            <span class="absolute -left-[7px] mt-1.5 h-3 w-3 rounded-full bg-forest-500 border-2 border-white" aria-hidden="true"></span>
+            <p class="text-xs font-bold uppercase tracking-wider text-forest-700">{c.date}</p>
+            <p class="text-sm text-slate-700 leading-relaxed mt-1">{c.text}</p>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <!-- How to choose -->
+    <section>
+      <h2 class="text-2xl font-bold text-forest-900 mb-3 tracking-tight">Water Taxi Now vs Waiting for the New Ferry</h2>
+      <div class="grid sm:grid-cols-2 gap-4 text-sm text-slate-700">
+        <div class="bg-forest-50 border border-forest-200 rounded-2xl p-5">
+          <h3 class="font-bold text-forest-900 mb-2">Take the water taxi (recommended)</h3>
+          <p class="leading-relaxed">Operating today, frequent departures, €6, lands at Camposancos / A Pasaxe where the Camino arrows resume. There is no reason to plan around the new ferry — it has no confirmed launch date, only a "summer 2026" target.</p>
+        </div>
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5">
+          <h3 class="font-bold text-slate-800 mb-2">Waiting for the new ferry</h3>
+          <p class="leading-relaxed">Only relevant if you walk after it launches. Expected benefits: larger capacity (50–60 vs ~6–12) and a fixed municipal timetable. Fares not yet announced. This page will record the launch in the changelog above.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <h2 class="text-2xl font-bold text-forest-900 mb-5 tracking-tight">Frequently Asked Questions</h2>
+      <div class="space-y-3">
+        {faq.map((item) => (
+          <details class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+            <summary class="px-6 py-4 font-semibold text-forest-900 cursor-pointer">{item.q}</summary>
+            <div class="px-6 pb-5 text-sm text-slate-700 leading-relaxed border-t border-slate-100 pt-3">{item.a}</div>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- Related -->
+    <section class="bg-forest-50 border border-forest-200 rounded-2xl p-6">
+      <h2 class="text-base font-bold text-forest-900 mb-3">Plan the Crossing</h2>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/en/caminha/ferry-and-logistics/" class="text-forest-700 hover:underline no-underline font-medium">Full ferry &amp; logistics guide — operators, dock, overland detour</a></li>
+        <li><a href="/en/caminho-da-costa/caminha-a-guarda/" class="text-forest-700 hover:underline no-underline font-medium">Caminha → A Guarda as a Camino stage — landing point and the walk in</a></li>
+        <li><a href="/en/caminho-da-costa/" class="text-forest-700 hover:underline no-underline font-medium">Coastal Route stage overview</a></li>
+        <li><a href="/en/caminha/where-to-stay/" class="text-forest-700 hover:underline no-underline font-medium">Where to stay in Caminha the night before</a></li>
+      </ul>
+    </section>
+
+    <p class="text-xs text-slate-400">
+      Sources: operator websites (xacobeotransfer.com, taxiboatperegrinos.com), Câmara Municipal de Caminha announcements (Dec 2025, May 2026), regional press (Alto Minho TV, O Amarense, e24.pt) and pilgrim reports on the Camino de Santiago forum. Independently verified; this site has no affiliation with any transport provider.
+    </p>
+  </div>
+</MainLayout>
