@@ -4,7 +4,7 @@ import MainLayout from '../../layouts/MainLayout.astro';
 
 <MainLayout
   title="Política de Privacidade — Way to Santiago Guide"
-  description="Política de privacidade do waytosantiagoguide.com. Informação sobre links de afiliados, publicidade e recolha de dados analíticos."
+  description="Política de privacidade do waytosantiagoguide.com. Informação sobre links de afiliados e recolha de dados analíticos."
   lang="pt"
   schemaType="webpage"
 >
@@ -70,13 +70,6 @@ import MainLayout from '../../layouts/MainLayout.astro';
       </section>
 
       <section>
-        <h2 class="text-xl font-bold text-forest-900 mb-3">Publicidade — Google AdSense</h2>
-        <p>
-          Este Site exibe anúncios servidos pelo <strong>Google AdSense</strong>. A Google utiliza cookies para mostrar anúncios com base nas suas visitas anteriores a este e outros sites. Pode desativar a publicidade personalizada em <a href="https://adssettings.google.com" rel="noopener noreferrer nofollow" class="text-forest-700 hover:underline" target="_blank">adssettings.google.com</a>.
-        </p>
-      </section>
-
-      <section>
         <h2 class="text-xl font-bold text-forest-900 mb-3">Cookies</h2>
         <p>
           O Site utiliza os seguintes cookies:
@@ -94,7 +87,6 @@ import MainLayout from '../../layouts/MainLayout.astro';
               {[
                 { name: '_ga, _ga_*', provider: 'Google Analytics', purpose: 'Distinguir visitantes únicos; rastrear dados de sessão' },
                 { name: 'ferryWarningDismissed', provider: 'Este site (sessionStorage)', purpose: 'Lembrar se o visitante dispensou o banner de estado do ferry' },
-                { name: 'Cookies Google Ads', provider: 'Google AdSense', purpose: 'Servir e medir o desempenho publicitário' },
               ].map((row, i) => (
                 <tr class={i % 2 === 0 ? 'bg-white' : 'bg-slate-50/70'}>
                   <td class="px-4 py-3 font-mono text-xs text-slate-700">{row.name}</td>
@@ -106,7 +98,7 @@ import MainLayout from '../../layouts/MainLayout.astro';
           </table>
         </div>
         <p class="mt-4 text-sm">
-          Pode desativar os cookies nas definições do seu browser. Note que desativar os cookies pode afetar a funcionalidade de serviços de terceiros (análise, publicidade) mas não afetará a sua capacidade de ler conteúdo neste Site.
+          Pode desativar os cookies nas definições do seu browser. Note que desativar os cookies pode afetar a funcionalidade de serviços de terceiros (análise) mas não afetará a sua capacidade de ler conteúdo neste Site.
         </p>
       </section>
 
@@ -117,7 +109,6 @@ import MainLayout from '../../layouts/MainLayout.astro';
           {[
             { name: 'Booking.com', url: 'https://www.booking.com/content/privacy.html', note: 'Plataforma afiliada de reserva de alojamento' },
             { name: 'Google Analytics 4', url: 'https://policies.google.com/privacy', note: 'Análise anónima de visitantes' },
-            { name: 'Google AdSense', url: 'https://policies.google.com/privacy', note: 'Publicidade display' },
             { name: 'Google Fonts', url: 'https://policies.google.com/privacy', note: 'Tipografia (DM Sans) servida via CDN da Google' },
           ].map(({ name, url, note }) => (
             <li class="flex items-start gap-2">

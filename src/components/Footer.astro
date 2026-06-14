@@ -1,4 +1,6 @@
 ---
+import { SOCIAL_LINKS } from '../lib/social';
+
 interface Props {
   lang: 'en' | 'es' | 'pt';
 }
@@ -29,7 +31,6 @@ const t = {
     copyright: `© ${year} Caminha Guide. All rights reserved.`,
     ferryDisclaimerLabel: 'Ferry Timetable Notice',
     ferryDisclaimer: 'Ferry timetables and prices are subject to change without notice. Always verify schedules directly with the ferry operator before your crossing. This site is independently operated and has no affiliation with any transport provider.',
-    adsenseNotice: 'This site uses Google AdSense to display advertising. Ads help keep this guide free for pilgrims.',
     independentNote: 'Independent guide — not affiliated with any Camino organisation or tourism board.',
   },
   es: {
@@ -53,7 +54,6 @@ const t = {
     copyright: `© ${year} Guía de Caminha. Todos los derechos reservados.`,
     ferryDisclaimerLabel: 'Aviso Horarios del Ferry',
     ferryDisclaimer: 'Los horarios y precios del ferry están sujetos a cambios sin previo aviso. Confirma siempre los horarios directamente con la naviera antes de tu travesía. Este sitio es independiente y no tiene ninguna afiliación con ningún proveedor de transporte.',
-    adsenseNotice: 'Este sitio utiliza Google AdSense para mostrar publicidad. Los anuncios ayudan a mantener esta guía gratuita para los peregrinos.',
     independentNote: 'Guía independiente — sin afiliación con ninguna organización del Camino ni junta de turismo.',
   },
   pt: {
@@ -77,7 +77,6 @@ const t = {
     copyright: `© ${year} Guia de Caminha. Todos os direitos reservados.`,
     ferryDisclaimerLabel: 'Aviso sobre Horários do Ferry',
     ferryDisclaimer: 'Os horários e preços do ferry estão sujeitos a alterações sem aviso prévio. Verifique sempre os horários diretamente com o operador do ferry antes da sua travessia. Este site é operado de forma independente e não tem qualquer afiliação com nenhum fornecedor de transporte.',
-    adsenseNotice: 'Este site utiliza Google AdSense para exibir publicidade. Os anúncios ajudam a manter este guia gratuito para os peregrinos.',
     independentNote: 'Guia independente — sem afiliação com nenhuma organização do Caminho ou junta de turismo.',
   },
 } as const;
@@ -149,6 +148,34 @@ const navLinks =
           {text.tagline}
         </p>
         <p class="mt-3 text-xs text-slate-500 italic">{text.independentNote}</p>
+
+        <!-- Social media -->
+        <div class="mt-6 flex items-center gap-3">
+          <a
+            href={SOCIAL_LINKS.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            class="flex h-10 w-10 items-center justify-center rounded-xl bg-forest-900 border border-forest-800 text-slate-400 hover:text-white hover:bg-forest-600 hover:border-forest-500 transition-all duration-200 cursor-pointer"
+          >
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </a>
+          <a
+            href={SOCIAL_LINKS.facebook}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            class="flex h-10 w-10 items-center justify-center rounded-xl bg-forest-900 border border-forest-800 text-slate-400 hover:text-white hover:bg-forest-600 hover:border-forest-500 transition-all duration-200 cursor-pointer"
+          >
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </a>
+        </div>
       </div>
 
       <!-- Navigation column -->
@@ -244,10 +271,9 @@ const navLinks =
       </div>
     </div>
 
-    <!-- AdSense notice + copyright -->
-    <div class="mt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+    <!-- Copyright -->
+    <div class="mt-6">
       <p class="text-xs text-slate-600">{text.copyright}</p>
-      <p class="text-xs text-slate-600 max-w-sm sm:text-right">{text.adsenseNotice}</p>
     </div>
 
   </div>

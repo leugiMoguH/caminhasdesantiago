@@ -4,7 +4,7 @@ import MainLayout from '../../layouts/MainLayout.astro';
 
 <MainLayout
   title="Privacy Policy — Way to Santiago Guide"
-  description="Privacy policy for waytosantiagoguide.com. Information on affiliate links, advertising, and analytics data collection."
+  description="Privacy policy for waytosantiagoguide.com. Information on affiliate links and analytics data collection."
   lang="en"
   schemaType="webpage"
 >
@@ -72,14 +72,6 @@ import MainLayout from '../../layouts/MainLayout.astro';
         </p>
       </section>
 
-      <!-- Advertising (AdSense) -->
-      <section>
-        <h2 class="text-xl font-bold text-forest-900 mb-3">Advertising — Google AdSense</h2>
-        <p>
-          This Site displays advertisements served by <strong>Google AdSense</strong>. Google uses cookies to show ads based on your prior visits to this and other websites. You can opt out of personalised advertising by visiting <a href="https://adssettings.google.com" rel="noopener noreferrer nofollow" class="text-forest-700 hover:underline" target="_blank">adssettings.google.com</a>.
-        </p>
-      </section>
-
       <!-- Cookies -->
       <section>
         <h2 class="text-xl font-bold text-forest-900 mb-3">Cookies</h2>
@@ -99,7 +91,6 @@ import MainLayout from '../../layouts/MainLayout.astro';
               {[
                 { name: '_ga, _ga_*', provider: 'Google Analytics', purpose: 'Distinguish unique visitors; track session data' },
                 { name: 'ferryWarningDismissed', provider: 'This site (sessionStorage)', purpose: 'Remember if visitor dismissed the ferry status banner' },
-                { name: 'Google Ads cookies', provider: 'Google AdSense', purpose: 'Serve and measure advertising performance' },
               ].map((row, i) => (
                 <tr class={i % 2 === 0 ? 'bg-white' : 'bg-slate-50/70'}>
                   <td class="px-4 py-3 font-mono text-xs text-slate-700">{row.name}</td>
@@ -111,7 +102,7 @@ import MainLayout from '../../layouts/MainLayout.astro';
           </table>
         </div>
         <p class="mt-4 text-sm">
-          You can disable cookies in your browser settings. Note that disabling cookies may affect the functionality of third-party services (analytics, advertising) but will not affect your ability to read content on this Site.
+          You can disable cookies in your browser settings. Note that disabling cookies may affect the functionality of third-party services (analytics) but will not affect your ability to read content on this Site.
         </p>
       </section>
 
@@ -123,7 +114,6 @@ import MainLayout from '../../layouts/MainLayout.astro';
           {[
             { name: 'Booking.com', url: 'https://www.booking.com/content/privacy.html', note: 'Accommodation booking affiliate platform' },
             { name: 'Google Analytics 4', url: 'https://policies.google.com/privacy', note: 'Anonymous visitor analytics' },
-            { name: 'Google AdSense', url: 'https://policies.google.com/privacy', note: 'Display advertising' },
             { name: 'Google Fonts', url: 'https://policies.google.com/privacy', note: 'Typography (DM Sans) served via Google CDN' },
           ].map(({ name, url, note }) => (
             <li class="flex items-start gap-2">
