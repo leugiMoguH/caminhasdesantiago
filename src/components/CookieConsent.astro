@@ -1,0 +1,97 @@
+---
+/**
+ * CookieConsent — GDPR consent gate.
+ *
+ * Google Analytics 4 and the CJ Affiliate (Commission Junction) deep-linking
+ * script are NOT loaded until the visitor accepts. Choice is stored in
+ * localStorage ('cookie-consent' = granted | denied). On repeat visits the
+ * stored choice is respected silently. Decline => no analytics/affiliate cookies.
+ */
+interface Props {
+  lang: 'en' | 'es' | 'pt';
+}
+const { lang } = Astro.props;
+
+const t = {
+  en: {
+    msg: 'We use cookies for analytics and affiliate tracking. You can accept or decline — declining still lets you read everything.',
+    accept: 'Accept',
+    decline: 'Decline',
+    privacy: 'Privacy policy',
+    href: '/en/privacy-policy/',
+  },
+  es: {
+    msg: 'Usamos cookies para analítica y seguimiento de afiliados. Puedes aceptar o rechazar — si rechazas, puedes seguir leyendo todo.',
+    accept: 'Aceptar',
+    decline: 'Rechazar',
+    privacy: 'Política de privacidad',
+    href: '/es/politica-de-privacidad/',
+  },
+  pt: {
+    msg: 'Usamos cookies para análise e rastreamento de afiliados. Podes aceitar ou recusar — se recusares, continuas a poder ler tudo.',
+    accept: 'Aceitar',
+    decline: 'Recusar',
+    privacy: 'Política de privacidade',
+    href: '/pt/politica-de-privacidade/',
+  },
+}[lang];
+---
+
+<div
+  id="cookie-consent"
+  class="hidden fixed inset-x-3 bottom-3 z-50"
+  role="dialog"
+  aria-live="polite"
+  aria-label="Cookie consent"
+>
+  <div class="mx-auto max-w-2xl rounded-2xl border border-slate-200 bg-white/95 backdrop-blur-md p-4 shadow-xl shadow-slate-900/10 sm:flex sm:items-center sm:gap-4">
+    <p class="flex-1 text-sm leading-relaxed text-slate-700">
+      {t.msg} <a href={t.href} class="font-medium text-forest-700 hover:underline no-underline">{t.privacy}</a>.
+    </p>
+    <div class="mt-3 flex shrink-0 gap-2 sm:mt-0">
+      <button type="button" id="cc-decline" class="cursor-pointer rounded-xl bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-200">{t.decline}</button>
+      <button type="button" id="cc-accept" class="cursor-pointer rounded-xl bg-forest-700 px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-forest-800">{t.accept}</button>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    var KEY = 'cookie-consent';
+    var GA_ID = 'G-GF2GHM795M';
+    var loaded = false;
+    function loadTrackers() {
+      if (loaded) return;
+      loaded = true;
+      // Google Analytics 4
+      var ga = document.createElement('script');
+      ga.async = true;
+      ga.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+      document.head.appendChild(ga);
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { window.dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', GA_ID);
+      // CJ Affiliate (Commission Junction) automated deep linking
+      var cj = document.createElement('script');
+      cj.src = 'https://www.anrdoezrs.net/am/101760389/include/allCj/am.js';
+      document.body.appendChild(cj);
+    }
+    var choice = null;
+    try { choice = localStorage.getItem(KEY); } catch (e) {}
+    var banner = document.getElementById('cookie-consent');
+    if (choice === 'granted') {
+      loadTrackers();
+    } else if (choice !== 'denied' && banner) {
+      banner.classList.remove('hidden');
+    }
+    function decide(value) {
+      try { localStorage.setItem(KEY, value); } catch (e) {}
+      if (banner) banner.classList.add('hidden');
+    }
+    var accept = document.getElementById('cc-accept');
+    var decline = document.getElementById('cc-decline');
+    if (accept) accept.addEventListener('click', function () { decide('granted'); loadTrackers(); });
+    if (decline) decline.addEventListener('click', function () { decide('denied'); });
+  })();
+</script>

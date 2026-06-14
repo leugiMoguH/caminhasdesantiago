@@ -81,7 +81,7 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
       <div class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3">
         {datosClave.map(({ icono, valor, etiqueta }) => (
           <div class="bg-white/10 hover:bg-white/15 transition-colors duration-200 rounded-2xl p-4 text-center">
-            <div class="flex justify-center mb-2 text-forest-300" set:html={icono} />
+            <div class="flex justify-center mb-2 text-forest-100" set:html={icono} />
             <div class="text-lg font-bold text-white">{valor}</div>
             <div class="text-xs text-slate-400 mt-0.5">{etiqueta}</div>
           </div>

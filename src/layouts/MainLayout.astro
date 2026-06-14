@@ -2,6 +2,7 @@
 import BaseSEO from '../components/BaseSEO.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import CookieConsent from '../components/CookieConsent.astro';
 import '../styles/global.css';
 
 /**
@@ -140,14 +141,7 @@ const htmlLang = lang === 'en' ? 'en' : lang === 'es' ? 'es' : 'pt';
       noindex={noindex}
     />
 
-    <!-- Google Analytics 4 — G-GF2GHM795M -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GF2GHM795M"></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-GF2GHM795M');
-    </script>
+    <!-- Google Analytics + CJ Affiliate are loaded by CookieConsent only after the visitor consents -->
 
     <!-- Preconnect + DM Sans font (non-blocking: load async, swap on load) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -168,8 +162,7 @@ const htmlLang = lang === 'en' ? 'en' : lang === 'es' ? 'es' : 'pt';
 
     <Footer lang={lang} />
 
-    <!-- CJ Affiliate (Commission Junction) — automated deep linking: routes affiliate-partner links (Booking.com) through CJ for attribution -->
-    <script is:inline src="https://www.anrdoezrs.net/am/101760389/include/allCj/am.js"></script>
+    <CookieConsent lang={lang} />
 
   </body>
 </html>
