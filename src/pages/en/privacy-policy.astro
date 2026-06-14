@@ -20,7 +20,7 @@ import MainLayout from '../../layouts/MainLayout.astro';
     </nav>
 
     <h1 class="text-3xl sm:text-4xl font-bold text-forest-900 mb-3 tracking-tight">Privacy Policy</h1>
-    <p class="text-slate-500 text-sm mb-10">Last updated: May 2026</p>
+    <p class="text-slate-500 text-sm mb-10">Last updated: June 2026</p>
 
     <div class="prose-like space-y-8 text-slate-700 text-base leading-relaxed">
 
@@ -72,6 +72,14 @@ import MainLayout from '../../layouts/MainLayout.astro';
         </p>
       </section>
 
+      <!-- Affiliate tracking (CJ) -->
+      <section>
+        <h2 class="text-xl font-bold text-forest-900 mb-3">Affiliate Tracking — CJ Affiliate (Commission Junction)</h2>
+        <p>
+          Our Booking.com affiliate links are administered through <strong>CJ Affiliate (Commission Junction)</strong>. A CJ script on this Site automatically detects links to affiliate partners and routes your click through CJ so any resulting booking is credited to us — at no extra cost to you. CJ may set cookies to measure clicks and completed bookings. This Site does not collect personally identifiable information through CJ. See CJ's privacy notice at <a href="https://www.cj.com/legal/privacy-policy-services" rel="noopener noreferrer nofollow" class="text-forest-700 hover:underline" target="_blank">cj.com</a>.
+        </p>
+      </section>
+
       <!-- Cookies -->
       <section>
         <h2 class="text-xl font-bold text-forest-900 mb-3">Cookies</h2>
@@ -91,6 +99,7 @@ import MainLayout from '../../layouts/MainLayout.astro';
               {[
                 { name: '_ga, _ga_*', provider: 'Google Analytics', purpose: 'Distinguish unique visitors; track session data' },
                 { name: 'ferryWarningDismissed', provider: 'This site (sessionStorage)', purpose: 'Remember if visitor dismissed the ferry status banner' },
+                { name: 'CJ affiliate cookies', provider: 'CJ Affiliate (Commission Junction)', purpose: 'Attribute affiliate clicks and completed bookings' },
               ].map((row, i) => (
                 <tr class={i % 2 === 0 ? 'bg-white' : 'bg-slate-50/70'}>
                   <td class="px-4 py-3 font-mono text-xs text-slate-700">{row.name}</td>
@@ -114,6 +123,7 @@ import MainLayout from '../../layouts/MainLayout.astro';
           {[
             { name: 'Booking.com', url: 'https://www.booking.com/content/privacy.html', note: 'Accommodation booking affiliate platform' },
             { name: 'Google Analytics 4', url: 'https://policies.google.com/privacy', note: 'Anonymous visitor analytics' },
+            { name: 'CJ Affiliate (Commission Junction)', url: 'https://www.cj.com/legal/privacy-policy-services', note: 'Affiliate link tracking for Booking.com' },
             { name: 'Google Fonts', url: 'https://policies.google.com/privacy', note: 'Typography (DM Sans) served via Google CDN' },
           ].map(({ name, url, note }) => (
             <li class="flex items-start gap-2">

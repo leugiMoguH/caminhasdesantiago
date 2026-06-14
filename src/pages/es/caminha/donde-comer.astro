@@ -1,5 +1,8 @@
 ---
 import MainLayout from '../../../layouts/MainLayout.astro';
+import PhotoFigure from '../../../components/PhotoFigure.astro';
+import pracaPhoto from '../../../assets/photos/caminha-centro-praca.jpg';
+import { bookingSearch } from '../../../lib/booking';
 
 type Zona = 'caminha' | 'vpa';
 
@@ -170,9 +173,12 @@ const zonas: Zona[] = ['caminha', 'vpa'];
   </div>
 
   <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-    <div class="my-6">
-      
-    </div>
+    <PhotoFigure
+      src={pracaPhoto}
+      alt="Plaza Conselheiro Silva Torres en Caminha — terrazas de cafés y restaurantes bajo la Torre del Reloj medieval"
+      caption="Plaza Conselheiro Silva Torres — terrazas en el corazón de Caminha"
+      loading="eager"
+    />
   </div>
   
 
@@ -338,7 +344,7 @@ const zonas: Zona[] = ['caminha', 'vpa'];
         <p class="text-sm text-slate-600 leading-relaxed">Albergues desde 12 €, pensiones y hoteles de 4 estrellas — todo reservable en Booking.com.</p>
       </div>
       <div class="flex flex-col sm:flex-row gap-3 shrink-0">
-        <a href="https://www.booking.com/searchresults.html?ss=Caminha%2C+Portugal&aid=7968251" rel="nofollow noopener noreferrer sponsored" target="_blank" class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-earth-500 to-earth-600 hover:from-earth-600 hover:to-earth-700 active:scale-[0.98] text-white font-bold text-sm px-6 py-3.5 rounded-xl transition-all duration-200 no-underline shadow-md hover:shadow-lg cursor-pointer group">
+        <a href={bookingSearch('Caminha, Portugal', 'wtsg-eat-es')} rel="nofollow noopener noreferrer sponsored" target="_blank" class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-earth-500 to-earth-600 hover:from-earth-600 hover:to-earth-700 active:scale-[0.98] text-white font-bold text-sm px-6 py-3.5 rounded-xl transition-all duration-200 no-underline shadow-md hover:shadow-lg cursor-pointer group">
           Ver Disponibilidad
           <svg class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
         </a>

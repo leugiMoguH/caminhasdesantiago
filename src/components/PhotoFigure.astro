@@ -1,0 +1,44 @@
+---
+/**
+ * PhotoFigure — optimized, responsive content photo in a landscape crop.
+ *
+ * Source photos are portrait phone shots; the aspect-ratio box + object-cover
+ * presents them as a clean landscape band so they sit well inside article copy.
+ * Pass an imported asset (ImageMetadata) as `src` so Astro emits webp/avif.
+ */
+import { Image } from 'astro:assets';
+
+interface Props {
+  src: ImageMetadata;
+  alt: string;
+  caption?: string;
+  aspect?: string;      // Tailwind aspect ratio utility, e.g. 'aspect-[3/2]'
+  loading?: 'lazy' | 'eager';
+  class?: string;
+}
+
+const {
+  src,
+  alt,
+  caption,
+  aspect = 'aspect-[3/2]',
+  loading = 'lazy',
+  class: className = '',
+} = Astro.props;
+---
+
+<figure class={`my-8 ${className}`}>
+  <div class={`overflow-hidden rounded-2xl border border-slate-200 shadow-sm ${aspect}`}>
+    <Image
+      src={src}
+      alt={alt}
+      widths={[360, 540, 720]}
+      sizes="(max-width: 768px) 100vw, 720px"
+      loading={loading}
+      class="w-full h-full object-cover"
+    />
+  </div>
+  {caption && (
+    <figcaption class="mt-2 text-center text-xs italic text-slate-500">{caption}</figcaption>
+  )}
+</figure>

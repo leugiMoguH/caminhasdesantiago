@@ -1,5 +1,8 @@
 ---
 import MainLayout from '../../../layouts/MainLayout.astro';
+import PhotoFigure from '../../../components/PhotoFigure.astro';
+import { bookingSearch } from '../../../lib/booking';
+import assoreamentoPhoto from '../../../assets/photos/caminha-rio-assoreamento.jpg';
 import { getEntry } from 'astro:content';
 import { buildFerryGraph } from '../../../lib/ferrySchema';
 
@@ -192,6 +195,19 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
         
 
         <!-- Assoreamento -->
+        <PhotoFigure
+          src={assoreamentoPhoto}
+          alt="O estuário do Minho em maré baixa perto de Caminha, com bancos de areia a descoberto"
+          caption="O estuário do Minho em maré baixa — os bancos de areia por trás do assoreamento que encalhou o antigo ferry"
+        />
+        <aside class="mb-10 rounded-2xl bg-forest-50 border border-forest-200 p-5 flex flex-col sm:flex-row sm:items-center gap-4">
+          <p class="flex-1 text-sm text-slate-700 leading-relaxed">Chegas na véspera da travessia? Reserva cama em Caminha — ou um quarto privado em A Guarda para depois de cruzar.</p>
+          <div class="flex flex-wrap gap-2 shrink-0">
+            <a href="/pt/caminha/onde-ficar/" class="inline-flex items-center rounded-xl bg-forest-700 hover:bg-forest-800 text-white text-sm font-bold px-4 py-2.5 no-underline transition-colors">Ficar em Caminha</a>
+            <a href={bookingSearch('A Guarda, Espanha', 'wtsg-ferry-pt-aguarda')} rel="nofollow noopener noreferrer sponsored" target="_blank" class="inline-flex items-center rounded-xl bg-earth-500 hover:bg-earth-600 text-white text-sm font-bold px-4 py-2.5 no-underline transition-colors">Hotéis em A Guarda</a>
+          </div>
+        </aside>
+
         <section id="assoreamento">
           <div class="rounded-2xl overflow-hidden shadow-lg border border-red-200">
             <div class="bg-gradient-to-r from-red-700 to-red-800 px-6 py-5 flex gap-4 items-start">

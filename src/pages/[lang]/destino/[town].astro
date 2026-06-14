@@ -12,6 +12,7 @@ import {
   i18nUrlsFor,
   type Lang,
 } from '../../../lib/clusterRoutes';
+import { bookingSearch } from '../../../lib/booking';
 
 type Link = { url: string; label: string };
 
@@ -107,6 +108,20 @@ const hub = hubPath(lang);
         </div>
       </section>
     )}
+
+    <!-- Private-room option (Booking.com affiliate) -->
+    <aside class="bg-earth-50 border border-earth-200 rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center gap-4">
+      <p class="flex-1 text-sm text-slate-700 leading-relaxed">{ui.privateRoomLead}</p>
+      <a
+        href={bookingSearch(data.name, `wtsg-town-${lang}-${slug}`)}
+        rel="nofollow noopener noreferrer sponsored"
+        target="_blank"
+        class="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-earth-500 to-earth-600 px-5 py-3 text-sm font-bold text-white no-underline shadow-md transition-all hover:from-earth-600 hover:to-earth-700"
+      >
+        {ui.privateRoomCta}
+        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      </a>
+    </aside>
 
     <!-- Sections -->
     {t.sections.map((s: { heading: string; body: string }) => (

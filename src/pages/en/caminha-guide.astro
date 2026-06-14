@@ -1,5 +1,7 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
+import PhotoFigure from '../../components/PhotoFigure.astro';
+import torrePhoto from '../../assets/photos/caminha-torre-relogio.jpg';
 
 const SITE_URL = 'https://waytosantiagoguide.com';
 
@@ -207,6 +209,17 @@ const jsonLd = {
         ))}
       </dl>
     </div>
+  </div>
+
+  <!-- Caminha photo -->
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-8">
+    <PhotoFigure
+      src={torrePhoto}
+      alt="Caminha's medieval Clock Tower (Torre do Relógio) rising above the historic centre"
+      caption="The Torre do Relógio — Caminha's emblem in the historic centre"
+      loading="eager"
+      class="!my-0"
+    />
   </div>
 
   <!-- ── CLUSTER NAVIGATION ────────────────────────────────────────────────────── -->

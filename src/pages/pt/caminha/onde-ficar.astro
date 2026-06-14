@@ -1,5 +1,6 @@
 ---
 import MainLayout from '../../../layouts/MainLayout.astro';
+import { bookingLink, stayLabel } from '../../../lib/booking';
 
 type Zona = 'caminha' | 'vpa' | 'seixas';
 type Categoria = 'albergue' | 'hotel' | 'pensao';
@@ -194,7 +195,7 @@ const etiquetaCategoria: Record<Categoria, string> = {
       </nav>
       <h1 class="text-3xl sm:text-4xl font-bold text-forest-900 mb-4 tracking-tight">Onde Ficar</h1>
       <p class="text-slate-600 max-w-2xl text-base leading-relaxed">
-        Alojamento verificado em três zonas da Rota Costeira Portuguesa: Caminha (localidade de travessia do rio), Vila Praia de Âncora (costeira, 8 km a sul) e Seixas (freguesia na rota a sul de Caminha). Todos os hotéis ligam diretamente ao Booking.com.
+        Alojamento verificado em três zonas da Rota Costeira Portuguesa: Caminha (localidade de travessia do rio), Vila Praia de Âncora (costeira, 8 km a sul) e Seixas (freguesia na rota a sul de Caminha). Todos os hotéis ligam diretamente ao Booking.com. Na época alta (maio–outubro) as camas em Caminha são limitadas, por isso reserva com antecedência.
       </p>
       <div class="mt-6 flex flex-wrap gap-2.5">
         {zonas.map((z) => (
@@ -290,7 +291,7 @@ const etiquetaCategoria: Record<Categoria, string> = {
 
                           {a.reservaUrl ? (
                             <a
-                              href={a.reservaUrl}
+                              href={bookingLink(a.reservaUrl, stayLabel(a.nome, 'pt'))}
                               rel="nofollow noopener noreferrer sponsored"
                               target="_blank"
                               class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-earth-500 to-earth-600 hover:from-earth-600 hover:to-earth-700 active:scale-[0.98] text-white font-bold text-sm px-6 py-3.5 rounded-xl transition-all duration-200 no-underline shrink-0 shadow-md hover:shadow-lg cursor-pointer group"

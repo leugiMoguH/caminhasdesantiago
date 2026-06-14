@@ -1,5 +1,8 @@
 ---
 import MainLayout from '../../../layouts/MainLayout.astro';
+import PhotoFigure from '../../../components/PhotoFigure.astro';
+import pracaPhoto from '../../../assets/photos/caminha-centro-praca.jpg';
+import { bookingSearch } from '../../../lib/booking';
 
 type Zone = 'caminha' | 'vpa';
 
@@ -154,6 +157,16 @@ const zones: Zone[] = ['caminha', 'vpa'];
   </div>
 
   
+
+  <!-- ── Caminha town photo ─────────────────────────────────────────────────── -->
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <PhotoFigure
+      src={pracaPhoto}
+      alt="Praça Conselheiro Silva Torres in Caminha — café and restaurant terraces below the medieval Clock Tower"
+      caption="Praça Conselheiro Silva Torres — café terraces in the heart of Caminha"
+      loading="eager"
+    />
+  </div>
 
   <!-- ── RESTAURANTS ─────────────────────────────────────────────────────────── -->
   <div id="restaurants" class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10 space-y-16">
@@ -324,7 +337,7 @@ const zones: Zone[] = ['caminha', 'vpa'];
       </div>
       <div class="flex flex-col sm:flex-row gap-3 shrink-0">
         <a
-          href="https://www.booking.com/searchresults.html?ss=Caminha%2C+Portugal&aid=7968251"
+          href={bookingSearch('Caminha, Portugal', 'wtsg-eat-en')}
           rel="nofollow noopener noreferrer sponsored"
           target="_blank"
           class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-earth-500 to-earth-600 hover:from-earth-600 hover:to-earth-700 active:scale-[0.98] text-white font-bold text-sm px-6 py-3.5 rounded-xl transition-all duration-200 no-underline shadow-md hover:shadow-lg cursor-pointer group"

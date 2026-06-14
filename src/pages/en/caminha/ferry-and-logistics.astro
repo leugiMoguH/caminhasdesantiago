@@ -1,5 +1,8 @@
 ---
 import MainLayout from '../../../layouts/MainLayout.astro';
+import PhotoFigure from '../../../components/PhotoFigure.astro';
+import { bookingSearch } from '../../../lib/booking';
+import assoreamentoPhoto from '../../../assets/photos/caminha-rio-assoreamento.jpg';
 import { getEntry } from 'astro:content';
 import { buildFerryGraph } from '../../../lib/ferrySchema';
 
@@ -197,6 +200,19 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
         </section>
 
         <!-- ── THE ASSOREAMENTO PROBLEM — Status Warning Card ──────────────────── -->
+        <PhotoFigure
+          src={assoreamentoPhoto}
+          alt="The Minho estuary at low tide near Caminha, with exposed sandbanks"
+          caption="The Minho estuary at low tide — the sandbanks behind the siltation that grounded the old ferry"
+        />
+        <aside class="mb-10 rounded-2xl bg-forest-50 border border-forest-200 p-5 flex flex-col sm:flex-row sm:items-center gap-4">
+          <p class="flex-1 text-sm text-slate-700 leading-relaxed">Arriving the evening before the crossing? Book a bed in Caminha — or a private room in A Guarda for after you cross.</p>
+          <div class="flex flex-wrap gap-2 shrink-0">
+            <a href="/en/caminha/where-to-stay/" class="inline-flex items-center rounded-xl bg-forest-700 hover:bg-forest-800 text-white text-sm font-bold px-4 py-2.5 no-underline transition-colors">Stay in Caminha</a>
+            <a href={bookingSearch('A Guarda, Spain', 'wtsg-ferry-en-aguarda')} rel="nofollow noopener noreferrer sponsored" target="_blank" class="inline-flex items-center rounded-xl bg-earth-500 hover:bg-earth-600 text-white text-sm font-bold px-4 py-2.5 no-underline transition-colors">A Guarda hotels</a>
+          </div>
+        </aside>
+
         <section id="assoreamento">
           <!-- Dramatic warning card -->
           <div class="rounded-2xl overflow-hidden shadow-lg border border-red-200">

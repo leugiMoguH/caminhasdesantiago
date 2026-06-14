@@ -20,7 +20,7 @@ import MainLayout from '../../layouts/MainLayout.astro';
     </nav>
 
     <h1 class="text-3xl sm:text-4xl font-bold text-forest-900 mb-3 tracking-tight">Política de Privacidade</h1>
-    <p class="text-slate-500 text-sm mb-10">Última atualização: Maio 2026</p>
+    <p class="text-slate-500 text-sm mb-10">Última atualização: Junho 2026</p>
 
     <div class="prose-like space-y-8 text-slate-700 text-base leading-relaxed">
 
@@ -70,6 +70,13 @@ import MainLayout from '../../layouts/MainLayout.astro';
       </section>
 
       <section>
+        <h2 class="text-xl font-bold text-forest-900 mb-3">Rastreamento de Afiliados — CJ Affiliate (Commission Junction)</h2>
+        <p>
+          Os nossos links de afiliados do Booking.com são geridos através da <strong>CJ Affiliate (Commission Junction)</strong>. Um script da CJ neste Site deteta automaticamente os links para parceiros afiliados e encaminha o seu clique através da CJ para que qualquer reserva resultante nos seja atribuída — sem custo adicional para si. A CJ pode usar cookies para medir cliques e reservas concluídas. Este Site não recolhe informação pessoalmente identificável através da CJ. Consulte o aviso de privacidade da CJ em <a href="https://www.cj.com/legal/privacy-policy-services" rel="noopener noreferrer nofollow" class="text-forest-700 hover:underline" target="_blank">cj.com</a>.
+        </p>
+      </section>
+
+      <section>
         <h2 class="text-xl font-bold text-forest-900 mb-3">Cookies</h2>
         <p>
           O Site utiliza os seguintes cookies:
@@ -87,6 +94,7 @@ import MainLayout from '../../layouts/MainLayout.astro';
               {[
                 { name: '_ga, _ga_*', provider: 'Google Analytics', purpose: 'Distinguir visitantes únicos; rastrear dados de sessão' },
                 { name: 'ferryWarningDismissed', provider: 'Este site (sessionStorage)', purpose: 'Lembrar se o visitante dispensou o banner de estado do ferry' },
+                { name: 'Cookies de afiliado CJ', provider: 'CJ Affiliate (Commission Junction)', purpose: 'Atribuir cliques de afiliado e reservas concluídas' },
               ].map((row, i) => (
                 <tr class={i % 2 === 0 ? 'bg-white' : 'bg-slate-50/70'}>
                   <td class="px-4 py-3 font-mono text-xs text-slate-700">{row.name}</td>
@@ -109,6 +117,7 @@ import MainLayout from '../../layouts/MainLayout.astro';
           {[
             { name: 'Booking.com', url: 'https://www.booking.com/content/privacy.html', note: 'Plataforma afiliada de reserva de alojamento' },
             { name: 'Google Analytics 4', url: 'https://policies.google.com/privacy', note: 'Análise anónima de visitantes' },
+            { name: 'CJ Affiliate (Commission Junction)', url: 'https://www.cj.com/legal/privacy-policy-services', note: 'Rastreamento de links de afiliado para Booking.com' },
             { name: 'Google Fonts', url: 'https://policies.google.com/privacy', note: 'Tipografia (DM Sans) servida via CDN da Google' },
           ].map(({ name, url, note }) => (
             <li class="flex items-start gap-2">

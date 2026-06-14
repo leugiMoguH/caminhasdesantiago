@@ -39,6 +39,8 @@ interface UIStrings {
   distance: string;
   difficulty: string;
   stayHeading: string;
+  privateRoomLead: string;
+  privateRoomCta: string;
   servicesHeading: string;
   sourcesNote: string;
   difficultyLabel: Record<'easy' | 'moderate' | 'hard', string>;
@@ -63,6 +65,8 @@ export const UI: Record<Lang, UIStrings> = {
     distance: 'Distance',
     difficulty: 'Difficulty',
     stayHeading: 'Where to stay',
+    privateRoomLead: 'Prefer a private room over a shared albergue? Compare hotels and guesthouses on Booking.com.',
+    privateRoomCta: 'Check availability',
     servicesHeading: 'Services',
     sourcesNote: 'Sources',
     difficultyLabel: { easy: 'Easy', moderate: 'Moderate', hard: 'Hard' },
@@ -85,6 +89,8 @@ export const UI: Record<Lang, UIStrings> = {
     distance: 'Distancia',
     difficulty: 'Dificultad',
     stayHeading: 'Dónde dormir',
+    privateRoomLead: '¿Prefieres una habitación privada en vez de un albergue compartido? Compara hoteles y pensiones en Booking.com.',
+    privateRoomCta: 'Ver disponibilidad',
     servicesHeading: 'Servicios',
     sourcesNote: 'Fuentes',
     difficultyLabel: { easy: 'Fácil', moderate: 'Moderada', hard: 'Difícil' },
@@ -107,6 +113,8 @@ export const UI: Record<Lang, UIStrings> = {
     distance: 'Distância',
     difficulty: 'Dificuldade',
     stayHeading: 'Onde ficar',
+    privateRoomLead: 'Preferes um quarto privado em vez de um albergue partilhado? Compara hotéis e pensões no Booking.com.',
+    privateRoomCta: 'Ver disponibilidade',
     servicesHeading: 'Serviços',
     sourcesNote: 'Fontes',
     difficultyLabel: { easy: 'Fácil', moderate: 'Moderada', hard: 'Difícil' },

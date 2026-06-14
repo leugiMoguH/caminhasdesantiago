@@ -1,5 +1,6 @@
 ---
 import MainLayout from '../../../layouts/MainLayout.astro';
+import { bookingLink, stayLabel } from '../../../lib/booking';
 
 type Zone = 'caminha' | 'vpa' | 'seixas';
 type Category = 'albergue' | 'hotel' | 'guesthouse';
@@ -361,7 +362,7 @@ const categoryLabel: Record<Category, string> = {
       </nav>
       <h1 class="text-3xl sm:text-4xl font-bold text-forest-900 mb-4 tracking-tight">Where to Stay</h1>
       <p class="text-slate-600 max-w-2xl text-base leading-relaxed">
-        Verified accommodation across three zones on the Portuguese Coastal Camino: Caminha (river crossing town), Vila Praia de Âncora (coastal, 8 km south), and Seixas (on-route parish south of Caminha). All hotels link directly to Booking.com.
+        Verified accommodation across three zones on the Portuguese Coastal Camino: Caminha (river crossing town), Vila Praia de Âncora (coastal, 8 km south), and Seixas (on-route parish south of Caminha). All hotels link directly to Booking.com. In peak season (May–October) beds in Caminha are limited, so book ahead.
       </p>
       <div class="mt-6 flex flex-wrap gap-2.5">
         {zones.map((z) => (
@@ -454,7 +455,7 @@ const categoryLabel: Record<Category, string> = {
 
                           {a.bookingUrl ? (
                             <a
-                              href={a.bookingUrl}
+                              href={bookingLink(a.bookingUrl, stayLabel(a.name, 'en'))}
                               rel="nofollow noopener noreferrer sponsored"
                               target="_blank"
                               class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-earth-500 to-earth-600 hover:from-earth-600 hover:to-earth-700 active:scale-[0.98] text-white font-bold text-sm px-6 py-3.5 rounded-xl transition-all duration-200 no-underline shrink-0 shadow-md hover:shadow-lg cursor-pointer group"
