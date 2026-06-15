@@ -1,0 +1,112 @@
+route: coastal
+order: 9
+from: Caldas de Reis
+to: Padrón
+distanceKm: 18.9
+ascentM: 204
+difficulty: moderate
+terrain: "Gentle Galician country — forest tracks, old stone bridges and quiet lanes through small parishes — with modest ups and downs and no hard climb, following the Bermaña and then the Ulla rivers into Padrón."
+prevSlug: pontevedra-caldas-de-reis
+nextSlug: padron-santiago
+townSlugs: []
+logisticsSlugs: []
+sourceVerified: true
+lastVerified: "2026-06-15"
+sources:
+  - https://thenwewalked.com/caldas-de-reis-to-padron-camino-portuguese/
+  - https://www.pilgrim.es/en/portuguese-way/stage-23-pontevedra-caldas-de-reis/
+  - https://stingynomads.com/portuguese-coastal-camino-stages/
+i18n:
+  en:
+    metaTitle: "Caldas de Reis to Padrón (19 km): Camino Stage Guide (2026)"
+    metaDescription: "The Caldas de Reis to Padrón stage of the Camino Portugués: 18.9 km of gentle country walking over old Roman bridges to Padrón, the town of the Pedrón stone and the legend of Saint James. Route, Herbón detour, where to sleep, and a stage FAQ."
+    h1: "Caldas de Reis → Padrón"
+    lead: "The penultimate stage, and an easy, atmospheric one. The route leaves the spa town of Caldas de Reis over an old bridge and follows gentle country — forest tracks, small parishes and stone bridges — down to Padrón, the town at the heart of the Saint James legend, where his stone boat is said to have moored. About 18.9 km with no hard climb, leaving you within a single day of Santiago."
+    sections:
+      - heading: "Distance and difficulty"
+        body: "The stage is about 18.9 km with roughly 200 m of ascent — moderate for length but easy underfoot, with only modest ups and downs and no real climb. The walking is mostly on forest tracks and quiet lanes. Five hours or so is typical. It is a relaxed day, and many pilgrims walk it knowing the cathedral is now within reach the following morning."
+      - heading: "Route and variants"
+        body: "From Caldas de Reis the waymarked route runs as a single line through Carracedo, Valga and Pontecesures into Padrón. The one notable option is the Herbón detour: a short side trip (adding roughly 3 km) to the Convento de Herbón, the Franciscan monastery whose monks are credited with introducing the famous Padrón peppers (pementos de Padrón) to Galicia. It has a donativo pilgrim albergue and rejoins the main route near Padrón."
+      - heading: "The stage, section by section"
+        body: "You leave Caldas de Reis over the Puente Romano del Río Bermaña and pass the 16th-century Capela de San Roque on the way out of town. The route climbs gently to Carracedo, with its church of Santa Mariña, then continues through O Pino — where the restored Muíño do Xalleiro watermill stands by the path — to San Miguel de Valga. The final approach crosses the River Ulla on the Puente Romano de Pontecesures and enters Padrón."
+      - heading: "Arriving in Padrón"
+        body: "Padrón is steeped in the founding legend of the Camino. According to tradition, the disciples of Saint James brought his body by sea to Iria Flavia (old Padrón) and moored their stone boat to a rock called the Pedrón — now kept beneath the altar of the church of Santiago in the town, and the source of Padrón's name. The town is also famous for its small green peppers and for its riverside gardens and market. It is a fitting, story-rich place to spend the last night before Santiago."
+      - heading: "Where to sleep and eat"
+        body: "Padrón has a good range of pilgrim beds — a budget albergue with dorms and private rooms, plus guesthouses, apartments and hotels (names recurring in current guides include Albergue Murgadán, Villa Galicia, Casa dos Cantares and the Hotel Chef Rivera, known for its restaurant). For food, look for the local pementos de Padrón — fried green peppers, most of them mild, the occasional one hot. Book ahead in season, as Padrón is a popular last stop before the city."
+      - heading: "Stage logistics at a glance"
+        body: "Distance about 18.9 km; difficulty moderate but easy underfoot; five hours or so for most. The main optional decision is the Herbón monastery detour (about 3 km extra) with its donativo albergue. Services are good in Padrón at the end. The final stage, Padrón to Santiago (about 24–25 km), reaches the cathedral and the Praza do Obradoiro."
+    faq:
+      - q: "How long is the Caldas de Reis to Padrón stage?"
+        a: "About 18.9 km, with roughly 200 m of ascent. It is moderate for length but easy underfoot, and most pilgrims walk it in around five hours."
+      - q: "Is the Caldas de Reis to Padrón stage hard?"
+        a: "No — it has only modest ups and downs and no real climb, mostly on forest tracks and quiet lanes. It is one of the easier days on this part of the route."
+      - q: "What is the Pedrón stone in Padrón?"
+        a: "According to tradition, the disciples of Saint James brought his body by sea to Iria Flavia (old Padrón) and moored their boat to a rock, the Pedrón. It is kept beneath the altar of the church of Santiago in Padrón and gives the town its name."
+      - q: "Should I take the Herbón detour?"
+        a: "The Convento de Herbón is a short side trip (about 3 km extra) to a Franciscan monastery linked to the famous Padrón peppers, with a donativo pilgrim albergue. It rejoins the main route near Padrón — worth it if you want a quieter, historic overnight."
+      - q: "What are Padrón peppers?"
+        a: "Pementos de Padrón are small green peppers, usually fried in oil and salted; most are mild but the occasional one is surprisingly hot. They are a regional specialty traditionally linked to the monks of Herbón."
+      - q: "Where can I sleep in Padrón?"
+        a: "Padrón has a good range of beds — a budget albergue with dorms and private rooms, plus guesthouses, apartments and hotels (current guides mention Albergue Murgadán, Villa Galicia, Casa dos Cantares and the Hotel Chef Rivera). Book ahead in season."
+  es:
+    metaTitle: "Caldas de Reis a Padrón (19 km): Guía de la Etapa (2026)"
+    metaDescription: "La etapa Caldas de Reis–Padrón del Camino Portugués: 18,9 km de caminata suave sobre viejos puentes romanos hasta Padrón, la villa de la piedra del Pedrón y la leyenda del apóstol Santiago. Ruta, desvío de Herbón, dónde dormir y preguntas frecuentes."
+    h1: "Caldas de Reis → Padrón"
+    lead: "La penúltima etapa, fácil y con encanto. La ruta sale de la villa balneario de Caldas de Reis por un viejo puente y sigue un campo suave — pistas de bosque, pequeñas parroquias y puentes de piedra — hasta Padrón, la villa en el corazón de la leyenda de Santiago, donde se dice que amarró su barca de piedra. Unos 18,9 km sin subida dura, que te dejan a una sola jornada de Santiago."
+    sections:
+      - heading: "Distancia y dificultad"
+        body: "La etapa tiene unos 18,9 km con alrededor de 200 m de desnivel — moderada por longitud pero cómoda de firme, con solo leves subidas y bajadas y sin subida real. Se camina sobre todo por pistas de bosque y caminos tranquilos. Unas cinco horas es lo típico. Es un día relajado, y muchos peregrinos lo caminan sabiendo que la catedral queda ya al alcance a la mañana siguiente."
+      - heading: "Ruta y variantes"
+        body: "Desde Caldas de Reis la ruta señalizada va como una sola línea por Carracedo, Valga y Pontecesures hasta Padrón. La opción más destacada es el desvío de Herbón: una corta excursión lateral (que añade unos 3 km) al Convento de Herbón, el monasterio franciscano a cuyos monjes se atribuye la introducción de los famosos pimientos de Padrón en Galicia. Tiene un albergue de peregrinos de donativo y se reúne con la ruta principal cerca de Padrón."
+      - heading: "La etapa, tramo a tramo"
+        body: "Sales de Caldas de Reis por el Puente Romano del Río Bermaña y pasas la Capela de San Roque, del siglo XVI, al salir de la villa. La ruta sube suavemente a Carracedo, con su iglesia de Santa Mariña, y continúa por O Pino — donde el restaurado Muíño do Xalleiro se alza junto al camino — hasta San Miguel de Valga. La aproximación final cruza el río Ulla por el Puente Romano de Pontecesures y entra en Padrón."
+      - heading: "La llegada a Padrón"
+        body: "Padrón está impregnada de la leyenda fundacional del Camino. Según la tradición, los discípulos de Santiago trajeron su cuerpo por mar a Iria Flavia (la antigua Padrón) y amarraron su barca de piedra a una roca llamada el Pedrón — hoy guardada bajo el altar de la iglesia de Santiago de la villa, y origen del nombre de Padrón. La villa es también famosa por sus pequeños pimientos verdes y por sus jardines y mercado junto al río. Es un lugar apropiado y lleno de historia para pasar la última noche antes de Santiago."
+      - heading: "Dónde dormir y comer"
+        body: "Padrón tiene buena oferta de camas de peregrino — un albergue económico con literas y habitaciones privadas, además de pensiones, apartamentos y hoteles (nombres que se repiten en las guías actuales: Albergue Murgadán, Villa Galicia, Casa dos Cantares y el Hotel Chef Rivera, conocido por su restaurante). Para comer, busca los pementos de Padrón — pimientos verdes fritos, la mayoría suaves, alguno picante. Reserva con antelación en temporada, pues Padrón es una última parada popular antes de la ciudad."
+      - heading: "Logística de la etapa de un vistazo"
+        body: "Distancia unos 18,9 km; dificultad moderada pero cómoda de firme; unas cinco horas para la mayoría. La principal decisión opcional es el desvío al monasterio de Herbón (unos 3 km extra) con su albergue de donativo. Los servicios son buenos en Padrón al final. La última etapa, Padrón a Santiago (unos 24–25 km), llega a la catedral y a la Praza do Obradoiro."
+    faq:
+      - q: "¿Cuánto mide la etapa Caldas de Reis–Padrón?"
+        a: "Unos 18,9 km, con alrededor de 200 m de desnivel. Es moderada por longitud pero cómoda de firme, y la mayoría la camina en unas cinco horas."
+      - q: "¿Es dura la etapa Caldas de Reis–Padrón?"
+        a: "No — solo tiene leves subidas y bajadas y ninguna subida real, sobre todo por pistas de bosque y caminos tranquilos. Es uno de los días más fáciles de esta parte de la ruta."
+      - q: "¿Qué es la piedra del Pedrón en Padrón?"
+        a: "Según la tradición, los discípulos de Santiago trajeron su cuerpo por mar a Iria Flavia (la antigua Padrón) y amarraron su barca a una roca, el Pedrón. Se guarda bajo el altar de la iglesia de Santiago de Padrón y da nombre a la villa."
+      - q: "¿Debo tomar el desvío de Herbón?"
+        a: "El Convento de Herbón es una corta excursión lateral (unos 3 km extra) a un monasterio franciscano ligado a los famosos pimientos de Padrón, con un albergue de peregrinos de donativo. Se reúne con la ruta principal cerca de Padrón — merece la pena si quieres una parada más tranquila e histórica."
+      - q: "¿Qué son los pimientos de Padrón?"
+        a: "Los pementos de Padrón son pequeños pimientos verdes, normalmente fritos en aceite y con sal; la mayoría son suaves pero alguno resulta sorprendentemente picante. Son una especialidad regional ligada por tradición a los monjes de Herbón."
+      - q: "¿Dónde puedo dormir en Padrón?"
+        a: "Padrón tiene buena oferta de camas — un albergue económico con literas y habitaciones privadas, además de pensiones, apartamentos y hoteles (las guías actuales mencionan Albergue Murgadán, Villa Galicia, Casa dos Cantares y el Hotel Chef Rivera). Reserva con antelación en temporada."
+  pt:
+    metaTitle: "Caldas de Reis a Padrón (19 km): Guia da Etapa (2026)"
+    metaDescription: "A etapa Caldas de Reis–Padrón do Caminho Português: 18,9 km de caminhada suave sobre velhas pontes romanas até Padrón, a vila da pedra do Pedrón e a lenda do apóstolo Santiago. Percurso, desvio de Herbón, onde dormir e perguntas frequentes."
+    h1: "Caldas de Reis → Padrón"
+    lead: "A penúltima etapa, fácil e cheia de atmosfera. O percurso sai da vila termal de Caldas de Reis por uma velha ponte e segue um campo suave — trilhos de floresta, pequenas freguesias e pontes de pedra — até Padrón, a vila no coração da lenda de Santiago, onde se diz que atracou a sua barca de pedra. Cerca de 18,9 km sem subida dura, que o deixam a uma só jornada de Santiago."
+    sections:
+      - heading: "Distância e dificuldade"
+        body: "A etapa tem cerca de 18,9 km com à volta de 200 m de subida — moderada por comprimento mas confortável de piso, com apenas ligeiras subidas e descidas e sem subida real. Caminha-se sobretudo por trilhos de floresta e caminhos tranquilos. Cerca de cinco horas é o típico. É um dia descontraído, e muitos peregrinos caminham-no sabendo que a catedral fica já ao alcance na manhã seguinte."
+      - heading: "Percurso e variantes"
+        body: "Desde Caldas de Reis o percurso sinalizado segue como uma só linha por Carracedo, Valga e Pontecesures até Padrón. A opção mais notável é o desvio de Herbón: uma curta excursão lateral (que acrescenta cerca de 3 km) ao Convento de Herbón, o mosteiro franciscano a cujos monges se atribui a introdução dos famosos pimentos de Padrón na Galiza. Tem um albergue de peregrinos de donativo e reúne-se com o percurso principal perto de Padrón."
+      - heading: "A etapa, troço a troço"
+        body: "Sai de Caldas de Reis pelo Puente Romano del Río Bermaña e passa a Capela de San Roque, do século XVI, à saída da vila. O percurso sobe suavemente a Carracedo, com a sua igreja de Santa Mariña, e continua por O Pino — onde o restaurado Muíño do Xalleiro se ergue junto ao caminho — até San Miguel de Valga. A aproximação final atravessa o rio Ulla pelo Puente Romano de Pontecesures e entra em Padrón."
+      - heading: "A chegada a Padrón"
+        body: "Padrón está impregnada da lenda fundadora do Caminho. Segundo a tradição, os discípulos de Santiago trouxeram o seu corpo por mar até Iria Flavia (a antiga Padrón) e amarraram a sua barca de pedra a uma rocha chamada o Pedrón — hoje guardada sob o altar da igreja de Santiago da vila, e origem do nome de Padrón. A vila é também famosa pelos seus pequenos pimentos verdes e pelos seus jardins e mercado junto ao rio. É um lugar apropriado e cheio de história para passar a última noite antes de Santiago."
+      - heading: "Onde dormir e comer"
+        body: "Padrón tem boa oferta de camas de peregrino — um albergue económico com camaratas e quartos privados, além de pensões, apartamentos e hotéis (nomes que se repetem nos guias atuais: Albergue Murgadán, Villa Galicia, Casa dos Cantares e o Hotel Chef Rivera, conhecido pelo restaurante). Para comer, procure os pementos de Padrón — pimentos verdes fritos, a maioria suaves, algum picante. Reserve com antecedência na época, pois Padrón é uma última paragem popular antes da cidade."
+      - heading: "Logística da etapa em resumo"
+        body: "Distância cerca de 18,9 km; dificuldade moderada mas confortável de piso; cerca de cinco horas para a maioria. A principal decisão opcional é o desvio ao mosteiro de Herbón (cerca de 3 km extra) com o seu albergue de donativo. Os serviços são bons em Padrón no fim. A última etapa, Padrón a Santiago (cerca de 24–25 km), chega à catedral e à Praza do Obradoiro."
+    faq:
+      - q: "Qual o comprimento da etapa Caldas de Reis–Padrón?"
+        a: "Cerca de 18,9 km, com à volta de 200 m de subida. É moderada por comprimento mas confortável de piso, e a maioria caminha-a em cerca de cinco horas."
+      - q: "A etapa Caldas de Reis–Padrón é difícil?"
+        a: "Não — tem apenas ligeiras subidas e descidas e nenhuma subida real, sobretudo por trilhos de floresta e caminhos tranquilos. É um dos dias mais fáceis desta parte do percurso."
+      - q: "O que é a pedra do Pedrón em Padrón?"
+        a: "Segundo a tradição, os discípulos de Santiago trouxeram o seu corpo por mar até Iria Flavia (a antiga Padrón) e amarraram a sua barca a uma rocha, o Pedrón. Está guardada sob o altar da igreja de Santiago de Padrón e dá nome à vila."
+      - q: "Devo seguir o desvio de Herbón?"
+        a: "O Convento de Herbón é uma curta excursão lateral (cerca de 3 km extra) a um mosteiro franciscano ligado aos famosos pimentos de Padrón, com um albergue de peregrinos de donativo. Reúne-se com o percurso principal perto de Padrón — vale a pena se quiser uma paragem mais tranquila e histórica."
+      - q: "O que são os pimentos de Padrón?"
+        a: "Os pementos de Padrón são pequenos pimentos verdes, normalmente fritos em azeite e com sal; a maioria são suaves mas algum é surpreendentemente picante. São uma especialidade regional ligada por tradição aos monges de Herbón."
+      - q: "Onde posso dormir em Padrón?"
+        a: "Padrón tem boa oferta de camas — um albergue económico com camaratas e quartos privados, além de pensões, apartamentos e hotéis (os guias atuais mencionam Albergue Murgadán, Villa Galicia, Casa dos Cantares e o Hotel Chef Rivera). Reserve com antecedência na época."

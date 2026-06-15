@@ -12,11 +12,11 @@ const faqItems = [
   },
   {
     question: 'When is the best time of year to walk the Coastal Route through Caminha?',
-    answer: 'May to October offers the most reliable conditions: daily ferry service, long daylight hours, and open albergues. July and August are peak season — book private albergues and hotels in advance. The municipal albergue cannot be booked. November to March brings reduced ferry service (weekends and public holidays only) and a significant reduction in pilgrim infrastructure. Winter walkers should consider the Portuguese Interior Route via Valença–Tui as a more reliable crossing alternative.',
+    answer: 'May to October offers the most reliable conditions: frequent daily water-taxi crossings, long daylight hours, and open albergues. July and August are peak season — book private albergues and hotels in advance. The municipal albergue cannot be booked. November to March brings reduced winter crossings (fewer daily departures, more weather cancellations) and a significant reduction in pilgrim infrastructure. Winter walkers should consider the Portuguese Interior Route via Valença–Tui as a more reliable crossing alternative.',
   },
   {
     question: 'How do I cross from Portugal to Spain on the Coastal Route?',
-    answer: 'The primary crossing is by ferry from Cais de Caminha to A Guarda (€2.50 per adult, ~15 minutes). In summer (April–October) the ferry runs daily from 09:00 to 19:00. The ferry is subject to seasonal siltation (assoreamento) that can suspend service without notice — always verify the evening before. Alternatives: Xávegas water taxis (€5–6 per person, informal fishermen\'s boats) or the overland train from Caminha to Valença then walking across the Tui bridge. See the full ferry and logistics guide for details.',
+    answer: 'You cross the Minho by licensed water taxi from Caminha to A Guarda — about 10 minutes, €6 per person (€7–8 with a bike). Several operators run daily, including Taxi Boat Peregrinos / Capitão Mário, Xacobeo Transfer (online booking, year-round), Taxi Mar Caminha and Popeye the Sailor Man. The old Santa Rita de Cássia ferry stopped in 2020 due to siltation (assoreamento) and is to be dismantled; a new municipal ferry is announced for summer 2026 but is not yet operating. Crossings can still be suspended in bad weather or low tide — always verify the evening before. Backup: the overland train from Caminha to Valença then walking across the Tui bridge. See the full ferry and logistics guide for details.',
   },
 ];
 ---
@@ -48,9 +48,9 @@ const faqItems = [
       <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4">
         {[
           { value: 'VPA → Seixas → Caminha', label: 'Final Portugal stages' },
-          { value: 'Apr – Oct', label: 'Daily ferry season' },
-          { value: '€2.50', label: 'Ferry fare' },
-          { value: '~15 min', label: 'Minho crossing' },
+          { value: 'Daily', label: 'Water-taxi crossings' },
+          { value: '€6', label: 'Water-taxi fare' },
+          { value: '~10 min', label: 'Minho crossing' },
         ].map(({ value, label }) => (
           <div class="bg-white/10 backdrop-blur-sm border border-white/10 rounded-2xl p-4 text-center hover:bg-white/15 transition-colors">
             <div class="text-sm font-bold text-white leading-tight">{value}</div>
@@ -169,15 +169,15 @@ const faqItems = [
           <h2 id="crossing-heading" class="text-2xl font-bold text-forest-900 mb-4 tracking-tight">Crossing Logistics</h2>
           <div class="space-y-4 text-slate-700 text-sm leading-relaxed">
             <p>
-              The Minho river crossing is the defining moment of this route — a 15-minute ferry ride from Caminha (Portugal) to A Guarda (Spain) that separates the Portuguese and Galician sections of the Coastal Camino.
+              The Minho river crossing is the defining moment of this route — a short boat ride of about 10 minutes from Caminha (Portugal) to A Guarda (Spain) that separates the Portuguese and Galician sections of the Coastal Camino.
             </p>
 
             <!-- Quick facts -->
             <div class="grid sm:grid-cols-3 gap-3">
               {[
-                { label: 'Fare', value: '€2.50 adult one-way' },
-                { label: 'Duration', value: '~15 min' },
-                { label: 'Season', value: 'Daily Apr–Oct; weekends Nov–Mar' },
+                { label: 'Fare', value: '€6 per person one-way' },
+                { label: 'Duration', value: '~10 min' },
+                { label: 'Season', value: 'Daily; reduced in winter' },
               ].map(({ label, value }) => (
                 <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 text-center">
                   <p class="text-xs text-slate-500 uppercase tracking-wider mb-1">{label}</p>
@@ -343,7 +343,7 @@ const faqItems = [
           "name": "How do I cross from Portugal to Spain on the Coastal Route?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The primary crossing is by ferry from Cais de Caminha to A Guarda (€2.50 per adult, approximately 15 minutes). In summer (April–October) the ferry runs daily from 09:00 to 19:00. The ferry is subject to seasonal siltation (assoreamento) that can suspend service without notice — always verify the evening before. Alternatives: Xávegas water taxis (€5–6 per person) or the overland train from Caminha to Valença then walking across the Tui bridge."
+            "text": "You cross the Minho by licensed water taxi from Caminha to A Guarda — about 10 minutes, €6 per person (€7–8 with a bike). Several operators run daily, including Taxi Boat Peregrinos / Capitão Mário, Xacobeo Transfer (online booking, year-round), Taxi Mar Caminha and Popeye the Sailor Man. The old Santa Rita de Cássia ferry stopped in 2020 due to siltation (assoreamento) and is to be dismantled; a new municipal ferry is announced for summer 2026 but is not yet operating. Crossings can still be suspended in bad weather — always verify the evening before. Backup: the overland train from Caminha to Valença then walking across the Tui bridge."
           }
         }
       ]

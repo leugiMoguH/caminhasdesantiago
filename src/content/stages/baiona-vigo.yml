@@ -1,0 +1,112 @@
+route: coastal
+order: 5
+from: Baiona
+to: Vigo
+distanceKm: 26.9
+ascentM: 140
+difficulty: moderate
+terrain: "A long, mostly flat coastal day on the litoral variant — promenades, beaches and seafront road around the Bay of Vigo — with an optional hillier inland line; the challenge is distance and patchy waymarking near the city, not gradient."
+prevSlug: oia-baiona
+nextSlug: vigo-redondela
+townSlugs: []
+logisticsSlugs: []
+sourceVerified: true
+lastVerified: "2026-06-15"
+sources:
+  - https://stingynomads.com/portuguese-coastal-camino-stages/
+  - https://thenwewalked.com/baiona-to-vigo-camino-portuguese-coastal/
+  - https://www.alltrails.com/trail/spain/pontevedra/camino-de-la-costa-portuguesa-oia-baiona
+i18n:
+  en:
+    metaTitle: "Baiona to Vigo (27 km): Coastal Camino Stage Guide (2026)"
+    metaDescription: "The Baiona to Vigo stage of the Portuguese Coastal Camino: a long, mostly flat 26.9 km along the Bay of Vigo past the Ramallosa Roman bridge, Playa América and Samil beach into the city. Route, variants, waymarking warning, and a stage FAQ."
+    h1: "Baiona → Vigo"
+    lead: "This is the long day of the northern coast: about 27 km around the great Bay of Vigo, from the seaside calm of Baiona into Galicia's largest city. On the litoral variant it is almost flat — promenades, beaches and seafront road most of the way — so the difficulty is distance and, near Vigo, some of the patchiest waymarking on the whole route. Start early, and have a maps app ready for the urban approach."
+    sections:
+      - heading: "Distance and difficulty"
+        body: "There are two ways to measure this stage. The litoral (seafront) variant is about 26.9 km and almost flat, with only around 140 m of ascent; the official inland variant is a little shorter at roughly 24.6 km but climbs more (around 400 m). Either way it is a long day — four hours of actual walking minimum, more with stops and city navigation — so it is rated moderate for length rather than terrain. Most coastal walkers take the flat litoral line for the views."
+      - heading: "Route and variants"
+        body: "Out of Baiona the route soon reaches A Ramallosa and then splits in spirit: the litoral variant hugs the bay through Nigrán, Playa América and a string of beaches, while the official inland line climbs away from the water before rejoining near Vigo. The litoral is flatter and more scenic; the inland is marginally shorter but hillier. The real catch is the final approach into Vigo, where arrows are sparse and contradictory by Camino standards — most walkers use a navigation app for the city section."
+      - heading: "The stage, section by section"
+        body: "Leaving Baiona you cross to A Ramallosa over the Ponte Românica da Ramallosa, a medieval (13th-century) bridge over the Miñor river. From there the litoral line runs through Nigrán and Playa América, past Praia de Patos and Praia do Portiño, and along the seafront through Saians and Canido — the Areal de Canido has well-known seafood restaurants. The last long stretch follows Samil beach, nearly two kilometres of white sand on the edge of the city, before the route turns into Vigo proper and its busy waterfront."
+      - heading: "Arriving in Vigo"
+        body: "Vigo is the biggest city on the Coastal Route — a working port and industrial hub rather than a postcard old town, but with every service a pilgrim could want and good onward transport. The waymarking through the city is notoriously thin, so be prepared to navigate by app or by the harbour and city-centre landmarks. Vigo is also the point where the Coastal Route effectively rejoins the wider Camino Portugués network for the run to Santiago via Redondela."
+      - heading: "Where to sleep and eat"
+        body: "As a city, Vigo has accommodation at every level, from a pilgrim hostel to business and boutique hotels concentrated around the centre and the port. Beds are rarely the problem here that they are in the small coastal villages; the challenge is choosing a location that suits where you will pick the route up again the next morning. For food you are spoilt — Vigo is famous for its oysters and seafood, especially around the Rúa da Pescadería. Resupply fully here before the shorter, greener stage to Redondela."
+      - heading: "Stage logistics at a glance"
+        body: "Distance about 26.9 km on the litoral variant (around 24.6 km inland); difficulty moderate, almost entirely for length; little real climbing on the coast line. Services are plentiful along the bay and in the city, so the planning priorities are an early start and a navigation app for the final approach into Vigo. The next stage, Vigo to Redondela, is short and easy by comparison (about 16.5 km)."
+    faq:
+      - q: "How long is the Baiona to Vigo stage?"
+        a: "About 26.9 km on the flat litoral (seafront) variant, or roughly 24.6 km on the hillier inland variant. It is the long day of the northern coast — most pilgrims allow most of a day with stops and city navigation."
+      - q: "Is the Baiona to Vigo stage hard?"
+        a: "Not for terrain — the litoral variant is almost flat (around 140 m of ascent). It is rated moderate because of its length and the patchy waymarking on the approach into Vigo, where many walkers use a navigation app."
+      - q: "Should I take the coastal or the inland variant?"
+        a: "Most Coastal Camino walkers take the litoral (seafront) line: it is flatter and far more scenic, following the Bay of Vigo through Playa América and Samil. The official inland variant is marginally shorter but climbs more."
+      - q: "What is the Ramallosa bridge?"
+        a: "The Ponte Românica da Ramallosa, a medieval (13th-century) stone bridge over the Miñor river between Baiona and Nigrán, crossed early in the stage."
+      - q: "Is waymarking a problem on this stage?"
+        a: "Yes, near Vigo. The arrows on the approach into the city are unusually sparse and inconsistent for this route, so carry a charged phone with a navigation app for the urban section."
+      - q: "Where can I sleep in Vigo?"
+        a: "Vigo is a city with beds at every level — a pilgrim hostel plus many hotels around the centre and port. Choose somewhere near where you will rejoin the route for Redondela the next morning."
+  es:
+    metaTitle: "Baiona a Vigo (27 km): Guía de la Etapa del Camino de la Costa (2026)"
+    metaDescription: "La etapa Baiona–Vigo del Camino Portugués de la Costa: una larga jornada casi llana de 26,9 km por la ría de Vigo, pasando el puente románico de Ramallosa, Playa América y la playa de Samil hasta la ciudad. Ruta, variantes, aviso de señalización y preguntas frecuentes."
+    h1: "Baiona → Vigo"
+    lead: "Es la jornada larga de la costa norte: unos 27 km en torno a la gran ría de Vigo, desde la calma marinera de Baiona hasta la mayor ciudad de Galicia. Por la variante litoral es casi llana — paseos marítimos, playas y carretera costera casi todo el rato — así que la dificultad está en la distancia y, cerca de Vigo, en una de las señalizaciones más pobres de toda la ruta. Sal temprano y ten lista una app de mapas para la entrada urbana."
+    sections:
+      - heading: "Distancia y dificultad"
+        body: "Hay dos formas de medir esta etapa. La variante litoral (marítima) tiene unos 26,9 km y es casi llana, con solo unos 140 m de desnivel; la variante interior oficial es algo más corta, unos 24,6 km, pero sube más (unos 400 m). En cualquier caso es una jornada larga — cuatro horas de caminata como mínimo, más con paradas y navegación urbana — por lo que se considera moderada por longitud, no por terreno. La mayoría de los caminantes de costa toma la línea litoral llana por las vistas."
+      - heading: "Ruta y variantes"
+        body: "Al salir de Baiona la ruta llega pronto a A Ramallosa y luego se separa en esencia: la variante litoral bordea la ría por Nigrán, Playa América y una sucesión de playas, mientras que la línea interior oficial se aleja del agua antes de reunirse cerca de Vigo. La litoral es más llana y bonita; la interior es algo más corta pero con más subidas. El verdadero problema es la entrada final a Vigo, donde las flechas son escasas y contradictorias para lo habitual en el Camino — la mayoría usa una app de navegación en el tramo urbano."
+      - heading: "La etapa, tramo a tramo"
+        body: "Al salir de Baiona cruzas a A Ramallosa por el Ponte Românica da Ramallosa, un puente medieval (siglo XIII) sobre el río Miñor. Desde allí la línea litoral pasa por Nigrán y Playa América, junto a Praia de Patos y Praia do Portiño, y sigue el frente marítimo por Saians y Canido — el Areal de Canido tiene conocidas marisquerías. El último tramo largo recorre la playa de Samil, casi dos kilómetros de arena blanca al borde de la ciudad, antes de que la ruta entre en Vigo y su animado frente portuario."
+      - heading: "La llegada a Vigo"
+        body: "Vigo es la mayor ciudad de la Ruta de la Costa — un puerto trabajador y centro industrial más que un casco antiguo de postal, pero con todos los servicios que un peregrino pueda necesitar y buen transporte de salida. La señalización por la ciudad es notoriamente pobre, así que prepárate para orientarte por app o por el puerto y los hitos del centro. Vigo es también el punto donde la Ruta de la Costa se reincorpora de hecho a la red más amplia del Camino Portugués camino de Santiago vía Redondela."
+      - heading: "Dónde dormir y comer"
+        body: "Como ciudad, Vigo tiene alojamiento de todos los niveles, desde un albergue de peregrinos hasta hoteles de negocios y boutique concentrados en el centro y el puerto. Aquí las camas rara vez son el problema que sí lo son en las pequeñas aldeas costeras; el reto es elegir una zona acorde con dónde retomarás la ruta a la mañana siguiente. Para comer estás de suerte — Vigo es famosa por sus ostras y mariscos, sobre todo en torno a la Rúa da Pescadería. Reabastécete bien aquí antes de la etapa más corta y verde hasta Redondela."
+      - heading: "Logística de la etapa de un vistazo"
+        body: "Distancia unos 26,9 km por la variante litoral (unos 24,6 km por el interior); dificultad moderada, casi solo por longitud; poca subida real por la línea de costa. Los servicios abundan por la ría y en la ciudad, así que las prioridades de planificación son salir temprano y llevar una app de navegación para la entrada final a Vigo. La siguiente etapa, Vigo a Redondela, es corta y fácil en comparación (unos 16,5 km)."
+    faq:
+      - q: "¿Cuánto mide la etapa Baiona–Vigo?"
+        a: "Unos 26,9 km por la variante litoral (marítima) llana, o unos 24,6 km por la variante interior con más subidas. Es la jornada larga de la costa norte — la mayoría reserva casi todo el día con paradas y navegación urbana."
+      - q: "¿Es dura la etapa Baiona–Vigo?"
+        a: "Por terreno no — la variante litoral es casi llana (unos 140 m de desnivel). Se considera moderada por su longitud y por la señalización pobre en la entrada a Vigo, donde muchos usan una app de navegación."
+      - q: "¿Tomo la variante costera o la interior?"
+        a: "La mayoría de los caminantes de costa toma la línea litoral (marítima): es más llana y mucho más bonita, siguiendo la ría de Vigo por Playa América y Samil. La variante interior oficial es algo más corta pero sube más."
+      - q: "¿Qué es el puente de Ramallosa?"
+        a: "El Ponte Românica da Ramallosa, un puente de piedra medieval (siglo XIII) sobre el río Miñor entre Baiona y Nigrán, que se cruza al principio de la etapa."
+      - q: "¿Es un problema la señalización en esta etapa?"
+        a: "Sí, cerca de Vigo. Las flechas en la entrada a la ciudad son inusualmente escasas e inconsistentes para esta ruta, así que lleva el móvil cargado con una app de navegación para el tramo urbano."
+      - q: "¿Dónde puedo dormir en Vigo?"
+        a: "Vigo es una ciudad con camas de todos los niveles — un albergue de peregrinos y muchos hoteles por el centro y el puerto. Elige un lugar cercano a donde retomarás la ruta hacia Redondela a la mañana siguiente."
+  pt:
+    metaTitle: "Baiona a Vigo (27 km): Guia da Etapa do Caminho da Costa (2026)"
+    metaDescription: "A etapa Baiona–Vigo do Caminho Português da Costa: uma longa jornada quase plana de 26,9 km pela ria de Vigo, passando a ponte românica da Ramallosa, a Playa América e a praia de Samil até à cidade. Percurso, variantes, aviso de sinalização e perguntas frequentes."
+    h1: "Baiona → Vigo"
+    lead: "É a jornada longa da costa norte: cerca de 27 km à volta da grande ria de Vigo, da calma marítima de Baiona até à maior cidade da Galiza. Pela variante litoral é quase plana — passeios marítimos, praias e estrada costeira quase todo o trajeto — por isso a dificuldade está na distância e, perto de Vigo, numa das sinalizações mais fracas de toda a rota. Parta cedo e tenha pronta uma app de mapas para a entrada urbana."
+    sections:
+      - heading: "Distância e dificuldade"
+        body: "Há duas formas de medir esta etapa. A variante litoral (marítima) tem cerca de 26,9 km e é quase plana, com apenas uns 140 m de subida; a variante interior oficial é um pouco mais curta, cerca de 24,6 km, mas sobe mais (cerca de 400 m). Em qualquer caso é uma jornada longa — quatro horas de caminhada no mínimo, mais com paragens e navegação urbana — por isso é classificada como moderada por comprimento, não por terreno. A maioria dos caminhantes de costa segue a linha litoral plana pelas vistas."
+      - heading: "Percurso e variantes"
+        body: "À saída de Baiona o percurso chega cedo a A Ramallosa e depois separa-se em essência: a variante litoral acompanha a ria por Nigrán, Playa América e uma sucessão de praias, enquanto a linha interior oficial se afasta da água antes de se reunir perto de Vigo. A litoral é mais plana e mais bonita; a interior é um pouco mais curta mas com mais subidas. O verdadeiro senão é a entrada final em Vigo, onde as setas são escassas e contraditórias para o habitual no Caminho — a maioria usa uma app de navegação no troço urbano."
+      - heading: "A etapa, troço a troço"
+        body: "Ao sair de Baiona atravessa para A Ramallosa pela Ponte Românica da Ramallosa, uma ponte medieval (século XIII) sobre o rio Miñor. Dali a linha litoral passa por Nigrán e Playa América, junto à Praia de Patos e à Praia do Portiño, e segue a frente marítima por Saians e Canido — o Areal de Canido tem conhecidas marisqueiras. O último troço longo percorre a praia de Samil, quase dois quilómetros de areia branca à beira da cidade, antes de o percurso entrar em Vigo e na sua movimentada frente portuária."
+      - heading: "A chegada a Vigo"
+        body: "Vigo é a maior cidade da Rota da Costa — um porto trabalhador e polo industrial mais do que um centro histórico de postal, mas com todos os serviços que um peregrino possa querer e bons transportes de saída. A sinalização pela cidade é notoriamente fraca, por isso prepare-se para se orientar por app ou pelo porto e pelos pontos de referência do centro. Vigo é também o ponto onde a Rota da Costa se reincorpora, na prática, à rede mais ampla do Caminho Português rumo a Santiago via Redondela."
+      - heading: "Onde dormir e comer"
+        body: "Sendo cidade, Vigo tem alojamento de todos os níveis, de um albergue de peregrinos a hotéis de negócios e boutique concentrados no centro e no porto. Aqui as camas raramente são o problema que são nas pequenas aldeias costeiras; o desafio é escolher uma zona que se ajuste a onde vai retomar o percurso na manhã seguinte. Para comer está em sorte — Vigo é famosa pelas suas ostras e marisco, sobretudo à volta da Rúa da Pescadería. Reabasteça-se bem aqui antes da etapa mais curta e verde até Redondela."
+      - heading: "Logística da etapa em resumo"
+        body: "Distância cerca de 26,9 km pela variante litoral (cerca de 24,6 km pelo interior); dificuldade moderada, quase só por comprimento; pouca subida real pela linha de costa. Os serviços abundam pela ria e na cidade, por isso as prioridades de planeamento são partir cedo e levar uma app de navegação para a entrada final em Vigo. A etapa seguinte, Vigo a Redondela, é curta e fácil em comparação (cerca de 16,5 km)."
+    faq:
+      - q: "Qual o comprimento da etapa Baiona–Vigo?"
+        a: "Cerca de 26,9 km pela variante litoral (marítima) plana, ou cerca de 24,6 km pela variante interior com mais subidas. É a jornada longa da costa norte — a maioria reserva quase o dia todo com paragens e navegação urbana."
+      - q: "A etapa Baiona–Vigo é difícil?"
+        a: "Por terreno não — a variante litoral é quase plana (cerca de 140 m de subida). É classificada como moderada pelo seu comprimento e pela sinalização fraca na entrada em Vigo, onde muitos usam uma app de navegação."
+      - q: "Devo seguir a variante costeira ou a interior?"
+        a: "A maioria dos caminhantes de costa segue a linha litoral (marítima): é mais plana e muito mais bonita, acompanhando a ria de Vigo por Playa América e Samil. A variante interior oficial é um pouco mais curta mas sobe mais."
+      - q: "O que é a ponte da Ramallosa?"
+        a: "A Ponte Românica da Ramallosa, uma ponte de pedra medieval (século XIII) sobre o rio Miñor entre Baiona e Nigrán, atravessada no início da etapa."
+      - q: "A sinalização é um problema nesta etapa?"
+        a: "Sim, perto de Vigo. As setas na entrada da cidade são invulgarmente escassas e inconsistentes para esta rota, por isso leve o telemóvel carregado com uma app de navegação para o troço urbano."
+      - q: "Onde posso dormir em Vigo?"
+        a: "Vigo é uma cidade com camas de todos os níveis — um albergue de peregrinos e muitos hotéis pelo centro e pelo porto. Escolha um lugar perto de onde vai retomar o percurso para Redondela na manhã seguinte."

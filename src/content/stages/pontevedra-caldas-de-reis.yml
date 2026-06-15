@@ -1,0 +1,112 @@
+route: coastal
+order: 8
+from: Pontevedra
+to: Caldas de Reis
+distanceKm: 21.1
+ascentM: 197
+difficulty: moderate
+terrain: "A mix of tarmac and soft forest tracks through Galician wine country — granite posts holding up the vines — with gentle gradients and no hard climbs, ending at the thermal-spring town of Caldas de Reis."
+prevSlug: redondela-pontevedra
+nextSlug: caldas-de-reis-padron
+townSlugs: []
+logisticsSlugs: []
+sourceVerified: true
+lastVerified: "2026-06-15"
+sources:
+  - https://thenwewalked.com/pontevedra-to-caldas-de-reis-camino-portuguese/
+  - https://www.pilgrim.es/en/portuguese-way/stage-23-pontevedra-caldas-de-reis/
+  - https://stingynomads.com/portuguese-coastal-camino-stages/
+i18n:
+  en:
+    metaTitle: "Pontevedra to Caldas de Reis (21 km): Camino Stage Guide (2026)"
+    metaDescription: "The Pontevedra to Caldas de Reis stage of the Camino Portugués: about 21 km of easy walking through Galician wine country to the thermal-spring town of Caldas de Reis, with the Spiritual Variant split and the Barosa waterfall option. Route, where to sleep, and a stage FAQ."
+    h1: "Pontevedra → Caldas de Reis"
+    lead: "A gentle day through Galician wine country. The route leaves Pontevedra and rolls north through vineyards trained on granite posts, woodland and small parishes — passing the junction where the scenic Spiritual Variant branches off toward the sea — before arriving in Caldas de Reis, a spa town whose hot springs have drawn travellers since Roman times. About 21 km, easy underfoot, with the chance to soak tired feet at the end."
+    sections:
+      - heading: "Distance and difficulty"
+        body: "The stage is about 21 km with roughly 200 m of ascent — rated moderate mostly for length, as the gradients are gentle and there is no hard climb. The surface is a pleasant mix of tarmac and soft forest track. Five to six hours is typical. It is an easier walking day than the previous Redondela stage, and the reward at the end is the thermal water of Caldas de Reis."
+      - heading: "Route and variants"
+        body: "Soon after Pontevedra, at Pontecabras (about 3–4 km in), the waymarked Spiritual Variant (Variante Espiritual) branches left toward Combarro and the sea, rejoining the main route further north by boat or on foot over several extra days. This guide follows the main Central line, which continues straight through the wine country. A short optional detour later visits the Río Barosa waterfall and its restored mills — pretty when the water is high, modest when it is low."
+      - heading: "The stage, section by section"
+        body: "Leaving Pontevedra past the Virxe Peregrina, the route climbs gently away from the city and reaches the Pontecabras junction, where the Spiritual Variant splits off. Staying on the main line you pass the church of Santa María de Alba and the hamlet of San Amaro, then walk on through vineyards and woodland. The optional Río Barosa detour comes near Briallos; from there the path continues through Tivo and drops the last couple of kilometres into Caldas de Reis."
+      - heading: "Arriving in Caldas de Reis"
+        body: "Caldas de Reis is a small spa town built on hot springs that have been used since Roman times — its name literally means the baths of the kings. There is a free public outdoor spot to soak your feet in warm spring water, a welcome ritual at the end of the day; note that the ornamental town fountains are not for bathing, and locals are protective of them. The town has a relaxed riverside centre with bars and restaurants and is a pleasant overnight before the run to Padrón."
+      - heading: "Where to sleep and eat"
+        body: "Caldas de Reis has a good spread of pilgrim accommodation, from a public-style albergue to guesthouses and spa hotels — names that recur in current guides include the Albergue As Pozas Termais, the Pensión de Peregrinos La Moderna, and spa hotels such as the Hotel Balneario Dávila. Book ahead in high season, as it is a popular stop. The riverside has bars and restaurants for an evening meal; stock up for the next stage, which passes through smaller villages."
+      - heading: "Stage logistics at a glance"
+        body: "Distance about 21 km; difficulty moderate, mostly for length; gentle gradients on a mix of tarmac and forest track; five to six hours for most. The key decision is early: whether to take the multi-day Spiritual Variant at Pontecabras or stay on the main line. The next stage, Caldas de Reis to Padrón (about 18.9 km), brings you to the town of the Pedrón stone."
+    faq:
+      - q: "How long is the Pontevedra to Caldas de Reis stage?"
+        a: "About 21 km, with roughly 200 m of ascent. It is rated moderate mainly for length and most pilgrims walk it in five to six hours."
+      - q: "Is the Pontevedra to Caldas de Reis stage hard?"
+        a: "No — the gradients are gentle and there is no hard climb. It is an easy walking day through wine country, easier than the previous Redondela to Pontevedra stage."
+      - q: "What is the Spiritual Variant and where does it start?"
+        a: "The Variante Espiritual is a scenic multi-day alternative toward Combarro and the sea, rejoining the main route further north (partly by boat). It branches off at Pontecabras, about 3–4 km after Pontevedra. This stage follows the main Central line instead."
+      - q: "Can I bathe in the hot springs at Caldas de Reis?"
+        a: "Yes — there is a free public outdoor spot to soak your feet in warm spring water. The ornamental town fountains, however, are not for bathing, and locals are protective of them."
+      - q: "Is the Río Barosa waterfall worth the detour?"
+        a: "It is an optional short detour near Briallos to a waterfall with restored mills. It is pretty when the water is high but modest in dry spells — worth it if you have time and recent rain."
+      - q: "Where can I sleep in Caldas de Reis?"
+        a: "Caldas de Reis has a good range of pilgrim beds — an albergue, guesthouses and spa hotels (names in current guides include Albergue As Pozas Termais, Pensión La Moderna and the Hotel Balneario Dávila). Book ahead in high season, as it is a popular stop."
+  es:
+    metaTitle: "Pontevedra a Caldas de Reis (21 km): Guía de la Etapa (2026)"
+    metaDescription: "La etapa Pontevedra–Caldas de Reis del Camino Portugués: unos 21 km de caminata fácil por la zona de viñedos gallega hasta la villa termal de Caldas de Reis, con la salida de la Variante Espiritual y la opción de la cascada del Barosa. Ruta, dónde dormir y preguntas frecuentes."
+    h1: "Pontevedra → Caldas de Reis"
+    lead: "Una jornada suave por la zona de viñedos gallega. La ruta sale de Pontevedra y ondula hacia el norte entre viñas sobre postes de granito, bosque y pequeñas parroquias — pasando el cruce donde la panorámica Variante Espiritual se desvía hacia el mar — antes de llegar a Caldas de Reis, villa balneario cuyas aguas termales atraen viajeros desde época romana. Unos 21 km, cómodos, con la posibilidad de remojar los pies cansados al final."
+    sections:
+      - heading: "Distancia y dificultad"
+        body: "La etapa tiene unos 21 km con alrededor de 200 m de desnivel — moderada sobre todo por la longitud, ya que las pendientes son suaves y no hay subida dura. El firme es una agradable mezcla de asfalto y pista de bosque blanda. Cinco a seis horas es lo típico. Es un día de caminata más fácil que la etapa anterior de Redondela, y la recompensa al final es el agua termal de Caldas de Reis."
+      - heading: "Ruta y variantes"
+        body: "Poco después de Pontevedra, en Pontecabras (a unos 3–4 km), la señalizada Variante Espiritual se desvía a la izquierda hacia Combarro y el mar, para reunirse con la ruta principal más al norte en barco o a pie a lo largo de varios días extra. Esta guía sigue la línea Central principal, que continúa recta por la zona de viñedos. Un corto desvío opcional más adelante visita la cascada del Río Barosa y sus molinos restaurados — bonita con agua alta, modesta con agua baja."
+      - heading: "La etapa, tramo a tramo"
+        body: "Al salir de Pontevedra junto a la Virxe Peregrina, la ruta sube suavemente alejándose de la ciudad y llega al cruce de Pontecabras, donde se separa la Variante Espiritual. Siguiendo la línea principal pasas la iglesia de Santa María de Alba y la aldea de San Amaro, y caminas luego entre viñedos y bosque. El desvío opcional del Río Barosa queda cerca de Briallos; desde allí el camino continúa por Tivo y baja los últimos kilómetros a Caldas de Reis."
+      - heading: "La llegada a Caldas de Reis"
+        body: "Caldas de Reis es una pequeña villa balneario sobre aguas termales usadas desde época romana — su nombre significa literalmente los baños de los reyes. Hay un punto público y gratuito al aire libre para remojar los pies en agua termal, un ritual bienvenido al final del día; ten en cuenta que las fuentes ornamentales de la villa no son para baño, y los vecinos las protegen. La villa tiene un relajado centro junto al río con bares y restaurantes y es una grata parada antes del tramo a Padrón."
+      - heading: "Dónde dormir y comer"
+        body: "Caldas de Reis tiene una buena oferta de alojamiento de peregrinos, desde un albergue de tipo público hasta pensiones y hoteles balneario — nombres que se repiten en las guías actuales son el Albergue As Pozas Termais, la Pensión de Peregrinos La Moderna y hoteles balneario como el Hotel Balneario Dávila. Reserva con antelación en temporada alta, pues es una parada popular. La orilla del río tiene bares y restaurantes para cenar; abastécete para la siguiente etapa, que pasa por pueblos más pequeños."
+      - heading: "Logística de la etapa de un vistazo"
+        body: "Distancia unos 21 km; dificultad moderada, sobre todo por longitud; pendientes suaves en una mezcla de asfalto y pista de bosque; cinco a seis horas para la mayoría. La decisión clave es temprana: tomar la Variante Espiritual de varios días en Pontecabras o seguir por la línea principal. La siguiente etapa, Caldas de Reis a Padrón (unos 18,9 km), te lleva a la villa de la piedra del Pedrón."
+    faq:
+      - q: "¿Cuánto mide la etapa Pontevedra–Caldas de Reis?"
+        a: "Unos 21 km, con alrededor de 200 m de desnivel. Se considera moderada sobre todo por la longitud y la mayoría la camina en cinco o seis horas."
+      - q: "¿Es dura la etapa Pontevedra–Caldas de Reis?"
+        a: "No — las pendientes son suaves y no hay subida dura. Es un día de caminata fácil por la zona de viñedos, más fácil que la etapa anterior Redondela–Pontevedra."
+      - q: "¿Qué es la Variante Espiritual y dónde empieza?"
+        a: "La Variante Espiritual es una alternativa panorámica de varios días hacia Combarro y el mar, que se reúne con la ruta principal más al norte (en parte en barco). Se desvía en Pontecabras, a unos 3–4 km de Pontevedra. Esta etapa sigue en cambio la línea Central principal."
+      - q: "¿Puedo bañarme en las aguas termales de Caldas de Reis?"
+        a: "Sí — hay un punto público y gratuito al aire libre para remojar los pies en agua termal. Las fuentes ornamentales de la villa, en cambio, no son para baño, y los vecinos las protegen."
+      - q: "¿Merece la pena el desvío a la cascada del Río Barosa?"
+        a: "Es un corto desvío opcional cerca de Briallos a una cascada con molinos restaurados. Es bonita con agua alta pero modesta en épocas secas — merece la pena si tienes tiempo y ha llovido hace poco."
+      - q: "¿Dónde puedo dormir en Caldas de Reis?"
+        a: "Caldas de Reis tiene buena oferta de camas de peregrino — un albergue, pensiones y hoteles balneario (nombres en las guías actuales: Albergue As Pozas Termais, Pensión La Moderna y el Hotel Balneario Dávila). Reserva con antelación en temporada alta, pues es una parada popular."
+  pt:
+    metaTitle: "Pontevedra a Caldas de Reis (21 km): Guia da Etapa (2026)"
+    metaDescription: "A etapa Pontevedra–Caldas de Reis do Caminho Português: cerca de 21 km de caminhada fácil pela zona de vinhedos galega até à vila termal de Caldas de Reis, com a saída da Variante Espiritual e a opção da cascata do Barosa. Percurso, onde dormir e perguntas frequentes."
+    h1: "Pontevedra → Caldas de Reis"
+    lead: "Uma jornada suave pela zona de vinhedos galega. O percurso sai de Pontevedra e ondula para norte entre vinhas sobre postes de granito, floresta e pequenas freguesias — passando o cruzamento onde a panorâmica Variante Espiritual se desvia para o mar — antes de chegar a Caldas de Reis, vila termal cujas águas atraem viajantes desde a época romana. Cerca de 21 km, confortáveis, com a possibilidade de mergulhar os pés cansados no fim."
+    sections:
+      - heading: "Distância e dificuldade"
+        body: "A etapa tem cerca de 21 km com à volta de 200 m de subida — moderada sobretudo pelo comprimento, já que os declives são suaves e não há subida dura. O piso é uma agradável mistura de alcatrão e trilho de floresta macio. Cinco a seis horas é o típico. É um dia de caminhada mais fácil do que a etapa anterior de Redondela, e a recompensa no fim é a água termal de Caldas de Reis."
+      - heading: "Percurso e variantes"
+        body: "Pouco depois de Pontevedra, em Pontecabras (a cerca de 3–4 km), a sinalizada Variante Espiritual desvia-se à esquerda para Combarro e o mar, para se reunir com o percurso principal mais a norte de barco ou a pé ao longo de vários dias extra. Este guia segue a linha Central principal, que continua a direito pela zona de vinhedos. Um curto desvio opcional mais à frente visita a cascata do Río Barosa e os seus moinhos restaurados — bonita com água alta, modesta com água baixa."
+      - heading: "A etapa, troço a troço"
+        body: "Ao sair de Pontevedra junto à Virxe Peregrina, o percurso sobe suavemente afastando-se da cidade e chega ao cruzamento de Pontecabras, onde se separa a Variante Espiritual. Seguindo a linha principal passa a igreja de Santa María de Alba e a aldeia de San Amaro, e caminha depois entre vinhedos e floresta. O desvio opcional do Río Barosa fica perto de Briallos; dali o caminho continua por Tivo e desce os últimos quilómetros a Caldas de Reis."
+      - heading: "A chegada a Caldas de Reis"
+        body: "Caldas de Reis é uma pequena vila termal sobre águas usadas desde a época romana — o seu nome significa literalmente os banhos dos reis. Há um ponto público e gratuito ao ar livre para mergulhar os pés em água termal, um ritual bem-vindo no fim do dia; note que as fontes ornamentais da vila não são para banho, e os habitantes protegem-nas. A vila tem um descontraído centro junto ao rio com bares e restaurantes e é uma agradável paragem antes do troço a Padrón."
+      - heading: "Onde dormir e comer"
+        body: "Caldas de Reis tem boa oferta de alojamento de peregrinos, de um albergue de tipo público a pensões e hotéis termais — nomes que se repetem nos guias atuais são o Albergue As Pozas Termais, a Pensión de Peregrinos La Moderna e hotéis termais como o Hotel Balneario Dávila. Reserve com antecedência na época alta, pois é uma paragem popular. A margem do rio tem bares e restaurantes para jantar; abasteça-se para a etapa seguinte, que passa por aldeias mais pequenas."
+      - heading: "Logística da etapa em resumo"
+        body: "Distância cerca de 21 km; dificuldade moderada, sobretudo por comprimento; declives suaves numa mistura de alcatrão e trilho de floresta; cinco a seis horas para a maioria. A decisão chave é cedo: seguir a Variante Espiritual de vários dias em Pontecabras ou continuar pela linha principal. A etapa seguinte, Caldas de Reis a Padrón (cerca de 18,9 km), leva-o à vila da pedra do Pedrón."
+    faq:
+      - q: "Qual o comprimento da etapa Pontevedra–Caldas de Reis?"
+        a: "Cerca de 21 km, com à volta de 200 m de subida. É classificada como moderada sobretudo pelo comprimento e a maioria caminha-a em cinco a seis horas."
+      - q: "A etapa Pontevedra–Caldas de Reis é difícil?"
+        a: "Não — os declives são suaves e não há subida dura. É um dia de caminhada fácil pela zona de vinhedos, mais fácil do que a etapa anterior Redondela–Pontevedra."
+      - q: "O que é a Variante Espiritual e onde começa?"
+        a: "A Variante Espiritual é uma alternativa panorâmica de vários dias para Combarro e o mar, que se reúne com o percurso principal mais a norte (em parte de barco). Desvia-se em Pontecabras, a cerca de 3–4 km de Pontevedra. Esta etapa segue antes a linha Central principal."
+      - q: "Posso tomar banho nas águas termais de Caldas de Reis?"
+        a: "Sim — há um ponto público e gratuito ao ar livre para mergulhar os pés em água termal. As fontes ornamentais da vila, porém, não são para banho, e os habitantes protegem-nas."
+      - q: "Vale a pena o desvio à cascata do Río Barosa?"
+        a: "É um curto desvio opcional perto de Briallos a uma cascata com moinhos restaurados. É bonita com água alta mas modesta em épocas secas — vale a pena se tiver tempo e tiver chovido há pouco."
+      - q: "Onde posso dormir em Caldas de Reis?"
+        a: "Caldas de Reis tem boa oferta de camas de peregrino — um albergue, pensões e hotéis termais (nomes nos guias atuais: Albergue As Pozas Termais, Pensión La Moderna e o Hotel Balneario Dávila). Reserve com antecedência na época alta, pois é uma paragem popular."

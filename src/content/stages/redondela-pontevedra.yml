@@ -1,0 +1,111 @@
+route: coastal
+order: 7
+from: Redondela
+to: Pontevedra
+distanceKm: 19.6
+difficulty: moderate
+terrain: "Rolling country lanes, woodland and historic stone bridges, with one steady cobbled climb over the Canicouva on remnants of the Roman road; a few stretches and crossings beside the busy N-550, then an easy approach into Pontevedra."
+prevSlug: vigo-redondela
+nextSlug: pontevedra-caldas-de-reis
+townSlugs: []
+logisticsSlugs: []
+sourceVerified: true
+lastVerified: "2026-06-15"
+sources:
+  - https://www.pilgrim.es/en/portuguese-way/stage-22-redondela-pontevedra/
+  - https://www.caminodesantiago.gal/en/make-plans/the-ways/portuguese-way/stage-redondela-pontevedra
+  - https://stingynomads.com/portuguese-coastal-camino-stages/
+i18n:
+  en:
+    metaTitle: "Redondela to Pontevedra (20 km): Coastal Camino Stage Guide (2026)"
+    metaDescription: "The Redondela to Pontevedra stage of the Camino Portugués: 19.6 km through Arcade and over the historic Ponte Sampaio and the Roman road of Canicouva into beautiful Pontevedra. Route, the 1809 battle, where to sleep, and a stage FAQ."
+    h1: "Redondela → Pontevedra"
+    lead: "Now on the joined Coastal and Central route, this is a classic Galician stage: rolling lanes and woodland, the oyster town of Arcade, two historic stone bridges, and a steady climb over the Canicouva on the remnants of a Roman road, ending in Pontevedra — one of the loveliest old towns on the whole Camino. About 19.6 km, with a little care needed where the route meets the busy main road."
+    sections:
+      - heading: "Distance and difficulty"
+        body: "The stage is about 19.6 km and rated moderate. The terrain rolls gently for most of the day, with one sustained climb — the cobbled Canicouva, on the line of the old Roman road — as the main effort. The footing is good overall, but there are a few sections and crossings beside the N-550 national road, including at Cesantes early on, where you should walk with care and wear something visible. Most pilgrims take five to six hours."
+      - heading: "Route and variants"
+        body: "From Redondela the waymarked route runs as a single line — Coastal and Central are now one — through Cesantes and Arcade, over Ponte Sampaio and up the Canicouva before descending toward Pontevedra. There is no significant variant on this stage. The points that need attention are the N-550 crossings rather than any navigation choice: the arrows are clear, but the road is busy."
+      - heading: "The stage, section by section"
+        body: "Leaving Redondela you pass through Cesantes — the early road crossings here are the most exposed of the day — and on to Arcade, a town famous for its oysters and, in season, a garden of hundreds of camellias. Beyond Arcade you cross the Verdugo river on the Ponte Sampaio, a fine medieval bridge that was the site of a decisive engagement in June 1809, when French troops under Marshal Ney abandoned the field during the Peninsular War. The route then climbs the Canicouva on stretches of the old Roman Road XIX, which once linked Braga and Astorga, before easing down through woodland into Pontevedra."
+      - heading: "Arriving in Pontevedra"
+        body: "Pontevedra has one of the best-preserved medieval old towns in Galicia — a web of granite squares and arcaded streets, almost entirely pedestrian. The landmark for pilgrims is the round Santuario da Virxe Peregrina, the chapel of the Pilgrim Virgin, built on a scallop-shell plan. With its plazas, tapas bars and history, Pontevedra rewards an early arrival and an afternoon of wandering, and it is a comfortable base before the wine-country stage to Caldas de Reis."
+      - heading: "Where to sleep and eat"
+        body: "As a city, Pontevedra has the full range of accommodation, including a pilgrim hostel and many hotels and guesthouses in and around the old town. Booking a bed near the historic centre puts you among the best of the city's tapas bars and squares for the evening. Eat well here — Galician seafood and the local wines — and resupply before the next stage, which passes through quieter wine country with fewer large towns."
+      - heading: "Stage logistics at a glance"
+        body: "Distance about 19.6 km; difficulty moderate, with the cobbled Canicouva climb as the main effort; five to six hours for most. Services are good at Arcade (midway) and Pontevedra (end). The chief hazard is the N-550 crossings, especially around Cesantes — walk visibly and carefully. The next stage to Caldas de Reis (about 21 km) leads into Galician wine country."
+    faq:
+      - q: "How long is the Redondela to Pontevedra stage?"
+        a: "About 19.6 km. It is rated moderate and most pilgrims walk it in five to six hours."
+      - q: "Is the Redondela to Pontevedra stage hard?"
+        a: "It is moderate. The terrain rolls gently for most of the day; the main effort is the cobbled Canicouva climb on the old Roman road. The chief hazard is the road crossings on the N-550, not the gradient."
+      - q: "What is the Ponte Sampaio?"
+        a: "A medieval stone bridge over the Verdugo river, crossed after Arcade. It was the site of a decisive battle in June 1809, when French troops under Marshal Ney withdrew during the Peninsular War."
+      - q: "Why is Arcade worth a stop?"
+        a: "Arcade, roughly midway, is famous for its oysters and, in season, a garden with hundreds of camellias. It is the natural mid-stage break with bars and services."
+      - q: "What should I see in Pontevedra?"
+        a: "Pontevedra has one of the best-preserved medieval old towns in Galicia, almost entirely pedestrian. The pilgrim landmark is the round Santuario da Virxe Peregrina, built on a scallop-shell plan. Plazas, tapas bars and granite streets reward an afternoon."
+      - q: "Where can I sleep in Pontevedra?"
+        a: "Pontevedra is a city with the full range of beds, including a pilgrim hostel and many hotels and guesthouses. Staying near the old town puts you among the best tapas bars and squares for the evening."
+  es:
+    metaTitle: "Redondela a Pontevedra (20 km): Guía de la Etapa del Camino (2026)"
+    metaDescription: "La etapa Redondela–Pontevedra del Camino Portugués: 19,6 km por Arcade y sobre el histórico Ponte Sampaio y la calzada romana de Canicouva hasta la bella Pontevedra. Ruta, la batalla de 1809, dónde dormir y preguntas frecuentes."
+    h1: "Redondela → Pontevedra"
+    lead: "Ya en la ruta unida de Costa y Central, esta es una etapa gallega clásica: caminos ondulados y bosque, la villa ostrícola de Arcade, dos puentes de piedra históricos y una subida sostenida por la Canicouva sobre restos de calzada romana, para acabar en Pontevedra — uno de los cascos antiguos más bonitos de todo el Camino. Unos 19,6 km, con algo de cuidado donde la ruta se cruza con la carretera principal."
+    sections:
+      - heading: "Distancia y dificultad"
+        body: "La etapa tiene unos 19,6 km y se considera moderada. El terreno ondula suavemente casi todo el día, con una subida sostenida — la Canicouva empedrada, sobre el trazado de la vieja calzada romana — como esfuerzo principal. El firme es bueno en general, pero hay algunos tramos y cruces junto a la carretera nacional N-550, entre ellos en Cesantes al principio, donde conviene caminar con cuidado y llevar algo visible. La mayoría tarda de cinco a seis horas."
+      - heading: "Ruta y variantes"
+        body: "Desde Redondela la ruta señalizada va como una sola línea — Costa y Central son ya una — por Cesantes y Arcade, sobre Ponte Sampaio y arriba por la Canicouva antes de bajar hacia Pontevedra. No hay variante importante en esta etapa. Los puntos que requieren atención son los cruces de la N-550 más que cualquier decisión de navegación: las flechas son claras, pero la carretera tiene tráfico."
+      - heading: "La etapa, tramo a tramo"
+        body: "Al salir de Redondela pasas por Cesantes — los cruces de carretera de aquí son los más expuestos del día — y sigues a Arcade, villa famosa por sus ostras y, en temporada, por un jardín de cientos de camelias. Pasada Arcade cruzas el río Verdugo por el Ponte Sampaio, un buen puente medieval que fue escenario de un combate decisivo en junio de 1809, cuando las tropas francesas del mariscal Ney abandonaron el campo durante la Guerra de la Independencia. La ruta sube luego la Canicouva por tramos de la antigua Calzada Romana XIX, que unía Braga y Astorga, antes de bajar suavemente entre bosque a Pontevedra."
+      - heading: "La llegada a Pontevedra"
+        body: "Pontevedra tiene uno de los cascos antiguos medievales mejor conservados de Galicia — una red de plazas de granito y calles soportaladas, casi todo peatonal. El hito para los peregrinos es el redondo Santuario da Virxe Peregrina, la capilla de la Virgen Peregrina, con planta en forma de concha de vieira. Con sus plazas, bares de tapas e historia, Pontevedra premia la llegada temprana y una tarde de paseo, y es una base cómoda antes de la etapa de viñedos hasta Caldas de Reis."
+      - heading: "Dónde dormir y comer"
+        body: "Como ciudad, Pontevedra tiene toda la gama de alojamiento, incluido un albergue de peregrinos y muchos hoteles y pensiones en y alrededor del casco antiguo. Reservar cerca del centro histórico te deja entre los mejores bares de tapas y plazas de la ciudad para la noche. Come bien aquí — marisco gallego y los vinos de la zona — y reabastécete antes de la siguiente etapa, que pasa por una zona de viñedos más tranquila con menos pueblos grandes."
+      - heading: "Logística de la etapa de un vistazo"
+        body: "Distancia unos 19,6 km; dificultad moderada, con la subida empedrada de la Canicouva como esfuerzo principal; de cinco a seis horas para la mayoría. Los servicios son buenos en Arcade (a mitad) y Pontevedra (final). El riesgo principal son los cruces de la N-550, sobre todo en Cesantes — camina visible y con cuidado. La siguiente etapa a Caldas de Reis (unos 21 km) entra en la zona de viñedos gallega."
+    faq:
+      - q: "¿Cuánto mide la etapa Redondela–Pontevedra?"
+        a: "Unos 19,6 km. Se considera moderada y la mayoría la camina en cinco o seis horas."
+      - q: "¿Es dura la etapa Redondela–Pontevedra?"
+        a: "Es moderada. El terreno ondula suavemente casi todo el día; el esfuerzo principal es la subida empedrada de la Canicouva por la vieja calzada romana. El riesgo principal son los cruces de la N-550, no la pendiente."
+      - q: "¿Qué es el Ponte Sampaio?"
+        a: "Un puente de piedra medieval sobre el río Verdugo, que se cruza pasada Arcade. Fue escenario de una batalla decisiva en junio de 1809, cuando las tropas francesas del mariscal Ney se retiraron durante la Guerra de la Independencia."
+      - q: "¿Por qué merece una parada Arcade?"
+        a: "Arcade, hacia la mitad, es famosa por sus ostras y, en temporada, por un jardín con cientos de camelias. Es la pausa natural de media etapa, con bares y servicios."
+      - q: "¿Qué debo ver en Pontevedra?"
+        a: "Pontevedra tiene uno de los cascos antiguos medievales mejor conservados de Galicia, casi todo peatonal. El hito de los peregrinos es el redondo Santuario da Virxe Peregrina, con planta en forma de concha de vieira. Plazas, bares de tapas y calles de granito premian una tarde."
+      - q: "¿Dónde puedo dormir en Pontevedra?"
+        a: "Pontevedra es una ciudad con toda la gama de camas, incluido un albergue de peregrinos y muchos hoteles y pensiones. Alojarte cerca del casco antiguo te deja entre los mejores bares de tapas y plazas para la noche."
+  pt:
+    metaTitle: "Redondela a Pontevedra (20 km): Guia da Etapa do Caminho (2026)"
+    metaDescription: "A etapa Redondela–Pontevedra do Caminho Português: 19,6 km por Arcade e sobre o histórico Ponte Sampaio e a calçada romana de Canicouva até à bela Pontevedra. Percurso, a batalha de 1809, onde dormir e perguntas frequentes."
+    h1: "Redondela → Pontevedra"
+    lead: "Já na rota unida da Costa e Central, esta é uma etapa galega clássica: caminhos ondulados e floresta, a vila ostrícola de Arcade, duas pontes de pedra históricas e uma subida sustentada pela Canicouva sobre restos de calçada romana, para acabar em Pontevedra — um dos centros históricos mais bonitos de todo o Caminho. Cerca de 19,6 km, com algum cuidado onde o percurso se cruza com a estrada principal."
+    sections:
+      - heading: "Distância e dificuldade"
+        body: "A etapa tem cerca de 19,6 km e é classificada como moderada. O terreno ondula suavemente quase todo o dia, com uma subida sustentada — a Canicouva empedrada, sobre o traçado da velha calçada romana — como esforço principal. O piso é bom no geral, mas há alguns troços e travessias junto à estrada nacional N-550, entre eles em Cesantes no início, onde convém caminhar com cuidado e levar algo visível. A maioria leva cinco a seis horas."
+      - heading: "Percurso e variantes"
+        body: "Desde Redondela o percurso sinalizado segue como uma só linha — Costa e Central são já uma — por Cesantes e Arcade, sobre o Ponte Sampaio e acima pela Canicouva antes de descer para Pontevedra. Não há variante relevante nesta etapa. Os pontos que pedem atenção são as travessias da N-550 mais do que qualquer decisão de navegação: as setas são claras, mas a estrada tem trânsito."
+      - heading: "A etapa, troço a troço"
+        body: "Ao sair de Redondela passa por Cesantes — as travessias de estrada aqui são as mais expostas do dia — e segue para Arcade, vila famosa pelas suas ostras e, na época, por um jardim de centenas de camélias. Passada Arcade atravessa o rio Verdugo pelo Ponte Sampaio, uma boa ponte medieval que foi palco de um combate decisivo em junho de 1809, quando as tropas francesas do marechal Ney abandonaram o campo durante a Guerra Peninsular. O percurso sobe depois a Canicouva por troços da antiga Calçada Romana XIX, que ligava Braga e Astorga, antes de descer suavemente por floresta até Pontevedra."
+      - heading: "A chegada a Pontevedra"
+        body: "Pontevedra tem um dos centros históricos medievais mais bem conservados da Galiza — uma teia de praças de granito e ruas com arcadas, quase tudo pedonal. O marco para os peregrinos é o redondo Santuario da Virxe Peregrina, a capela da Virgem Peregrina, com planta em forma de concha de vieira. Com as suas praças, bares de tapas e história, Pontevedra compensa a chegada cedo e uma tarde a passear, e é uma base confortável antes da etapa de vinhedos até Caldas de Reis."
+      - heading: "Onde dormir e comer"
+        body: "Sendo cidade, Pontevedra tem toda a gama de alojamento, incluindo um albergue de peregrinos e muitos hotéis e pensões dentro e à volta do centro histórico. Reservar perto do centro histórico deixa-o entre os melhores bares de tapas e praças da cidade para a noite. Coma bem aqui — marisco galego e os vinhos da zona — e reabasteça-se antes da etapa seguinte, que passa por uma zona de vinhedos mais tranquila com menos vilas grandes."
+      - heading: "Logística da etapa em resumo"
+        body: "Distância cerca de 19,6 km; dificuldade moderada, com a subida empedrada da Canicouva como esforço principal; cinco a seis horas para a maioria. Os serviços são bons em Arcade (a meio) e Pontevedra (fim). O risco principal são as travessias da N-550, sobretudo em Cesantes — caminhe visível e com cuidado. A etapa seguinte até Caldas de Reis (cerca de 21 km) entra na zona de vinhedos galega."
+    faq:
+      - q: "Qual o comprimento da etapa Redondela–Pontevedra?"
+        a: "Cerca de 19,6 km. É classificada como moderada e a maioria caminha-a em cinco a seis horas."
+      - q: "A etapa Redondela–Pontevedra é difícil?"
+        a: "É moderada. O terreno ondula suavemente quase todo o dia; o esforço principal é a subida empedrada da Canicouva pela velha calçada romana. O risco principal são as travessias da N-550, não o declive."
+      - q: "O que é o Ponte Sampaio?"
+        a: "Uma ponte de pedra medieval sobre o rio Verdugo, atravessada depois de Arcade. Foi palco de uma batalha decisiva em junho de 1809, quando as tropas francesas do marechal Ney se retiraram durante a Guerra Peninsular."
+      - q: "Porque vale a pena parar em Arcade?"
+        a: "Arcade, a meio, é famosa pelas suas ostras e, na época, por um jardim com centenas de camélias. É a pausa natural de meia etapa, com bares e serviços."
+      - q: "O que devo ver em Pontevedra?"
+        a: "Pontevedra tem um dos centros históricos medievais mais bem conservados da Galiza, quase tudo pedonal. O marco dos peregrinos é o redondo Santuario da Virxe Peregrina, com planta em forma de concha de vieira. Praças, bares de tapas e ruas de granito compensam uma tarde."
+      - q: "Onde posso dormir em Pontevedra?"
+        a: "Pontevedra é uma cidade com toda a gama de camas, incluindo um albergue de peregrinos e muitos hotéis e pensões. Ficar perto do centro histórico deixa-o entre os melhores bares de tapas e praças para a noite."

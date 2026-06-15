@@ -1,0 +1,111 @@
+route: coastal
+order: 10
+from: Padrón
+to: Santiago de Compostela
+distanceKm: 24.4
+ascentM: 380
+difficulty: moderate
+terrain: "Country lanes, woodland and village roads with rolling gradients and a couple of pulls — the steepest around A Rúa de Francos — before the long descent through O Milladoiro and the urban climb into the old city of Santiago."
+prevSlug: caldas-de-reis-padron
+townSlugs: []
+logisticsSlugs: []
+sourceVerified: true
+lastVerified: "2026-06-15"
+sources:
+  - https://www.pilgrim.es/en/portuguese-way/stage-25-padron-santiago-de-compostela/
+  - https://stingynomads.com/portuguese-coastal-camino-stages/
+  - https://thenwewalked.com/padron-to-santiago-camino-portuguese/
+i18n:
+  en:
+    metaTitle: "Padrón to Santiago (24 km): Final Camino Stage Guide (2026)"
+    metaDescription: "The final Padrón to Santiago de Compostela stage of the Camino Portugués: about 24 km through A Escravitude, O Milladoiro and into the old city to the cathedral and the Praza do Obradoiro. Route, the first cathedral view, arrival tips, and a stage FAQ."
+    h1: "Padrón → Santiago de Compostela"
+    lead: "The last stage. From Padrón, the town of the Saint James legend, you walk about 24 km through woodland, villages and the suburb of O Milladoiro before climbing into the old city of Santiago de Compostela and the great Praza do Obradoiro in front of the cathedral. It is a rolling, moderate day with a couple of climbs, ending at the goal of the whole Camino Portugués."
+    sections:
+      - heading: "Distance and difficulty"
+        body: "The stage is about 24.4 km and rated moderate — not for any single hard climb but for the cumulative rolling gradients across a long day, the steepest pull being around A Rúa de Francos. Surfaces are mixed country lanes, woodland tracks and, at the end, city streets. Allow six to seven hours with stops. Start early: arriving with time to spare lets you reach the cathedral, find a bed, and still make the Pilgrim's Mass."
+      - heading: "Route and variants"
+        body: "From Padrón the waymarked route runs as a single line through Iria Flavia, A Escravitude, Cruces, A Picaraña, O Faramello and Teo, then over the hills by A Rúa de Francos and Castro Lupario before dropping to O Milladoiro and climbing into Santiago. There is no significant variant. The waymarking is good and the path busy on this final stretch, so navigation is straightforward; the main thing is to pace the rolling profile."
+      - heading: "The stage, section by section"
+        body: "Leaving Padrón you pass Iria Flavia, the ancient site where Saint James is said to have first preached in Spain, then reach the 16th-century Sanctuary of A Escravitude, built over a healing spring. The route continues through Cruces and the rest area at A Picaraña, past O Faramello and Teo, before the day's steepest section near A Rúa de Francos and the hillfort of Castro Lupario, tied in legend to Queen Lupa. From there it descends to the busy suburb of O Milladoiro; soon after, at Agro dos Mosteiros, the cathedral towers come into view for the first time."
+      - heading: "Arriving in Santiago"
+        body: "The route crosses the Sar river by the old bridge at Conxo and climbs through the city, entering the old town through the Porta Faxeira beside the Alameda park. From there the pedestrian streets lead down to the Praza do Obradoiro, the great square in front of the cathedral and the end of the Camino Portugués. Collect your Compostela at the Pilgrim's Office, and aim to catch the Pilgrim's Mass if the timing works — the most fitting close to the walk."
+      - heading: "Where to sleep and eat"
+        body: "Santiago is a full city of pilgrims with accommodation at every level, from large albergues to hotels, much of it within walking distance of the cathedral. Beds are plentiful but the most central fill in peak season, so book ahead if you want to be near the Obradoiro. The old town is full of restaurants and tapas bars — celebrate with Galician seafood, pulpo á feira, or a tarta de Santiago. The Pilgrim's Office issues the Compostela to those who qualify."
+      - heading: "Stage logistics at a glance"
+        body: "Distance about 24.4 km; difficulty moderate for length and rolling gradients; six to seven hours with stops. Services are frequent the whole way, so the priorities are an early start and a steady pace. This is the final stage — the route ends at the Praza do Obradoiro and the cathedral. Remember the Pilgrim's Office for your Compostela and check the day's Pilgrim's Mass time on arrival."
+    faq:
+      - q: "How long is the Padrón to Santiago stage?"
+        a: "About 24.4 km. It is rated moderate for its length and rolling gradients, and most pilgrims allow six to seven hours with stops."
+      - q: "Is the Padrón to Santiago stage hard?"
+        a: "It is moderate. There is no single brutal climb, but the cumulative rolling profile across a long day makes it tiring — the steepest pull is around A Rúa de Francos. Pace yourself and start early."
+      - q: "Where do you first see the cathedral?"
+        a: "The cathedral towers first come into view at Agro dos Mosteiros, after the descent past O Milladoiro on the approach into Santiago."
+      - q: "Where does the Camino Portugués end in Santiago?"
+        a: "At the Praza do Obradoiro, the great square in front of the cathedral, reached through the old town via the Porta Faxeira beside the Alameda park."
+      - q: "How do I get my Compostela?"
+        a: "Present your stamped credential at the Pilgrim's Office in Santiago. Pilgrims who have walked at least the last 100 km (and meet the stamp requirements) qualify for the Compostela certificate."
+      - q: "Where can I sleep in Santiago?"
+        a: "Santiago has accommodation at every level — large albergues, guesthouses and hotels — much of it near the cathedral. Beds are plentiful, but the most central fill in peak season, so book ahead if you want to be by the Obradoiro."
+  es:
+    metaTitle: "Padrón a Santiago (24 km): Guía de la Última Etapa (2026)"
+    metaDescription: "La última etapa Padrón–Santiago de Compostela del Camino Portugués: unos 24 km por A Escravitude, O Milladoiro y hasta el casco antiguo, a la catedral y la Praza do Obradoiro. Ruta, la primera vista de la catedral, consejos de llegada y preguntas frecuentes."
+    h1: "Padrón → Santiago de Compostela"
+    lead: "La última etapa. Desde Padrón, la villa de la leyenda de Santiago, caminas unos 24 km por bosque, aldeas y el barrio de O Milladoiro antes de subir al casco antiguo de Santiago de Compostela y a la gran Praza do Obradoiro frente a la catedral. Es una jornada ondulada y moderada con un par de subidas, que acaba en la meta de todo el Camino Portugués."
+    sections:
+      - heading: "Distancia y dificultad"
+        body: "La etapa tiene unos 24,4 km y se considera moderada — no por una sola subida dura, sino por el desnivel ondulado acumulado a lo largo de un día largo, siendo la subida más fuerte la de A Rúa de Francos. El firme combina caminos rurales, pistas de bosque y, al final, calles de ciudad. Cuenta seis o siete horas con paradas. Sal temprano: llegar con tiempo te permite alcanzar la catedral, encontrar cama y aún llegar a la Misa del Peregrino."
+      - heading: "Ruta y variantes"
+        body: "Desde Padrón la ruta señalizada va como una sola línea por Iria Flavia, A Escravitude, Cruces, A Picaraña, O Faramello y Teo, luego por los montes de A Rúa de Francos y Castro Lupario antes de bajar a O Milladoiro y subir a Santiago. No hay variante importante. La señalización es buena y el camino concurrido en este tramo final, así que la navegación es sencilla; lo principal es dosificar el perfil ondulado."
+      - heading: "La etapa, tramo a tramo"
+        body: "Al salir de Padrón pasas Iria Flavia, el antiguo lugar donde se dice que Santiago predicó por primera vez en España, y luego llegas al Santuario de A Escravitude, del siglo XVI, levantado sobre un manantial sanador. La ruta continúa por Cruces y el área de descanso de A Picaraña, pasa O Faramello y Teo, antes del tramo más empinado del día cerca de A Rúa de Francos y el castro de Castro Lupario, ligado en la leyenda a la reina Lupa. Desde allí baja al concurrido barrio de O Milladoiro; poco después, en Agro dos Mosteiros, las torres de la catedral aparecen por primera vez."
+      - heading: "La llegada a Santiago"
+        body: "La ruta cruza el río Sar por el viejo puente de Conxo y sube por la ciudad, entrando en el casco antiguo por la Porta Faxeira junto al parque de la Alameda. Desde allí las calles peatonales bajan a la Praza do Obradoiro, la gran plaza frente a la catedral y final del Camino Portugués. Recoge tu Compostela en la Oficina del Peregrino y procura llegar a la Misa del Peregrino si el horario lo permite — el cierre más apropiado de la caminata."
+      - heading: "Dónde dormir y comer"
+        body: "Santiago es toda una ciudad de peregrinos con alojamiento de todos los niveles, desde grandes albergues hasta hoteles, mucho de ello a poca distancia a pie de la catedral. Las camas abundan, pero las más céntricas se llenan en temporada alta, así que reserva con antelación si quieres estar cerca del Obradoiro. El casco antiguo está lleno de restaurantes y bares de tapas — celebra con marisco gallego, pulpo á feira o una tarta de Santiago. La Oficina del Peregrino expide la Compostela a quienes cumplen los requisitos."
+      - heading: "Logística de la etapa de un vistazo"
+        body: "Distancia unos 24,4 km; dificultad moderada por longitud y desnivel ondulado; seis o siete horas con paradas. Los servicios son frecuentes todo el camino, así que las prioridades son salir temprano y llevar un ritmo constante. Es la última etapa — la ruta acaba en la Praza do Obradoiro y la catedral. Recuerda la Oficina del Peregrino para tu Compostela y consulta el horario de la Misa del Peregrino al llegar."
+    faq:
+      - q: "¿Cuánto mide la etapa Padrón–Santiago?"
+        a: "Unos 24,4 km. Se considera moderada por su longitud y desnivel ondulado, y la mayoría cuenta seis o siete horas con paradas."
+      - q: "¿Es dura la etapa Padrón–Santiago?"
+        a: "Es moderada. No hay una sola subida brutal, pero el perfil ondulado acumulado a lo largo de un día largo cansa — la subida más fuerte es la de A Rúa de Francos. Dosifícate y sal temprano."
+      - q: "¿Dónde se ve por primera vez la catedral?"
+        a: "Las torres de la catedral aparecen por primera vez en Agro dos Mosteiros, tras la bajada de O Milladoiro en la aproximación a Santiago."
+      - q: "¿Dónde termina el Camino Portugués en Santiago?"
+        a: "En la Praza do Obradoiro, la gran plaza frente a la catedral, a la que se llega por el casco antiguo a través de la Porta Faxeira junto al parque de la Alameda."
+      - q: "¿Cómo consigo mi Compostela?"
+        a: "Presenta tu credencial sellada en la Oficina del Peregrino de Santiago. Los peregrinos que han caminado al menos los últimos 100 km (y cumplen los requisitos de sellos) tienen derecho al certificado de la Compostela."
+      - q: "¿Dónde puedo dormir en Santiago?"
+        a: "Santiago tiene alojamiento de todos los niveles — grandes albergues, pensiones y hoteles — mucho cerca de la catedral. Las camas abundan, pero las más céntricas se llenan en temporada alta, así que reserva con antelación si quieres estar junto al Obradoiro."
+  pt:
+    metaTitle: "Padrón a Santiago (24 km): Guia da Última Etapa (2026)"
+    metaDescription: "A última etapa Padrón–Santiago de Compostela do Caminho Português: cerca de 24 km por A Escravitude, O Milladoiro e até ao centro histórico, à catedral e à Praza do Obradoiro. Percurso, a primeira vista da catedral, conselhos de chegada e perguntas frequentes."
+    h1: "Padrón → Santiago de Compostela"
+    lead: "A última etapa. Desde Padrón, a vila da lenda de Santiago, caminha cerca de 24 km por floresta, aldeias e o bairro de O Milladoiro antes de subir ao centro histórico de Santiago de Compostela e à grande Praza do Obradoiro em frente à catedral. É uma jornada ondulada e moderada com um par de subidas, que acaba na meta de todo o Caminho Português."
+    sections:
+      - heading: "Distância e dificuldade"
+        body: "A etapa tem cerca de 24,4 km e é classificada como moderada — não por uma única subida dura, mas pelo desnível ondulado acumulado ao longo de um dia longo, sendo a subida mais forte a de A Rúa de Francos. O piso combina caminhos rurais, trilhos de floresta e, no fim, ruas de cidade. Conte seis a sete horas com paragens. Parta cedo: chegar com tempo permite alcançar a catedral, encontrar cama e ainda apanhar a Missa do Peregrino."
+      - heading: "Percurso e variantes"
+        body: "Desde Padrón o percurso sinalizado segue como uma só linha por Iria Flavia, A Escravitude, Cruces, A Picaraña, O Faramello e Teo, depois pelos montes de A Rúa de Francos e Castro Lupario antes de descer a O Milladoiro e subir a Santiago. Não há variante relevante. A sinalização é boa e o caminho movimentado neste troço final, por isso a navegação é simples; o principal é dosear o perfil ondulado."
+      - heading: "A etapa, troço a troço"
+        body: "Ao sair de Padrón passa Iria Flavia, o antigo lugar onde se diz que Santiago pregou pela primeira vez em Espanha, e depois chega ao Santuário de A Escravitude, do século XVI, erguido sobre uma nascente curativa. O percurso continua por Cruces e a área de descanso de A Picaraña, passa O Faramello e Teo, antes do troço mais íngreme do dia perto de A Rúa de Francos e do castro de Castro Lupario, ligado na lenda à rainha Lupa. Dali desce ao movimentado bairro de O Milladoiro; pouco depois, em Agro dos Mosteiros, as torres da catedral surgem pela primeira vez."
+      - heading: "A chegada a Santiago"
+        body: "O percurso atravessa o rio Sar pela velha ponte de Conxo e sobe pela cidade, entrando no centro histórico pela Porta Faxeira junto ao parque da Alameda. Dali as ruas pedonais descem à Praza do Obradoiro, a grande praça em frente à catedral e fim do Caminho Português. Recolha a sua Compostela na Oficina do Peregrino e procure chegar à Missa do Peregrino se o horário permitir — o encerramento mais apropriado da caminhada."
+      - heading: "Onde dormir e comer"
+        body: "Santiago é toda uma cidade de peregrinos com alojamento de todos os níveis, de grandes albergues a hotéis, muito a curta distância a pé da catedral. As camas abundam, mas as mais centrais enchem na época alta, por isso reserve com antecedência se quiser ficar perto do Obradoiro. O centro histórico está cheio de restaurantes e bares de tapas — celebre com marisco galego, polvo à feira ou uma tarta de Santiago. A Oficina do Peregrino emite a Compostela a quem cumpre os requisitos."
+      - heading: "Logística da etapa em resumo"
+        body: "Distância cerca de 24,4 km; dificuldade moderada por comprimento e desnível ondulado; seis a sete horas com paragens. Os serviços são frequentes todo o caminho, por isso as prioridades são partir cedo e manter um ritmo constante. É a última etapa — o percurso acaba na Praza do Obradoiro e na catedral. Lembre-se da Oficina do Peregrino para a sua Compostela e confirme o horário da Missa do Peregrino à chegada."
+    faq:
+      - q: "Qual o comprimento da etapa Padrón–Santiago?"
+        a: "Cerca de 24,4 km. É classificada como moderada pelo seu comprimento e desnível ondulado, e a maioria conta seis a sete horas com paragens."
+      - q: "A etapa Padrón–Santiago é difícil?"
+        a: "É moderada. Não há uma única subida brutal, mas o perfil ondulado acumulado ao longo de um dia longo cansa — a subida mais forte é a de A Rúa de Francos. Doseie-se e parta cedo."
+      - q: "Onde se vê a catedral pela primeira vez?"
+        a: "As torres da catedral surgem pela primeira vez em Agro dos Mosteiros, depois da descida de O Milladoiro na aproximação a Santiago."
+      - q: "Onde termina o Caminho Português em Santiago?"
+        a: "Na Praza do Obradoiro, a grande praça em frente à catedral, alcançada pelo centro histórico através da Porta Faxeira junto ao parque da Alameda."
+      - q: "Como obtenho a minha Compostela?"
+        a: "Apresente a sua credencial carimbada na Oficina do Peregrino em Santiago. Os peregrinos que caminharam pelo menos os últimos 100 km (e cumprem os requisitos de carimbos) têm direito ao certificado da Compostela."
+      - q: "Onde posso dormir em Santiago?"
+        a: "Santiago tem alojamento de todos os níveis — grandes albergues, pensões e hotéis — muito perto da catedral. As camas abundam, mas as mais centrais enchem na época alta, por isso reserve com antecedência se quiser ficar junto ao Obradoiro."

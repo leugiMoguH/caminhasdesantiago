@@ -12,11 +12,11 @@ const faqItems = [
   },
   {
     question: 'Qual é a melhor época do ano para percorrer a Rota da Costa por Caminha?',
-    answer: 'De maio a outubro oferece as condições mais fiáveis: ferry diário, muitas horas de luz e albergues abertos. Julho e agosto são época alta — reserve albergues privados e hotéis com antecedência. O albergue municipal não pode ser reservado. De novembro a março o ferry é reduzido (apenas fins de semana e feriados) e a infraestrutura para peregrinos diminui consideravelmente.',
+    answer: 'De maio a outubro oferece as condições mais fiáveis: travessias de táxi fluvial frequentes todos os dias, muitas horas de luz e albergues abertos. Julho e agosto são época alta — reserve albergues privados e hotéis com antecedência. O albergue municipal não pode ser reservado. De novembro a março as travessias são reduzidas (menos partidas diárias, mais cancelamentos por mau tempo) e a infraestrutura para peregrinos diminui consideravelmente.',
   },
   {
     question: 'Como atravesso de Portugal para Espanha na Rota da Costa?',
-    answer: 'A travessia principal é de ferry desde o Cais de Caminha até A Guarda (2,50 € por adulto, cerca de 15 minutos). No verão (abril–outubro) o ferry funciona diariamente das 09:00 às 19:00. Está sujeito a assoreamento sazonal que pode suspender o serviço sem aviso — confirme sempre na noite anterior. Alternativas: táxis aquáticos Xávegas (5–6 € por pessoa) ou o comboio terrestre de Caminha a Valença e depois atravessar a pé a ponte de Tui.',
+    answer: 'Atravessa o Minho de táxi fluvial licenciado desde Caminha até A Guarda — cerca de 10 minutos, €6 por pessoa (€7–8 com bicicleta). Vários operadores atravessam diariamente, entre eles Taxi Boat Peregrinos / Capitão Mário, Xacobeo Transfer (reserva online, todo o ano), Taxi Mar Caminha e Popeye the Sailor Man. O antigo ferry Santa Rita de Cássia parou em 2020 devido ao assoreamento e será desmantelado; está anunciado um novo ferry municipal para o verão de 2026, mas ainda não opera. As travessias ainda podem ser suspensas com mau tempo — confirme sempre na noite anterior. Alternativa: o comboio de Caminha a Valença e depois atravessar a pé a ponte de Tui.',
   },
 ];
 
@@ -56,9 +56,9 @@ const guideLinks = [
       <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4">
         {[
           { value: 'VPA → Seixas → Caminha', label: 'Últimas etapas em Portugal' },
-          { value: 'Abr – Out', label: 'Época de ferry diário' },
-          { value: '€2,50', label: 'Tarifa do ferry' },
-          { value: '~15 min', label: 'Travessia do Minho' },
+          { value: 'Diário', label: 'Travessias de táxi fluvial' },
+          { value: '€6', label: 'Tarifa do táxi fluvial' },
+          { value: '~10 min', label: 'Travessia do Minho' },
         ].map(({ value, label }) => (
           <div class="bg-white/10 backdrop-blur-sm border border-white/10 rounded-2xl p-4 text-center hover:bg-white/15 transition-colors">
             <div class="text-sm font-bold text-white leading-tight">{value}</div>
@@ -164,14 +164,14 @@ const guideLinks = [
           <h2 id="travessia-heading" class="text-2xl font-bold text-forest-900 mb-4 tracking-tight">Logística da Travessia</h2>
           <div class="space-y-4 text-slate-700 text-sm leading-relaxed">
             <p>
-              A travessia do rio Minho é o momento decisivo deste percurso — uma viagem de ferry de 15 minutos desde Caminha (Portugal) até A Guarda (Espanha) que separa as secções portuguesa e galega do Caminho da Costa.
+              A travessia do rio Minho é o momento decisivo deste percurso — uma curta viagem de barco de cerca de 10 minutos desde Caminha (Portugal) até A Guarda (Espanha) que separa as secções portuguesa e galega do Caminho da Costa.
             </p>
 
             <div class="grid sm:grid-cols-3 gap-3">
               {[
-                { label: 'Tarifa', value: '€2,50 adulto ida' },
-                { label: 'Duração', value: '~15 min' },
-                { label: 'Época', value: 'Diário abr–out; fins de semana nov–mar' },
+                { label: 'Tarifa', value: '€6 por pessoa ida' },
+                { label: 'Duração', value: '~10 min' },
+                { label: 'Época', value: 'Diário; reduzido no inverno' },
               ].map(({ label, value }) => (
                 <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 text-center">
                   <p class="text-xs text-slate-500 uppercase tracking-wider mb-1">{label}</p>

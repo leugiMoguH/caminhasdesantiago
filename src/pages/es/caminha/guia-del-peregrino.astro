@@ -12,11 +12,11 @@ const faqItems = [
   },
   {
     question: '¿Cuál es la mejor época del año para recorrer la Ruta de la Costa por Caminha?',
-    answer: 'De mayo a octubre ofrece las condiciones más fiables: ferry diario, muchas horas de luz y albergues abiertos. Julio y agosto son temporada alta — reserva albergues privados y hoteles con antelación. El albergue municipal no se puede reservar. De noviembre a marzo el ferry se reduce (solo fines de semana y festivos) y la infraestructura para peregrinos disminuye notablemente.',
+    answer: 'De mayo a octubre ofrece las condiciones más fiables: cruces en taxi acuático frecuentes a diario, muchas horas de luz y albergues abiertos. Julio y agosto son temporada alta — reserva albergues privados y hoteles con antelación. El albergue municipal no se puede reservar. De noviembre a marzo los cruces se reducen (menos salidas diarias, más cancelaciones por el tiempo) y la infraestructura para peregrinos disminuye notablemente.',
   },
   {
     question: '¿Cómo cruzo de Portugal a España en la Ruta de la Costa?',
-    answer: 'El cruce principal es en ferry desde el Cais de Caminha hasta A Guarda (2,50 € por adulto, unos 15 minutos). En verano (abril–octubre) el ferry funciona a diario de 09:00 a 19:00. Está sujeto a asoreamiento estacional (assoreamento) que puede suspender el servicio sin aviso — confirma siempre la noche anterior. Alternativas: taxis acuáticos Xávegas (5–6 € por persona) o el tren terrestre de Caminha a Valença y luego cruzar a pie el puente de Tui.',
+    answer: 'Cruzas el Miño en taxi acuático autorizado desde Caminha hasta A Guarda — unos 10 minutos, 6 € por persona (7–8 € con bici). Varios operadores cruzan a diario, entre ellos Taxi Boat Peregrinos / Capitão Mário, Xacobeo Transfer (reserva online, todo el año), Taxi Mar Caminha y Popeye the Sailor Man. El antiguo ferry Santa Rita de Cássia dejó de operar en 2020 por el asoreamiento (assoreamento) y será desguazado; hay un nuevo ferry municipal anunciado para el verano de 2026, pero aún no opera. Los cruces aún pueden suspenderse con mal tiempo — confirma siempre la noche anterior. Alternativa: el tren de Caminha a Valença y luego cruzar a pie el puente de Tui.',
   },
 ];
 
@@ -56,9 +56,9 @@ const guideLinks = [
       <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4">
         {[
           { value: 'VPA → Seixas → Caminha', label: 'Últimas etapas en Portugal' },
-          { value: 'Abr – Oct', label: 'Temporada de ferry diario' },
-          { value: '€2,50', label: 'Tarifa del ferry' },
-          { value: '~15 min', label: 'Cruce del Miño' },
+          { value: 'Diario', label: 'Cruces en taxi acuático' },
+          { value: '€6', label: 'Tarifa del taxi acuático' },
+          { value: '~10 min', label: 'Cruce del Miño' },
         ].map(({ value, label }) => (
           <div class="bg-white/10 backdrop-blur-sm border border-white/10 rounded-2xl p-4 text-center hover:bg-white/15 transition-colors">
             <div class="text-sm font-bold text-white leading-tight">{value}</div>
@@ -164,14 +164,14 @@ const guideLinks = [
           <h2 id="cruce-heading" class="text-2xl font-bold text-forest-900 mb-4 tracking-tight">Logística del Cruce</h2>
           <div class="space-y-4 text-slate-700 text-sm leading-relaxed">
             <p>
-              El cruce del río Miño es el momento decisivo de esta ruta — un trayecto de ferry de 15 minutos desde Caminha (Portugal) hasta A Guarda (España) que separa las secciones portuguesa y gallega del Camino de la Costa.
+              El cruce del río Miño es el momento decisivo de esta ruta — un breve trayecto en barco de unos 10 minutos desde Caminha (Portugal) hasta A Guarda (España) que separa las secciones portuguesa y gallega del Camino de la Costa.
             </p>
 
             <div class="grid sm:grid-cols-3 gap-3">
               {[
-                { label: 'Tarifa', value: '€2,50 adulto ida' },
-                { label: 'Duración', value: '~15 min' },
-                { label: 'Temporada', value: 'Diario abr–oct; fines de semana nov–mar' },
+                { label: 'Tarifa', value: '€6 por persona ida' },
+                { label: 'Duración', value: '~10 min' },
+                { label: 'Temporada', value: 'Diario; reducido en invierno' },
               ].map(({ label, value }) => (
                 <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 text-center">
                   <p class="text-xs text-slate-500 uppercase tracking-wider mb-1">{label}</p>

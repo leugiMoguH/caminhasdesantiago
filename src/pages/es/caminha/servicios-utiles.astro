@@ -1,5 +1,7 @@
 ---
 import MainLayout from '../../../layouts/MainLayout.astro';
+import PhotoFigure from '../../../components/PhotoFigure.astro';
+import ruaPhoto from '../../../assets/photos/caminha-rua-centro.jpg';
 ---
 
 <MainLayout
@@ -41,7 +43,15 @@ import MainLayout from '../../../layouts/MainLayout.astro';
     </div>
   </div>
 
-  
+  <!-- ── Foto del centro histórico de Caminha ──────────────────────────────── -->
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <PhotoFigure
+      src={ruaPhoto}
+      alt="Una calle del centro histórico de Caminha — comercios y fachadas a lo largo de la ruta por el casco antiguo"
+      caption="El centro histórico de Caminha — donde los peregrinos encuentran farmacias, tiendas de equipo y cajeros"
+      loading="eager"
+    />
+  </div>
 
   <!-- ── CONTENIDO PRINCIPAL ──────────────────────────────────────────────────── -->
   <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
@@ -318,6 +328,13 @@ import MainLayout from '../../../layouts/MainLayout.astro';
           <h2 class="text-base font-bold text-forest-900 mb-3 tracking-tight">Otras Guías del Peregrino</h2>
           <ul class="space-y-3 text-sm">
             <li>
+              <a href="/es/guia-de-caminha/" class="text-forest-700 hover:underline no-underline font-medium cursor-pointer flex items-center gap-1 group">
+                Guía de Caminha (Resumen)
+                <svg class="h-3.5 w-3.5 text-earth-500 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+              </a>
+              <p class="text-xs text-slate-500 mt-0.5">Todos los clusters — ferry, alojamiento, comida, servicios</p>
+            </li>
+            <li>
               <a href="/es/caminha/ferry-y-logistica/" class="text-forest-700 hover:underline no-underline font-medium cursor-pointer flex items-center gap-1 group">
                 Ferry y Logística
                 <svg class="h-3.5 w-3.5 text-earth-500 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
@@ -344,5 +361,47 @@ import MainLayout from '../../../layouts/MainLayout.astro';
       </aside>
     </div>
   </div>
+
+  <!-- ── SCHEMA: FAQPage (paridad con EN useful-services) ────────────────────── -->
+  <script type="application/ld+json" is:inline set:html={`
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cómo encuentro la farmacia de turno (farmácia de serviço) en Caminha?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pregunta al hospitalero de tu albergue la tarde anterior — lo comprueban habitualmente para los peregrinos. Llama a la Linha 1400 (Serviço Nacional de Farmácias, llamada gratuita) o al SNS24 (808 24 24 24) para la farmacia abierta más cercana. La puerta de cualquier farmacia cerrada muestra la dirección de la farmacia de turno. Consulta farmaciasdeplantao.pt o busca 'farmácia de serviço Caminha' en Google."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Hay tiendas de equipo para peregrinos en Caminha?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. El centro histórico tiene tiendas especializadas para peregrinos como Dorigem no Caminho (Rua São João 27) y Dorigem Shop (Rua 16 de Setembro 17) para ropa técnica y accesorios. Cool Caminha y Forte Store (ambas en Rua 16 de Setembro) ofrecen ropa general y outdoor. Loja da Amizade tiene chubasqueros de emergencia a precios locales. Para equipo de senderismo, el Decathlon más cercano está en Viana do Castelo (~20 min en tren)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Dónde están los cajeros en Caminha?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Caminha tiene varios cajeros Multibanco concentrados en torno a la Praça do Conselho y sus calles de acceso. Las sucursales de CGD (Caixa Geral de Depósitos) y Millennium BCP tienen cajeros exteriores accesibles fuera del horario bancario. El efectivo es imprescindible para la travesía del río — el taxi marítimo cuesta 6 € por persona (7–8 € con bicicleta), normalmente en efectivo en el embarcadero."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿A qué número de emergencia deben llamar los peregrinos en Caminha?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Llama al 112 para todas las emergencias (policía, ambulancia, bomberos). Para consejo médico no urgente y para encontrar la farmacia de turno, llama al SNS24: 808 24 24 24. El Centro de Saúde de Caminha (+351 258 919 440) abre de lunes a viernes en horario laboral. La oficina de turismo de Caminha (+351 258 921 952) ayuda con información práctica local, incluidos los contactos del taxi marítimo."
+          }
+        }
+      ]
+    }
+  `} />
 
 </MainLayout>

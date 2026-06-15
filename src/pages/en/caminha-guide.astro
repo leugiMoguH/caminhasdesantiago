@@ -34,8 +34,8 @@ const clusters = [
     slug: 'ferry-and-logistics',
     href: '/en/caminha/ferry-and-logistics/',
     color: 'slate',
-    tagline: 'Minho river crossing — timetables & siltation',
-    description: 'Complete guide to the Caminha–A Guarda ferry crossing. Summer/winter schedules, €2.50 fares, seasonal siltation (assoreamento) risk, and the overland Valença–Tui alternative.',
+    tagline: 'Minho river crossing — water taxis & siltation',
+    description: 'Complete guide to the Caminha–A Guarda crossing in 2026: daily water taxis (€6, ~10 min) that replaced the suspended ferry, the seasonal siltation (assoreamento) risk, the Portugal–Spain time-zone trap, and the overland Valença–Tui alternative.',
     cta: 'Plan your crossing',
     icon: `<svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M22 18H2l4-8h12l4 8z"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 2v8"/></svg>`,
   },
@@ -94,7 +94,7 @@ const jsonLd = {
       '@type': 'TouristDestination',
       '@id': `${SITE_URL}/en/caminha-guide/#destination`,
       name: 'Caminha',
-      description: 'Historic border town in northern Portugal on the Camino de Santiago Coastal Route (Caminho da Costa). Pilgrims cross the Minho river by ferry to A Guarda, Spain. Last Portuguese stage before Galicia.',
+      description: 'Historic border town in northern Portugal on the Camino de Santiago Coastal Route (Caminho da Costa). Pilgrims cross the Minho river by water taxi to A Guarda, Spain. Last Portuguese stage before Galicia.',
       url: `${SITE_URL}/en/caminha-guide/`,
       touristType: 'Pilgrim',
       geo: {
@@ -131,7 +131,7 @@ const jsonLd = {
           name: 'Where is Caminha on the Camino de Santiago?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Caminha is the last Portuguese town on the Camino de Santiago Coastal Route (Caminho da Costa), located at the mouth of the Minho river, 24 km north of Viana do Castelo. It sits directly opposite A Guarda, Galicia (Spain), and pilgrims cross by ferry to continue north toward Santiago de Compostela.',
+            text: 'Caminha is the last Portuguese town on the Camino de Santiago Coastal Route (Caminho da Costa), located at the mouth of the Minho river, 24 km north of Viana do Castelo. It sits directly opposite A Guarda, Galicia (Spain), and pilgrims cross by boat to continue north toward Santiago de Compostela.',
           },
         },
         {
@@ -139,7 +139,7 @@ const jsonLd = {
           name: 'How do pilgrims cross from Caminha to Spain?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'The standard crossing is the Caminha–A Guarda ferry (Santa Rita de Cássia), a 15-minute river crossing costing €2.50 per adult. The ferry operates April–October daily and November–March on weekends only. Seasonal siltation (assoreamento) can suspend service without notice — water taxi (Xávegas, €5–6) and overland train to Valença then walking to Tui are the main alternatives.',
+            text: 'Pilgrims cross the Minho by licensed water taxi — about 10 minutes on the water, €6 per person (€7–8 with a bicycle). Several services run daily, including Taxi Boat Peregrinos (roughly every 30 minutes, Apr–Oct), Xacobeo Transfer (about hourly, online booking, year-round), Taxi Mar Caminha and Popeye the Sailor Man. The old Santa Rita de Cássia ferry stopped in 2020 due to river-mouth siltation (assoreamento) and is to be dismantled; a new municipal ferry is announced for summer 2026 but is not yet operating. If no boat runs, take the train to Valença and walk across the Tui–Valença bridge.',
           },
         },
         {
@@ -197,10 +197,10 @@ const jsonLd = {
       <!-- Quick stats -->
       <dl class="grid grid-cols-2 sm:grid-cols-4 gap-4">
         {[
-          { value: '~15 min', label: 'Ferry to Spain' },
-          { value: '€2.50', label: 'Ferry fare' },
+          { value: '~10 min', label: 'Boat to Spain' },
+          { value: '€6', label: 'Water-taxi fare' },
           { value: '24 km', label: 'From Viana do Castelo' },
-          { value: 'Apr–Oct', label: 'Daily ferry service' },
+          { value: 'Daily', label: 'Water-taxi crossings' },
         ].map(({ value, label }) => (
           <div class="bg-white border border-forest-100 rounded-2xl px-4 py-4 text-center shadow-sm">
             <dt class="text-xl font-bold text-forest-700">{value}</dt>
@@ -323,7 +323,7 @@ const jsonLd = {
         </div>
       </div>
       <p class="text-slate-600 text-sm leading-relaxed mb-6 max-w-2xl">
-        The Minho river crossing between Caminha (Portugal) and A Guarda (Spain) is 15 minutes by ferry — and potentially a full-day logistics problem when the estuary silts up. Covers summer/winter timetables, fare tables, water taxi (Xávegas) contacts, and the overland Valença–Tui bridge alternative. For route context, credential requirements, and seasonal timing, see the <a href="/en/caminha/pilgrim-guide/" class="text-forest-700 hover:underline no-underline font-medium">pilgrim guide to the Coastal Route</a>.
+        The Minho river crossing between Caminha (Portugal) and A Guarda (Spain) is a short boat ride — and potentially a full-day logistics problem when the estuary silts up. Covers the daily water-taxi services (€6, ~10 min) that replaced the suspended Santa Rita de Cássia ferry, the two operators and how to book, the Portugal–Spain time-zone trap, and the overland Valença–Tui bridge alternative. For route context, credential requirements, and seasonal timing, see the <a href="/en/caminha/pilgrim-guide/" class="text-forest-700 hover:underline no-underline font-medium">pilgrim guide to the Coastal Route</a>.
       </p>
       <a
         href="/en/caminha/ferry-and-logistics/"
@@ -377,7 +377,7 @@ const jsonLd = {
             Caminha (population ~7,000) sits at the confluence of the Coura and Minho rivers, facing the Spanish town of A Guarda across the water. Its 14th-century walls, fortified clock tower, and elegant Praça do Conselho make it one of the most distinctive stops on the Portuguese Coastal Camino.
           </p>
           <p>
-            For pilgrims walking the <strong>Caminho da Costa</strong> (Coastal Route), Caminha marks the transition from Portugal to Galicia, Spain. The ferry crossing — a short but memorable 15-minute boat ride — has been used by travellers for centuries. After crossing, pilgrims continue north through A Guarda along the Galician coast toward Santiago de Compostela.
+            For pilgrims walking the <strong>Caminho da Costa</strong> (Coastal Route), Caminha marks the transition from Portugal to Galicia, Spain. The river crossing — a short but memorable boat ride of about 10 minutes — has linked the two banks for centuries; today it is made by licensed water taxi while a new municipal ferry is awaited. After crossing, pilgrims continue north through A Guarda along the Galician coast toward Santiago de Compostela.
           </p>
           <p>
             The town is a practical overnight stop before the crossing, with a municipal pilgrim hostel, several private albergues, guesthouses, and enough restaurants to recover after the long coastal stage from Viana do Castelo (24 km).
@@ -394,11 +394,11 @@ const jsonLd = {
       {[
         {
           q: 'Where is Caminha on the Camino de Santiago?',
-          a: 'Caminha is the last Portuguese town on the Camino de Santiago Coastal Route (Caminho da Costa), located at the mouth of the Minho river, 24 km north of Viana do Castelo. It sits directly opposite A Guarda, Galicia (Spain), and pilgrims cross by ferry to continue north toward Santiago de Compostela.',
+          a: 'Caminha is the last Portuguese town on the Camino de Santiago Coastal Route (Caminho da Costa), located at the mouth of the Minho river, 24 km north of Viana do Castelo. It sits directly opposite A Guarda, Galicia (Spain), and pilgrims cross by boat to continue north toward Santiago de Compostela.',
         },
         {
           q: 'How do pilgrims cross from Caminha to Spain?',
-          a: 'The standard crossing is the Caminha–A Guarda ferry (Santa Rita de Cássia), a 15-minute river crossing costing €2.50 per adult. Seasonal siltation (assoreamento) can suspend the service without notice — water taxi alternatives (Xávegas, ~€5–6) and the overland train to Valença then walking to Tui are the backup options.',
+          a: 'Pilgrims cross the Minho by licensed water taxi — about 10 minutes, €6 per person (€7–8 with a bike). Several services run daily, including Taxi Boat Peregrinos, Xacobeo Transfer (online booking), Taxi Mar Caminha and Popeye the Sailor Man. The old Santa Rita de Cássia ferry stopped in 2020 due to siltation (assoreamento) and is to be dismantled; a new municipal ferry is announced for summer 2026 but is not yet operating. Backup: train to Valença, then walk across the Tui–Valença bridge.',
         },
         {
           q: 'Is there a municipal albergue in Caminha?',

@@ -1,6 +1,8 @@
 ---
 import MainLayout from '../../../layouts/MainLayout.astro';
-import { bookingLink, stayLabel } from '../../../lib/booking';
+import PhotoFigure from '../../../components/PhotoFigure.astro';
+import marginalPhoto from '../../../assets/photos/caminha-marginal-rio-minho.jpg';
+import { bookingLink, bookingSearch, stayLabel } from '../../../lib/booking';
 
 type Zone = 'caminha' | 'vpa' | 'seixas';
 type Category = 'albergue' | 'hotel' | 'guesthouse';
@@ -59,6 +61,16 @@ const accommodations: Accommodation[] = [
     positioning: 'Central town, near waterfront',
     differentiators: ['Breakfast included', 'Air-conditioned rooms'],
     bookingUrl: 'https://www.booking.com/hotel/pt/litos-al.html?aid=7968251',
+  },
+  {
+    name: 'Donna Nega Alojamento Local',
+    zone: 'caminha',
+    category: 'guesthouse',
+    type: 'Guest House',
+    address: '',
+    positioning: 'Central Caminha, sun terrace and shared kitchen',
+    differentiators: ['Shared kitchen and lounge', 'Sun terrace; bicycle parking'],
+    bookingUrl: 'https://www.booking.com/hotel/pt/patricia-lourenco.html?aid=7968251',
   },
   {
     name: 'Design & Wine Hotel',
@@ -374,6 +386,16 @@ const categoryLabel: Record<Category, string> = {
     </div>
   </div>
 
+  <!-- ── Caminha riverfront photo ──────────────────────────────────────────── -->
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-8">
+    <PhotoFigure
+      src={marginalPhoto}
+      alt="Caminha's riverside marginal on the Rio Minho — the waterfront where most central albergues and guesthouses sit"
+      caption="Caminha's Rio Minho waterfront — most central beds are minutes from here"
+      loading="eager"
+    />
+  </div>
+
   <!-- ── PEAK SEASON CALLOUT ─────────────────────────────────────────────────── -->
   <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pb-4">
     <div class="bg-amber-50 border border-amber-300/70 rounded-2xl p-6 shadow-sm">
@@ -482,6 +504,17 @@ const categoryLabel: Record<Category, string> = {
         </section>
       );
     })}
+  </div>
+
+  <!-- ── BROWSE ALL CTA ──────────────────────────────────────────────────────── -->
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pb-4">
+    <div class="bg-forest-50 border border-forest-200 rounded-2xl p-6 flex flex-col sm:flex-row sm:items-center gap-4">
+      <div class="flex-1">
+        <h2 class="text-base font-bold text-forest-900 mb-1">More places to stay in Caminha</h2>
+        <p class="text-sm text-slate-600 leading-relaxed">Caminha also has guesthouses, apartments and B&amp;Bs beyond those listed above — for example Residencial Galo d'Ouro on the main square and riverside apartments near the Minho. Browse current availability and prices for all stays in town.</p>
+      </div>
+      <a href={bookingSearch('Caminha, Portugal', 'wtsg-stay-en-all-caminha')} rel="nofollow noopener noreferrer sponsored" target="_blank" class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-earth-500 to-earth-600 hover:from-earth-600 hover:to-earth-700 text-white font-bold text-sm px-6 py-3.5 rounded-xl no-underline shrink-0 shadow-md cursor-pointer">See all Caminha stays</a>
+    </div>
   </div>
 
   <!-- ── BOOKING TIP ─────────────────────────────────────────────────────────── -->

@@ -1,0 +1,112 @@
+route: coastal
+order: 4
+from: Oia
+to: Baiona
+distanceKm: 18.2
+ascentM: 261
+difficulty: moderate
+terrain: "Coastal trail and quiet road out of Oia, then a hillier middle and a rocky headland with sweeping Atlantic views, before a long descent through Baredo into Baiona; a couple of real climbs in the second half on otherwise good surfaces."
+prevSlug: a-guarda-oia
+nextSlug: baiona-vigo
+townSlugs: []
+logisticsSlugs: []
+sourceVerified: true
+lastVerified: "2026-06-15"
+sources:
+  - https://stingynomads.com/portuguese-coastal-camino-stages/
+  - https://thenwewalked.com/oia-to-baiona-camino-portuguese-coastal/
+  - https://santiagoways.com/en/stage-guarda-baiona/
+i18n:
+  en:
+    metaTitle: "Oia to Baiona (18 km): Coastal Camino Stage Guide (2026)"
+    metaDescription: "The Oia to Baiona stage of the Portuguese Coastal Camino: 18.2 km through Viladesuso and a rocky headland into historic Baiona, with its Monterreal fortress and Parador. Route, hills, where to sleep, and a stage FAQ."
+    h1: "Oia → Baiona"
+    lead: "After the easy run up from A Guarda, this stage introduces the Galician hills. You leave the monastery at Oia along the coast, climb and descend through small parishes and a dramatic rocky headland, and finally drop into Baiona — a handsome seaside town wrapped around the Monterreal fortress, and famously the first place in Europe to hear that Columbus had reached the New World. It is about 18 km with a couple of genuine climbs in the second half."
+    sections:
+      - heading: "Distance and difficulty"
+        body: "The stage is about 18.2 km, with roughly 260 m of ascent and a similar amount of descent — rated moderate rather than easy because of two real hills in the second half. The first stretch out of Oia is gentle and coastal; the work comes later, on the climb to the headland and the long descent into Baiona. Surfaces are mostly good (trail and quiet road), so the difficulty is in the gradient, not the footing. Most walkers take four to five hours."
+      - heading: "Route and variants"
+        body: "From Oia the waymarked route follows a quiet coastal trail for the first few kilometres, then rejoins the main line toward Viladesuso. There is no major split on this stage — the Coastal Route runs as a single corridor between the hills and the sea — but you will alternate between shoreline path and quiet road, and the middle section climbs inland a little before the headland. Follow the yellow arrows carefully through the small parishes, where the line occasionally leaves the obvious road."
+      - heading: "The stage, section by section"
+        body: "You leave Oia on a coastal trail and reach Viladesuso, the first place with services, after about 4.5 km — a sensible breakfast or coffee stop. The route continues through Porto Mougás (where bars and shops are often closed, so do not rely on them) and past Pedra Rubia, where a seaside campsite with a windmill marks the way. After A Ermida the path climbs onto a rocky headland with sweeping coastal views — the scenic high point of the day — then descends through the parish of Baredo. The final few kilometres drop through residential streets into the centre of Baiona."
+      - heading: "Arriving in Baiona"
+        body: "Baiona is the first proper town since A Guarda and a rewarding place to stop. Its centrepiece is the Castillo de Monterreal, a walled fortress on a headland over the bay, now home to the Parador hotel; you can walk the ramparts for the views even if you are not staying. On the harbour stands a full-size replica of the caravel La Pinta, which put in here in March 1493 — making Baiona the first town in Europe to learn of the discovery of America. The old town has plenty of bars, restaurants and shops, so it is a good resupply and rest point."
+      - heading: "Where to sleep and eat"
+        body: "Baiona has a wide range of beds. Pilgrims typically use a private albergue in town (Estela do Mar and Baionamar are the names that recur in current guides); at the other end, the Parador de Baiona inside the Monterreal fortress is the landmark splurge, with conventional hotels and guesthouses in between. If you prefer to stop earlier, Viladesuso has its own beds (including Albergue Da Estrela). Baiona's old town is full of seafood restaurants and tapas bars; eat here, because the next stage into Vigo is long. Book ahead in summer — Baiona is a popular weekend destination as well as a Camino stop."
+      - heading: "Stage logistics at a glance"
+        body: "Distance about 18.2 km; difficulty moderate; four to five hours walking with two real climbs in the second half. Reliable services are at Viladesuso (early) and Baiona (end); do not count on Porto Mougás. The next stage, Baiona to Vigo, is long (around 26 km on the coastal line) and tricky to navigate in places, so arriving in Baiona with time to rest and resupply sets you up well."
+    faq:
+      - q: "How long is the Oia to Baiona stage?"
+        a: "About 18.2 km, with roughly 260 m of ascent. Most pilgrims walk it in four to five hours."
+      - q: "Is the Oia to Baiona stage hard?"
+        a: "It is rated moderate. The first half along the coast is easy; the second half has two genuine climbs — up to a rocky headland and then the descent into Baiona — so it is harder than the previous A Guarda to Oia stage."
+      - q: "Where can I eat between Oia and Baiona?"
+        a: "Viladesuso, about 4.5 km in, is the reliable early stop. Porto Mougás has bars and shops but they are often closed, so do not depend on them. Otherwise eat in Baiona at the end of the stage."
+      - q: "Where can I sleep in Baiona?"
+        a: "Baiona has the full range: private pilgrim albergues in town (Estela do Mar, Baionamar appear in current guides), ordinary hotels and guesthouses, and the landmark Parador de Baiona inside the Monterreal fortress. Book ahead in summer."
+      - q: "What is the fortress in Baiona?"
+        a: "The Castillo de Monterreal, a walled fortress on a headland over the bay, now home to the Parador hotel. You can walk its ramparts for the views even without staying. On the harbour below, a replica of the caravel La Pinta recalls 1493, when Baiona became the first town in Europe to hear of the discovery of America."
+      - q: "How should I plan the day after Baiona?"
+        a: "The following stage to Vigo is long (around 26 km on the coastal line) and known for sparse waymarking near the city. Rest and resupply in Baiona, and start early for Vigo."
+  es:
+    metaTitle: "Oia a Baiona (18 km): Guía de la Etapa del Camino de la Costa (2026)"
+    metaDescription: "La etapa Oia–Baiona del Camino Portugués de la Costa: 18,2 km por Viladesuso y un cabo rocoso hasta la histórica Baiona, con su fortaleza de Monterreal y el Parador. Ruta, subidas, dónde dormir y preguntas frecuentes."
+    h1: "Oia → Baiona"
+    lead: "Tras la cómoda subida desde A Guarda, esta etapa introduce los montes gallegos. Sales del monasterio de Oia junto a la costa, subes y bajas entre pequeñas parroquias y un cabo rocoso espectacular, y al fin desciendes a Baiona — una bonita villa marinera en torno a la fortaleza de Monterreal y, famosamente, el primer lugar de Europa en saber que Colón había llegado al Nuevo Mundo. Son unos 18 km con un par de subidas de verdad en la segunda mitad."
+    sections:
+      - heading: "Distancia y dificultad"
+        body: "La etapa tiene unos 18,2 km, con alrededor de 260 m de desnivel positivo y otro tanto de bajada — se considera moderada, no fácil, por dos subidas reales en la segunda mitad. El primer tramo desde Oia es suave y costero; el esfuerzo llega después, en la subida al cabo y la larga bajada a Baiona. El firme es bueno en su mayoría (sendero y carretera tranquila), así que la dificultad está en la pendiente, no en el terreno. La mayoría tarda de cuatro a cinco horas."
+      - heading: "Ruta y variantes"
+        body: "Desde Oia la ruta señalizada sigue un sendero costero tranquilo los primeros kilómetros y luego enlaza con la línea principal hacia Viladesuso. No hay una bifurcación importante en esta etapa — la Ruta de la Costa va como un único corredor entre los montes y el mar — pero alternarás sendero de orilla y carretera tranquila, y el tramo central sube algo hacia el interior antes del cabo. Sigue con atención las flechas amarillas por las pequeñas parroquias, donde la traza a veces deja la carretera evidente."
+      - heading: "La etapa, tramo a tramo"
+        body: "Sales de Oia por un sendero costero y llegas a Viladesuso, el primer lugar con servicios, tras unos 4,5 km — buena parada para desayunar o tomar café. La ruta continúa por Porto Mougás (donde bares y tiendas suelen estar cerrados, así que no cuentes con ellos) y pasa Pedra Rubia, donde un camping junto al mar con un molino marca el camino. Tras A Ermida el sendero sube a un cabo rocoso con amplias vistas de la costa — el punto culminante del día — y luego baja por la parroquia de Baredo. Los últimos kilómetros descienden por calles residenciales hasta el centro de Baiona."
+      - heading: "La llegada a Baiona"
+        body: "Baiona es la primera villa de verdad desde A Guarda y un lugar gratificante para parar. Su joya es el Castillo de Monterreal, una fortaleza amurallada sobre un cabo en la bahía, hoy sede del Parador; puedes recorrer sus murallas por las vistas aunque no te alojes. En el puerto se alza una réplica a tamaño real de la carabela La Pinta, que recaló aquí en marzo de 1493 — convirtiendo a Baiona en la primera villa de Europa en conocer el descubrimiento de América. El casco antiguo tiene muchos bares, restaurantes y tiendas, así que es buen punto de reabastecimiento y descanso."
+      - heading: "Dónde dormir y comer"
+        body: "Baiona tiene una amplia oferta de camas. Los peregrinos suelen usar un albergue privado en la villa (Estela do Mar y Baionamar son los nombres que se repiten en las guías actuales); en el otro extremo, el Parador de Baiona dentro de la fortaleza de Monterreal es el capricho emblemático, con hoteles y pensiones convencionales entre medias. Si prefieres parar antes, Viladesuso tiene sus propias camas (incluido el Albergue Da Estrela). El casco antiguo de Baiona está lleno de marisquerías y bares de tapas; come aquí, porque la siguiente etapa a Vigo es larga. Reserva con antelación en verano — Baiona es un destino de fin de semana popular además de parada del Camino."
+      - heading: "Logística de la etapa de un vistazo"
+        body: "Distancia unos 18,2 km; dificultad moderada; de cuatro a cinco horas de caminata con dos subidas reales en la segunda mitad. Los servicios fiables están en Viladesuso (pronto) y Baiona (final); no cuentes con Porto Mougás. La siguiente etapa, Baiona a Vigo, es larga (unos 26 km por la línea costera) y a tramos difícil de seguir, así que llegar a Baiona con tiempo para descansar y reabastecerte te deja bien preparado."
+    faq:
+      - q: "¿Cuánto mide la etapa Oia–Baiona?"
+        a: "Unos 18,2 km, con alrededor de 260 m de desnivel. La mayoría la camina en cuatro o cinco horas."
+      - q: "¿Es dura la etapa Oia–Baiona?"
+        a: "Se considera moderada. La primera mitad junto a la costa es fácil; la segunda tiene dos subidas reales — hasta un cabo rocoso y luego la bajada a Baiona — así que es más exigente que la etapa anterior A Guarda–Oia."
+      - q: "¿Dónde puedo comer entre Oia y Baiona?"
+        a: "Viladesuso, a unos 4,5 km, es la parada temprana fiable. Porto Mougás tiene bares y tiendas pero suelen estar cerrados, así que no dependas de ellos. Por lo demás, come en Baiona al final de la etapa."
+      - q: "¿Dónde puedo dormir en Baiona?"
+        a: "Baiona tiene toda la gama: albergues privados de peregrinos en la villa (Estela do Mar, Baionamar aparecen en las guías actuales), hoteles y pensiones corrientes, y el emblemático Parador de Baiona dentro de la fortaleza de Monterreal. Reserva con antelación en verano."
+      - q: "¿Qué es la fortaleza de Baiona?"
+        a: "El Castillo de Monterreal, una fortaleza amurallada sobre un cabo en la bahía, hoy sede del Parador. Puedes recorrer sus murallas por las vistas aunque no te alojes. En el puerto, una réplica de la carabela La Pinta recuerda 1493, cuando Baiona fue la primera villa de Europa en conocer el descubrimiento de América."
+      - q: "¿Cómo debo planear el día después de Baiona?"
+        a: "La etapa siguiente a Vigo es larga (unos 26 km por la línea costera) y conocida por la escasa señalización cerca de la ciudad. Descansa y reabastécete en Baiona, y sal temprano hacia Vigo."
+  pt:
+    metaTitle: "Oia a Baiona (18 km): Guia da Etapa do Caminho da Costa (2026)"
+    metaDescription: "A etapa Oia–Baiona do Caminho Português da Costa: 18,2 km por Viladesuso e um cabo rochoso até à histórica Baiona, com a fortaleza de Monterreal e o Parador. Percurso, subidas, onde dormir e perguntas frequentes."
+    h1: "Oia → Baiona"
+    lead: "Depois da subida fácil desde A Guarda, esta etapa introduz os montes galegos. Sai do mosteiro de Oia junto à costa, sobe e desce entre pequenas freguesias e um cabo rochoso espetacular, e por fim desce a Baiona — uma bonita vila marítima em torno da fortaleza de Monterreal e, famosamente, o primeiro lugar da Europa a saber que Colombo tinha chegado ao Novo Mundo. São cerca de 18 km com um par de subidas a sério na segunda metade."
+    sections:
+      - heading: "Distância e dificuldade"
+        body: "A etapa tem cerca de 18,2 km, com à volta de 260 m de subida e outro tanto de descida — é classificada como moderada, e não fácil, por causa de duas subidas reais na segunda metade. O primeiro troço desde Oia é suave e costeiro; o esforço chega depois, na subida ao cabo e na longa descida a Baiona. O piso é bom na maioria (trilho e estrada tranquila), por isso a dificuldade está no declive, não no terreno. A maioria leva quatro a cinco horas."
+      - heading: "Percurso e variantes"
+        body: "Desde Oia o percurso sinalizado segue um trilho costeiro tranquilo nos primeiros quilómetros e depois junta-se à linha principal em direção a Viladesuso. Não há bifurcação relevante nesta etapa — a Rota da Costa segue como um único corredor entre os montes e o mar — mas vai alternar trilho de margem e estrada tranquila, e o troço central sobe um pouco para o interior antes do cabo. Siga com atenção as setas amarelas pelas pequenas freguesias, onde o traçado às vezes deixa a estrada óbvia."
+      - heading: "A etapa, troço a troço"
+        body: "Sai de Oia por um trilho costeiro e chega a Viladesuso, o primeiro lugar com serviços, ao fim de cerca de 4,5 km — boa paragem para o pequeno-almoço ou um café. O percurso continua por Porto Mougás (onde bares e lojas estão muitas vezes fechados, por isso não conte com eles) e passa Pedra Rubia, onde um parque de campismo junto ao mar com um moinho marca o caminho. Depois de A Ermida o trilho sobe a um cabo rochoso com amplas vistas da costa — o ponto alto do dia — e depois desce pela freguesia de Baredo. Os últimos quilómetros descem por ruas residenciais até ao centro de Baiona."
+      - heading: "A chegada a Baiona"
+        body: "Baiona é a primeira vila a sério desde A Guarda e um lugar compensador para parar. A sua joia é o Castillo de Monterreal, uma fortaleza amuralhada sobre um cabo na baía, hoje sede do Parador; pode percorrer as suas muralhas pelas vistas mesmo sem se alojar. No porto ergue-se uma réplica em tamanho real da caravela La Pinta, que aqui aportou em março de 1493 — fazendo de Baiona a primeira vila da Europa a saber do descobrimento da América. O centro histórico tem muitos bares, restaurantes e lojas, por isso é bom ponto de reabastecimento e descanso."
+      - heading: "Onde dormir e comer"
+        body: "Baiona tem uma vasta oferta de camas. Os peregrinos costumam usar um albergue privado na vila (Estela do Mar e Baionamar são os nomes que se repetem nos guias atuais); no outro extremo, o Parador de Baiona dentro da fortaleza de Monterreal é o luxo emblemático, com hotéis e pensões convencionais pelo meio. Se preferir parar antes, Viladesuso tem as suas próprias camas (incluindo o Albergue Da Estrela). O centro histórico de Baiona está cheio de marisqueiras e bares de tapas; coma aqui, porque a etapa seguinte até Vigo é longa. Reserve com antecedência no verão — Baiona é um destino de fim de semana popular, além de paragem do Caminho."
+      - heading: "Logística da etapa em resumo"
+        body: "Distância cerca de 18,2 km; dificuldade moderada; quatro a cinco horas de caminhada com duas subidas reais na segunda metade. Os serviços fiáveis estão em Viladesuso (cedo) e Baiona (fim); não conte com Porto Mougás. A etapa seguinte, Baiona a Vigo, é longa (cerca de 26 km pela linha costeira) e por troços difícil de seguir, por isso chegar a Baiona com tempo para descansar e reabastecer deixa-o bem preparado."
+    faq:
+      - q: "Qual o comprimento da etapa Oia–Baiona?"
+        a: "Cerca de 18,2 km, com à volta de 260 m de subida. A maioria caminha-a em quatro a cinco horas."
+      - q: "A etapa Oia–Baiona é difícil?"
+        a: "É classificada como moderada. A primeira metade junto à costa é fácil; a segunda tem duas subidas reais — até um cabo rochoso e depois a descida a Baiona — por isso é mais exigente do que a etapa anterior A Guarda–Oia."
+      - q: "Onde posso comer entre Oia e Baiona?"
+        a: "Viladesuso, a cerca de 4,5 km, é a paragem inicial fiável. Porto Mougás tem bares e lojas mas estão muitas vezes fechados, por isso não dependa deles. De resto, coma em Baiona no fim da etapa."
+      - q: "Onde posso dormir em Baiona?"
+        a: "Baiona tem toda a gama: albergues privados de peregrinos na vila (Estela do Mar, Baionamar aparecem nos guias atuais), hotéis e pensões correntes, e o emblemático Parador de Baiona dentro da fortaleza de Monterreal. Reserve com antecedência no verão."
+      - q: "O que é a fortaleza de Baiona?"
+        a: "O Castillo de Monterreal, uma fortaleza amuralhada sobre um cabo na baía, hoje sede do Parador. Pode percorrer as suas muralhas pelas vistas mesmo sem se alojar. No porto, uma réplica da caravela La Pinta recorda 1493, quando Baiona foi a primeira vila da Europa a saber do descobrimento da América."
+      - q: "Como devo planear o dia depois de Baiona?"
+        a: "A etapa seguinte até Vigo é longa (cerca de 26 km pela linha costeira) e conhecida pela fraca sinalização perto da cidade. Descanse e reabasteça-se em Baiona, e parta cedo para Vigo."

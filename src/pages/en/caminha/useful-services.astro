@@ -1,5 +1,7 @@
 ---
 import MainLayout from '../../../layouts/MainLayout.astro';
+import PhotoFigure from '../../../components/PhotoFigure.astro';
+import ruaPhoto from '../../../assets/photos/caminha-rua-centro.jpg';
 ---
 
 <MainLayout
@@ -41,7 +43,15 @@ import MainLayout from '../../../layouts/MainLayout.astro';
     </div>
   </div>
 
-  
+  <!-- ── Caminha historical-centre photo ───────────────────────────────────── -->
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <PhotoFigure
+      src={ruaPhoto}
+      alt="A street in Caminha's historical centre — shops and façades along the route through the old town"
+      caption="Caminha's historical centre — where pilgrims find pharmacies, gear shops and ATMs"
+      loading="eager"
+    />
+  </div>
 
   <!-- ── MAIN CONTENT ─────────────────────────────────────────────────────────── -->
   <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
@@ -385,7 +395,7 @@ import MainLayout from '../../../layouts/MainLayout.astro';
           "name": "Where are the ATMs in Caminha?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Caminha has several Multibanco ATMs concentrated around Praça do Conselho and the streets leading to it. CGD (Caixa Geral de Depósitos) and Millennium BCP branches have exterior ATMs accessible outside banking hours. Cash is essential for the ferry crossing (€2.50) and water taxi fares (€5–6)."
+            "text": "Caminha has several Multibanco ATMs concentrated around Praça do Conselho and the streets leading to it. CGD (Caixa Geral de Depósitos) and Millennium BCP branches have exterior ATMs accessible outside banking hours. Cash is essential for the river crossing — water-taxi fares are €6 per person (€7–8 with a bike), usually paid in cash at the dock."
           }
         },
         {

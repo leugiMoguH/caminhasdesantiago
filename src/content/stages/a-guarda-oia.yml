@@ -1,0 +1,119 @@
+route: coastal
+order: 3
+from: A Guarda
+to: Oia
+distanceKm: 14.3
+ascentM: 135
+difficulty: easy
+terrain: "Coastal paths, boardwalk and quiet coast road (the PO-552) hugging the open Atlantic, with short rocky shoreline sections and gentle undulation; no sustained climbs, but little shade and a road camber for part of the way."
+prevSlug: caminha-a-guarda
+nextSlug: oia-baiona
+townSlugs:
+  - a-guarda
+logisticsSlugs: []
+sourceVerified: true
+lastVerified: "2026-06-15"
+sources:
+  - https://stingynomads.com/portuguese-coastal-camino-stages/
+  - https://thenwewalked.com/a-guarda-to-oia-camino-portuguese-coastal/
+  - https://www.elcaminoconcorreos.com/en/camino-portugues-the-portuguese-way/a-guarda-oia
+i18n:
+  en:
+    metaTitle: "A Guarda to Oia (14 km): Coastal Camino Stage Guide (2026)"
+    metaDescription: "The A Guarda to Oia stage of the Portuguese Coastal Camino: 14.3 km of easy, open-Atlantic walking past beaches and petroglyphs to the Cistercian monastery at Oia. Route, landmarks, where to sleep and eat, and a stage FAQ."
+    h1: "A Guarda → Oia"
+    lead: "This is the first full walking stage on Galician soil after the river crossing, and one of the most scenic on the whole Coastal Route. You leave A Guarda along the open Atlantic and follow the shore north for about 14 km — past beaches, an old shellfish nursery and prehistoric rock carvings — until the great Cistercian monastery of Santa María de Oia rises straight out of the sea in front of you. It is an easy, low day with almost no climbing, but there is little shade, so carry water and sun cover."
+    sections:
+      - heading: "Distance and difficulty"
+        body: "The stage is about 14.3 km and is rated easy: roughly 135 m of ascent spread over gentle undulation, with no sustained climb. Most walkers cover it in three to four hours at a steady pace. The two things to plan for are exposure and surface — the route stays beside the open Atlantic with very little shade, and a long middle section follows the coast road (the PO-552), where the camber and occasional traffic ask for care. Start with full water bottles and sun protection, especially from late spring to early autumn."
+      - heading: "Route and variants"
+        body: "The waymarked Coastal Route leaves A Guarda heading north and barely loses sight of the sea all day. For most of the stage the official line runs along the PO-552 coast road and the shoreline paths beside it; in several places you can drop onto the rocks and beaches that run parallel to the road. There is no major inland alternative on this stage — the corridor between the hills and the Atlantic is narrow, so almost everyone walks the same scenic line into Oia."
+      - heading: "The stage, section by section"
+        body: "You leave A Guarda past the Museo do Mar and pick up the coastal path. Within the first couple of kilometres you reach the beaches of Praia Fedorento and Praia Area Grande, then pass the Cetárea da Redonda, an 1890s seawater shellfish nursery cut into the rock. The path joins the PO-552 for the long open middle of the stage. At Portecelo, about two-thirds of the way, look for the Petróglifos de Portecelo (Bronze Age rock carvings) and a café — the last reliable stop before Oia. A little further the small Ermita de San Sebastián, rebuilt in 1770, overlooks the sea, and shortly afterwards the monastery and the village of Oia come into view."
+      - heading: "The Monastery of Santa María de Oia"
+        body: "Oia is built around the Mosteiro de Santa María de Oia, a Cistercian monastery founded in 1137 and the only Galician monastery to sit right on the open Atlantic. Its monks defended this coast against pirates and corsairs for centuries — a role recognised in 1624 when the crown named it a Royal and Imperial Monastery — and the building later served as everything from a religious house to a prison camp during the Spanish Civil War. It is privately owned and under restoration, so opening for visits is irregular; even seen only from the outside, the church rising straight from the sea wall is the landmark of the stage."
+      - heading: "Arriving in Oia"
+        body: "Oia is a small fishing village wrapped around its harbour and the monastery, not a town — expect a handful of bars and pensions rather than a full service centre. It makes a quiet, atmospheric overnight if you want to keep the stages short, but beds are limited and fill in high season, so book ahead. Many pilgrims instead pause in Oia for a meal and a look at the monastery and walk on toward Baiona the same day."
+      - heading: "Where to sleep and eat"
+        body: "Accommodation in Oia is limited and seasonal. The pilgrim option is the Albergue Caminho Portugues; for a private room, Casa Puertas (a casa rural) and Hotel A Raiña are the names that recur in current guides. The cliffside La Cala inn has closed permanently — ignore older listings that still show it. For food, the café at Portecelo is the dependable mid-stage stop, and Oia itself has a few harbour bars. Because supplies are thin, treat A Guarda as your real resupply point before setting out. Always confirm a bed the day before in high season rather than arriving on spec."
+      - heading: "Stage logistics at a glance"
+        body: "Distance about 14.3 km; difficulty easy; roughly three to four hours walking. No bridge, ferry or boat on this stage — it is all on foot. Water and food are scarce between A Guarda and Portecelo, so start stocked. If Oia is full or you still have daylight, the next stage on to Baiona (about 18 km) can be linked, but that makes a long, exposed day of roughly 32 km — most walkers prefer to sleep in Oia or Viladesuso and keep the coastline enjoyable."
+    faq:
+      - q: "How long is the A Guarda to Oia stage?"
+        a: "About 14.3 km, with roughly 135 m of ascent. It is an easy, low-elevation day that most pilgrims walk in three to four hours."
+      - q: "Is the A Guarda to Oia stage hard?"
+        a: "No — it is rated easy, with gentle undulation and no sustained climb. The only real challenges are exposure (little shade beside the open Atlantic) and a long section on the PO-552 coast road, so carry water and sun protection."
+      - q: "Can I visit the Monastery of Santa María de Oia?"
+        a: "The 12th-century Cistercian monastery is privately owned and under restoration, so interior visits are irregular and not guaranteed. Even from the outside it is the highlight of the stage — the church rises straight out of the sea wall in the centre of Oia."
+      - q: "Where can I sleep in Oia?"
+        a: "Beds are limited. The pilgrim option is the Albergue Caminho Portugues; for a private room, Casa Puertas and Hotel A Raiña appear in current guides. Book ahead in high season — the village is small. (The former La Cala inn has closed permanently.)"
+      - q: "Is there food and water on the way?"
+        a: "Supplies are thin. The café at Portecelo, about two-thirds of the way, is the dependable mid-stage stop; otherwise Oia has only a few harbour bars. Stock up in A Guarda and start with full water bottles."
+      - q: "Can I walk along the coast the whole way?"
+        a: "Largely, yes. The waymarked route stays beside the open Atlantic all day, alternating between shoreline paths and the PO-552 coast road, with no major inland variant on this stage."
+  es:
+    metaTitle: "A Guarda a Oia (14 km): Guía de la Etapa del Camino de la Costa (2026)"
+    metaDescription: "La etapa A Guarda–Oia del Camino Portugués de la Costa: 14,3 km de caminata fácil junto al Atlántico abierto, entre playas y petroglifos, hasta el monasterio cisterciense de Oia. Ruta, hitos, dónde dormir y comer, y preguntas frecuentes."
+    h1: "A Guarda → Oia"
+    lead: "Es la primera etapa de caminata completa en suelo gallego tras el cruce del río, y una de las más bonitas de toda la Ruta de la Costa. Sales de A Guarda junto al Atlántico abierto y sigues la orilla hacia el norte unos 14 km — entre playas, una vieja cetárea y grabados rupestres prehistóricos — hasta que el gran monasterio cisterciense de Santa María de Oia surge del mar frente a ti. Es un día fácil y llano, casi sin subidas, pero con poca sombra: lleva agua y protección solar."
+    sections:
+      - heading: "Distancia y dificultad"
+        body: "La etapa tiene unos 14,3 km y se considera fácil: alrededor de 135 m de desnivel positivo repartidos en suaves ondulaciones, sin ninguna subida sostenida. La mayoría la cubre en tres o cuatro horas a buen ritmo. Hay que prever dos cosas: la exposición y el firme — la ruta va junto al Atlántico abierto con muy poca sombra, y un largo tramo central sigue la carretera de la costa (la PO-552), donde el peralte y algún tráfico exigen atención. Empieza con las botellas llenas y protección solar, sobre todo de finales de primavera a principios de otoño."
+      - heading: "Ruta y variantes"
+        body: "La Ruta de la Costa señalizada sale de A Guarda hacia el norte y apenas pierde de vista el mar en todo el día. Durante casi toda la etapa el trazado oficial discurre por la carretera costera PO-552 y los senderos de la orilla junto a ella; en varios puntos puedes bajar a las rocas y playas que corren paralelas a la carretera. No hay una alternativa interior importante en esta etapa — el corredor entre los montes y el Atlántico es estrecho, así que casi todos caminan la misma línea panorámica hasta Oia."
+      - heading: "La etapa, tramo a tramo"
+        body: "Sales de A Guarda pasando por el Museo do Mar y enlazas con el sendero costero. En los primeros kilómetros llegas a las playas de Praia Fedorento y Praia Area Grande, y luego pasas la Cetárea da Redonda, un vivero de marisco de agua de mar excavado en la roca en la década de 1890. El camino se une a la PO-552 para el largo tramo central abierto. En Portecelo, a unos dos tercios del recorrido, busca los Petróglifos de Portecelo (grabados de la Edad del Bronce) y un café — la última parada fiable antes de Oia. Algo más adelante, la pequeña Ermita de San Sebastián, reconstruida en 1770, mira al mar, y poco después aparecen el monasterio y la aldea de Oia."
+      - heading: "El monasterio de Santa María de Oia"
+        body: "Oia se organiza en torno al Mosteiro de Santa María de Oia, un monasterio cisterciense fundado en 1137 y el único de Galicia situado directamente sobre el Atlántico abierto. Sus monjes defendieron esta costa de piratas y corsarios durante siglos — un papel reconocido en 1624, cuando la corona lo nombró Real e Imperial Monasterio — y el edificio fue después desde casa religiosa hasta campo de prisioneros durante la Guerra Civil. Es de propiedad privada y está en restauración, así que las visitas son irregulares; incluso visto solo por fuera, la iglesia que se alza desde el propio muro del mar es el gran hito de la etapa."
+      - heading: "La llegada a Oia"
+        body: "Oia es una pequeña aldea de pescadores en torno a su puerto y al monasterio, no un pueblo — espera un puñado de bares y pensiones, no un centro de servicios completo. Es una parada tranquila y con encanto si quieres etapas cortas, pero las camas son limitadas y se llenan en temporada alta, así que reserva con antelación. Muchos peregrinos hacen en Oia una pausa para comer y ver el monasterio y siguen hacia Baiona el mismo día."
+      - heading: "Dónde dormir y comer"
+        body: "El alojamiento en Oia es limitado y estacional. La opción de peregrino es el Albergue Caminho Portugues; para habitación privada, Casa Puertas (una casa rural) y el Hotel A Raiña son los nombres que se repiten en las guías actuales. El antiguo albergue La Cala, sobre el acantilado, ha cerrado de forma permanente — ignora los listados antiguos que aún lo muestran. Para comer, el café de Portecelo es la parada intermedia fiable, y la propia Oia tiene unos pocos bares en el puerto. Como los suministros escasean, trata A Guarda como tu verdadero punto de reabastecimiento antes de salir. Confirma siempre la cama la víspera en temporada alta en vez de llegar a la aventura."
+      - heading: "Logística de la etapa de un vistazo"
+        body: "Distancia unos 14,3 km; dificultad fácil; unas tres o cuatro horas de caminata. No hay puente, ferry ni barco en esta etapa — todo es a pie. El agua y la comida escasean entre A Guarda y Portecelo, así que sal con provisiones. Si Oia está llena o aún tienes luz, la siguiente etapa hasta Baiona (unos 18 km) se puede encadenar, pero eso hace un día largo y expuesto de unos 32 km — la mayoría prefiere dormir en Oia o Viladesuso y mantener la costa disfrutable."
+    faq:
+      - q: "¿Cuánto mide la etapa A Guarda–Oia?"
+        a: "Unos 14,3 km, con alrededor de 135 m de desnivel. Es un día fácil y llano que la mayoría camina en tres o cuatro horas."
+      - q: "¿Es dura la etapa A Guarda–Oia?"
+        a: "No — se considera fácil, con suaves ondulaciones y sin subida sostenida. Los únicos retos reales son la exposición (poca sombra junto al Atlántico abierto) y un largo tramo por la carretera de la costa PO-552, así que lleva agua y protección solar."
+      - q: "¿Se puede visitar el monasterio de Santa María de Oia?"
+        a: "El monasterio cisterciense del siglo XII es de propiedad privada y está en restauración, así que las visitas al interior son irregulares y no están garantizadas. Aun por fuera es lo más destacado de la etapa — la iglesia se alza desde el propio muro del mar en el centro de Oia."
+      - q: "¿Dónde puedo dormir en Oia?"
+        a: "Las camas son limitadas. La opción de peregrino es el Albergue Caminho Portugues; para habitación privada, Casa Puertas y el Hotel A Raiña aparecen en las guías actuales. Reserva con antelación en temporada alta — la aldea es pequeña. (El antiguo albergue La Cala ha cerrado de forma permanente.)"
+      - q: "¿Hay comida y agua por el camino?"
+        a: "Los suministros son escasos. El café de Portecelo, a unos dos tercios del recorrido, es la parada intermedia fiable; por lo demás, Oia solo tiene unos pocos bares en el puerto. Abastécete en A Guarda y sal con las botellas llenas."
+      - q: "¿Puedo caminar junto a la costa todo el trayecto?"
+        a: "En gran parte, sí. La ruta señalizada va junto al Atlántico abierto todo el día, alternando senderos de la orilla y la carretera costera PO-552, sin variante interior importante en esta etapa."
+  pt:
+    metaTitle: "A Guarda a Oia (14 km): Guia da Etapa do Caminho da Costa (2026)"
+    metaDescription: "A etapa A Guarda–Oia do Caminho Português da Costa: 14,3 km de caminhada fácil junto ao Atlântico aberto, entre praias e petróglifos, até ao mosteiro cisterciense de Oia. Percurso, pontos de interesse, onde dormir e comer, e perguntas frequentes."
+    h1: "A Guarda → Oia"
+    lead: "É a primeira etapa de caminhada completa em solo galego depois da travessia do rio, e uma das mais bonitas de toda a Rota da Costa. Sai de A Guarda junto ao Atlântico aberto e segue a margem para norte cerca de 14 km — entre praias, uma antiga cetária e gravuras rupestres pré-históricas — até o grande mosteiro cisterciense de Santa María de Oia surgir do mar à sua frente. É um dia fácil e plano, quase sem subidas, mas com pouca sombra: leve água e proteção solar."
+    sections:
+      - heading: "Distância e dificuldade"
+        body: "A etapa tem cerca de 14,3 km e é classificada como fácil: à volta de 135 m de subida distribuídos por ondulação suave, sem qualquer subida sustentada. A maioria cumpre-a em três a quatro horas a bom ritmo. Há duas coisas a prever: a exposição e o piso — o percurso fica junto ao Atlântico aberto com muito pouca sombra, e um longo troço central segue a estrada da costa (a PO-552), onde a inclinação transversal e algum trânsito exigem cuidado. Comece com as garrafas cheias e proteção solar, sobretudo do fim da primavera ao início do outono."
+      - heading: "Percurso e variantes"
+        body: "A Rota da Costa sinalizada sai de A Guarda para norte e quase não perde o mar de vista durante todo o dia. Na maior parte da etapa o traçado oficial segue a estrada costeira PO-552 e os trilhos da margem ao lado dela; em vários pontos pode descer às rochas e praias que correm paralelas à estrada. Não há alternativa interior relevante nesta etapa — o corredor entre os montes e o Atlântico é estreito, por isso quase todos caminham a mesma linha panorâmica até Oia."
+      - heading: "A etapa, troço a troço"
+        body: "Sai de A Guarda passando pelo Museo do Mar e apanha o trilho costeiro. Nos primeiros quilómetros chega às praias de Praia Fedorento e Praia Area Grande, e depois passa a Cetárea da Redonda, um viveiro de marisco de água do mar escavado na rocha na década de 1890. O caminho junta-se à PO-552 no longo troço central aberto. Em Portecelo, a cerca de dois terços do percurso, procure os Petróglifos de Portecelo (gravuras da Idade do Bronze) e um café — a última paragem fiável antes de Oia. Um pouco mais à frente, a pequena Ermida de San Sebastián, reconstruída em 1770, debruça-se sobre o mar, e logo depois surgem o mosteiro e a aldeia de Oia."
+      - heading: "O mosteiro de Santa María de Oia"
+        body: "Oia organiza-se em torno do Mosteiro de Santa María de Oia, um mosteiro cisterciense fundado em 1137 e o único da Galiza situado diretamente sobre o Atlântico aberto. Os seus monges defenderam esta costa de piratas e corsários durante séculos — um papel reconhecido em 1624, quando a coroa o nomeou Real e Imperial Mosteiro — e o edifício foi depois desde casa religiosa a campo de prisioneiros durante a Guerra Civil. É de propriedade privada e está em restauro, por isso as visitas são irregulares; mesmo visto só por fora, a igreja que se ergue do próprio muro do mar é o grande marco da etapa."
+      - heading: "A chegada a Oia"
+        body: "Oia é uma pequena aldeia de pescadores em torno do porto e do mosteiro, não uma vila — conte com um punhado de bares e pensões, não um centro de serviços completo. É uma paragem tranquila e cheia de atmosfera se quiser etapas curtas, mas as camas são limitadas e enchem na época alta, por isso reserve com antecedência. Muitos peregrinos fazem em Oia uma pausa para comer e ver o mosteiro e seguem para Baiona no mesmo dia."
+      - heading: "Onde dormir e comer"
+        body: "O alojamento em Oia é limitado e sazonal. A opção de peregrino é o Albergue Caminho Portugues; para quarto privado, a Casa Puertas (uma casa rural) e o Hotel A Raiña são os nomes que se repetem nos guias atuais. O antigo albergue La Cala, sobre a falésia, fechou em definitivo — ignore as listagens antigas que ainda o mostram. Para comer, o café de Portecelo é a paragem intermédia fiável, e a própria Oia tem alguns bares no porto. Como os abastecimentos são escassos, trate A Guarda como o seu verdadeiro ponto de reabastecimento antes de partir. Confirme sempre a cama na véspera na época alta, em vez de chegar à aventura."
+      - heading: "Logística da etapa em resumo"
+        body: "Distância cerca de 14,3 km; dificuldade fácil; cerca de três a quatro horas de caminhada. Não há ponte, ferry nem barco nesta etapa — é tudo a pé. A água e a comida escasseiam entre A Guarda e Portecelo, por isso parta abastecido. Se Oia estiver cheia ou ainda tiver luz, a etapa seguinte até Baiona (cerca de 18 km) pode ser encadeada, mas isso faz um dia longo e exposto de cerca de 32 km — a maioria prefere dormir em Oia ou Viladesuso e manter a costa agradável."
+    faq:
+      - q: "Qual o comprimento da etapa A Guarda–Oia?"
+        a: "Cerca de 14,3 km, com à volta de 135 m de subida. É um dia fácil e plano que a maioria caminha em três a quatro horas."
+      - q: "A etapa A Guarda–Oia é difícil?"
+        a: "Não — é classificada como fácil, com ondulação suave e sem subida sustentada. Os únicos desafios reais são a exposição (pouca sombra junto ao Atlântico aberto) e um longo troço pela estrada da costa PO-552, por isso leve água e proteção solar."
+      - q: "Pode visitar-se o mosteiro de Santa María de Oia?"
+        a: "O mosteiro cisterciense do século XII é de propriedade privada e está em restauro, por isso as visitas ao interior são irregulares e não garantidas. Mesmo por fora é o ponto alto da etapa — a igreja ergue-se do próprio muro do mar no centro de Oia."
+      - q: "Onde posso dormir em Oia?"
+        a: "As camas são limitadas. A opção de peregrino é o Albergue Caminho Portugues; para quarto privado, a Casa Puertas e o Hotel A Raiña aparecem nos guias atuais. Reserve com antecedência na época alta — a aldeia é pequena. (O antigo albergue La Cala fechou em definitivo.)"
+      - q: "Há comida e água pelo caminho?"
+        a: "Os abastecimentos são escassos. O café de Portecelo, a cerca de dois terços do percurso, é a paragem intermédia fiável; de resto, Oia só tem alguns bares no porto. Abasteça-se em A Guarda e parta com as garrafas cheias."
+      - q: "Posso caminhar junto à costa todo o trajeto?"
+        a: "Em grande parte, sim. O percurso sinalizado fica junto ao Atlântico aberto todo o dia, alternando trilhos da margem e a estrada costeira PO-552, sem variante interior relevante nesta etapa."

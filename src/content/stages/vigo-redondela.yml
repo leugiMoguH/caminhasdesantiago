@@ -1,0 +1,112 @@
+route: coastal
+order: 6
+from: Vigo
+to: Redondela
+distanceKm: 16.6
+ascentM: 310
+difficulty: moderate
+terrain: "Out of Vigo on city streets, then the level Senda da Auga forest water-channel trail high above the Ría de Vigo, with views to the Rande bridge, before a descent on tracks and tarmac into Redondela; modest climbing, mostly on good surfaces."
+prevSlug: baiona-vigo
+nextSlug: redondela-pontevedra
+townSlugs: []
+logisticsSlugs: []
+sourceVerified: true
+lastVerified: "2026-06-15"
+sources:
+  - https://stingynomads.com/portuguese-coastal-camino-stages/
+  - https://thenwewalked.com/vigo-to-redondela-camino-portuguese-coastal/
+  - https://www.caminodesantiago.gal/en/make-plans/the-ways/portuguese-way/stage-redondela-pontevedra
+i18n:
+  en:
+    metaTitle: "Vigo to Redondela (17 km): Coastal Camino Stage Guide (2026)"
+    metaDescription: "The Vigo to Redondela stage of the Portuguese Coastal Camino: 16.6 km out of the city onto the scenic Senda da Auga forest trail above the Ría de Vigo, with Rande bridge views, into Redondela where the Coastal and Central routes meet. Route, albergues, and a stage FAQ."
+    h1: "Vigo → Redondela"
+    lead: "A short, green recovery day after the long Baiona stage. You climb out of Vigo onto the Senda da Auga — a level forest trail following an old water channel high above the Ría de Vigo, with views across the water to the great Rande bridge — and then drop into Redondela, the town where the Coastal Route finally joins the Central Camino Portugués for the last push to Santiago. It is about 16.6 km with one gentle climb."
+    sections:
+      - heading: "Distance and difficulty"
+        body: "The stage is about 16.6 km with roughly 310 m of ascent — short by Camino standards, with one real but gradual climb out of Vigo and an easy descent into Redondela. It is a good day to recover after the long, hard-to-navigate Baiona stage. Surfaces are mixed: city streets at the start, a long stretch of smooth forest trail in the middle, and tracks and tarmac at the end. Most walkers finish in four hours or less."
+      - heading: "Route and variants"
+        body: "Leaving central Vigo the waymarks climb through the upper city and into the woods to pick up the Senda da Auga, the level path that defines this stage. There is no significant variant — once on the Senda da Auga the route is clear and well used by local walkers and cyclists — but pay attention at the start, where the city waymarking is thin, the same problem that dogs the approach into Vigo from the south."
+      - heading: "The stage, section by section"
+        body: "From the centre you climb past the modernist Igrexa da Inmaculada Concepción (completed 1968) to reach the Senda da Auga, a scenic trail that runs along an old water channel through eucalyptus and pine, level and shaded, with repeated views down to the ría and across to the Rande bridge. Roughly midway a small waterfall and picnic area at Rego Fondón make a natural break, and there are cafés along the way. The trail eventually descends past the Iglesia de San Andrés (1743) and into Redondela."
+      - heading: "Arriving in Redondela"
+        body: "Redondela is the historic meeting point of the two main Portuguese routes: pilgrims who walked the Coastal Route and those who came inland on the Central Camino from Tui converge here, so from this stage on the path is busier all the way to Santiago. The town is known for its two great railway viaducts striding over the rooftops. It has a full set of services and a strong choice of pilgrim beds, making it a natural and popular overnight."
+      - heading: "Where to sleep and eat"
+        body: "Redondela has several pilgrim albergues. The municipal Albergue de Peregrinos Casa da Torre occupies a 16th-century tower house in the centre; the Albergue Parroquial Santiago Apóstol offers bunks, a kitchen and a garden; and there are private options such as A Marisma, which is highly rated and books up quickly. Hostales and guesthouses fill out the range. The town has plenty of bars and restaurants — and because the route is busier from here, it is worth booking a bed ahead in season rather than arriving late."
+      - heading: "Stage logistics at a glance"
+        body: "Distance about 16.6 km; difficulty moderate but short, with one gradual climb; four hours or less for most. Cafés and the Rego Fondón picnic spot break the trail, so resupply is easy. From Redondela the Coastal and Central routes are one; the next stage to Pontevedra (about 19.6 km) crosses the historic Ponte Sampaio. Book ahead from here on, as pilgrim numbers rise sharply after the junction."
+    faq:
+      - q: "How long is the Vigo to Redondela stage?"
+        a: "About 16.6 km, with roughly 310 m of ascent. It is a short day that most pilgrims walk in four hours or less."
+      - q: "Is the Vigo to Redondela stage hard?"
+        a: "It is rated moderate but easy-going: one gradual climb out of Vigo onto the Senda da Auga, then a gentle descent. The main trail is level and shaded, so it is a good recovery day after the long Baiona stage."
+      - q: "What is the Senda da Auga?"
+        a: "A level forest trail following an old water channel high above the Ría de Vigo, shaded by eucalyptus and pine and offering repeated views to the Rande bridge. It is the scenic backbone of this stage and popular with local walkers and cyclists."
+      - q: "Why does the route get busier at Redondela?"
+        a: "Redondela is where the Coastal Route joins the Central Camino Portugués coming inland from Tui. The two paths become one here, so foot traffic increases markedly for the rest of the way to Santiago."
+      - q: "Where can I sleep in Redondela?"
+        a: "Redondela has several pilgrim albergues — the municipal Casa da Torre in a 16th-century tower house, the parish Albergue Santiago Apóstol, and private options like A Marisma — plus hostales and guesthouses. Book ahead in season, as the route is busy from here."
+      - q: "Is waymarking a problem on this stage?"
+        a: "Only at the very start, climbing out of central Vigo, where city arrows are sparse. Once you are on the Senda da Auga the route is clear and easy to follow into Redondela."
+  es:
+    metaTitle: "Vigo a Redondela (17 km): Guía de la Etapa del Camino de la Costa (2026)"
+    metaDescription: "La etapa Vigo–Redondela del Camino Portugués de la Costa: 16,6 km saliendo de la ciudad hacia la Senda da Auga sobre la ría de Vigo, con vistas al puente de Rande, hasta Redondela, donde se unen la ruta de la Costa y la Central. Ruta, albergues y preguntas frecuentes."
+    h1: "Vigo → Redondela"
+    lead: "Una jornada corta y verde para recuperarse tras la larga etapa de Baiona. Subes desde Vigo a la Senda da Auga — un sendero llano de bosque que sigue un viejo canal de agua sobre la ría de Vigo, con vistas al gran puente de Rande — y luego bajas a Redondela, el pueblo donde la Ruta de la Costa se une por fin al Camino Portugués Central para el último tramo hasta Santiago. Son unos 16,6 km con una subida suave."
+    sections:
+      - heading: "Distancia y dificultad"
+        body: "La etapa tiene unos 16,6 km con alrededor de 310 m de desnivel — corta para lo habitual en el Camino, con una subida real pero gradual al salir de Vigo y una bajada fácil a Redondela. Es un buen día para recuperarse tras la larga y difícil de seguir etapa de Baiona. El firme es variado: calles de ciudad al principio, un largo tramo de sendero de bosque suave en medio, y pistas y asfalto al final. La mayoría termina en cuatro horas o menos."
+      - heading: "Ruta y variantes"
+        body: "Al salir del centro de Vigo las flechas suben por la parte alta de la ciudad y entran en el bosque para enlazar con la Senda da Auga, el camino llano que define esta etapa. No hay variante importante — una vez en la Senda da Auga la ruta es clara y muy usada por caminantes y ciclistas locales — pero presta atención al principio, donde la señalización urbana es escasa, el mismo problema que afecta a la entrada a Vigo desde el sur."
+      - heading: "La etapa, tramo a tramo"
+        body: "Desde el centro subes junto a la modernista Igrexa da Inmaculada Concepción (terminada en 1968) hasta alcanzar la Senda da Auga, un sendero panorámico que recorre un viejo canal de agua entre eucaliptos y pinos, llano y sombreado, con repetidas vistas a la ría y al puente de Rande. Hacia la mitad, una pequeña cascada y zona de pícnic en Rego Fondón hacen una pausa natural, y hay cafés por el camino. El sendero acaba bajando junto a la Iglesia de San Andrés (1743) y entra en Redondela."
+      - heading: "La llegada a Redondela"
+        body: "Redondela es el histórico punto de encuentro de las dos rutas portuguesas principales: los peregrinos que hicieron la Ruta de la Costa y los que vinieron por el interior por el Camino Central desde Tui convergen aquí, así que a partir de esta etapa el camino va más concurrido hasta Santiago. El pueblo es conocido por sus dos grandes viaductos de ferrocarril que cruzan sobre los tejados. Tiene todos los servicios y buena oferta de camas de peregrino, lo que lo hace una parada natural y popular."
+      - heading: "Dónde dormir y comer"
+        body: "Redondela tiene varios albergues de peregrinos. El municipal Albergue de Peregrinos Casa da Torre ocupa una casa torre del siglo XVI en el centro; el Albergue Parroquial Santiago Apóstol ofrece literas, cocina y jardín; y hay opciones privadas como A Marisma, muy valorada y que se llena rápido. Hostales y pensiones completan la oferta. El pueblo tiene muchos bares y restaurantes — y como la ruta va más concurrida desde aquí, conviene reservar cama con antelación en temporada en vez de llegar tarde."
+      - heading: "Logística de la etapa de un vistazo"
+        body: "Distancia unos 16,6 km; dificultad moderada pero corta, con una subida gradual; cuatro horas o menos para la mayoría. Cafés y la zona de pícnic de Rego Fondón cortan el sendero, así que el reabastecimiento es fácil. Desde Redondela la Costa y la Central son una sola; la siguiente etapa a Pontevedra (unos 19,6 km) cruza el histórico Ponte Sampaio. Reserva con antelación a partir de aquí, pues el número de peregrinos sube mucho tras la unión."
+    faq:
+      - q: "¿Cuánto mide la etapa Vigo–Redondela?"
+        a: "Unos 16,6 km, con alrededor de 310 m de desnivel. Es una jornada corta que la mayoría camina en cuatro horas o menos."
+      - q: "¿Es dura la etapa Vigo–Redondela?"
+        a: "Se considera moderada pero llevadera: una subida gradual al salir de Vigo hacia la Senda da Auga y luego una bajada suave. El sendero principal es llano y sombreado, así que es un buen día de recuperación tras la larga etapa de Baiona."
+      - q: "¿Qué es la Senda da Auga?"
+        a: "Un sendero llano de bosque que sigue un viejo canal de agua sobre la ría de Vigo, sombreado por eucaliptos y pinos y con repetidas vistas al puente de Rande. Es la columna vertebral panorámica de esta etapa y muy popular entre caminantes y ciclistas locales."
+      - q: "¿Por qué se llena más la ruta en Redondela?"
+        a: "Redondela es donde la Ruta de la Costa se une al Camino Portugués Central que viene del interior desde Tui. Los dos caminos se hacen uno aquí, así que el tránsito a pie aumenta mucho durante el resto del trayecto a Santiago."
+      - q: "¿Dónde puedo dormir en Redondela?"
+        a: "Redondela tiene varios albergues de peregrinos — el municipal Casa da Torre en una casa torre del siglo XVI, el parroquial Santiago Apóstol y opciones privadas como A Marisma — además de hostales y pensiones. Reserva con antelación en temporada, pues la ruta va concurrida desde aquí."
+      - q: "¿Es un problema la señalización en esta etapa?"
+        a: "Solo al principio, subiendo desde el centro de Vigo, donde las flechas urbanas son escasas. Una vez en la Senda da Auga la ruta es clara y fácil de seguir hasta Redondela."
+  pt:
+    metaTitle: "Vigo a Redondela (17 km): Guia da Etapa do Caminho da Costa (2026)"
+    metaDescription: "A etapa Vigo–Redondela do Caminho Português da Costa: 16,6 km a sair da cidade para a Senda da Auga sobre a ria de Vigo, com vistas à ponte de Rande, até Redondela, onde se unem a rota da Costa e a Central. Percurso, albergues e perguntas frequentes."
+    h1: "Vigo → Redondela"
+    lead: "Uma jornada curta e verde para recuperar depois da longa etapa de Baiona. Sobe de Vigo para a Senda da Auga — um trilho plano de floresta que segue um velho canal de água sobre a ria de Vigo, com vistas à grande ponte de Rande — e depois desce a Redondela, a vila onde a Rota da Costa se junta por fim ao Caminho Português Central para o último troço até Santiago. São cerca de 16,6 km com uma subida suave."
+    sections:
+      - heading: "Distância e dificuldade"
+        body: "A etapa tem cerca de 16,6 km com à volta de 310 m de subida — curta para o habitual no Caminho, com uma subida real mas gradual à saída de Vigo e uma descida fácil até Redondela. É um bom dia para recuperar depois da longa e difícil de seguir etapa de Baiona. O piso é variado: ruas de cidade no início, um longo troço de trilho de floresta suave no meio, e caminhos e alcatrão no fim. A maioria termina em quatro horas ou menos."
+      - heading: "Percurso e variantes"
+        body: "À saída do centro de Vigo as setas sobem pela parte alta da cidade e entram na floresta para apanhar a Senda da Auga, o caminho plano que define esta etapa. Não há variante relevante — uma vez na Senda da Auga o percurso é claro e muito usado por caminhantes e ciclistas locais — mas preste atenção no início, onde a sinalização urbana é escassa, o mesmo problema que afeta a entrada em Vigo a partir do sul."
+      - heading: "A etapa, troço a troço"
+        body: "Do centro sobe junto à modernista Igrexa da Inmaculada Concepción (concluída em 1968) até alcançar a Senda da Auga, um trilho panorâmico que percorre um velho canal de água entre eucaliptos e pinheiros, plano e sombreado, com repetidas vistas à ria e à ponte de Rande. A meio, uma pequena cascata e zona de piquenique em Rego Fondón fazem uma pausa natural, e há cafés pelo caminho. O trilho acaba por descer junto à Iglesia de San Andrés (1743) e entra em Redondela."
+      - heading: "A chegada a Redondela"
+        body: "Redondela é o histórico ponto de encontro das duas rotas portuguesas principais: os peregrinos que fizeram a Rota da Costa e os que vieram pelo interior pelo Caminho Central desde Tui convergem aqui, por isso a partir desta etapa o caminho fica mais movimentado até Santiago. A vila é conhecida pelos seus dois grandes viadutos de caminho de ferro que cruzam sobre os telhados. Tem todos os serviços e boa oferta de camas de peregrino, o que a torna paragem natural e popular."
+      - heading: "Onde dormir e comer"
+        body: "Redondela tem vários albergues de peregrinos. O municipal Albergue de Peregrinos Casa da Torre ocupa uma casa torre do século XVI no centro; o Albergue Parroquial Santiago Apóstol oferece camaratas, cozinha e jardim; e há opções privadas como A Marisma, muito bem avaliada e que enche depressa. Hostais e pensões completam a oferta. A vila tem muitos bares e restaurantes — e como a rota fica mais movimentada a partir daqui, vale a pena reservar cama com antecedência na época em vez de chegar tarde."
+      - heading: "Logística da etapa em resumo"
+        body: "Distância cerca de 16,6 km; dificuldade moderada mas curta, com uma subida gradual; quatro horas ou menos para a maioria. Cafés e a zona de piquenique de Rego Fondón cortam o trilho, por isso o reabastecimento é fácil. Desde Redondela a Costa e a Central são uma só; a etapa seguinte até Pontevedra (cerca de 19,6 km) cruza o histórico Ponte Sampaio. Reserve com antecedência a partir daqui, pois o número de peregrinos sobe muito depois da junção."
+    faq:
+      - q: "Qual o comprimento da etapa Vigo–Redondela?"
+        a: "Cerca de 16,6 km, com à volta de 310 m de subida. É uma jornada curta que a maioria caminha em quatro horas ou menos."
+      - q: "A etapa Vigo–Redondela é difícil?"
+        a: "É classificada como moderada mas acessível: uma subida gradual à saída de Vigo para a Senda da Auga e depois uma descida suave. O trilho principal é plano e sombreado, por isso é um bom dia de recuperação depois da longa etapa de Baiona."
+      - q: "O que é a Senda da Auga?"
+        a: "Um trilho plano de floresta que segue um velho canal de água sobre a ria de Vigo, sombreado por eucaliptos e pinheiros e com repetidas vistas à ponte de Rande. É a espinha dorsal panorâmica desta etapa e muito popular entre caminhantes e ciclistas locais."
+      - q: "Porque é que a rota fica mais movimentada em Redondela?"
+        a: "Redondela é onde a Rota da Costa se junta ao Caminho Português Central que vem do interior desde Tui. Os dois caminhos tornam-se um só aqui, por isso o tráfego a pé aumenta muito durante o resto do trajeto até Santiago."
+      - q: "Onde posso dormir em Redondela?"
+        a: "Redondela tem vários albergues de peregrinos — o municipal Casa da Torre numa casa torre do século XVI, o parroquial Santiago Apóstol e opções privadas como A Marisma — além de hostais e pensões. Reserve com antecedência na época, pois a rota fica movimentada a partir daqui."
+      - q: "A sinalização é um problema nesta etapa?"
+        a: "Só no início, a subir do centro de Vigo, onde as setas urbanas são escassas. Uma vez na Senda da Auga o percurso é claro e fácil de seguir até Redondela."
