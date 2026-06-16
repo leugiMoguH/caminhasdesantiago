@@ -21,8 +21,8 @@ sources:
   - https://oamarense.pt/caminha-espera-retomar-ferry-ate-a-guarda-no-verao-de-2026/
 i18n:
   en:
-    metaTitle: "Caminha → A Guarda: How to Cross the Minho River in 2026 (€6, 10 min)"
-    metaDescription: "How the Caminha to A Guarda crossing works in 2026: water taxis run daily — every 30 minutes in season — for €6, the ride takes ~10 minutes, and you walk ~1.5 km into A Guarda. Boarding point, time-zone trap, bikes, and the overland backup."
+    metaTitle: "Caminha to A Guarda: Coastal Camino Stage & Crossing into Spain (2026)"
+    metaDescription: "The final Portuguese stage of the Coastal Camino: a short Minho river crossing from Caminha into A Guarda, Spain, then ~1.5 km on foot to town. Stage overview, what to expect, and where it sits between Viana do Castelo and Oia — full ferry timetable linked."
     h1: "Caminha → A Guarda (the Minho crossing)"
     lead: "This short stage is really a river crossing. There is no bridge at Caminha, so you cross the Minho by boat — about 10 minutes on the water — and then walk a little over a kilometre into A Guarda on the Spanish bank. In 2026 the crossing runs daily: several licensed water-taxi services replaced the old ferry, and a new municipal ferry is expected this summer."
     sections:
@@ -56,8 +56,8 @@ i18n:
       - q: "What if no boat is crossing?"
         a: "Take the overland detour: a train from Caminha to Valença (~35 min, ~€3.60), then walk across the Tui–Valença international bridge into Spain. This connects you to the Camino Portugués Interior."
   es:
-    metaTitle: "Caminha → A Guarda: Cómo Cruzar el Río Miño en 2026 (6 €, 10 min)"
-    metaDescription: "Cómo funciona el cruce Caminha–A Guarda en 2026: los taxi-barco operan a diario — cada 30 minutos en temporada — por 6 €, la travesía dura ~10 minutos y se camina ~1,5 km hasta A Guarda. Embarque, trampa horaria, bicis y la alternativa terrestre."
+    metaTitle: "Caminha a A Guarda: Etapa del Camino de la Costa y Paso a España (2026)"
+    metaDescription: "La última etapa portuguesa del Camino de la Costa: un breve cruce del Miño desde Caminha hasta A Guarda (España) y ~1,5 km a pie hasta el pueblo. Resumen de la etapa, qué esperar y su lugar entre Viana do Castelo y Oia — con enlace al horario completo del ferry."
     h1: "Caminha → A Guarda (el cruce del Miño)"
     lead: "Esta etapa corta es en realidad un cruce de río. No hay puente en Caminha, así que se cruza el Miño en barco — unos 10 minutos sobre el agua — y luego se camina algo más de un kilómetro hasta A Guarda, en la orilla española. En 2026 el cruce funciona a diario: varios servicios de taxi-barco autorizados sustituyeron al antiguo ferry, y hay un nuevo ferry municipal previsto para este verano."
     sections:
@@ -91,8 +91,8 @@ i18n:
       - q: "¿Qué hago si no hay barco?"
         a: "Toma el desvío terrestre: un tren de Caminha a Valença (~35 min, ~3,60 €) y luego cruza a pie el puente internacional Tui–Valença. Esto te conecta con el Camino Portugués Interior."
   pt:
-    metaTitle: "Caminha → A Guarda: Como Atravessar o Rio Minho em 2026 (€6, 10 min)"
-    metaDescription: "Como funciona a travessia Caminha–A Guarda em 2026: os táxis fluviais operam diariamente — de 30 em 30 minutos na época alta — por €6, a viagem demora ~10 minutos e caminha-se ~1,5 km até A Guarda. Embarque, armadilha horária, bicicletas e a alternativa terrestre."
+    metaTitle: "Caminha a A Guarda: Etapa do Caminho da Costa e Passagem para Espanha (2026)"
+    metaDescription: "A última etapa portuguesa do Caminho da Costa: uma breve travessia do Minho de Caminha até A Guarda (Espanha) e ~1,5 km a pé até à vila. Resumo da etapa, o que esperar e o seu lugar entre Viana do Castelo e Oia — com ligação ao horário completo do ferry."
     h1: "Caminha → A Guarda (a travessia do Minho)"
     lead: "Esta etapa curta é, na verdade, uma travessia de rio. Não há ponte em Caminha, por isso atravessa-se o Minho de barco — cerca de 10 minutos sobre a água — e caminha-se pouco mais de um quilómetro até A Guarda, na margem espanhola. Em 2026 a travessia funciona diariamente: vários táxis fluviais licenciados substituíram o antigo ferry, e está previsto um novo ferry municipal para este verão."
     sections:

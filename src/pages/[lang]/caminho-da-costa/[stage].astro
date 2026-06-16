@@ -91,6 +91,16 @@ const graph = buildClusterGraph({
 const ferry = ferryPath(lang);
 const guide = caminhaGuidePath(lang);
 const hub = hubPath(lang);
+
+// On the international-crossing stage only, defer all ferry logistics (timetable,
+// operators, prices) to the dedicated Ferry & Logistics page — keeps this page the
+// route-stage authority and avoids competing with it for the same crossing queries.
+const isCrossingStage = slug === 'caminha-a-guarda';
+const ferryAuthority = {
+  en: { lead: 'This page is the route-stage overview.', cta: 'For the full ferry timetable, live operators, prices and booking, see the', link: 'Caminha–A Guarda Ferry & Logistics guide' },
+  es: { lead: 'Esta página es el resumen de la etapa.', cta: 'Para el horario completo del ferry, operadores, precios y reservas, consulta la', link: 'guía Ferry y Logística Caminha–A Guarda' },
+  pt: { lead: 'Esta página é o resumo da etapa.', cta: 'Para o horário completo do ferry, operadores, preços e reservas, consulte o', link: 'guia Ferry e Logística Caminha–A Guarda' },
+}[lang];
 ---
 
 <MainLayout title={t.metaTitle} description={t.metaDescription} lang={lang} schemaType="none" i18nUrls={i18nUrls}>
@@ -145,6 +155,21 @@ const hub = hubPath(lang);
     <section>
       <p class="text-slate-700 text-sm leading-relaxed bg-slate-50 border border-slate-200 rounded-2xl p-5">{data.terrain}</p>
     </section>
+
+    {isCrossingStage && (
+      <aside class="bg-earth-50 border border-earth-200 rounded-2xl p-5 flex gap-4 shadow-sm">
+        <div class="shrink-0 flex h-10 w-10 items-center justify-center rounded-xl bg-earth-100 border border-earth-200">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-earth-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+          </svg>
+        </div>
+        <p class="text-sm text-slate-700 leading-relaxed">
+          <strong class="text-forest-900">{ferryAuthority.lead}</strong>{' '}
+          {ferryAuthority.cta}{' '}
+          <a href={ferry} class="text-forest-700 font-semibold hover:underline no-underline">{ferryAuthority.link} →</a>
+        </p>
+      </aside>
+    )}
 
     <!-- Sections -->
     {t.sections.map((s: { heading: string; body: string }) => (
