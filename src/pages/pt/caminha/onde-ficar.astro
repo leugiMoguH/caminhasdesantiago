@@ -175,21 +175,36 @@ const etiquetaCategoria: Record<Categoria, string> = {
   <script type="application/ld+json" is:inline set:html={`
     {
       "@context": "https://schema.org",
-      "@type": "ItemList",
-      "@id": "https://waytosantiagoguide.com/pt/caminha/onde-ficar/#list",
-      "mainEntityOfPage": { "@id": "https://waytosantiagoguide.com/pt/caminha/onde-ficar/#webpage" },
-      "name": "Alojamento em Caminha, Vila Praia de Âncora e Seixas — Caminho de Santiago da Costa",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "item": { "@type": "Hostel", "name": "Albergue Municipal de Peregrinos de Caminha", "address": { "@type": "PostalAddress", "streetAddress": "Rua Ricardo Joaquim de Sousa", "addressLocality": "Caminha", "addressCountry": "PT" } } },
-        { "@type": "ListItem", "position": 2, "item": { "@type": "Hostel", "name": "Albergue Santiago de Caminha", "address": { "@type": "PostalAddress", "addressLocality": "Caminha", "addressCountry": "PT" } } },
-        { "@type": "ListItem", "position": 3, "item": { "@type": "Hostel", "name": "Bom Caminha — Albergue Privado para Peregrinos", "address": { "@type": "PostalAddress", "addressLocality": "Caminha", "addressCountry": "PT" } } },
-        { "@type": "ListItem", "position": 4, "item": { "@type": "LodgingBusiness", "name": "Litos AL", "address": { "@type": "PostalAddress", "streetAddress": "Largo Senhora da Agonia 13", "addressLocality": "Caminha", "addressCountry": "PT" } } },
-        { "@type": "ListItem", "position": 5, "item": { "@type": "Hotel", "name": "Design & Wine Hotel", "address": { "@type": "PostalAddress", "addressLocality": "Caminha", "addressCountry": "PT" } } },
-        { "@type": "ListItem", "position": 6, "item": { "@type": "Hotel", "name": "Hotel Porta do Sol Conference & SPA", "address": { "@type": "PostalAddress", "addressLocality": "Caminha", "addressCountry": "PT" } } },
-        { "@type": "ListItem", "position": 7, "item": { "@type": "Hotel", "name": "BLUE ANCORA HOTEL", "address": { "@type": "PostalAddress", "addressLocality": "Vila Praia de Âncora", "addressCountry": "PT" } } },
-        { "@type": "ListItem", "position": 8, "item": { "@type": "Hotel", "name": "Hotel Meira", "address": { "@type": "PostalAddress", "addressLocality": "Vila Praia de Âncora", "addressCountry": "PT" } } },
-        { "@type": "ListItem", "position": 9, "item": { "@type": "Hostel", "name": "Albergue de São Bento", "address": { "@type": "PostalAddress", "addressLocality": "Seixas, Caminha", "addressCountry": "PT" } } },
-        { "@type": "ListItem", "position": 10, "item": { "@type": "Hotel", "name": "Rinoterra Minho", "address": { "@type": "PostalAddress", "streetAddress": "Rua da Costa 15", "addressLocality": "Seixas, Caminha", "addressCountry": "PT" } } }
+      "@graph": [
+        {
+          "@type": "ItemList",
+          "@id": "https://waytosantiagoguide.com/pt/caminha/onde-ficar/#list",
+          "mainEntityOfPage": { "@id": "https://waytosantiagoguide.com/pt/caminha/onde-ficar/#webpage" },
+          "name": "Alojamento em Caminha, Vila Praia de Âncora e Seixas — Caminho de Santiago da Costa",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "item": { "@type": "Hostel", "name": "Albergue Municipal de Peregrinos de Caminha", "description": "Albergue municipal oficial de peregrinos no centro de Caminha, a poucos minutos do cais do ferry. Apenas admissão direta a partir das 14:00, com credencial.", "address": { "@type": "PostalAddress", "streetAddress": "Rua Ricardo Joaquim de Sousa", "addressLocality": "Caminha", "addressCountry": "PT" } } },
+            { "@type": "ListItem", "position": 2, "item": { "@type": "Hostel", "name": "Albergue Santiago de Caminha", "description": "Albergue privado de peregrinos no centro de Caminha, reservável online. Bar e cafetaria no estabelecimento.", "address": { "@type": "PostalAddress", "addressLocality": "Caminha", "addressCountry": "PT" } } },
+            { "@type": "ListItem", "position": 3, "item": { "@type": "Hostel", "name": "Bom Caminha — Albergue Privado para Peregrinos", "description": "Albergue privado numa casa senhorial restaurada de 1882 no centro histórico de Caminha. Jantar de peregrino opcional, cozinha comunitária, reserva antecipada disponível.", "address": { "@type": "PostalAddress", "addressLocality": "Caminha", "addressCountry": "PT" } } },
+            { "@type": "ListItem", "position": 4, "item": { "@type": "LodgingBusiness", "name": "Litos AL", "description": "Casa de hóspedes no centro de Caminha, perto da marginal. Pequeno-almoço incluído, quartos com ar condicionado.", "address": { "@type": "PostalAddress", "streetAddress": "Largo Senhora da Agonia 13", "addressLocality": "Caminha", "addressCountry": "PT" } } },
+            { "@type": "ListItem", "position": 5, "item": { "@type": "Hotel", "name": "Design & Wine Hotel", "description": "Hotel num edifício do século XVIII no centro de Caminha. Piscina interior, bar de vinhos.", "address": { "@type": "PostalAddress", "addressLocality": "Caminha", "addressCountry": "PT" } } },
+            { "@type": "ListItem", "position": 6, "item": { "@type": "Hotel", "name": "Hotel Porta do Sol Conference & SPA", "description": "Hotel de 4 estrelas perto da foz do rio e da praia atlântica em Caminha. Duas piscinas exteriores, spa.", "address": { "@type": "PostalAddress", "addressLocality": "Caminha", "addressCountry": "PT" } } },
+            { "@type": "ListItem", "position": 7, "item": { "@type": "Hotel", "name": "BLUE ANCORA HOTEL", "description": "Hotel em Vila Praia de Âncora, a 3 minutos a pé da praia. Piscina exterior sazonal, quartos com vista para o mar.", "address": { "@type": "PostalAddress", "addressLocality": "Vila Praia de Âncora", "addressCountry": "PT" } } },
+            { "@type": "ListItem", "position": 8, "item": { "@type": "Hotel", "name": "Hotel Meira", "description": "Hotel de 4 estrelas em Vila Praia de Âncora, perto da praia. Piscina, pequeno-almoço bufete incluído.", "address": { "@type": "PostalAddress", "addressLocality": "Vila Praia de Âncora", "addressCountry": "PT" } } },
+            { "@type": "ListItem", "position": 9, "item": { "@type": "Hostel", "name": "Albergue de São Bento", "description": "Albergue de peregrinos frente ao mar na freguesia de Seixas. Jantares de peregrino disponíveis, cozinha partilhada.", "address": { "@type": "PostalAddress", "addressLocality": "Seixas, Caminha", "addressCountry": "PT" } } },
+            { "@type": "ListItem", "position": 10, "item": { "@type": "Hotel", "name": "Rinoterra Minho", "description": "Hotel rural na freguesia de Seixas com vistas para o rio e a montanha. Spa, ténis, restaurante português.", "address": { "@type": "PostalAddress", "streetAddress": "Rua da Costa 15", "addressLocality": "Seixas, Caminha", "addressCountry": "PT" } } }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://waytosantiagoguide.com/pt/caminha/onde-ficar/#faq",
+          "mainEntityOfPage": { "@id": "https://waytosantiagoguide.com/pt/caminha/onde-ficar/#webpage" },
+          "mainEntity": [
+            { "@type": "Question", "name": "É possível reservar o albergue municipal de Caminha com antecedência?", "acceptedAnswer": { "@type": "Answer", "text": "Não. O Albergue Municipal de Peregrinos de Caminha é apenas de admissão direta, abrindo às 14:00 por ordem de chegada. É exigida uma credencial do peregrino válida. A estadia máxima é de 2 noites consecutivas. Os albergues privados (Albergue Santiago, Bom Caminha) podem ser reservados online com antecedência através do Booking.com." } },
+            { "@type": "Question", "name": "Há alojamento perto do cais do ferry de Caminha?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O albergue municipal e a maioria das casas de hóspedes de Caminha ficam a 5–10 minutos a pé do cais do ferry (Cais de Caminha). O centro é compacto — todo o alojamento listado fica a curta distância a pé do ponto de partida." } },
+            { "@type": "Question", "name": "Que tipos de alojamento existem em Caminha para peregrinos?", "acceptedAnswer": { "@type": "Answer", "text": "Caminha oferece: albergue municipal (admissão direta, com credencial), albergues privados (reserva antecipada disponível), casas de hóspedes e hotéis. A zona mais alargada inclui hotéis de praia em Vila Praia de Âncora (8 km a sul) e um albergue frente ao mar mais um hotel rural em Seixas." } },
+            { "@type": "Question", "name": "Quando se deve reservar alojamento em Caminha para o Caminho da Costa?", "acceptedAnswer": { "@type": "Answer", "text": "O Caminho da Costa atinge o pico de maio a outubro. Os albergues privados e hotéis devem ser reservados com 1–2 semanas de antecedência na época alta (julho–agosto). O albergue municipal não pode ser reservado e enche nas tardes de verão — chegue antes das 15:00 na época alta." } }
+          ]
+        }
       ]
     }
   `} />

@@ -28,8 +28,12 @@ const PATH_MAP: Record<string, { en: string; es: string; pt: string }> = {
   '/en/caminha-guide/':                      { en: '/en/caminha-guide/',                      es: '/es/guia-de-caminha/',                    pt: '/pt/guia-de-caminha/' },
   '/es/guia-de-caminha/':                    { en: '/en/caminha-guide/',                      es: '/es/guia-de-caminha/',                    pt: '/pt/guia-de-caminha/' },
   '/pt/guia-de-caminha/':                    { en: '/en/caminha-guide/',                      es: '/es/guia-de-caminha/',                    pt: '/pt/guia-de-caminha/' },
-  '/en/caminha/vila-praia-de-ancora/':       { en: '/en/caminha/vila-praia-de-ancora/',        es: '/es/',                                    pt: '/pt/' },
-  '/en/caminha/seixas/':                     { en: '/en/caminha/seixas/',                      es: '/es/',                                    pt: '/pt/' },
+  '/en/caminha/vila-praia-de-ancora/':       { en: '/en/caminha/vila-praia-de-ancora/',        es: '/es/caminha/vila-praia-de-ancora/',       pt: '/pt/caminha/vila-praia-de-ancora/' },
+  '/es/caminha/vila-praia-de-ancora/':       { en: '/en/caminha/vila-praia-de-ancora/',        es: '/es/caminha/vila-praia-de-ancora/',       pt: '/pt/caminha/vila-praia-de-ancora/' },
+  '/pt/caminha/vila-praia-de-ancora/':       { en: '/en/caminha/vila-praia-de-ancora/',        es: '/es/caminha/vila-praia-de-ancora/',       pt: '/pt/caminha/vila-praia-de-ancora/' },
+  '/en/caminha/seixas/':                     { en: '/en/caminha/seixas/',                      es: '/es/caminha/seixas/',                     pt: '/pt/caminha/seixas/' },
+  '/es/caminha/seixas/':                     { en: '/en/caminha/seixas/',                      es: '/es/caminha/seixas/',                     pt: '/pt/caminha/seixas/' },
+  '/pt/caminha/seixas/':                     { en: '/en/caminha/seixas/',                      es: '/es/caminha/seixas/',                     pt: '/pt/caminha/seixas/' },
   '/en/caminha/pilgrim-guide/':              { en: '/en/caminha/pilgrim-guide/',               es: '/es/caminha/guia-del-peregrino/',         pt: '/pt/caminha/guia-do-peregrino/' },
   '/es/caminha/guia-del-peregrino/':         { en: '/en/caminha/pilgrim-guide/',               es: '/es/caminha/guia-del-peregrino/',         pt: '/pt/caminha/guia-do-peregrino/' },
   '/pt/caminha/guia-do-peregrino/':          { en: '/en/caminha/pilgrim-guide/',               es: '/es/caminha/guia-del-peregrino/',         pt: '/pt/caminha/guia-do-peregrino/' },
@@ -85,8 +89,6 @@ const ptPath = pathEntry?.pt ?? '/pt/';
 // hreflang (would be non-reciprocal — /es/ and /pt/ do not point back).
 // Emit only self en + x-default for these.
 const NO_TRANSLATION = new Set([
-  '/en/caminha/vila-praia-de-ancora/',
-  '/en/caminha/seixas/',
   '/en/caminha-ferry-status/',
   '/en/sitemap/',
   '/404/',
