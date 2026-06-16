@@ -91,7 +91,7 @@ caminha-a-guarda:
   # ── Translatable structured strings (NOT long-form prose) ────────────────────
   i18n:
     en:
-      metaTitle: "Caminha to A Guarda Ferry & Water Taxi (June 2026): Times, Prices, What's Running"
+      metaTitle: "Caminha to A Guarda Ferry Timetable 2026: Times, Prices & Water Taxi"
       metaDescription: "Updated June 2026. Several licensed boats cross the Minho daily: from every 30 minutes, €6 per person (€7–8 with bike), online booking available. New municipal ferry expected this summer — full details, timetables and the overland backup route."
       breadcrumb:
         - { name: Home, item: "/en/" }
@@ -151,7 +151,7 @@ caminha-a-guarda:
         - { from: "Viana do Castelo", to: "Valença", duration: "~55 min", fare: "€3.60 (Caminha→Valença direct)", frequency: "Roughly hourly on weekdays; reduced weekends" }
         - { from: "Valença", to: "Tui (walk)", duration: "~25 min on foot", fare: "Free", frequency: "Bridge open 24/7" }
     es:
-      metaTitle: "Ferry y Taxi-Barco Caminha–A Guarda (Junio 2026): Horarios, Precios y Estado"
+      metaTitle: "Horario del Ferry Caminha–A Guarda 2026: Precios y Taxi-Barco"
       metaDescription: "Actualizado junio 2026. Varios barcos autorizados cruzan el Miño a diario: desde cada 30 minutos, 6 € por persona (7–8 € con bici), reserva online disponible. Nuevo ferry municipal previsto este verano — detalles, horarios y la ruta alternativa terrestre."
       breadcrumb:
         - { name: Inicio, item: "/es/" }
@@ -210,7 +210,7 @@ caminha-a-guarda:
         - { from: "Viana do Castelo", to: "Valença", duration: "~55 min", fare: "~3,60 € (Caminha→Valença directo)", frequency: "Aprox. cada hora; reducido fines de semana" }
         - { from: "Valença", to: "Tui (a pie)", duration: "~25 min a pie", fare: "Gratis", frequency: "Puente abierto 24h" }
     pt:
-      metaTitle: "Ferry e Táxi Fluvial Caminha–A Guarda (Junho 2026): Horários, Preços e Estado"
+      metaTitle: "Horário do Ferry Caminha–A Guarda 2026: Preços e Táxi Fluvial"
       metaDescription: "Atualizado em junho de 2026. Vários barcos licenciados atravessam o Minho diariamente: desde de 30 em 30 minutos, €6 por pessoa (€7–8 com bicicleta), reserva online disponível. Novo ferry municipal previsto para este verão — detalhes, horários e a alternativa terrestre."
       breadcrumb:
         - { name: Início, item: "/pt/" }
