@@ -79,6 +79,10 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
       <p class="text-slate-300 max-w-2xl text-base leading-relaxed">
         The Minho river crossing between Caminha (Portugal) and A Guarda (Spain) operates daily. Several licensed water-taxi services replaced the old ferry: boats leave as often as every 30 minutes in season, the ride takes about 10 minutes, and a new municipal ferry is expected in summer 2026. This page covers operators, prices, booking and the overland backup.
       </p>
+      <p class="mt-3 text-sm text-slate-300">
+        Updated June 2026 ·
+        <a href="#timetable" class="text-earth-300 hover:text-earth-200 font-semibold no-underline hover:underline">Jump to the 2026 timetable ↓</a>
+      </p>
 
       <!-- Key facts strip with SVG icons -->
       <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4">
@@ -129,7 +133,7 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
 
         <!-- Operators -->
         <section id="operators">
-          <h2 class="text-2xl font-bold text-forest-900 mb-2 tracking-tight">Caminha–A Guarda Ferry Timetable (2026)</h2>
+          <h2 id="timetable" class="text-2xl font-bold text-forest-900 mb-2 tracking-tight">Caminha–A Guarda Ferry Timetable (2026)</h2>
           <p class="text-slate-600 text-sm mb-5 leading-relaxed">
             Several licensed water-taxi services operate the Caminha–A Guarda crossing daily. The most reliable months are April to October; outside this window crossings are less frequent and more easily cancelled by weather. The boats are small — sometimes around six passengers — so book ahead in busy months.
           </p>
@@ -222,7 +226,7 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
           <p class="flex-1 text-sm text-slate-700 leading-relaxed">Arriving the evening before the crossing? Book a bed in Caminha — or a private room in A Guarda for after you cross.</p>
           <div class="flex flex-wrap gap-2 shrink-0">
             <a href="/en/caminha/where-to-stay/" class="inline-flex items-center rounded-xl bg-forest-700 hover:bg-forest-800 text-white text-sm font-bold px-4 py-2.5 no-underline transition-colors">Stay in Caminha</a>
-            <a href={bookingSearch('A Guarda, Spain', 'wtsg-ferry-en-aguarda')} rel="nofollow noopener noreferrer sponsored" target="_blank" class="inline-flex items-center rounded-xl bg-earth-500 hover:bg-earth-600 text-white text-sm font-bold px-4 py-2.5 no-underline transition-colors">A Guarda hotels</a>
+            <a href={bookingSearch('A Guarda, Spain', 'wtsg-ferry-en-aguarda')} rel="nofollow noopener noreferrer sponsored" target="_blank" class="inline-flex items-center rounded-xl bg-earth-700 hover:bg-earth-800 text-white text-sm font-bold px-4 py-2.5 no-underline transition-colors">A Guarda hotels</a>
           </div>
         </aside>
 
@@ -343,7 +347,7 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
                     Departure — Portugal
                   </p>
                   <p class="text-xs text-slate-700 leading-relaxed"><strong>Cais da Rua dos Pescadores</strong>, Caminha. The fishermen's dock is located immediately adjacent to the main ferry berth on the northern waterfront. Look for the traditional wooden fishing boats moored below the embankment wall.</p>
-                  <p class="text-xs text-slate-500 mt-2">Coordinates: 41.8734° N, 8.8358° W</p>
+                  <p class="text-xs text-slate-600 mt-2">Coordinates: 41.8734° N, 8.8358° W</p>
                 </div>
                 <div class="bg-earth-50 border border-earth-200 rounded-xl p-4">
                   <p class="font-semibold text-earth-900 mb-2 text-xs uppercase tracking-wider flex items-center gap-1.5">
@@ -351,7 +355,7 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
                     Arrival — Spain
                   </p>
                   <p class="text-xs text-slate-700 leading-relaxed"><strong>Camposancos</strong>, A Guarda municipality, Galicia, Spain. Water taxis land at Camposancos — a small fishing hamlet on the Spanish bank of the Minho, approximately 1.5 km south of A Guarda town centre. Yellow Camino arrows resume from the landing point northward toward A Guarda.</p>
-                  <p class="text-xs text-slate-500 mt-2">From landing: ~20 min walk north to A Guarda centre</p>
+                  <p class="text-xs text-slate-600 mt-2">From landing: ~20 min walk north to A Guarda centre</p>
                 </div>
               </div>
 
@@ -602,42 +606,42 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
                 Live Crossing Status
                 <svg class="h-3.5 w-3.5 text-earth-500 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
               </a>
-              <p class="text-xs text-slate-500 mt-0.5">Updated monthly — what's running right now</p>
+              <p class="text-xs text-slate-600 mt-0.5">Updated monthly — what's running right now</p>
             </li>
             <li>
               <a href="/en/caminho-da-costa/caminha-a-guarda/" class="text-forest-700 hover:underline no-underline font-medium cursor-pointer flex items-center gap-1 group">
                 The Crossing as a Camino Stage
                 <svg class="h-3.5 w-3.5 text-earth-500 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
               </a>
-              <p class="text-xs text-slate-500 mt-0.5">Landing point, the walk into A Guarda, waymarks</p>
+              <p class="text-xs text-slate-600 mt-0.5">Landing point, the walk into A Guarda, waymarks</p>
             </li>
             <li>
               <a href="/en/caminha-guide/" class="text-forest-700 hover:underline no-underline font-medium cursor-pointer flex items-center gap-1 group">
                 Caminha Guide (Overview)
                 <svg class="h-3.5 w-3.5 text-earth-500 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
               </a>
-              <p class="text-xs text-slate-500 mt-0.5">All clusters — stay, eat, services</p>
+              <p class="text-xs text-slate-600 mt-0.5">All clusters — stay, eat, services</p>
             </li>
             <li>
               <a href="/en/caminha/where-to-stay/" class="text-forest-700 hover:underline no-underline font-medium cursor-pointer flex items-center gap-1 group">
                 Where to Stay
                 <svg class="h-3.5 w-3.5 text-earth-500 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
               </a>
-              <p class="text-xs text-slate-500 mt-0.5">Albergue, guesthouses, Design Wine Hotel</p>
+              <p class="text-xs text-slate-600 mt-0.5">Albergue, guesthouses, Design Wine Hotel</p>
             </li>
             <li>
               <a href="/en/caminha/where-to-eat/" class="text-forest-700 hover:underline no-underline font-medium cursor-pointer flex items-center gap-1 group">
                 Where to Eat
                 <svg class="h-3.5 w-3.5 text-earth-500 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
               </a>
-              <p class="text-xs text-slate-500 mt-0.5">Pilgrim menus from €8, arroz de debulho</p>
+              <p class="text-xs text-slate-600 mt-0.5">Pilgrim menus from €8, arroz de debulho</p>
             </li>
             <li>
               <a href="/en/caminha/useful-services/" class="text-forest-700 hover:underline no-underline font-medium cursor-pointer flex items-center gap-1 group">
                 Pilgrim Services
                 <svg class="h-3.5 w-3.5 text-earth-500 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
               </a>
-              <p class="text-xs text-slate-500 mt-0.5">Pharmacies, gear shops, ATMs &amp; emergency contacts</p>
+              <p class="text-xs text-slate-600 mt-0.5">Pharmacies, gear shops, ATMs &amp; emergency contacts</p>
             </li>
           </ul>
         </div>
@@ -658,7 +662,7 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
           href="https://www.booking.com/searchresults.html?ss=Caminha%2C+Portugal&aid=7968251"
           rel="nofollow noopener noreferrer sponsored"
           target="_blank"
-          class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-earth-500 to-earth-600 hover:from-earth-600 hover:to-earth-700 active:scale-[0.98] text-white font-bold text-sm px-6 py-3.5 rounded-xl transition-all duration-200 no-underline shadow-md hover:shadow-lg cursor-pointer group"
+          class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-earth-600 to-earth-700 hover:from-earth-700 hover:to-earth-800 active:scale-[0.98] text-white font-bold text-sm px-6 py-3.5 rounded-xl transition-all duration-200 no-underline shadow-md hover:shadow-lg cursor-pointer group"
         >
           Check Availability
           <svg class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">

@@ -75,6 +75,10 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
         <p class="text-slate-300 text-base leading-relaxed">
           El cruce del río Miño entre Caminha (Portugal) y A Guarda (España) funciona a diario. Varios servicios de taxi-barco autorizados sustituyeron al antiguo ferry: hay salidas cada 30 minutos en temporada, la travesía dura unos 10 minutos y hay un nuevo ferry municipal previsto para el verano de 2026. Esta página cubre operadores, precios, reservas y la alternativa terrestre.
         </p>
+        <p class="mt-3 text-sm text-slate-300">
+          Actualizado en junio de 2026 ·
+          <a href="#timetable" class="text-earth-300 hover:text-earth-200 font-semibold no-underline hover:underline">Ir al horario 2026 ↓</a>
+        </p>
       </div>
 
       <!-- Datos clave con SVG -->
@@ -128,7 +132,7 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
 
         <!-- Operadores -->
         <section id="operators">
-          <h2 class="text-2xl font-bold text-forest-900 mb-2">Horario del Ferry Caminha–A Guarda (2026)</h2>
+          <h2 id="timetable" class="text-2xl font-bold text-forest-900 mb-2">Horario del Ferry Caminha–A Guarda (2026)</h2>
           <p class="text-slate-600 text-sm mb-5 leading-relaxed">
             Varios servicios de taxi-barco autorizados operan el cruce Caminha–A Guarda a diario. Los meses más fiables son de abril a octubre; fuera de esa ventana hay menos salidas y se cancelan con más facilidad por el tiempo. Los barcos son pequeños — a veces unos seis pasajeros — así que reserva con antelación en los meses de mayor afluencia.
           </p>
@@ -223,7 +227,7 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
           <p class="flex-1 text-sm text-slate-700 leading-relaxed">¿Llegas la tarde anterior al cruce? Reserva cama en Caminha — o una habitación privada en A Guarda para después de cruzar.</p>
           <div class="flex flex-wrap gap-2 shrink-0">
             <a href="/es/caminha/donde-dormir/" class="inline-flex items-center rounded-xl bg-forest-700 hover:bg-forest-800 text-white text-sm font-bold px-4 py-2.5 no-underline transition-colors">Alojarse en Caminha</a>
-            <a href={bookingSearch('A Guarda, España', 'wtsg-ferry-es-aguarda')} rel="nofollow noopener noreferrer sponsored" target="_blank" class="inline-flex items-center rounded-xl bg-earth-500 hover:bg-earth-600 text-white text-sm font-bold px-4 py-2.5 no-underline transition-colors">Hoteles en A Guarda</a>
+            <a href={bookingSearch('A Guarda, España', 'wtsg-ferry-es-aguarda')} rel="nofollow noopener noreferrer sponsored" target="_blank" class="inline-flex items-center rounded-xl bg-earth-700 hover:bg-earth-800 text-white text-sm font-bold px-4 py-2.5 no-underline transition-colors">Hoteles en A Guarda</a>
           </div>
         </aside>
 
@@ -334,7 +338,7 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
                     Salida — Portugal
                   </p>
                   <p class="text-xs text-slate-700 leading-relaxed"><strong>Cais da Rua dos Pescadores</strong>, Caminha. El muelle de los pescadores está inmediatamente adyacente al embarcadero del ferry principal en el paseo fluvial norte. Busca las embarcaciones tradicionales de pesca amarradas bajo el muro del malecón.</p>
-                  <p class="text-xs text-slate-500 mt-2">Coordenadas: 41,8734° N, 8,8358° O</p>
+                  <p class="text-xs text-slate-600 mt-2">Coordenadas: 41,8734° N, 8,8358° O</p>
                 </div>
                 <div class="bg-earth-50 border border-earth-200 rounded-xl p-4">
                   <p class="font-semibold text-earth-900 mb-2 text-xs uppercase tracking-wider flex items-center gap-1.5">
@@ -342,7 +346,7 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
                     Llegada — España
                   </p>
                   <p class="text-xs text-slate-700 leading-relaxed"><strong>Camposancos</strong>, municipio de A Guarda, Galicia, España. Los taxis acuáticos desembarcan en Camposancos — una pequeña aldea pesquera en la orilla española del Miño, a unos 1,5 km al sur del centro de A Guarda. Las flechas amarillas del Camino retoman desde el punto de desembarco hacia el norte.</p>
-                  <p class="text-xs text-slate-500 mt-2">Desde el desembarco: ~20 min a pie hasta el centro de A Guarda</p>
+                  <p class="text-xs text-slate-600 mt-2">Desde el desembarco: ~20 min a pie hasta el centro de A Guarda</p>
                 </div>
               </div>
 
@@ -590,19 +594,19 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
               <a href="/es/caminha/donde-dormir/" class="text-forest-700 hover:underline no-underline font-medium cursor-pointer">
                 Dónde Dormir →
               </a>
-              <p class="text-xs text-slate-500 mt-0.5">Albergue, pensiones, Design Wine Hotel</p>
+              <p class="text-xs text-slate-600 mt-0.5">Albergue, pensiones, Design Wine Hotel</p>
             </li>
             <li>
               <a href="/es/caminha/donde-comer/" class="text-forest-700 hover:underline no-underline font-medium cursor-pointer">
                 Dónde Comer →
               </a>
-              <p class="text-xs text-slate-500 mt-0.5">Menús del peregrino desde 8 €, arroz de debulho</p>
+              <p class="text-xs text-slate-600 mt-0.5">Menús del peregrino desde 8 €, arroz de debulho</p>
             </li>
             <li>
               <a href="/es/caminha/servicios-utiles/" class="text-forest-700 hover:underline no-underline font-medium cursor-pointer">
                 Servicios Útiles →
               </a>
-              <p class="text-xs text-slate-500 mt-0.5">Farmacias de guardia, tiendas de equipamiento y cajeros</p>
+              <p class="text-xs text-slate-600 mt-0.5">Farmacias de guardia, tiendas de equipamiento y cajeros</p>
             </li>
           </ul>
         </div>
@@ -623,7 +627,7 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
           href="https://www.booking.com/searchresults.html?ss=Caminha%2C+Portugal&aid=7968251"
           rel="nofollow noopener noreferrer sponsored"
           target="_blank"
-          class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-earth-500 to-earth-600 hover:from-earth-600 hover:to-earth-700 active:scale-[0.98] text-white font-bold text-sm px-6 py-3.5 rounded-xl transition-all duration-200 no-underline shadow-md hover:shadow-lg cursor-pointer group"
+          class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-earth-600 to-earth-700 hover:from-earth-700 hover:to-earth-800 active:scale-[0.98] text-white font-bold text-sm px-6 py-3.5 rounded-xl transition-all duration-200 no-underline shadow-md hover:shadow-lg cursor-pointer group"
         >
           Ver Disponibilidad
           <svg class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">

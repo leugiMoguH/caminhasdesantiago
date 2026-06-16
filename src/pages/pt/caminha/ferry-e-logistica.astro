@@ -68,6 +68,10 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
       <p class="text-slate-300 max-w-2xl text-base leading-relaxed">
         A travessia do rio Minho entre Caminha (Portugal) e A Guarda (Espanha) funciona diariamente. Vários serviços de táxi fluvial licenciados substituíram o antigo ferry: há partidas de 30 em 30 minutos na época alta, a viagem demora cerca de 10 minutos e está previsto um novo ferry municipal para o verão de 2026. Esta página cobre operadores, preços, reservas e a alternativa terrestre.
       </p>
+      <p class="mt-3 text-sm text-slate-300">
+        Atualizado em junho de 2026 ·
+        <a href="#timetable" class="text-earth-300 hover:text-earth-200 font-semibold no-underline hover:underline">Ir para o horário 2026 ↓</a>
+      </p>
 
       <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4">
         {keyFacts.map(({ icon, value, label }) => (
@@ -121,7 +125,7 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
 
         <!-- Operadores -->
         <section id="operators">
-          <h2 class="text-2xl font-bold text-forest-900 mb-2 tracking-tight">Horário do Ferry Caminha–A Guarda (2026)</h2>
+          <h2 id="timetable" class="text-2xl font-bold text-forest-900 mb-2 tracking-tight">Horário do Ferry Caminha–A Guarda (2026)</h2>
           <p class="text-slate-600 text-sm mb-5 leading-relaxed">
             Vários serviços de táxi fluvial licenciados operam a travessia Caminha–A Guarda diariamente. Os meses mais fiáveis são de abril a outubro; fora dessa janela há menos partidas e cancelam-se com mais facilidade devido ao tempo. Os barcos são pequenos — por vezes cerca de seis passageiros — por isso reserve com antecedência nos meses de maior procura.
           </p>
@@ -217,7 +221,7 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
           <p class="flex-1 text-sm text-slate-700 leading-relaxed">Chegas na véspera da travessia? Reserva cama em Caminha — ou um quarto privado em A Guarda para depois de cruzar.</p>
           <div class="flex flex-wrap gap-2 shrink-0">
             <a href="/pt/caminha/onde-ficar/" class="inline-flex items-center rounded-xl bg-forest-700 hover:bg-forest-800 text-white text-sm font-bold px-4 py-2.5 no-underline transition-colors">Ficar em Caminha</a>
-            <a href={bookingSearch('A Guarda, Espanha', 'wtsg-ferry-pt-aguarda')} rel="nofollow noopener noreferrer sponsored" target="_blank" class="inline-flex items-center rounded-xl bg-earth-500 hover:bg-earth-600 text-white text-sm font-bold px-4 py-2.5 no-underline transition-colors">Hotéis em A Guarda</a>
+            <a href={bookingSearch('A Guarda, Espanha', 'wtsg-ferry-pt-aguarda')} rel="nofollow noopener noreferrer sponsored" target="_blank" class="inline-flex items-center rounded-xl bg-earth-700 hover:bg-earth-800 text-white text-sm font-bold px-4 py-2.5 no-underline transition-colors">Hotéis em A Guarda</a>
           </div>
         </aside>
 
@@ -331,7 +335,7 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
                     Partida — Portugal
                   </p>
                   <p class="text-xs text-slate-700 leading-relaxed"><strong>Cais da Rua dos Pescadores</strong>, Caminha. O cais de pesca fica imediatamente adjacente ao cais principal do ferry na frente ribeirinha norte. Procure as embarcações tradicionais de pesca atracadas abaixo do muro do cais.</p>
-                  <p class="text-xs text-slate-500 mt-2">Coordenadas: 41.8734° N, 8.8358° O</p>
+                  <p class="text-xs text-slate-600 mt-2">Coordenadas: 41.8734° N, 8.8358° O</p>
                 </div>
                 <div class="bg-earth-50 border border-earth-200 rounded-xl p-4">
                   <p class="font-semibold text-earth-900 mb-2 text-xs uppercase tracking-wider flex items-center gap-1.5">
@@ -339,7 +343,7 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
                     Chegada — Espanha
                   </p>
                   <p class="text-xs text-slate-700 leading-relaxed"><strong>Camposancos</strong>, município de A Guarda, Galiza, Espanha. Os táxis fluviais atracam em Camposancos — uma pequena aldeia piscatória na margem espanhola do Minho, aproximadamente 1,5 km a sul do centro de A Guarda. As setas amarelas do Caminho retomam a partir do ponto de desembarque em direção a norte para A Guarda.</p>
-                  <p class="text-xs text-slate-500 mt-2">Do ponto de desembarque: ~20 min a pé para o centro de A Guarda</p>
+                  <p class="text-xs text-slate-600 mt-2">Do ponto de desembarque: ~20 min a pé para o centro de A Guarda</p>
                 </div>
               </div>
 
@@ -584,21 +588,21 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
                 Onde Ficar
                 <svg class="h-3.5 w-3.5 text-earth-500 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
               </a>
-              <p class="text-xs text-slate-500 mt-0.5">Albergue, pensões, Design Wine Hotel</p>
+              <p class="text-xs text-slate-600 mt-0.5">Albergue, pensões, Design Wine Hotel</p>
             </li>
             <li>
               <a href="/pt/caminha/onde-comer/" class="text-forest-700 hover:underline no-underline font-medium cursor-pointer flex items-center gap-1 group">
                 Onde Comer
                 <svg class="h-3.5 w-3.5 text-earth-500 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
               </a>
-              <p class="text-xs text-slate-500 mt-0.5">Menus de peregrino a partir de €8, arroz de debulho</p>
+              <p class="text-xs text-slate-600 mt-0.5">Menus de peregrino a partir de €8, arroz de debulho</p>
             </li>
             <li>
               <a href="/pt/caminha/servicos-uteis/" class="text-forest-700 hover:underline no-underline font-medium cursor-pointer flex items-center gap-1 group">
                 Serviços Úteis
                 <svg class="h-3.5 w-3.5 text-earth-500 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
               </a>
-              <p class="text-xs text-slate-500 mt-0.5">Farmácias de serviço, lojas de equipamento e multibanco</p>
+              <p class="text-xs text-slate-600 mt-0.5">Farmácias de serviço, lojas de equipamento e multibanco</p>
             </li>
           </ul>
         </div>
@@ -619,7 +623,7 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
           href="https://www.booking.com/searchresults.html?ss=Caminha%2C+Portugal&aid=7968251"
           rel="nofollow noopener noreferrer sponsored"
           target="_blank"
-          class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-earth-500 to-earth-600 hover:from-earth-600 hover:to-earth-700 active:scale-[0.98] text-white font-bold text-sm px-6 py-3.5 rounded-xl transition-all duration-200 no-underline shadow-md hover:shadow-lg cursor-pointer group"
+          class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-earth-600 to-earth-700 hover:from-earth-700 hover:to-earth-800 active:scale-[0.98] text-white font-bold text-sm px-6 py-3.5 rounded-xl transition-all duration-200 no-underline shadow-md hover:shadow-lg cursor-pointer group"
         >
           Ver Disponibilidade
           <svg class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">

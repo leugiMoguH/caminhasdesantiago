@@ -134,6 +134,8 @@ caminha-a-guarda:
         - "Your credencial can get a special crossing stamp on request."
         - "If weather stops all boats, the Valença–Tui train detour is always available."
       faq:
+        - q: "What is the Caminha to A Guarda ferry timetable?"
+          a: "There is no single fixed ferry timetable — the crossing is run by several licensed water taxis. In season (April–October), Taxi Boat Peregrinos / Capitão Mário departs roughly every 30 minutes from 07:00 to 17:00, and Xacobeo Transfer runs about hourly (07:30–15:30) with online booking. The ride takes around 10 minutes and costs €6 per person. Departures flex with the tide, so confirm the day's times with the operator before crossing."
         - q: "Is the Caminha ferry running?"
           a: "The old Santa Rita de Cássia ferry stopped in 2020 and will be dismantled, but the crossing itself operates daily. Several licensed water-taxi services run it, including Taxi Boat Peregrinos / Capitão Mário (every 30 minutes, 07:00–17:00, Apr–Oct), Xacobeo Transfer (roughly hourly, online booking, year-round), Taxi Mar Caminha and Popeye the Sailor Man. A new municipal ferry is expected in summer 2026."
         - q: "How much does the Caminha to A Guarda crossing cost?"
@@ -193,6 +195,8 @@ caminha-a-guarda:
         - "Pueden sellar tu credencial con un sello especial de la travesía si lo pides."
         - "Si el tiempo detiene todos los barcos, el desvío en tren Valença–Tui siempre está disponible."
       faq:
+        - q: "¿Cuál es el horario del ferry de Caminha a A Guarda?"
+          a: "No hay un único horario fijo de ferry — el cruce lo operan varios taxi-barco autorizados. En temporada (abril–octubre), Taxi Boat Peregrinos / Capitão Mário sale aproximadamente cada 30 minutos de 07:00 a 17:00, y Xacobeo Transfer opera más o menos cada hora (07:30–15:30) con reserva online. La travesía dura unos 10 minutos y cuesta 6 € por persona. Las salidas varían con la marea, así que confirma los horarios del día con el operador antes de cruzar."
         - q: "¿Está funcionando el ferry de Caminha?"
           a: "El antiguo ferry Santa Rita de Cássia dejó de operar en 2020 y será desguazado, pero el cruce funciona a diario. Lo operan varios servicios de taxi-barco autorizados, entre ellos Taxi Boat Peregrinos / Capitão Mário (cada 30 minutos, 07:00–17:00, abr–oct), Xacobeo Transfer (aprox. cada hora, reserva online, todo el año), Taxi Mar Caminha y Popeye the Sailor Man. Un nuevo ferry municipal está previsto para el verano de 2026."
         - q: "¿Cuánto cuesta el cruce de Caminha a A Guarda?"
@@ -252,6 +256,8 @@ caminha-a-guarda:
         - "Podem carimbar a sua credencial com um carimbo especial da travessia se pedir."
         - "Se o tempo parar todos os barcos, o desvio de comboio Valença–Tui está sempre disponível."
       faq:
+        - q: "Qual é o horário do ferry de Caminha para A Guarda?"
+          a: "Não há um único horário fixo de ferry — a travessia é feita por vários táxis fluviais licenciados. Na época alta (abril–outubro), o Taxi Boat Peregrinos / Capitão Mário parte aproximadamente de 30 em 30 minutos das 07:00 às 17:00, e o Xacobeo Transfer opera cerca de hora a hora (07:30–15:30) com reserva online. A viagem demora cerca de 10 minutos e custa €6 por pessoa. As partidas variam com a maré, por isso confirme os horários do dia com o operador antes de atravessar."
         - q: "O ferry de Caminha está a funcionar?"
           a: "O antigo ferry Santa Rita de Cássia parou em 2020 e vai ser desmantelado, mas a travessia funciona diariamente. É operada por vários serviços de táxi fluvial licenciados, entre eles Taxi Boat Peregrinos / Capitão Mário (de 30 em 30 minutos, 07:00–17:00, abr–out), Xacobeo Transfer (aprox. de hora em hora, reserva online, todo o ano), Taxi Mar Caminha e Popeye the Sailor Man. Está previsto um novo ferry municipal para o verão de 2026."
         - q: "Quanto custa a travessia de Caminha para A Guarda?"

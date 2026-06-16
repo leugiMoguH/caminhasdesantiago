@@ -10,7 +10,7 @@ sources:
   - https://www.cp.pt/
 i18n:
   en:
-    metaTitle: "How to Get to the Portuguese Coastal Camino: Porto to Viana & Caminha (2026)"
+    metaTitle: "Porto to Caminha by Train (2026): CP Linha do Minho via Viana do Castelo"
     metaDescription: "Reaching the northern Portuguese Coastal Camino from Porto: the CP Linha do Minho train to Viana do Castelo (~84 min) and on to Caminha, plus Porto Airport connections. Step-by-step."
     h1: "Getting to the coastal start: Porto → Viana do Castelo / Caminha"
     lead: "Most pilgrims joining the northern stretch of the Portuguese Coastal Camino arrive from Porto. The simplest link is the CP Linha do Minho railway, which runs up the coast through Viana do Castelo and Caminha to the Spanish border."
@@ -38,7 +38,7 @@ i18n:
       - q: "Should I start in Viana do Castelo or Caminha?"
         a: "Start in Viana do Castelo for the full ~27.8 km coastal stage to Caminha, or start in Caminha if you only want the last Portuguese town before crossing the Minho to A Guarda."
   es:
-    metaTitle: "Cómo Llegar al Camino Portugués de la Costa: Oporto a Viana y Caminha (2026)"
+    metaTitle: "Oporto a Caminha en Tren (2026): CP Linha do Minho vía Viana do Castelo"
     metaDescription: "Llegar al tramo norte del Camino Portugués de la Costa desde Oporto: tren CP Linha do Minho a Viana do Castelo (~84 min) y hasta Caminha, más conexiones del aeropuerto de Oporto. Paso a paso."
     h1: "Llegar al inicio costero: Oporto → Viana do Castelo / Caminha"
     lead: "La mayoría de los peregrinos que se incorporan al tramo norte del Camino Portugués de la Costa llegan desde Oporto. El enlace más sencillo es el ferrocarril CP Linha do Minho, que sube por la costa pasando por Viana do Castelo y Caminha hasta la frontera española."
@@ -66,7 +66,7 @@ i18n:
       - q: "¿Debo empezar en Viana do Castelo o en Caminha?"
         a: "Empieza en Viana do Castelo para la etapa costera completa de ~27,8 km hasta Caminha, o en Caminha si solo quieres el último pueblo portugués antes de cruzar el Miño hasta A Guarda."
   pt:
-    metaTitle: "Como Chegar ao Caminho Português da Costa: Porto a Viana e Caminha (2026)"
+    metaTitle: "Porto a Caminha de Comboio (2026): CP Linha do Minho via Viana do Castelo"
     metaDescription: "Chegar ao troço norte do Caminho Português da Costa a partir do Porto: comboio CP Linha do Minho para Viana do Castelo (~84 min) e até Caminha, mais ligações do aeroporto do Porto. Passo a passo."
     h1: "Chegar ao início costeiro: Porto → Viana do Castelo / Caminha"
     lead: "A maioria dos peregrinos que se juntam ao troço norte do Caminho Português da Costa chega a partir do Porto. A ligação mais simples é a Linha do Minho da CP, que sobe pela costa passando por Viana do Castelo e Caminha até à fronteira espanhola."
