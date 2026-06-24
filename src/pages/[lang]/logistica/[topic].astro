@@ -10,6 +10,7 @@ import {
   townPath,
   hubPath,
   ferryPath,
+  coastalWhereToStayPath,
   i18nUrlsFor,
   type Lang,
 } from '../../../lib/clusterRoutes';
@@ -24,6 +25,7 @@ export async function getStaticPaths() {
   ]);
   const stageById = new Map(stages.map((s) => [s.id, s]));
   const townById = new Map(towns.map((t) => [t.id, t]));
+  const topicById = new Map(logistics.map((l) => [l.id, l]));
 
   return logistics.flatMap((item) =>
     LANGS.map((lang) => {
@@ -40,16 +42,24 @@ export async function getStaticPaths() {
           return e ? { url: townPath(lang, s), label: e.data.name } : null;
         })
         .filter((x: Link | null): x is Link => x !== null);
-      return { params: { lang, topic: item.id }, props: { lang, data: d, stageLinks, townLinks } };
+      // Sibling problem/spoke pages — the topical cluster (Phase 4 STEP 5).
+      const topicLinks: Link[] = (d.relatedTopicSlugs ?? [])
+        .map((s: string) => {
+          const e = topicById.get(s);
+          return e ? { url: logisticsPath(lang, s), label: e.data.i18n[lang].h1 } : null;
+        })
+        .filter((x: Link | null): x is Link => x !== null);
+      return { params: { lang, topic: item.id }, props: { lang, data: d, stageLinks, townLinks, topicLinks } };
     }),
   );
 }
 
-const { lang, data, stageLinks, townLinks } = Astro.props as {
+const { lang, data, stageLinks, townLinks, topicLinks } = Astro.props as {
   lang: Lang;
   data: any;
   stageLinks: Link[];
   townLinks: Link[];
+  topicLinks: Link[];
 };
 const t = data.i18n[lang];
 const ui = UI[lang];
@@ -75,6 +85,21 @@ const graph = buildClusterGraph({
 });
 const ferry = ferryPath(lang);
 const hub = hubPath(lang);
+const stayHub = coastalWhereToStayPath(lang);
+const GUIDE_URL = '/camino-portugues-guide/';
+const guideLabel: Record<Lang, string> = {
+  en: 'Pilgrim Essentials: what to know before you go',
+  es: 'Esenciales del peregrino: lo que debes saber antes de ir',
+  pt: 'Essenciais do peregrino: o que saber antes de ir',
+};
+const stayHubLabel: Record<Lang, string> = {
+  en: 'Where to stay on the Coastal Camino',
+  es: 'Dónde dormir en el Camino de la Costa',
+  pt: 'Onde ficar no Caminho da Costa',
+};
+const moreQuestionsLabel: Record<Lang, string> = {
+  en: 'More pilgrim questions', es: 'Más dudas de peregrinos', pt: 'Mais dúvidas de peregrinos',
+};
 ---
 
 <MainLayout title={t.metaTitle} description={t.metaDescription} lang={lang} schemaType="none" i18nUrls={i18nUrls}>
@@ -127,6 +152,8 @@ const hub = hubPath(lang);
     <section class="bg-forest-50 border border-forest-200 rounded-2xl p-6">
       <h2 class="text-base font-bold text-forest-900 mb-3">{ui.relatedLinks}</h2>
       <ul class="space-y-2 text-sm">
+        <li><a href={GUIDE_URL} class="text-forest-700 hover:underline no-underline font-medium">{guideLabel[lang]}</a></li>
+        <li><a href={stayHub} class="text-forest-700 hover:underline no-underline font-medium">{stayHubLabel[lang]}</a></li>
         {stageLinks.map((x) => (
           <li><a href={x.url} class="text-forest-700 hover:underline no-underline font-medium">{x.label}</a></li>
         ))}
@@ -136,6 +163,17 @@ const hub = hubPath(lang);
         <li><a href={ferry} class="text-forest-700 hover:underline no-underline font-medium">{ui.crossingLink}</a></li>
         <li><a href={hub} class="text-slate-600 hover:underline no-underline">{ui.backToRoute}</a></li>
       </ul>
+
+      {topicLinks.length > 0 && (
+        <>
+          <h3 class="text-base font-bold text-forest-900 mt-5 mb-3">{moreQuestionsLabel[lang]}</h3>
+          <ul class="space-y-2 text-sm">
+            {topicLinks.map((x) => (
+              <li><a href={x.url} class="text-forest-700 hover:underline no-underline font-medium">{x.label} →</a></li>
+            ))}
+          </ul>
+        </>
+      )}
     </section>
 
     <!-- FAQ -->

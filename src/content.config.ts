@@ -182,6 +182,9 @@ const logistics = defineCollection({
     topic: z.string(),
     relatedStageSlugs: z.array(z.string()).default([]),
     relatedTownSlugs: z.array(z.string()).default([]),
+    // Sibling logistics topics — builds the problem-first topical cluster
+    // (Phase 4 internal linking). Optional; ids of other logistics entries.
+    relatedTopicSlugs: z.array(z.string()).default([]),
     ...verification,
     i18n: richTrio,
   }),

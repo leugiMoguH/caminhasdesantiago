@@ -1,0 +1,192 @@
+---
+/**
+ * Pilgrim Essentials (Phase 3, STEP 1). The site's retention anchor: brutally
+ * honest, experience-based guidance written like a pilgrim talking to a friend,
+ * not a blog. Scannable only — bullets, ⚠️ warnings, 💡 tips, no long prose.
+ *
+ * English, single page outside the SEO cluster but INDEXABLE (clean EN-only
+ * hreflang via PATH_MAP + NO_TRANSLATION in MainLayout). Advice naturally leads
+ * to the existing affiliate CTAs (where-to-stay quick guide + Booking search) —
+ * monetization stays intact, no friction added before the links.
+ */
+import MainLayout from '../layouts/MainLayout.astro';
+import TrustBadge from '../components/TrustBadge.astro';
+import { bookingSearch } from '../lib/booking';
+
+const metaTitle = 'The Camino Portugués: What You Actually Need to Know Before You Go';
+const metaDescription =
+  'Honest, experience-based guidance for the Camino Portugués: real costs, when to book, the biggest mistakes pilgrims make, and how to never end up without a bed.';
+
+const QUICK_GUIDE = '/camino-portugues-where-to-stay/';
+const bedTonight = bookingSearch('Pontevedra', 'wtsg-guide-en-bed');
+
+// Forward-looking links keep pilgrims moving inside the site.
+const loops = [
+  { label: 'See the 3 best places to stay (quick guide)', href: QUICK_GUIDE },
+  { label: 'Where to stay on the Coastal Camino — every stop', href: '/en/coastal-camino/where-to-stay/' },
+  { label: 'Plan the route, stage by stage', href: '/en/caminho-da-costa/' },
+];
+
+// Hub spokes — the real fears pilgrims search. Answered in depth on their own
+// pages; the guide is the authority center that links them (Phase 4 STEP 3).
+const worries = [
+  { q: 'What if albergues are full?', href: '/en/logistica/albergues-full/' },
+  { q: 'Can I walk without booking?', href: '/en/logistica/walking-without-booking/' },
+  { q: 'Are municipal albergues reliable?', href: '/en/logistica/municipal-albergues-reliable/' },
+  { q: 'What time do albergues fill up?', href: '/en/logistica/when-albergues-fill/' },
+];
+---
+
+<MainLayout title={metaTitle} description={metaDescription} lang="en" schemaType="none">
+  <!-- HERO -->
+  <section class="bg-gradient-to-br from-forest-800 to-forest-950 text-white">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 py-12 md:py-16">
+      <p class="inline-flex items-center gap-1.5 rounded-full bg-earth-500/15 border border-earth-400/30 px-3 py-1 text-xs font-semibold text-earth-200 mb-4">
+        Pilgrim Essentials
+      </p>
+      <h1 class="text-2xl sm:text-4xl font-bold tracking-tight leading-tight text-balance">
+        The Camino Portugués: What You Actually Need to Know Before You Go
+      </h1>
+      <p class="mt-4 text-forest-100 text-base sm:text-lg leading-relaxed max-w-2xl">
+        No fluff, no history lesson. The honest stuff experienced pilgrims wish they'd known on day one.
+      </p>
+      <TrustBadge lang="en" variant="dark" class="mt-6" />
+    </div>
+  </section>
+
+  <div class="mx-auto max-w-3xl px-4 sm:px-6 py-10 sm:py-12 space-y-10">
+
+    <!-- 1. Real costs -->
+    <section>
+      <h2 class="text-xl sm:text-2xl font-bold text-forest-900 tracking-tight mb-1">How much it REALLY costs</h2>
+      <p class="text-sm text-slate-500 mb-4">Per person, per day. Coastal route, 2026.</p>
+      <ul class="space-y-2 text-[15px] text-slate-700 leading-relaxed">
+        <li class="flex gap-2"><span class="text-forest-600 font-bold shrink-0">€</span> <span><strong>Municipal / Xunta albergue:</strong> €8–10 a bed. Cash, no booking.</span></li>
+        <li class="flex gap-2"><span class="text-forest-600 font-bold shrink-0">€</span> <span><strong>Private albergue dorm:</strong> €15–22. Bookable, comfier, fewer beds per room.</span></li>
+        <li class="flex gap-2"><span class="text-forest-600 font-bold shrink-0">€</span> <span><strong>Private room / guesthouse:</strong> €40–70 for two. Worth it every few nights.</span></li>
+        <li class="flex gap-2"><span class="text-forest-600 font-bold shrink-0">€</span> <span><strong>Food:</strong> €15–25/day. The pilgrim menu (menú do peregrino) runs €12–15 for three courses + wine.</span></li>
+      </ul>
+      <p class="mt-4 inline-flex items-start gap-2 rounded-lg bg-earth-50 border border-earth-200 px-3 py-2 text-sm font-semibold text-earth-800">
+        <span aria-hidden="true">💡</span>
+        <span>Realistic daily budget: <strong>€30–40</strong> bare-bones (albergues + pilgrim menu), <strong>€60–80</strong> with the odd private room and café stops.</span>
+      </p>
+    </section>
+
+    <!-- 2. When to book -->
+    <section>
+      <h2 class="text-xl sm:text-2xl font-bold text-forest-900 tracking-tight mb-4">When you should (and shouldn't) book albergues</h2>
+      <ul class="space-y-3 text-[15px] text-slate-700 leading-relaxed">
+        <li class="flex gap-2"><span class="text-forest-700 font-bold shrink-0">✓</span> <span><strong>Book ahead</strong> in July–August, on the small coastal stretches (Oia, Baiona), and any private albergue if you walk slowly or finish late.</span></li>
+        <li class="flex gap-2"><span class="text-forest-700 font-bold shrink-0">✓</span> <span><strong>Book a private room</strong> the night before a rest day or a long stage — you'll want the quiet.</span></li>
+        <li class="flex gap-2"><span class="text-slate-400 font-bold shrink-0">✕</span> <span><strong>Don't bother booking</strong> the big municipal albergues — they're first-come and can't be reserved anyway.</span></li>
+        <li class="flex gap-2"><span class="text-slate-400 font-bold shrink-0">✕</span> <span><strong>Don't over-plan</strong> the whole trip night-by-night. Book 1–2 days ahead and stay flexible — bodies and weather change plans.</span></li>
+      </ul>
+      <p class="mt-4 inline-flex items-start gap-2 rounded-lg bg-amber-50 border border-amber-200 px-3 py-2 text-sm font-semibold text-amber-900">
+        <span aria-hidden="true">⚠️</span>
+        <span>Spring/autumn weekends and Holy Week fill faster than people expect. If a date matters, lock it in.</span>
+      </p>
+    </section>
+
+    <!-- 3. Biggest mistakes -->
+    <section>
+      <h2 class="text-xl sm:text-2xl font-bold text-forest-900 tracking-tight mb-4">Biggest mistakes pilgrims make</h2>
+      <ul class="space-y-3 text-[15px] text-slate-700 leading-relaxed">
+        <li class="flex gap-2"><span aria-hidden="true" class="shrink-0">⚠️</span> <span><strong>Packing too heavy.</strong> If your bag is over ~10% of your body weight, you'll feel it by day three. Ship the extras ahead.</span></li>
+        <li class="flex gap-2"><span aria-hidden="true" class="shrink-0">⚠️</span> <span><strong>New boots.</strong> Never start in unbroken-in shoes. Blisters end more Caminos than distance does.</span></li>
+        <li class="flex gap-2"><span aria-hidden="true" class="shrink-0">⚠️</span> <span><strong>Walking too far, too soon.</strong> Big first days wreck knees and feet. Ease in.</span></li>
+        <li class="flex gap-2"><span aria-hidden="true" class="shrink-0">⚠️</span> <span><strong>Forgetting Spain is +1 hour</strong> ahead of Portugal. Albergues fill on Spanish time after the border.</span></li>
+        <li class="flex gap-2"><span aria-hidden="true" class="shrink-0">⚠️</span> <span><strong>Treating it as a race.</strong> The pilgrims who quit are usually the fastest ones in week one.</span></li>
+      </ul>
+    </section>
+
+    <!-- 4. What nobody tells you -->
+    <section>
+      <h2 class="text-xl sm:text-2xl font-bold text-forest-900 tracking-tight mb-4">What nobody tells you before starting</h2>
+      <ul class="space-y-3 text-[15px] text-slate-700 leading-relaxed">
+        <li class="flex gap-2"><span aria-hidden="true" class="shrink-0">💡</span> <span>Carry your <strong>credential (pilgrim passport)</strong> from day one — you need two stamps a day in the last 100 km for the Compostela.</span></li>
+        <li class="flex gap-2"><span aria-hidden="true" class="shrink-0">💡</span> <span>Most albergues are <strong>cash-only</strong> and rural ATMs run dry. Carry €50–100 in small notes.</span></li>
+        <li class="flex gap-2"><span aria-hidden="true" class="shrink-0">💡</span> <span>Mornings are silent and magic. <strong>The 6–8 a.m. walk</strong> is why people come back.</span></li>
+        <li class="flex gap-2"><span aria-hidden="true" class="shrink-0">💡</span> <span>The <strong>ferry / river crossing at Caminha</strong> can be suspended — check before you arrive, not when you're standing at the water.</span></li>
+        <li class="flex gap-2"><span aria-hidden="true" class="shrink-0">💡</span> <span>Earplugs change your Camino. Dorms snore. Pack a pair.</span></li>
+      </ul>
+    </section>
+
+    <!-- 5. How to avoid no bed → naturally leads to CTA -->
+    <section class="bg-slate-50 border border-slate-200 rounded-2xl p-5 sm:p-6">
+      <h2 class="text-xl sm:text-2xl font-bold text-forest-900 tracking-tight mb-4">How to avoid ending up without a bed</h2>
+      <ul class="space-y-3 text-[15px] text-slate-700 leading-relaxed">
+        <li class="flex gap-2"><span aria-hidden="true" class="shrink-0">⚡</span> <span><strong>Arrive before 14:00</strong> in summer. Municipal beds are gone by mid-afternoon.</span></li>
+        <li class="flex gap-2"><span aria-hidden="true" class="shrink-0">⚡</span> <span><strong>Know which towns are tight:</strong> small coastal villages have a handful of beds; cities have hundreds.</span></li>
+        <li class="flex gap-2"><span aria-hidden="true" class="shrink-0">💡</span> <span><strong>Keep one bookable bed in your pocket.</strong> Reserve a private albergue or room for the night you most need certainty.</span></li>
+      </ul>
+      <p class="mt-4 text-[15px] text-slate-700 leading-relaxed">
+        Don't want to research every stop? We did it for you:
+      </p>
+      <div class="mt-3 flex flex-col sm:flex-row gap-3">
+        <a href={QUICK_GUIDE} class="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-forest-700 to-forest-800 px-5 py-3 text-sm font-bold text-white no-underline shadow-md transition-all hover:from-forest-800 hover:to-forest-900">
+          See the 3 best places to stay
+          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </a>
+        <a href={bedTonight} rel="nofollow noopener noreferrer sponsored" target="_blank" class="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-earth-500 to-earth-600 px-5 py-3 text-sm font-bold text-white no-underline shadow-md transition-all hover:from-earth-600 hover:to-earth-700">
+          Check tonight's availability
+          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- 6. Private vs municipal -->
+    <section>
+      <h2 class="text-xl sm:text-2xl font-bold text-forest-900 tracking-tight mb-4">Private vs municipal albergues — what actually matters</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+          <p class="font-bold text-forest-900">Municipal / Xunta <span class="text-xs font-semibold text-forest-700 bg-forest-50 border border-forest-100 rounded-full px-2 py-0.5 ml-1">Best budget</span></p>
+          <ul class="mt-3 space-y-2 text-sm text-slate-700 leading-relaxed">
+            <li>✓ Cheapest (€8–10)</li>
+            <li>✓ The real pilgrim atmosphere</li>
+            <li>✕ First-come — no reservations</li>
+            <li>✕ Bigger dorms, more snoring</li>
+          </ul>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+          <p class="font-bold text-forest-900">Private <span class="text-xs font-semibold text-earth-700 bg-earth-50 border border-earth-200 rounded-full px-2 py-0.5 ml-1">Best for certainty</span></p>
+          <ul class="mt-3 space-y-2 text-sm text-slate-700 leading-relaxed">
+            <li>✓ You can book ahead</li>
+            <li>✓ Smaller rooms, better showers</li>
+            <li>✓ Often laundry + kitchen</li>
+            <li>✕ €15–22 — a bit more</li>
+          </ul>
+        </div>
+      </div>
+      <p class="mt-4 inline-flex items-start gap-2 rounded-lg bg-earth-50 border border-earth-200 px-3 py-2 text-sm font-semibold text-earth-800">
+        <span aria-hidden="true">💡</span>
+        <span>What actually matters: mix them. Municipal when you arrive early and want the vibe; private when you need a guaranteed bed and a good night's sleep.</span>
+      </p>
+    </section>
+
+    <!-- Hub: real worries, answered in depth -->
+    <section>
+      <h2 class="text-xl sm:text-2xl font-bold text-forest-900 tracking-tight mb-1">Still worried? The honest answers</h2>
+      <p class="text-sm text-slate-500 mb-4">The questions that keep pilgrims up at night — each answered in full.</p>
+      <div class="grid sm:grid-cols-2 gap-3">
+        {worries.map((w) => (
+          <a href={w.href} class="group flex items-center justify-between gap-3 bg-white border border-slate-200 rounded-2xl p-4 shadow-sm no-underline hover:border-forest-300 hover:shadow-md transition-all">
+            <span class="font-semibold text-forest-900 group-hover:text-forest-700">{w.q}</span>
+            <svg class="h-4 w-4 shrink-0 text-earth-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Navigation loop -->
+    <section class="bg-forest-50 border border-forest-200 rounded-2xl p-6">
+      <h2 class="text-base font-bold text-forest-900 mb-3">Keep planning</h2>
+      <ul class="space-y-2 text-sm">
+        {loops.map((l) => (
+          <li><a href={l.href} class="text-forest-700 hover:underline no-underline font-medium inline-flex items-center gap-1.5">{l.label} →</a></li>
+        ))}
+      </ul>
+    </section>
+
+    <TrustBadge lang="en" />
+  </div>
+</MainLayout>

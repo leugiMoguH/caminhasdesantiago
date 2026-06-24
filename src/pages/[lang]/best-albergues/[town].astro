@@ -10,11 +10,14 @@ import {
   hubPath,
   bestAlberguesPath,
   coastalWhereToStayPath,
+  logisticsPath,
   i18nUrlsFor,
   type Lang,
 } from '../../../lib/clusterRoutes';
 import { bookingSearch } from '../../../lib/booking';
 import StayCard from '../../../components/StayCard.astro';
+import TrustBadge from '../../../components/TrustBadge.astro';
+import { pilgrimNote } from '../../../lib/pilgrimNotes';
 
 type Link = { url: string; label: string };
 type Acc = {
@@ -153,6 +156,19 @@ const metaTitle =
 const stayHub = coastalWhereToStayPath(lang);
 const guide = townPath(lang, slug);
 const hub = hubPath(lang);
+// Authority + reassurance links (Phase 4 STEP 5) — guide hub + a problem page.
+const ESSENTIALS_URL = '/camino-portugues-guide/';
+const essentialsLabel: Record<Lang, string> = {
+  en: 'Pilgrim Essentials: what to know before you go',
+  es: 'Esenciales del peregrino: lo que saber antes de ir',
+  pt: 'Essenciais do peregrino: o que saber antes de ir',
+};
+const fullHref = logisticsPath(lang, 'albergues-full');
+const fullLabel: Record<Lang, string> = {
+  en: 'What if the albergues are full?',
+  es: '¿Y si los albergues están llenos?',
+  pt: 'E se os albergues estiverem cheios?',
+};
 
 const breadcrumb = [
   { name: ui.home, item: `/${lang}/` },
@@ -197,6 +213,7 @@ const compareHref = bookingSearch(data.name, `wtsg-bestalb-${lang}-${slug}-compa
       </nav>
       <h1 class="text-3xl sm:text-4xl font-bold mb-4 tracking-tight text-white">{L.h1}</h1>
       <p class="text-forest-100 text-base leading-relaxed max-w-2xl">{L.intro}</p>
+      <TrustBadge lang={lang} variant="dark" class="mt-5" />
       <!-- Standardized CTA: intro -->
       <div data-aff-pos="intro" class="mt-6">
         <a href={compareHref} rel="nofollow noopener noreferrer sponsored" target="_blank" class="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-earth-500 to-earth-600 px-5 py-3 text-sm font-bold text-white no-underline shadow-md transition-all hover:from-earth-600 hover:to-earth-700">
@@ -212,7 +229,7 @@ const compareHref = bookingSearch(data.name, `wtsg-bestalb-${lang}-${slug}-compa
     <section data-aff-pos="mid">
       <ol class="space-y-4">
         {accs.map((a, i) => (
-          <StayCard lang={lang} acc={a} rank={i + 1} primary={i === 0} lowest={i === cheapestIdx} />
+          <StayCard lang={lang} acc={a} rank={i + 1} primary={i === 0} lowest={i === cheapestIdx} note={pilgrimNote(a, lang)} />
         ))}
       </ol>
       <a href={compareHref} rel="nofollow noopener noreferrer sponsored" target="_blank" class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-earth-700 hover:underline no-underline">
@@ -234,6 +251,8 @@ const compareHref = bookingSearch(data.name, `wtsg-bestalb-${lang}-${slug}-compa
         <li><a href={guide} class="text-forest-700 hover:underline no-underline font-medium">{L.townGuide}</a></li>
         {stage && <li><a href={stage.url} class="text-forest-700 hover:underline no-underline font-medium">{stage.label}</a></li>}
         <li><a href={stayHub} class="text-forest-700 hover:underline no-underline font-medium">{L.whereStay}</a></li>
+        <li><a href={fullHref} class="text-forest-700 hover:underline no-underline font-medium">{fullLabel[lang]}</a></li>
+        <li><a href={ESSENTIALS_URL} class="text-forest-700 hover:underline no-underline font-medium">{essentialsLabel[lang]}</a></li>
       </ul>
     </section>
 

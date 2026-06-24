@@ -1,0 +1,61 @@
+---
+/**
+ * Reusable trust layer (Phase 3, STEP 5). Three honest signals — verified
+ * sourcing, current year, and a price/availability caveat — shown as compact
+ * chips. Placed under titles and near CTAs to raise confidence without adding
+ * reading friction.
+ *
+ * `variant`:
+ *   'light'  — for white/neutral backgrounds (default)
+ *   'dark'   — for the forest hero gradient (used under H1)
+ */
+type Lang = 'en' | 'es' | 'pt';
+interface Props {
+  lang: Lang;
+  variant?: 'light' | 'dark';
+  class?: string;
+}
+const { lang, variant = 'light', class: className = '' } = Astro.props;
+
+const T: Record<Lang, { data: string; updated: string; vary: string }> = {
+  en: {
+    data: 'Based on real pilgrim data & verified sources',
+    updated: 'Updated for 2026',
+    vary: 'Prices & availability may vary',
+  },
+  es: {
+    data: 'Basado en datos reales de peregrinos y fuentes verificadas',
+    updated: 'Actualizado para 2026',
+    vary: 'Precios y disponibilidad pueden variar',
+  },
+  pt: {
+    data: 'Baseado em dados reais de peregrinos e fontes verificadas',
+    updated: 'Atualizado para 2026',
+    vary: 'Preços e disponibilidade podem variar',
+  },
+};
+const t = T[lang];
+
+const wrap = variant === 'dark'
+  ? 'text-forest-100/90'
+  : 'text-slate-500';
+const chip = variant === 'dark'
+  ? 'bg-white/10 border border-white/15'
+  : 'bg-slate-50 border border-slate-200';
+const accent = variant === 'dark' ? 'text-earth-300' : 'text-forest-600';
+---
+
+<ul class={`flex flex-wrap items-center gap-x-2 gap-y-1.5 text-xs font-medium ${wrap} ${className}`} role="list">
+  <li class={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 ${chip}`}>
+    <svg class={`h-3.5 w-3.5 shrink-0 ${accent}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+    {t.data}
+  </li>
+  <li class={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 ${chip}`}>
+    <svg class={`h-3.5 w-3.5 shrink-0 ${accent}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+    {t.updated}
+  </li>
+  <li class={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 ${chip}`}>
+    <svg class={`h-3.5 w-3.5 shrink-0 ${accent}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+    {t.vary}
+  </li>
+</ul>
