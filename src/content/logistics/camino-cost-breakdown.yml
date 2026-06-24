@@ -1,0 +1,86 @@
+topic: camino-cost-breakdown
+relatedStageSlugs:
+  - vigo-redondela
+relatedTownSlugs:
+  - vigo
+  - pontevedra
+relatedTopicSlugs:
+  - booking-strategy
+  - summer-albergues-availability
+  - packing-list
+sourceVerified: true
+lastVerified: "2026-06-24"
+sources:
+  - https://stingynomads.com/camino-portugues-stages/
+  - https://stingynomads.com/albergues-camino-de-santiago/
+  - https://www.caminodesantiago.gal/en/make-plans/the-ways/portuguese-way
+i18n:
+  en:
+    metaTitle: "How Much Does the Camino Portugués Cost? 2026 Budget Breakdown"
+    metaDescription: "What the Camino Portugués really costs in 2026: honest daily ranges for beds, food and extras, plus a realistic total for the Coastal route — budget, mid and comfort numbers."
+    h1: "How much does the Camino Portugués cost?"
+    lead: "Blunt answer: most pilgrims spend €30–45 a day walking simply, or €60–85 a day with private rooms and restaurant meals. Here is exactly where the money goes in 2026, so you can set a budget you will actually keep to."
+    sections:
+      - heading: "The daily numbers"
+        body: "Per person, per day. Bed: €8–10 in a municipal or Xunta albergue, €15–22 in a private albergue dorm, or €40–70 for a private room or guesthouse split between two. Food: €15–25 — the pilgrim menu runs €12–15 for three courses with wine, plus coffee, breakfast and snacks. Extras (laundry, drinks, the odd taxi): €5–10. Add it up and the bare-bones day is about €30, a comfortable day about €70."
+      - heading: "The total for the Coastal route"
+        body: "💡 The northern Coastal route from Porto to Santiago is roughly 280 km, about 12–14 walking days. Budget pilgrims sleeping in albergues and eating pilgrim menus land near €350–550 for the whole walk. Mix in private rooms a few nights and restaurant dinners and €700–1,000 is realistic. Walking from Tui (the last 100 km) costs proportionally less — figure 5–6 days."
+      - heading: "What people forget to budget"
+        body: "⚠️ The costs that ambush pilgrims: getting to the start (Porto train/bus, flights), the credential and any guidebook, travel insurance, blister and foot care, and the celebratory nights in Santiago at the end. None are huge, but together they add €100–200 most people leave out of the plan."
+      - heading: "How to spend less without suffering"
+        body: "Sleep mostly in municipal albergues, cook a few dinners from supermarkets, carry a refillable bottle, and book private beds only on the nights you truly need certainty. The single biggest saving is beds: alternating municipal and private roughly halves the largest line in your budget while still guaranteeing sleep on tight nights."
+    faq:
+      - q: "How much does the Camino Portugués cost per day?"
+        a: "About €30–45 a day walking simply (municipal albergues and pilgrim menus), or €60–85 a day with private rooms and restaurant meals. Beds and food are the two big lines; small extras add €5–10."
+      - q: "What is the total cost of the Camino Portugués?"
+        a: "For the ~280 km Coastal route (12–14 days), budget pilgrims spend around €350–550 and mid-comfort pilgrims €700–1,000, excluding travel to the start. The last 100 km from Tui costs proportionally less over 5–6 days."
+      - q: "What costs do pilgrims forget?"
+        a: "Travel to the start (Porto train or flights), the credential and guidebook, insurance, foot care, and celebrating in Santiago. Together these often add €100–200 that people leave out of their plan."
+      - q: "How can I walk the Camino Portugués cheaply?"
+        a: "Sleep mainly in municipal albergues (€8–10), cook some meals from supermarkets, carry a refillable bottle, and reserve private beds only on tight nights. Beds are the biggest line, so alternating municipal and private saves the most."
+  es:
+    metaTitle: "¿Cuánto cuesta el Camino Portugués? Presupuesto 2026"
+    metaDescription: "Lo que cuesta de verdad el Camino Portugués en 2026: rangos diarios honestos de cama, comida y extras, y un total realista para la ruta de la Costa — cifras económicas, medias y de confort."
+    h1: "¿Cuánto cuesta el Camino Portugués?"
+    lead: "Respuesta directa: la mayoría gasta 30–45 € al día caminando con sencillez, o 60–85 € al día con habitaciones privadas y comidas de restaurante. Esto es exactamente adónde va el dinero en 2026, para que fijes un presupuesto que de verdad cumplas."
+    sections:
+      - heading: "Las cifras diarias"
+        body: "Por persona y día. Cama: 8–10 € en albergue municipal o de la Xunta, 15–22 € en litera de albergue privado, o 40–70 € por habitación privada o pensión dividida entre dos. Comida: 15–25 € — el menú del peregrino cuesta 12–15 € por tres platos con vino, más café, desayuno y algo de picar. Extras (lavandería, bebidas, algún taxi): 5–10 €. Sumado, el día básico ronda los 30 € y el día cómodo unos 70 €."
+      - heading: "El total de la ruta de la Costa"
+        body: "💡 La ruta de la Costa de Oporto a Santiago son unos 280 km, unos 12–14 días de marcha. Los peregrinos económicos que duermen en albergues y comen menús del peregrino acaban cerca de 350–550 € por todo el camino. Si añades habitaciones privadas algunas noches y cenas de restaurante, 700–1.000 € es realista. Desde Tui (los últimos 100 km) cuesta proporcionalmente menos: cuenta 5–6 días."
+      - heading: "Lo que se olvida presupuestar"
+        body: "⚠️ Los costes que pillan a los peregrinos: llegar al inicio (tren/bus de Oporto, vuelos), la credencial y alguna guía, el seguro de viaje, el cuidado de pies y ampollas, y las noches de celebración en Santiago al final. Ninguno es enorme, pero juntos suman 100–200 € que la mayoría deja fuera del plan."
+      - heading: "Cómo gastar menos sin sufrir"
+        body: "Duerme sobre todo en albergues municipales, cocina alguna cena de supermercado, lleva botella recargable y reserva camas privadas solo las noches que de verdad necesites seguridad. El mayor ahorro son las camas: alternar municipal y privado casi reduce a la mitad la mayor partida del presupuesto sin renunciar a dormir las noches difíciles."
+    faq:
+      - q: "¿Cuánto cuesta el Camino Portugués al día?"
+        a: "Unos 30–45 € al día caminando con sencillez (albergues municipales y menús del peregrino), o 60–85 € al día con habitaciones privadas y comidas de restaurante. Cama y comida son las dos grandes partidas; los extras suman 5–10 €."
+      - q: "¿Cuál es el coste total del Camino Portugués?"
+        a: "Para la ruta de la Costa (~280 km, 12–14 días), los peregrinos económicos gastan unos 350–550 € y los de confort medio 700–1.000 €, sin contar el viaje al inicio. Los últimos 100 km desde Tui cuestan proporcionalmente menos en 5–6 días."
+      - q: "¿Qué costes se olvidan los peregrinos?"
+        a: "El viaje al inicio (tren de Oporto o vuelos), la credencial y la guía, el seguro, el cuidado de pies y celebrar en Santiago. Juntos suelen sumar 100–200 € que la gente deja fuera del plan."
+      - q: "¿Cómo hacer el Camino Portugués barato?"
+        a: "Duerme sobre todo en albergues municipales (8–10 €), cocina algunas comidas de supermercado, lleva botella recargable y reserva camas privadas solo las noches difíciles. La cama es la mayor partida, así que alternar municipal y privado es lo que más ahorra."
+  pt:
+    metaTitle: "Quanto custa o Caminho Português? Orçamento 2026"
+    metaDescription: "O que custa mesmo o Caminho Português em 2026: intervalos diários honestos de cama, comida e extras, e um total realista para a rota da Costa — valores económicos, médios e de conforto."
+    h1: "Quanto custa o Caminho Português?"
+    lead: "Resposta direta: a maioria gasta 30–45 € por dia caminhando com simplicidade, ou 60–85 € por dia com quartos privados e refeições de restaurante. Eis exatamente para onde vai o dinheiro em 2026, para definires um orçamento que cumpras mesmo."
+    sections:
+      - heading: "Os valores diários"
+        body: "Por pessoa e por dia. Cama: 8–10 € em albergue municipal ou da Xunta, 15–22 € em beliche de albergue privado, ou 40–70 € por quarto privado ou pensão dividido por dois. Comida: 15–25 € — o menu do peregrino custa 12–15 € por três pratos com vinho, mais café, pequeno-almoço e algo para petiscar. Extras (lavandaria, bebidas, algum táxi): 5–10 €. Somado, o dia básico ronda os 30 € e o dia confortável uns 70 €."
+      - heading: "O total da rota da Costa"
+        body: "💡 A rota da Costa do Porto a Santiago são cerca de 280 km, uns 12–14 dias de marcha. Os peregrinos económicos que dormem em albergues e comem menus do peregrino ficam perto de 350–550 € por todo o caminho. Se juntares quartos privados algumas noites e jantares de restaurante, 700–1.000 € é realista. Desde Tui (os últimos 100 km) custa proporcionalmente menos: conta 5–6 dias."
+      - heading: "O que se esquece de orçamentar"
+        body: "⚠️ Os custos que apanham os peregrinos: chegar ao início (comboio/autocarro do Porto, voos), a credencial e algum guia, o seguro de viagem, o cuidado de pés e bolhas, e as noites de celebração em Santiago no fim. Nenhum é enorme, mas juntos somam 100–200 € que a maioria deixa de fora do plano."
+      - heading: "Como gastar menos sem sofrer"
+        body: "Dorme sobretudo em albergues municipais, cozinha algum jantar de supermercado, leva garrafa recarregável e reserva camas privadas só nas noites em que precises mesmo de certeza. A maior poupança são as camas: alternar municipal e privado quase reduz a metade a maior rubrica do orçamento sem abdicares de dormir nas noites apertadas."
+    faq:
+      - q: "Quanto custa o Caminho Português por dia?"
+        a: "Cerca de 30–45 € por dia caminhando com simplicidade (albergues municipais e menus do peregrino), ou 60–85 € por dia com quartos privados e refeições de restaurante. Cama e comida são as duas grandes rubricas; os extras somam 5–10 €."
+      - q: "Qual é o custo total do Caminho Português?"
+        a: "Para a rota da Costa (~280 km, 12–14 dias), os peregrinos económicos gastam cerca de 350–550 € e os de conforto médio 700–1.000 €, sem contar a viagem para o início. Os últimos 100 km desde Tui custam proporcionalmente menos em 5–6 dias."
+      - q: "Que custos se esquecem os peregrinos?"
+        a: "A viagem para o início (comboio do Porto ou voos), a credencial e o guia, o seguro, o cuidado dos pés e celebrar em Santiago. Juntos costumam somar 100–200 € que as pessoas deixam de fora do plano."
+      - q: "Como fazer o Caminho Português barato?"
+        a: "Dorme sobretudo em albergues municipais (8–10 €), cozinha algumas refeições de supermercado, leva garrafa recarregável e reserva camas privadas só nas noites apertadas. A cama é a maior rubrica, por isso alternar municipal e privado é o que mais poupa."

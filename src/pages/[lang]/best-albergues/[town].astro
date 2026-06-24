@@ -10,7 +10,7 @@ import {
   hubPath,
   bestAlberguesPath,
   coastalWhereToStayPath,
-  logisticsPath,
+  essentialNav,
   i18nUrlsFor,
   type Lang,
 } from '../../../lib/clusterRoutes';
@@ -156,18 +156,18 @@ const metaTitle =
 const stayHub = coastalWhereToStayPath(lang);
 const guide = townPath(lang, slug);
 const hub = hubPath(lang);
-// Authority + reassurance links (Phase 4 STEP 5) — guide hub + a problem page.
-const ESSENTIALS_URL = '/camino-portugues-guide/';
-const essentialsLabel: Record<Lang, string> = {
-  en: 'Pilgrim Essentials: what to know before you go',
-  es: 'Esenciales del peregrino: lo que saber antes de ir',
-  pt: 'Essenciais do peregrino: o que saber antes de ir',
+// Internal-link flow (Phase 5 STEP 4) — guide + two logistics pages.
+const essentials = essentialNav(lang);
+// Monetization framing (Phase 5 STEP 3).
+const pickLead: Record<Lang, string> = {
+  en: 'These are the stays most pilgrims actually choose — here’s how to pick yours.',
+  es: 'Estos son los alojamientos que la mayoría de los peregrinos elige — así eliges el tuyo.',
+  pt: 'Estes são os alojamentos que a maioria dos peregrinos escolhe — eis como escolher o teu.',
 };
-const fullHref = logisticsPath(lang, 'albergues-full');
-const fullLabel: Record<Lang, string> = {
-  en: 'What if the albergues are full?',
-  es: '¿Y si los albergues están llenos?',
-  pt: 'E se os albergues estiverem cheios?',
+const availabilityNudge: Record<Lang, string> = {
+  en: 'Check availability early — the best options go first.',
+  es: 'Comprueba la disponibilidad pronto — las mejores opciones vuelan.',
+  pt: 'Confirma a disponibilidade cedo — as melhores opções vão primeiro.',
 };
 
 const breadcrumb = [
@@ -227,15 +227,21 @@ const compareHref = bookingSearch(data.name, `wtsg-bestalb-${lang}-${slug}-compa
   <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 space-y-10">
     <!-- Ranked comparison (card layout, primary highlighted) -->
     <section data-aff-pos="mid">
+      <p class="text-slate-600 leading-relaxed mb-4">{pickLead[lang]}</p>
       <ol class="space-y-4">
         {accs.map((a, i) => (
           <StayCard lang={lang} acc={a} rank={i + 1} primary={i === 0} lowest={i === cheapestIdx} note={pilgrimNote(a, lang)} />
         ))}
       </ol>
-      <a href={compareHref} rel="nofollow noopener noreferrer sponsored" target="_blank" class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-earth-700 hover:underline no-underline">
-        {L.compare}
-        <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-      </a>
+      <p class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-earth-800">
+        <span aria-hidden="true">⚡</span> {availabilityNudge[lang]}
+      </p>
+      <div class="mt-2">
+        <a href={compareHref} rel="nofollow noopener noreferrer sponsored" target="_blank" class="inline-flex items-center gap-1.5 text-sm font-semibold text-earth-700 hover:underline no-underline">
+          {L.compare}
+          <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </a>
+      </div>
     </section>
 
     <!-- How to choose -->
@@ -251,8 +257,9 @@ const compareHref = bookingSearch(data.name, `wtsg-bestalb-${lang}-${slug}-compa
         <li><a href={guide} class="text-forest-700 hover:underline no-underline font-medium">{L.townGuide}</a></li>
         {stage && <li><a href={stage.url} class="text-forest-700 hover:underline no-underline font-medium">{stage.label}</a></li>}
         <li><a href={stayHub} class="text-forest-700 hover:underline no-underline font-medium">{L.whereStay}</a></li>
-        <li><a href={fullHref} class="text-forest-700 hover:underline no-underline font-medium">{fullLabel[lang]}</a></li>
-        <li><a href={ESSENTIALS_URL} class="text-forest-700 hover:underline no-underline font-medium">{essentialsLabel[lang]}</a></li>
+        {essentials.map((e) => (
+          <li><a href={e.url} class="text-forest-700 hover:underline no-underline font-medium">{e.label}</a></li>
+        ))}
       </ul>
     </section>
 

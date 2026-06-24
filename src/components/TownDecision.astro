@@ -1,0 +1,123 @@
+---
+/**
+ * Quick-decision block (Phase 5 STEP 2) — sits BEFORE the StayCards on every
+ * town page so a low-patience pilgrim can decide in seconds. Five skimmable
+ * micro-sections, max a few lines each:
+ *   1. Where most pilgrims stay — budget / safest (bookable) / best, DERIVED
+ *      from the town's own verified accommodation data (no duplication).
+ *   2–5. Do you need to book / biggest mistake / quiet vs social / fill time —
+ *      hand-curated per town in townDecisionData.ts.
+ */
+import { TOWN_INSIGHTS, type Lang } from '../lib/townDecisionData';
+
+interface Acc {
+  name: string;
+  type: string;
+  beds?: number;
+  priceEUR?: string;
+  bookable?: boolean;
+}
+interface Props {
+  lang: Lang;
+  name: string;
+  slug: string;
+  accommodations: Acc[];
+}
+const { lang, name, slug, accommodations } = Astro.props;
+const insight = TOWN_INSIGHTS[slug];
+
+const priceNum = (a: Acc): number => {
+  const m = a.priceEUR ? a.priceEUR.match(/\d+/) : null;
+  return m ? parseInt(m[0], 10) : Number.POSITIVE_INFINITY;
+};
+
+// Derived picks from verified data.
+const budget = [...accommodations].sort((a, b) => priceNum(a) - priceNum(b))[0] ?? null;
+const safest = accommodations.find((a) => a.bookable === true) ?? null; // first bookable
+const best = accommodations[0] ?? null; // ranked #1
+
+const T = {
+  en: {
+    whereH: `Where most pilgrims stay in ${name}`,
+    budget: 'Best budget', safest: 'Safest (bookable)', best: 'Best overall',
+    noBookable: 'No bookable albergue here — reserve a private room on Booking.com for certainty.',
+    needH: `Do you need to book in ${name}?`,
+    mistakeH: `Biggest mistake in ${name}`,
+    quietH: 'Quiet vs social — what to expect',
+    fillH: 'What time beds usually fill',
+  },
+  es: {
+    whereH: `Dónde duermen la mayoría en ${name}`,
+    budget: 'Más económico', safest: 'Más seguro (reservable)', best: 'Mejor en conjunto',
+    noBookable: 'Aquí no hay albergue reservable — reserva una habitación privada en Booking.com para asegurarte.',
+    needH: `¿Hace falta reservar en ${name}?`,
+    mistakeH: `El mayor error en ${name}`,
+    quietH: 'Tranquilo o sociable — qué esperar',
+    fillH: 'A qué hora se suelen llenar las camas',
+  },
+  pt: {
+    whereH: `Onde fica a maioria em ${name}`,
+    budget: 'Mais económico', safest: 'Mais seguro (reservável)', best: 'Melhor no conjunto',
+    noBookable: 'Aqui não há albergue reservável — reserva um quarto privado no Booking.com para garantir.',
+    needH: `É preciso reservar em ${name}?`,
+    mistakeH: `O maior erro em ${name}`,
+    quietH: 'Tranquilo ou sociável — o que esperar',
+    fillH: 'A que horas costumam encher as camas',
+  },
+}[lang];
+
+const picks = [
+  budget && { tag: T.budget, acc: budget, tone: 'forest' as const },
+  safest && { tag: T.safest, acc: safest, tone: 'earth' as const },
+  best && { tag: T.best, acc: best, tone: 'slate' as const },
+].filter((x): x is { tag: string; acc: Acc; tone: 'forest' | 'earth' | 'slate' } => Boolean(x));
+const tagClass: Record<string, string> = {
+  forest: 'bg-forest-50 border-forest-100 text-forest-700',
+  earth: 'bg-earth-50 border-earth-200 text-earth-700',
+  slate: 'bg-slate-100 border-slate-200 text-slate-700',
+};
+---
+
+<section class="bg-white border border-slate-200 rounded-2xl p-5 sm:p-6 shadow-sm space-y-5">
+  <!-- 1. Where most pilgrims stay -->
+  {picks.length > 0 && (
+    <div>
+      <h2 class="text-base font-bold text-forest-900 mb-3">{T.whereH}</h2>
+      <ul class="grid sm:grid-cols-3 gap-2.5">
+        {picks.map((p) => (
+          <li class="rounded-xl border border-slate-200 p-3">
+            <span class={`inline-block text-xs font-semibold rounded-full border px-2 py-0.5 mb-1.5 ${tagClass[p.tone]}`}>{p.tag}</span>
+            <p class="text-sm font-bold text-forest-900 leading-snug">{p.acc.name}</p>
+            {p.acc.priceEUR && <p class="text-sm font-bold text-earth-700 mt-0.5">€{p.acc.priceEUR}</p>}
+          </li>
+        ))}
+      </ul>
+      {!safest && <p class="text-xs text-slate-500 mt-2">💡 {T.noBookable}</p>}
+    </div>
+  )}
+
+  {insight && (
+    <div class="grid sm:grid-cols-2 gap-x-6 gap-y-4 border-t border-slate-100 pt-5">
+      <!-- 2. Do you need to book -->
+      <div>
+        <h3 class="text-sm font-bold text-forest-900 mb-1">{T.needH}</h3>
+        <p class="text-sm text-slate-700 leading-snug">{insight.needBook[lang]}</p>
+      </div>
+      <!-- 5. What time beds fill -->
+      <div>
+        <h3 class="text-sm font-bold text-forest-900 mb-1">⏰ {T.fillH}</h3>
+        <p class="text-sm text-slate-700 leading-snug">{insight.fillTime[lang]}</p>
+      </div>
+      <!-- 3. Biggest mistake -->
+      <div>
+        <h3 class="text-sm font-bold text-forest-900 mb-1">⚠️ {T.mistakeH}</h3>
+        <p class="text-sm text-slate-700 leading-snug">{insight.mistake[lang]}</p>
+      </div>
+      <!-- 4. Quiet vs social -->
+      <div>
+        <h3 class="text-sm font-bold text-forest-900 mb-1">{T.quietH}</h3>
+        <p class="text-sm text-slate-700 leading-snug">{insight.quietVsSocial[lang]}</p>
+      </div>
+    </div>
+  )}
+</section>

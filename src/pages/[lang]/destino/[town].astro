@@ -11,13 +11,14 @@ import {
   ferryPath,
   bestAlberguesPath,
   coastalWhereToStayPath,
-  logisticsPath,
+  essentialNav,
   i18nUrlsFor,
   type Lang,
 } from '../../../lib/clusterRoutes';
 import { bookingSearch } from '../../../lib/booking';
 import StayCard from '../../../components/StayCard.astro';
 import TrustBadge from '../../../components/TrustBadge.astro';
+import TownDecision from '../../../components/TownDecision.astro';
 import { pilgrimNote } from '../../../lib/pilgrimNotes';
 
 type Link = { url: string; label: string };
@@ -139,11 +140,17 @@ const compareMore: Record<Lang, string> = {
   es: `Compara más alojamientos en ${data.name} en Booking.com`,
   pt: `Compara mais alojamentos em ${data.name} no Booking.com`,
 };
-// Guidance tone (Phase 3 STEP 6) — less "listing", more "here's what pilgrims do".
+// Monetization framing (Phase 5 STEP 3) — guidance tone before the listings.
 const topStaysLead: Record<Lang, string> = {
-  en: `If you're stopping in ${data.name}, most pilgrims pick one of these — here's how they compare.`,
-  es: `Si paras en ${data.name}, la mayoría de los peregrinos elige uno de estos — así se comparan.`,
-  pt: `Se paras em ${data.name}, a maioria dos peregrinos escolhe um destes — eis como se comparam.`,
+  en: 'These are the stays most pilgrims actually choose — here’s how to pick yours.',
+  es: 'Estos son los alojamientos que la mayoría de los peregrinos elige — así eliges el tuyo.',
+  pt: 'Estes são os alojamentos que a maioria dos peregrinos escolhe — eis como escolher o teu.',
+};
+// After-listing nudge (Phase 5 STEP 3) — honest urgency, not an ad.
+const availabilityNudge: Record<Lang, string> = {
+  en: 'Check availability early — the best options go first.',
+  es: 'Comprueba la disponibilidad pronto — las mejores opciones vuelan.',
+  pt: 'Confirma a disponibilidade cedo — as melhores opções vão primeiro.',
 };
 // Navigation loop (Phase 3 STEP 3) — keep pilgrims moving toward Santiago.
 const keepMovingHeading: Record<Lang, string> = {
@@ -181,19 +188,8 @@ const stayHubLabel: Record<Lang, string> = {
   es: 'Dónde dormir en el Camino de la Costa',
   pt: 'Onde ficar no Caminho da Costa',
 };
-// Authority + reassurance links (Phase 4 STEP 5) — guide hub + a problem page.
-const GUIDE_URL = '/camino-portugues-guide/';
-const guideLabel: Record<Lang, string> = {
-  en: 'Pilgrim Essentials: what to know before you go',
-  es: 'Esenciales del peregrino: lo que saber antes de ir',
-  pt: 'Essenciais do peregrino: o que saber antes de ir',
-};
-const fullHref = logisticsPath(lang, 'albergues-full');
-const fullLabel: Record<Lang, string> = {
-  en: 'What if the albergues are full?',
-  es: '¿Y si los albergues están llenos?',
-  pt: 'E se os albergues estiverem cheios?',
-};
+// Internal-link flow (Phase 5 STEP 4) — guide + two logistics pages, every page.
+const essentials = essentialNav(lang);
 ---
 
 <MainLayout title={t.metaTitle} description={t.metaDescription} lang={lang} schemaType="none" i18nUrls={i18nUrls}>
@@ -229,6 +225,11 @@ const fullLabel: Record<Lang, string> = {
   </div>
 
   <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 space-y-10">
+    <!-- Quick decision block (Phase 5 STEP 2) — decide before the listings -->
+    {data.accommodations.length > 0 && (
+      <TownDecision lang={lang} name={data.name} slug={slug} accommodations={data.accommodations} />
+    )}
+
     <!-- Top stays (ranked) — price hint + verified benefit + clear CTA -->
     {data.accommodations.length > 0 && (
       <section data-aff-pos="mid">
@@ -239,6 +240,9 @@ const fullLabel: Record<Lang, string> = {
             <StayCard lang={lang} acc={a} rank={i + 1} primary={i === 0} lowest={i === cheapestAccIdx} note={pilgrimNote(a, lang)} />
           ))}
         </ol>
+        <p class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-earth-800">
+          <span aria-hidden="true">⚡</span> {availabilityNudge[lang]}
+        </p>
         <!-- Section-level affiliate CTA (browse intent beyond the listed albergues) -->
         <div class="mt-4 flex flex-col gap-2">
           <a
@@ -327,8 +331,9 @@ const fullLabel: Record<Lang, string> = {
       <ul class="space-y-2 text-sm">
         {data.accommodations.length > 0 && <li><a href={bestAlbHref} class="text-forest-700 hover:underline no-underline font-medium">{compareAlbLabel[lang]}</a></li>}
         <li><a href={stayHubHref} class="text-forest-700 hover:underline no-underline font-medium">{stayHubLabel[lang]}</a></li>
-        <li><a href={fullHref} class="text-forest-700 hover:underline no-underline font-medium">{fullLabel[lang]}</a></li>
-        <li><a href={GUIDE_URL} class="text-forest-700 hover:underline no-underline font-medium">{guideLabel[lang]}</a></li>
+        {essentials.map((e) => (
+          <li><a href={e.url} class="text-forest-700 hover:underline no-underline font-medium">{e.label}</a></li>
+        ))}
         {stage && <li><a href={stage.url} class="text-forest-700 hover:underline no-underline font-medium">{stage.label}</a></li>}
         <li><a href={ferry} class="text-forest-700 hover:underline no-underline font-medium">{ui.crossingLink}</a></li>
         <li><a href={hub} class="text-slate-600 hover:underline no-underline">{ui.backToRoute}</a></li>

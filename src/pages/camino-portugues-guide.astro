@@ -12,6 +12,7 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import TrustBadge from '../components/TrustBadge.astro';
 import { bookingSearch } from '../lib/booking';
+import { buildClusterGraph } from '../lib/clusterSchema';
 
 const metaTitle = 'The Camino Portugués: What You Actually Need to Know Before You Go';
 const metaDescription =
@@ -22,9 +23,14 @@ const bedTonight = bookingSearch('Pontevedra', 'wtsg-guide-en-bed');
 
 // Forward-looking links keep pilgrims moving inside the site.
 const loops = [
+  { label: 'How much does the Camino Portugués cost? (2026 budget)', href: '/en/logistica/camino-cost-breakdown/' },
+  { label: 'Packing list: what pilgrims actually carry', href: '/en/logistica/packing-list/' },
+  { label: 'When is the best time to walk?', href: '/en/logistica/best-time-camino-portugues/' },
+  { label: 'Booking strategy: how to never miss a bed', href: '/en/logistica/booking-strategy/' },
+  { label: 'Coastal vs Central: which route?', href: '/en/logistica/coastal-vs-central/' },
+  { label: 'Stages, distances & difficulty', href: '/en/logistica/stages-difficulty/' },
+  { label: 'Is the Camino Portugués safe?', href: '/en/logistica/is-camino-portugues-safe/' },
   { label: 'See the 3 best places to stay (quick guide)', href: QUICK_GUIDE },
-  { label: 'Where to stay on the Coastal Camino — every stop', href: '/en/coastal-camino/where-to-stay/' },
-  { label: 'Plan the route, stage by stage', href: '/en/caminho-da-costa/' },
 ];
 
 // Hub spokes — the real fears pilgrims search. Answered in depth on their own
@@ -35,9 +41,34 @@ const worries = [
   { q: 'Are municipal albergues reliable?', href: '/en/logistica/municipal-albergues-reliable/' },
   { q: 'What time do albergues fill up?', href: '/en/logistica/when-albergues-fill/' },
 ];
+
+// Real questions drawn from this guide (Phase 5 STEP 5) → visible FAQ + FAQPage schema.
+const faqs = [
+  { q: 'How much does the Camino Portugués cost per day?', a: 'About €30–40 a day bare-bones (municipal albergues and pilgrim menus), or €60–80 with the odd private room and café stops. Beds and food are the two big costs.' },
+  { q: 'Do I need to book albergues in advance?', a: 'Book ahead in July–August, on weekends and in small coastal villages, and for any private albergue if you walk slowly or finish late. The big municipal albergues are first-come and cannot be reserved at all.' },
+  { q: 'What is the biggest mistake first-time pilgrims make?', a: 'Packing too heavy and starting in unbroken-in boots. Keep your pack under ~10% of body weight, break in your shoes first, and ease into the daily distance.' },
+  { q: 'How do I avoid ending up without a bed?', a: 'Arrive before 14:00 in summer, know which towns have few beds, and keep one bookable private bed in your pocket for the night you most need certainty.' },
+  { q: 'Private or municipal albergues — which is better?', a: 'Mix them. Municipal albergues are cheapest (€8–10), social and first-come; private albergues cost €15–22, can be booked ahead and are quieter. Use municipal when you arrive early, private when you need a guaranteed bed.' },
+  { q: 'How much cash should I carry on the Camino Portugués?', a: 'Most albergues are cash-only and rural ATMs can run dry, so carry €50–100 in small notes and top up in the larger towns.' },
+];
+
+const PAGE_PATH = '/camino-portugues-guide/';
+const faqGraph = buildClusterGraph({
+  lang: 'en',
+  pagePath: PAGE_PATH,
+  title: metaTitle,
+  description: metaDescription,
+  breadcrumb: [
+    { name: 'Home', item: '/en/' },
+    { name: 'Pilgrim Essentials', item: PAGE_PATH },
+  ],
+  faq: faqs,
+});
 ---
 
 <MainLayout title={metaTitle} description={metaDescription} lang="en" schemaType="none">
+  <script type="application/ld+json" set:html={JSON.stringify(faqGraph).replace(/</g, '\\u003c')} />
+
   <!-- HERO -->
   <section class="bg-gradient-to-br from-forest-800 to-forest-950 text-white">
     <div class="mx-auto max-w-3xl px-4 sm:px-6 py-12 md:py-16">
@@ -161,6 +192,19 @@ const worries = [
         <span aria-hidden="true">💡</span>
         <span>What actually matters: mix them. Municipal when you arrive early and want the vibe; private when you need a guaranteed bed and a good night's sleep.</span>
       </p>
+    </section>
+
+    <!-- FAQ (visible + FAQPage schema, STEP 5) -->
+    <section>
+      <h2 class="text-xl sm:text-2xl font-bold text-forest-900 tracking-tight mb-4">Quick answers</h2>
+      <div class="space-y-3">
+        {faqs.map((f) => (
+          <details class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+            <summary class="px-5 py-4 font-semibold text-forest-900 cursor-pointer">{f.q}</summary>
+            <div class="px-5 pb-5 text-sm text-slate-700 leading-relaxed border-t border-slate-100 pt-3">{f.a}</div>
+          </details>
+        ))}
+      </div>
     </section>
 
     <!-- Hub: real worries, answered in depth -->

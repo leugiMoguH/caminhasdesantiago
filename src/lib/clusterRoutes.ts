@@ -135,3 +135,36 @@ export const i18nUrlsFor = (
   es: `${SITE_URL}${builder('es', slug)}`,
   pt: `${SITE_URL}${builder('pt', slug)}`,
 });
+
+// Standalone EN-only companion pages (outside the lang cluster).
+export const GUIDE_URL = '/camino-portugues-guide/';
+
+/**
+ * Shared "next step toward booking" links every page must carry (Phase 5 STEP 4):
+ * the Pilgrim Essentials guide + two high-intent logistics pages. Anchors are
+ * action-framed ("avoid no beds", "booking strategy") rather than bare titles.
+ */
+export const essentialNav = (lang: Lang): { url: string; label: string }[] => {
+  const L = {
+    en: {
+      guide: 'Pilgrim Essentials: what to know before you go',
+      full: 'What if the albergues are full? (avoid no beds)',
+      strategy: 'Booking strategy: how to never miss a bed',
+    },
+    es: {
+      guide: 'Esenciales del peregrino: lo que saber antes de ir',
+      full: '¿Y si los albergues están llenos? (evita quedarte sin cama)',
+      strategy: 'Estrategia de reserva: cómo no quedarte nunca sin cama',
+    },
+    pt: {
+      guide: 'Essenciais do peregrino: o que saber antes de ir',
+      full: 'E se os albergues estiverem cheios? (evita ficar sem cama)',
+      strategy: 'Estratégia de reserva: como nunca ficar sem cama',
+    },
+  }[lang];
+  return [
+    { url: GUIDE_URL, label: L.guide },
+    { url: logisticsPath(lang, 'albergues-full'), label: L.full },
+    { url: logisticsPath(lang, 'booking-strategy'), label: L.strategy },
+  ];
+};
