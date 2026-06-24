@@ -1,5 +1,6 @@
 ---
 import { SOCIAL_LINKS } from '../lib/social';
+import { guidePath, whereToStayLpPath } from '../lib/clusterRoutes';
 
 interface Props {
   lang: 'en' | 'es' | 'pt';
@@ -100,7 +101,7 @@ const navLinks =
         { href: '/en/caminha/useful-services/', label: text.services },
         { href: '/en/caminho-da-costa/', label: text.coastalRoute },
         { href: '/en/caminho-da-costa/caminha-a-guarda/', label: text.crossing },
-        { href: '/camino-portugues-guide/', label: text.essentials },
+        { href: guidePath(lang), label: text.essentials },
       ]
     : lang === 'es'
     ? [
@@ -112,7 +113,7 @@ const navLinks =
         { href: '/es/caminha/servicios-utiles/', label: text.services },
         { href: '/es/caminho-da-costa/', label: text.coastalRoute },
         { href: '/es/caminho-da-costa/caminha-a-guarda/', label: text.crossing },
-        { href: '/camino-portugues-guide/', label: text.essentials },
+        { href: guidePath(lang), label: text.essentials },
       ]
     : [
         { href: '/pt/', label: text.home },
@@ -123,7 +124,7 @@ const navLinks =
         { href: '/pt/caminha/servicos-uteis/', label: text.services },
         { href: '/pt/caminho-da-costa/', label: text.coastalRoute },
         { href: '/pt/caminho-da-costa/caminha-a-guarda/', label: text.crossing },
-        { href: '/camino-portugues-guide/', label: text.essentials },
+        { href: guidePath(lang), label: text.essentials },
       ];
 ---
 
@@ -132,7 +133,7 @@ const navLinks =
   <!-- Sitewide quick-guide CTA → conversion landing page -->
   <div class="bg-earth-600">
     <a
-      href="/camino-portugues-where-to-stay/"
+      href={whereToStayLpPath(lang)}
       class="mx-auto flex max-w-6xl items-center justify-center gap-2 px-4 py-3 text-center text-sm font-bold text-white no-underline hover:bg-earth-700 transition-colors sm:text-base"
     >
       👉 {text.quickGuide}

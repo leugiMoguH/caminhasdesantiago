@@ -1,0 +1,175 @@
+---
+/**
+ * Conversion landing page (Spanish) for cold Instagram paid traffic.
+ * Localized sibling of /camino-portugues-where-to-stay (EN). noindex, kept out
+ * of the SEO cluster. Reciprocal trilingual hreflang via lpI18nUrls.
+ */
+import MainLayout from '../../layouts/MainLayout.astro';
+import { bookingSearch } from '../../lib/booking';
+import { buildClusterGraph } from '../../lib/clusterSchema';
+import { lpI18nUrls, whereToStayLpPath, guidePath } from '../../lib/clusterRoutes';
+
+const metaTitle = 'Dónde dormir en el Camino Portugués — 3 mejores albergues desde 10 €';
+const metaDescription =
+  'Sin investigar: los 3 mejores sitios para dormir en el Camino Portugués, con precios en vivo desde 10 € la noche. Comprueba disponibilidad y reserva tu cama en segundos.';
+
+type Pick = { town: string; label: string; fromEUR: string; benefit: string; urgency: string; cta: string };
+
+const picks: Pick[] = [
+  {
+    town: 'Pontevedra',
+    label: 'Mejor en conjunto',
+    fromEUR: '10',
+    benefit: 'La parada de descanso favorita de los peregrinos — casco antiguo medieval peatonal, un gran albergue público y hostales reservables, todo a un paseo de la ruta.',
+    urgency: 'Popular entre peregrinos — las camas se llenan los fines de semana de verano.',
+    cta: 'Comprobar disponibilidad',
+  },
+  {
+    town: 'Vigo',
+    label: 'Mejor económico',
+    fromEUR: '10',
+    benefit: 'El mayor albergue de peregrinos de Galicia — 93 plazas desde 10 € — más habitaciones y hostales para todos los bolsillos y cada servicio de ciudad a la puerta.',
+    urgency: 'Plazas limitadas en temporada alta — reserva pronto para fijar el precio.',
+    cta: 'Ver camas y precios',
+  },
+  {
+    town: 'Baiona',
+    label: 'Mejor ubicación',
+    fromEUR: '17',
+    benefit: 'Duerme junto al Atlántico en una villa con fortaleza amurallada — sal de las murallas de Monterreal directo al sendero costero a la mañana siguiente.',
+    urgency: 'Pequeña villa marinera — a menudo completa en julio y agosto.',
+    cta: 'Reserva tu sitio',
+  },
+];
+
+const hrefFor = (town: string): string => bookingSearch(town, `wtsg-iglp-es-${town.toLowerCase()}`);
+const heroPick = picks[0];
+const restPicks = picks.slice(1);
+const stickyHref = hrefFor(heroPick.town);
+
+const faqs = [
+  { q: '¿Dónde dormir en el Camino Portugués?', a: 'En la ruta de la Costa, los tres sitios que más reservan los peregrinos son Pontevedra (mejor en conjunto), Vigo (más económico) y Baiona (mejor ubicación). Cada uno tiene albergues más habitaciones reservables.' },
+  { q: '¿Cuánto cuesta una cama en el Camino Portugués?', a: 'Los albergues municipales cuestan unos 10 € la noche, las literas de albergue privado 15–22 €, y una habitación privada 40–70 € dividida entre dos. Los precios en vivo aparecen al comprobar disponibilidad.' },
+  { q: '¿Hace falta reservar con antelación?', a: 'Reserva en julio–agosto, en fines de semana y en pueblos costeros pequeños. Los grandes albergues públicos de las ciudades son por orden de llegada y no se reservan, así que llega temprano en verano.' },
+  { q: '¿Puedo reservar estos sitios online?', a: 'Sí — cada opción enlaza a la disponibilidad y los precios en vivo en Booking.com, donde reservas una cama o habitación en un par de minutos.' },
+];
+const faqGraph = buildClusterGraph({
+  lang: 'es',
+  pagePath: whereToStayLpPath('es'),
+  title: metaTitle,
+  description: metaDescription,
+  breadcrumb: [
+    { name: 'Inicio', item: '/es/' },
+    { name: 'Dónde dormir', item: whereToStayLpPath('es') },
+  ],
+  faq: faqs,
+});
+---
+
+<MainLayout title={metaTitle} description={metaDescription} lang="es" schemaType="none" noindex={true} i18nUrls={lpI18nUrls}>
+  <script type="application/ld+json" set:html={JSON.stringify(faqGraph).replace(/</g, '\\u003c')} />
+
+  <!-- HERO -->
+  <section class="bg-gradient-to-br from-forest-800 to-forest-950 text-white">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 py-9 sm:py-12 text-center">
+      <p class="inline-flex items-center gap-1.5 rounded-full bg-earth-500/15 border border-earth-400/30 px-3 py-1 text-xs font-semibold text-earth-200 mb-4">
+        Camino Portugués · Ruta de la Costa
+      </p>
+      <h1 class="text-2xl sm:text-4xl font-bold tracking-tight leading-tight text-balance">
+        Dónde dormir en el Camino Portugués
+        <span class="block text-earth-300 mt-1">Mejores albergues desde 10 €</span>
+      </h1>
+      <p class="mt-4 text-forest-100 text-base sm:text-lg leading-relaxed max-w-xl mx-auto">
+        3 sitios probados que los peregrinos sí reservan — sin investigar.
+      </p>
+      <div class="mt-5 flex flex-wrap justify-center gap-x-5 gap-y-1.5 text-xs sm:text-sm text-forest-100/90 font-medium">
+        <span class="inline-flex items-center gap-1.5"><span class="text-earth-300">✓</span> Precios y disponibilidad en vivo</span>
+        <span class="inline-flex items-center gap-1.5"><span class="text-earth-300">✓</span> Cancelación gratis en la mayoría</span>
+        <span class="inline-flex items-center gap-1.5"><span class="text-earth-300">✓</span> Camas desde 10 €/noche</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOP 3 -->
+  <div class="mx-auto max-w-3xl px-4 sm:px-6 py-8 sm:py-10 pb-28 sm:pb-10 space-y-5">
+
+    <!-- #1 -->
+    <article data-aff-pos="hero" class="relative bg-white border-2 border-earth-500 ring-4 ring-earth-500/15 rounded-3xl p-6 sm:p-7 shadow-xl">
+      <div class="absolute -top-3 left-6 flex items-center gap-2">
+        <span class="rounded-full bg-earth-600 px-3 py-1 text-xs font-bold text-white shadow-sm">#1 Recomendado</span>
+        <span class="rounded-full bg-forest-700 px-3 py-1 text-xs font-bold text-white shadow-sm">{heroPick.label}</span>
+      </div>
+      <div class="flex items-start justify-between gap-4 mt-2">
+        <h2 class="text-2xl sm:text-3xl font-bold text-forest-900 tracking-tight">{heroPick.town}</h2>
+        <div class="text-right shrink-0">
+          <p class="text-xs text-slate-500 font-medium leading-none">desde</p>
+          <p class="text-3xl sm:text-4xl font-extrabold text-earth-700 leading-none mt-1">{heroPick.fromEUR} €</p>
+          <p class="text-xs text-slate-500 font-medium">/ noche</p>
+        </div>
+      </div>
+      <p class="mt-3 text-base text-slate-700 leading-relaxed">{heroPick.benefit}</p>
+      <p class="mt-4 inline-flex items-center gap-2 rounded-lg bg-earth-50 border border-earth-200 px-3 py-2 text-sm font-semibold text-earth-800">
+        <svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        {heroPick.urgency}
+      </p>
+      <a href={hrefFor(heroPick.town)} rel="nofollow noopener noreferrer sponsored" target="_blank" class="mt-5 flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-earth-500 to-earth-600 px-6 py-4 text-lg font-bold text-white no-underline shadow-lg transition-all hover:from-earth-600 hover:to-earth-700 active:scale-[0.99]">
+        {heroPick.cta}
+        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </a>
+    </article>
+
+    <!-- #2 + #3 -->
+    {restPicks.map((p, i) => (
+      <article data-aff-pos="card" class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+        <div class="flex items-start justify-between gap-3">
+          <div class="min-w-0">
+            <span class="inline-block rounded-full bg-forest-50 border border-forest-100 px-2.5 py-0.5 text-xs font-semibold text-forest-700 mb-1.5">{p.label}</span>
+            <h2 class="text-xl font-bold text-forest-900 tracking-tight">#{i + 2} {p.town}</h2>
+          </div>
+          <div class="text-right shrink-0">
+            <p class="text-[11px] text-slate-500 font-medium leading-none">desde</p>
+            <p class="text-2xl font-extrabold text-earth-700 leading-none mt-0.5">{p.fromEUR} €</p>
+            <p class="text-[11px] text-slate-500 font-medium">/ noche</p>
+          </div>
+        </div>
+        <p class="mt-2.5 text-sm text-slate-700 leading-relaxed">{p.benefit}</p>
+        <p class="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-earth-800">
+          <svg class="h-3.5 w-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          {p.urgency}
+        </p>
+        <a href={hrefFor(p.town)} rel="nofollow noopener noreferrer sponsored" target="_blank" class="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-forest-700 px-5 py-3.5 text-base font-bold text-white no-underline shadow-md transition-all hover:bg-forest-800 active:scale-[0.99]">
+          {p.cta}
+          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </a>
+      </article>
+    ))}
+
+    <!-- FAQ -->
+    <section class="pt-2">
+      <h2 class="text-lg font-bold text-forest-900 mb-3 text-center">Respuestas rápidas</h2>
+      <div class="space-y-2.5 max-w-2xl mx-auto">
+        {faqs.map((f) => (
+          <details class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+            <summary class="px-5 py-3.5 font-semibold text-forest-900 cursor-pointer text-sm">{f.q}</summary>
+            <div class="px-5 pb-4 text-sm text-slate-700 leading-relaxed border-t border-slate-100 pt-3">{f.a}</div>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <p class="text-center text-sm pt-1">
+      <a href={guidePath('es')} class="font-semibold text-forest-700 hover:underline no-underline">¿Primera vez en el Camino? Lee la guía honesta previa al viaje →</a>
+    </p>
+    <p class="text-center text-xs text-slate-400">
+      Precios y disponibilidad en vivo en Booking.com. Podemos ganar una comisión — a ti nunca te cuesta más.
+    </p>
+  </div>
+
+  <!-- STICKY mobile CTA -->
+  <div class="sm:hidden fixed inset-x-0 bottom-0 z-40 border-t border-earth-200 bg-white/95 backdrop-blur px-4 py-3 shadow-[0_-4px_16px_rgba(0,0,0,0.08)]">
+    <a href={stickyHref} rel="nofollow noopener noreferrer sponsored" target="_blank" data-aff-pos="sticky" class="flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-earth-500 to-earth-600 px-6 py-4 text-base font-bold text-white no-underline shadow-lg active:scale-[0.99]">
+      {heroPick.cta} — {heroPick.town} desde {heroPick.fromEUR} €
+      <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</MainLayout>

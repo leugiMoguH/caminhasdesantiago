@@ -27,6 +27,8 @@ const STATIC_GROUPS = [
   { en: '/en/coastal-camino/where-to-stay/',        es: '/es/coastal-camino/where-to-stay/',        pt: '/pt/coastal-camino/where-to-stay/' },
   { en: '/en/coastal-camino/best-stages-to-sleep/', es: '/es/coastal-camino/best-stages-to-sleep/', pt: '/pt/coastal-camino/best-stages-to-sleep/' },
   { en: '/en/coastal-camino/cheapest-albergues/',   es: '/es/coastal-camino/cheapest-albergues/',   pt: '/pt/coastal-camino/cheapest-albergues/' },
+  // Standalone Pilgrim Essentials guide (indexable) — EN at root, ES/PT prefixed.
+  { en: '/camino-portugues-guide/',                 es: '/es/guia-camino-portugues/',               pt: '/pt/guia-caminho-portugues/' },
 ];
 
 // Dynamic groups generated from verified content collections. Slugs are identical
@@ -97,8 +99,10 @@ export default defineConfig({
       filter: (page) =>
         page !== 'https://waytosantiagoguide.com/' &&
         page !== 'https://waytosantiagoguide.com/en/sitemap/' &&
-        // noindex paid-traffic landing page — keep out of the sitemap/SEO graph
-        page !== 'https://waytosantiagoguide.com/camino-portugues-where-to-stay/',
+        // noindex paid-traffic landing pages (EN/ES/PT) — keep out of sitemap/SEO graph
+        page !== 'https://waytosantiagoguide.com/camino-portugues-where-to-stay/' &&
+        page !== 'https://waytosantiagoguide.com/es/donde-dormir-camino-portugues/' &&
+        page !== 'https://waytosantiagoguide.com/pt/onde-ficar-caminho-portugues/',
       serialize(item) {
         // Emit reciprocal hreflang only for real translations; clear any
         // auto-grouped links on EN-only pages. No lastmod (build-date lastmod

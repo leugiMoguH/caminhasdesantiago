@@ -14,6 +14,7 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import { bookingSearch } from '../lib/booking';
 import { buildClusterGraph } from '../lib/clusterSchema';
+import { lpI18nUrls } from '../lib/clusterRoutes';
 
 const metaTitle = 'Where to Stay on the Camino Portugués — 3 Best Albergues from €10';
 const metaDescription =
@@ -84,7 +85,7 @@ const faqGraph = buildClusterGraph({
 });
 ---
 
-<MainLayout title={metaTitle} description={metaDescription} lang="en" schemaType="none" noindex={true}>
+<MainLayout title={metaTitle} description={metaDescription} lang="en" schemaType="none" noindex={true} i18nUrls={lpI18nUrls}>
   <script type="application/ld+json" set:html={JSON.stringify(faqGraph).replace(/</g, '\\u003c')} />
 
   <!-- HERO — compact so the #1 pick is on screen within one scroll -->

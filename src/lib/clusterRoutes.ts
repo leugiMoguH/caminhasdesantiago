@@ -136,8 +136,33 @@ export const i18nUrlsFor = (
   pt: `${SITE_URL}${builder('pt', slug)}`,
 });
 
-// Standalone EN-only companion pages (outside the lang cluster).
-export const GUIDE_URL = '/camino-portugues-guide/';
+// Standalone companion pages (outside the cluster). EN lives at the root URL
+// (kept stable to avoid churn); ES/PT are localized siblings under their prefix.
+export const guidePath = (lang: Lang): string =>
+  lang === 'en'
+    ? '/camino-portugues-guide/'
+    : lang === 'es'
+      ? '/es/guia-camino-portugues/'
+      : '/pt/guia-caminho-portugues/';
+
+export const whereToStayLpPath = (lang: Lang): string =>
+  lang === 'en'
+    ? '/camino-portugues-where-to-stay/'
+    : lang === 'es'
+      ? '/es/donde-dormir-camino-portugues/'
+      : '/pt/onde-ficar-caminho-portugues/';
+
+/** Absolute trilingual hreflang set for the two standalone companion pages. */
+export const guideI18nUrls = {
+  en: `${SITE_URL}${guidePath('en')}`,
+  es: `${SITE_URL}${guidePath('es')}`,
+  pt: `${SITE_URL}${guidePath('pt')}`,
+};
+export const lpI18nUrls = {
+  en: `${SITE_URL}${whereToStayLpPath('en')}`,
+  es: `${SITE_URL}${whereToStayLpPath('es')}`,
+  pt: `${SITE_URL}${whereToStayLpPath('pt')}`,
+};
 
 /**
  * Shared "next step toward booking" links every page must carry (Phase 5 STEP 4):
@@ -163,7 +188,7 @@ export const essentialNav = (lang: Lang): { url: string; label: string }[] => {
     },
   }[lang];
   return [
-    { url: GUIDE_URL, label: L.guide },
+    { url: guidePath(lang), label: L.guide },
     { url: logisticsPath(lang, 'albergues-full'), label: L.full },
     { url: logisticsPath(lang, 'booking-strategy'), label: L.strategy },
   ];

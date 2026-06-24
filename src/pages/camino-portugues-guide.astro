@@ -13,6 +13,7 @@ import MainLayout from '../layouts/MainLayout.astro';
 import TrustBadge from '../components/TrustBadge.astro';
 import { bookingSearch } from '../lib/booking';
 import { buildClusterGraph } from '../lib/clusterSchema';
+import { guideI18nUrls } from '../lib/clusterRoutes';
 
 const metaTitle = 'The Camino Portugués: What You Actually Need to Know Before You Go';
 const metaDescription =
@@ -66,7 +67,7 @@ const faqGraph = buildClusterGraph({
 });
 ---
 
-<MainLayout title={metaTitle} description={metaDescription} lang="en" schemaType="none">
+<MainLayout title={metaTitle} description={metaDescription} lang="en" schemaType="none" i18nUrls={guideI18nUrls}>
   <script type="application/ld+json" set:html={JSON.stringify(faqGraph).replace(/</g, '\\u003c')} />
 
   <!-- HERO -->

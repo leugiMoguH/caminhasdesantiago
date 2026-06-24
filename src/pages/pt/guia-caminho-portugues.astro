@@ -1,0 +1,227 @@
+---
+/**
+ * Pilgrim Essentials — Portuguese (pt-PT). Localized sibling of
+ * /camino-portugues-guide (EN). Same honest, scannable structure; localized
+ * internal links + FAQPage. Reciprocal trilingual hreflang via guideI18nUrls.
+ */
+import MainLayout from '../../layouts/MainLayout.astro';
+import TrustBadge from '../../components/TrustBadge.astro';
+import { bookingSearch } from '../../lib/booking';
+import { buildClusterGraph } from '../../lib/clusterSchema';
+import { guideI18nUrls, guidePath, whereToStayLpPath } from '../../lib/clusterRoutes';
+
+const metaTitle = 'O Caminho Português: o que precisas mesmo de saber antes de ir';
+const metaDescription =
+  'Guia honesto e baseado na experiência para o Caminho Português: custos reais, quando reservar, os maiores erros dos peregrinos e como nunca ficar sem cama.';
+
+const QUICK_GUIDE = whereToStayLpPath('pt');
+const bedTonight = bookingSearch('Pontevedra', 'wtsg-guide-pt-bed');
+
+const loops = [
+  { label: 'Quanto custa o Caminho Português? (orçamento 2026)', href: '/pt/logistica/camino-cost-breakdown/' },
+  { label: 'Lista de bagagem: o que os peregrinos levam mesmo', href: '/pt/logistica/packing-list/' },
+  { label: 'Qual é a melhor altura para caminhar?', href: '/pt/logistica/best-time-camino-portugues/' },
+  { label: 'Estratégia de reserva: como nunca ficar sem cama', href: '/pt/logistica/booking-strategy/' },
+  { label: 'Costa ou Central: que rota?', href: '/pt/logistica/coastal-vs-central/' },
+  { label: 'Etapas, distâncias e dificuldade', href: '/pt/logistica/stages-difficulty/' },
+  { label: 'O Caminho Português é seguro?', href: '/pt/logistica/is-camino-portugues-safe/' },
+  { label: 'Os 3 melhores sítios para ficar (guia rápido)', href: QUICK_GUIDE },
+];
+
+const worries = [
+  { q: 'E se os albergues estiverem cheios?', href: '/pt/logistica/albergues-full/' },
+  { q: 'Pode caminhar-se sem reservar?', href: '/pt/logistica/walking-without-booking/' },
+  { q: 'Os albergues municipais são de confiança?', href: '/pt/logistica/municipal-albergues-reliable/' },
+  { q: 'A que horas enchem os albergues?', href: '/pt/logistica/when-albergues-fill/' },
+];
+
+const faqs = [
+  { q: 'Quanto custa o Caminho Português por dia?', a: 'Cerca de 30–40 € por dia com simplicidade (albergues municipais e menus do peregrino), ou 60–80 € com algum quarto privado e paragens em cafés. Cama e comida são os dois grandes custos.' },
+  { q: 'É preciso reservar os albergues com antecedência?', a: 'Reserva em julho–agosto, aos fins de semana e nas pequenas vilas costeiras, e qualquer albergue privado se caminhas devagar ou chegas tarde. Os grandes municipais são por ordem de chegada e não se podem reservar.' },
+  { q: 'Qual é o maior erro dos principiantes?', a: 'Carregar peso a mais e começar com botas por amaciar. Mantém a mochila abaixo de ~10 % do teu peso, amacia o calçado antes e vai entrando na distância diária.' },
+  { q: 'Como evito ficar sem cama?', a: 'Chega antes das 14:00 no verão, sabe que vilas têm poucas camas e tem sempre uma cama privada reservável para a noite em que mais precisas de certeza.' },
+  { q: 'Privados ou municipais — qual é melhor?', a: 'Combina-os. Os municipais são os mais baratos (8–10 €), sociáveis e por ordem de chegada; os privados custam 15–22 €, reservam-se e são mais sossegados. Municipal quando chegas cedo, privado quando precisas de cama garantida.' },
+  { q: 'Quanto dinheiro devo levar no Caminho Português?', a: 'Muitos albergues são só a dinheiro e os multibancos rurais podem ficar sem notas, por isso leva 50–100 € em notas pequenas e reabastece nas vilas maiores.' },
+];
+
+const faqGraph = buildClusterGraph({
+  lang: 'pt',
+  pagePath: guidePath('pt'),
+  title: metaTitle,
+  description: metaDescription,
+  breadcrumb: [
+    { name: 'Início', item: '/pt/' },
+    { name: 'Essenciais do peregrino', item: guidePath('pt') },
+  ],
+  faq: faqs,
+});
+---
+
+<MainLayout title={metaTitle} description={metaDescription} lang="pt" schemaType="none" i18nUrls={guideI18nUrls}>
+  <script type="application/ld+json" set:html={JSON.stringify(faqGraph).replace(/</g, '\\u003c')} />
+
+  <!-- HERO -->
+  <section class="bg-gradient-to-br from-forest-800 to-forest-950 text-white">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 py-12 md:py-16">
+      <p class="inline-flex items-center gap-1.5 rounded-full bg-earth-500/15 border border-earth-400/30 px-3 py-1 text-xs font-semibold text-earth-200 mb-4">
+        Essenciais do peregrino
+      </p>
+      <h1 class="text-2xl sm:text-4xl font-bold tracking-tight leading-tight text-balance">
+        O Caminho Português: o que precisas mesmo de saber antes de ir
+      </h1>
+      <p class="mt-4 text-forest-100 text-base sm:text-lg leading-relaxed max-w-2xl">
+        Sem enchimento, sem lição de história. O que é honesto e que os peregrinos experientes gostariam de ter sabido no primeiro dia.
+      </p>
+      <TrustBadge lang="pt" variant="dark" class="mt-6" />
+    </div>
+  </section>
+
+  <div class="mx-auto max-w-3xl px-4 sm:px-6 py-10 sm:py-12 space-y-10">
+
+    <!-- 1. Custos reais -->
+    <section>
+      <h2 class="text-xl sm:text-2xl font-bold text-forest-900 tracking-tight mb-1">Quanto custa MESMO</h2>
+      <p class="text-sm text-slate-500 mb-4">Por pessoa e por dia. Rota da Costa, 2026.</p>
+      <ul class="space-y-2 text-[15px] text-slate-700 leading-relaxed">
+        <li class="flex gap-2"><span class="text-forest-600 font-bold shrink-0">€</span> <span><strong>Albergue municipal / Xunta:</strong> 8–10 € a cama. A dinheiro, sem reserva.</span></li>
+        <li class="flex gap-2"><span class="text-forest-600 font-bold shrink-0">€</span> <span><strong>Beliche de albergue privado:</strong> 15–22 €. Reservável, mais confortável, menos camas por quarto.</span></li>
+        <li class="flex gap-2"><span class="text-forest-600 font-bold shrink-0">€</span> <span><strong>Quarto privado / pensão:</strong> 40–70 € para dois. Vale a pena de poucas em poucas noites.</span></li>
+        <li class="flex gap-2"><span class="text-forest-600 font-bold shrink-0">€</span> <span><strong>Comida:</strong> 15–25 €/dia. O menu do peregrino custa 12–15 € por três pratos com vinho.</span></li>
+      </ul>
+      <p class="mt-4 inline-flex items-start gap-2 rounded-lg bg-earth-50 border border-earth-200 px-3 py-2 text-sm font-semibold text-earth-800">
+        <span aria-hidden="true">💡</span>
+        <span>Orçamento diário realista: <strong>30–40 €</strong> básico (albergues + menu do peregrino), <strong>60–80 €</strong> com algum quarto privado e cafés.</span>
+      </p>
+    </section>
+
+    <!-- 2. Quando reservar -->
+    <section>
+      <h2 class="text-xl sm:text-2xl font-bold text-forest-900 tracking-tight mb-4">Quando deves (e quando não) reservar albergues</h2>
+      <ul class="space-y-3 text-[15px] text-slate-700 leading-relaxed">
+        <li class="flex gap-2"><span class="text-forest-700 font-bold shrink-0">✓</span> <span><strong>Reserva com antecedência</strong> em julho–agosto, nos troços costeiros pequenos (Oia, Baiona) e qualquer albergue privado se caminhas devagar ou terminas tarde.</span></li>
+        <li class="flex gap-2"><span class="text-forest-700 font-bold shrink-0">✓</span> <span><strong>Reserva um quarto privado</strong> na noite antes de um dia de descanso ou de uma etapa longa — vais querer sossego.</span></li>
+        <li class="flex gap-2"><span class="text-slate-400 font-bold shrink-0">✕</span> <span><strong>Não te dês ao trabalho de reservar</strong> os grandes municipais — são por ordem de chegada e não se podem reservar de qualquer forma.</span></li>
+        <li class="flex gap-2"><span class="text-slate-400 font-bold shrink-0">✕</span> <span><strong>Não planeies de mais</strong> toda a viagem noite a noite. Reserva com 1–2 dias e mantém-te flexível — o corpo e o tempo mudam planos.</span></li>
+      </ul>
+      <p class="mt-4 inline-flex items-start gap-2 rounded-lg bg-amber-50 border border-amber-200 px-3 py-2 text-sm font-semibold text-amber-900">
+        <span aria-hidden="true">⚠️</span>
+        <span>Os fins de semana de primavera/outono e a Páscoa enchem mais depressa do que se pensa. Se uma data importa, garante-a.</span>
+      </p>
+    </section>
+
+    <!-- 3. Maiores erros -->
+    <section>
+      <h2 class="text-xl sm:text-2xl font-bold text-forest-900 tracking-tight mb-4">Os maiores erros dos peregrinos</h2>
+      <ul class="space-y-3 text-[15px] text-slate-700 leading-relaxed">
+        <li class="flex gap-2"><span aria-hidden="true" class="shrink-0">⚠️</span> <span><strong>Carregar peso a mais.</strong> Se a tua mochila passa dos ~10 % do teu peso, vais senti-lo ao terceiro dia. Envia o que sobra à frente.</span></li>
+        <li class="flex gap-2"><span aria-hidden="true" class="shrink-0">⚠️</span> <span><strong>Botas novas.</strong> Nunca comeces com calçado por amaciar. As bolhas acabam mais Caminhos do que a distância.</span></li>
+        <li class="flex gap-2"><span aria-hidden="true" class="shrink-0">⚠️</span> <span><strong>Caminhar demasiado, demasiado cedo.</strong> Os primeiros dias longos destroem joelhos e pés. Vai com calma.</span></li>
+        <li class="flex gap-2"><span aria-hidden="true" class="shrink-0">⚠️</span> <span><strong>Esquecer que a Espanha está +1 hora</strong> à frente de Portugal. Os albergues enchem em hora espanhola depois da fronteira.</span></li>
+        <li class="flex gap-2"><span aria-hidden="true" class="shrink-0">⚠️</span> <span><strong>Tratá-lo como uma corrida.</strong> Quem desiste costuma ser quem foi mais rápido na primeira semana.</span></li>
+      </ul>
+    </section>
+
+    <!-- 4. O que ninguém te conta -->
+    <section>
+      <h2 class="text-xl sm:text-2xl font-bold text-forest-900 tracking-tight mb-4">O que ninguém te conta antes de começar</h2>
+      <ul class="space-y-3 text-[15px] text-slate-700 leading-relaxed">
+        <li class="flex gap-2"><span aria-hidden="true" class="shrink-0">💡</span> <span>Leva a tua <strong>credencial (passaporte do peregrino)</strong> desde o primeiro dia — nos últimos 100 km precisas de dois carimbos diários para a Compostela.</span></li>
+        <li class="flex gap-2"><span aria-hidden="true" class="shrink-0">💡</span> <span>Muitos albergues são <strong>só a dinheiro</strong> e os multibancos rurais ficam sem notas. Leva 50–100 € em notas pequenas.</span></li>
+        <li class="flex gap-2"><span aria-hidden="true" class="shrink-0">💡</span> <span>As manhãs são silenciosas e mágicas. <strong>A caminhada das 6–8 h</strong> é por isso que as pessoas voltam.</span></li>
+        <li class="flex gap-2"><span aria-hidden="true" class="shrink-0">💡</span> <span>A <strong>travessia do rio em Caminha</strong> pode estar suspensa — confirma antes de chegares, não à beira da água.</span></li>
+        <li class="flex gap-2"><span aria-hidden="true" class="shrink-0">💡</span> <span>Os tampões para os ouvidos mudam o teu Caminho. Os dormitórios ressonam. Leva um par.</span></li>
+      </ul>
+    </section>
+
+    <!-- 5. Como não ficar sem cama → CTA -->
+    <section class="bg-slate-50 border border-slate-200 rounded-2xl p-5 sm:p-6">
+      <h2 class="text-xl sm:text-2xl font-bold text-forest-900 tracking-tight mb-4">Como evitar ficar sem cama</h2>
+      <ul class="space-y-3 text-[15px] text-slate-700 leading-relaxed">
+        <li class="flex gap-2"><span aria-hidden="true" class="shrink-0">⚡</span> <span><strong>Chega antes das 14:00</strong> no verão. As camas municipais desaparecem a meio da tarde.</span></li>
+        <li class="flex gap-2"><span aria-hidden="true" class="shrink-0">⚡</span> <span><strong>Sabe que vilas vão apertadas:</strong> as pequenas vilas costeiras têm poucas camas; as cidades, centenas.</span></li>
+        <li class="flex gap-2"><span aria-hidden="true" class="shrink-0">💡</span> <span><strong>Tem uma cama reservável no bolso.</strong> Reserva um albergue privado ou quarto na noite em que mais precisas de certeza.</span></li>
+      </ul>
+      <p class="mt-4 text-[15px] text-slate-700 leading-relaxed">
+        Não queres pesquisar cada paragem? Fizemo-lo por ti:
+      </p>
+      <div class="mt-3 flex flex-col sm:flex-row gap-3">
+        <a href={QUICK_GUIDE} class="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-forest-700 to-forest-800 px-5 py-3 text-sm font-bold text-white no-underline shadow-md transition-all hover:from-forest-800 hover:to-forest-900">
+          Ver os 3 melhores sítios para ficar
+          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </a>
+        <a href={bedTonight} rel="nofollow noopener noreferrer sponsored" target="_blank" class="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-earth-500 to-earth-600 px-5 py-3 text-sm font-bold text-white no-underline shadow-md transition-all hover:from-earth-600 hover:to-earth-700">
+          Ver disponibilidade de hoje
+          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- 6. Privados vs municipais -->
+    <section>
+      <h2 class="text-xl sm:text-2xl font-bold text-forest-900 tracking-tight mb-4">Privados vs municipais — o que importa mesmo</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+          <p class="font-bold text-forest-900">Municipal / Xunta <span class="text-xs font-semibold text-forest-700 bg-forest-50 border border-forest-100 rounded-full px-2 py-0.5 ml-1">Mais económico</span></p>
+          <ul class="mt-3 space-y-2 text-sm text-slate-700 leading-relaxed">
+            <li>✓ O mais barato (8–10 €)</li>
+            <li>✓ O verdadeiro ambiente peregrino</li>
+            <li>✕ Por ordem de chegada — sem reserva</li>
+            <li>✕ Dormitórios maiores, mais ressonar</li>
+          </ul>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+          <p class="font-bold text-forest-900">Privado <span class="text-xs font-semibold text-earth-700 bg-earth-50 border border-earth-200 rounded-full px-2 py-0.5 ml-1">Mais seguro</span></p>
+          <ul class="mt-3 space-y-2 text-sm text-slate-700 leading-relaxed">
+            <li>✓ Podes reservar com antecedência</li>
+            <li>✓ Quartos mais pequenos, melhores duches</li>
+            <li>✓ Muitas vezes lavandaria + cozinha</li>
+            <li>✕ 15–22 € — um pouco mais</li>
+          </ul>
+        </div>
+      </div>
+      <p class="mt-4 inline-flex items-start gap-2 rounded-lg bg-earth-50 border border-earth-200 px-3 py-2 text-sm font-semibold text-earth-800">
+        <span aria-hidden="true">💡</span>
+        <span>O que importa mesmo: combina-os. Municipal quando chegas cedo e queres o ambiente; privado quando precisas de cama garantida e de dormir bem.</span>
+      </p>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+      <h2 class="text-xl sm:text-2xl font-bold text-forest-900 tracking-tight mb-4">Respostas rápidas</h2>
+      <div class="space-y-3">
+        {faqs.map((f) => (
+          <details class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+            <summary class="px-5 py-4 font-semibold text-forest-900 cursor-pointer">{f.q}</summary>
+            <div class="px-5 pb-5 text-sm text-slate-700 leading-relaxed border-t border-slate-100 pt-3">{f.a}</div>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- Hub: dúvidas, respondidas a fundo -->
+    <section>
+      <h2 class="text-xl sm:text-2xl font-bold text-forest-900 tracking-tight mb-1">Ainda com dúvidas? As respostas honestas</h2>
+      <p class="text-sm text-slate-500 mb-4">As perguntas que tiram o sono aos peregrinos — cada uma respondida a fundo.</p>
+      <div class="grid sm:grid-cols-2 gap-3">
+        {worries.map((w) => (
+          <a href={w.href} class="group flex items-center justify-between gap-3 bg-white border border-slate-200 rounded-2xl p-4 shadow-sm no-underline hover:border-forest-300 hover:shadow-md transition-all">
+            <span class="font-semibold text-forest-900 group-hover:text-forest-700">{w.q}</span>
+            <svg class="h-4 w-4 shrink-0 text-earth-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Continuar a planear -->
+    <section class="bg-forest-50 border border-forest-200 rounded-2xl p-6">
+      <h2 class="text-base font-bold text-forest-900 mb-3">Continuar a planear</h2>
+      <ul class="space-y-2 text-sm">
+        {loops.map((l) => (
+          <li><a href={l.href} class="text-forest-700 hover:underline no-underline font-medium inline-flex items-center gap-1.5">{l.label} →</a></li>
+        ))}
+      </ul>
+    </section>
+
+    <TrustBadge lang="pt" />
+  </div>
+</MainLayout>

@@ -11,6 +11,7 @@ import {
   hubPath,
   ferryPath,
   coastalWhereToStayPath,
+  guidePath,
   i18nUrlsFor,
   type Lang,
 } from '../../../lib/clusterRoutes';
@@ -86,7 +87,7 @@ const graph = buildClusterGraph({
 const ferry = ferryPath(lang);
 const hub = hubPath(lang);
 const stayHub = coastalWhereToStayPath(lang);
-const GUIDE_URL = '/camino-portugues-guide/';
+const GUIDE_URL = guidePath(lang);
 const guideLabel: Record<Lang, string> = {
   en: 'Pilgrim Essentials: what to know before you go',
   es: 'Esenciales del peregrino: lo que debes saber antes de ir',
