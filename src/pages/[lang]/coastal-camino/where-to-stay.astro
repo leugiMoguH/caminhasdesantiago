@@ -1,0 +1,239 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+import { getCollection } from 'astro:content';
+import { buildClusterGraph } from '../../../lib/clusterSchema';
+import {
+  UI,
+  LANGS,
+  SITE_URL,
+  townPath,
+  bestAlberguesPath,
+  bestStagesToSleepPath,
+  cheapestAlberguesPath,
+  coastalWhereToStayPath,
+  caminhaGuidePath,
+  hubPath,
+  type Lang,
+} from '../../../lib/clusterRoutes';
+import { bookingSearch } from '../../../lib/booking';
+
+export function getStaticPaths() {
+  return LANGS.map((lang) => ({ params: { lang } }));
+}
+
+const lang = Astro.params.lang as Lang;
+const ui = UI[lang];
+const PAGE_PATH = coastalWhereToStayPath(lang);
+const i18nUrls = {
+  en: `${SITE_URL}${coastalWhereToStayPath('en')}`,
+  es: `${SITE_URL}${coastalWhereToStayPath('es')}`,
+  pt: `${SITE_URL}${coastalWhereToStayPath('pt')}`,
+};
+
+const towns = await getCollection('towns', (e) => e.data.sourceVerified);
+const townById = new Map(towns.map((t) => [t.id, t]));
+const priceNum = (p?: string): number => {
+  const m = p ? p.match(/\d+/) : null;
+  return m ? parseInt(m[0], 10) : Number.POSITIVE_INFINITY;
+};
+// Route order (north-to-Santiago) + a short curated reason per stop.
+const ORDER: { slug: string; en: string; es: string; pt: string }[] = [
+  { slug: 'a-guarda', en: 'First town in Spain after the river crossing — two albergues and full services to settle in.', es: 'Primer pueblo en España tras el cruce del río: dos albergues y servicios completos para instalarse.', pt: 'Primeira vila em Espanha após a travessia do rio: dois albergues e serviços completos para instalar-se.' },
+  { slug: 'oia', en: 'Tiny monastery village — only a handful of beds, so book ahead, but the most scenic overnight on the coast.', es: 'Diminuto pueblo del monasterio: muy pocas plazas, reserva con antelación, pero la noche más bonita de la costa.', pt: 'Minúscula aldeia do mosteiro: poucas camas, reserva com antecedência, mas a noite mais cénica da costa.' },
+  { slug: 'baiona', en: 'Handsome fortress town — private albergues only, so reserve in summer; lovely seafront and food.', es: 'Bonita villa con fortaleza: solo albergues privados, reserva en verano; gran paseo marítimo y comida.', pt: 'Bela vila com fortaleza: só albergues privados, reserva no verão; ótima frente-mar e comida.' },
+  { slug: 'vigo', en: 'Galicia’s biggest city — a large, cheap public albergue (first-come) plus every service and transport link.', es: 'La mayor ciudad de Galicia: gran albergue público barato (por orden de llegada) y todos los servicios.', pt: 'A maior cidade da Galiza: grande albergue público barato (por ordem de chegada) e todos os serviços.' },
+  { slug: 'redondela', en: 'Where the Coastal and Central routes meet — public Casa da Torre plus bookable private albergues.', es: 'Donde se unen la Costa y el Central: Casa da Torre pública y albergues privados con reserva.', pt: 'Onde se juntam a Costa e o Central: Casa da Torre pública e albergues privados com reserva.' },
+  { slug: 'pontevedra', en: 'The best rest-day city — a car-free old town, a public albergue and plenty of bookable hostels.', es: 'La mejor ciudad para descansar: casco antiguo peatonal, albergue público y hostales con reserva.', pt: 'A melhor cidade para descansar: centro antigo pedonal, albergue público e hostels com reserva.' },
+  { slug: 'padron', en: 'The last stop before Santiago — public and private albergues; book ahead to time your final day.', es: 'La última parada antes de Santiago: albergues público y privado; reserva para calcular tu jornada final.', pt: 'A última paragem antes de Santiago: albergues público e privado; reserva para calcular a tua jornada final.' },
+];
+
+const L = {
+  en: {
+    h1: 'Where to stay on the Portuguese Coastal Camino',
+    metaTitle: 'Where to Stay on the Portuguese Coastal Camino (2026): Best Towns & Albergues',
+    metaDescription: 'Where to sleep on the Portuguese Coastal Camino in 2026: the best towns to overnight from Caminha to Padrón, with albergues, prices, booking tips and links to compare every stop.',
+    intro: 'These are the towns pilgrims actually sleep in on the Coastal Camino, in route order from the Minho crossing to Padrón. Small coastal villages have few beds and fill in summer — book ahead — while the cities have large public albergues you cannot reserve. Tap any stop to compare its albergues.',
+    base: 'Before the crossing: Caminha',
+    baseReason: 'The Portuguese base before crossing into Spain — guesthouses and small hotels by the Minho; book ahead in summer as beds are limited.',
+    bedsLine: (beds: number, n: number, min: number) => `${beds} beds across ${n} ${n === 1 ? 'albergue' : 'albergues'} · from €${min}`,
+    compareAlb: 'Compare albergues',
+    townGuide: 'Town guide',
+    book: 'Book a stay',
+    nextH: 'Plan the route',
+    bestStages: 'Best stages to sleep on the Coastal Camino',
+    cheap: 'Cheapest albergues on the Coastal Camino — budget beds from €10',
+    routeHub: ui.routeHub,
+    faqH: ui.faqHeading,
+    faq: [
+      { q: 'Which towns are best to sleep in on the Coastal Camino?', a: 'In route order: Caminha (before the crossing), then A Guarda, Oia, Baiona, Vigo, Redondela, Pontevedra and Padrón. A Guarda, Vigo, Pontevedra and Padrón have the most beds; Oia and Baiona are the smallest and need booking ahead.' },
+      { q: 'Do I need to book albergues ahead on the coastal route?', a: 'In the small towns (Oia, Baiona) yes, especially May to October, because beds are few and private albergues take reservations. The big public albergues in Vigo, Pontevedra and Padrón are first-come and cannot be reserved, so arrive early in high season.' },
+      { q: 'Are there albergues the whole way along the coast?', a: 'Yes. Every overnight town from A Guarda to Padrón has at least one pilgrim albergue, mixing cheap public (municipal/Xunta) hostels with bookable private ones, plus hotels in the larger places.' },
+    ],
+  },
+  es: {
+    h1: 'Dónde dormir en el Camino Portugués de la Costa',
+    metaTitle: 'Dónde Dormir en el Camino Portugués de la Costa (2026): Mejores Pueblos y Albergues',
+    metaDescription: 'Dónde dormir en el Camino Portugués de la Costa en 2026: los mejores pueblos para pernoctar de Caminha a Padrón, con albergues, precios, consejos de reserva y enlaces para comparar cada parada.',
+    intro: 'Estos son los pueblos donde realmente duermen los peregrinos en el Camino de la Costa, en orden de ruta desde el cruce del Miño hasta Padrón. Los pequeños pueblos costeros tienen pocas plazas y se llenan en verano —reserva con antelación—, mientras que las ciudades tienen grandes albergues públicos que no se pueden reservar. Toca cualquier parada para comparar sus albergues.',
+    base: 'Antes del cruce: Caminha',
+    baseReason: 'La base portuguesa antes de cruzar a España: pensiones y pequeños hoteles junto al Miño; reserva en verano porque las plazas son limitadas.',
+    bedsLine: (beds: number, n: number, min: number) => `${beds} plazas en ${n} ${n === 1 ? 'albergue' : 'albergues'} · desde ${min} €`,
+    compareAlb: 'Comparar albergues',
+    townGuide: 'Guía del pueblo',
+    book: 'Reservar alojamiento',
+    nextH: 'Planifica la ruta',
+    bestStages: 'Mejores etapas para dormir en el Camino de la Costa',
+    cheap: 'Albergues más baratos del Camino de la Costa — plazas desde 10 €',
+    routeHub: ui.routeHub,
+    faqH: ui.faqHeading,
+    faq: [
+      { q: '¿En qué pueblos conviene dormir en el Camino de la Costa?', a: 'En orden de ruta: Caminha (antes del cruce), luego A Guarda, Oia, Baiona, Vigo, Redondela, Pontevedra y Padrón. A Guarda, Vigo, Pontevedra y Padrón tienen más plazas; Oia y Baiona son los más pequeños y conviene reservar.' },
+      { q: '¿Hace falta reservar los albergues con antelación?', a: 'En los pueblos pequeños (Oia, Baiona) sí, sobre todo de mayo a octubre, porque hay pocas plazas y los albergues privados admiten reserva. Los grandes albergues públicos de Vigo, Pontevedra y Padrón son por orden de llegada y no se reservan, así que llega temprano en temporada alta.' },
+      { q: '¿Hay albergues durante todo el camino por la costa?', a: 'Sí. Cada pueblo de pernocta de A Guarda a Padrón tiene al menos un albergue de peregrinos, combinando albergues públicos baratos (municipales/Xunta) con privados que admiten reserva, más hoteles en las localidades mayores.' },
+    ],
+  },
+  pt: {
+    h1: 'Onde ficar no Caminho Português da Costa',
+    metaTitle: 'Onde Ficar no Caminho Português da Costa (2026): Melhores Vilas e Albergues',
+    metaDescription: 'Onde dormir no Caminho Português da Costa em 2026: as melhores vilas para pernoitar de Caminha a Padrón, com albergues, preços, dicas de reserva e ligações para comparar cada paragem.',
+    intro: 'Estas são as vilas onde os peregrinos realmente dormem no Caminho da Costa, por ordem de percurso desde a travessia do Minho até Padrón. As pequenas vilas costeiras têm poucas camas e enchem no verão —reserva com antecedência—, enquanto as cidades têm grandes albergues públicos que não se podem reservar. Toca em qualquer paragem para comparar os seus albergues.',
+    base: 'Antes da travessia: Caminha',
+    baseReason: 'A base portuguesa antes de atravessar para Espanha: pensões e pequenos hotéis junto ao Minho; reserva no verão porque as camas são limitadas.',
+    bedsLine: (beds: number, n: number, min: number) => `${beds} camas em ${n} ${n === 1 ? 'albergue' : 'albergues'} · desde ${min} €`,
+    compareAlb: 'Comparar albergues',
+    townGuide: 'Guia da vila',
+    book: 'Reservar alojamento',
+    nextH: 'Planeia o percurso',
+    bestStages: 'Melhores etapas para dormir no Caminho da Costa',
+    cheap: 'Albergues mais baratos do Caminho da Costa — camas desde 10 €',
+    routeHub: ui.routeHub,
+    faqH: ui.faqHeading,
+    faq: [
+      { q: 'Em que vilas convém dormir no Caminho da Costa?', a: 'Por ordem de percurso: Caminha (antes da travessia), depois A Guarda, Oia, Baiona, Vigo, Redondela, Pontevedra e Padrón. A Guarda, Vigo, Pontevedra e Padrón têm mais camas; Oia e Baiona são as mais pequenas e convém reservar.' },
+      { q: 'É preciso reservar os albergues com antecedência?', a: 'Nas vilas pequenas (Oia, Baiona) sim, sobretudo de maio a outubro, porque há poucas camas e os albergues privados aceitam reserva. Os grandes albergues públicos de Vigo, Pontevedra e Padrón são por ordem de chegada e não se reservam, por isso chega cedo na época alta.' },
+      { q: 'Há albergues ao longo de todo o caminho pela costa?', a: 'Sim. Cada vila de pernoita de A Guarda a Padrón tem pelo menos um albergue de peregrinos, combinando albergues públicos baratos (municipais/Xunta) com privados que aceitam reserva, além de hotéis nas localidades maiores.' },
+    ],
+  },
+}[lang];
+
+const stops = ORDER.map((o) => {
+  const t = townById.get(o.slug);
+  if (!t) return null;
+  const accs = t.data.accommodations;
+  const beds = accs.reduce((s: number, a: any) => s + (a.beds ?? 0), 0);
+  const min = Math.min(...accs.map((a: any) => priceNum(a.priceEUR)).filter((n: number) => Number.isFinite(n)));
+  return {
+    slug: o.slug,
+    name: t.data.name,
+    reason: o[lang],
+    beds,
+    n: accs.length,
+    min: Number.isFinite(min) ? min : null,
+    bookingHref: bookingSearch(t.data.name, `wtsg-staycoast-${lang}-${o.slug}`),
+  };
+}).filter((x): x is NonNullable<typeof x> => x !== null);
+
+const breadcrumb = [
+  { name: ui.home, item: `/${lang}/` },
+  { name: ui.routeHub, item: hubPath(lang) },
+  { name: L.h1, item: PAGE_PATH },
+];
+const graph = buildClusterGraph({
+  lang,
+  pagePath: PAGE_PATH,
+  title: L.metaTitle,
+  description: L.metaDescription,
+  breadcrumb,
+  entity: {
+    '@type': 'ItemList',
+    name: L.h1,
+    numberOfItems: stops.length,
+    itemListElement: stops.map((s, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: s.name,
+      url: `${SITE_URL}${bestAlberguesPath(lang, s.slug)}`,
+    })),
+  },
+  faq: L.faq,
+});
+const hub = hubPath(lang);
+const caminha = caminhaGuidePath(lang);
+const bestStages = bestStagesToSleepPath(lang);
+const cheapest = cheapestAlberguesPath(lang);
+---
+
+<MainLayout title={L.metaTitle} description={L.metaDescription} lang={lang} schemaType="none" i18nUrls={i18nUrls}>
+  <script type="application/ld+json" set:html={JSON.stringify(graph).replace(/</g, '\\u003c')} />
+
+  <div class="bg-gradient-to-br from-forest-800 to-forest-950 text-white">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+      <nav aria-label="Breadcrumb" class="mb-5">
+        <ol class="flex flex-wrap items-center gap-2 text-sm text-forest-100">
+          <li><a href={`/${lang}/`} class="text-slate-300 hover:text-white no-underline hover:underline">{ui.home}</a></li>
+          <li aria-hidden="true" class="text-forest-600">›</li>
+          <li><a href={hub} class="text-slate-300 hover:text-white no-underline hover:underline">{ui.routeHub}</a></li>
+          <li aria-hidden="true" class="text-forest-600">›</li>
+          <li aria-current="page" class="text-white font-medium">{L.h1}</li>
+        </ol>
+      </nav>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4 tracking-tight text-white">{L.h1}</h1>
+      <p class="text-forest-100 text-base leading-relaxed max-w-2xl">{L.intro}</p>
+    </div>
+  </div>
+
+  <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 space-y-10">
+    <!-- Caminha base -->
+    <section class="bg-earth-50 border border-earth-200 rounded-2xl p-5">
+      <h2 class="font-bold text-forest-900">{L.base}</h2>
+      <p class="text-sm text-slate-700 leading-relaxed mt-1">{L.baseReason}</p>
+      <a href={caminha} class="text-sm font-semibold text-forest-700 hover:underline no-underline mt-2 inline-block">{L.townGuide} →</a>
+    </section>
+
+    <!-- Ranked stops -->
+    <section data-aff-pos="mid">
+      <ol class="space-y-4">
+        {stops.map((s, i) => (
+          <li class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm flex gap-4">
+            <span class="shrink-0 flex h-9 w-9 items-center justify-center rounded-full bg-forest-700 text-white text-base font-bold" aria-hidden="true">{i + 1}</span>
+            <div class="flex-1 min-w-0">
+              <p class="font-bold text-forest-900">{s.name}</p>
+              {s.beds > 0 && s.min !== null && (
+                <p class="text-xs text-slate-500 mt-0.5">{L.bedsLine(s.beds, s.n, s.min)}</p>
+              )}
+              <p class="text-sm text-slate-700 leading-relaxed mt-2">{s.reason}</p>
+              <div class="flex flex-wrap gap-x-4 gap-y-1 mt-2.5 text-sm">
+                <a href={bestAlberguesPath(lang, s.slug)} class="font-semibold text-forest-700 hover:underline no-underline">{L.compareAlb} →</a>
+                <a href={townPath(lang, s.slug)} class="text-slate-600 hover:underline no-underline">{L.townGuide}</a>
+                <a href={s.bookingHref} rel="nofollow noopener noreferrer sponsored" target="_blank" class="font-semibold text-earth-700 hover:underline no-underline">{L.book}</a>
+              </div>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <!-- Next steps -->
+    <section class="bg-forest-50 border border-forest-200 rounded-2xl p-6">
+      <h2 class="text-base font-bold text-forest-900 mb-3">{L.nextH}</h2>
+      <ul class="space-y-2 text-sm">
+        <li><a href={cheapest} class="text-forest-700 hover:underline no-underline font-medium">{L.cheap}</a></li>
+        <li><a href={bestStages} class="text-forest-700 hover:underline no-underline font-medium">{L.bestStages}</a></li>
+        <li><a href={hub} class="text-forest-700 hover:underline no-underline font-medium">{L.routeHub}</a></li>
+      </ul>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+      <h2 class="text-2xl font-bold text-forest-900 mb-5 tracking-tight">{L.faqH}</h2>
+      <div class="space-y-3">
+        {L.faq.map((f) => (
+          <details class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+            <summary class="px-6 py-4 font-semibold text-forest-900 cursor-pointer">{f.q}</summary>
+            <div class="px-6 pb-5 text-sm text-slate-700 leading-relaxed border-t border-slate-100 pt-3">{f.a}</div>
+          </details>
+        ))}
+      </div>
+    </section>
+  </div>
+</MainLayout>

@@ -1,0 +1,137 @@
+name: Padrón
+country: ES
+region: A Coruña (Galicia)
+onStageSlug: caldas-de-reis-padron
+geo:
+  lat: 42.7395
+  lng: -8.6605
+accommodations:
+  - name: Albergue de peregrinos de Padrón (Xunta)
+    type: municipal-albergue
+    beds: 46
+    priceEUR: "10"
+    openSeason: All year
+    url: https://wisepilgrim.com/en/accommodations/camino-portugues/padron/albergue-de-peregrinos-de-padron
+    bookable: false
+    highlight:
+      en: "Public Xunta albergue with 46 beds at €10, central near the Sar river — first-come, the budget choice for the last night before Santiago."
+      es: "Albergue público de la Xunta con 46 plazas a 10 €, céntrico junto al río Sar; por orden de llegada, la opción económica para la última noche antes de Santiago."
+      pt: "Albergue público da Xunta com 46 camas a 10 €, central junto ao rio Sar; por ordem de chegada, a opção económica para a última noite antes de Santiago."
+  - name: Albergue O Pedrón
+    type: private-albergue
+    beds: 44
+    priceEUR: "17–19"
+    openSeason: All year
+    url: https://www.alberguescaminosantiago.com/camino-portugues/albergue-o-pedron-padron/
+    bookable: true
+    highlight:
+      en: "Modern private albergue with 44 beds, an on-site bar-restaurant and a wheelchair-accessible place — takes reservations, 400 m from the centre."
+      es: "Albergue privado moderno con 44 plazas, bar-restaurante propio y una plaza accesible; admite reserva, a 400 m del centro."
+      pt: "Albergue privado moderno com 44 camas, bar-restaurante próprio e um lugar acessível; aceita reserva, a 400 m do centro."
+services:
+  - Public + private pilgrim albergues
+  - Credential stamp (sello)
+  - Igrexa de Santiago (the Pedrón stone)
+  - Rosalía de Castro house-museum
+  - Restaurants (famous Padrón peppers)
+  - Market, supermarkets and shops
+  - ATMs and pharmacy
+  - Train and buses to Santiago
+whereToStay:
+  en:
+    intro: "Padrón is the last stop before Santiago, so its beds are in demand from pilgrims timing a final short day into the city. There is a public albergue and several private ones, plus hotels; the public albergue is cheapest but first-come, so in summer have a backup or book a private bed ahead."
+    areas:
+      - name: "Town centre by the river"
+        blurb: "The heart of Padrón around the Santiago church and the riverside gardens keeps you among the tapas bars, the pepper stalls and the route out toward Santiago — the natural base for the last night on the Camino."
+        bookingQuery: "Padron centro"
+        anchor: "hotels and guesthouses in central Padrón"
+      - name: "Near the station"
+        blurb: "Padrón has a train station with frequent links to Santiago, so rooms nearby suit anyone planning to ride in, send luggage ahead, or start the final stage early without a cross-town walk."
+        bookingQuery: "Padron estación"
+        anchor: "stays near Padrón station"
+  es:
+    intro: "Padrón es la última parada antes de Santiago, así que sus plazas tienen demanda entre quienes calculan una corta jornada final hacia la ciudad. Hay un albergue público y varios privados, además de hoteles; el público es el más barato pero por orden de llegada, así que en verano ten un plan B o reserva una plaza privada con antelación."
+    areas:
+      - name: "Centro junto al río"
+        blurb: "El corazón de Padrón, en torno a la iglesia de Santiago y los jardines junto al río, te deja entre los bares de tapas, los puestos de pimientos y la salida hacia Santiago: la base natural para la última noche del Camino."
+        bookingQuery: "Padron centro"
+        anchor: "hoteles y pensiones en el centro de Padrón"
+      - name: "Junto a la estación"
+        blurb: "Padrón tiene estación de tren con enlaces frecuentes a Santiago, así que las habitaciones cercanas convienen a quien piense llegar en tren, enviar la mochila por delante o empezar la etapa final temprano sin cruzar el pueblo."
+        bookingQuery: "Padron estación"
+        anchor: "alojamientos cerca de la estación de Padrón"
+  pt:
+    intro: "Padrón é a última paragem antes de Santiago, por isso as suas camas têm procura entre quem calcula uma curta jornada final até à cidade. Há um albergue público e vários privados, além de hotéis; o público é o mais barato mas por ordem de chegada, por isso no verão tem um plano B ou reserva uma cama privada com antecedência."
+    areas:
+      - name: "Centro junto ao rio"
+        blurb: "O coração de Padrón, em redor da igreja de Santiago e dos jardins junto ao rio, deixa-te entre os bares de tapas, as bancas de pimentos e a saída para Santiago: a base natural para a última noite do Caminho."
+        bookingQuery: "Padron centro"
+        anchor: "hotéis e pensões no centro de Padrón"
+      - name: "Junto à estação"
+        blurb: "Padrón tem estação de comboio com ligações frequentes a Santiago, por isso os quartos próximos convêm a quem pense chegar de comboio, enviar a mochila à frente ou começar a etapa final cedo sem atravessar a vila."
+        bookingQuery: "Padron estação"
+        anchor: "alojamentos perto da estação de Padrón"
+sourceVerified: true
+lastVerified: "2026-06-24"
+sources:
+  - https://wisepilgrim.com/en/accommodations/camino-portugues/padron/albergue-de-peregrinos-de-padron
+  - https://www.alberguescaminosantiago.com/camino-portugues/albergue-o-pedron-padron/
+  - https://pilgrim8.com/camino-portugues/padron/albergue-de-peregrinos
+i18n:
+  en:
+    metaTitle: "Where to Stay in Padrón (2026): Best Albergues for the Last Night Before Santiago"
+    metaDescription: "Padrón, Galicia: the legendary cradle of the Camino and last stop before Santiago. Public albergue (46 beds, €10) plus private albergues, where to stay, the Pedrón stone, Padrón peppers and the final stage."
+    h1: "Padrón"
+    lead: "Padrón is where the Galician Camino begins its legend and the pilgrim journey nearly ends. Tradition says the stone boat carrying the body of St James moored here, tying up to the pedrón — the stone now kept beneath the altar of the Santiago church, which gives the town its name. Just 24 km from the cathedral, it is the classic last overnight before walking into Santiago."
+    sections:
+      - heading: "Where pilgrims stay"
+        body: "Padrón has a public Xunta albergue with 46 beds at €10, open all year and assigned first-come, central near the Sar river. Because it is the final stop before Santiago, beds fill, so a dependable alternative is the private Albergue O Pedrón (44 beds, about €17–19, open all year, bookable, with a bar-restaurant and a wheelchair-accessible place) along with the town's hotels. Book a private bed ahead in summer if you want certainty for the last night."
+      - heading: "The cradle of the Camino"
+        body: "Padrón is steeped in the Saint James story: the pedrón stone under the church altar, the Santiaguiño do Monte hermitage above town, and a deep place in Galician culture as the home of the poet Rosalía de Castro, whose house is now a museum. It is also famous for its peppers — pementos de Padrón, the small green peppers where, as the saying goes, 'some are hot and some are not.'"
+      - heading: "The final stage to Santiago"
+        body: "From Padrón the last stage runs about 24 km to Santiago de Compostela through A Escravitude, O Milladoiro and the first distant view of the cathedral spires. Many pilgrims walk it in one day to reach the Obradoiro square by afternoon. If you would rather arrive fresh, an early start from Padrón gives you time for the Pilgrim's Mass."
+    faq:
+      - q: "Where can pilgrims stay in Padrón?"
+        a: "The public Xunta albergue has 46 beds at €10, open all year, first-come with no reservations. As Padrón is the last stop before Santiago, a reliable backup is the bookable private Albergue O Pedrón (44 beds, about €17–19, open all year), plus the town's hotels."
+      - q: "How far is Padrón from Santiago?"
+        a: "About 24 km — the classic final stage of the Portuguese Camino, walkable in a day through A Escravitude and O Milladoiro into Santiago de Compostela."
+      - q: "Why is Padrón called the cradle of the Camino?"
+        a: "Tradition holds that the boat carrying the body of St James moored at Padrón, tying to the pedrón stone now kept beneath the Santiago church altar — the origin of the town's name and a founding site of the whole Santiago pilgrimage."
+  es:
+    metaTitle: "Dónde Dormir en Padrón (2026): Mejores Albergues para la Última Noche Antes de Santiago"
+    metaDescription: "Padrón, Galicia: la cuna legendaria del Camino y última parada antes de Santiago. Albergue público (46 plazas, 10 €) y albergues privados, dónde dormir, la piedra del Pedrón, los pimientos y la etapa final."
+    h1: "Padrón"
+    lead: "Padrón es donde el Camino gallego comienza su leyenda y el viaje del peregrino casi termina. La tradición dice que la barca de piedra que traía el cuerpo del Apóstol Santiago atracó aquí, amarrando al pedrón, la piedra que hoy se guarda bajo el altar de la iglesia de Santiago y que da nombre al pueblo. A solo 24 km de la catedral, es la clásica última noche antes de entrar en Santiago."
+    sections:
+      - heading: "Dónde duermen los peregrinos"
+        body: "Padrón tiene un albergue público de la Xunta con 46 plazas a 10 €, abierto todo el año y por orden de llegada, céntrico junto al río Sar. Al ser la última parada antes de Santiago, las plazas se llenan, así que una alternativa fiable es el Albergue O Pedrón privado (44 plazas, unos 17–19 €, abierto todo el año, con reserva, con bar-restaurante y una plaza accesible) junto a los hoteles del pueblo. Reserva una plaza privada con antelación en verano si quieres seguridad para la última noche."
+      - heading: "La cuna del Camino"
+        body: "Padrón está impregnada de la historia del Apóstol: la piedra del pedrón bajo el altar de la iglesia, la ermita de Santiaguiño do Monte sobre el pueblo y un lugar hondo en la cultura gallega como hogar de la poeta Rosalía de Castro, cuya casa es hoy museo. Es también famosa por sus pimientos —los pementos de Padrón, los pequeños pimientos verdes de los que, como dice el refrán, 'unos pican y otros no'."
+      - heading: "La etapa final a Santiago"
+        body: "Desde Padrón la última etapa recorre unos 24 km hasta Santiago de Compostela por A Escravitude, O Milladoiro y la primera vista lejana de las torres de la catedral. Muchos peregrinos la hacen en un día para llegar a la plaza del Obradoiro por la tarde. Si prefieres llegar fresco, salir temprano de Padrón te da tiempo para la Misa del Peregrino."
+    faq:
+      - q: "¿Dónde pueden alojarse los peregrinos en Padrón?"
+        a: "El albergue público de la Xunta tiene 46 plazas a 10 €, abierto todo el año, por orden de llegada y sin reservas. Como Padrón es la última parada antes de Santiago, un respaldo fiable es el Albergue O Pedrón privado (44 plazas, unos 17–19 €, abierto todo el año, con reserva), además de los hoteles del pueblo."
+      - q: "¿A qué distancia está Padrón de Santiago?"
+        a: "A unos 24 km, la clásica etapa final del Camino Portugués, caminable en un día por A Escravitude y O Milladoiro hasta Santiago de Compostela."
+      - q: "¿Por qué se llama a Padrón la cuna del Camino?"
+        a: "La tradición sostiene que la barca que traía el cuerpo del Apóstol Santiago atracó en Padrón, amarrando a la piedra del pedrón que hoy se guarda bajo el altar de la iglesia de Santiago: el origen del nombre del pueblo y un lugar fundacional de toda la peregrinación a Santiago."
+  pt:
+    metaTitle: "Onde Ficar em Padrón (2026): Melhores Albergues para a Última Noite Antes de Santiago"
+    metaDescription: "Padrón, Galiza: o berço lendário do Caminho e última paragem antes de Santiago. Albergue público (46 camas, 10 €) e albergues privados, onde ficar, a pedra do Pedrón, os pimentos e a etapa final."
+    h1: "Padrón"
+    lead: "Padrón é onde o Caminho galego começa a sua lenda e a viagem do peregrino quase termina. A tradição diz que o barco de pedra que trazia o corpo do Apóstolo Santiago aqui aportou, amarrando ao pedrón, a pedra hoje guardada sob o altar da igreja de Santiago e que dá nome à vila. A apenas 24 km da catedral, é a clássica última noite antes de entrar em Santiago."
+    sections:
+      - heading: "Onde os peregrinos ficam"
+        body: "Padrón tem um albergue público da Xunta com 46 camas a 10 €, aberto todo o ano e por ordem de chegada, central junto ao rio Sar. Por ser a última paragem antes de Santiago, as camas enchem, por isso uma alternativa fiável é o Albergue O Pedrón privado (44 camas, cerca de 17–19 €, aberto todo o ano, com reserva, com bar-restaurante e um lugar acessível) a par dos hotéis da vila. Reserva uma cama privada com antecedência no verão se queres segurança para a última noite."
+      - heading: "O berço do Caminho"
+        body: "Padrón está impregnada da história do Apóstolo: a pedra do pedrón sob o altar da igreja, a ermida de Santiaguiño do Monte sobre a vila e um lugar profundo na cultura galega como casa da poeta Rosalía de Castro, cuja casa é hoje museu. É também famosa pelos seus pimentos — os pementos de Padrón, os pequenos pimentos verdes dos quais, como diz o ditado, 'uns picam e outros não'."
+      - heading: "A etapa final até Santiago"
+        body: "A partir de Padrón a última etapa percorre cerca de 24 km até Santiago de Compostela por A Escravitude, O Milladoiro e a primeira vista distante das torres da catedral. Muitos peregrinos fazem-na num dia para chegar à praça do Obradoiro à tarde. Se preferes chegar fresco, partir cedo de Padrón dá-te tempo para a Missa do Peregrino."
+    faq:
+      - q: "Onde podem ficar os peregrinos em Padrón?"
+        a: "O albergue público da Xunta tem 46 camas a 10 €, aberto todo o ano, por ordem de chegada e sem reservas. Como Padrón é a última paragem antes de Santiago, um apoio fiável é o Albergue O Pedrón privado (44 camas, cerca de 17–19 €, aberto todo o ano, com reserva), além dos hotéis da vila."
+      - q: "A que distância fica Padrón de Santiago?"
+        a: "A cerca de 24 km, a clássica etapa final do Caminho Português, caminhável num dia por A Escravitude e O Milladoiro até Santiago de Compostela."
+      - q: "Porque é Padrón chamada o berço do Caminho?"
+        a: "A tradição sustenta que o barco que trazia o corpo do Apóstolo Santiago aportou em Padrón, amarrando à pedra do pedrón hoje guardada sob o altar da igreja de Santiago: a origem do nome da vila e um lugar fundador de toda a peregrinação a Santiago."

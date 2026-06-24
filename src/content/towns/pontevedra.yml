@@ -1,0 +1,137 @@
+name: Pontevedra
+country: ES
+region: Pontevedra (Galicia)
+onStageSlug: redondela-pontevedra
+geo:
+  lat: 42.4310
+  lng: -8.6444
+accommodations:
+  - name: Albergue de peregrinos de Pontevedra (Virgen Peregrina)
+    type: municipal-albergue
+    beds: 56
+    priceEUR: "10"
+    openSeason: All year (closed approx. 24 Dec – 7 Jan)
+    url: https://www.alberguescaminosantiago.com/camino-portugues/albergue-de-peregrinos-de-pontevedra/
+    bookable: false
+    highlight:
+      en: "Modern public Xunta albergue with 56 beds (up to 86 in peak season), a short walk from the car-free old town — first-come."
+      es: "Albergue público de la Xunta moderno con 56 plazas (hasta 86 en temporada alta), a un paso del casco antiguo peatonal; por orden de llegada."
+      pt: "Albergue público da Xunta moderno com 56 camas (até 86 na época alta), a um passo do centro antigo pedonal; por ordem de chegada."
+  - name: Slow City Hostel
+    type: private-albergue
+    beds: 6
+    priceEUR: "20–23"
+    openSeason: 1 Mar – 30 Nov
+    url: https://www.alberguescaminosantiago.com/camino-portugues/albergues/albergue-slow-city-hostel-pontevedra/
+    bookable: true
+    highlight:
+      en: "Small, highly rated private hostel in a restored 1920 building in the monumental old town — no curfew, bookable, issues credentials."
+      es: "Pequeño albergue privado muy valorado en un edificio de 1920 restaurado en la zona monumental; sin toque de queda, con reserva, expide credencial."
+      pt: "Pequeno albergue privado muito bem avaliado num edifício de 1920 restaurado na zona monumental; sem recolher, com reserva, emite credencial."
+services:
+  - Public + private pilgrim albergues
+  - Credential stamp (sello)
+  - Wide choice of restaurants and tapas (car-free old town)
+  - Supermarkets and shops
+  - ATMs and banks
+  - Pharmacies and hospital
+  - Train and bus stations
+  - Start of the Spiritual Variant (Variante Espiritual)
+whereToStay:
+  en:
+    intro: "Pontevedra is a real rest-day city with one of the finest car-free old towns in Spain, so accommodation is plentiful — from the public albergue to small hostels and hotels among the granite squares. The public albergue is cheapest but does not take bookings; the old town is where most pilgrims want to be."
+    areas:
+      - name: "Zona monumental (car-free old town)"
+        blurb: "The pedestrianised old town — Praza da Leña, the Pilgrim Virgin church, dozens of tapas bars — is the heart of Pontevedra and where small hostels and characterful hotels cluster. Stay here and you step out of your door into the best of the city."
+        bookingQuery: "Pontevedra casco antiguo"
+        anchor: "hotels and hostels in Pontevedra's old town"
+      - name: "Near the stations"
+        blurb: "If you are taking the train on to Caldas or Santiago, or arriving by rail, rooms near the combined train and bus station save a cross-city walk with a full pack — handy for an early start or a transit night."
+        bookingQuery: "Pontevedra estación"
+        anchor: "stays near Pontevedra's train and bus station"
+  es:
+    intro: "Pontevedra es una auténtica ciudad para un día de descanso, con uno de los mejores cascos antiguos peatonales de España, así que el alojamiento abunda: desde el albergue público hasta pequeños hostales y hoteles entre las plazas de granito. El albergue público es el más barato pero no admite reservas; el casco antiguo es donde la mayoría de los peregrinos quiere estar."
+    areas:
+      - name: "Zona monumental (casco peatonal)"
+        blurb: "El casco antiguo peatonal —Praza da Leña, la iglesia de la Virgen Peregrina, decenas de bares de tapas— es el corazón de Pontevedra y donde se concentran los pequeños hostales y hoteles con encanto. Aloja aquí y sales por la puerta a lo mejor de la ciudad."
+        bookingQuery: "Pontevedra casco antiguo"
+        anchor: "hoteles y hostales en el casco antiguo de Pontevedra"
+      - name: "Junto a las estaciones"
+        blurb: "Si vas a seguir en tren a Caldas o Santiago, o llegas en tren, las habitaciones cerca de la estación conjunta de tren y autobús te ahorran cruzar la ciudad con la mochila: práctico para salir temprano o pasar una noche de tránsito."
+        bookingQuery: "Pontevedra estación"
+        anchor: "alojamientos cerca de la estación de Pontevedra"
+  pt:
+    intro: "Pontevedra é uma autêntica cidade para um dia de descanso, com um dos melhores centros antigos pedonais de Espanha, por isso o alojamento abunda: desde o albergue público a pequenos hostels e hotéis entre as praças de granito. O albergue público é o mais barato mas não aceita reservas; o centro antigo é onde a maioria dos peregrinos quer estar."
+    areas:
+      - name: "Zona monumental (centro pedonal)"
+        blurb: "O centro antigo pedonal —Praza da Leña, a igreja da Virgem Peregrina, dezenas de bares de tapas— é o coração de Pontevedra e onde se concentram os pequenos hostels e hotéis com carácter. Fica aqui e sais à porta para o melhor da cidade."
+        bookingQuery: "Pontevedra centro histórico"
+        anchor: "hotéis e hostels no centro antigo de Pontevedra"
+      - name: "Junto às estações"
+        blurb: "Se vais seguir de comboio para Caldas ou Santiago, ou chegas de comboio, os quartos perto da estação conjunta de comboio e autocarro poupam-te atravessar a cidade com a mochila: prático para partir cedo ou passar uma noite de trânsito."
+        bookingQuery: "Pontevedra estação"
+        anchor: "alojamentos perto da estação de Pontevedra"
+sourceVerified: true
+lastVerified: "2026-06-24"
+sources:
+  - https://www.alberguescaminosantiago.com/camino-portugues/albergue-de-peregrinos-de-pontevedra/
+  - https://www.alberguescaminosantiago.com/camino-portugues/albergues/albergue-slow-city-hostel-pontevedra/
+  - https://www.gronze.com/galicia/pontevedra/pontevedra/albergue-peregrinos-virgen-peregrina
+i18n:
+  en:
+    metaTitle: "Where to Stay in Pontevedra (2026): Best Pilgrim Albergues & the Old Town"
+    metaDescription: "Pontevedra, Galicia: the great rest-day city on the Portuguese Camino, with one of Spain's finest car-free old towns. Public albergue (56 beds, €10), small hostels, where to stay, services and the Spiritual Variant."
+    h1: "Pontevedra"
+    lead: "Pontevedra is the most rewarding city to rest in on the whole Portuguese Camino — a graceful Galician capital whose car-free old town of granite squares, arcades and tapas bars is regularly named one of the best places to walk in Spain. It is also a spiritual landmark: the scallop-shaped church of the Virxe Peregrina, the Pilgrim Virgin, is patron of the route, and the Spiritual Variant branches off just beyond the city."
+    sections:
+      - heading: "Where pilgrims stay"
+        body: "Pontevedra's public albergue, run by the Xunta, is a modern building with 56 beds (expandable to 86 in high season) at €10, open all year except roughly 24 December to 7 January, and assigned first-come with no reservations. As a full city there is far more choice: small, well-rated private hostels such as Slow City Hostel in the old town (6 beds, about €20–23, bookable) and a range of hotels mean you can always find a bed — and the car-free centre is the place to be."
+      - heading: "A city built for walking"
+        body: "Few places suit a pilgrim's rest day better. Pontevedra pedestrianised almost its entire historic core, so you wander car-free between the round Pilgrim Virgin church, the Gothic Basílica de Santa María, Praza da Leña and the market without a single road to cross. It is a place to eat well, replace gear, see a pharmacy or doctor, and let your feet recover before the final push to Santiago."
+      - heading: "Continuing — and the Spiritual Variant"
+        body: "Beyond Pontevedra the main Camino heads for Caldas de Reis, about 21 km on through pine and eucalyptus and the Barosa waterfalls. Just outside the city the Spiritual Variant (Variante Espiritual) branches west via Armenteira and a boat trip up the Ría de Arousa — a longer, scenic detour that rejoins near Padrón. Decide before you leave Pontevedra which line you will follow."
+    faq:
+      - q: "Where can pilgrims stay in Pontevedra?"
+        a: "The public Xunta albergue has 56 beds (up to 86 in peak season) at €10, open all year except around 24 December–7 January, first-come with no reservations. Being a city, Pontevedra also has well-rated private hostels such as Slow City Hostel (6 beds, about €20–23, bookable) and many hotels, so a bed is always findable."
+      - q: "Is Pontevedra a good place for a rest day?"
+        a: "Yes — arguably the best on the Portuguese Camino. Its almost entirely car-free old town, the Pilgrim Virgin church, the basilica and a wealth of tapas bars make it ideal for a low-stress day off, with all city services close at hand."
+      - q: "Where does the Spiritual Variant start?"
+        a: "The Spiritual Variant (Variante Espiritual) branches off the main Camino just beyond Pontevedra, heading west via the Armenteira monastery and a boat trip up the Ría de Arousa before rejoining the route near Padrón. Choose your line before leaving the city."
+  es:
+    metaTitle: "Dónde Dormir en Pontevedra (2026): Mejores Albergues de Peregrinos y el Casco Antiguo"
+    metaDescription: "Pontevedra, Galicia: la gran ciudad para descansar en el Camino Portugués, con uno de los mejores cascos antiguos peatonales de España. Albergue público (56 plazas, 10 €), hostales, dónde dormir y la Variante Espiritual."
+    h1: "Pontevedra"
+    lead: "Pontevedra es la ciudad más agradecida para descansar de todo el Camino Portugués: una elegante capital gallega cuyo casco antiguo peatonal de plazas de granito, soportales y bares de tapas se cita a menudo entre los mejores lugares para pasear de España. Es además un hito espiritual: la iglesia con forma de concha de la Virxe Peregrina, la Virgen Peregrina, es patrona de la ruta, y la Variante Espiritual se desvía justo pasada la ciudad."
+    sections:
+      - heading: "Dónde duermen los peregrinos"
+        body: "El albergue público de Pontevedra, de la Xunta, es un edificio moderno con 56 plazas (ampliables a 86 en temporada alta) a 10 €, abierto todo el año salvo aproximadamente del 24 de diciembre al 7 de enero, y asignado por orden de llegada sin reservas. Como ciudad completa hay mucha más oferta: pequeños hostales bien valorados como el Slow City Hostel en el casco antiguo (6 plazas, unos 20–23 €, con reserva) y diversos hoteles aseguran cama siempre, y el centro peatonal es el sitio donde estar."
+      - heading: "Una ciudad hecha para caminar"
+        body: "Pocos lugares se prestan mejor a un día de descanso. Pontevedra peatonalizó casi todo su casco histórico, así que paseas sin coches entre la iglesia redonda de la Virgen Peregrina, la basílica gótica de Santa María, la Praza da Leña y el mercado sin cruzar una sola calzada. Es un sitio para comer bien, reponer equipo, ver una farmacia o un médico y dejar que los pies se recuperen antes del tramo final a Santiago."
+      - heading: "Continuar — y la Variante Espiritual"
+        body: "Pasada Pontevedra el Camino principal va hacia Caldas de Reis, a unos 21 km entre pinos y eucaliptos y las cascadas de A Barosa. A la salida de la ciudad la Variante Espiritual se desvía al oeste por Armenteira y un trayecto en barco por la Ría de Arousa, un rodeo más largo y escénico que se reúne cerca de Padrón. Decide antes de salir de Pontevedra qué línea vas a seguir."
+    faq:
+      - q: "¿Dónde pueden alojarse los peregrinos en Pontevedra?"
+        a: "El albergue público de la Xunta tiene 56 plazas (hasta 86 en temporada alta) a 10 €, abierto todo el año salvo en torno al 24 de diciembre–7 de enero, por orden de llegada y sin reservas. Al ser ciudad, Pontevedra también tiene hostales bien valorados como el Slow City Hostel (6 plazas, unos 20–23 €, con reserva) y muchos hoteles, así que siempre se encuentra cama."
+      - q: "¿Es Pontevedra buen sitio para un día de descanso?"
+        a: "Sí, quizá el mejor del Camino Portugués. Su casco antiguo casi totalmente peatonal, la iglesia de la Virgen Peregrina, la basílica y la abundancia de bares de tapas la hacen ideal para un día libre sin estrés, con todos los servicios urbanos a mano."
+      - q: "¿Dónde empieza la Variante Espiritual?"
+        a: "La Variante Espiritual se desvía del Camino principal justo pasada Pontevedra, hacia el oeste por el monasterio de Armenteira y un trayecto en barco por la Ría de Arousa, antes de reunirse con la ruta cerca de Padrón. Elige tu línea antes de salir de la ciudad."
+  pt:
+    metaTitle: "Onde Ficar em Pontevedra (2026): Melhores Albergues de Peregrinos e o Centro Antigo"
+    metaDescription: "Pontevedra, Galiza: a grande cidade para descansar no Caminho Português, com um dos melhores centros antigos pedonais de Espanha. Albergue público (56 camas, 10 €), hostels, onde ficar e a Variante Espiritual."
+    h1: "Pontevedra"
+    lead: "Pontevedra é a cidade mais gratificante para descansar em todo o Caminho Português: uma graciosa capital galega cujo centro antigo pedonal de praças de granito, arcadas e bares de tapas é muitas vezes citado entre os melhores lugares para passear de Espanha. É também um marco espiritual: a igreja em forma de concha da Virxe Peregrina, a Virgem Peregrina, é padroeira da rota, e a Variante Espiritual desvia-se logo a seguir à cidade."
+    sections:
+      - heading: "Onde os peregrinos ficam"
+        body: "O albergue público de Pontevedra, da Xunta, é um edifício moderno com 56 camas (ampliáveis a 86 na época alta) a 10 €, aberto todo o ano exceto aproximadamente de 24 de dezembro a 7 de janeiro, atribuído por ordem de chegada sem reservas. Sendo uma cidade completa há muito mais oferta: pequenos hostels bem avaliados como o Slow City Hostel no centro antigo (6 camas, cerca de 20–23 €, com reserva) e vários hotéis garantem cama sempre, e o centro pedonal é o sítio onde ficar."
+      - heading: "Uma cidade feita para caminhar"
+        body: "Poucos lugares se prestam melhor a um dia de descanso. Pontevedra pedonalizou quase todo o seu centro histórico, por isso passeias sem carros entre a igreja redonda da Virgem Peregrina, a basílica gótica de Santa María, a Praza da Leña e o mercado sem atravessar uma única estrada. É um sítio para comer bem, repor equipamento, ver uma farmácia ou médico e deixar os pés recuperar antes do troço final até Santiago."
+      - heading: "Continuar — e a Variante Espiritual"
+        body: "Depois de Pontevedra o Caminho principal segue para Caldas de Reis, a cerca de 21 km entre pinheiros e eucaliptos e as cascatas da Barosa. À saída da cidade a Variante Espiritual desvia-se para oeste por Armenteira e um trajeto de barco pela Ría de Arousa, um desvio mais longo e cénico que se junta perto de Padrón. Decide antes de sair de Pontevedra que linha vais seguir."
+    faq:
+      - q: "Onde podem ficar os peregrinos em Pontevedra?"
+        a: "O albergue público da Xunta tem 56 camas (até 86 na época alta) a 10 €, aberto todo o ano exceto por volta de 24 de dezembro–7 de janeiro, por ordem de chegada e sem reservas. Sendo cidade, Pontevedra também tem hostels bem avaliados como o Slow City Hostel (6 camas, cerca de 20–23 €, com reserva) e muitos hotéis, por isso há sempre cama."
+      - q: "Pontevedra é bom sítio para um dia de descanso?"
+        a: "Sim, talvez o melhor do Caminho Português. O seu centro antigo quase totalmente pedonal, a igreja da Virgem Peregrina, a basílica e a abundância de bares de tapas tornam-na ideal para um dia de folga sem stress, com todos os serviços urbanos à mão."
+      - q: "Onde começa a Variante Espiritual?"
+        a: "A Variante Espiritual desvia-se do Caminho principal logo a seguir a Pontevedra, para oeste pelo mosteiro de Armenteira e um trajeto de barco pela Ría de Arousa, antes de se juntar à rota perto de Padrón. Escolhe a tua linha antes de sair da cidade."

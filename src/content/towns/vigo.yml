@@ -1,0 +1,139 @@
+name: Vigo
+country: ES
+region: Pontevedra (Galicia)
+onStageSlug: baiona-vigo
+geo:
+  lat: 42.2406
+  lng: -8.7207
+accommodations:
+  - name: Albergue de Peregrinos de Vigo (Xunta de Galicia)
+    type: municipal-albergue
+    beds: 93
+    priceEUR: "10"
+    openSeason: All year
+    url: https://www.alberguescaminosantiago.com/camino-portugues-por-la-costa/albergues/albergue-de-peregrinos-de-la-xunta-de-galicia-de-vigo/
+    bookable: false
+    highlight:
+      en: "Large public albergue (93 beds) in Ribeira do Berbés by the old port, disposable sheets and blankets included — €10, first-come, no reservations."
+      es: "Gran albergue público (93 plazas) en la Ribeira do Berbés junto al puerto viejo, con sábanas desechables y mantas; 10 €, por orden de llegada, sin reservas."
+      pt: "Grande albergue público (93 camas) na Ribeira do Berbés junto ao porto velho, com lençóis descartáveis e cobertores; 10 €, por ordem de chegada, sem reservas."
+services:
+  - Public pilgrim albergue (Xunta, 93 beds, first-come)
+  - Credential stamp (sello)
+  - Full range of restaurants (incl. the oyster street, Rúa da Pescadería)
+  - Supermarkets and shops
+  - ATMs and banks
+  - Pharmacies and hospital
+  - Train stations (Urzáiz AVE, Vigo-Guixar) and bus station
+  - Buses to Peinador airport
+  - Seasonal ferry to the Cíes Islands
+whereToStay:
+  en:
+    intro: "Vigo is Galicia's largest city — around 290,000 people — so beds are plentiful and varied, but the pilgrim line runs through a sprawling urban approach. The public albergue is the cheapest option but does not take reservations, so if you arrive late or want a guaranteed room, these are the areas to look at."
+    areas:
+      - name: "Casco Vello & Ribeira do Berbés"
+        blurb: "The old maritime quarter is where the Camino arrives and where the public albergue sits, in Ribeira do Berbés by the port. Staying in the Casco Vello keeps you among the oyster bars and tapas streets, with the next morning's waymarks right outside."
+        bookingQuery: "Vigo Casco Vello"
+        anchor: "hotels and guesthouses in Vigo's Casco Vello"
+      - name: "Around the stations (Urzáiz / Vigo-Guixar)"
+        blurb: "If you are catching an early train on to Santiago or Porto, or arriving by rail, rooms near Urzáiz and Vigo-Guixar stations save a cross-city walk with a full pack — handy on a rest day or a transit stop."
+        bookingQuery: "Vigo Urzaiz station"
+        anchor: "stays near Vigo's train stations"
+      - name: "Samil seafront"
+        blurb: "The litoral variant passes Samil beach on the way in. Seafront rooms here are quieter than the centre and look out over the Cíes Islands — a calmer base if you want the bay rather than the city at your door."
+        bookingQuery: "Vigo Samil beach"
+        anchor: "seafront rooms near Samil beach"
+  es:
+    intro: "Vigo es la ciudad más grande de Galicia —unos 290.000 habitantes—, así que hay camas de sobra y variadas, pero la ruta del peregrino atraviesa una extensa entrada urbana. El albergue público es la opción más barata pero no admite reservas, así que si llegas tarde o quieres una habitación asegurada, estas son las zonas a mirar."
+    areas:
+      - name: "Casco Vello y Ribeira do Berbés"
+        blurb: "El casco viejo marinero es por donde llega el Camino y donde está el albergue público, en la Ribeira do Berbés junto al puerto. Dormir en el Casco Vello te deja entre las ostrerías y las calles de tapas, con las flechas de la mañana a la puerta."
+        bookingQuery: "Vigo Casco Vello"
+        anchor: "hoteles y pensiones en el Casco Vello de Vigo"
+      - name: "Junto a las estaciones (Urzáiz / Vigo-Guixar)"
+        blurb: "Si vas a coger un tren temprano hacia Santiago o Oporto, o llegas en tren, las habitaciones cerca de las estaciones de Urzáiz y Vigo-Guixar te ahorran cruzar la ciudad con la mochila a cuestas: práctico en un día de descanso o una parada de tránsito."
+        bookingQuery: "Vigo estación Urzaiz"
+        anchor: "alojamientos cerca de las estaciones de tren de Vigo"
+      - name: "Frente marítima de Samil"
+        blurb: "La variante litoral pasa por la playa de Samil al entrar. Las habitaciones frente al mar son más tranquilas que el centro y miran a las Islas Cíes: una base más serena si prefieres la bahía a la ciudad en la puerta."
+        bookingQuery: "Vigo playa Samil"
+        anchor: "habitaciones frente al mar cerca de la playa de Samil"
+  pt:
+    intro: "Vigo é a maior cidade da Galiza — cerca de 290.000 habitantes —, por isso há camas de sobra e variadas, mas o percurso do peregrino atravessa uma extensa entrada urbana. O albergue público é a opção mais barata mas não aceita reservas, por isso se chegares tarde ou quiseres um quarto garantido, estas são as zonas a considerar."
+    areas:
+      - name: "Casco Vello e Ribeira do Berbés"
+        blurb: "O casco antigo marítimo é por onde chega o Caminho e onde fica o albergue público, na Ribeira do Berbés junto ao porto. Ficar no Casco Vello deixa-te entre as ostreiras e as ruas de tapas, com as setas da manhã à porta."
+        bookingQuery: "Vigo Casco Vello"
+        anchor: "hotéis e pensões no Casco Vello de Vigo"
+      - name: "Junto às estações (Urzáiz / Vigo-Guixar)"
+        blurb: "Se vais apanhar um comboio cedo para Santiago ou Porto, ou chegas de comboio, os quartos perto das estações de Urzáiz e Vigo-Guixar poupam-te atravessar a cidade com a mochila às costas: prático num dia de descanso ou numa paragem de trânsito."
+        bookingQuery: "Vigo estação Urzaiz"
+        anchor: "alojamentos perto das estações de comboio de Vigo"
+      - name: "Frente marítima de Samil"
+        blurb: "A variante litoral passa pela praia de Samil à entrada. Os quartos à beira-mar são mais tranquilos do que o centro e olham para as Ilhas Cíes: uma base mais serena se preferes a baía à cidade à porta."
+        bookingQuery: "Vigo praia Samil"
+        anchor: "quartos à beira-mar perto da praia de Samil"
+sourceVerified: true
+lastVerified: "2026-06-23"
+sources:
+  - https://www.alberguescaminosantiago.com/camino-portugues-por-la-costa/albergues/albergue-de-peregrinos-de-la-xunta-de-galicia-de-vigo/
+  - https://www.alberguescaminosantiago.com/camino-portugues-por-la-costa/albergues-en-vigo/
+  - https://pilgrim8.com/camino-portugues-de-la-costa/vigo/albergue-de-peregrinos
+i18n:
+  en:
+    metaTitle: "Where to Stay in Vigo (2026): Public Albergue (93 Beds, €10) & City Guide"
+    metaDescription: "Vigo, Galicia's largest city, on the Portuguese Coastal Camino. The Xunta pilgrim albergue (93 beds, €10, first-come), where to stay by neighbourhood, full city services, transport links and the onward route to Redondela."
+    h1: "Vigo"
+    lead: "Vigo is the largest city on the whole Portuguese Camino — a working Atlantic port of around 290,000 people at the head of its ría. After the long, mostly flat day from Baiona, it offers everything a pilgrim might need: a big, cheap public albergue, every service under one roof, and major train, bus and air links. The catch is the sprawling urban approach, where the route's waymarking is among the patchiest on the coast."
+    sections:
+      - heading: "Where pilgrims stay"
+        body: "The headline option is the Xunta de Galicia public albergue in Ribeira do Berbés, in the old town by the port: 93 beds at €10, open all year, with disposable sheets and blankets included. It does not take reservations — beds go by order of arrival from the early afternoon — so in busy months arrive early or have a backup. Because Vigo is a full city, private hostels, guesthouses and hotels across the centre give you a guaranteed bed when the albergue is full."
+      - heading: "A real city on the Camino"
+        body: "Vigo is a change of pace after the small coastal towns: a granite old town climbing from the harbour, the famous oyster street (Rúa da Pescadería) where women shuck oysters at street stalls, big shops, and a seafront looking out to the Cíes Islands — a national park reachable by ferry in summer. It is the place to resupply, replace worn gear, see a pharmacy or doctor, and rest a tired body before the hills toward Redondela."
+      - heading: "Transport and continuing to Redondela"
+        body: "Vigo is the region's transport hub: high-speed and regional trains from Urzáiz and Vigo-Guixar (to Santiago, Pontevedra and Porto), a central bus station, and buses to Peinador airport — useful if you are starting or ending a stretch here. Walking on, the next stage climbs out of the city to Redondela, where the Coastal Route meets the Central Camino. Waymarking improves once you leave the urban edge, but a maps app helps through the streets."
+    faq:
+      - q: "Where can pilgrims stay in Vigo?"
+        a: "The main pilgrim option is the Xunta de Galicia public albergue in Ribeira do Berbés (93 beds, €10, open all year, first-come — no reservations). As Vigo is a large city, plenty of private hostels, guesthouses and hotels across the centre offer a guaranteed bed when the albergue fills."
+      - q: "Does the Vigo public albergue take reservations?"
+        a: "No. The Xunta albergue assigns its 93 beds on a first-come, first-served basis from the early afternoon and does not accept advance bookings. In high season, arrive early or have a private room as a backup."
+      - q: "Can I take a train or fly from Vigo?"
+        a: "Yes. Vigo has two train stations — Urzáiz (high-speed) and Vigo-Guixar — with services to Santiago, Pontevedra and Porto, a central bus station, and bus links to Peinador airport. It is a common place to start, pause or finish a section of the Coastal Camino."
+  es:
+    metaTitle: "Dónde Dormir en Vigo (2026): Albergue Público (93 Plazas, 10 €) y Guía de la Ciudad"
+    metaDescription: "Vigo, la mayor ciudad de Galicia, en el Camino Portugués de la Costa. Albergue de peregrinos de la Xunta (93 plazas, 10 €, por orden de llegada), dónde dormir por barrios, servicios, transporte y ruta hacia Redondela."
+    h1: "Vigo"
+    lead: "Vigo es la ciudad más grande de todo el Camino Portugués: un puerto atlántico en activo de unos 290.000 habitantes al fondo de su ría. Tras la jornada larga y casi llana desde Baiona, ofrece todo lo que un peregrino pueda necesitar: un albergue público grande y barato, todos los servicios en un mismo sitio y grandes conexiones de tren, autobús y avión. La pega es la extensa entrada urbana, donde la señalización es de las más irregulares de la costa."
+    sections:
+      - heading: "Dónde duermen los peregrinos"
+        body: "La opción estrella es el albergue público de la Xunta de Galicia en la Ribeira do Berbés, en el casco viejo junto al puerto: 93 plazas a 10 €, abierto todo el año, con sábanas desechables y mantas incluidas. No admite reservas —las plazas se dan por orden de llegada desde primera hora de la tarde—, así que en los meses de más afluencia conviene llegar pronto o tener un plan B. Como Vigo es una ciudad completa, los hostales privados, pensiones y hoteles del centro garantizan cama cuando el albergue se llena."
+      - heading: "Una ciudad de verdad en el Camino"
+        body: "Vigo es un cambio de ritmo tras los pequeños pueblos costeros: un casco viejo de granito que trepa desde el puerto, la famosa calle de las ostras (Rúa da Pescadería), donde las ostreras las abren en los puestos de la calle, grandes comercios y un frente marítimo que mira a las Islas Cíes, parque nacional al que se llega en barco en verano. Es el lugar para reabastecerte, reponer equipo gastado, ver una farmacia o un médico y descansar antes de las cuestas hacia Redondela."
+      - heading: "Transporte y continuar hacia Redondela"
+        body: "Vigo es el nudo de transporte de la región: trenes de alta velocidad y regionales desde Urzáiz y Vigo-Guixar (a Santiago, Pontevedra y Oporto), una estación central de autobuses y buses al aeropuerto de Peinador, útil si empiezas o terminas un tramo aquí. Al seguir, la etapa siguiente sube desde la ciudad hacia Redondela, donde el Camino de la Costa se une al Central. La señalización mejora al dejar el borde urbano, pero una app de mapas ayuda entre las calles."
+    faq:
+      - q: "¿Dónde pueden alojarse los peregrinos en Vigo?"
+        a: "La opción principal es el albergue público de la Xunta de Galicia en la Ribeira do Berbés (93 plazas, 10 €, todo el año, por orden de llegada, sin reservas). Al ser Vigo una gran ciudad, numerosos hostales, pensiones y hoteles del centro ofrecen cama asegurada cuando el albergue se llena."
+      - q: "¿El albergue público de Vigo admite reservas?"
+        a: "No. El albergue de la Xunta asigna sus 93 plazas por orden de llegada desde primera hora de la tarde y no acepta reservas anticipadas. En temporada alta, llega pronto o ten una habitación privada como alternativa."
+      - q: "¿Puedo coger un tren o volar desde Vigo?"
+        a: "Sí. Vigo tiene dos estaciones de tren —Urzáiz (alta velocidad) y Vigo-Guixar— con servicios a Santiago, Pontevedra y Oporto, una estación central de autobuses y buses al aeropuerto de Peinador. Es un lugar habitual para empezar, hacer una pausa o terminar un tramo del Camino de la Costa."
+  pt:
+    metaTitle: "Onde Ficar em Vigo (2026): Albergue Público (93 Camas, 10 €) e Guia da Cidade"
+    metaDescription: "Vigo, a maior cidade da Galiza, no Caminho Português da Costa. Albergue de peregrinos da Xunta (93 camas, 10 €, por ordem de chegada), onde ficar por bairros, serviços, transportes e percurso até Redondela."
+    h1: "Vigo"
+    lead: "Vigo é a maior cidade de todo o Caminho Português: um porto atlântico em atividade de cerca de 290.000 habitantes no fundo da sua ria. Após o dia longo e quase plano desde Baiona, oferece tudo o que um peregrino possa precisar: um albergue público grande e barato, todos os serviços no mesmo sítio e grandes ligações de comboio, autocarro e avião. O senão é a extensa entrada urbana, onde a sinalização é das mais irregulares da costa."
+    sections:
+      - heading: "Onde os peregrinos ficam"
+        body: "A opção de destaque é o albergue público da Xunta de Galicia na Ribeira do Berbés, no centro histórico junto ao porto: 93 camas a 10 €, aberto todo o ano, com lençóis descartáveis e cobertores incluídos. Não aceita reservas — as camas são dadas por ordem de chegada a partir do início da tarde —, por isso nos meses de mais afluência convém chegar cedo ou ter um plano B. Como Vigo é uma cidade completa, os hostels privados, pensões e hotéis do centro garantem cama quando o albergue enche."
+      - heading: "Uma cidade a sério no Caminho"
+        body: "Vigo é uma mudança de ritmo após as pequenas vilas costeiras: um centro histórico de granito que sobe desde o porto, a famosa rua das ostras (Rúa da Pescadería), onde as ostreiras as abrem nas bancas da rua, grandes lojas e uma frente marítima virada para as Ilhas Cíes, parque nacional alcançável de barco no verão. É o lugar para te reabasteceres, repor equipamento gasto, ver uma farmácia ou médico e descansar antes das subidas para Redondela."
+      - heading: "Transportes e continuar para Redondela"
+        body: "Vigo é o nó de transportes da região: comboios de alta velocidade e regionais desde Urzáiz e Vigo-Guixar (para Santiago, Pontevedra e Porto), uma estação central de autocarros e autocarros para o aeroporto de Peinador, úteis se começas ou terminas um troço aqui. Ao seguir, a etapa seguinte sobe da cidade para Redondela, onde o Caminho da Costa se junta ao Central. A sinalização melhora ao deixar a orla urbana, mas uma app de mapas ajuda entre as ruas."
+    faq:
+      - q: "Onde podem ficar os peregrinos em Vigo?"
+        a: "A opção principal é o albergue público da Xunta de Galicia na Ribeira do Berbés (93 camas, 10 €, todo o ano, por ordem de chegada, sem reservas). Sendo Vigo uma grande cidade, vários hostels, pensões e hotéis do centro oferecem cama garantida quando o albergue enche."
+      - q: "O albergue público de Vigo aceita reservas?"
+        a: "Não. O albergue da Xunta atribui as suas 93 camas por ordem de chegada a partir do início da tarde e não aceita reservas antecipadas. Na época alta, chega cedo ou tem um quarto privado como alternativa."
+      - q: "Posso apanhar um comboio ou voar de Vigo?"
+        a: "Sim. Vigo tem duas estações de comboio — Urzáiz (alta velocidade) e Vigo-Guixar — com ligações a Santiago, Pontevedra e Porto, uma estação central de autocarros e autocarros para o aeroporto de Peinador. É um lugar habitual para começar, fazer uma pausa ou terminar um troço do Caminho da Costa."

@@ -126,6 +126,22 @@ const stages = defineCollection({
   }),
 });
 
+// Commercial "where to stay / best areas for pilgrims" block. Localized so each
+// town's neighbourhood guidance is unique (no template duplication), with a
+// natural-language anchor + a Booking.com search query per area. 1–4 areas keeps
+// the affiliate-link density honest (no link overload).
+const stayArea = z.object({
+  name: z.string(),
+  blurb: z.string(),
+  bookingQuery: z.string(),
+  anchor: z.string(),
+});
+const stayBlock = z.object({
+  intro: z.string(),
+  areas: z.array(stayArea).min(1).max(4),
+});
+const whereToStayTrio = z.object({ en: stayBlock, es: stayBlock, pt: stayBlock });
+
 // ── towns ────────────────────────────────────────────────────────────────────
 const towns = defineCollection({
   loader: glob({ pattern: '**/*.yml', base: 'src/content/towns' }),
@@ -144,10 +160,16 @@ const towns = defineCollection({
           priceEUR: z.string().optional(),
           openSeason: z.string().optional(),
           url: z.string().url().optional(),
+          // Short verified benefit for the ranked "Top stays" cards (localized).
+          highlight: z.object({ en: z.string(), es: z.string(), pt: z.string() }).optional(),
+          // Whether the place takes advance bookings — drives the CTA wording so
+          // we never offer "reserve" on a first-come municipal albergue.
+          bookable: z.boolean().optional(),
         }),
       )
       .default([]),
     services: z.array(z.string()).default([]),
+    whereToStay: whereToStayTrio.optional(),
     ...verification,
     i18n: richTrio,
   }),

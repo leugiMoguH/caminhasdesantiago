@@ -5,6 +5,7 @@ import { buildClusterGraph } from '../../../lib/clusterSchema';
 import {
   UI,
   LANGS,
+  SITE_URL,
   stagePath,
   townPath,
   logisticsPath,
@@ -16,6 +17,8 @@ import {
 } from '../../../lib/clusterRoutes';
 import PhotoFigure from '../../../components/PhotoFigure.astro';
 import marginalPhoto from '../../../assets/photos/caminha-marginal-passadico.jpg';
+import { warnIfStale, freshnessLabel } from '../../../lib/freshness';
+import { bookingSearch } from '../../../lib/booking';
 
 type Link = { url: string; label: string };
 
@@ -28,6 +31,9 @@ export async function getStaticPaths() {
   const stageById = new Map(stages.map((s) => [s.id, s]));
   const townById = new Map(towns.map((t) => [t.id, t]));
   const logById = new Map(logistics.map((l) => [l.id, l]));
+
+  // Freshness guard (R1) — warn at build if any stage's data is stale (>30 days).
+  for (const s of stages) warnIfStale(`stage/${s.id}`, s.data.lastVerified);
 
   return stages.flatMap((stage) =>
     LANGS.map((lang) => {
@@ -87,10 +93,30 @@ const graph = buildClusterGraph({
   entity: { '@type': 'TouristTrip', name: t.h1, description: t.lead, touristType: 'Pilgrim' },
   faq: t.faq,
   dateModified: data.lastVerified,
+  image: {
+    url: `${SITE_URL}${marginalPhoto.src}`,
+    description: 'The Coastal Camino riverside walkway along the Minho estuary near Caminha',
+  },
 });
 const ferry = ferryPath(lang);
 const guide = caminhaGuidePath(lang);
 const hub = hubPath(lang);
+
+// Slug → display name for town links (works before a town page exists).
+const humanize = (s: string): string =>
+  s.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+const slugify = (s: string): string =>
+  s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+// Always surface the destination town (even before its page exists), plus any
+// explicit townSlugs from the stage data.
+const stayTownSlugs: string[] = Array.from(new Set<string>([...data.townSlugs, slugify(data.to)]));
+const stayIn: Record<Lang, string> = { en: 'Where to stay in', es: 'Dónde dormir en', pt: 'Onde ficar em' };
+const stayCta: Record<Lang, string> = {
+  en: `Find a place to stay in ${data.to} tonight`,
+  es: `Encuentra dónde dormir en ${data.to} esta noche`,
+  pt: `Encontra onde ficar em ${data.to} esta noite`,
+};
+const stayHref = bookingSearch(`${data.to}`, `wtsg-stage-${lang}-${slug}`);
 
 // On the international-crossing stage only, defer all ferry logistics (timetable,
 // operators, prices) to the dedicated Ferry & Logistics page — keeps this page the
@@ -136,6 +162,22 @@ const ferryAuthority = {
           </div>
         )}
       </div>
+    </div>
+  </div>
+
+  <!-- Booking CTA (above the fold) -->
+  <div class="bg-forest-50 border-b border-forest-100">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row sm:items-center gap-3">
+      <p class="text-sm text-slate-700 flex-1 font-medium">{stayCta[lang]}</p>
+      <a
+        href={stayHref}
+        rel="sponsored nofollow noopener"
+        target="_blank"
+        class="inline-flex items-center justify-center gap-2 rounded-xl bg-forest-700 px-5 py-3 text-sm font-bold text-white no-underline hover:bg-forest-800 transition-colors shrink-0"
+      >
+        {ui.privateRoomCta}
+        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </a>
     </div>
   </div>
 
@@ -195,6 +237,22 @@ const ferryAuthority = {
       )}
     </nav>
 
+    <!-- Where to stay (stage → town) -->
+    {stayTownSlugs.length > 0 && (
+      <section class="bg-white border border-slate-200 rounded-2xl p-6">
+        <h2 class="text-base font-bold text-forest-900 mb-3">{ui.stayHeading}</h2>
+        <ul class="space-y-2 text-sm">
+          {stayTownSlugs.map((s: string) => (
+            <li>
+              <a href={townPath(lang, s)} class="text-forest-700 hover:underline no-underline font-medium">
+                {stayIn[lang]} {humanize(s)} →
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
     <!-- Related links -->
     <section class="bg-forest-50 border border-forest-200 rounded-2xl p-6">
       <h2 class="text-base font-bold text-forest-900 mb-3">{ui.relatedLinks}</h2>
@@ -229,6 +287,10 @@ const ferryAuthority = {
       </section>
     )}
 
-    <p class="text-xs text-slate-500">{ui.sourcesNote}: {data.sources.join(' · ')}</p>
+    <p class="text-xs text-slate-500">
+      <span class="font-medium text-slate-600">{freshnessLabel(lang, data.lastVerified)}</span>
+      <span class="mx-1.5 text-slate-300" aria-hidden="true">·</span>
+      {ui.sourcesNote}: {data.sources.join(' · ')}
+    </p>
   </div>
 </MainLayout>

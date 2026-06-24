@@ -1,0 +1,95 @@
+---
+/**
+ * One ranked accommodation card — shared by the town guide ("Top stays") and the
+ * /best-albergues/[town] comparison page so both render identically.
+ *
+ * Visual conversion layer: the `primary` card (the recommended pick) gets an
+ * accent ring, an "Our pick" badge and a solid button CTA; the rest get a plain
+ * card and a text-link CTA. CTA wording adapts to `bookable` so a first-come
+ * municipal albergue never shows "Reserve".
+ */
+type Lang = 'en' | 'es' | 'pt';
+interface Acc {
+  name: string;
+  type: string;
+  beds?: number;
+  priceEUR?: string;
+  openSeason?: string;
+  url?: string;
+  highlight?: { en: string; es: string; pt: string };
+  bookable?: boolean;
+}
+interface Props {
+  lang: Lang;
+  acc: Acc;
+  rank: number;
+  primary?: boolean;
+  lowest?: boolean;
+}
+const { lang, acc, rank, primary = false, lowest = false } = Astro.props;
+
+const typeLabel: Record<Lang, Record<string, string>> = {
+  en: { 'municipal-albergue': 'Public albergue', 'private-albergue': 'Private albergue', hotel: 'Hotel', guesthouse: 'Guesthouse' },
+  es: { 'municipal-albergue': 'Albergue público', 'private-albergue': 'Albergue privado', hotel: 'Hotel', guesthouse: 'Pensión' },
+  pt: { 'municipal-albergue': 'Albergue público', 'private-albergue': 'Albergue privado', hotel: 'Hotel', guesthouse: 'Pensão' },
+};
+const bedsWord: Record<Lang, string> = { en: 'beds', es: 'plazas', pt: 'camas' };
+const reserveCta: Record<Lang, string> = { en: 'Reserve a bed', es: 'Reservar plaza', pt: 'Reservar cama' };
+const detailsCta: Record<Lang, string> = { en: 'Albergue details', es: 'Ver el albergue', pt: 'Ver o albergue' };
+const ourPick: Record<Lang, string> = { en: 'Our pick', es: 'Nuestra elección', pt: 'A nossa escolha' };
+const lowestLabel: Record<Lang, string> = { en: 'Lowest price', es: 'Precio más bajo', pt: 'Preço mais baixo' };
+const reservesLabel: Record<Lang, string> = { en: 'Takes reservations', es: 'Admite reserva', pt: 'Aceita reserva' };
+const firstComeLabel: Record<Lang, string> = { en: 'First-come', es: 'Por orden de llegada', pt: 'Por ordem de chegada' };
+
+const cta = acc.bookable ? reserveCta[lang] : detailsCta[lang];
+const cardClass = primary
+  ? 'bg-white border-2 border-forest-600 ring-1 ring-forest-600/20 rounded-2xl p-5 shadow-md flex gap-4'
+  : 'bg-white border border-slate-200 rounded-2xl p-5 shadow-sm flex gap-4';
+const rankClass = primary
+  ? 'shrink-0 flex h-9 w-9 items-center justify-center rounded-full bg-earth-600 text-white text-base font-bold'
+  : 'shrink-0 flex h-9 w-9 items-center justify-center rounded-full bg-forest-700 text-white text-base font-bold';
+---
+
+<li class={cardClass}>
+  <span class={rankClass} aria-hidden="true">{rank}</span>
+  <div class="flex-1 min-w-0">
+    <div class="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+      <p class="font-bold text-forest-900">{acc.name}</p>
+      <span class="text-xs font-medium text-forest-700 bg-forest-50 border border-forest-100 rounded-full px-2 py-0.5">{typeLabel[lang][acc.type]}</span>
+      {primary && <span class="text-xs font-bold text-white bg-earth-600 rounded-full px-2 py-0.5">{ourPick[lang]}</span>}
+      {lowest && <span class="text-xs font-semibold text-earth-700 bg-earth-50 border border-earth-200 rounded-full px-2 py-0.5">{lowestLabel[lang]}</span>}
+      {acc.bookable === true ? (
+        <span class="text-xs font-medium text-forest-700 bg-forest-50 border border-forest-100 rounded-full px-2 py-0.5">{reservesLabel[lang]}</span>
+      ) : acc.bookable === false ? (
+        <span class="text-xs font-medium text-slate-600 bg-slate-100 border border-slate-200 rounded-full px-2 py-0.5">{firstComeLabel[lang]}</span>
+      ) : null}
+    </div>
+    <p class="mt-1.5">
+      {acc.priceEUR && <span class="text-xl font-bold text-earth-700">€{acc.priceEUR}</span>}
+      {acc.beds && <span class="text-xs text-slate-500"> · {acc.beds} {bedsWord[lang]}</span>}
+      {acc.openSeason && <span class="text-xs text-slate-500"> · {acc.openSeason}</span>}
+    </p>
+    {acc.highlight && <p class="text-sm text-slate-700 leading-relaxed mt-2">{acc.highlight[lang]}</p>}
+    {acc.url && (primary ? (
+      <a
+        href={acc.url}
+        rel="nofollow noopener noreferrer"
+        target="_blank"
+        class="mt-3 inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-forest-700 to-forest-800 px-5 py-2.5 text-sm font-bold text-white no-underline shadow-md transition-all hover:from-forest-800 hover:to-forest-900"
+      >
+        {cta}
+        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </a>
+    ) : (
+      <a
+        href={acc.url}
+        rel="nofollow noopener noreferrer"
+        target="_blank"
+        class="mt-2.5 inline-flex items-center gap-1 text-sm font-semibold text-forest-700 hover:underline no-underline"
+      >
+        {cta}
+        <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </a>
+    ))}
+  </div>
+</li>

@@ -49,23 +49,11 @@ interface AlternateLang {
   href: string;
 }
 
-interface LocalBusinessData {
-  name: string;
-  description: string;
-  address: string;
-  telephone?: string;
-  url?: string;
-  priceRange?: string;
-  servesCuisine?: string;
-  openingHours?: string[];
-}
-
 interface Props {
   title: string;
   description: string;
   lang: 'en' | 'es' | 'pt';
-  schemaType?: 'website' | 'webpage' | 'localbusiness' | 'none';
-  localBusinessData?: LocalBusinessData;
+  schemaType?: 'website' | 'webpage' | 'none';
   ogImage?: string;
   noindex?: boolean;
   // Override hreflang + language-switcher URLs for routes not in PATH_MAP
@@ -73,7 +61,7 @@ interface Props {
   i18nUrls?: { en: string; es: string; pt: string };
 }
 
-const { title, description, lang, schemaType = 'webpage', localBusinessData, ogImage, noindex = false, i18nUrls } = Astro.props;
+const { title, description, lang, schemaType = 'webpage', ogImage, noindex = false, i18nUrls } = Astro.props;
 
 const SITE_URL = 'https://waytosantiagoguide.com';
 const currentPath = Astro.url.pathname;
@@ -138,21 +126,16 @@ const htmlLang = lang === 'en' ? 'en' : lang === 'es' ? 'es' : 'pt';
       canonicalURL={canonicalURL}
       alternateLanguages={alternateLanguages}
       schemaType={schemaType}
-      localBusinessData={localBusinessData}
       ogImage={ogImage}
       noindex={noindex}
     />
 
     <!-- Google Analytics + CJ Affiliate are loaded by CookieConsent only after the visitor consents -->
 
-    <!-- Preconnect + DM Sans font (non-blocking: load async, swap on load) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" media="print" onload="this.media='all'" />
-    <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" />
-    </noscript>
+    <!-- Self-hosted DM Sans — @font-face lives in global.css. Preload only the
+         latin face (covers the visible above-the-fold text); other faces load
+         on demand. No external font request, no render-blocking font CSS. -->
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/dmsans-latin.woff2" crossorigin />
   </head>
   <body>
 
@@ -165,6 +148,49 @@ const htmlLang = lang === 'en' ? 'en' : lang === 'es' ? 'es' : 'pt';
     <Footer lang={lang} />
 
     <CookieConsent lang={lang} />
+
+    <!--
+      Outbound/affiliate click tracking. Pushes GA4 events to the shared
+      dataLayer. GA only loads after consent (CookieConsent), so until then
+      events queue locally and are NEVER transmitted — no tracking pre-consent.
+    -->
+    <script is:inline>
+      (function () {
+        function send(name, params) {
+          window.dataLayer = window.dataLayer || [];
+          // gtag pushes the arguments object — the exact form GA4 consumes.
+          function gtag() { window.dataLayer.push(arguments); }
+          gtag('event', name, params);
+        }
+        document.addEventListener(
+          'click',
+          function (e) {
+            var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+            if (!a) return;
+            var href = a.getAttribute('href') || '';
+            if (!/^https?:\/\//i.test(href)) return; // external links only
+            var host;
+            try { host = new URL(href).hostname; } catch (_) { return; }
+            if (host === location.hostname) return;
+            var rel = (a.getAttribute('rel') || '').toLowerCase();
+            var isAffiliate = host.indexOf('booking.com') !== -1 || rel.indexOf('sponsored') !== -1;
+            // link_position: intro | mid | end — read from data-aff-pos on the
+            // anchor (or its closest ancestor that carries it). Falls back to
+            // 'unknown' so GA4 conversion segmentation always has a value.
+            var posEl = a.closest ? a.closest('[data-aff-pos]') : null;
+            var linkPosition = (posEl && posEl.getAttribute('data-aff-pos')) || 'unknown';
+            send(isAffiliate ? 'affiliate_click' : 'outbound_click', {
+              page_path: location.pathname,
+              link_position: linkPosition,
+              link_domain: host,
+              link_url: href,
+              link_text: (a.textContent || '').trim().slice(0, 80),
+            });
+          },
+          { capture: true },
+        );
+      })();
+    </script>
 
   </body>
 </html>

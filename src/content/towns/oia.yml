@@ -1,0 +1,135 @@
+name: Oia
+country: ES
+region: Pontevedra (Galicia)
+onStageSlug: a-guarda-oia
+geo:
+  lat: 42.0009
+  lng: -8.8689
+accommodations:
+  - name: Alojamiento Camino Portugués Oia
+    type: private-albergue
+    beds: 20
+    priceEUR: "15–16"
+    openSeason: All year
+    url: https://www.alberguescaminosantiago.com/camino-portugues-por-la-costa/albergues-albergue-alojamiento-camino-portugues-oia-viladesuso/
+    bookable: true
+    highlight:
+      en: "On the coast in Viladesuso with a bar-restaurant, terrace and small shop — bunks have curtains, reading lights and plugs."
+      es: "En la costa, en Viladesuso, con bar-restaurante, terraza y pequeña tienda; las literas tienen cortinas, luz de lectura y enchufes."
+      pt: "Na costa, em Viladesuso, com bar-restaurante, esplanada e pequena loja; os beliches têm cortinas, luz de leitura e tomadas."
+  - name: Albergue La Cala – A Pilgrim's Inn
+    type: private-albergue
+    beds: 12
+    priceEUR: "25"
+    openSeason: 1 Mar – 12 Oct
+    url: https://www.alberguescaminosantiago.com/camino-portugues-por-la-costa/albergue-la-cala-a-pilgrims-inn-oia/
+    bookable: true
+    highlight:
+      en: "Small, quiet 12-bed inn 50 m from the coastal route; price includes bedding, towels and breakfast."
+      es: "Pequeño y tranquilo, 12 plazas a 50 m de la ruta costera; el precio incluye ropa de cama, toallas y desayuno."
+      pt: "Pequeno e tranquilo, 12 camas a 50 m da rota costeira; o preço inclui roupa de cama, toalhas e pequeno-almoço."
+services:
+  - Private pilgrim albergues (no municipal albergue)
+  - Mosteiro de Santa María de Oia (12th-century monastery)
+  - Bar-restaurants on the seafront
+  - Small grocery shop
+  - Credential stamp (sello)
+  - Buses to Baiona and Vigo
+whereToStay:
+  en:
+    intro: "Oia is a tiny coastal parish, so beds are very limited and almost all are in small private albergues that take reservations — book ahead, especially May to October, because there is no large municipal hostel to fall back on. Most pilgrim accommodation sits in Viladesuso, the part of the parish the Camino passes through."
+    areas:
+      - name: "Viladesuso (on the route)"
+        blurb: "The waymarked Camino runs through Viladesuso, where the main pilgrim albergue, a bar-restaurant and a small shop sit right on the coast. Staying here means you can eat, resupply and sleep without leaving the route."
+        bookingQuery: "Viladesuso Oia"
+        anchor: "guesthouses and inns in Viladesuso"
+      - name: "By the monastery & Oia seafront"
+        blurb: "Around the great seafront monastery the village has a handful of rooms with Atlantic views — a quiet, scenic base if you want the sound of the sea and an early start along the shore toward Baiona."
+        bookingQuery: "Oia Pontevedra"
+        anchor: "rooms near the Oia monastery"
+  es:
+    intro: "Oia es una pequeña parroquia costera, así que las plazas son muy limitadas y casi todas están en pequeños albergues privados que admiten reserva: reserva con antelación, sobre todo de mayo a octubre, porque no hay un gran albergue municipal como alternativa. La mayoría del alojamiento de peregrinos está en Viladesuso, la parte de la parroquia por la que pasa el Camino."
+    areas:
+      - name: "Viladesuso (en la ruta)"
+        blurb: "El Camino señalizado atraviesa Viladesuso, donde el albergue de peregrinos principal, un bar-restaurante y una pequeña tienda están justo en la costa. Dormir aquí te permite comer, reabastecerte y descansar sin salir de la ruta."
+        bookingQuery: "Viladesuso Oia"
+        anchor: "pensiones y posadas en Viladesuso"
+      - name: "Junto al monasterio y el frente marítimo de Oia"
+        blurb: "En torno al gran monasterio frente al mar, el pueblo tiene unas pocas habitaciones con vistas al Atlántico: una base tranquila y con encanto si quieres el sonido del mar y un comienzo temprano por la costa rumbo a Baiona."
+        bookingQuery: "Oia Pontevedra"
+        anchor: "habitaciones cerca del monasterio de Oia"
+  pt:
+    intro: "Oia é uma pequena paróquia costeira, por isso as camas são muito limitadas e quase todas estão em pequenos albergues privados que aceitam reserva: reserva com antecedência, sobretudo de maio a outubro, porque não há um grande albergue municipal como alternativa. A maioria do alojamento de peregrinos fica em Viladesuso, a parte da paróquia por onde passa o Caminho."
+    areas:
+      - name: "Viladesuso (no percurso)"
+        blurb: "O Caminho sinalizado atravessa Viladesuso, onde o albergue de peregrinos principal, um bar-restaurante e uma pequena loja ficam mesmo na costa. Ficar aqui permite-te comer, reabastecer e descansar sem sair do percurso."
+        bookingQuery: "Viladesuso Oia"
+        anchor: "pensões e estalagens em Viladesuso"
+      - name: "Junto ao mosteiro e à frente marítima de Oia"
+        blurb: "Em redor do grande mosteiro à beira-mar, a aldeia tem alguns quartos com vista para o Atlântico: uma base tranquila e cénica se queres o som do mar e uma partida cedo pela costa em direção a Baiona."
+        bookingQuery: "Oia Pontevedra"
+        anchor: "quartos perto do mosteiro de Oia"
+sourceVerified: true
+lastVerified: "2026-06-24"
+sources:
+  - https://www.alberguescaminosantiago.com/camino-portugues-por-la-costa/albergues-albergue-alojamiento-camino-portugues-oia-viladesuso/
+  - https://www.alberguescaminosantiago.com/camino-portugues-por-la-costa/albergue-la-cala-a-pilgrims-inn-oia/
+  - https://www.gronze.com/galicia/pontevedra/viladesuso/alojamiento-camino-portugues-oia
+i18n:
+  en:
+    metaTitle: "Where to Stay in Oia (2026): 2 Pilgrim Albergues on the Coastal Camino"
+    metaDescription: "Oia, Galicia: the monastery village between A Guarda and Baiona on the Portuguese Coastal Camino. Just 2 small pilgrim albergues (book ahead), the seafront monastery, services and the onward route."
+    h1: "Oia"
+    lead: "Oia is one of the smallest and most scenic stops on the Portuguese Coastal Camino — a coastal parish gathered around the great seafront Monastery of Santa María, founded by Cistercian monks in 1137. It is an easy half-day from A Guarda, which makes it a quiet alternative to pushing straight on to Baiona, but its handful of pilgrim beds fill fast."
+    sections:
+      - heading: "Where pilgrims stay"
+        body: "Oia has no municipal albergue — its pilgrim beds are in two small private albergues, both of which take reservations. Alojamiento Camino Portugués Oia, in Viladesuso on the coast, has 20 beds at about €15–16, open all year, with a bar-restaurant, terrace and small shop. Albergue La Cala – A Pilgrim's Inn is a quieter 12-bed house 50 m from the route at about €25, open 1 March to 12 October, with bedding, towels and breakfast included. Because the village is tiny and beds are few, reserve ahead from May to October."
+      - heading: "The monastery and the coast"
+        body: "The Monastery of Santa María de Oia rises straight from the rocks above the Atlantic — one of the only Galician monasteries built right on the shore. Founded in 1137 and rebuilt over the centuries, it dominates the village. The surrounding hills are known for their wild horses and the summer rapa das bestas round-ups, and the coast here is open and dramatic, with whale and dolphin sightings offshore."
+      - heading: "Continuing to Baiona"
+        body: "From Oia the Coastal Camino keeps to the shoreline before climbing over a rocky headland and dropping into Baiona — a hillier stage of about 18 km. There is little between the two villages, so fill your water and buy any food in Oia before setting off. Remember Spain runs one hour ahead of Portugal."
+    faq:
+      - q: "Where can pilgrims stay in Oia?"
+        a: "In two small private albergues: Alojamiento Camino Portugués Oia in Viladesuso (20 beds, about €15–16, open all year) and Albergue La Cala – A Pilgrim's Inn (12 beds, about €25, open 1 March–12 October). Both take reservations and Oia has no municipal albergue, so book ahead in summer."
+      - q: "Is Oia worth stopping in, or should I walk on to Baiona?"
+        a: "Oia makes an easy, scenic half-day from A Guarda and breaks the coast into gentler stages, with its seafront monastery and quiet Atlantic setting. The trade-off is very few beds and limited services, so it suits walkers who reserve ahead; those wanting a full range of shops and hostels often push on to Baiona."
+      - q: "What is the monastery at Oia?"
+        a: "The Monastery of Santa María de Oia, a Cistercian house founded in 1137 and built right on the rocky shore — one of the few Galician monasteries on the coast. It is the landmark of the village and visible from the Camino as you pass."
+  es:
+    metaTitle: "Dónde Dormir en Oia (2026): 2 Albergues de Peregrinos en el Camino de la Costa"
+    metaDescription: "Oia, Galicia: el pueblo del monasterio entre A Guarda y Baiona en el Camino Portugués de la Costa. Solo 2 pequeños albergues de peregrinos (reserva), el monasterio frente al mar, servicios y ruta."
+    h1: "Oia"
+    lead: "Oia es una de las paradas más pequeñas y bonitas del Camino Portugués de la Costa: una parroquia costera reunida en torno al gran Monasterio de Santa María, frente al mar, fundado por monjes cistercienses en 1137. Está a una media jornada fácil de A Guarda, lo que la hace una alternativa tranquila a seguir directo hasta Baiona, pero sus pocas plazas de peregrino se llenan rápido."
+    sections:
+      - heading: "Dónde duermen los peregrinos"
+        body: "Oia no tiene albergue municipal: sus plazas de peregrino están en dos pequeños albergues privados, ambos con reserva. Alojamiento Camino Portugués Oia, en Viladesuso junto a la costa, tiene 20 plazas a unos 15–16 €, abierto todo el año, con bar-restaurante, terraza y pequeña tienda. Albergue La Cala – A Pilgrim's Inn es una casa más tranquila de 12 plazas a 50 m de la ruta, a unos 25 €, abierta del 1 de marzo al 12 de octubre, con ropa de cama, toallas y desayuno incluidos. Como el pueblo es diminuto y hay pocas plazas, reserva con antelación de mayo a octubre."
+      - heading: "El monasterio y la costa"
+        body: "El Monasterio de Santa María de Oia se alza directamente sobre las rocas del Atlántico, uno de los pocos monasterios gallegos construidos junto al mar. Fundado en 1137 y reconstruido a lo largo de los siglos, domina el pueblo. Los montes de alrededor son conocidos por sus caballos salvajes y las rapas das bestas del verano, y la costa aquí es abierta y espectacular, con avistamientos de ballenas y delfines."
+      - heading: "Continuar hacia Baiona"
+        body: "Desde Oia el Camino de la Costa sigue la línea de costa antes de subir un promontorio rocoso y bajar a Baiona, una etapa con más cuestas de unos 18 km. Hay poco entre los dos pueblos, así que llena el agua y compra comida en Oia antes de salir. Recuerda que España va una hora por delante de Portugal."
+    faq:
+      - q: "¿Dónde pueden alojarse los peregrinos en Oia?"
+        a: "En dos pequeños albergues privados: Alojamiento Camino Portugués Oia en Viladesuso (20 plazas, unos 15–16 €, todo el año) y Albergue La Cala – A Pilgrim's Inn (12 plazas, unos 25 €, del 1 de marzo al 12 de octubre). Ambos admiten reserva y Oia no tiene albergue municipal, así que reserva con antelación en verano."
+      - q: "¿Merece la pena parar en Oia o sigo hasta Baiona?"
+        a: "Oia es una media jornada fácil y bonita desde A Guarda y parte la costa en etapas más suaves, con su monasterio frente al mar y un entorno atlántico tranquilo. La contrapartida son muy pocas plazas y servicios limitados, así que conviene a quien reserva con antelación; quien quiera tiendas y albergues de sobra suele seguir hasta Baiona."
+      - q: "¿Qué es el monasterio de Oia?"
+        a: "El Monasterio de Santa María de Oia, una casa cisterciense fundada en 1137 y construida junto a la costa rocosa, uno de los pocos monasterios gallegos a pie de mar. Es el emblema del pueblo y se ve desde el Camino al pasar."
+  pt:
+    metaTitle: "Onde Ficar em Oia (2026): 2 Albergues de Peregrinos no Caminho da Costa"
+    metaDescription: "Oia, Galiza: a aldeia do mosteiro entre A Guarda e Baiona no Caminho Português da Costa. Apenas 2 pequenos albergues de peregrinos (reserva), o mosteiro à beira-mar, serviços e percurso."
+    h1: "Oia"
+    lead: "Oia é uma das paragens mais pequenas e cénicas do Caminho Português da Costa: uma paróquia costeira reunida em torno do grande Mosteiro de Santa María, à beira-mar, fundado por monges cistercienses em 1137. Fica a meia jornada fácil de A Guarda, o que a torna uma alternativa tranquila a seguir direto até Baiona, mas as suas poucas camas de peregrino enchem depressa."
+    sections:
+      - heading: "Onde os peregrinos ficam"
+        body: "Oia não tem albergue municipal: as suas camas de peregrino estão em dois pequenos albergues privados, ambos com reserva. O Alojamiento Camino Portugués Oia, em Viladesuso junto à costa, tem 20 camas a cerca de 15–16 €, aberto todo o ano, com bar-restaurante, esplanada e pequena loja. O Albergue La Cala – A Pilgrim's Inn é uma casa mais tranquila de 12 camas a 50 m do percurso, a cerca de 25 €, aberta de 1 de março a 12 de outubro, com roupa de cama, toalhas e pequeno-almoço incluídos. Como a aldeia é minúscula e há poucas camas, reserva com antecedência de maio a outubro."
+      - heading: "O mosteiro e a costa"
+        body: "O Mosteiro de Santa María de Oia ergue-se diretamente sobre as rochas do Atlântico, um dos poucos mosteiros galegos construídos junto ao mar. Fundado em 1137 e reconstruído ao longo dos séculos, domina a aldeia. Os montes em redor são conhecidos pelos seus cavalos selvagens e pelas rapas das bestas do verão, e a costa aqui é aberta e dramática, com avistamentos de baleias e golfinhos ao largo."
+      - heading: "Continuar para Baiona"
+        body: "A partir de Oia o Caminho da Costa segue a linha de costa antes de subir um promontório rochoso e descer a Baiona, uma etapa com mais subidas de cerca de 18 km. Há pouco entre as duas aldeias, por isso enche a água e compra comida em Oia antes de partir. Lembra-te de que a Espanha está uma hora à frente de Portugal."
+    faq:
+      - q: "Onde podem ficar os peregrinos em Oia?"
+        a: "Em dois pequenos albergues privados: Alojamiento Camino Portugués Oia em Viladesuso (20 camas, cerca de 15–16 €, todo o ano) e Albergue La Cala – A Pilgrim's Inn (12 camas, cerca de 25 €, de 1 de março a 12 de outubro). Ambos aceitam reserva e Oia não tem albergue municipal, por isso reserva com antecedência no verão."
+      - q: "Vale a pena parar em Oia ou sigo até Baiona?"
+        a: "Oia é uma meia jornada fácil e cénica desde A Guarda e parte a costa em etapas mais suaves, com o seu mosteiro à beira-mar e um cenário atlântico tranquilo. A contrapartida são muito poucas camas e serviços limitados, por isso convém a quem reserva com antecedência; quem quer lojas e albergues de sobra costuma seguir até Baiona."
+      - q: "O que é o mosteiro de Oia?"
+        a: "O Mosteiro de Santa María de Oia, uma casa cisterciense fundada em 1137 e construída junto à costa rochosa, um dos poucos mosteiros galegos à beira-mar. É o emblema da aldeia e vê-se a partir do Caminho ao passar."

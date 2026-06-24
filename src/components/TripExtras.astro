@@ -1,0 +1,51 @@
+---
+/**
+ * TripExtras — trust-first "plan the rest of your trip" block (audit H2).
+ *
+ * Renders ONLY the affiliate links that are configured (see lib/affiliates.ts).
+ * If a partner is unset its builder returns null and that card is skipped; if
+ * none are set the whole block renders nothing — no broken links, no CLS.
+ *
+ * rel="sponsored nofollow" + a visible disclosure keep it compliant and honest.
+ */
+import { tourLink, insuranceLink, transportLink } from '../lib/affiliates';
+
+interface Props {
+  lang: 'en' | 'es' | 'pt';
+  slug: string; // placement slug for tracking, e.g. 'ferry'
+}
+const { lang, slug } = Astro.props;
+
+const items = [
+  { href: tourLink(lang, slug),      key: 'tour' as const },
+  { href: insuranceLink(lang, slug), key: 'insurance' as const },
+  { href: transportLink(lang, slug), key: 'transport' as const },
+].filter((i): i is { href: string; key: 'tour' | 'insurance' | 'transport' } => i.href !== null);
+
+const t = {
+  en: { title: 'Plan the rest of your trip', disclosure: 'Affiliate links — we may earn a commission at no extra cost to you.',
+        tour: 'Book experiences & guided walks', insurance: 'Pilgrim travel insurance', transport: 'Trains & buses to the start' },
+  es: { title: 'Organiza el resto de tu viaje', disclosure: 'Enlaces de afiliado — podemos ganar una comisión sin coste extra para ti.',
+        tour: 'Reserva experiencias y visitas guiadas', insurance: 'Seguro de viaje para peregrinos', transport: 'Trenes y autobuses hasta el inicio' },
+  pt: { title: 'Organiza o resto da tua viagem', disclosure: 'Links de afiliado — podemos ganhar uma comissão sem custo extra para ti.',
+        tour: 'Reserva experiências e visitas guiadas', insurance: 'Seguro de viagem para peregrinos', transport: 'Comboios e autocarros até ao início' },
+}[lang];
+---
+{items.length > 0 && (
+  <section class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10">
+    <h2 class="text-xl font-bold text-forest-900 mb-1">{t.title}</h2>
+    <p class="text-xs text-slate-500 mb-5">{t.disclosure}</p>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+      {items.map(({ href, key }) => (
+        <a
+          href={href}
+          rel="sponsored nofollow"
+          target="_blank"
+          class="rounded-2xl border border-slate-200 bg-white px-5 py-4 text-sm font-semibold text-forest-800 no-underline hover:border-forest-300 hover:bg-forest-50/50 transition-colors"
+        >
+          {t[key]}
+        </a>
+      ))}
+    </div>
+  </section>
+)}

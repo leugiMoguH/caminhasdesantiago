@@ -1,0 +1,215 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+import { getCollection } from 'astro:content';
+import { buildClusterGraph } from '../../../lib/clusterSchema';
+import {
+  UI,
+  LANGS,
+  SITE_URL,
+  townPath,
+  stagePath,
+  bestAlberguesPath,
+  bestStagesToSleepPath,
+  coastalWhereToStayPath,
+  hubPath,
+  type Lang,
+} from '../../../lib/clusterRoutes';
+import { bookingSearch } from '../../../lib/booking';
+
+export function getStaticPaths() {
+  return LANGS.map((lang) => ({ params: { lang } }));
+}
+
+const lang = Astro.params.lang as Lang;
+const ui = UI[lang];
+const PAGE_PATH = bestStagesToSleepPath(lang);
+const i18nUrls = {
+  en: `${SITE_URL}${bestStagesToSleepPath('en')}`,
+  es: `${SITE_URL}${bestStagesToSleepPath('es')}`,
+  pt: `${SITE_URL}${bestStagesToSleepPath('pt')}`,
+};
+
+const [towns, stages] = await Promise.all([
+  getCollection('towns', (e) => e.data.sourceVerified),
+  getCollection('stages', (e) => e.data.sourceVerified),
+]);
+const townById = new Map(towns.map((t) => [t.id, t]));
+const stageById = new Map(stages.map((s) => [s.id, s]));
+
+// Recommended overnight stops, by the stage that arrives there. Reason is
+// itinerary-focused (day length / logistics), distinct from the bed-focused
+// "where to stay" page.
+const ITIN: { slug: string; en: string; es: string; pt: string }[] = [
+  { slug: 'a-guarda', en: 'Sleep here on your first Spanish night so the Minho crossing is unhurried — cross in the afternoon and settle in. Skip only if you crossed early and feel strong.', es: 'Duerme aquí la primera noche española para no apurar el cruce del Miño: cruza por la tarde e instálate. Sáltalo solo si cruzaste pronto y te sientes con fuerzas.', pt: 'Dorme aqui na primeira noite espanhola para não apressar a travessia do Minho: atravessa à tarde e instala-te. Salta só se atravessaste cedo e te sentes com forças.' },
+  { slug: 'oia', en: 'A short half-day from A Guarda — the gentle way to split the coast into easy days, ideal if you want a scenic, low-mileage stop. Beds are few, so reserve.', es: 'Media jornada corta desde A Guarda: la forma suave de partir la costa en días fáciles, ideal si quieres una parada escénica y de poco kilometraje. Hay pocas plazas, reserva.', pt: 'Meia jornada curta desde A Guarda: a forma suave de partir a costa em dias fáceis, ideal se queres uma paragem cénica e de pouca quilometragem. Há poucas camas, reserva.' },
+  { slug: 'baiona', en: 'The classic second overnight — a hillier day from Oia ends at a handsome seaside town with food and atmosphere. A natural place to break before the long Vigo day.', es: 'El clásico segundo alto: una jornada con más cuestas desde Oia termina en una bonita villa marinera con comida y ambiente. Un sitio natural antes del largo día a Vigo.', pt: 'O clássico segundo alto: um dia com mais subidas desde Oia termina numa bela vila marítima com comida e ambiente. Um sítio natural antes do longo dia até Vigo.' },
+  { slug: 'vigo', en: 'After the long, flat day around the bay, the city is the obvious overnight — most beds on the route and full services. Good place to take stock before the hills.', es: 'Tras el largo día llano alrededor de la ría, la ciudad es el alto obvio: más plazas de la ruta y servicios completos. Buen sitio para tomar aliento antes de las cuestas.', pt: 'Após o longo dia plano à volta da ria, a cidade é o alto óbvio: mais camas do percurso e serviços completos. Bom sítio para recuperar antes das subidas.' },
+  { slug: 'redondela', en: 'A short day from Vigo and the junction with the Central route — a sensible overnight that sets up a clean run to Pontevedra. Busy, so have a booking backup.', es: 'Una jornada corta desde Vigo y el cruce con el Central: un alto sensato que prepara un buen tramo hasta Pontevedra. Concurrido, ten una reserva de respaldo.', pt: 'Uma jornada curta desde Vigo e o cruzamento com o Central: um alto sensato que prepara um bom troço até Pontevedra. Movimentado, tem uma reserva de apoio.' },
+  { slug: 'pontevedra', en: 'The best rest-day overnight on the whole route — a car-free old town, plenty of beds and every service. Stop two nights here if you need a day off your feet.', es: 'La mejor noche para descansar de toda la ruta: casco antiguo peatonal, muchas plazas y todos los servicios. Quédate dos noches si necesitas un día de descanso.', pt: 'A melhor noite para descansar de todo o percurso: centro antigo pedonal, muitas camas e todos os serviços. Fica duas noites se precisas de um dia de descanso.' },
+  { slug: 'padron', en: 'The standard last overnight before Santiago — sleep here to keep the final day to a relaxed ~24 km and reach the cathedral in time for the Pilgrim’s Mass.', es: 'El último alto habitual antes de Santiago: duerme aquí para dejar la jornada final en unos ~24 km tranquilos y llegar a la catedral a tiempo para la Misa del Peregrino.', pt: 'O último alto habitual antes de Santiago: dorme aqui para deixar a jornada final em ~24 km tranquilos e chegar à catedral a tempo da Missa do Peregrino.' },
+];
+
+const L = {
+  en: {
+    h1: 'Best stages to sleep on the Coastal Camino',
+    metaTitle: 'Best Stages to Sleep on the Portuguese Coastal Camino (2026): Where to Break the Route',
+    metaDescription: 'How to split the Portuguese Coastal Camino in 2026: the best overnight stops from A Guarda to Padrón, with stage distances, who each suits, and links to compare albergues and book.',
+    intro: 'Where you break each day decides how hard the Coastal Camino feels. These are the overnight stops most pilgrims build their itinerary around, in route order, with the stage distance into each and why it works. Compare the albergues at any stop, or book a bed in a click.',
+    stageInto: (to: string, km: number) => `Stage into ${to}: ${km} km`,
+    compareAlb: 'Compare albergues',
+    stageGuide: 'Stage guide',
+    book: 'Book a stay',
+    nextH: 'Keep planning',
+    whereStay: 'Where to stay on the Coastal Camino',
+    routeHub: ui.routeHub,
+    faqH: ui.faqHeading,
+    faq: [
+      { q: 'How many days is the Portuguese Coastal Camino from the border?', a: 'Most pilgrims take about 6–7 days from the Minho crossing to Santiago, sleeping in A Guarda, Baiona, Vigo, Redondela or Pontevedra and Padrón. Adding Oia turns the first part into gentler, shorter days.' },
+      { q: 'Which is the best overnight stop on the coastal route?', a: 'Pontevedra is the best for a rest day (car-free old town, many beds), Vigo has the most beds, and Baiona is the most scenic mid-route. Padrón is the standard last stop before Santiago.' },
+      { q: 'What is the shortest way to split the coast into easy days?', a: 'Add Oia as a short half-day after A Guarda, then Baiona, Vigo, Redondela, Pontevedra and Padrón. That keeps most days under 20 km, at the cost of one extra night and booking ahead for Oia’s few beds.' },
+    ],
+  },
+  es: {
+    h1: 'Mejores etapas para dormir en el Camino de la Costa',
+    metaTitle: 'Mejores Etapas para Dormir en el Camino Portugués de la Costa (2026): Dónde Partir la Ruta',
+    metaDescription: 'Cómo partir el Camino Portugués de la Costa en 2026: los mejores altos para pernoctar de A Guarda a Padrón, con distancias de etapa, a quién conviene cada uno y enlaces para comparar albergues y reservar.',
+    intro: 'Dónde partes cada día decide lo dura que se siente la costa. Estos son los altos para pernoctar en torno a los que la mayoría arma su itinerario, en orden de ruta, con la distancia de etapa hasta cada uno y por qué funciona. Compara los albergues de cada parada o reserva cama en un clic.',
+    stageInto: (to: string, km: number) => `Etapa hasta ${to}: ${km} km`,
+    compareAlb: 'Comparar albergues',
+    stageGuide: 'Guía de la etapa',
+    book: 'Reservar alojamiento',
+    nextH: 'Sigue planificando',
+    whereStay: 'Dónde dormir en el Camino de la Costa',
+    routeHub: ui.routeHub,
+    faqH: ui.faqHeading,
+    faq: [
+      { q: '¿Cuántos días son del Camino de la Costa desde la frontera?', a: 'La mayoría tarda unos 6–7 días del cruce del Miño a Santiago, durmiendo en A Guarda, Baiona, Vigo, Redondela o Pontevedra y Padrón. Añadir Oia convierte la primera parte en días más suaves y cortos.' },
+      { q: '¿Cuál es el mejor alto para pernoctar en la costa?', a: 'Pontevedra es el mejor para un día de descanso (casco peatonal, muchas plazas), Vigo tiene más plazas y Baiona es el más bonito a media ruta. Padrón es el último alto habitual antes de Santiago.' },
+      { q: '¿Cuál es la forma más corta de partir la costa en días fáciles?', a: 'Añade Oia como media jornada corta tras A Guarda, luego Baiona, Vigo, Redondela, Pontevedra y Padrón. Así casi todos los días quedan por debajo de 20 km, a costa de una noche extra y reservar las pocas plazas de Oia.' },
+    ],
+  },
+  pt: {
+    h1: 'Melhores etapas para dormir no Caminho da Costa',
+    metaTitle: 'Melhores Etapas para Dormir no Caminho Português da Costa (2026): Onde Partir o Percurso',
+    metaDescription: 'Como partir o Caminho Português da Costa em 2026: os melhores altos para pernoitar de A Guarda a Padrón, com distâncias de etapa, a quem convém cada um e ligações para comparar albergues e reservar.',
+    intro: 'Onde partes cada dia decide o quão duro o Caminho da Costa se sente. Estes são os altos para pernoitar em torno dos quais a maioria monta o seu itinerário, por ordem de percurso, com a distância de etapa até cada um e porque funciona. Compara os albergues de cada paragem ou reserva cama num clique.',
+    stageInto: (to: string, km: number) => `Etapa até ${to}: ${km} km`,
+    compareAlb: 'Comparar albergues',
+    stageGuide: 'Guia da etapa',
+    book: 'Reservar alojamento',
+    nextH: 'Continua a planear',
+    whereStay: 'Onde ficar no Caminho da Costa',
+    routeHub: ui.routeHub,
+    faqH: ui.faqHeading,
+    faq: [
+      { q: 'Quantos dias são o Caminho da Costa desde a fronteira?', a: 'A maioria leva cerca de 6–7 dias da travessia do Minho a Santiago, dormindo em A Guarda, Baiona, Vigo, Redondela ou Pontevedra e Padrón. Acrescentar Oia torna a primeira parte em dias mais suaves e curtos.' },
+      { q: 'Qual é o melhor alto para pernoitar na costa?', a: 'Pontevedra é o melhor para um dia de descanso (centro pedonal, muitas camas), Vigo tem mais camas e Baiona é o mais cénico a meio do percurso. Padrón é o último alto habitual antes de Santiago.' },
+      { q: 'Qual é a forma mais curta de partir a costa em dias fáceis?', a: 'Acrescenta Oia como meia jornada curta após A Guarda, depois Baiona, Vigo, Redondela, Pontevedra e Padrón. Assim quase todos os dias ficam abaixo de 20 km, ao custo de uma noite extra e reservar as poucas camas de Oia.' },
+    ],
+  },
+}[lang];
+
+const stops = ITIN.map((o) => {
+  const t = townById.get(o.slug);
+  if (!t) return null;
+  const st = stageById.get(t.data.onStageSlug);
+  return {
+    slug: o.slug,
+    name: t.data.name,
+    reason: o[lang],
+    km: st ? st.data.distanceKm : null,
+    stageSlug: t.data.onStageSlug,
+    bookingHref: bookingSearch(t.data.name, `wtsg-stagesleep-${lang}-${o.slug}`),
+  };
+}).filter((x): x is NonNullable<typeof x> => x !== null);
+
+const breadcrumb = [
+  { name: ui.home, item: `/${lang}/` },
+  { name: ui.routeHub, item: hubPath(lang) },
+  { name: L.h1, item: PAGE_PATH },
+];
+const graph = buildClusterGraph({
+  lang,
+  pagePath: PAGE_PATH,
+  title: L.metaTitle,
+  description: L.metaDescription,
+  breadcrumb,
+  entity: {
+    '@type': 'ItemList',
+    name: L.h1,
+    numberOfItems: stops.length,
+    itemListElement: stops.map((s, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: s.name,
+      url: `${SITE_URL}${stagePath(lang, s.stageSlug)}`,
+    })),
+  },
+  faq: L.faq,
+});
+const hub = hubPath(lang);
+const stayHub = coastalWhereToStayPath(lang);
+---
+
+<MainLayout title={L.metaTitle} description={L.metaDescription} lang={lang} schemaType="none" i18nUrls={i18nUrls}>
+  <script type="application/ld+json" set:html={JSON.stringify(graph).replace(/</g, '\\u003c')} />
+
+  <div class="bg-gradient-to-br from-slate-800 via-slate-800 to-forest-950 text-white">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+      <nav aria-label="Breadcrumb" class="mb-5">
+        <ol class="flex flex-wrap items-center gap-2 text-sm text-slate-400">
+          <li><a href={`/${lang}/`} class="text-slate-300 hover:text-white no-underline hover:underline">{ui.home}</a></li>
+          <li aria-hidden="true" class="text-slate-600">›</li>
+          <li><a href={hub} class="text-slate-300 hover:text-white no-underline hover:underline">{ui.routeHub}</a></li>
+          <li aria-hidden="true" class="text-slate-600">›</li>
+          <li aria-current="page" class="text-slate-200 font-medium">{L.h1}</li>
+        </ol>
+      </nav>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4 tracking-tight text-white">{L.h1}</h1>
+      <p class="text-slate-300 text-base leading-relaxed max-w-2xl">{L.intro}</p>
+    </div>
+  </div>
+
+  <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 space-y-10">
+    <section data-aff-pos="mid">
+      <ol class="space-y-4">
+        {stops.map((s, i) => (
+          <li class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm flex gap-4">
+            <span class="shrink-0 flex h-9 w-9 items-center justify-center rounded-full bg-forest-700 text-white text-base font-bold" aria-hidden="true">{i + 1}</span>
+            <div class="flex-1 min-w-0">
+              <p class="font-bold text-forest-900">{s.name}</p>
+              {s.km !== null && <p class="text-xs font-semibold text-earth-700 mt-0.5">{L.stageInto(s.name, s.km)}</p>}
+              <p class="text-sm text-slate-700 leading-relaxed mt-2">{s.reason}</p>
+              <div class="flex flex-wrap gap-x-4 gap-y-1 mt-2.5 text-sm">
+                <a href={bestAlberguesPath(lang, s.slug)} class="font-semibold text-forest-700 hover:underline no-underline">{L.compareAlb} →</a>
+                <a href={stagePath(lang, s.stageSlug)} class="text-slate-600 hover:underline no-underline">{L.stageGuide}</a>
+                <a href={townPath(lang, s.slug)} class="text-slate-600 hover:underline no-underline">{s.name}</a>
+                <a href={s.bookingHref} rel="nofollow noopener noreferrer sponsored" target="_blank" class="font-semibold text-earth-700 hover:underline no-underline">{L.book}</a>
+              </div>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section class="bg-forest-50 border border-forest-200 rounded-2xl p-6">
+      <h2 class="text-base font-bold text-forest-900 mb-3">{L.nextH}</h2>
+      <ul class="space-y-2 text-sm">
+        <li><a href={stayHub} class="text-forest-700 hover:underline no-underline font-medium">{L.whereStay}</a></li>
+        <li><a href={hub} class="text-forest-700 hover:underline no-underline font-medium">{L.routeHub}</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-bold text-forest-900 mb-5 tracking-tight">{L.faqH}</h2>
+      <div class="space-y-3">
+        {L.faq.map((f) => (
+          <details class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+            <summary class="px-6 py-4 font-semibold text-forest-900 cursor-pointer">{f.q}</summary>
+            <div class="px-6 pb-5 text-sm text-slate-700 leading-relaxed border-t border-slate-100 pt-3">{f.a}</div>
+          </details>
+        ))}
+      </div>
+    </section>
+  </div>
+</MainLayout>

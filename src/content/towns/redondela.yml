@@ -1,0 +1,137 @@
+name: Redondela
+country: ES
+region: Pontevedra (Galicia)
+onStageSlug: vigo-redondela
+geo:
+  lat: 42.2837
+  lng: -8.6093
+accommodations:
+  - name: Albergue de peregrinos Casa da Torre
+    type: municipal-albergue
+    beds: 36
+    priceEUR: "10"
+    openSeason: All year
+    url: https://www.gronze.com/galicia/pontevedra/redondela/albergue-peregrinos-casa-da-torre
+    bookable: false
+    highlight:
+      en: "Public Xunta albergue inside a restored 16th-century tower house on the main square — central, characterful, first-come."
+      es: "Albergue público de la Xunta en una casa-torre del siglo XVI restaurada en la plaza principal: céntrico, con encanto, por orden de llegada."
+      pt: "Albergue público da Xunta numa casa-torre do século XVI restaurada na praça principal: central, com carácter, por ordem de chegada."
+  - name: Albergue A Conserveira
+    type: private-albergue
+    beds: 40
+    priceEUR: "15–16"
+    openSeason: 1 Mar – 31 Oct
+    url: https://pilgrim8.com/camino-portugues/redondela/albergue-a-conserveira
+    bookable: true
+    highlight:
+      en: "Central private albergue with 40 beds plus private rooms — takes reservations, so a reliable backup when Casa da Torre fills."
+      es: "Albergue privado céntrico con 40 plazas y habitaciones privadas; admite reserva, un respaldo fiable cuando Casa da Torre se llena."
+      pt: "Albergue privado central com 40 camas e quartos privados; aceita reserva, um apoio fiável quando a Casa da Torre enche."
+services:
+  - Public + private pilgrim albergues
+  - Credential stamp (sello)
+  - Restaurants and cafés
+  - Supermarkets
+  - ATMs
+  - Pharmacy
+  - Train station (Redondela)
+  - Buses to Vigo and Pontevedra
+whereToStay:
+  en:
+    intro: "Redondela is the junction town where the Coastal Camino rejoins the Central Portuguese route, so it sees plenty of pilgrims and has both a public and several private albergues. The public Casa da Torre is central but does not take bookings; if you want a guaranteed bed or arrive late, the private albergues and the town's small hotels are the answer."
+    areas:
+      - name: "Historic centre (Praza de Ribadavia)"
+        blurb: "The old core around Praza de Ribadavia holds the Casa da Torre albergue, the arrows, the bars and the morning route out of town — the obvious place to stay so everything is on foot."
+        bookingQuery: "Redondela centro"
+        anchor: "small hotels and guesthouses in central Redondela"
+      - name: "Near the station & viaducts"
+        blurb: "If you plan to train on to Pontevedra or Vigo, rooms near the station and the great railway viaducts save a walk with your pack and put you a step ahead for an early departure."
+        bookingQuery: "Redondela estación"
+        anchor: "stays near Redondela station"
+  es:
+    intro: "Redondela es el pueblo de cruce donde el Camino de la Costa se reúne con la ruta Central portuguesa, así que ve pasar a muchos peregrinos y tiene un albergue público y varios privados. El público Casa da Torre es céntrico pero no admite reservas; si quieres cama asegurada o llegas tarde, la respuesta son los albergues privados y los pequeños hoteles del pueblo."
+    areas:
+      - name: "Casco histórico (Praza de Ribadavia)"
+        blurb: "El casco antiguo en torno a la Praza de Ribadavia reúne el albergue Casa da Torre, las flechas, los bares y la salida de la mañana: el sitio lógico para alojarse y tenerlo todo a pie."
+        bookingQuery: "Redondela centro"
+        anchor: "pequeños hoteles y pensiones en el centro de Redondela"
+      - name: "Junto a la estación y los viaductos"
+        blurb: "Si piensas seguir en tren a Pontevedra o Vigo, las habitaciones cerca de la estación y los grandes viaductos ferroviarios te ahorran caminar con la mochila y te dejan listo para salir temprano."
+        bookingQuery: "Redondela estación"
+        anchor: "alojamientos cerca de la estación de Redondela"
+  pt:
+    intro: "Redondela é a vila de cruzamento onde o Caminho da Costa se junta à rota Central portuguesa, por isso vê passar muitos peregrinos e tem um albergue público e vários privados. O público Casa da Torre é central mas não aceita reservas; se queres cama garantida ou chegas tarde, a resposta são os albergues privados e os pequenos hotéis da vila."
+    areas:
+      - name: "Centro histórico (Praza de Ribadavia)"
+        blurb: "O centro antigo em redor da Praza de Ribadavia reúne o albergue Casa da Torre, as setas, os bares e a saída da manhã: o sítio lógico para ficar e ter tudo a pé."
+        bookingQuery: "Redondela centro"
+        anchor: "pequenos hotéis e pensões no centro de Redondela"
+      - name: "Junto à estação e aos viadutos"
+        blurb: "Se pensas seguir de comboio para Pontevedra ou Vigo, os quartos perto da estação e dos grandes viadutos ferroviários poupam-te caminhar com a mochila e deixam-te pronto para partir cedo."
+        bookingQuery: "Redondela estação"
+        anchor: "alojamentos perto da estação de Redondela"
+sourceVerified: true
+lastVerified: "2026-06-24"
+sources:
+  - https://www.gronze.com/galicia/pontevedra/redondela/albergue-peregrinos-casa-da-torre
+  - https://www.alberguescaminosantiago.com/camino-portugues/albergue-de-peregrinos-de-redondela/
+  - https://pilgrim8.com/camino-portugues/redondela/albergue-a-conserveira
+i18n:
+  en:
+    metaTitle: "Where to Stay in Redondela (2026): Best Pilgrim Albergues Where the Caminos Meet"
+    metaDescription: "Redondela, Galicia: the junction where the Coastal Camino rejoins the Central Portuguese route. Public Casa da Torre (36 beds, €10) plus private albergues, where to stay, services and the way on to Pontevedra."
+    h1: "Redondela"
+    lead: "Redondela is the meeting point of the two Portuguese Caminos: here the Coastal Route you have followed from the border finally rejoins the Central Camino coming up from Tui and Porto. A lively town beneath two towering railway viaducts at the head of its ría, it is a natural overnight before the climb toward Pontevedra."
+    sections:
+      - heading: "Where pilgrims stay"
+        body: "Redondela's landmark pilgrim address is the public Casa da Torre, a restored 16th-century tower house on the main square run by the Xunta: 36 beds at €10, open all year, first-come with no reservations. Because the town sits at the junction of two routes it can be busy, so for a guaranteed bed the central private Albergue A Conserveira (40 beds, about €15–16, open March–October, bookable) is a dependable backup, alongside the town's small hotels."
+      - heading: "A town of two Caminos"
+        body: "Redondela is best known for the two great railway viaducts that stride over its rooftops and for the Coca, a dragon paraded through the streets at the Corpus Christi festival. For pilgrims its significance is practical: this is where coastal and central walkers merge into a single, busier corridor for the final days to Santiago, so the waymarking, services and pilgrim crowd all change character here."
+      - heading: "Continuing to Pontevedra"
+        body: "From Redondela the combined Camino climbs out of town and on toward Arcade — famous for its oysters — and the medieval Ponte Sampaio before reaching Pontevedra, about 20 km on. It is a moderate day with a couple of climbs early; stock up in Redondela, as the first stretch has limited services."
+    faq:
+      - q: "Where can pilgrims stay in Redondela?"
+        a: "The main option is the public Casa da Torre albergue on the main square (36 beds, €10, open all year, first-come — no reservations). For a guaranteed bed, the central private Albergue A Conserveira (40 beds, about €15–16, open March–October) takes bookings, and the town also has small hotels."
+      - q: "Why is Redondela important on the Camino?"
+        a: "It is the junction where the Portuguese Coastal Camino rejoins the Central route. Pilgrims who walked the coast from Caminha or Vigo merge here with those coming up from Tui and Porto, sharing a single corridor for the last days into Santiago."
+      - q: "Does the Casa da Torre albergue take reservations?"
+        a: "No. The Xunta-run Casa da Torre assigns its 36 beds first-come from the early afternoon. In busy months arrive early or use the bookable private Albergue A Conserveira as a backup."
+  es:
+    metaTitle: "Dónde Dormir en Redondela (2026): Mejores Albergues Donde se Unen los Caminos"
+    metaDescription: "Redondela, Galicia: el cruce donde el Camino de la Costa se reúne con la ruta Central portuguesa. Casa da Torre pública (36 plazas, 10 €) y albergues privados, dónde dormir, servicios y la ruta a Pontevedra."
+    h1: "Redondela"
+    lead: "Redondela es el punto de encuentro de los dos Caminos portugueses: aquí la Ruta de la Costa que has seguido desde la frontera se reúne por fin con el Camino Central que sube desde Tui y Oporto. Villa animada bajo dos imponentes viaductos ferroviarios al fondo de su ría, es una parada natural para pernoctar antes de la subida hacia Pontevedra."
+    sections:
+      - heading: "Dónde duermen los peregrinos"
+        body: "La dirección de peregrino emblemática de Redondela es la Casa da Torre pública, una casa-torre del siglo XVI restaurada en la plaza principal y gestionada por la Xunta: 36 plazas a 10 €, abierta todo el año, por orden de llegada y sin reservas. Como el pueblo está en el cruce de dos rutas puede estar concurrido, así que para cama asegurada el céntrico Albergue A Conserveira privado (40 plazas, unos 15–16 €, abierto de marzo a octubre, con reserva) es un respaldo fiable, junto a los pequeños hoteles del pueblo."
+      - heading: "Un pueblo de dos Caminos"
+        body: "Redondela es conocida por los dos grandes viaductos ferroviarios que cruzan sus tejados y por la Coca, un dragón que recorre las calles en la fiesta del Corpus. Para los peregrinos su importancia es práctica: aquí los caminantes de la costa y del Central se fusionan en un único corredor, más concurrido, para los últimos días hasta Santiago, así que la señalización, los servicios y el ambiente peregrino cambian de carácter."
+      - heading: "Continuar hacia Pontevedra"
+        body: "Desde Redondela el Camino unificado sube del pueblo y sigue hacia Arcade —famoso por sus ostras— y el puente medieval de Ponte Sampaio antes de llegar a Pontevedra, a unos 20 km. Es una jornada moderada con un par de subidas al principio; abastécete en Redondela, porque el primer tramo tiene servicios limitados."
+    faq:
+      - q: "¿Dónde pueden alojarse los peregrinos en Redondela?"
+        a: "La opción principal es el albergue público Casa da Torre en la plaza principal (36 plazas, 10 €, todo el año, por orden de llegada, sin reservas). Para cama asegurada, el céntrico Albergue A Conserveira privado (40 plazas, unos 15–16 €, abierto de marzo a octubre) admite reserva, y el pueblo también tiene pequeños hoteles."
+      - q: "¿Por qué es importante Redondela en el Camino?"
+        a: "Es el cruce donde el Camino Portugués de la Costa se reúne con la ruta Central. Los peregrinos que han caminado la costa desde Caminha o Vigo se fusionan aquí con los que suben desde Tui y Oporto, compartiendo un único corredor en los últimos días hasta Santiago."
+      - q: "¿La Casa da Torre admite reservas?"
+        a: "No. La Casa da Torre de la Xunta asigna sus 36 plazas por orden de llegada desde primera hora de la tarde. En meses de afluencia, llega pronto o usa el Albergue A Conserveira privado, que sí admite reserva."
+  pt:
+    metaTitle: "Onde Ficar em Redondela (2026): Melhores Albergues Onde se Juntam os Caminhos"
+    metaDescription: "Redondela, Galiza: o cruzamento onde o Caminho da Costa se junta à rota Central portuguesa. Casa da Torre pública (36 camas, 10 €) e albergues privados, onde ficar, serviços e o percurso até Pontevedra."
+    h1: "Redondela"
+    lead: "Redondela é o ponto de encontro dos dois Caminhos portugueses: aqui a Rota da Costa que seguiste desde a fronteira junta-se por fim ao Caminho Central que sobe de Tui e do Porto. Vila animada sob dois imponentes viadutos ferroviários no fundo da sua ria, é uma paragem natural para pernoitar antes da subida para Pontevedra."
+    sections:
+      - heading: "Onde os peregrinos ficam"
+        body: "A morada de peregrino emblemática de Redondela é a Casa da Torre pública, uma casa-torre do século XVI restaurada na praça principal e gerida pela Xunta: 36 camas a 10 €, aberta todo o ano, por ordem de chegada e sem reservas. Como a vila fica no cruzamento de duas rotas pode estar cheia, por isso para cama garantida o central Albergue A Conserveira privado (40 camas, cerca de 15–16 €, aberto de março a outubro, com reserva) é um apoio fiável, a par dos pequenos hotéis da vila."
+      - heading: "Uma vila de dois Caminhos"
+        body: "Redondela é conhecida pelos dois grandes viadutos ferroviários que atravessam os seus telhados e pela Coca, um dragão que percorre as ruas na festa do Corpo de Deus. Para os peregrinos a sua importância é prática: aqui os caminhantes da costa e do Central fundem-se num único corredor, mais movimentado, para os últimos dias até Santiago, por isso a sinalização, os serviços e o ambiente peregrino mudam de carácter."
+      - heading: "Continuar para Pontevedra"
+        body: "A partir de Redondela o Caminho unificado sobe da vila e segue para Arcade — famoso pelas suas ostras — e a ponte medieval de Ponte Sampaio antes de chegar a Pontevedra, a cerca de 20 km. É uma jornada moderada com algumas subidas no início; abastece-te em Redondela, porque o primeiro troço tem serviços limitados."
+    faq:
+      - q: "Onde podem ficar os peregrinos em Redondela?"
+        a: "A opção principal é o albergue público Casa da Torre na praça principal (36 camas, 10 €, todo o ano, por ordem de chegada, sem reservas). Para cama garantida, o central Albergue A Conserveira privado (40 camas, cerca de 15–16 €, aberto de março a outubro) aceita reserva, e a vila também tem pequenos hotéis."
+      - q: "Porque é importante Redondela no Caminho?"
+        a: "É o cruzamento onde o Caminho Português da Costa se junta à rota Central. Os peregrinos que caminharam a costa desde Caminha ou Vigo fundem-se aqui com os que sobem de Tui e do Porto, partilhando um único corredor nos últimos dias até Santiago."
+      - q: "A Casa da Torre aceita reservas?"
+        a: "Não. A Casa da Torre da Xunta atribui as suas 36 camas por ordem de chegada a partir do início da tarde. Em meses de afluência, chega cedo ou usa o Albergue A Conserveira privado, que aceita reserva."

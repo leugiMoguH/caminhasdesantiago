@@ -1,0 +1,178 @@
+---
+/**
+ * Conversion-first landing page for cold Instagram (paid) traffic.
+ *
+ * Single English page, intentionally OUTSIDE the /en|/es|/pt SEO cluster and
+ * `noindex` — it exists to turn low-patience / high-intent paid clicks into
+ * Booking.com affiliate clicks with minimum reading, not to rank. Kept separate
+ * from the organic /coastal-camino/where-to-stay/ page so the two never compete.
+ *
+ * Hard rules baked in: max 3 picks, #1 visually dominant, scannable only (no
+ * paragraphs / history / SEO fluff), options visible within ~1 scroll, every CTA
+ * is a tracked Booking.com affiliate link, sticky thumb CTA on mobile.
+ */
+import MainLayout from '../layouts/MainLayout.astro';
+import { bookingSearch } from '../lib/booking';
+
+const metaTitle = 'Where to Stay on the Camino Portugués — 3 Best Albergues from €10';
+const metaDescription =
+  'Skip the research: the 3 best places to sleep on the Camino Portugués, with live prices from €10 a night. Check availability and book your bed in seconds.';
+
+// Real, verified picks (data mirrors src/content/towns/*.yml). Each drives a
+// tracked Booking.com affiliate search for that town — live availability + price.
+type Pick = {
+  town: string;
+  label: string;        // forced-decision badge
+  fromEUR: string;      // cheapest pilgrim bed in town
+  benefit: string;      // ONE strong benefit
+  urgency: string;      // scarcity / urgency trigger
+  cta: string;          // CTA copy
+};
+
+const picks: Pick[] = [
+  {
+    town: 'Pontevedra',
+    label: 'Best overall',
+    fromEUR: '10',
+    benefit: 'The pilgrims’ favourite rest stop — a car-free medieval old town, a big public albergue and bookable hostels, all a short walk from the route.',
+    urgency: 'Popular with pilgrims — beds fill on summer weekends.',
+    cta: 'Check availability',
+  },
+  {
+    town: 'Vigo',
+    label: 'Best budget',
+    fromEUR: '10',
+    benefit: 'Galicia’s biggest pilgrim albergue — 93 beds from €10 — plus rooms and hostels for every budget and every city service on the doorstep.',
+    urgency: 'Limited beds in peak season — book early to lock the price.',
+    cta: 'See beds & prices',
+  },
+  {
+    town: 'Baiona',
+    label: 'Best location',
+    fromEUR: '17',
+    benefit: 'Sleep right by the Atlantic in a walled fortress town — step from the Monterreal walls straight onto the coastal path the next morning.',
+    urgency: 'Small seafront town — often fully booked in July & August.',
+    cta: 'Reserve your spot',
+  },
+];
+
+const hrefFor = (town: string): string =>
+  bookingSearch(town, `wtsg-iglp-en-${town.toLowerCase()}`);
+
+const heroPick = picks[0];
+const restPicks = picks.slice(1);
+const stickyHref = hrefFor(heroPick.town);
+---
+
+<MainLayout title={metaTitle} description={metaDescription} lang="en" schemaType="none" noindex={true}>
+  <!-- HERO — compact so the #1 pick is on screen within one scroll -->
+  <section class="bg-gradient-to-br from-forest-800 to-forest-950 text-white">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 py-9 sm:py-12 text-center">
+      <p class="inline-flex items-center gap-1.5 rounded-full bg-earth-500/15 border border-earth-400/30 px-3 py-1 text-xs font-semibold text-earth-200 mb-4">
+        Camino Portugués · Coastal route
+      </p>
+      <h1 class="text-2xl sm:text-4xl font-bold tracking-tight leading-tight text-balance">
+        Where to Stay on the Camino Portugués
+        <span class="block text-earth-300 mt-1">Best Albergues from €10</span>
+      </h1>
+      <p class="mt-4 text-forest-100 text-base sm:text-lg leading-relaxed max-w-xl mx-auto">
+        3 proven places pilgrims actually book — no research needed.
+      </p>
+      <div class="mt-5 flex flex-wrap justify-center gap-x-5 gap-y-1.5 text-xs sm:text-sm text-forest-100/90 font-medium">
+        <span class="inline-flex items-center gap-1.5"><span class="text-earth-300">✓</span> Live prices &amp; availability</span>
+        <span class="inline-flex items-center gap-1.5"><span class="text-earth-300">✓</span> Free cancellation on most stays</span>
+        <span class="inline-flex items-center gap-1.5"><span class="text-earth-300">✓</span> Beds from €10/night</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOP 3 PICKS -->
+  <div class="mx-auto max-w-3xl px-4 sm:px-6 py-8 sm:py-10 pb-28 sm:pb-10 space-y-5">
+
+    <!-- #1 — visually dominant -->
+    <article data-aff-pos="hero" class="relative bg-white border-2 border-earth-500 ring-4 ring-earth-500/15 rounded-3xl p-6 sm:p-7 shadow-xl">
+      <div class="absolute -top-3 left-6 flex items-center gap-2">
+        <span class="rounded-full bg-earth-600 px-3 py-1 text-xs font-bold text-white shadow-sm">#1 Recommended</span>
+        <span class="rounded-full bg-forest-700 px-3 py-1 text-xs font-bold text-white shadow-sm">{heroPick.label}</span>
+      </div>
+
+      <div class="flex items-start justify-between gap-4 mt-2">
+        <h2 class="text-2xl sm:text-3xl font-bold text-forest-900 tracking-tight">{heroPick.town}</h2>
+        <div class="text-right shrink-0">
+          <p class="text-xs text-slate-500 font-medium leading-none">from</p>
+          <p class="text-3xl sm:text-4xl font-extrabold text-earth-700 leading-none mt-1">€{heroPick.fromEUR}</p>
+          <p class="text-xs text-slate-500 font-medium">/ night</p>
+        </div>
+      </div>
+
+      <p class="mt-3 text-base text-slate-700 leading-relaxed">{heroPick.benefit}</p>
+
+      <p class="mt-4 inline-flex items-center gap-2 rounded-lg bg-earth-50 border border-earth-200 px-3 py-2 text-sm font-semibold text-earth-800">
+        <svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        {heroPick.urgency}
+      </p>
+
+      <a
+        href={hrefFor(heroPick.town)}
+        rel="nofollow noopener noreferrer sponsored"
+        target="_blank"
+        class="mt-5 flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-earth-500 to-earth-600 px-6 py-4 text-lg font-bold text-white no-underline shadow-lg transition-all hover:from-earth-600 hover:to-earth-700 active:scale-[0.99]"
+      >
+        {heroPick.cta}
+        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </a>
+    </article>
+
+    <!-- #2 + #3 — secondary cards -->
+    {restPicks.map((p, i) => (
+      <article data-aff-pos="card" class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+        <div class="flex items-start justify-between gap-3">
+          <div class="min-w-0">
+            <span class="inline-block rounded-full bg-forest-50 border border-forest-100 px-2.5 py-0.5 text-xs font-semibold text-forest-700 mb-1.5">{p.label}</span>
+            <h2 class="text-xl font-bold text-forest-900 tracking-tight">#{i + 2} {p.town}</h2>
+          </div>
+          <div class="text-right shrink-0">
+            <p class="text-[11px] text-slate-500 font-medium leading-none">from</p>
+            <p class="text-2xl font-extrabold text-earth-700 leading-none mt-0.5">€{p.fromEUR}</p>
+            <p class="text-[11px] text-slate-500 font-medium">/ night</p>
+          </div>
+        </div>
+
+        <p class="mt-2.5 text-sm text-slate-700 leading-relaxed">{p.benefit}</p>
+
+        <p class="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-earth-800">
+          <svg class="h-3.5 w-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          {p.urgency}
+        </p>
+
+        <a
+          href={hrefFor(p.town)}
+          rel="nofollow noopener noreferrer sponsored"
+          target="_blank"
+          class="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-forest-700 px-5 py-3.5 text-base font-bold text-white no-underline shadow-md transition-all hover:bg-forest-800 active:scale-[0.99]"
+        >
+          {p.cta}
+          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </a>
+      </article>
+    ))}
+
+    <p class="text-center text-xs text-slate-400 pt-1">
+      Prices &amp; availability shown live on Booking.com. We may earn a commission — it never costs you more.
+    </p>
+  </div>
+
+  <!-- STICKY mobile CTA — thumb-friendly, points at the #1 pick -->
+  <div class="sm:hidden fixed inset-x-0 bottom-0 z-40 border-t border-earth-200 bg-white/95 backdrop-blur px-4 py-3 shadow-[0_-4px_16px_rgba(0,0,0,0.08)]">
+    <a
+      href={stickyHref}
+      rel="nofollow noopener noreferrer sponsored"
+      target="_blank"
+      data-aff-pos="sticky"
+      class="flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-earth-500 to-earth-600 px-6 py-4 text-base font-bold text-white no-underline shadow-lg active:scale-[0.99]"
+    >
+      {heroPick.cta} — {heroPick.town} from €{heroPick.fromEUR}
+      <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</MainLayout>

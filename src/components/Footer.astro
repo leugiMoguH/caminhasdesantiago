@@ -32,6 +32,7 @@ const t = {
     ferryDisclaimerLabel: 'Ferry Timetable Notice',
     ferryDisclaimer: 'Ferry timetables and prices are subject to change without notice. Always verify schedules directly with the ferry operator before your crossing. This site is independently operated and has no affiliation with any transport provider.',
     independentNote: 'Independent guide — not affiliated with any Camino organisation or tourism board.',
+    quickGuide: 'See the best places to stay (quick guide)',
   },
   es: {
     tagline: 'Tu guía independiente para peregrinos y viajeros en el Camino de Santiago de la Costa, a través de Caminha, Portugal.',
@@ -55,6 +56,7 @@ const t = {
     ferryDisclaimerLabel: 'Aviso Horarios del Ferry',
     ferryDisclaimer: 'Los horarios y precios del ferry están sujetos a cambios sin previo aviso. Confirma siempre los horarios directamente con la naviera antes de tu travesía. Este sitio es independiente y no tiene ninguna afiliación con ningún proveedor de transporte.',
     independentNote: 'Guía independiente — sin afiliación con ninguna organización del Camino ni junta de turismo.',
+    quickGuide: 'Mira los mejores sitios para dormir (guía rápida)',
   },
   pt: {
     tagline: 'O seu guia independente para peregrinos e viajantes na Rota Costeira do Caminho de Santiago, através de Caminha, Portugal.',
@@ -78,6 +80,7 @@ const t = {
     ferryDisclaimerLabel: 'Aviso sobre Horários do Ferry',
     ferryDisclaimer: 'Os horários e preços do ferry estão sujeitos a alterações sem aviso prévio. Verifique sempre os horários diretamente com o operador do ferry antes da sua travessia. Este site é operado de forma independente e não tem qualquer afiliação com nenhum fornecedor de transporte.',
     independentNote: 'Guia independente — sem afiliação com nenhuma organização do Caminho ou junta de turismo.',
+    quickGuide: 'Vê os melhores sítios para ficar (guia rápido)',
   },
 } as const;
 
@@ -120,7 +123,16 @@ const navLinks =
 
 <footer class="bg-forest-950 text-slate-300 mt-auto">
 
-  
+  <!-- Sitewide quick-guide CTA → conversion landing page -->
+  <div class="bg-earth-600">
+    <a
+      href="/camino-portugues-where-to-stay/"
+      class="mx-auto flex max-w-6xl items-center justify-center gap-2 px-4 py-3 text-center text-sm font-bold text-white no-underline hover:bg-earth-700 transition-colors sm:text-base"
+    >
+      👉 {text.quickGuide}
+      <svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+    </a>
+  </div>
 
   <!-- Main footer content -->
   <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-14">

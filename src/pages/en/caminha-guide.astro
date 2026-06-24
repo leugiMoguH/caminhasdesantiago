@@ -171,7 +171,7 @@ const jsonLd = {
   schemaType="none"
 >
 
-  <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd).replace(/</g, '\\u003c')} />
 
   <!-- ── HERO ──────────────────────────────────────────────────────────────────── -->
   <div class="bg-gradient-to-b from-forest-50 to-white border-b border-forest-100/60">

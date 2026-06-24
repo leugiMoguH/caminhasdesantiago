@@ -12,12 +12,22 @@ accommodations:
     priceEUR: "10"
     openSeason: All year
     url: https://www.wisepilgrim.com/en/accommodations/camino-portugues/a-guarda/albergue-de-peregrinos-de-a-guarda
+    bookable: false
+    highlight:
+      en: "Municipal albergue in the old Manuel Rodríguez Sinde school with kitchen, laundry, dining room and Wi-Fi — the budget choice, first-come."
+      es: "Albergue municipal en el antiguo colegio Manuel Rodríguez Sinde con cocina, lavandería, comedor y Wi-Fi; la opción económica, por orden de llegada."
+      pt: "Albergue municipal na antiga escola Manuel Rodríguez Sinde com cozinha, lavandaria, sala de refeições e Wi-Fi; a opção económica, por ordem de chegada."
   - name: Albergue O Peirao
     type: private-albergue
     beds: 16
     priceEUR: "15–17"
     openSeason: 1 Apr – 30 Oct
     url: https://wisepilgrim.com/en/accommodations/camino-portugues/a-guarda/albergue-o-peirao
+    bookable: true
+    highlight:
+      en: "Small private albergue (16 beds) that takes reservations — a dependable backup when the municipal fills in summer."
+      es: "Pequeño albergue privado (16 plazas) que admite reserva; un respaldo fiable cuando el municipal se llena en verano."
+      pt: "Pequeno albergue privado (16 camas) que aceita reserva; um apoio fiável quando o municipal enche no verão."
 services:
   - Pilgrim albergues (municipal + private)
   - Credential stamp (sello)
@@ -25,6 +35,40 @@ services:
   - Supermarkets
   - ATMs
   - Pharmacy
+whereToStay:
+  en:
+    intro: "A Guarda is the first Spanish town after the river crossing, so it sees a steady flow of pilgrims and has both a municipal and a private albergue plus hotels. The municipal is the cheapest but first-come; for a guaranteed bed after the crossing, the private albergue and the town's hotels take bookings."
+    areas:
+      - name: "Town centre & port"
+        blurb: "The compact centre around the fishing port holds the albergues, the bars and the route north — staying here keeps everything walkable after a tiring crossing day."
+        bookingQuery: "A Guarda centro"
+        anchor: "hotels and guesthouses in central A Guarda"
+      - name: "Near the Camposancos landing"
+        blurb: "If you cross late from Caminha, rooms toward the Camposancos landing — where the water taxi drops you, about 1.5 km from the centre — let you stop sooner without walking the whole way into town."
+        bookingQuery: "Camposancos A Guarda"
+        anchor: "stays near the Camposancos crossing point"
+  es:
+    intro: "A Guarda es el primer pueblo español tras el cruce del río, así que recibe un flujo constante de peregrinos y tiene un albergue municipal y otro privado, además de hoteles. El municipal es el más barato pero por orden de llegada; para cama asegurada tras el cruce, el albergue privado y los hoteles del pueblo admiten reserva."
+    areas:
+      - name: "Centro y puerto"
+        blurb: "El centro compacto en torno al puerto pesquero reúne los albergues, los bares y la ruta hacia el norte; alojarte aquí lo deja todo a pie tras una jornada de cruce cansada."
+        bookingQuery: "A Guarda centro"
+        anchor: "hoteles y pensiones en el centro de A Guarda"
+      - name: "Junto al desembarco de Camposancos"
+        blurb: "Si cruzas tarde desde Caminha, las habitaciones hacia el desembarco de Camposancos —donde te deja el taxi-marítimo, a unos 1,5 km del centro— te permiten parar antes sin caminar hasta el pueblo."
+        bookingQuery: "Camposancos A Guarda"
+        anchor: "alojamientos cerca del punto de cruce de Camposancos"
+  pt:
+    intro: "A Guarda é a primeira vila espanhola após a travessia do rio, por isso recebe um fluxo constante de peregrinos e tem um albergue municipal e outro privado, além de hotéis. O municipal é o mais barato mas por ordem de chegada; para cama garantida após a travessia, o albergue privado e os hotéis da vila aceitam reserva."
+    areas:
+      - name: "Centro e porto"
+        blurb: "O centro compacto em redor do porto piscatório reúne os albergues, os bares e o percurso para norte; ficar aqui deixa tudo a pé após um dia de travessia cansativo."
+        bookingQuery: "A Guarda centro"
+        anchor: "hotéis e pensões no centro de A Guarda"
+      - name: "Junto ao desembarque de Camposancos"
+        blurb: "Se atravessas tarde desde Caminha, os quartos para o lado do desembarque de Camposancos —onde o táxi fluvial te deixa, a cerca de 1,5 km do centro— permitem parar mais cedo sem caminhar até à vila."
+        bookingQuery: "Camposancos A Guarda"
+        anchor: "alojamentos perto do ponto de travessia de Camposancos"
 sourceVerified: true
 lastVerified: "2026-06-06"
 sources:
@@ -33,7 +77,7 @@ sources:
   - https://wisepilgrim.com/en/accommodations/camino-portugues/a-guarda/albergue-o-peirao
 i18n:
   en:
-    metaTitle: "A Guarda for Pilgrims — Albergues, Services & the Coastal Camino (2026)"
+    metaTitle: "Where to Stay in A Guarda (2026): 2 Pilgrim Albergues, Beds & Services"
     metaDescription: "A Guarda, Galicia: the first Spanish town on the Portuguese Coastal Camino after the Minho crossing. Pilgrim albergues (municipal 36 beds €10, O Peirao 16 beds), services, and onward route."
     h1: "A Guarda"
     lead: "A Guarda (O Garda) is the first Spanish town on the Portuguese Coastal Camino, reached by crossing the Minho river from Caminha. A working fishing town in Pontevedra, Galicia, it is the natural overnight stop after the crossing."
@@ -52,7 +96,7 @@ i18n:
       - q: "Does A Guarda have shops and ATMs?"
         a: "Yes. A Guarda is a town of roughly 10,000 with restaurants, supermarkets, ATMs and a pharmacy, plus credential stamps at the pilgrim albergue."
   es:
-    metaTitle: "A Guarda para Peregrinos — Albergues, Servicios y el Camino de la Costa (2026)"
+    metaTitle: "Dónde Dormir en A Guarda (2026): 2 Albergues de Peregrinos, Plazas y Servicios"
     metaDescription: "A Guarda, Galicia: el primer pueblo español del Camino Portugués de la Costa tras el cruce del Miño. Albergues (municipal 36 plazas 10 €, O Peirao 16 plazas), servicios y ruta de continuación."
     h1: "A Guarda"
     lead: "A Guarda (O Garda) es el primer pueblo español del Camino Portugués de la Costa, al que se llega cruzando el río Miño desde Caminha. Villa pesquera de Pontevedra (Galicia), es la parada natural para pernoctar tras el cruce."
@@ -71,7 +115,7 @@ i18n:
       - q: "¿Tiene A Guarda tiendas y cajeros?"
         a: "Sí. A Guarda es un pueblo de unos 10.000 habitantes con restaurantes, supermercados, cajeros y farmacia, además de sellos en el albergue de peregrinos."
   pt:
-    metaTitle: "A Guarda para Peregrinos — Albergues, Serviços e o Caminho da Costa (2026)"
+    metaTitle: "Onde Ficar em A Guarda (2026): 2 Albergues de Peregrinos, Camas e Serviços"
     metaDescription: "A Guarda, Galiza: a primeira vila espanhola do Caminho Português da Costa após a travessia do Minho. Albergues (municipal 36 camas 10 €, O Peirao 16 camas), serviços e percurso seguinte."
     h1: "A Guarda"
     lead: "A Guarda (O Garda) é a primeira vila espanhola do Caminho Português da Costa, alcançada atravessando o rio Minho a partir de Caminha. Vila piscatória de Pontevedra (Galiza), é a paragem natural para pernoitar após a travessia."

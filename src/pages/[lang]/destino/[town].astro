@@ -9,10 +9,13 @@ import {
   stagePath,
   hubPath,
   ferryPath,
+  bestAlberguesPath,
+  coastalWhereToStayPath,
   i18nUrlsFor,
   type Lang,
 } from '../../../lib/clusterRoutes';
 import { bookingSearch } from '../../../lib/booking';
+import StayCard from '../../../components/StayCard.astro';
 
 type Link = { url: string; label: string };
 
@@ -22,20 +25,36 @@ export async function getStaticPaths() {
     getCollection('stages', (e) => e.data.sourceVerified),
   ]);
   const stageById = new Map(stages.map((s) => [s.id, s]));
+  const stageOrder = (slug: string): number => stageById.get(slug)?.data.order ?? 999;
+  // Towns ordered along the route (by their stage's order) so each town can link
+  // to its immediate neighbours — keeps the cluster flat (crawl depth ≤ 3) and
+  // gives Google a town→town path beyond the stage hub.
+  const townsSorted = [...towns].sort(
+    (a, b) => stageOrder(a.data.onStageSlug) - stageOrder(b.data.onStageSlug),
+  );
 
-  return towns.flatMap((town) =>
-    LANGS.map((lang) => {
+  return towns.flatMap((town) => {
+    const idx = townsSorted.findIndex((x) => x.id === town.id);
+    return LANGS.map((lang) => {
       const d = town.data;
       const st = stageById.get(d.onStageSlug);
       const stage: Link | null = st
         ? { url: stagePath(lang, d.onStageSlug), label: st.data.i18n[lang].h1 }
         : null;
-      return { params: { lang, town: town.id }, props: { lang, data: d, stage } };
-    }),
-  );
+      const nearby: Link[] = [townsSorted[idx - 1], townsSorted[idx + 1]]
+        .filter((n): n is typeof town => Boolean(n))
+        .map((n) => ({ url: townPath(lang, n.id), label: n.data.name }));
+      return { params: { lang, town: town.id }, props: { lang, data: d, stage, nearby } };
+    });
+  });
 }
 
-const { lang, data, stage } = Astro.props as { lang: Lang; data: any; stage: Link | null };
+const { lang, data, stage, nearby } = Astro.props as {
+  lang: Lang;
+  data: any;
+  stage: Link | null;
+  nearby: Link[];
+};
 const t = data.i18n[lang];
 const ui = UI[lang];
 const slug = Astro.params.town as string;
@@ -65,10 +84,77 @@ const graph = buildClusterGraph({
 });
 const ferry = ferryPath(lang);
 const hub = hubPath(lang);
+
+// ── Commercial layer: localized headings + per-placement Booking labels ───────
+const stayInHeading: Record<Lang, string> = {
+  en: `Where to stay in ${data.name}`,
+  es: `Dónde dormir en ${data.name}`,
+  pt: `Onde ficar em ${data.name}`,
+};
+const bestAreasHeading: Record<Lang, string> = {
+  en: 'Best areas for pilgrims',
+  es: 'Mejores zonas para peregrinos',
+  pt: 'Melhores zonas para peregrinos',
+};
+const heroCta: Record<Lang, string> = {
+  en: `Find a bed in ${data.name} tonight`,
+  es: `Encuentra cama en ${data.name} esta noche`,
+  pt: `Encontra cama em ${data.name} esta noite`,
+};
+const endCtaLead: Record<Lang, string> = {
+  en: `Walking on tomorrow? Lock in tonight's bed in ${data.name} before the town fills up.`,
+  es: `¿Sigues mañana? Asegura la cama de esta noche en ${data.name} antes de que se llene.`,
+  pt: `Segues amanhã? Garante a cama de esta noite em ${data.name} antes de a vila encher.`,
+};
+const nearbyHeading: Record<Lang, string> = {
+  en: 'Nearby towns',
+  es: 'Pueblos cercanos',
+  pt: 'Localidades próximas',
+};
+const checkLabel: Record<Lang, string> = {
+  en: 'Check availability', es: 'Ver disponibilidad', pt: 'Ver disponibilidade',
+};
+const heroStayHref = bookingSearch(data.name, `wtsg-town-${lang}-${slug}-hero`);
+const endStayHref = bookingSearch(data.name, `wtsg-town-${lang}-${slug}-end`);
+// Localized "best areas for pilgrims" block (per-town, source-verified content).
+const ws = data.whereToStay ? data.whereToStay[lang] : null;
+
+// ── Ranked "Top stays" labels (monetization) ─────────────────────────────────
+const topStaysHeading: Record<Lang, string> = {
+  en: `Top stays in ${data.name}`,
+  es: `Mejores alojamientos en ${data.name}`,
+  pt: `Melhores alojamentos em ${data.name}`,
+};
+const compareMore: Record<Lang, string> = {
+  en: `Compare more ${data.name} stays on Booking.com`,
+  es: `Compara más alojamientos en ${data.name} en Booking.com`,
+  pt: `Compara mais alojamentos em ${data.name} no Booking.com`,
+};
+const compareMoreHref = bookingSearch(data.name, `wtsg-town-${lang}-${slug}-topstays`);
+const accPriceNum = (a: { priceEUR?: string }): number => {
+  const m = a.priceEUR ? a.priceEUR.match(/\d+/) : null;
+  return m ? parseInt(m[0], 10) : Number.POSITIVE_INFINITY;
+};
+const cheapestAccIdx = data.accommodations.reduce(
+  (best: number, a: { priceEUR?: string }, i: number) => (accPriceNum(a) < accPriceNum(data.accommodations[best]) ? i : best),
+  0,
+);
+const bestAlbHref = bestAlberguesPath(lang, slug);
+const stayHubHref = coastalWhereToStayPath(lang);
+const compareAlbLabel: Record<Lang, string> = {
+  en: `See all ${data.name} albergues compared`,
+  es: `Ver todos los albergues de ${data.name} comparados`,
+  pt: `Ver todos os albergues de ${data.name} comparados`,
+};
+const stayHubLabel: Record<Lang, string> = {
+  en: 'Where to stay on the Coastal Camino',
+  es: 'Dónde dormir en el Camino de la Costa',
+  pt: 'Onde ficar no Caminho da Costa',
+};
 ---
 
 <MainLayout title={t.metaTitle} description={t.metaDescription} lang={lang} schemaType="none" i18nUrls={i18nUrls}>
-  <script type="application/ld+json" set:html={JSON.stringify(graph)} />
+  <script type="application/ld+json" set:html={JSON.stringify(graph).replace(/</g, '\\u003c')} />
 
   <div class="bg-gradient-to-br from-forest-800 to-forest-950 text-white">
     <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
@@ -83,34 +169,55 @@ const hub = hubPath(lang);
       </nav>
       <h1 class="text-3xl sm:text-4xl font-bold mb-4 tracking-tight text-white">{t.h1}</h1>
       <p class="text-forest-100 text-base leading-relaxed max-w-2xl">{t.lead}</p>
+      <!-- Primary CTA (after intro) — accommodation is the priority intent for a town page -->
+      <div data-aff-pos="intro" class="mt-6">
+        <a
+          href={heroStayHref}
+          rel="nofollow noopener noreferrer sponsored"
+          target="_blank"
+          class="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-earth-500 to-earth-600 px-5 py-3 text-sm font-bold text-white no-underline shadow-md transition-all hover:from-earth-600 hover:to-earth-700"
+        >
+          {heroCta[lang]}
+          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </a>
+      </div>
     </div>
   </div>
 
   <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 space-y-10">
-    <!-- Accommodation -->
+    <!-- Top stays (ranked) — price hint + verified benefit + clear CTA -->
     {data.accommodations.length > 0 && (
-      <section>
-        <h2 class="text-2xl font-bold text-forest-900 mb-5 tracking-tight">{ui.stayHeading}</h2>
-        <div class="grid sm:grid-cols-2 gap-4">
-          {data.accommodations.map((a: { name: string; type: string; beds?: number; priceEUR?: string; openSeason?: string; url?: string }) => (
-            <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
-              <p class="font-bold text-forest-900">{a.name}</p>
-              <p class="text-xs text-slate-500 mt-1">
-                {a.beds && <span>{a.beds} beds</span>}
-                {a.priceEUR && <span> · €{a.priceEUR}</span>}
-                {a.openSeason && <span> · {a.openSeason}</span>}
-              </p>
-              {a.url && (
-                <a href={a.url} rel="nofollow noopener noreferrer" target="_blank" class="text-sm text-forest-700 hover:underline no-underline mt-2 inline-block">Details →</a>
-              )}
-            </div>
+      <section data-aff-pos="mid">
+        <h2 class="text-2xl font-bold text-forest-900 mb-5 tracking-tight">{topStaysHeading[lang]}</h2>
+        <ol class="space-y-4">
+          {data.accommodations.map((a: { name: string; type: string; beds?: number; priceEUR?: string; openSeason?: string; url?: string; highlight?: { en: string; es: string; pt: string }; bookable?: boolean }, i: number) => (
+            <StayCard lang={lang} acc={a} rank={i + 1} primary={i === 0} lowest={i === cheapestAccIdx} />
           ))}
+        </ol>
+        <!-- Section-level affiliate CTA (browse intent beyond the listed albergues) -->
+        <div class="mt-4 flex flex-col gap-2">
+          <a
+            href={bestAlbHref}
+            class="inline-flex items-center gap-1.5 text-sm font-semibold text-forest-700 hover:underline no-underline"
+          >
+            {compareAlbLabel[lang]}
+            <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+          <a
+            href={compareMoreHref}
+            rel="nofollow noopener noreferrer sponsored"
+            target="_blank"
+            class="inline-flex items-center gap-1.5 text-sm font-semibold text-earth-700 hover:underline no-underline"
+          >
+            {compareMore[lang]}
+            <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
         </div>
       </section>
     )}
 
     <!-- Private-room option (Booking.com affiliate) -->
-    <aside class="bg-earth-50 border border-earth-200 rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center gap-4">
+    <aside data-aff-pos="mid" class="bg-earth-50 border border-earth-200 rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center gap-4">
       <p class="flex-1 text-sm text-slate-700 leading-relaxed">{ui.privateRoomLead}</p>
       <a
         href={bookingSearch(data.name, `wtsg-town-${lang}-${slug}`)}
@@ -131,6 +238,32 @@ const hub = hubPath(lang);
       </section>
     ))}
 
+    <!-- Where to stay in [Town] — best areas for pilgrims (commercial) -->
+    {ws && (
+      <section data-aff-pos="mid">
+        <h2 class="text-2xl font-bold text-forest-900 mb-3 tracking-tight">{stayInHeading[lang]}</h2>
+        <p class="text-slate-700 leading-relaxed mb-5">{ws.intro}</p>
+        <h3 class="text-base font-bold text-forest-900 mb-3">{bestAreasHeading[lang]}</h3>
+        <div class="space-y-4">
+          {ws.areas.map((area: { name: string; blurb: string; bookingQuery: string; anchor: string }, i: number) => (
+            <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+              <p class="font-bold text-forest-900">{area.name}</p>
+              <p class="text-sm text-slate-700 leading-relaxed mt-1.5">{area.blurb}</p>
+              <a
+                href={bookingSearch(area.bookingQuery, `wtsg-town-${lang}-${slug}-area-${i}`)}
+                rel="nofollow noopener noreferrer sponsored"
+                target="_blank"
+                class="text-sm font-semibold text-earth-700 hover:underline no-underline mt-2.5 inline-flex items-center gap-1"
+              >
+                {area.anchor}
+                <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
     <!-- Services -->
     {data.services.length > 0 && (
       <section>
@@ -143,14 +276,26 @@ const hub = hubPath(lang);
       </section>
     )}
 
-    <!-- Related -->
+    <!-- Related + nearby towns (internal link boost; keeps crawl depth ≤ 3) -->
     <section class="bg-forest-50 border border-forest-200 rounded-2xl p-6">
       <h2 class="text-base font-bold text-forest-900 mb-3">{ui.relatedLinks}</h2>
       <ul class="space-y-2 text-sm">
+        {data.accommodations.length > 0 && <li><a href={bestAlbHref} class="text-forest-700 hover:underline no-underline font-medium">{compareAlbLabel[lang]}</a></li>}
+        <li><a href={stayHubHref} class="text-forest-700 hover:underline no-underline font-medium">{stayHubLabel[lang]}</a></li>
         {stage && <li><a href={stage.url} class="text-forest-700 hover:underline no-underline font-medium">{stage.label}</a></li>}
         <li><a href={ferry} class="text-forest-700 hover:underline no-underline font-medium">{ui.crossingLink}</a></li>
         <li><a href={hub} class="text-slate-600 hover:underline no-underline">{ui.backToRoute}</a></li>
       </ul>
+      {nearby.length > 0 && (
+        <>
+          <h3 class="text-base font-bold text-forest-900 mt-5 mb-3">{nearbyHeading[lang]}</h3>
+          <ul class="space-y-2 text-sm">
+            {nearby.map((n) => (
+              <li><a href={n.url} class="text-forest-700 hover:underline no-underline font-medium">{n.label} →</a></li>
+            ))}
+          </ul>
+        </>
+      )}
     </section>
 
     <!-- FAQ -->
@@ -167,6 +312,20 @@ const hub = hubPath(lang);
         </div>
       </section>
     )}
+
+    <!-- Closing CTA (end of page) — accommodation, the priority booking intent -->
+    <aside data-aff-pos="end" class="bg-forest-800 text-white rounded-2xl p-6 flex flex-col sm:flex-row sm:items-center gap-4">
+      <p class="flex-1 text-sm text-forest-50 leading-relaxed font-medium">{endCtaLead[lang]}</p>
+      <a
+        href={endStayHref}
+        rel="nofollow noopener noreferrer sponsored"
+        target="_blank"
+        class="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-earth-500 to-earth-600 px-5 py-3 text-sm font-bold text-white no-underline shadow-md transition-all hover:from-earth-600 hover:to-earth-700"
+      >
+        {checkLabel[lang]}
+        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </a>
+    </aside>
 
     <p class="text-xs text-slate-500">{ui.sourcesNote}: {data.sources.join(' · ')}</p>
   </div>

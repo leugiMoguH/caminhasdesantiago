@@ -5,6 +5,8 @@ import { bookingSearch } from '../../../lib/booking';
 import assoreamentoPhoto from '../../../assets/photos/caminha-rio-assoreamento.jpg';
 import { getEntry } from 'astro:content';
 import { buildFerryGraph } from '../../../lib/ferrySchema';
+import TripExtras from '../../../components/TripExtras.astro';
+import EmailSignup from '../../../components/EmailSignup.astro';
 
 const LANG = 'en' as const;
 const PAGE_PATH = '/en/caminha/ferry-and-logistics/';
@@ -13,6 +15,14 @@ const PAGE_PATH = '/en/caminha/ferry-and-logistics/';
 const entry = await getEntry('crossing', 'caminha-a-guarda');
 const f = entry!.data;
 const t = f.i18n[LANG];
+
+// Derived from the single source of truth (ferry.yml lastVerified) so the
+// visible "Updated …" label can never drift from the data.
+const UPDATED_MONTH = new Date(`${f.lastVerified}T00:00:00Z`).toLocaleString('en-GB', {
+  month: 'long',
+  year: 'numeric',
+  timeZone: 'UTC',
+});
 
 // Map shared facts into this page's existing template shapes (prose stays inline).
 const ol = t.operatorLabels;
@@ -61,7 +71,7 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
 >
 
   <!-- JSON-LD: generated from ferry.yml (single source of truth — UI and schema cannot diverge) -->
-  <script type="application/ld+json" set:html={JSON.stringify(ferryGraph)} />
+  <script type="application/ld+json" set:html={JSON.stringify(ferryGraph).replace(/</g, '\\u003c')} />
 
   <!-- ── HERO HEADER ──────────────────────────────────────────────────────────── -->
   <div class="bg-gradient-to-br from-slate-800 via-slate-800 to-forest-950 text-white">
@@ -80,7 +90,7 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
         The Minho river crossing between Caminha (Portugal) and A Guarda (Spain) operates daily. Several licensed water-taxi services replaced the old ferry: boats leave as often as every 30 minutes in season, the ride takes about 10 minutes, and a new municipal ferry is expected in summer 2026. This page covers operators, prices, booking and the overland backup.
       </p>
       <p class="mt-3 text-sm text-slate-300">
-        Updated June 2026 ·
+        Updated {UPDATED_MONTH} ·
         <a href="#timetable" class="text-earth-300 hover:text-earth-200 font-semibold no-underline hover:underline">Jump to the 2026 timetable ↓</a>
       </p>
 
@@ -94,6 +104,22 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
           </div>
         ))}
       </div>
+    </div>
+  </div>
+
+  <!-- Booking CTA (above the fold) -->
+  <div class="bg-forest-50 border-b border-forest-100">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row sm:items-center gap-3">
+      <p class="text-sm text-slate-700 flex-1 font-medium"><strong class="text-forest-900">Crossing today?</strong> Find a place to stay in Caminha tonight before the boat.</p>
+      <a
+        href={bookingSearch('Caminha, Portugal', 'wtsg-ferry-cta-en')}
+        rel="sponsored nofollow noopener"
+        target="_blank"
+        class="inline-flex items-center justify-center gap-2 rounded-xl bg-forest-700 px-5 py-3 text-sm font-bold text-white no-underline hover:bg-forest-800 transition-colors shrink-0"
+      >
+        Find a place to stay
+        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </a>
     </div>
   </div>
 
@@ -675,6 +701,9 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
       </div>
     </div>
   </div>
+
+  <TripExtras lang="en" slug="ferry" />
+  <EmailSignup lang="en" />
 
 </MainLayout>
 

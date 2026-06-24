@@ -9,6 +9,9 @@ import {
   stagePath,
   logisticsPath,
   ferryPath,
+  coastalWhereToStayPath,
+  bestStagesToSleepPath,
+  cheapestAlberguesPath,
   i18nUrlsFor,
   SITE_URL,
   type Lang,
@@ -75,10 +78,18 @@ const graph = buildClusterGraph({
   dateModified: lastmod,
 });
 const ferry = ferryPath(lang);
+const stayHub = coastalWhereToStayPath(lang);
+const bestStages = bestStagesToSleepPath(lang);
+const cheapest = cheapestAlberguesPath(lang);
+const planStay = {
+  en: { h: 'Where to stay', stay: 'Where to stay on the Coastal Camino — best towns & albergues', stages: 'Best stages to sleep — how to break the route', cheap: 'Cheapest albergues — budget beds from €10' },
+  es: { h: 'Dónde dormir', stay: 'Dónde dormir en el Camino de la Costa — mejores pueblos y albergues', stages: 'Mejores etapas para dormir — cómo partir la ruta', cheap: 'Albergues más baratos — plazas desde 10 €' },
+  pt: { h: 'Onde ficar', stay: 'Onde ficar no Caminho da Costa — melhores vilas e albergues', stages: 'Melhores etapas para dormir — como partir o percurso', cheap: 'Albergues mais baratos — camas desde 10 €' },
+}[lang];
 ---
 
 <MainLayout title={title} description={description} lang={lang} schemaType="none" i18nUrls={i18nUrls}>
-  <script type="application/ld+json" set:html={JSON.stringify(graph)} />
+  <script type="application/ld+json" set:html={JSON.stringify(graph).replace(/</g, '\\u003c')} />
 
   <div class="bg-gradient-to-br from-slate-800 via-slate-800 to-forest-950 text-white">
     <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-14 md:py-20">
@@ -105,6 +116,15 @@ const ferry = ferryPath(lang);
           </a>
         ))}
       </div>
+    </section>
+
+    <section class="bg-forest-50 border border-forest-200 rounded-2xl p-6">
+      <h2 class="text-base font-bold text-forest-900 mb-3">{planStay.h}</h2>
+      <ul class="space-y-2 text-sm">
+        <li><a href={stayHub} class="text-forest-700 hover:underline no-underline font-medium">{planStay.stay}</a></li>
+        <li><a href={cheapest} class="text-forest-700 hover:underline no-underline font-medium">{planStay.cheap}</a></li>
+        <li><a href={bestStages} class="text-forest-700 hover:underline no-underline font-medium">{planStay.stages}</a></li>
+      </ul>
     </section>
 
     <section class="bg-forest-50 border border-forest-200 rounded-2xl p-6">

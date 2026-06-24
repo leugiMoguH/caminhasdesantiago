@@ -1,0 +1,220 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+import { getCollection } from 'astro:content';
+import { buildClusterGraph } from '../../../lib/clusterSchema';
+import {
+  UI,
+  LANGS,
+  SITE_URL,
+  townPath,
+  bestAlberguesPath,
+  coastalWhereToStayPath,
+  cheapestAlberguesPath,
+  hubPath,
+  type Lang,
+} from '../../../lib/clusterRoutes';
+import { bookingSearch } from '../../../lib/booking';
+
+export function getStaticPaths() {
+  return LANGS.map((lang) => ({ params: { lang } }));
+}
+
+const lang = Astro.params.lang as Lang;
+const ui = UI[lang];
+const PAGE_PATH = cheapestAlberguesPath(lang);
+const i18nUrls = {
+  en: `${SITE_URL}${cheapestAlberguesPath('en')}`,
+  es: `${SITE_URL}${cheapestAlberguesPath('es')}`,
+  pt: `${SITE_URL}${cheapestAlberguesPath('pt')}`,
+};
+
+const towns = await getCollection('towns', (e) => e.data.sourceVerified);
+const priceNum = (p?: string): number => {
+  const m = p ? p.match(/\d+/) : null;
+  return m ? parseInt(m[0], 10) : Number.POSITIVE_INFINITY;
+};
+// Flatten every verified albergue, sort cheapest-first — a price-ranked budget
+// view of the whole coast (distinct intent from the route-ordered "where to stay").
+const all = towns.flatMap((t) =>
+  t.data.accommodations.map((a: any) => ({
+    name: a.name,
+    townName: t.data.name,
+    townSlug: t.id,
+    type: a.type,
+    beds: a.beds,
+    priceEUR: a.priceEUR,
+    price: priceNum(a.priceEUR),
+    bookable: a.bookable,
+    url: a.url,
+  })),
+);
+const ranked = all
+  .filter((a) => Number.isFinite(a.price))
+  .sort((a, b) => a.price - b.price);
+
+const typeLabel: Record<Lang, Record<string, string>> = {
+  en: { 'municipal-albergue': 'Public albergue', 'private-albergue': 'Private albergue', hotel: 'Hotel', guesthouse: 'Guesthouse' },
+  es: { 'municipal-albergue': 'Albergue público', 'private-albergue': 'Albergue privado', hotel: 'Hotel', guesthouse: 'Pensión' },
+  pt: { 'municipal-albergue': 'Albergue público', 'private-albergue': 'Albergue privado', hotel: 'Hotel', guesthouse: 'Pensão' },
+};
+const bedsWord: Record<Lang, string> = { en: 'beds', es: 'plazas', pt: 'camas' };
+
+const L = {
+  en: {
+    h1: 'Cheapest albergues on the Portuguese Coastal Camino',
+    metaTitle: 'Cheapest Albergues on the Coastal Camino (2026): Budget Pilgrim Beds from €10',
+    metaDescription: 'The cheapest pilgrim albergues and hostels on the Portuguese Coastal Camino in 2026, ranked by price from €10 a night — budget beds town by town, with booking links and money-saving tips.',
+    intro: 'Walking the coast on a budget? These are the lowest-priced pilgrim albergues and hostels on the Portuguese Coastal Camino, ranked cheapest first. Public (municipal and Xunta) albergues at around €10 are the cheapest beds; private hostels cost a little more but take reservations. Tap a town to compare all its options.',
+    inTown: 'in',
+    compareAlb: 'Compare',
+    book: 'Book',
+    tipsH: 'How to keep beds cheap on the coast',
+    tips: 'The €10 public albergues (Vigo, Pontevedra, Padrón, Redondela, A Guarda) are first-come, so arrive by early afternoon in summer to get one. Private albergues cost a few euros more but can be booked ahead — worth it on the small-town nights (Oia, Baiona) where beds are scarce. Carry a sleeping bag for the municipal albergues, and cook in their kitchens to cut food costs.',
+    nextH: 'Plan your stops',
+    whereStay: 'Where to stay on the Coastal Camino',
+    routeHub: ui.routeHub,
+    faqH: ui.faqHeading,
+    faq: [
+      { q: 'What is the cheapest albergue on the Portuguese Coastal Camino?', a: 'The public (municipal and Xunta) albergues are the cheapest, at about €10 a night — found in A Guarda, Vigo, Redondela, Pontevedra and Padrón. They are first-come and cannot be reserved, so arrive early in high season.' },
+      { q: 'How much should I budget for a bed on the coastal route?', a: 'Roughly €10 a night in the public albergues, and about €15–25 in private albergues and hostels. Small coastal towns like Oia and Baiona have only private beds, so budget a little more on those nights.' },
+      { q: 'Are there cheap hostels the whole way along the coast?', a: 'Yes. Every overnight town from A Guarda to Padrón has at least one pilgrim albergue, mixing €10 public hostels with bookable private ones, so a budget bed is available at every stage.' },
+    ],
+  },
+  es: {
+    h1: 'Albergues más baratos del Camino Portugués de la Costa',
+    metaTitle: 'Albergues más Baratos del Camino de la Costa (2026): Plazas de Peregrino desde 10 €',
+    metaDescription: 'Los albergues y hostales de peregrinos más baratos del Camino Portugués de la Costa en 2026, ordenados por precio desde 10 € la noche: plazas económicas pueblo a pueblo, con enlaces de reserva y consejos para ahorrar.',
+    intro: '¿Caminas la costa con presupuesto ajustado? Estos son los albergues y hostales de peregrinos más económicos del Camino Portugués de la Costa, ordenados de más barato a más caro. Los albergues públicos (municipales y de la Xunta) a unos 10 € son las plazas más baratas; los privados cuestan algo más pero admiten reserva. Toca un pueblo para comparar todas sus opciones.',
+    inTown: 'en',
+    compareAlb: 'Comparar',
+    book: 'Reservar',
+    tipsH: 'Cómo dormir barato en la costa',
+    tips: 'Los albergues públicos de 10 € (Vigo, Pontevedra, Padrón, Redondela, A Guarda) son por orden de llegada, así que llega a primera hora de la tarde en verano para conseguir plaza. Los privados cuestan unos euros más pero se reservan: merece la pena en las noches de pueblo pequeño (Oia, Baiona), donde hay pocas plazas. Lleva saco de dormir para los municipales y cocina en sus cocinas para ahorrar en comida.',
+    nextH: 'Planifica tus paradas',
+    whereStay: 'Dónde dormir en el Camino de la Costa',
+    routeHub: ui.routeHub,
+    faqH: ui.faqHeading,
+    faq: [
+      { q: '¿Cuál es el albergue más barato del Camino Portugués de la Costa?', a: 'Los albergues públicos (municipales y de la Xunta) son los más baratos, a unos 10 € la noche, en A Guarda, Vigo, Redondela, Pontevedra y Padrón. Son por orden de llegada y no se reservan, así que llega temprano en temporada alta.' },
+      { q: '¿Cuánto debo presupuestar para una cama en la ruta de la costa?', a: 'Unos 10 € la noche en los albergues públicos y unos 15–25 € en albergues privados y hostales. Pueblos pequeños como Oia y Baiona solo tienen plazas privadas, así que presupuesta algo más esas noches.' },
+      { q: '¿Hay hostales baratos durante todo el camino por la costa?', a: 'Sí. Cada pueblo de pernocta de A Guarda a Padrón tiene al menos un albergue de peregrinos, combinando hostales públicos de 10 € con privados que admiten reserva, así que hay cama económica en cada etapa.' },
+    ],
+  },
+  pt: {
+    h1: 'Albergues mais baratos do Caminho Português da Costa',
+    metaTitle: 'Albergues mais Baratos do Caminho da Costa (2026): Camas de Peregrino desde 10 €',
+    metaDescription: 'Os albergues e hostels de peregrinos mais baratos do Caminho Português da Costa em 2026, ordenados por preço desde 10 € a noite: camas económicas vila a vila, com ligações de reserva e dicas para poupar.',
+    intro: 'Caminhas a costa com orçamento apertado? Estes são os albergues e hostels de peregrinos mais económicos do Caminho Português da Costa, ordenados do mais barato ao mais caro. Os albergues públicos (municipais e da Xunta) a cerca de 10 € são as camas mais baratas; os privados custam um pouco mais mas aceitam reserva. Toca numa vila para comparar todas as suas opções.',
+    inTown: 'em',
+    compareAlb: 'Comparar',
+    book: 'Reservar',
+    tipsH: 'Como dormir barato na costa',
+    tips: 'Os albergues públicos de 10 € (Vigo, Pontevedra, Padrón, Redondela, A Guarda) são por ordem de chegada, por isso chega ao início da tarde no verão para conseguir cama. Os privados custam uns euros mais mas reservam-se: vale a pena nas noites de vila pequena (Oia, Baiona), onde há poucas camas. Leva saco-cama para os municipais e cozinha nas suas cozinhas para poupar na comida.',
+    nextH: 'Planeia as tuas paragens',
+    whereStay: 'Onde ficar no Caminho da Costa',
+    routeHub: ui.routeHub,
+    faqH: ui.faqHeading,
+    faq: [
+      { q: 'Qual é o albergue mais barato do Caminho Português da Costa?', a: 'Os albergues públicos (municipais e da Xunta) são os mais baratos, a cerca de 10 € a noite, em A Guarda, Vigo, Redondela, Pontevedra e Padrón. São por ordem de chegada e não se reservam, por isso chega cedo na época alta.' },
+      { q: 'Quanto devo orçamentar para uma cama na rota da costa?', a: 'Cerca de 10 € a noite nos albergues públicos e cerca de 15–25 € nos albergues privados e hostels. Vilas pequenas como Oia e Baiona só têm camas privadas, por isso orçamenta um pouco mais nessas noites.' },
+      { q: 'Há hostels baratos ao longo de todo o caminho pela costa?', a: 'Sim. Cada vila de pernoita de A Guarda a Padrón tem pelo menos um albergue de peregrinos, combinando hostels públicos de 10 € com privados que aceitam reserva, por isso há cama económica em cada etapa.' },
+    ],
+  },
+}[lang];
+
+const breadcrumb = [
+  { name: ui.home, item: `/${lang}/` },
+  { name: ui.routeHub, item: hubPath(lang) },
+  { name: L.h1, item: PAGE_PATH },
+];
+const graph = buildClusterGraph({
+  lang,
+  pagePath: PAGE_PATH,
+  title: L.metaTitle,
+  description: L.metaDescription,
+  breadcrumb,
+  entity: {
+    '@type': 'ItemList',
+    name: L.h1,
+    numberOfItems: ranked.length,
+    itemListElement: ranked.map((a, i) => ({ '@type': 'ListItem', position: i + 1, name: `${a.name} (${a.townName})` })),
+  },
+  faq: L.faq,
+});
+const hub = hubPath(lang);
+const stayHub = coastalWhereToStayPath(lang);
+---
+
+<MainLayout title={L.metaTitle} description={L.metaDescription} lang={lang} schemaType="none" i18nUrls={i18nUrls}>
+  <script type="application/ld+json" set:html={JSON.stringify(graph).replace(/</g, '\\u003c')} />
+
+  <div class="bg-gradient-to-br from-forest-800 to-forest-950 text-white">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+      <nav aria-label="Breadcrumb" class="mb-5">
+        <ol class="flex flex-wrap items-center gap-2 text-sm text-forest-100">
+          <li><a href={`/${lang}/`} class="text-slate-300 hover:text-white no-underline hover:underline">{ui.home}</a></li>
+          <li aria-hidden="true" class="text-forest-600">›</li>
+          <li><a href={hub} class="text-slate-300 hover:text-white no-underline hover:underline">{ui.routeHub}</a></li>
+          <li aria-hidden="true" class="text-forest-600">›</li>
+          <li aria-current="page" class="text-white font-medium">{L.h1}</li>
+        </ol>
+      </nav>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4 tracking-tight text-white">{L.h1}</h1>
+      <p class="text-forest-100 text-base leading-relaxed max-w-2xl">{L.intro}</p>
+    </div>
+  </div>
+
+  <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 space-y-10">
+    <!-- Price-ranked list -->
+    <section data-aff-pos="mid">
+      <ol class="space-y-3">
+        {ranked.map((a, i) => (
+          <li class={`rounded-2xl p-4 shadow-sm flex items-center gap-4 ${i === 0 ? 'bg-white border-2 border-forest-600' : 'bg-white border border-slate-200'}`}>
+            <span class="shrink-0 w-16 text-center">
+              <span class="block text-lg font-bold text-earth-700">€{a.priceEUR}</span>
+            </span>
+            <div class="flex-1 min-w-0">
+              <p class="font-semibold text-forest-900">{a.name}</p>
+              <p class="text-xs text-slate-500 mt-0.5">
+                {typeLabel[lang][a.type]} · {L.inTown} {a.townName}
+                {a.beds && <span> · {a.beds} {bedsWord[lang]}</span>}
+              </p>
+              <div class="flex flex-wrap gap-x-4 gap-y-1 mt-1.5 text-sm">
+                <a href={bestAlberguesPath(lang, a.townSlug)} class="font-semibold text-forest-700 hover:underline no-underline">{L.compareAlb} {a.townName} →</a>
+                <a href={bookingSearch(a.townName, `wtsg-cheapest-${lang}-${a.townSlug}`)} rel="nofollow noopener noreferrer sponsored" target="_blank" class="font-semibold text-earth-700 hover:underline no-underline">{L.book}</a>
+              </div>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <!-- Budget tips -->
+    <section class="bg-slate-50 border border-slate-200 rounded-2xl p-6">
+      <h2 class="text-base font-bold text-forest-900 mb-2">{L.tipsH}</h2>
+      <p class="text-sm text-slate-700 leading-relaxed">{L.tips}</p>
+    </section>
+
+    <!-- Next -->
+    <section class="bg-forest-50 border border-forest-200 rounded-2xl p-6">
+      <h2 class="text-base font-bold text-forest-900 mb-3">{L.nextH}</h2>
+      <ul class="space-y-2 text-sm">
+        <li><a href={stayHub} class="text-forest-700 hover:underline no-underline font-medium">{L.whereStay}</a></li>
+        <li><a href={hub} class="text-forest-700 hover:underline no-underline font-medium">{L.routeHub}</a></li>
+      </ul>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+      <h2 class="text-2xl font-bold text-forest-900 mb-5 tracking-tight">{L.faqH}</h2>
+      <div class="space-y-3">
+        {L.faq.map((f) => (
+          <details class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+            <summary class="px-6 py-4 font-semibold text-forest-900 cursor-pointer">{f.q}</summary>
+            <div class="px-6 pb-5 text-sm text-slate-700 leading-relaxed border-t border-slate-100 pt-3">{f.a}</div>
+          </details>
+        ))}
+      </div>
+    </section>
+  </div>
+</MainLayout>

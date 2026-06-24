@@ -10,6 +10,12 @@ export const stagePath = (lang: Lang, slug: string): string => `/${lang}/caminho
 export const townPath = (lang: Lang, slug: string): string => `/${lang}/destino/${slug}/`;
 export const logisticsPath = (lang: Lang, slug: string): string => `/${lang}/logistica/${slug}/`;
 
+// Comparison / commercial-intent pages (programmatic + curated).
+export const bestAlberguesPath = (lang: Lang, slug: string): string => `/${lang}/best-albergues/${slug}/`;
+export const coastalWhereToStayPath = (lang: Lang): string => `/${lang}/coastal-camino/where-to-stay/`;
+export const bestStagesToSleepPath = (lang: Lang): string => `/${lang}/coastal-camino/best-stages-to-sleep/`;
+export const cheapestAlberguesPath = (lang: Lang): string => `/${lang}/coastal-camino/cheapest-albergues/`;
+
 // Existing localized pages (pre-cluster) we link into.
 export const ferryPath = (lang: Lang): string =>
   lang === 'en'

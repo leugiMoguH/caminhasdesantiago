@@ -20,6 +20,7 @@ interface ClusterGraphOpts {
   howTo?: { name: string; text: string }[];
   howToName?: string;
   dateModified?: string;
+  image?: { url: string; description: string };
 }
 
 const abs = (item: string): string => (item.startsWith('http') ? item : `${SITE_URL}${item}`);
@@ -29,7 +30,7 @@ const abs = (item: string): string => (item.startsWith('http') ? item : `${SITE_
  * verified collection data. FAQPage and HowTo are emitted only when data exists.
  */
 export function buildClusterGraph(opts: ClusterGraphOpts): Record<string, unknown> {
-  const { lang, pagePath, title, description, breadcrumb, entity, faq, howTo, howToName, dateModified } = opts;
+  const { lang, pagePath, title, description, breadcrumb, entity, faq, howTo, howToName, dateModified, image } = opts;
   const pageUrl = `${SITE_URL}${pagePath}`;
 
   const graph: Record<string, unknown>[] = [
@@ -57,6 +58,16 @@ export function buildClusterGraph(opts: ClusterGraphOpts): Record<string, unknow
       about: { '@id': `${SITE_URL}/#organization` },
       breadcrumb: { '@id': `${pageUrl}#breadcrumb` },
       ...(dateModified ? { dateModified } : {}),
+      ...(image
+        ? {
+            primaryImageOfPage: {
+              '@type': 'ImageObject',
+              url: image.url,
+              contentUrl: image.url,
+              description: image.description,
+            },
+          }
+        : {}),
     },
     {
       '@type': 'BreadcrumbList',

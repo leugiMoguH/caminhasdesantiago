@@ -1,0 +1,148 @@
+name: Baiona
+country: ES
+region: Pontevedra (Galicia)
+onStageSlug: oia-baiona
+geo:
+  lat: 42.1196
+  lng: -8.8497
+accommodations:
+  - name: Albergue Estela do Mar
+    type: private-albergue
+    beds: 28
+    priceEUR: "18–21"
+    openSeason: All year
+    url: https://www.alberguescaminosantiago.com/camino-portugues-por-la-costa/albergue-estela-do-mar-baiona/
+    bookable: true
+    highlight:
+      en: "Open all year, 100 m from the old town, with 28 beds plus a few private rooms — bedding and towel included, takes reservations."
+      es: "Abierto todo el año, a 100 m del casco antiguo, con 28 plazas y algunas habitaciones privadas; ropa de cama y toalla incluidas, admite reserva."
+      pt: "Aberto todo o ano, a 100 m do centro antigo, com 28 camas e alguns quartos privados; roupa de cama e toalha incluídas, aceita reserva."
+  - name: Albergue Hostel Baionamar
+    type: private-albergue
+    beds: 18
+    priceEUR: "17–21"
+    openSeason: 1 Mar – 31 Oct
+    url: https://www.alberguescaminosantiago.com/camino-portugues-por-la-costa/albergue-hostel-baionamar-baiona/
+    bookable: true
+    highlight:
+      en: "Friendly 18-bed albergue that issues credentials and offers breakfast and baggage transfer — bookable, open March–October."
+      es: "Acogedor albergue de 18 plazas que expide credencial y ofrece desayuno y transporte de mochilas; con reserva, abierto de marzo a octubre."
+      pt: "Acolhedor albergue de 18 camas que emite credencial e oferece pequeno-almoço e transporte de mochilas; com reserva, aberto de março a outubro."
+services:
+  - Private pilgrim albergues (no municipal albergue)
+  - Credential stamp (sello)
+  - Seafood restaurants and cafés
+  - Supermarkets
+  - ATMs
+  - Pharmacy
+  - Buses to Vigo and Vigo airport
+whereToStay:
+  en:
+    intro: "Baiona is compact, so almost anywhere puts you within a short walk of the Camino. The trade-off is beds: the town has only private albergues — no municipal one — and fills fast in July and August, so book ahead in summer. These are the areas pilgrims choose between."
+    areas:
+      - name: "Old town & Monterreal fortress"
+        blurb: "The historic core wrapped around the Monterreal peninsula has the most character — narrow streets, the seafront promenade and the morning arrows all start here. Staying in the casco histórico means restaurants and the next day's route are on your doorstep."
+        bookingQuery: "Baiona old town"
+        anchor: "guesthouses and small hotels in Baiona's old town"
+      - name: "Seafront & Praia Ladeira"
+        blurb: "East of the centre the long Ladeira beach and Sabarís promenade offer quieter, often better-value rooms with sea views — a relaxed end to the hilly day from Oia, and you rejoin the waymarks along the bay next morning."
+        bookingQuery: "Baiona Praia Ladeira"
+        anchor: "seafront stays near Praia Ladeira"
+      - name: "Parador de Baiona"
+        blurb: "For a rest-day splurge, the state-run Parador sits inside the fortress walls on its own peninsula with Atlantic views all round — the standout address in town if you want one memorable night off the bunk."
+        bookingQuery: "Parador de Baiona"
+        anchor: "the Parador de Baiona inside the fortress"
+  es:
+    intro: "Baiona es compacta, así que casi cualquier alojamiento te deja a pocos minutos a pie del Camino. El punto débil son las plazas: el pueblo solo tiene albergues privados —no hay municipal— y se llenan rápido en julio y agosto, así que reserva con antelación en verano. Estas son las zonas entre las que eligen los peregrinos."
+    areas:
+      - name: "Casco histórico y fortaleza de Monterreal"
+        blurb: "El casco antiguo en torno a la península de Monterreal es el de más encanto: callejuelas, el paseo marítimo y las flechas de la mañana arrancan aquí. Dormir en el casco histórico deja los restaurantes y la ruta del día siguiente a un paso."
+        bookingQuery: "Baiona casco histórico"
+        anchor: "pensiones y hoteles pequeños en el casco histórico de Baiona"
+      - name: "Frente marítima y Praia Ladeira"
+        blurb: "Al este del centro, la larga playa de Ladeira y el paseo de Sabarís ofrecen habitaciones más tranquilas y a menudo de mejor precio, con vistas al mar: un final relajado tras la etapa con cuestas desde Oia, y al día siguiente retomas las marcas junto a la bahía."
+        bookingQuery: "Baiona Praia Ladeira"
+        anchor: "alojamientos frente al mar cerca de Praia Ladeira"
+      - name: "Parador de Baiona"
+        blurb: "Para un capricho de día de descanso, el Parador estatal se alza dentro de las murallas de la fortaleza, en su propia península con vistas atlánticas en todas direcciones: la dirección más especial del pueblo si quieres una noche memorable fuera de la litera."
+        bookingQuery: "Parador de Baiona"
+        anchor: "el Parador de Baiona dentro de la fortaleza"
+  pt:
+    intro: "Baiona é compacta, por isso quase qualquer alojamento te deixa a poucos minutos a pé do Caminho. O ponto fraco são as camas: a vila só tem albergues privados — não há municipal — e enchem depressa em julho e agosto, por isso reserva com antecedência no verão. Estas são as zonas entre as quais os peregrinos escolhem."
+    areas:
+      - name: "Centro histórico e fortaleza de Monterreal"
+        blurb: "O centro histórico em redor da península de Monterreal é o de mais carácter: ruas estreitas, o passeio marítimo e as setas da manhã começam aqui. Ficar no casco histórico deixa os restaurantes e o percurso do dia seguinte à porta."
+        bookingQuery: "Baiona centro histórico"
+        anchor: "pensões e pequenos hotéis no centro histórico de Baiona"
+      - name: "Frente marítima e Praia Ladeira"
+        blurb: "A leste do centro, a longa praia da Ladeira e o passeio de Sabarís oferecem quartos mais tranquilos e muitas vezes com melhor preço, com vista de mar: um final relaxado após a etapa com subidas desde Oia, e no dia seguinte voltas às marcas junto à baía."
+        bookingQuery: "Baiona Praia Ladeira"
+        anchor: "alojamentos à beira-mar perto da Praia Ladeira"
+      - name: "Parador de Baiona"
+        blurb: "Para um mimo de dia de descanso, o Parador estatal ergue-se dentro das muralhas da fortaleza, na sua própria península com vistas atlânticas em todas as direções: a morada mais especial da vila se quiseres uma noite memorável fora do beliche."
+        bookingQuery: "Parador de Baiona"
+        anchor: "o Parador de Baiona dentro da fortaleza"
+sourceVerified: true
+lastVerified: "2026-06-23"
+sources:
+  - https://www.alberguescaminosantiago.com/camino-portugues-por-la-costa/albergue-estela-do-mar-baiona/
+  - https://www.alberguescaminosantiago.com/camino-portugues-por-la-costa/albergue-hostel-baionamar-baiona/
+  - https://www.alberguescaminosantiago.com/camino-portugues-por-la-costa/guia-albergues/
+i18n:
+  en:
+    metaTitle: "Where to Stay in Baiona (2026): Best Pilgrim Albergues in the Fortress Town"
+    metaDescription: "Baiona, Galicia: the seaside fortress town on the Portuguese Coastal Camino between Oia and Vigo. Private pilgrim albergues (Estela do Mar 28 beds, Baionamar 18 beds), where to stay, services and onward route."
+    h1: "Baiona"
+    lead: "Baiona is a handsome seaside town on the Galician coast, the end of the hilly stage from Oia and a favourite overnight on the Portuguese Coastal Camino. Wrapped around the Monterreal fortress — now a Parador — it is famous as the first place in Europe to learn that Columbus had reached the New World, when the caravel Pinta sailed in here in March 1493."
+    sections:
+      - heading: "Where pilgrims stay"
+        body: "Unlike A Guarda or Vigo, Baiona has no municipal albergue — pilgrim beds are in two private albergues. Estela do Mar is open all year with 28 beds (about €18–21 in the dormitory, plus a few private rooms) and sits 100 m from the old town. Hostel Baionamar has 18 beds (about €17–21) and opens 1 March to 31 October. Both are small, so in July and August it pays to reserve ahead; otherwise the town's hotels and guesthouses fill the gap."
+      - heading: "What to see while you are here"
+        body: "Walk the walls of the Monterreal fortress around the peninsula for sweeping Atlantic views, see the replica of the caravel Pinta moored in the harbour, and wander the arcaded streets of the old town. It is a genuine resort town of around 12,000, busiest in summer, with a long seafront and good seafood."
+      - heading: "Continuing to Vigo"
+        body: "From Baiona the Coastal Camino follows the bay north toward Vigo — a long but mostly flat day past the Ramallosa Roman bridge and the beaches of Playa América and Samil. Remember that Spain runs one hour ahead of Portugal, and that waymarking gets patchy on the urban approach into Vigo, so start early."
+    faq:
+      - q: "Where can pilgrims stay in Baiona?"
+        a: "In two private albergues: Estela do Mar (28 beds, about €18–21, open all year) and Hostel Baionamar (18 beds, about €17–21, open 1 March–31 October). Baiona has no municipal albergue, so book ahead in July and August or fall back on the town's hotels and guesthouses."
+      - q: "Does Baiona have a municipal pilgrim albergue?"
+        a: "No. Unlike A Guarda and Vigo, Baiona's pilgrim beds are all in private albergues. That means fewer beds overall, so reserving ahead in high summer is wise."
+      - q: "Why is Baiona famous?"
+        a: "It was the first place in Europe to hear that Columbus had reached the Americas — the caravel Pinta arrived in Baiona in March 1493. A full-size replica is moored in the harbour, and the Monterreal fortress on the peninsula is now a Parador hotel."
+  es:
+    metaTitle: "Dónde Dormir en Baiona (2026): Mejores Albergues de Peregrinos junto a la Fortaleza"
+    metaDescription: "Baiona, Galicia: la villa marinera con fortaleza en el Camino Portugués de la Costa entre Oia y Vigo. Albergues privados de peregrinos (Estela do Mar 28 plazas, Baionamar 18 plazas), dónde dormir, servicios y ruta."
+    h1: "Baiona"
+    lead: "Baiona es una elegante villa marinera de la costa gallega, final de la etapa con cuestas desde Oia y una de las paradas favoritas del Camino Portugués de la Costa. Abrazada a la fortaleza de Monterreal —hoy Parador—, es famosa por ser el primer lugar de Europa en saber que Colón había llegado al Nuevo Mundo, cuando la carabela Pinta arribó aquí en marzo de 1493."
+    sections:
+      - heading: "Dónde duermen los peregrinos"
+        body: "A diferencia de A Guarda o Vigo, Baiona no tiene albergue municipal: las plazas de peregrino están en dos albergues privados. Estela do Mar abre todo el año con 28 plazas (unos 18–21 € en litera, más algunas habitaciones privadas) y está a 100 m del casco antiguo. Hostel Baionamar tiene 18 plazas (unos 17–21 €) y abre del 1 de marzo al 31 de octubre. Ambos son pequeños, así que en julio y agosto conviene reservar; si no, los hoteles y pensiones del pueblo cubren el resto."
+      - heading: "Qué ver mientras estás aquí"
+        body: "Recorre las murallas de la fortaleza de Monterreal por la península para disfrutar de amplias vistas atlánticas, contempla la réplica de la carabela Pinta amarrada en el puerto y pasea por las calles soportaladas del casco antiguo. Es una auténtica villa turística de unos 12.000 habitantes, con su momento álgido en verano, con un largo paseo marítimo y buen marisco."
+      - heading: "Continuar hacia Vigo"
+        body: "Desde Baiona el Camino de la Costa sigue la bahía hacia el norte rumbo a Vigo: una jornada larga pero casi llana, pasando el puente romano de A Ramallosa y las playas de Playa América y Samil. Recuerda que España va una hora por delante de Portugal y que la señalización se vuelve irregular en la entrada urbana a Vigo, así que sal temprano."
+    faq:
+      - q: "¿Dónde pueden alojarse los peregrinos en Baiona?"
+        a: "En dos albergues privados: Estela do Mar (28 plazas, unos 18–21 €, todo el año) y Hostel Baionamar (18 plazas, unos 17–21 €, del 1 de marzo al 31 de octubre). Baiona no tiene albergue municipal, así que reserva en julio y agosto o recurre a los hoteles y pensiones del pueblo."
+      - q: "¿Tiene Baiona albergue municipal de peregrinos?"
+        a: "No. A diferencia de A Guarda y Vigo, las plazas de peregrino de Baiona están todas en albergues privados. Eso significa menos camas en total, por lo que conviene reservar con antelación en pleno verano."
+      - q: "¿Por qué es famosa Baiona?"
+        a: "Fue el primer lugar de Europa en saber que Colón había llegado a América: la carabela Pinta arribó a Baiona en marzo de 1493. En el puerto está amarrada una réplica a tamaño real, y la fortaleza de Monterreal, en la península, es hoy un Parador."
+  pt:
+    metaTitle: "Onde Ficar em Baiona (2026): Melhores Albergues de Peregrinos junto à Fortaleza"
+    metaDescription: "Baiona, Galiza: a vila marítima com fortaleza no Caminho Português da Costa entre Oia e Vigo. Albergues privados de peregrinos (Estela do Mar 28 camas, Baionamar 18 camas), onde ficar, serviços e percurso."
+    h1: "Baiona"
+    lead: "Baiona é uma elegante vila marítima da costa galega, o fim da etapa com subidas desde Oia e uma das paragens preferidas do Caminho Português da Costa. Abraçada à fortaleza de Monterreal — hoje Parador —, é famosa por ter sido o primeiro lugar da Europa a saber que Colombo tinha chegado ao Novo Mundo, quando a caravela Pinta aqui aportou em março de 1493."
+    sections:
+      - heading: "Onde os peregrinos ficam"
+        body: "Ao contrário de A Guarda ou Vigo, Baiona não tem albergue municipal: as camas de peregrino estão em dois albergues privados. O Estela do Mar abre todo o ano com 28 camas (cerca de 18–21 € no dormitório, mais alguns quartos privados) e fica a 100 m do centro histórico. O Hostel Baionamar tem 18 camas (cerca de 17–21 €) e abre de 1 de março a 31 de outubro. Ambos são pequenos, por isso em julho e agosto vale a pena reservar; caso contrário, os hotéis e pensões da vila preenchem a falta."
+      - heading: "O que ver enquanto cá estás"
+        body: "Percorre as muralhas da fortaleza de Monterreal pela península para vistas atlânticas amplas, vê a réplica da caravela Pinta atracada no porto e passeia pelas ruas com arcadas do centro histórico. É uma autêntica vila turística de cerca de 12.000 habitantes, no auge no verão, com um longo passeio marítimo e bom marisco."
+      - heading: "Continuar para Vigo"
+        body: "A partir de Baiona o Caminho da Costa segue a baía para norte em direção a Vigo: um dia longo mas quase plano, passando a ponte romana de A Ramallosa e as praias de Playa América e Samil. Lembra-te de que a Espanha está uma hora à frente de Portugal e de que a sinalização fica irregular na entrada urbana de Vigo, por isso parte cedo."
+    faq:
+      - q: "Onde podem ficar os peregrinos em Baiona?"
+        a: "Em dois albergues privados: Estela do Mar (28 camas, cerca de 18–21 €, todo o ano) e Hostel Baionamar (18 camas, cerca de 17–21 €, de 1 de março a 31 de outubro). Baiona não tem albergue municipal, por isso reserva em julho e agosto ou recorre aos hotéis e pensões da vila."
+      - q: "Baiona tem albergue municipal de peregrinos?"
+        a: "Não. Ao contrário de A Guarda e Vigo, as camas de peregrino de Baiona estão todas em albergues privados. Isso significa menos camas no total, pelo que convém reservar com antecedência em pleno verão."
+      - q: "Porque é famosa Baiona?"
+        a: "Foi o primeiro lugar da Europa a saber que Colombo tinha chegado à América: a caravela Pinta aportou em Baiona em março de 1493. No porto está atracada uma réplica em tamanho real, e a fortaleza de Monterreal, na península, é hoje um Parador."

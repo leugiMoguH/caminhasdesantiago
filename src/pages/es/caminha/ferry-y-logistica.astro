@@ -5,6 +5,7 @@ import { bookingSearch } from '../../../lib/booking';
 import assoreamentoPhoto from '../../../assets/photos/caminha-rio-assoreamento.jpg';
 import { getEntry } from 'astro:content';
 import { buildFerryGraph } from '../../../lib/ferrySchema';
+import EmailSignup from '../../../components/EmailSignup.astro';
 
 const LANG = 'es' as const;
 const PAGE_PATH = '/es/caminha/ferry-y-logistica/';
@@ -51,7 +52,7 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
 >
 
     <!-- JSON-LD: generated from ferry.yml (single source of truth) -->
-  <script type="application/ld+json" set:html={JSON.stringify(ferryGraph)} />
+  <script type="application/ld+json" set:html={JSON.stringify(ferryGraph).replace(/</g, '\\u003c')} />
 
   <!-- ── ENCABEZADO ──────────────────────────────────────────────────────────── -->
   <div class="bg-gradient-to-br from-slate-800 via-slate-800 to-forest-950 text-white">
@@ -668,5 +669,7 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
       });
     })();
   </script>
+
+  <EmailSignup lang="es" />
 
 </MainLayout>
