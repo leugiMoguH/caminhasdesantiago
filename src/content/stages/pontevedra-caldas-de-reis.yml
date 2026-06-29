@@ -9,7 +9,8 @@ terrain: "A mix of tarmac and soft forest tracks through Galician wine country â
 prevSlug: redondela-pontevedra
 nextSlug: caldas-de-reis-padron
 townSlugs: []
-logisticsSlugs: []
+logisticsSlugs:
+  - variante-espiritual
 sourceVerified: true
 lastVerified: "2026-06-15"
 sources:

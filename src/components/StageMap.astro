@@ -1,0 +1,110 @@
+---
+/**
+ * StageMap — per-stage orientation map + GPX/elevation resources.
+ *
+ * Renders a keyless, JS-free OpenStreetMap embed centred on the stage (verified
+ * endpoint coordinates from lib/stageGeo.ts), plus links to the exact track,
+ * elevation profile and downloadable GPX on authoritative pilgrim sites
+ * (Gronze, Wikiloc). The map LOCATES the stage; the linked resources hold the
+ * precise walking route — no route geometry is fabricated on-site.
+ *
+ * Renders nothing when the stage has no coordinates entry.
+ */
+import { STAGE_GEO } from '../lib/stageGeo';
+import type { Lang } from '../lib/clusterRoutes';
+
+interface Props {
+  slug: string;
+  lang: Lang;
+}
+const { slug, lang } = Astro.props;
+const ep = STAGE_GEO[slug];
+
+const t = {
+  en: {
+    h: 'Stage map & GPX track',
+    locate:
+      'This map shows where the stage runs. For the exact route, the elevation profile and a downloadable GPX track, use these pilgrim resources:',
+    gronze: 'Stage maps & elevation (Gronze)',
+    wikiloc: 'GPX tracks (Wikiloc)',
+    larger: 'Open in OpenStreetMap',
+    cap: (a: string, b: string) => `Coastal Camino: ${a} → ${b}`,
+  },
+  es: {
+    h: 'Mapa de la etapa y track GPX',
+    locate:
+      'Este mapa muestra por dónde discurre la etapa. Para el recorrido exacto, la altimetría y un track GPX descargable, usa estos recursos para peregrinos:',
+    gronze: 'Mapas y altimetría de la etapa (Gronze)',
+    wikiloc: 'Tracks GPX (Wikiloc)',
+    larger: 'Abrir en OpenStreetMap',
+    cap: (a: string, b: string) => `Camino de la Costa: ${a} → ${b}`,
+  },
+  pt: {
+    h: 'Mapa da etapa e track GPX',
+    locate:
+      'Este mapa mostra por onde passa a etapa. Para o percurso exato, a altimetria e um track GPX descarregável, usa estes recursos para peregrinos:',
+    gronze: 'Mapas e altimetria da etapa (Gronze)',
+    wikiloc: 'Tracks GPX (Wikiloc)',
+    larger: 'Abrir no OpenStreetMap',
+    cap: (a: string, b: string) => `Caminho da Costa: ${a} → ${b}`,
+  },
+}[lang];
+
+let map: {
+  src: string;
+  larger: string;
+  gronze: string;
+  wikiloc: string;
+  from: string;
+  to: string;
+} | null = null;
+
+if (ep) {
+  const pad = 0.03;
+  const r = (n: number): string => n.toFixed(4);
+  const minLat = r(Math.min(ep.from.lat, ep.to.lat) - pad);
+  const maxLat = r(Math.max(ep.from.lat, ep.to.lat) + pad);
+  const minLng = r(Math.min(ep.from.lng, ep.to.lng) - pad);
+  const maxLng = r(Math.max(ep.from.lng, ep.to.lng) + pad);
+  const bbox = `${minLng},${minLat},${maxLng},${maxLat}`;
+  const midLat = ((ep.from.lat + ep.to.lat) / 2).toFixed(4);
+  const midLng = ((ep.from.lng + ep.to.lng) / 2).toFixed(4);
+  map = {
+    src: `https://www.openstreetmap.org/export/embed.html?bbox=${encodeURIComponent(bbox)}&layer=mapnik`,
+    larger: `https://www.openstreetmap.org/#map=11/${midLat}/${midLng}`,
+    gronze: 'https://www.gronze.com/camino-portugues-costa',
+    wikiloc: `https://www.wikiloc.com/trails/search?q=${encodeURIComponent(`Camino Portugues Costa ${ep.from.name} ${ep.to.name}`)}`,
+    from: ep.from.name,
+    to: ep.to.name,
+  };
+}
+---
+
+{map && (
+  <section>
+    <h2 class="text-2xl font-bold text-forest-900 mb-4 tracking-tight">{t.h}</h2>
+    <figure class="overflow-hidden rounded-2xl border border-slate-200 shadow-sm m-0">
+      <div class="relative w-full" style="aspect-ratio: 16 / 9;">
+        <iframe
+          src={map.src}
+          title={t.cap(map.from, map.to)}
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          class="absolute inset-0 h-full w-full"
+          style="border:0;"
+        ></iframe>
+      </div>
+      <figcaption class="flex items-center justify-between gap-3 bg-slate-50 px-4 py-2.5 text-xs text-slate-600">
+        <span class="font-medium">{t.cap(map.from, map.to)}</span>
+        <a href={map.larger} target="_blank" rel="noopener noreferrer" class="font-semibold text-forest-700 no-underline hover:underline shrink-0">{t.larger} →</a>
+      </figcaption>
+    </figure>
+    <div class="mt-4 bg-forest-50 border border-forest-200 rounded-2xl p-5">
+      <p class="text-sm text-slate-700 leading-relaxed">{t.locate}</p>
+      <div class="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+        <a href={map.gronze} target="_blank" rel="noopener noreferrer" class="font-semibold text-forest-700 no-underline hover:underline">{t.gronze} →</a>
+        <a href={map.wikiloc} target="_blank" rel="noopener noreferrer" class="font-semibold text-forest-700 no-underline hover:underline">{t.wikiloc} →</a>
+      </div>
+    </div>
+  </section>
+)}

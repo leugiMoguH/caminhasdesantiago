@@ -2,9 +2,10 @@ caminha-a-guarda:
   # ── Language-neutral facts (single source of truth) ──────────────────────────
   # Crossing operates daily via several licensed water-taxi services. The official
   # Santa Rita de Cássia ferry stopped in 2020; a new municipal ferry is
-  # announced for summer 2026 but not yet operating.
+  # announced for summer 2026 but, as of late June 2026, not yet operating —
+  # water taxis remain the crossing. Re-checked vs regional news 2026-06-29.
   status: running
-  lastVerified: "2026-06-12"
+  lastVerified: "2026-06-29"
   crossingMinutes: 10
 
   route:

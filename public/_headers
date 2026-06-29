@@ -4,14 +4,15 @@
 # omitting it would let CSP block the affiliate script. connect-src widened to
 # the GA4 regional collection endpoints. form-action allows https: for a future
 # external email provider (signup currently disabled). Fonts are self-hosted, so
-# font-src/style-src no longer need the Google Fonts origins.
+# font-src/style-src no longer need the Google Fonts origins. frame-src allows the
+# OpenStreetMap embed used by the per-stage route map (no API key, no JS).
 /*
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
   Strict-Transport-Security: max-age=31536000; includeSubDomains
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.anrdoezrs.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https:; frame-ancestors 'none'; upgrade-insecure-requests;
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.anrdoezrs.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com; frame-src https://www.openstreetmap.org; object-src 'none'; base-uri 'self'; form-action 'self' https:; frame-ancestors 'none'; upgrade-insecure-requests;
 
 # Self-hosted fonts are content-hashed by filename stability — cache hard.
 /fonts/*

@@ -17,6 +17,7 @@ import {
   type Lang,
 } from '../../../lib/clusterRoutes';
 import PhotoFigure from '../../../components/PhotoFigure.astro';
+import StageMap from '../../../components/StageMap.astro';
 import marginalPhoto from '../../../assets/photos/caminha-marginal-passadico.jpg';
 import { warnIfStale, freshnessLabel } from '../../../lib/freshness';
 import { bookingSearch } from '../../../lib/booking';
@@ -200,6 +201,9 @@ const ferryAuthority = {
     <section>
       <p class="text-slate-700 text-sm leading-relaxed bg-slate-50 border border-slate-200 rounded-2xl p-5">{data.terrain}</p>
     </section>
+
+    <!-- Route map + GPX/elevation resources -->
+    <StageMap slug={slug} lang={lang} />
 
     {isCrossingStage && (
       <aside class="bg-earth-50 border border-earth-200 rounded-2xl p-5 flex gap-4 shadow-sm">
