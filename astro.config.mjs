@@ -64,7 +64,7 @@ const TRANSLATION_GROUPS = [
   ...STATIC_GROUPS,
   ...verifiedGroups('stages',    (l, s) => `/${l}/caminho-da-costa/${s}/`),
   ...verifiedGroups('towns',     (l, s) => `/${l}/destino/${s}/`),
-  ...verifiedGroups('towns',     (l, s) => `/${l}/best-albergues/${s}/`),
+  // best-albergues/* consolidated into destino/* (301 redirects) — no hreflang.
   ...verifiedGroups('logistics', (l, s) => `/${l}/logistica/${s}/`),
 ];
 
@@ -99,6 +99,8 @@ export default defineConfig({
       filter: (page) =>
         page !== 'https://waytosantiagoguide.com/' &&
         page !== 'https://waytosantiagoguide.com/en/sitemap/' &&
+        // best-albergues/* now 301-redirect to destino/* — keep redirect URLs out of the sitemap
+        !page.includes('/best-albergues/') &&
         // noindex paid-traffic landing pages (EN/ES/PT) — keep out of sitemap/SEO graph
         page !== 'https://waytosantiagoguide.com/camino-portugues-where-to-stay/' &&
         page !== 'https://waytosantiagoguide.com/es/donde-dormir-camino-portugues/' &&

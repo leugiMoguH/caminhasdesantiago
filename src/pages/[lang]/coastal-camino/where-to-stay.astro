@@ -7,7 +7,6 @@ import {
   LANGS,
   SITE_URL,
   townPath,
-  bestAlberguesPath,
   bestStagesToSleepPath,
   cheapestAlberguesPath,
   coastalWhereToStayPath,
@@ -152,7 +151,7 @@ const graph = buildClusterGraph({
       '@type': 'ListItem',
       position: i + 1,
       name: s.name,
-      url: `${SITE_URL}${bestAlberguesPath(lang, s.slug)}`,
+      url: `${SITE_URL}${townPath(lang, s.slug)}`,
     })),
   },
   faq: L.faq,
@@ -203,8 +202,7 @@ const cheapest = cheapestAlberguesPath(lang);
               )}
               <p class="text-sm text-slate-700 leading-relaxed mt-2">{s.reason}</p>
               <div class="flex flex-wrap gap-x-4 gap-y-1 mt-2.5 text-sm">
-                <a href={bestAlberguesPath(lang, s.slug)} class="font-semibold text-forest-700 hover:underline no-underline">{L.compareAlb} →</a>
-                <a href={townPath(lang, s.slug)} class="text-slate-600 hover:underline no-underline">{L.townGuide}</a>
+                <a href={townPath(lang, s.slug)} class="font-semibold text-forest-700 hover:underline no-underline">{L.townGuide} →</a>
                 <a href={s.bookingHref} rel="nofollow noopener noreferrer sponsored" target="_blank" class="font-semibold text-earth-700 hover:underline no-underline">{L.book}</a>
               </div>
             </div>

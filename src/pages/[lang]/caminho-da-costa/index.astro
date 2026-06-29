@@ -8,7 +8,6 @@ import {
   hubPath,
   stagePath,
   townPath,
-  bestAlberguesPath,
   logisticsPath,
   ferryPath,
   coastalWhereToStayPath,
@@ -49,7 +48,6 @@ export async function getStaticPaths() {
       towns: townsSorted.map((tn) => ({
         url: townPath(lang, tn.id),
         label: tn.data.name,
-        bestAlb: tn.data.accommodations.length > 0 ? bestAlberguesPath(lang, tn.id) : null,
       })),
     },
   }));
@@ -57,7 +55,7 @@ export async function getStaticPaths() {
 
 type StageCard = { url: string; label: string; distanceKm: number; difficulty: 'easy' | 'moderate' | 'hard' };
 type Link = { url: string; label: string };
-type TownLink = { url: string; label: string; bestAlb: string | null };
+type TownLink = { url: string; label: string };
 const { lang, stages, logistics, towns, lastmod } = Astro.props as { lang: Lang; stages: StageCard[]; logistics: Link[]; towns: TownLink[]; lastmod: string };
 const ui = UI[lang];
 const PAGE_PATH = hubPath(lang);
@@ -103,9 +101,9 @@ const planStay = {
   pt: { h: 'Onde ficar', stay: 'Onde ficar no Caminho da Costa — melhores vilas e albergues', stages: 'Melhores etapas para dormir — como partir o percurso', cheap: 'Albergues mais baratos — camas desde 10 €' },
 }[lang];
 const townsUI = {
-  en: { h: 'Towns on the route', sub: 'Guide, services and where to sleep in each town', alb: 'Best albergues' },
-  es: { h: 'Pueblos de la ruta', sub: 'Guía, servicios y dónde dormir en cada pueblo', alb: 'Mejores albergues' },
-  pt: { h: 'Localidades do percurso', sub: 'Guia, serviços e onde ficar em cada localidade', alb: 'Melhores albergues' },
+  en: { h: 'Towns on the route', sub: 'Guide, services and where to sleep in each town' },
+  es: { h: 'Pueblos de la ruta', sub: 'Guía, servicios y dónde dormir en cada pueblo' },
+  pt: { h: 'Localidades do percurso', sub: 'Guia, serviços e onde ficar em cada localidade' },
 }[lang];
 ---
 
@@ -145,12 +143,10 @@ const townsUI = {
         <p class="text-sm text-slate-600 mb-5">{townsUI.sub}</p>
         <div class="grid gap-3 sm:grid-cols-2">
           {towns.map((tn) => (
-            <div class="flex items-center justify-between gap-3 bg-white border border-slate-200 rounded-2xl p-4 shadow-sm">
-              <a href={tn.url} class="font-semibold text-forest-800 no-underline hover:underline">{tn.label}</a>
-              {tn.bestAlb && (
-                <a href={tn.bestAlb} class="text-xs font-medium text-earth-700 no-underline hover:underline shrink-0">{townsUI.alb} →</a>
-              )}
-            </div>
+            <a href={tn.url} class="flex items-center justify-between gap-3 bg-white border border-slate-200 rounded-2xl p-4 shadow-sm no-underline hover:border-forest-300">
+              <span class="font-semibold text-forest-800">{tn.label}</span>
+              <span class="text-xs text-slate-400 shrink-0" aria-hidden="true">→</span>
+            </a>
           ))}
         </div>
       </section>

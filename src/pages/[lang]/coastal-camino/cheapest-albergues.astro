@@ -7,7 +7,6 @@ import {
   LANGS,
   SITE_URL,
   townPath,
-  bestAlberguesPath,
   coastalWhereToStayPath,
   cheapestAlberguesPath,
   hubPath,
@@ -180,7 +179,7 @@ const stayHub = coastalWhereToStayPath(lang);
                 {a.beds && <span> · {a.beds} {bedsWord[lang]}</span>}
               </p>
               <div class="flex flex-wrap gap-x-4 gap-y-1 mt-1.5 text-sm">
-                <a href={bestAlberguesPath(lang, a.townSlug)} class="font-semibold text-forest-700 hover:underline no-underline">{L.compareAlb} {a.townName} →</a>
+                <a href={townPath(lang, a.townSlug)} class="font-semibold text-forest-700 hover:underline no-underline">{L.compareAlb} {a.townName} →</a>
                 <a href={bookingSearch(a.townName, `wtsg-cheapest-${lang}-${a.townSlug}`)} rel="nofollow noopener noreferrer sponsored" target="_blank" class="font-semibold text-earth-700 hover:underline no-underline">{L.book}</a>
               </div>
             </div>
