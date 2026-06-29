@@ -1,17 +1,18 @@
 /**
- * Booking.com affiliate helpers — single source of truth for the affiliate id
- * and per-placement tracking labels.
+ * Booking.com affiliate helpers — single source of truth for per-placement
+ * tracking labels.
  *
- * The `label` parameter is a native Booking.com Affiliate Partner feature: it
- * shows up in the Affiliate Partner dashboard reporting, letting us see which
- * page/position drives clicks and (completed) bookings. It is NOT a CJ link.
+ * Attribution is handled by the CJ Affiliate automated deep-linking script
+ * (am.js, loaded post-consent in CookieConsent.astro): it rewrites every
+ * booking.com link into a CJ-tracked link client-side. The old native
+ * Affiliate Partner `aid` was retired when Booking moved to CJ (June 2025), so
+ * it is no longer set here. The `label` rides along on the booking.com URL for
+ * per-placement reporting.
  */
-const AID = '7968251';
 
-/** Add the affiliate id + a tracking label to an existing Booking.com URL. */
+/** Add a per-placement tracking label to an existing Booking.com URL. */
 export function bookingLink(url: string, label: string): string {
   const u = new URL(url);
-  u.searchParams.set('aid', AID);
   u.searchParams.set('label', label);
   return u.toString();
 }
@@ -20,7 +21,6 @@ export function bookingLink(url: string, label: string): string {
 export function bookingSearch(query: string, label: string): string {
   const u = new URL('https://www.booking.com/searchresults.html');
   u.searchParams.set('ss', query);
-  u.searchParams.set('aid', AID);
   u.searchParams.set('label', label);
   return u.toString();
 }

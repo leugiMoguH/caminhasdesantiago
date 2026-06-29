@@ -72,7 +72,7 @@ if (ep) {
   map = {
     src: `https://www.openstreetmap.org/export/embed.html?bbox=${encodeURIComponent(bbox)}&layer=mapnik`,
     larger: `https://www.openstreetmap.org/#map=11/${midLat}/${midLng}`,
-    gronze: 'https://www.gronze.com/camino-portugues-costa',
+    gronze: ep.gronze ?? 'https://www.gronze.com/camino-portugues-costa',
     wikiloc: `https://www.wikiloc.com/trails/search?q=${encodeURIComponent(`Camino Portugues Costa ${ep.from.name} ${ep.to.name}`)}`,
     from: ep.from.name,
     to: ep.to.name,

@@ -40,7 +40,7 @@ const alojamentos: Alojamento[] = [
     morada: '',
     localizacao: 'Centro de Caminha, na rota do Caminho junto ao rio',
     diferenciais: ['Reserva online antecipada disponível', 'Bar e cafetaria no alojamento'],
-    reservaUrl: 'https://www.booking.com/hotel/pt/albergue-santiago-de-caminha.html?aid=7968251',
+    reservaUrl: 'https://www.booking.com/hotel/pt/albergue-santiago-de-caminha.html',
   },
   {
     nome: 'Bom Caminha — Albergue Privado para Peregrinos',
@@ -50,7 +50,7 @@ const alojamentos: Alojamento[] = [
     morada: '',
     localizacao: 'Centro histórico, casa histórica de 1882',
     diferenciais: ['Jantar de peregrinos opcional (suplemento de 12 €)', 'Cozinha comunitária; reserva antecipada disponível'],
-    reservaUrl: 'https://www.booking.com/hotel/pt/bom-caminha-private-albergue-amp-guest-house.html?aid=7968251',
+    reservaUrl: 'https://www.booking.com/hotel/pt/bom-caminha-private-albergue-amp-guest-house.html',
   },
   {
     nome: 'Litos AL',
@@ -60,7 +60,7 @@ const alojamentos: Alojamento[] = [
     morada: 'Largo Senhora da Agonia 13, Caminha',
     localizacao: 'Centro urbano, perto do passeio ribeirinho',
     diferenciais: ['Pequeno-almoço incluído', 'Quartos com ar condicionado'],
-    reservaUrl: 'https://www.booking.com/hotel/pt/litos-al.html?aid=7968251',
+    reservaUrl: 'https://www.booking.com/hotel/pt/litos-al.html',
   },
   {
     nome: 'Donna Nega Alojamento Local',
@@ -70,7 +70,7 @@ const alojamentos: Alojamento[] = [
     morada: '',
     localizacao: 'Centro de Caminha, terraço e cozinha partilhada',
     diferenciais: ['Cozinha e sala partilhadas', 'Terraço; estacionamento de bicicletas'],
-    reservaUrl: 'https://www.booking.com/hotel/pt/patricia-lourenco.html?aid=7968251',
+    reservaUrl: 'https://www.booking.com/hotel/pt/patricia-lourenco.html',
   },
   {
     nome: 'Design & Wine Hotel',
@@ -80,7 +80,7 @@ const alojamentos: Alojamento[] = [
     morada: '',
     localizacao: 'Centro urbano, edifício histórico do século XVIII',
     diferenciais: ['Piscina interior', 'Bar de vinhos e restaurante no hotel'],
-    reservaUrl: 'https://www.booking.com/hotel/pt/design.html?aid=7968251',
+    reservaUrl: 'https://www.booking.com/hotel/pt/design.html',
   },
   {
     nome: 'Hotel Porta do Sol Conference & SPA',
@@ -90,7 +90,7 @@ const alojamentos: Alojamento[] = [
     morada: '',
     localizacao: 'Perto da foz do rio e da praia atlântica',
     diferenciais: ['2 piscinas exteriores', 'Spa e instalações de bem-estar'],
-    reservaUrl: 'https://www.booking.com/hotel/pt/porta-do-sol-caminha.html?aid=7968251',
+    reservaUrl: 'https://www.booking.com/hotel/pt/porta-do-sol-caminha.html',
   },
 
   // ── VILA PRAIA DE ÂNCORA ───────────────────────────────────────────────────────
@@ -102,7 +102,7 @@ const alojamentos: Alojamento[] = [
     morada: '',
     localizacao: 'Zona costeira, a 3 minutos a pé da Praia de Vila Praia de Âncora',
     diferenciais: ['Piscina exterior de época', 'Quartos com vista para o mar e varanda'],
-    reservaUrl: 'https://www.booking.com/hotel/pt/blue-ancora.html?aid=7968251',
+    reservaUrl: 'https://www.booking.com/hotel/pt/blue-ancora.html',
   },
   {
     nome: 'Hotel Meira',
@@ -112,7 +112,7 @@ const alojamentos: Alojamento[] = [
     morada: '',
     localizacao: 'Perto da praia, num vale protegido do vento',
     diferenciais: ['Piscina', 'Buffet de pequeno-almoço incluído'],
-    reservaUrl: 'https://www.booking.com/hotel/pt/hotelmeiravilapraiaancora.html?aid=7968251',
+    reservaUrl: 'https://www.booking.com/hotel/pt/hotelmeiravilapraiaancora.html',
   },
 
   // ── SEIXAS ─────────────────────────────────────────────────────────────────────
@@ -124,7 +124,7 @@ const alojamentos: Alojamento[] = [
     morada: '',
     localizacao: 'Frente ao mar na freguesia de Seixas, a 1 km da Praia de Pedras Ruivas',
     diferenciais: ['Localização frente ao mar', 'Jantares de peregrinos disponíveis; cozinha comunitária'],
-    reservaUrl: 'https://www.booking.com/hotel/pt/albergue-de-sao-bento.html?aid=7968251',
+    reservaUrl: 'https://www.booking.com/hotel/pt/albergue-de-sao-bento.html',
   },
   {
     nome: 'Rinoterra Minho',
@@ -134,7 +134,7 @@ const alojamentos: Alojamento[] = [
     morada: 'Rua da Costa 15, Seixas, Caminha',
     localizacao: 'Rural, freguesia de Seixas, vistas para o rio e para a montanha',
     diferenciais: ['Spa e centro de bem-estar', 'Ténis; restaurante de cozinha portuguesa'],
-    reservaUrl: 'https://www.booking.com/hotel/pt/rinoterra-minho.html?aid=7968251',
+    reservaUrl: 'https://www.booking.com/hotel/pt/rinoterra-minho.html',
   },
 ];
 
@@ -215,7 +215,7 @@ const etiquetaCategoria: Record<Categoria, string> = {
         <ol class="flex items-center gap-2 text-sm text-slate-500">
           <li><a href="/pt/" class="hover:text-forest-700 no-underline hover:underline transition-colors">Início</a></li>
           <li aria-hidden="true" class="text-slate-300">›</li>
-          <li><span class="text-slate-400">Caminha</span></li>
+          <li><span class="text-slate-500">Caminha</span></li>
           <li aria-hidden="true" class="text-slate-300">›</li>
           <li aria-current="page" class="text-slate-700 font-medium">Onde Ficar</li>
         </ol>
