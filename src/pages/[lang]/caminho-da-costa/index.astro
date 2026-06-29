@@ -7,6 +7,8 @@ import {
   LANGS,
   hubPath,
   stagePath,
+  townPath,
+  bestAlberguesPath,
   logisticsPath,
   ferryPath,
   coastalWhereToStayPath,
@@ -18,12 +20,20 @@ import {
 } from '../../../lib/clusterRoutes';
 
 export async function getStaticPaths() {
-  const [stages, logistics] = await Promise.all([
+  const [stages, logistics, towns] = await Promise.all([
     getCollection('stages', (e) => e.data.sourceVerified),
     getCollection('logistics', (e) => e.data.sourceVerified),
+    getCollection('towns', (e) => e.data.sourceVerified),
   ]);
   const ordered = stages.sort((a, b) => a.data.order - b.data.order);
   const lastmod = ordered.reduce((m, s) => (s.data.lastVerified > m ? s.data.lastVerified : m), '');
+  // Towns sorted along the route (by their stage order) so the hub links every
+  // town + its albergues comparison directly — keeps crawl depth at 1 hop.
+  const stageOrder = (slug: string): number =>
+    stages.find((s) => s.id === slug)?.data.order ?? 999;
+  const townsSorted = [...towns].sort(
+    (a, b) => stageOrder(a.data.onStageSlug) - stageOrder(b.data.onStageSlug),
+  );
   return LANGS.map((lang) => ({
     params: { lang },
     props: {
@@ -36,13 +46,19 @@ export async function getStaticPaths() {
         difficulty: s.data.difficulty,
       })),
       logistics: logistics.map((l) => ({ url: logisticsPath(lang, l.id), label: l.data.i18n[lang].h1 })),
+      towns: townsSorted.map((tn) => ({
+        url: townPath(lang, tn.id),
+        label: tn.data.name,
+        bestAlb: tn.data.accommodations.length > 0 ? bestAlberguesPath(lang, tn.id) : null,
+      })),
     },
   }));
 }
 
 type StageCard = { url: string; label: string; distanceKm: number; difficulty: 'easy' | 'moderate' | 'hard' };
 type Link = { url: string; label: string };
-const { lang, stages, logistics, lastmod } = Astro.props as { lang: Lang; stages: StageCard[]; logistics: Link[]; lastmod: string };
+type TownLink = { url: string; label: string; bestAlb: string | null };
+const { lang, stages, logistics, towns, lastmod } = Astro.props as { lang: Lang; stages: StageCard[]; logistics: Link[]; towns: TownLink[]; lastmod: string };
 const ui = UI[lang];
 const PAGE_PATH = hubPath(lang);
 const i18nUrls = { en: `${SITE_URL}${hubPath('en')}`, es: `${SITE_URL}${hubPath('es')}`, pt: `${SITE_URL}${hubPath('pt')}` };
@@ -86,6 +102,11 @@ const planStay = {
   es: { h: 'Dónde dormir', stay: 'Dónde dormir en el Camino de la Costa — mejores pueblos y albergues', stages: 'Mejores etapas para dormir — cómo partir la ruta', cheap: 'Albergues más baratos — plazas desde 10 €' },
   pt: { h: 'Onde ficar', stay: 'Onde ficar no Caminho da Costa — melhores vilas e albergues', stages: 'Melhores etapas para dormir — como partir o percurso', cheap: 'Albergues mais baratos — camas desde 10 €' },
 }[lang];
+const townsUI = {
+  en: { h: 'Towns on the route', sub: 'Guide, services and where to sleep in each town', alb: 'Best albergues' },
+  es: { h: 'Pueblos de la ruta', sub: 'Guía, servicios y dónde dormir en cada pueblo', alb: 'Mejores albergues' },
+  pt: { h: 'Localidades do percurso', sub: 'Guia, serviços e onde ficar em cada localidade', alb: 'Melhores albergues' },
+}[lang];
 ---
 
 <MainLayout title={title} description={description} lang={lang} schemaType="none" i18nUrls={i18nUrls}>
@@ -117,6 +138,23 @@ const planStay = {
         ))}
       </div>
     </section>
+
+    {towns.length > 0 && (
+      <section>
+        <h2 class="text-2xl font-bold text-forest-900 mb-1 tracking-tight">{townsUI.h}</h2>
+        <p class="text-sm text-slate-600 mb-5">{townsUI.sub}</p>
+        <div class="grid gap-3 sm:grid-cols-2">
+          {towns.map((tn) => (
+            <div class="flex items-center justify-between gap-3 bg-white border border-slate-200 rounded-2xl p-4 shadow-sm">
+              <a href={tn.url} class="font-semibold text-forest-800 no-underline hover:underline">{tn.label}</a>
+              {tn.bestAlb && (
+                <a href={tn.bestAlb} class="text-xs font-medium text-earth-700 no-underline hover:underline shrink-0">{townsUI.alb} →</a>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
 
     <section class="bg-forest-50 border border-forest-200 rounded-2xl p-6">
       <h2 class="text-base font-bold text-forest-900 mb-3">{planStay.h}</h2>
