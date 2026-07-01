@@ -1,0 +1,137 @@
+---
+/**
+ * ShareFeedback — sitewide bottom strip with two no-backend features:
+ *   1. Share: native Web Share API (mobile), WhatsApp, and copy-link.
+ *   2. "Was this helpful?" 👍/👎 → pushes a GA4 event (same dataLayer as the
+ *      click tracker; only transmitted after cookie consent). The choice is
+ *      remembered per page in localStorage so it isn't asked twice.
+ * No server, no stored user data beyond the local per-page flag.
+ */
+interface Props {
+  lang: 'en' | 'es' | 'pt';
+}
+const { lang } = Astro.props;
+
+const S = {
+  en: {
+    helpfulQ: 'Was this guide helpful?',
+    yes: 'Yes',
+    no: 'No',
+    thanks: 'Thanks — this helps us improve.',
+    shareLabel: 'Share this guide',
+    share: 'Share',
+    whatsapp: 'WhatsApp',
+    copy: 'Copy link',
+    copied: 'Link copied!',
+  },
+  es: {
+    helpfulQ: '¿Te ha sido útil esta guía?',
+    yes: 'Sí',
+    no: 'No',
+    thanks: 'Gracias — nos ayuda a mejorar.',
+    shareLabel: 'Comparte esta guía',
+    share: 'Compartir',
+    whatsapp: 'WhatsApp',
+    copy: 'Copiar enlace',
+    copied: '¡Enlace copiado!',
+  },
+  pt: {
+    helpfulQ: 'Este guia foi útil?',
+    yes: 'Sim',
+    no: 'Não',
+    thanks: 'Obrigado — ajuda-nos a melhorar.',
+    shareLabel: 'Partilha este guia',
+    share: 'Partilhar',
+    whatsapp: 'WhatsApp',
+    copy: 'Copiar link',
+    copied: 'Link copiado!',
+  },
+}[lang];
+---
+
+<section aria-label={S.shareLabel} class="border-t border-slate-200 bg-slate-50/60">
+  <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+    <!-- Helpful feedback -->
+    <div id="sf-feedback" class="flex items-center gap-3">
+      <span class="text-sm font-semibold text-forest-900">{S.helpfulQ}</span>
+      <div id="sf-buttons" class="flex gap-2">
+        <button type="button" data-sf="yes" class="inline-flex items-center gap-1 rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 hover:border-forest-400 hover:text-forest-800 transition-colors cursor-pointer">👍 <span>{S.yes}</span></button>
+        <button type="button" data-sf="no" class="inline-flex items-center gap-1 rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 hover:border-forest-400 hover:text-forest-800 transition-colors cursor-pointer">👎 <span>{S.no}</span></button>
+      </div>
+      <span id="sf-thanks" class="text-sm text-forest-700 font-medium hidden">{S.thanks}</span>
+    </div>
+
+    <!-- Share -->
+    <div class="flex items-center gap-2">
+      <span class="text-xs font-semibold uppercase tracking-wider text-slate-500 hidden sm:inline">{S.shareLabel}</span>
+      <button type="button" id="sf-native" class="hidden inline-flex items-center gap-1.5 rounded-lg bg-forest-700 px-3 py-1.5 text-sm font-semibold text-white hover:bg-forest-800 transition-colors cursor-pointer">
+        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8.7 10.7l6.6-3.4M8.7 13.3l6.6 3.4M18 8a3 3 0 100-6 3 3 0 000 6zM6 15a3 3 0 100-6 3 3 0 000 6zm12 7a3 3 0 100-6 3 3 0 000 6z"/></svg>
+        {S.share}
+      </button>
+      <a id="sf-wa" href="#" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 hover:border-forest-400 hover:text-forest-800 transition-colors no-underline">
+        <svg class="h-4 w-4 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 004.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2zm5.8 14.16c-.24.68-1.4 1.3-1.94 1.34-.5.05-.96.24-3.23-.67-2.73-1.08-4.45-3.88-4.58-4.06-.13-.18-1.1-1.46-1.1-2.78 0-1.32.7-1.97.94-2.24.24-.27.53-.34.7-.34.18 0 .35 0 .5.01.16.01.38-.06.59.45.24.58.8 2 .87 2.14.07.14.12.31.02.5-.1.18-.15.29-.29.45-.14.16-.3.36-.43.48-.14.14-.29.29-.12.57.17.29.75 1.24 1.61 2 1.11.99 2.05 1.29 2.34 1.44.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.38-.24.64-.14.26.1 1.66.78 1.94.93.29.14.48.21.55.33.07.12.07.69-.17 1.37z"/></svg>
+        {S.whatsapp}
+      </a>
+      <button type="button" id="sf-copy" class="inline-flex items-center gap-1.5 rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 hover:border-forest-400 hover:text-forest-800 transition-colors cursor-pointer">
+        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 010 5.656l-3 3a4 4 0 01-5.656-5.656l1.5-1.5M10.172 13.828a4 4 0 010-5.656l3-3a4 4 0 015.656 5.656l-1.5 1.5"/></svg>
+        <span id="sf-copy-label">{S.copy}</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<script define:vars={{ S }}>
+  (function () {
+    var KEY = 'wtsg-feedback:' + location.pathname;
+
+    // ── Feedback ──────────────────────────────────────────────────────────
+    var wrap = document.getElementById('sf-buttons');
+    var thanks = document.getElementById('sf-thanks');
+    function markDone() {
+      if (wrap) wrap.classList.add('hidden');
+      if (thanks) thanks.classList.remove('hidden');
+    }
+    try { if (localStorage.getItem(KEY)) markDone(); } catch (e) {}
+    Array.prototype.forEach.call(document.querySelectorAll('[data-sf]'), function (btn) {
+      btn.addEventListener('click', function () {
+        var val = btn.getAttribute('data-sf');
+        try { localStorage.setItem(KEY, val); } catch (e) {}
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { window.dataLayer.push(arguments); }
+        gtag('event', 'feedback_helpful', { helpful: val, page_path: location.pathname });
+        markDone();
+      });
+    });
+
+    // ── Share ─────────────────────────────────────────────────────────────
+    var url = location.href;
+    var title = document.title;
+    var wa = document.getElementById('sf-wa');
+    if (wa) wa.setAttribute('href', 'https://wa.me/?text=' + encodeURIComponent(title + ' ' + url));
+
+    var nativeBtn = document.getElementById('sf-native');
+    if (nativeBtn && navigator.share) {
+      nativeBtn.classList.remove('hidden');
+      nativeBtn.addEventListener('click', function () {
+        navigator.share({ title: title, url: url }).catch(function () {});
+      });
+    }
+
+    var copyBtn = document.getElementById('sf-copy');
+    var copyLabel = document.getElementById('sf-copy-label');
+    if (copyBtn && copyLabel) {
+      copyBtn.addEventListener('click', function () {
+        function done() {
+          var prev = copyLabel.textContent;
+          copyLabel.textContent = S.copied;
+          setTimeout(function () { copyLabel.textContent = prev; }, 2000);
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(url).then(done).catch(done);
+        } else {
+          done();
+        }
+      });
+    }
+  })();
+</script>

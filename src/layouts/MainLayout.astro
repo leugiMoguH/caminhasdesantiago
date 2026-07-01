@@ -3,6 +3,7 @@ import BaseSEO from '../components/BaseSEO.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CookieConsent from '../components/CookieConsent.astro';
+import ShareFeedback from '../components/ShareFeedback.astro';
 import '../styles/global.css';
 
 /**
@@ -144,6 +145,8 @@ const htmlLang = lang === 'en' ? 'en' : lang === 'es' ? 'es' : 'pt';
     <main id="main-content" tabindex="-1">
       <slot />
     </main>
+
+    <ShareFeedback lang={lang} />
 
     <Footer lang={lang} />
 
