@@ -177,7 +177,17 @@ const STRINGS = {
       }
     } catch (e) {}
 
-    goEl.addEventListener('click', run);
+    goEl.addEventListener('click', function () {
+      run();
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { window.dataLayer.push(arguments); }
+      gtag('event', 'budget_estimated', {
+        days: parseInt(daysEl.value, 10) || 0,
+        lodging: lodgeEl.value,
+        meals: mealsEl.value,
+        luggage: !!(lugEl && lugEl.checked),
+      });
+    });
     run();
   })();
 </script>

@@ -203,7 +203,12 @@ const STRINGS = {
         noteBlock() + '</div>';
     }
 
-    goEl.addEventListener('click', render);
+    goEl.addEventListener('click', function () {
+      render();
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { window.dataLayer.push(arguments); }
+      gtag('event', 'ferry_planned', { arrival_time: timeEl.value, season: seasonEl.value });
+    });
     timeEl.addEventListener('change', render);
     seasonEl.addEventListener('change', render);
   })();

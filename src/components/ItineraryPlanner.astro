@@ -205,7 +205,14 @@ const stayHref = `/${lang}/coastal-camino/where-to-stay/`;
       }
     } catch (e) {}
 
-    goEl.addEventListener('click', run);
+    goEl.addEventListener('click', function () {
+      run();
+      var si = Math.max(0, Math.min(stages.length - 1, parseInt(startEl.value, 10) || 0));
+      var d = Math.max(1, Math.min(14, parseInt(daysEl.value, 10) || 1));
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { window.dataLayer.push(arguments); }
+      gtag('event', 'itinerary_built', { start: (stages[si] && stages[si].from) || '', days: d });
+    });
     run();
   })();
 </script>

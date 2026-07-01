@@ -144,6 +144,16 @@ const totalItems = cats.reduce((a, c) => a + c.items.length, 0);
         if (b.checked) s[b.id] = 1; else delete s[b.id];
         save(s);
         refresh();
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { window.dataLayer.push(arguments); }
+        try {
+          if (!localStorage.getItem('wtsg-packing-used')) {
+            localStorage.setItem('wtsg-packing-used', '1');
+            gtag('event', 'checklist_used', {});
+          }
+        } catch (e) {}
+        var done = boxes.filter(function (x) { return x.checked; }).length;
+        if (done === boxes.length) gtag('event', 'checklist_completed', { items: boxes.length });
       });
     });
     if (reset) {

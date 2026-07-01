@@ -84,6 +84,12 @@ const S = {
   (function () {
     var KEY = 'wtsg-feedback:' + location.pathname;
 
+    function share(method) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { window.dataLayer.push(arguments); }
+      gtag('event', 'share_click', { method: method, page_path: location.pathname });
+    }
+
     // ── Feedback ──────────────────────────────────────────────────────────
     var wrap = document.getElementById('sf-buttons');
     var thanks = document.getElementById('sf-thanks');
@@ -107,12 +113,16 @@ const S = {
     var url = location.href;
     var title = document.title;
     var wa = document.getElementById('sf-wa');
-    if (wa) wa.setAttribute('href', 'https://wa.me/?text=' + encodeURIComponent(title + ' ' + url));
+    if (wa) {
+      wa.setAttribute('href', 'https://wa.me/?text=' + encodeURIComponent(title + ' ' + url));
+      wa.addEventListener('click', function () { share('whatsapp'); });
+    }
 
     var nativeBtn = document.getElementById('sf-native');
     if (nativeBtn && navigator.share) {
       nativeBtn.classList.remove('hidden');
       nativeBtn.addEventListener('click', function () {
+        share('native');
         navigator.share({ title: title, url: url }).catch(function () {});
       });
     }
@@ -121,6 +131,7 @@ const S = {
     var copyLabel = document.getElementById('sf-copy-label');
     if (copyBtn && copyLabel) {
       copyBtn.addEventListener('click', function () {
+        share('copy');
         function done() {
           var prev = copyLabel.textContent;
           copyLabel.textContent = S.copied;
