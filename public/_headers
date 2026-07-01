@@ -17,3 +17,7 @@
 # Self-hosted fonts are content-hashed by filename stability — cache hard.
 /fonts/*
   Cache-Control: public, max-age=31536000, immutable
+
+# Service worker must revalidate so new versions ship on deploy (never cache-pin).
+/sw.js
+  Cache-Control: no-cache

@@ -5,6 +5,7 @@ import { bookingSearch } from '../../../lib/booking';
 import assoreamentoPhoto from '../../../assets/photos/caminha-rio-assoreamento.jpg';
 import { getEntry } from 'astro:content';
 import { buildFerryGraph } from '../../../lib/ferrySchema';
+import FerryPlanner from '../../../components/FerryPlanner.astro';
 import TripExtras from '../../../components/TripExtras.astro';
 import EmailSignup from '../../../components/EmailSignup.astro';
 
@@ -156,6 +157,9 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
             </p>
           </div>
         </div>
+
+        <!-- Interactive crossing planner -->
+        <FerryPlanner lang="en" />
 
         <!-- Operators -->
         <section id="operators">

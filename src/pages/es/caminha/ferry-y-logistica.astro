@@ -5,6 +5,7 @@ import { bookingSearch } from '../../../lib/booking';
 import assoreamentoPhoto from '../../../assets/photos/caminha-rio-assoreamento.jpg';
 import { getEntry } from 'astro:content';
 import { buildFerryGraph } from '../../../lib/ferrySchema';
+import FerryPlanner from '../../../components/FerryPlanner.astro';
 import EmailSignup from '../../../components/EmailSignup.astro';
 
 const LANG = 'es' as const;
@@ -132,6 +133,8 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
         </div>
 
         <!-- Operadores -->
+        <FerryPlanner lang="es" />
+
         <section id="operators">
           <h2 id="timetable" class="text-2xl font-bold text-forest-900 mb-2">Horario del Ferry Caminha–A Guarda (2026)</h2>
           <p class="text-slate-600 text-sm mb-5 leading-relaxed">

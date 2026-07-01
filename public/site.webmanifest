@@ -3,7 +3,8 @@
   "short_name": "WaySantiago",
   "description": "Pilgrim guide for the Camino de Santiago Coastal Route through Caminha, Portugal.",
   "start_url": "/en/",
-  "display": "browser",
+  "scope": "/",
+  "display": "minimal-ui",
   "background_color": "#ffffff",
   "theme_color": "#174d2b",
   "icons": [

@@ -192,5 +192,14 @@ const htmlLang = lang === 'en' ? 'en' : lang === 'es' ? 'es' : 'pt';
       })();
     </script>
 
+    <!-- Register the service worker for offline access on the trail. -->
+    <script is:inline>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('/sw.js').catch(function () {});
+        });
+      }
+    </script>
+
   </body>
 </html>

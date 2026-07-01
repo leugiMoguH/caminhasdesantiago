@@ -1,0 +1,210 @@
+---
+/**
+ * FerryPlanner — client-side "arrive-by" planner for the Caminha → A Guarda
+ * crossing. Solves the two real pilgrim pains: is a boat running at my time,
+ * and what is that in Spanish local time (+1h). Facts mirror
+ * src/content/crossing/ferry.yml (high-season window 07:00–17:00, ~every 30
+ * min, ~10 min crossing, €6). Honest by design — it frames departures as
+ * approximate and always points to the operators table + overland backup.
+ */
+interface Props {
+  lang: 'en' | 'es' | 'pt';
+}
+const { lang } = Astro.props;
+
+const CFG = {
+  start: 420, // 07:00 in minutes
+  end: 1020, // 17:00
+  cadence: 30, // minutes between departures in season
+  crossing: 10, // minutes on the water
+  tz: 60, // Spain is +1h vs Portugal
+};
+
+const STRINGS = {
+  en: {
+    badge: 'Interactive',
+    title: 'Caminha ferry crossing planner',
+    intro: 'Tell us when you expect to reach the Caminha dock — we’ll show the next likely boats and the arrival time in Spanish local time.',
+    timeLabel: 'When will you reach the dock?',
+    seasonLabel: 'Season',
+    seasonHigh: 'High season (Apr–Oct)',
+    seasonLow: 'Low season (Nov–Mar)',
+    btn: 'Show my crossings',
+    resultTitle: 'Your crossing options',
+    lineTpl: 'Depart ≈{d} · arrive A Guarda ≈{a} — that’s {s} Spanish local time',
+    beforeFirst: 'Boats start around 07:00. Your first crossings:',
+    afterLast: 'The last boat (≈17:00) has already gone. Use the overland detour: train Caminha → Valença, then walk across the bridge to Tui.',
+    lowSeasonMsg: 'Off-season crossings are scarce (often about one a day) and weather-dependent. Confirm by phone the day before, and keep the overland detour as your backup.',
+    noteFare: 'Fare €6 (bike €7–8). Book the day before in busy months; departures flex with tide and weather.',
+    tzNote: 'Spain is 1 hour ahead of Portugal.',
+    linkOperators: 'See operator hours ↓',
+    linkOverland: 'Overland backup ↓',
+    invalid: 'Enter the time you expect to reach the dock.',
+  },
+  es: {
+    badge: 'Interactivo',
+    title: 'Planificador de la travesía del ferry de Caminha',
+    intro: 'Dinos a qué hora esperas llegar al muelle de Caminha — te mostramos los próximos barcos probables y la hora de llegada en hora local española.',
+    timeLabel: '¿A qué hora llegarás al muelle?',
+    seasonLabel: 'Temporada',
+    seasonHigh: 'Temporada alta (abr–oct)',
+    seasonLow: 'Temporada baja (nov–mar)',
+    btn: 'Ver mis travesías',
+    resultTitle: 'Tus opciones de travesía',
+    lineTpl: 'Salida ≈{d} · llegada a A Guarda ≈{a} — son las {s} hora local española',
+    beforeFirst: 'Los barcos empiezan hacia las 07:00. Tus primeras travesías:',
+    afterLast: 'El último barco (≈17:00) ya ha salido. Usa el desvío por tierra: tren Caminha → Valença y cruza el puente a pie hasta Tui.',
+    lowSeasonMsg: 'Fuera de temporada las travesías son escasas (a menudo una al día) y dependen del tiempo. Confirma por teléfono la víspera y ten el desvío por tierra como respaldo.',
+    noteFare: 'Tarifa 6 € (bici 7–8 €). Reserva la víspera en meses de mucha gente; las salidas varían con la marea y el tiempo.',
+    tzNote: 'España va 1 hora por delante de Portugal.',
+    linkOperators: 'Ver horarios de operadores ↓',
+    linkOverland: 'Alternativa por tierra ↓',
+    invalid: 'Introduce la hora a la que llegarás al muelle.',
+  },
+  pt: {
+    badge: 'Interativo',
+    title: 'Planeador da travessia do ferry de Caminha',
+    intro: 'Diz-nos a que horas esperas chegar ao cais de Caminha — mostramos os próximos barcos prováveis e a hora de chegada na hora local espanhola.',
+    timeLabel: 'A que horas chegas ao cais?',
+    seasonLabel: 'Estação',
+    seasonHigh: 'Época alta (abr–out)',
+    seasonLow: 'Época baixa (nov–mar)',
+    btn: 'Ver as minhas travessias',
+    resultTitle: 'As tuas opções de travessia',
+    lineTpl: 'Partida ≈{d} · chegada a A Guarda ≈{a} — são {s} hora local espanhola',
+    beforeFirst: 'Os barcos começam por volta das 07:00. As tuas primeiras travessias:',
+    afterLast: 'O último barco (≈17:00) já partiu. Usa o desvio por terra: comboio Caminha → Valença e atravessa a ponte a pé até Tui.',
+    lowSeasonMsg: 'Fora de época as travessias são escassas (muitas vezes uma por dia) e dependem do tempo. Confirma por telefone na véspera e guarda o desvio por terra como recurso.',
+    noteFare: 'Tarifa 6 € (bicicleta 7–8 €). Reserva na véspera nos meses cheios; as partidas variam com a maré e o tempo.',
+    tzNote: 'A Espanha está 1 hora à frente de Portugal.',
+    linkOperators: 'Ver horários dos operadores ↓',
+    linkOverland: 'Alternativa por terra ↓',
+    invalid: 'Indica a hora a que chegas ao cais.',
+  },
+}[lang];
+---
+
+<section aria-labelledby="fp-heading" class="rounded-2xl border border-forest-200 bg-gradient-to-br from-forest-50 to-white p-5 sm:p-6 shadow-sm">
+  <div class="flex items-center gap-2 mb-1">
+    <span class="text-[10px] font-bold uppercase tracking-widest text-earth-700 bg-earth-100 px-2 py-0.5 rounded-full border border-earth-200">{STRINGS.badge}</span>
+  </div>
+  <h2 id="fp-heading" class="text-xl font-bold text-forest-900 tracking-tight">{STRINGS.title}</h2>
+  <p class="text-sm text-slate-600 leading-relaxed mt-1 mb-4">{STRINGS.intro}</p>
+
+  <div class="flex flex-col sm:flex-row gap-3 sm:items-end">
+    <div class="flex-1">
+      <label for="fp-time" class="block text-xs font-semibold text-forest-900 mb-1.5">{STRINGS.timeLabel}</label>
+      <input
+        type="time"
+        id="fp-time"
+        value="10:00"
+        class="w-full rounded-xl border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 font-mono focus:border-forest-500 focus:ring-2 focus:ring-forest-200 focus:outline-none"
+      />
+    </div>
+    <div class="flex-1">
+      <label for="fp-season" class="block text-xs font-semibold text-forest-900 mb-1.5">{STRINGS.seasonLabel}</label>
+      <select
+        id="fp-season"
+        class="w-full rounded-xl border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 focus:border-forest-500 focus:ring-2 focus:ring-forest-200 focus:outline-none"
+      >
+        <option value="high">{STRINGS.seasonHigh}</option>
+        <option value="low">{STRINGS.seasonLow}</option>
+      </select>
+    </div>
+    <button
+      type="button"
+      id="fp-go"
+      class="shrink-0 inline-flex items-center justify-center rounded-xl bg-forest-700 px-5 py-2.5 text-sm font-bold text-white no-underline hover:bg-forest-800 transition-colors cursor-pointer"
+    >
+      {STRINGS.btn}
+    </button>
+  </div>
+
+  <div id="fp-result" class="mt-4" role="status" aria-live="polite"></div>
+</section>
+
+<script define:vars={{ CFG, S: STRINGS }}>
+  (function () {
+    var timeEl = document.getElementById('fp-time');
+    var seasonEl = document.getElementById('fp-season');
+    var goEl = document.getElementById('fp-go');
+    var out = document.getElementById('fp-result');
+    if (!timeEl || !seasonEl || !goEl || !out) return;
+
+    function fmt(min) {
+      min = ((min % 1440) + 1440) % 1440;
+      var h = Math.floor(min / 60);
+      var m = min % 60;
+      return (h < 10 ? '0' : '') + h + ':' + (m < 10 ? '0' : '') + m;
+    }
+    function esc(s) {
+      return String(s).replace(/[&<>"]/g, function (c) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+      });
+    }
+    function noteBlock() {
+      return (
+        '<p class="text-xs text-slate-500 mt-3">' + esc(S.tzNote) + ' ' + esc(S.noteFare) + '</p>' +
+        '<div class="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-xs">' +
+          '<a href="#operators" class="text-forest-700 font-semibold no-underline hover:underline">' + esc(S.linkOperators) + '</a>' +
+          '<a href="#alternatives" class="text-forest-700 font-semibold no-underline hover:underline">' + esc(S.linkOverland) + '</a>' +
+        '</div>'
+      );
+    }
+    function slotLine(dep) {
+      var arr = dep + CFG.crossing;
+      var spain = arr + CFG.tz;
+      return S.lineTpl
+        .replace('{d}', fmt(dep))
+        .replace('{a}', fmt(arr))
+        .replace('{s}', fmt(spain));
+    }
+    function render() {
+      var v = (timeEl.value || '').trim();
+      if (!/^\d{1,2}:\d{2}$/.test(v)) {
+        out.innerHTML = '<p class="text-sm text-amber-700">' + esc(S.invalid) + '</p>';
+        return;
+      }
+      var parts = v.split(':');
+      var t = parseInt(parts[0], 10) * 60 + parseInt(parts[1], 10);
+
+      if (seasonEl.value === 'low') {
+        out.innerHTML =
+          '<div class="rounded-xl border border-amber-300/70 bg-amber-50 p-4">' +
+          '<p class="text-sm text-amber-800 leading-relaxed">' + esc(S.lowSeasonMsg) + '</p>' +
+          noteBlock() + '</div>';
+        return;
+      }
+
+      var first = t <= CFG.start ? CFG.start : Math.ceil(t / CFG.cadence) * CFG.cadence;
+      if (first > CFG.end) {
+        out.innerHTML =
+          '<div class="rounded-xl border border-amber-300/70 bg-amber-50 p-4">' +
+          '<p class="text-sm text-amber-800 leading-relaxed">' + esc(S.afterLast) + '</p>' +
+          noteBlock() + '</div>';
+        return;
+      }
+
+      var slots = [];
+      for (var s = first; s <= CFG.end && slots.length < 3; s += CFG.cadence) slots.push(s);
+
+      var lead = t <= CFG.start ? '<p class="text-sm text-slate-700 mb-2">' + esc(S.beforeFirst) + '</p>' : '';
+      var items = slots
+        .map(function (s) {
+          return '<li class="flex items-start gap-2 text-sm text-slate-800"><span class="text-forest-600 font-bold mt-0.5">⚓</span><span>' + esc(slotLine(s)) + '</span></li>';
+        })
+        .join('');
+
+      out.innerHTML =
+        '<div class="rounded-xl border border-forest-200 bg-white p-4">' +
+        '<p class="text-xs font-bold uppercase tracking-wider text-forest-900 mb-2">' + esc(S.resultTitle) + '</p>' +
+        lead +
+        '<ul class="space-y-1.5">' + items + '</ul>' +
+        noteBlock() + '</div>';
+    }
+
+    goEl.addEventListener('click', render);
+    timeEl.addEventListener('change', render);
+    seasonEl.addEventListener('change', render);
+  })();
+</script>
