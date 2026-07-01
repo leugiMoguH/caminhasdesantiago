@@ -29,6 +29,8 @@ const STATIC_GROUPS = [
   { en: '/en/coastal-camino/cheapest-albergues/',   es: '/es/coastal-camino/cheapest-albergues/',   pt: '/pt/coastal-camino/cheapest-albergues/' },
   // Standalone Pilgrim Essentials guide (indexable) — EN at root, ES/PT prefixed.
   { en: '/camino-portugues-guide/',                 es: '/es/guia-camino-portugues/',               pt: '/pt/guia-caminho-portugues/' },
+  // Interactive tools page (itinerary + packing + budget) — same slug per lang.
+  { en: '/en/planner/',                             es: '/es/planner/',                             pt: '/pt/planner/' },
 ];
 
 // Dynamic groups generated from verified content collections. Slugs are identical

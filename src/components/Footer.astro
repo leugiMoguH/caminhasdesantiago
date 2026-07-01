@@ -1,6 +1,6 @@
 ---
 import { SOCIAL_LINKS } from '../lib/social';
-import { guidePath, whereToStayLpPath } from '../lib/clusterRoutes';
+import { guidePath, whereToStayLpPath, plannerPath } from '../lib/clusterRoutes';
 
 interface Props {
   lang: 'en' | 'es' | 'pt';
@@ -23,6 +23,7 @@ const t = {
     coastalRoute: 'Coastal Route Stages',
     crossing: 'Caminha → A Guarda Crossing',
     essentials: 'Pilgrim Essentials Guide',
+    planner: 'Plan Your Camino (tools)',
     languages: 'Languages',
     english: 'English',
     spanish: 'Español',
@@ -48,6 +49,7 @@ const t = {
     coastalRoute: 'Etapas del Camino de la Costa',
     crossing: 'Cruce Caminha → A Guarda',
     essentials: 'Guía Esencial del Peregrino',
+    planner: 'Planifica tu Camino (herramientas)',
     languages: 'Idiomas',
     english: 'English',
     spanish: 'Español',
@@ -73,6 +75,7 @@ const t = {
     coastalRoute: 'Etapas do Caminho da Costa',
     crossing: 'Travessia Caminha → A Guarda',
     essentials: 'Guia Essencial do Peregrino',
+    planner: 'Planeia o teu Caminho (ferramentas)',
     languages: 'Idiomas',
     english: 'English',
     spanish: 'Español',
@@ -102,6 +105,7 @@ const navLinks =
         { href: '/en/caminho-da-costa/', label: text.coastalRoute },
         { href: '/en/caminho-da-costa/caminha-a-guarda/', label: text.crossing },
         { href: guidePath(lang), label: text.essentials },
+        { href: plannerPath(lang), label: text.planner },
       ]
     : lang === 'es'
     ? [
@@ -114,6 +118,7 @@ const navLinks =
         { href: '/es/caminho-da-costa/', label: text.coastalRoute },
         { href: '/es/caminho-da-costa/caminha-a-guarda/', label: text.crossing },
         { href: guidePath(lang), label: text.essentials },
+        { href: plannerPath(lang), label: text.planner },
       ]
     : [
         { href: '/pt/', label: text.home },
@@ -125,6 +130,7 @@ const navLinks =
         { href: '/pt/caminho-da-costa/', label: text.coastalRoute },
         { href: '/pt/caminho-da-costa/caminha-a-guarda/', label: text.crossing },
         { href: guidePath(lang), label: text.essentials },
+        { href: plannerPath(lang), label: text.planner },
       ];
 ---
 

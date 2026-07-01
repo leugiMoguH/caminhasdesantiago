@@ -1,0 +1,211 @@
+---
+/**
+ * ItineraryPlanner — client-side day-by-day split of the Coastal Camino.
+ * The user picks a start point + number of days; a greedy km-balancing pass
+ * groups the fixed town-to-town stages into that many days and names the sleep
+ * stop each night. Stages/distances come from the `stages` collection (passed
+ * in as a prop), so the tool can never drift from the content. Choices persist
+ * in localStorage. Honest by design: stages are atomic, so it suggests
+ * groupings and flags spare days rather than inventing split points.
+ */
+interface Stage {
+  from: string;
+  to: string;
+  km: number;
+  url: string;
+}
+interface Props {
+  lang: 'en' | 'es' | 'pt';
+  stages: Stage[];
+}
+const { lang, stages } = Astro.props;
+
+const STRINGS = {
+  en: {
+    badge: 'Interactive',
+    title: 'Itinerary planner',
+    intro: 'Pick where you start and how many days you have — we’ll suggest a day-by-day plan across the coastal stages and where to sleep each night.',
+    startLabel: 'Start from',
+    daysLabel: 'Days walking',
+    btn: 'Build my plan',
+    resultTitle: 'Suggested plan',
+    summary: '{days} days · {km} km total · about {avg} km/day',
+    dayWord: 'Day',
+    sleepIn: 'Sleep in',
+    spareDays: 'You have more days than stages — walk one stage a day and add rest days in Vigo, Pontevedra or Baiona, or start further back.',
+    tooFew: 'That’s a hard pace. Consider adding a day or two, or luggage transfer to lighten the load.',
+    note: 'Stages are the natural town-to-town stops; distances are approximate. Book beds a night ahead in busy months.',
+    ctaStay: 'Where to stay on the route →',
+    save: 'Your plan is saved on this device.',
+  },
+  es: {
+    badge: 'Interactivo',
+    title: 'Planificador de itinerario',
+    intro: 'Elige desde dónde empiezas y cuántos días tienes — te sugerimos un plan día a día por las etapas de la costa y dónde dormir cada noche.',
+    startLabel: 'Empezar desde',
+    daysLabel: 'Días caminando',
+    btn: 'Crear mi plan',
+    resultTitle: 'Plan sugerido',
+    summary: '{days} días · {km} km en total · unos {avg} km/día',
+    dayWord: 'Día',
+    sleepIn: 'Dormir en',
+    spareDays: 'Tienes más días que etapas — camina una etapa al día y añade días de descanso en Vigo, Pontevedra o Baiona, o empieza más atrás.',
+    tooFew: 'Es un ritmo exigente. Considera añadir uno o dos días, o el transporte de mochilas para aligerar.',
+    note: 'Las etapas son las paradas naturales de pueblo a pueblo; las distancias son aproximadas. Reserva cama con una noche de antelación en meses de mucha gente.',
+    ctaStay: 'Dónde dormir en la ruta →',
+    save: 'Tu plan queda guardado en este dispositivo.',
+  },
+  pt: {
+    badge: 'Interativo',
+    title: 'Planeador de itinerário',
+    intro: 'Escolhe onde começas e quantos dias tens — sugerimos um plano dia a dia pelas etapas da costa e onde dormir cada noite.',
+    startLabel: 'Começar em',
+    daysLabel: 'Dias a caminhar',
+    btn: 'Criar o meu plano',
+    resultTitle: 'Plano sugerido',
+    summary: '{days} dias · {km} km no total · cerca de {avg} km/dia',
+    dayWord: 'Dia',
+    sleepIn: 'Dormir em',
+    spareDays: 'Tens mais dias do que etapas — caminha uma etapa por dia e acrescenta dias de descanso em Vigo, Pontevedra ou Baiona, ou começa mais atrás.',
+    tooFew: 'É um ritmo exigente. Considera acrescentar um ou dois dias, ou o transporte de mochilas para aliviar.',
+    note: 'As etapas são as paragens naturais de vila em vila; as distâncias são aproximadas. Reserva cama com uma noite de antecedência nos meses cheios.',
+    ctaStay: 'Onde ficar na rota →',
+    save: 'O teu plano fica guardado neste dispositivo.',
+  },
+}[lang];
+
+const stayHref = `/${lang}/coastal-camino/where-to-stay/`;
+---
+
+<section aria-labelledby="ip-heading" class="rounded-2xl border border-forest-200 bg-white p-5 sm:p-6 shadow-sm">
+  <div class="flex items-center gap-2 mb-1">
+    <span class="text-[10px] font-bold uppercase tracking-widest text-earth-700 bg-earth-100 px-2 py-0.5 rounded-full border border-earth-200">{STRINGS.badge}</span>
+  </div>
+  <h2 id="ip-heading" class="text-xl font-bold text-forest-900 tracking-tight">{STRINGS.title}</h2>
+  <p class="text-sm text-slate-600 leading-relaxed mt-1 mb-4">{STRINGS.intro}</p>
+
+  <div class="flex flex-col sm:flex-row gap-3 sm:items-end">
+    <div class="flex-1">
+      <label for="ip-start" class="block text-xs font-semibold text-forest-900 mb-1.5">{STRINGS.startLabel}</label>
+      <select id="ip-start" class="w-full rounded-xl border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 focus:border-forest-500 focus:ring-2 focus:ring-forest-200 focus:outline-none">
+        {stages.map((s, i) => <option value={i}>{s.from}</option>)}
+      </select>
+    </div>
+    <div class="w-full sm:w-32">
+      <label for="ip-days" class="block text-xs font-semibold text-forest-900 mb-1.5">{STRINGS.daysLabel}</label>
+      <input type="number" id="ip-days" min="1" max="14" value="6" class="w-full rounded-xl border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 font-mono focus:border-forest-500 focus:ring-2 focus:ring-forest-200 focus:outline-none" />
+    </div>
+    <button type="button" id="ip-go" class="shrink-0 inline-flex items-center justify-center rounded-xl bg-forest-700 px-5 py-2.5 text-sm font-bold text-white no-underline hover:bg-forest-800 transition-colors cursor-pointer">{STRINGS.btn}</button>
+  </div>
+
+  <div id="ip-result" class="mt-4" role="status" aria-live="polite"></div>
+</section>
+
+<script define:vars={{ stages, S: STRINGS, stayHref }}>
+  (function () {
+    var startEl = document.getElementById('ip-start');
+    var daysEl = document.getElementById('ip-days');
+    var goEl = document.getElementById('ip-go');
+    var out = document.getElementById('ip-result');
+    if (!startEl || !daysEl || !goEl || !out) return;
+    var KEY = 'wtsg-itinerary';
+
+    function esc(s) {
+      return String(s).replace(/[&<>"]/g, function (c) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+      });
+    }
+
+    function build(startIndex, days) {
+      var seg = stages.slice(startIndex);
+      var total = seg.reduce(function (a, s) { return a + s.km; }, 0);
+      var count = seg.length;
+      var spare = days >= count;
+      var target = total / days;
+
+      var plan = [];
+      if (spare) {
+        // One stage per day; spare days become rest days (noted separately).
+        seg.forEach(function (s) { plan.push([s]); });
+      } else {
+        var day = [];
+        var dayKm = 0;
+        for (var i = 0; i < count; i++) {
+          day.push(seg[i]);
+          dayKm += seg[i].km;
+          var stagesAfter = count - i - 1;
+          var daysToPlaceAfter = days - plan.length - 1;
+          var mustClose = stagesAfter <= daysToPlaceAfter;
+          if (plan.length < days - 1 && (dayKm >= target || mustClose)) {
+            plan.push(day);
+            day = [];
+            dayKm = 0;
+          }
+        }
+        if (day.length) plan.push(day);
+      }
+
+      var avg = Math.round(total / days);
+      var summary = S.summary
+        .replace('{days}', String(days))
+        .replace('{km}', String(Math.round(total)))
+        .replace('{avg}', String(avg));
+
+      var cards = plan
+        .map(function (d, idx) {
+          var dKm = d.reduce(function (a, s) { return a + s.km; }, 0);
+          var legs = d
+            .map(function (s) {
+              return '<a href="' + esc(s.url) + '" class="text-forest-700 no-underline hover:underline">' + esc(s.from) + ' → ' + esc(s.to) + '</a> <span class="text-slate-400">(' + Math.round(s.km) + ' km)</span>';
+            })
+            .join('<br>');
+          var sleep = d[d.length - 1].to;
+          return (
+            '<div class="rounded-xl border border-slate-200 bg-slate-50/60 p-3.5">' +
+            '<div class="flex items-baseline justify-between gap-2 mb-1">' +
+            '<span class="text-xs font-bold uppercase tracking-wider text-forest-900">' + esc(S.dayWord) + ' ' + (idx + 1) + '</span>' +
+            '<span class="text-xs font-mono font-bold text-forest-700">' + Math.round(dKm) + ' km</span>' +
+            '</div>' +
+            '<p class="text-sm text-slate-700 leading-relaxed">' + legs + '</p>' +
+            '<p class="text-xs text-slate-500 mt-1.5">' + esc(S.sleepIn) + ' <strong class="text-slate-700">' + esc(sleep) + '</strong></p>' +
+            '</div>'
+          );
+        })
+        .join('');
+
+      var flags = '';
+      if (spare && days > count) flags = '<p class="text-xs text-amber-700 mt-2">' + esc(S.spareDays) + '</p>';
+      else if (avg >= 28) flags = '<p class="text-xs text-amber-700 mt-2">' + esc(S.tooFew) + '</p>';
+
+      out.innerHTML =
+        '<div class="rounded-xl border border-forest-200 bg-white p-4">' +
+        '<p class="text-xs font-bold uppercase tracking-wider text-forest-900 mb-1">' + esc(S.resultTitle) + '</p>' +
+        '<p class="text-sm font-semibold text-forest-800 mb-3">' + esc(summary) + '</p>' +
+        '<div class="space-y-2">' + cards + '</div>' +
+        flags +
+        '<p class="text-xs text-slate-500 mt-3">' + esc(S.note) + '</p>' +
+        '<a href="' + esc(stayHref) + '" class="inline-block mt-2 text-sm font-semibold text-forest-700 no-underline hover:underline">' + esc(S.ctaStay) + '</a>' +
+        '<p class="text-[11px] text-slate-400 mt-2">' + esc(S.save) + '</p>' +
+        '</div>';
+    }
+
+    function run() {
+      var startIndex = Math.max(0, Math.min(stages.length - 1, parseInt(startEl.value, 10) || 0));
+      var days = Math.max(1, Math.min(14, parseInt(daysEl.value, 10) || 1));
+      try { localStorage.setItem(KEY, JSON.stringify({ startIndex: startIndex, days: days })); } catch (e) {}
+      build(startIndex, days);
+    }
+
+    // Restore saved choices.
+    try {
+      var saved = JSON.parse(localStorage.getItem(KEY) || 'null');
+      if (saved && typeof saved.startIndex === 'number') {
+        startEl.value = String(saved.startIndex);
+        daysEl.value = String(saved.days);
+      }
+    } catch (e) {}
+
+    goEl.addEventListener('click', run);
+    run();
+  })();
+</script>

@@ -1,0 +1,158 @@
+---
+/**
+ * PackingChecklist — tickable Camino packing list persisted in localStorage.
+ * Predefined, categorized items (localized). Tracks progress and remembers
+ * ticks per device. Complements the packing-list article (advice) with a tool
+ * the pilgrim actually uses while packing.
+ */
+interface Props {
+  lang: 'en' | 'es' | 'pt';
+}
+const { lang } = Astro.props;
+
+interface Cat {
+  name: string;
+  items: string[];
+}
+const DATA: Record<'en' | 'es' | 'pt', { badge: string; title: string; intro: string; progress: string; reset: string; save: string; cats: Cat[] }> = {
+  en: {
+    badge: 'Interactive',
+    title: 'Packing checklist',
+    intro: 'Tick as you pack. Your progress is saved on this device, so you can come back to it.',
+    progress: 'packed',
+    reset: 'Reset',
+    save: 'Saved on this device.',
+    cats: [
+      { name: 'Documents & money', items: ['Passport / ID', 'Pilgrim credential', 'Travel insurance', 'Bank card + some cash', 'Booking confirmations'] },
+      { name: 'On your feet', items: ['Broken-in walking shoes', 'Camp/evening sandals', 'Walking socks (2–3 pairs)', 'Blister kit (Compeed, tape)'] },
+      { name: 'Clothing', items: ['Rain jacket', 'Quick-dry shirts (2–3)', 'Walking trousers/shorts', 'Warm layer (fleece)', 'Sun hat', 'Underwear (3)'] },
+      { name: 'Sleep & pack', items: ['Backpack 30–40 L', 'Lightweight sleeping bag/liner', 'Dry bag / pack liner', 'Earplugs + eye mask'] },
+      { name: 'Health & care', items: ['Sunscreen', 'Painkillers', 'Personal medication', 'Toiletries (travel size)', 'Quick-dry towel'] },
+      { name: 'Tech & extras', items: ['Phone + charger', 'Power bank', 'Water bottle/bladder', 'Trekking poles (optional)', 'Small first-aid kit'] },
+    ],
+  },
+  es: {
+    badge: 'Interactivo',
+    title: 'Lista de equipaje',
+    intro: 'Marca a medida que preparas la mochila. Tu progreso se guarda en este dispositivo para que puedas volver.',
+    progress: 'preparado',
+    reset: 'Reiniciar',
+    save: 'Guardado en este dispositivo.',
+    cats: [
+      { name: 'Documentos y dinero', items: ['Pasaporte / DNI', 'Credencial del peregrino', 'Seguro de viaje', 'Tarjeta + algo de efectivo', 'Confirmaciones de reserva'] },
+      { name: 'En los pies', items: ['Zapatillas ya domadas', 'Sandalias para la tarde', 'Calcetines de trekking (2–3)', 'Kit de ampollas (Compeed, esparadrapo)'] },
+      { name: 'Ropa', items: ['Chubasquero', 'Camisetas de secado rápido (2–3)', 'Pantalón/short de caminar', 'Capa de abrigo (forro)', 'Gorra', 'Ropa interior (3)'] },
+      { name: 'Dormir y mochila', items: ['Mochila 30–40 L', 'Saco/sábana ligera', 'Bolsa estanca / funda', 'Tapones + antifaz'] },
+      { name: 'Salud y cuidado', items: ['Protector solar', 'Analgésicos', 'Medicación personal', 'Aseo (tamaño viaje)', 'Toalla de secado rápido'] },
+      { name: 'Tecnología y extras', items: ['Móvil + cargador', 'Batería externa', 'Botella/bolsa de agua', 'Bastones (opcional)', 'Botiquín pequeño'] },
+    ],
+  },
+  pt: {
+    badge: 'Interativo',
+    title: 'Lista de bagagem',
+    intro: 'Marca à medida que fazes a mochila. O teu progresso fica guardado neste dispositivo para poderes voltar.',
+    progress: 'arrumado',
+    reset: 'Reiniciar',
+    save: 'Guardado neste dispositivo.',
+    cats: [
+      { name: 'Documentos e dinheiro', items: ['Passaporte / BI', 'Credencial do peregrino', 'Seguro de viagem', 'Cartão + algum dinheiro', 'Confirmações de reserva'] },
+      { name: 'Nos pés', items: ['Sapatos já amaciados', 'Sandálias para a tarde', 'Meias de caminhada (2–3)', 'Kit de bolhas (Compeed, adesivo)'] },
+      { name: 'Roupa', items: ['Corta-vento/impermeável', 'T-shirts de secagem rápida (2–3)', 'Calça/calção de caminhar', 'Camada quente (polar)', 'Chapéu', 'Roupa interior (3)'] },
+      { name: 'Dormir e mochila', items: ['Mochila 30–40 L', 'Saco/saco-cama leve', 'Saco estanque / forro', 'Tampões + máscara de olhos'] },
+      { name: 'Saúde e cuidados', items: ['Protetor solar', 'Analgésicos', 'Medicação pessoal', 'Higiene (tamanho viagem)', 'Toalha de secagem rápida'] },
+      { name: 'Tecnologia e extras', items: ['Telemóvel + carregador', 'Powerbank', 'Garrafa/bolsa de água', 'Bastões (opcional)', 'Kit de primeiros socorros'] },
+    ],
+  },
+};
+const D = DATA[lang];
+
+// Stable ids per item (category index + item index) so localStorage keys never
+// depend on the (localized) text.
+let idx = 0;
+const cats = D.cats.map((c, ci) => ({
+  name: c.name,
+  items: c.items.map((label, ii) => ({ id: `c${ci}i${ii}`, label })),
+}));
+const totalItems = cats.reduce((a, c) => a + c.items.length, 0);
+---
+
+<section aria-labelledby="pc-heading" class="rounded-2xl border border-forest-200 bg-white p-5 sm:p-6 shadow-sm">
+  <div class="flex items-center gap-2 mb-1">
+    <span class="text-[10px] font-bold uppercase tracking-widest text-earth-700 bg-earth-100 px-2 py-0.5 rounded-full border border-earth-200">{D.badge}</span>
+  </div>
+  <div class="flex items-start justify-between gap-3">
+    <div>
+      <h2 id="pc-heading" class="text-xl font-bold text-forest-900 tracking-tight">{D.title}</h2>
+      <p class="text-sm text-slate-600 leading-relaxed mt-1">{D.intro}</p>
+    </div>
+    <button type="button" id="pc-reset" class="shrink-0 text-xs font-semibold text-slate-500 hover:text-slate-800 underline decoration-slate-300 cursor-pointer">{D.reset}</button>
+  </div>
+
+  <div class="mt-4 mb-5">
+    <div class="h-2 w-full rounded-full bg-slate-100 overflow-hidden">
+      <div id="pc-bar" class="h-full bg-forest-600 transition-all duration-300" style="width:0%"></div>
+    </div>
+    <p class="text-xs text-slate-500 mt-1.5"><span id="pc-count">0</span>/{totalItems} {D.progress}</p>
+  </div>
+
+  <div class="grid sm:grid-cols-2 gap-x-6 gap-y-5">
+    {cats.map((c) => (
+      <div>
+        <h3 class="text-xs font-bold uppercase tracking-wider text-forest-900 mb-2">{c.name}</h3>
+        <ul class="space-y-1.5">
+          {c.items.map((it) => (
+            <li>
+              <label class="flex items-start gap-2.5 text-sm text-slate-700 cursor-pointer">
+                <input type="checkbox" data-pc-item id={it.id} class="mt-0.5 h-4 w-4 shrink-0 rounded border-slate-300 text-forest-600 focus:ring-forest-400 cursor-pointer" />
+                <span>{it.label}</span>
+              </label>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+  <p class="text-[11px] text-slate-400 mt-4">{D.save}</p>
+</section>
+
+<script>
+  (function () {
+    var KEY = 'wtsg-packing';
+    var boxes = Array.prototype.slice.call(document.querySelectorAll('[data-pc-item]'));
+    var bar = document.getElementById('pc-bar');
+    var count = document.getElementById('pc-count');
+    var reset = document.getElementById('pc-reset');
+    if (!boxes.length || !bar || !count) return;
+
+    function load() {
+      try { return JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { return {}; }
+    }
+    function save(state) {
+      try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+    }
+    function refresh() {
+      var done = boxes.filter(function (b) { return b.checked; }).length;
+      count.textContent = String(done);
+      bar.style.width = Math.round((done / boxes.length) * 100) + '%';
+    }
+
+    var state = load();
+    boxes.forEach(function (b) {
+      if (state[b.id]) b.checked = true;
+      b.addEventListener('change', function () {
+        var s = load();
+        if (b.checked) s[b.id] = 1; else delete s[b.id];
+        save(s);
+        refresh();
+      });
+    });
+    if (reset) {
+      reset.addEventListener('click', function () {
+        boxes.forEach(function (b) { b.checked = false; });
+        save({});
+        refresh();
+      });
+    }
+    refresh();
+  })();
+</script>

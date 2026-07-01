@@ -164,6 +164,15 @@ export const lpI18nUrls = {
   pt: `${SITE_URL}${whereToStayLpPath('pt')}`,
 };
 
+// Interactive tools page ("Plan your Camino"): itinerary + packing + budget.
+// Same slug across languages, so hreflang stays reciprocal.
+export const plannerPath = (lang: Lang): string => `/${lang}/planner/`;
+export const plannerI18nUrls = {
+  en: `${SITE_URL}${plannerPath('en')}`,
+  es: `${SITE_URL}${plannerPath('es')}`,
+  pt: `${SITE_URL}${plannerPath('pt')}`,
+};
+
 /**
  * Shared "next step toward booking" links every page must carry (Phase 5 STEP 4):
  * the Pilgrim Essentials guide + two high-intent logistics pages. Anchors are

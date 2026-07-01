@@ -1,0 +1,85 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import ItineraryPlanner from '../../components/ItineraryPlanner.astro';
+import PackingChecklist from '../../components/PackingChecklist.astro';
+import BudgetCalculator from '../../components/BudgetCalculator.astro';
+import { getCollection } from 'astro:content';
+import { LANGS, stagePath, plannerPath, plannerI18nUrls, guidePath, type Lang } from '../../lib/clusterRoutes';
+
+export async function getStaticPaths() {
+  const stagesRaw = await getCollection('stages', (e) => e.data.sourceVerified);
+  const sorted = stagesRaw.sort((a, b) => a.data.order - b.data.order);
+  return LANGS.map((lang) => ({
+    params: { lang },
+    props: {
+      lang,
+      stages: sorted.map((s) => ({
+        from: s.data.from,
+        to: s.data.to,
+        km: s.data.distanceKm,
+        url: stagePath(lang, s.id),
+      })),
+    },
+  }));
+}
+
+const { lang, stages } = Astro.props as {
+  lang: Lang;
+  stages: { from: string; to: string; km: number; url: string }[];
+};
+
+const T = {
+  en: {
+    home: 'Home',
+    crumb: 'Plan your Camino',
+    title: 'Plan Your Camino Portugués — Free Interactive Tools',
+    metaDesc: 'Free tools to plan the Camino Portugués Coastal Route: build a day-by-day itinerary, tick off a packing checklist, and estimate your budget. Saved on your device.',
+    h1: 'Plan your Camino',
+    lead: 'Three quick tools to turn a vague idea into a real plan — a day-by-day itinerary, a packing checklist you can tick off, and a budget estimate. Everything saves on your device; no sign-up.',
+    guideLabel: 'New to the Camino? Start with the Pilgrim Essentials guide →',
+  },
+  es: {
+    home: 'Inicio',
+    crumb: 'Planifica tu Camino',
+    title: 'Planifica tu Camino Portugués — Herramientas interactivas gratis',
+    metaDesc: 'Herramientas gratis para planificar el Camino Portugués de la Costa: crea un itinerario día a día, marca una lista de equipaje y estima tu presupuesto. Se guarda en tu dispositivo.',
+    h1: 'Planifica tu Camino',
+    lead: 'Tres herramientas rápidas para convertir una idea vaga en un plan real — un itinerario día a día, una lista de equipaje para marcar y una estimación de presupuesto. Todo se guarda en tu dispositivo; sin registro.',
+    guideLabel: '¿Nuevo en el Camino? Empieza por la guía Esenciales del Peregrino →',
+  },
+  pt: {
+    home: 'Início',
+    crumb: 'Planeia o teu Caminho',
+    title: 'Planeia o teu Caminho Português — Ferramentas interativas grátis',
+    metaDesc: 'Ferramentas grátis para planear o Caminho Português da Costa: cria um itinerário dia a dia, marca uma lista de bagagem e estima o teu orçamento. Guardado no teu dispositivo.',
+    h1: 'Planeia o teu Caminho',
+    lead: 'Três ferramentas rápidas para transformar uma ideia vaga num plano real — um itinerário dia a dia, uma lista de bagagem para marcar e uma estimativa de orçamento. Tudo fica guardado no teu dispositivo; sem registo.',
+    guideLabel: 'Novo no Caminho? Começa pelo guia Essenciais do Peregrino →',
+  },
+}[lang];
+---
+
+<MainLayout title={T.title} description={T.metaDesc} lang={lang} schemaType="webpage" i18nUrls={plannerI18nUrls}>
+  <div class="bg-gradient-to-br from-slate-700 to-forest-950 text-white">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+      <nav aria-label="Breadcrumb" class="mb-5">
+        <ol class="flex flex-wrap items-center gap-2 text-sm text-slate-400">
+          <li><a href={`/${lang}/`} class="text-slate-300 hover:text-white no-underline hover:underline">{T.home}</a></li>
+          <li aria-hidden="true" class="text-slate-600">›</li>
+          <li aria-current="page" class="text-slate-200 font-medium">{T.crumb}</li>
+        </ol>
+      </nav>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4 tracking-tight text-white">{T.h1}</h1>
+      <p class="text-slate-300 text-base leading-relaxed max-w-2xl">{T.lead}</p>
+      <p class="mt-4 text-sm">
+        <a href={guidePath(lang)} class="text-earth-300 hover:text-earth-200 font-semibold no-underline hover:underline">{T.guideLabel}</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 space-y-8">
+    <ItineraryPlanner lang={lang} stages={stages} />
+    <PackingChecklist lang={lang} />
+    <BudgetCalculator lang={lang} />
+  </div>
+</MainLayout>

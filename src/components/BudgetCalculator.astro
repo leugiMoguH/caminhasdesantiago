@@ -1,0 +1,183 @@
+---
+/**
+ * BudgetCalculator — estimates a Coastal Camino budget from days + lodging /
+ * meal style + luggage transfer. Per-day ranges reflect researched 2026 figures
+ * (coastal ~€35–45/day baseline; municipal beds €6–10, private €18–30; meals
+ * €8–40 by style; luggage €6–8/stage). Outputs an honest low–high range, not a
+ * fake exact number. Inputs persist in localStorage.
+ */
+interface Props {
+  lang: 'en' | 'es' | 'pt';
+}
+const { lang } = Astro.props;
+
+const CFG = {
+  lodging: {
+    municipal: [6, 10],
+    mixed: [12, 20],
+    private: [18, 30],
+    hotel: [40, 70],
+  },
+  meals: {
+    budget: [8, 15],
+    mixed: [15, 25],
+    restaurants: [25, 40],
+  },
+  base: [3, 6],
+  luggage: [6, 8],
+};
+
+const STRINGS = {
+  en: {
+    badge: 'Interactive',
+    title: 'Budget calculator',
+    intro: 'A realistic low–high estimate for the Coastal Camino, based on how you travel. Figures are per person in euros.',
+    daysLabel: 'Days',
+    lodgingLabel: 'Where you sleep',
+    mealsLabel: 'How you eat',
+    luggageLabel: 'Add luggage transfer',
+    btn: 'Estimate my budget',
+    resultTitle: 'Estimated budget',
+    perDay: 'about €{lo}–€{hi} per day',
+    total: '€{lo} – €{hi} total',
+    note: 'Excludes flights/transport to the start and back home. Municipal albergues are first-come; add a buffer for treats and the odd private room.',
+    lodging: { municipal: 'Mostly municipal albergues', mixed: 'Mix of albergues', private: 'Private albergues/rooms', hotel: 'Hotels/guesthouses' },
+    meals: { budget: 'Self-catering / cheap', mixed: 'Mix / pilgrim menus', restaurants: 'Mostly restaurants' },
+    save: 'Saved on this device.',
+  },
+  es: {
+    badge: 'Interactivo',
+    title: 'Calculadora de presupuesto',
+    intro: 'Una estimación realista mín–máx para el Camino de la Costa, según cómo viajes. Cifras por persona en euros.',
+    daysLabel: 'Días',
+    lodgingLabel: 'Dónde duermes',
+    mealsLabel: 'Cómo comes',
+    luggageLabel: 'Añadir transporte de mochilas',
+    btn: 'Estimar mi presupuesto',
+    resultTitle: 'Presupuesto estimado',
+    perDay: 'unos €{lo}–€{hi} al día',
+    total: '€{lo} – €{hi} en total',
+    note: 'No incluye vuelos/transporte hasta el inicio ni la vuelta. Los albergues municipales son por orden de llegada; añade un margen para caprichos y alguna habitación privada.',
+    lodging: { municipal: 'Sobre todo albergues municipales', mixed: 'Mezcla de albergues', private: 'Albergues privados/habitaciones', hotel: 'Hoteles/pensiones' },
+    meals: { budget: 'Cocina propia / barato', mixed: 'Mezcla / menús del peregrino', restaurants: 'Sobre todo restaurantes' },
+    save: 'Guardado en este dispositivo.',
+  },
+  pt: {
+    badge: 'Interativo',
+    title: 'Calculadora de orçamento',
+    intro: 'Uma estimativa realista mín–máx para o Caminho da Costa, conforme viajas. Valores por pessoa em euros.',
+    daysLabel: 'Dias',
+    lodgingLabel: 'Onde dormes',
+    mealsLabel: 'Como comes',
+    luggageLabel: 'Adicionar transporte de mochilas',
+    btn: 'Estimar o meu orçamento',
+    resultTitle: 'Orçamento estimado',
+    perDay: 'cerca de €{lo}–€{hi} por dia',
+    total: '€{lo} – €{hi} no total',
+    note: 'Não inclui voos/transporte até ao início nem o regresso. Os albergues municipais são por ordem de chegada; acrescenta uma margem para mimos e algum quarto privado.',
+    lodging: { municipal: 'Sobretudo albergues municipais', mixed: 'Mistura de albergues', private: 'Albergues privados/quartos', hotel: 'Hotéis/pensões' },
+    meals: { budget: 'Cozinha própria / barato', mixed: 'Mistura / menus do peregrino', restaurants: 'Sobretudo restaurantes' },
+    save: 'Guardado neste dispositivo.',
+  },
+}[lang];
+---
+
+<section aria-labelledby="bc-heading" class="rounded-2xl border border-forest-200 bg-white p-5 sm:p-6 shadow-sm">
+  <div class="flex items-center gap-2 mb-1">
+    <span class="text-[10px] font-bold uppercase tracking-widest text-earth-700 bg-earth-100 px-2 py-0.5 rounded-full border border-earth-200">{STRINGS.badge}</span>
+  </div>
+  <h2 id="bc-heading" class="text-xl font-bold text-forest-900 tracking-tight">{STRINGS.title}</h2>
+  <p class="text-sm text-slate-600 leading-relaxed mt-1 mb-4">{STRINGS.intro}</p>
+
+  <div class="grid sm:grid-cols-2 gap-3">
+    <div class="sm:w-32">
+      <label for="bc-days" class="block text-xs font-semibold text-forest-900 mb-1.5">{STRINGS.daysLabel}</label>
+      <input type="number" id="bc-days" min="1" max="30" value="7" class="w-full rounded-xl border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 font-mono focus:border-forest-500 focus:ring-2 focus:ring-forest-200 focus:outline-none" />
+    </div>
+    <div class="sm:col-span-1"></div>
+    <div>
+      <label for="bc-lodging" class="block text-xs font-semibold text-forest-900 mb-1.5">{STRINGS.lodgingLabel}</label>
+      <select id="bc-lodging" class="w-full rounded-xl border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 focus:border-forest-500 focus:ring-2 focus:ring-forest-200 focus:outline-none">
+        <option value="municipal">{STRINGS.lodging.municipal}</option>
+        <option value="mixed" selected>{STRINGS.lodging.mixed}</option>
+        <option value="private">{STRINGS.lodging.private}</option>
+        <option value="hotel">{STRINGS.lodging.hotel}</option>
+      </select>
+    </div>
+    <div>
+      <label for="bc-meals" class="block text-xs font-semibold text-forest-900 mb-1.5">{STRINGS.mealsLabel}</label>
+      <select id="bc-meals" class="w-full rounded-xl border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 focus:border-forest-500 focus:ring-2 focus:ring-forest-200 focus:outline-none">
+        <option value="budget">{STRINGS.meals.budget}</option>
+        <option value="mixed" selected>{STRINGS.meals.mixed}</option>
+        <option value="restaurants">{STRINGS.meals.restaurants}</option>
+      </select>
+    </div>
+  </div>
+
+  <label class="flex items-center gap-2.5 text-sm text-slate-700 mt-3 cursor-pointer">
+    <input type="checkbox" id="bc-luggage" class="h-4 w-4 rounded border-slate-300 text-forest-600 focus:ring-forest-400 cursor-pointer" />
+    <span>{STRINGS.luggageLabel}</span>
+  </label>
+
+  <button type="button" id="bc-go" class="mt-4 inline-flex items-center justify-center rounded-xl bg-forest-700 px-5 py-2.5 text-sm font-bold text-white no-underline hover:bg-forest-800 transition-colors cursor-pointer">{STRINGS.btn}</button>
+
+  <div id="bc-result" class="mt-4" role="status" aria-live="polite"></div>
+</section>
+
+<script define:vars={{ CFG, S: STRINGS }}>
+  (function () {
+    var daysEl = document.getElementById('bc-days');
+    var lodgeEl = document.getElementById('bc-lodging');
+    var mealsEl = document.getElementById('bc-meals');
+    var lugEl = document.getElementById('bc-luggage');
+    var goEl = document.getElementById('bc-go');
+    var out = document.getElementById('bc-result');
+    if (!daysEl || !lodgeEl || !mealsEl || !goEl || !out) return;
+    var KEY = 'wtsg-budget';
+
+    function esc(s) {
+      return String(s).replace(/[&<>"]/g, function (c) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+      });
+    }
+
+    function run() {
+      var days = Math.max(1, Math.min(30, parseInt(daysEl.value, 10) || 1));
+      var lodge = CFG.lodging[lodgeEl.value] || CFG.lodging.mixed;
+      var meal = CFG.meals[mealsEl.value] || CFG.meals.mixed;
+      var lug = lugEl && lugEl.checked ? CFG.luggage : [0, 0];
+
+      var pdLo = lodge[0] + meal[0] + CFG.base[0] + lug[0];
+      var pdHi = lodge[1] + meal[1] + CFG.base[1] + lug[1];
+      var totLo = pdLo * days;
+      var totHi = pdHi * days;
+
+      try {
+        localStorage.setItem(KEY, JSON.stringify({ days: days, lodge: lodgeEl.value, meals: mealsEl.value, luggage: !!(lugEl && lugEl.checked) }));
+      } catch (e) {}
+
+      out.innerHTML =
+        '<div class="rounded-xl border border-forest-200 bg-forest-50 p-4">' +
+        '<p class="text-xs font-bold uppercase tracking-wider text-forest-900 mb-1">' + esc(S.resultTitle) + '</p>' +
+        '<p class="text-2xl font-bold text-forest-800">' + esc(S.total.replace('{lo}', totLo).replace('{hi}', totHi)) + '</p>' +
+        '<p class="text-sm text-slate-600 mt-0.5">' + esc(S.perDay.replace('{lo}', pdLo).replace('{hi}', pdHi)) + '</p>' +
+        '<p class="text-xs text-slate-500 mt-3">' + esc(S.note) + '</p>' +
+        '<p class="text-[11px] text-slate-400 mt-2">' + esc(S.save) + '</p>' +
+        '</div>';
+    }
+
+    // Restore saved inputs.
+    try {
+      var saved = JSON.parse(localStorage.getItem(KEY) || 'null');
+      if (saved) {
+        if (saved.days) daysEl.value = String(saved.days);
+        if (saved.lodge) lodgeEl.value = saved.lodge;
+        if (saved.meals) mealsEl.value = saved.meals;
+        if (lugEl) lugEl.checked = !!saved.luggage;
+      }
+    } catch (e) {}
+
+    goEl.addEventListener('click', run);
+    run();
+  })();
+</script>
