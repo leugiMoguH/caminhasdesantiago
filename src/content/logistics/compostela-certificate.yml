@@ -1,0 +1,119 @@
+topic: compostela-certificate
+relatedStageSlugs:
+  - padron-santiago
+relatedTownSlugs:
+  - padron
+relatedTopicSlugs:
+  - pilgrim-credential
+  - finisterre-muxia
+  - getting-home
+sourceVerified: true
+lastVerified: "2026-07-01"
+sources:
+  - https://oficinadelperegrino.com/en/the-compostela/
+  - https://oficinadelperegrino.com/en/pilgrims-reception-office/
+  - https://caminoways.com/camino-pilgrim-passport-certificates
+  - https://walkthecaminoportugues.com/info/camino-compostela-certificate/
+i18n:
+  en:
+    metaTitle: "How to Get Your Compostela in Santiago (2026): Rules, Office & Steps"
+    metaDescription: "Everything you need to claim the Compostela in Santiago in 2026: the 100 km rule, stamps in your credential, where the Pilgrim's Office is, how to skip the queue online, and the extra certificates you can request."
+    h1: "How to get your Compostela in Santiago"
+    lead: "The Compostela is the cathedral's official certificate that you completed the Camino. It's free, you claim it in person in Santiago, and getting it is simple — as long as your credential proves you walked the qualifying distance. Here's exactly what you need and how to do it."
+    sections:
+      - heading: "Do you qualify? The 100 km rule"
+        body: "To earn the Compostela you must walk at least the final 100 km into Santiago (or cycle 200 km), and prove it with stamps in your pilgrim credential. On the Coastal route, starting in Baiona or Vigo comfortably covers the last 100 km. In that final 100 km you need at least two stamps per day — from albergues, churches, cafés, town halls — so keep collecting them."
+      - heading: "Where to go: the Pilgrim's Reception Office"
+        body: "Claim your Compostela at the Pilgrim's Reception Office (Oficina de Acogida al Peregrino), Rúa das Carretas 33, a few minutes' walk from the cathedral. You present your stamped credential, staff verify it, and you receive the Compostela on the spot. It's free of charge."
+      - heading: "Skip the queue with online pre-registration"
+        body: "💡 In busy months the queue can be long. Before you arrive, fill in the online form on the Pilgrim's Office website to get a QR code and a turn number — you then wait for your number instead of queuing from scratch. Do it the evening before or on your final morning."
+      - heading: "The other certificates you can get"
+        body: "The Compostela requires a religious or spiritual motivation; if your reasons are purely sporting or cultural you'll be offered the Certificate of Welcome instead. For a few euros you can also buy the Distance Certificate (Certificado de Distancia), which prints your start point, route and total kilometres — a nice keepsake. A cardboard tube to protect the certificates is sold there too."
+    howTo:
+      - name: "Collect two stamps a day in the last 100 km"
+        text: "From Baiona/Vigo onward, get at least two stamps (sellos) per day in your credential — albergues, churches, cafés and town halls all stamp."
+      - name: "Pre-register online"
+        text: "Fill in the Pilgrim's Office online form before arriving to receive a QR code and turn number, saving time in the queue."
+      - name: "Go to Rúa das Carretas 33"
+        text: "Bring your stamped credential to the Pilgrim's Reception Office near the cathedral and present it at the desk."
+      - name: "Receive your Compostela (and optional extras)"
+        text: "Staff verify your credential and issue the free Compostela. Optionally buy the Distance Certificate and a protective tube."
+    faq:
+      - q: "How much does the Compostela cost?"
+        a: "The Compostela itself is free. Optional extras cost a few euros each: the Distance Certificate is around €3, and a cardboard tube to protect them is a couple of euros."
+      - q: "Where do I get the Compostela in Santiago?"
+        a: "At the Pilgrim's Reception Office, Rúa das Carretas 33, a few minutes from the cathedral. You present your stamped credential and receive it on the spot."
+      - q: "Where do the last 100 km start on the Coastal route?"
+        a: "Starting in Baiona or Vigo comfortably covers the final 100 km into Santiago. In that stretch you need at least two credential stamps per day."
+      - q: "Can I skip the queue?"
+        a: "Yes. Fill in the online pre-registration form on the Pilgrim's Office website to get a QR code and turn number, then wait for your number instead of queuing from the start."
+      - q: "What if my reason for walking isn't religious?"
+        a: "The Compostela requires a religious or spiritual motivation. If your motivation is purely sporting or cultural, you'll be offered the Certificate of Welcome instead."
+  es:
+    metaTitle: "Cómo conseguir la Compostela en Santiago (2026): requisitos, oficina y pasos"
+    metaDescription: "Todo lo que necesitas para obtener la Compostela en Santiago en 2026: la regla de los 100 km, los sellos en la credencial, dónde está la Oficina del Peregrino, cómo evitar la cola online y los certificados extra que puedes pedir."
+    h1: "Cómo conseguir la Compostela en Santiago"
+    lead: "La Compostela es el certificado oficial de la catedral de que completaste el Camino. Es gratis, se recoge en persona en Santiago y conseguirla es sencillo — siempre que tu credencial demuestre que caminaste la distancia mínima. Esto es lo que necesitas y cómo hacerlo."
+    sections:
+      - heading: "¿Cumples? La regla de los 100 km"
+        body: "Para obtener la Compostela debes caminar al menos los últimos 100 km hasta Santiago (o 200 km en bici) y demostrarlo con sellos en la credencial. En la Costa, empezar en Baiona o Vigo cubre con holgura los últimos 100 km. En esos 100 km finales necesitas al menos dos sellos al día — de albergues, iglesias, cafés, ayuntamientos — así que sigue reuniéndolos."
+      - heading: "Dónde ir: la Oficina de Acogida al Peregrino"
+        body: "Recoge tu Compostela en la Oficina de Acogida al Peregrino, Rúa das Carretas 33, a pocos minutos de la catedral. Presentas tu credencial sellada, el personal la verifica y recibes la Compostela en el momento. Es gratuita."
+      - heading: "Evita la cola con el registro online"
+        body: "💡 En los meses de más gente la cola puede ser larga. Antes de llegar, rellena el formulario online en la web de la Oficina del Peregrino para obtener un código QR y un número de turno — luego esperas tu número en vez de hacer cola desde cero. Hazlo la víspera o la última mañana."
+      - heading: "Los otros certificados que puedes obtener"
+        body: "La Compostela exige una motivación religiosa o espiritual; si tus motivos son puramente deportivos o culturales te ofrecerán el Certificado de Bienvenida. Por unos euros también puedes comprar el Certificado de Distancia, que imprime tu punto de partida, ruta y kilómetros totales — un buen recuerdo. Allí también venden un tubo de cartón para proteger los certificados."
+    howTo:
+      - name: "Reúne dos sellos al día en los últimos 100 km"
+        text: "Desde Baiona/Vigo, consigue al menos dos sellos al día en tu credencial — albergues, iglesias, cafés y ayuntamientos sellan."
+      - name: "Regístrate online"
+        text: "Rellena el formulario online de la Oficina del Peregrino antes de llegar para recibir un código QR y número de turno, ahorrando tiempo en la cola."
+      - name: "Ve a Rúa das Carretas 33"
+        text: "Lleva tu credencial sellada a la Oficina de Acogida al Peregrino, cerca de la catedral, y preséntala en el mostrador."
+      - name: "Recibe tu Compostela (y extras opcionales)"
+        text: "El personal verifica tu credencial y emite la Compostela gratuita. Opcionalmente compra el Certificado de Distancia y un tubo protector."
+    faq:
+      - q: "¿Cuánto cuesta la Compostela?"
+        a: "La Compostela en sí es gratis. Los extras opcionales cuestan unos euros: el Certificado de Distancia ronda los €3 y el tubo de cartón para protegerlos, un par de euros."
+      - q: "¿Dónde se recoge la Compostela en Santiago?"
+        a: "En la Oficina de Acogida al Peregrino, Rúa das Carretas 33, a pocos minutos de la catedral. Presentas tu credencial sellada y la recibes en el momento."
+      - q: "¿Dónde empiezan los últimos 100 km en la Costa?"
+        a: "Empezar en Baiona o Vigo cubre con holgura los últimos 100 km hasta Santiago. En ese tramo necesitas al menos dos sellos al día en la credencial."
+      - q: "¿Puedo evitar la cola?"
+        a: "Sí. Rellena el formulario de registro online en la web de la Oficina del Peregrino para obtener un código QR y número de turno, y espera tu número en vez de hacer cola desde el principio."
+      - q: "¿Y si mi motivo para caminar no es religioso?"
+        a: "La Compostela exige una motivación religiosa o espiritual. Si tu motivación es puramente deportiva o cultural, te ofrecerán el Certificado de Bienvenida."
+  pt:
+    metaTitle: "Como obter a Compostela em Santiago (2026): requisitos, gabinete e passos"
+    metaDescription: "Tudo o que precisas para obter a Compostela em Santiago em 2026: a regra dos 100 km, os carimbos na credencial, onde fica o Gabinete do Peregrino, como evitar a fila online e os certificados extra que podes pedir."
+    h1: "Como obter a Compostela em Santiago"
+    lead: "A Compostela é o certificado oficial da catedral de que completaste o Caminho. É grátis, obtém-se em pessoa em Santiago e consegui-la é simples — desde que a tua credencial prove que caminhaste a distância mínima. Eis o que precisas e como fazer."
+    sections:
+      - heading: "Qualificas? A regra dos 100 km"
+        body: "Para obter a Compostela tens de caminhar pelo menos os últimos 100 km até Santiago (ou 200 km de bicicleta) e prová-lo com carimbos na credencial. Na Costa, começar em Baiona ou Vigo cobre com folga os últimos 100 km. Nesses 100 km finais precisas de pelo menos dois carimbos por dia — de albergues, igrejas, cafés, câmaras — por isso continua a reuni-los."
+      - heading: "Onde ir: o Gabinete de Acolhimento ao Peregrino"
+        body: "Recolhe a tua Compostela no Gabinete de Acolhimento ao Peregrino (Oficina de Acogida al Peregrino), Rúa das Carretas 33, a poucos minutos da catedral. Apresentas a credencial carimbada, o pessoal verifica-a e recebes a Compostela na hora. É gratuita."
+      - heading: "Evita a fila com o registo online"
+        body: "💡 Nos meses de mais gente a fila pode ser longa. Antes de chegares, preenche o formulário online no site do Gabinete do Peregrino para obter um código QR e um número de senha — depois esperas pela tua senha em vez de fazer fila do zero. Fá-lo na véspera ou na última manhã."
+      - heading: "Os outros certificados que podes obter"
+        body: "A Compostela exige uma motivação religiosa ou espiritual; se os teus motivos forem puramente desportivos ou culturais, oferecem-te o Certificado de Boas-Vindas. Por uns euros também podes comprar o Certificado de Distância, que imprime o teu ponto de partida, rota e quilómetros totais — uma boa recordação. Ali também vendem um tubo de cartão para proteger os certificados."
+    howTo:
+      - name: "Reúne dois carimbos por dia nos últimos 100 km"
+        text: "A partir de Baiona/Vigo, obtém pelo menos dois carimbos por dia na credencial — albergues, igrejas, cafés e câmaras carimbam."
+      - name: "Regista-te online"
+        text: "Preenche o formulário online do Gabinete do Peregrino antes de chegar para receber um código QR e número de senha, poupando tempo na fila."
+      - name: "Vai à Rúa das Carretas 33"
+        text: "Leva a credencial carimbada ao Gabinete de Acolhimento ao Peregrino, perto da catedral, e apresenta-a no balcão."
+      - name: "Recebe a tua Compostela (e extras opcionais)"
+        text: "O pessoal verifica a credencial e emite a Compostela gratuita. Opcionalmente compra o Certificado de Distância e um tubo protetor."
+    faq:
+      - q: "Quanto custa a Compostela?"
+        a: "A Compostela em si é grátis. Os extras opcionais custam uns euros: o Certificado de Distância ronda os €3 e o tubo de cartão para os proteger, uns dois euros."
+      - q: "Onde se obtém a Compostela em Santiago?"
+        a: "No Gabinete de Acolhimento ao Peregrino, Rúa das Carretas 33, a poucos minutos da catedral. Apresentas a credencial carimbada e recebe-la na hora."
+      - q: "Onde começam os últimos 100 km na Costa?"
+        a: "Começar em Baiona ou Vigo cobre com folga os últimos 100 km até Santiago. Nesse troço precisas de pelo menos dois carimbos por dia na credencial."
+      - q: "Posso evitar a fila?"
+        a: "Sim. Preenche o formulário de registo online no site do Gabinete do Peregrino para obter um código QR e número de senha, e espera pela tua senha em vez de fazer fila desde o início."
+      - q: "E se o meu motivo para caminhar não for religioso?"
+        a: "A Compostela exige uma motivação religiosa ou espiritual. Se a tua motivação for puramente desportiva ou cultural, oferecem-te o Certificado de Boas-Vindas."

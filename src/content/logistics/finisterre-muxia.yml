@@ -1,0 +1,85 @@
+topic: finisterre-muxia
+relatedStageSlugs:
+  - padron-santiago
+relatedTownSlugs: []
+relatedTopicSlugs:
+  - compostela-certificate
+  - getting-home
+  - pilgrim-credential
+sourceVerified: true
+lastVerified: "2026-07-01"
+sources:
+  - https://caminoways.com/camino-finisterre-muxia
+  - https://stingynomads.com/camino-finisterre-and-muxia/
+  - https://oficinadelperegrino.com/en/the-compostela/
+  - https://walkthecaminoportugues.com/info/camino-compostela-certificate/
+i18n:
+  en:
+    metaTitle: "Santiago to Finisterre & Muxía (2026): Walk, Days, Certificates"
+    metaDescription: "Should you continue past Santiago to Finisterre and Muxía in 2026? How many days it takes, the route order, the Finisterrana and Muxiana certificates, and how to walk it or go by bus."
+    h1: "Beyond Santiago: Finisterre & Muxía"
+    lead: "For many pilgrims Santiago isn't the real end — the coast is. Walking on to Finisterre, the old 'end of the world', and the sanctuary at Muxía is the classic epilogue to the Camino. Here's how long it takes, the smart order to walk it, and the certificates you can earn out there."
+    sections:
+      - heading: "The route and how many days"
+        body: "It's about 89 km from Santiago to Finisterre on foot, usually 3–4 days. Most pilgrims then add Muxía (roughly a day more), walking the beautiful coastal link between the two. You can walk it in either order; Santiago → Finisterre → Muxía is the most common, ending at Muxía's dramatic seaside sanctuary."
+      - heading: "The certificates: Finisterrana and Muxiana"
+        body: "💡 Walk it and you can claim two more certificates: the Finisterrana in Finisterre and the Muxiana in Muxía, each issued locally on presentation of a credential stamped along the way. Keep collecting stamps after Santiago — you'll need proof you walked the section, so pick up your credential stamps in villages, cafés and albergues en route."
+      - heading: "Walking vs. going by bus"
+        body: "⚠️ If you only want to see Finisterre, a day-trip bus from Santiago is quick and cheap — but you won't earn the Finisterrana that way, because the certificate is for pilgrims who walk. Decide what you want: the walking epilogue and certificates, or a fast look at the km-0 lighthouse and the Atlantic sunset."
+      - heading: "km 0 and the end-of-the-world feeling"
+        body: "The Finisterre lighthouse marks the symbolic km 0, on a cape the Romans thought was the western edge of the earth. Watching the sun sink into the Atlantic here is the ritual close of the Camino for many walkers. Muxía adds the storm-battered Santuario da Virxe da Barca right on the rocks — quieter, and for some the more moving of the two."
+    faq:
+      - q: "How many days from Santiago to Finisterre and Muxía?"
+        a: "About 89 km to Finisterre, usually 3–4 days on foot, plus roughly one more day to add Muxía. Many pilgrims allow 4–5 days for the full Finisterre–Muxía loop."
+      - q: "What certificates can I get in Finisterre and Muxía?"
+        a: "The Finisterrana in Finisterre and the Muxiana in Muxía. Each is issued locally when you present a credential stamped along the walk from Santiago."
+      - q: "Can I go to Finisterre by bus instead of walking?"
+        a: "Yes, there are day-trip buses from Santiago. But you won't earn the Finisterrana, which is only for pilgrims who walk the route and collect stamps."
+      - q: "Should I do Finisterre or Muxía first?"
+        a: "Either works. Santiago → Finisterre → Muxía is the most common order, finishing at Muxía's seaside sanctuary, but you can reverse it."
+  es:
+    metaTitle: "De Santiago a Finisterre y Muxía (2026): caminar, días, certificados"
+    metaDescription: "¿Merece la pena seguir más allá de Santiago hasta Finisterre y Muxía en 2026? Cuántos días lleva, el orden de la ruta, los certificados Finisterrana y Muxiana, y cómo hacerlo a pie o en autobús."
+    h1: "Más allá de Santiago: Finisterre y Muxía"
+    lead: "Para muchos peregrinos Santiago no es el verdadero final — lo es la costa. Seguir hasta Finisterre, el antiguo 'fin del mundo', y el santuario de Muxía es el epílogo clásico del Camino. Aquí tienes cuánto lleva, el orden inteligente para caminarlo y los certificados que puedes conseguir allí."
+    sections:
+      - heading: "La ruta y cuántos días"
+        body: "Son unos 89 km de Santiago a Finisterre a pie, normalmente 3–4 días. La mayoría añade luego Muxía (aproximadamente un día más), caminando el precioso enlace costero entre ambas. Puedes hacerlo en cualquier orden; Santiago → Finisterre → Muxía es lo más común, terminando en el espectacular santuario junto al mar de Muxía."
+      - heading: "Los certificados: Finisterrana y Muxiana"
+        body: "💡 Camínalo y podrás pedir dos certificados más: la Finisterrana en Finisterre y la Muxiana en Muxía, cada uno emitido localmente al presentar una credencial sellada por el camino. Sigue reuniendo sellos tras Santiago — necesitarás demostrar que caminaste el tramo, así que sella en pueblos, cafés y albergues de la ruta."
+      - heading: "Caminar o ir en autobús"
+        body: "⚠️ Si solo quieres ver Finisterre, un autobús de ida y vuelta desde Santiago es rápido y barato — pero así no consigues la Finisterrana, porque el certificado es para peregrinos que caminan. Decide qué quieres: el epílogo a pie y los certificados, o una vista rápida del faro del km 0 y la puesta de sol atlántica."
+      - heading: "El km 0 y la sensación de fin del mundo"
+        body: "El faro de Finisterre marca el simbólico km 0, en un cabo que los romanos creían el borde occidental de la tierra. Ver el sol hundirse en el Atlántico aquí es el cierre ritual del Camino para muchos. Muxía añade el azotado Santuario da Virxe da Barca sobre las rocas — más tranquilo, y para algunos el más emocionante de los dos."
+    faq:
+      - q: "¿Cuántos días de Santiago a Finisterre y Muxía?"
+        a: "Unos 89 km hasta Finisterre, normalmente 3–4 días a pie, más aproximadamente un día para añadir Muxía. Muchos peregrinos reservan 4–5 días para el circuito completo Finisterre–Muxía."
+      - q: "¿Qué certificados puedo conseguir en Finisterre y Muxía?"
+        a: "La Finisterrana en Finisterre y la Muxiana en Muxía. Cada uno se emite localmente al presentar una credencial sellada durante la caminata desde Santiago."
+      - q: "¿Puedo ir a Finisterre en autobús en vez de caminar?"
+        a: "Sí, hay autobuses de ida y vuelta desde Santiago. Pero no conseguirás la Finisterrana, que es solo para peregrinos que caminan la ruta y reúnen sellos."
+      - q: "¿Hago Finisterre o Muxía primero?"
+        a: "Cualquiera vale. Santiago → Finisterre → Muxía es el orden más común, terminando en el santuario junto al mar de Muxía, pero puedes invertirlo."
+  pt:
+    metaTitle: "De Santiago a Finisterra e Muxía (2026): caminhar, dias, certificados"
+    metaDescription: "Vale a pena seguir para lá de Santiago até Finisterra e Muxía em 2026? Quantos dias leva, a ordem da rota, os certificados Finisterrana e Muxiana, e como fazer a pé ou de autocarro."
+    h1: "Para lá de Santiago: Finisterra e Muxía"
+    lead: "Para muitos peregrinos Santiago não é o verdadeiro fim — é a costa. Continuar até Finisterra, o antigo 'fim do mundo', e o santuário de Muxía é o epílogo clássico do Caminho. Eis quanto tempo leva, a ordem inteligente para o caminhar e os certificados que podes obter por lá."
+    sections:
+      - heading: "A rota e quantos dias"
+        body: "São cerca de 89 km de Santiago a Finisterra a pé, normalmente 3–4 dias. A maioria acrescenta depois Muxía (aproximadamente mais um dia), caminhando a bela ligação costeira entre as duas. Podes fazer em qualquer ordem; Santiago → Finisterra → Muxía é o mais comum, terminando no espetacular santuário à beira-mar de Muxía."
+      - heading: "Os certificados: Finisterrana e Muxiana"
+        body: "💡 Caminha-o e podes pedir mais dois certificados: a Finisterrana em Finisterra e a Muxiana em Muxía, cada um emitido localmente ao apresentar uma credencial carimbada pelo caminho. Continua a reunir carimbos depois de Santiago — vais precisar de provar que caminhaste o troço, por isso carimba em vilas, cafés e albergues da rota."
+      - heading: "Caminhar ou ir de autocarro"
+        body: "⚠️ Se só queres ver Finisterra, um autocarro de ida e volta a partir de Santiago é rápido e barato — mas assim não obténs a Finisterrana, porque o certificado é para peregrinos que caminham. Decide o que queres: o epílogo a pé e os certificados, ou uma vista rápida do farol do km 0 e o pôr do sol atlântico."
+      - heading: "O km 0 e a sensação de fim do mundo"
+        body: "O farol de Finisterra marca o simbólico km 0, num cabo que os romanos julgavam ser o limite ocidental da terra. Ver o sol afundar-se no Atlântico aqui é o fecho ritual do Caminho para muitos. Muxía acrescenta o fustigado Santuário da Virxe da Barca sobre as rochas — mais sossegado, e para alguns o mais comovente dos dois."
+    faq:
+      - q: "Quantos dias de Santiago a Finisterra e Muxía?"
+        a: "Cerca de 89 km até Finisterra, normalmente 3–4 dias a pé, mais aproximadamente um dia para acrescentar Muxía. Muitos peregrinos reservam 4–5 dias para o circuito completo Finisterra–Muxía."
+      - q: "Que certificados posso obter em Finisterra e Muxía?"
+        a: "A Finisterrana em Finisterra e a Muxiana em Muxía. Cada um é emitido localmente ao apresentar uma credencial carimbada durante a caminhada desde Santiago."
+      - q: "Posso ir a Finisterra de autocarro em vez de caminhar?"
+        a: "Sim, há autocarros de ida e volta a partir de Santiago. Mas não obténs a Finisterrana, que é só para peregrinos que caminham a rota e reúnem carimbos."
+      - q: "Faço Finisterra ou Muxía primeiro?"
+        a: "Qualquer uma serve. Santiago → Finisterra → Muxía é a ordem mais comum, terminando no santuário à beira-mar de Muxía, mas podes inverter."

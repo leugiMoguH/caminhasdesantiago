@@ -1,0 +1,85 @@
+topic: getting-home
+relatedStageSlugs:
+  - padron-santiago
+relatedTownSlugs: []
+relatedTopicSlugs:
+  - getting-there
+  - compostela-certificate
+  - finisterre-muxia
+sourceVerified: true
+lastVerified: "2026-07-01"
+sources:
+  - https://caminoways.com/getting-to-from-santiago-de-compostela
+  - https://www.aena.es/en/santiago-rosalia-de-castro.html
+  - https://stingynomads.com/portuguese-coastal-camino-stages/
+  - https://www.renfe.com/es/en
+i18n:
+  en:
+    metaTitle: "Getting Home from Santiago (2026): Airport, Trains & Buses"
+    metaDescription: "How to leave Santiago after the Camino in 2026: the airport bus, trains and buses to Porto, Vigo, Madrid and Lisbon, getting back from Finisterre and Muxía, and where to leave your luggage."
+    h1: "Getting home from Santiago"
+    lead: "You walked to Santiago — now you need to get out. It's well connected by air, rail and road, so leaving is easy once you know the options. Here's how to reach the airport, the main onward connections, and how to get back if you continued to the coast."
+    sections:
+      - heading: "Santiago airport (SCQ)"
+        body: "Santiago–Rosalía de Castro airport (SCQ) is about 13 km east of the old town, at Lavacolla. The city airport bus links the centre and bus/train stations to the terminal in around 30 minutes for a few euros; a taxi is faster but costs much more. Direct flights serve Madrid, Barcelona and several European cities; for other destinations you'll usually connect via Madrid."
+      - heading: "Trains and buses onward"
+        body: "Santiago's train station (Renfe) and bus station connect to the rest of Spain and into Portugal. Trains run to Vigo, A Coruña, Madrid and beyond. Long-distance buses (Alsa, Monbus, FlixBus) are often the cheapest way south — direct coaches reach Porto in around 4 hours, useful if you flew into Porto to start."
+      - heading: "Getting back from Finisterre or Muxía"
+        body: "💡 If you walked on to the coast, you don't have to walk back. Monbus runs regular coaches from Finisterre and Muxía to Santiago (roughly 2–3 hours), so you can end at the ocean and ride back to catch your flight or train. Check the last departure the evening before, as rural timetables thin out."
+      - heading: "Left luggage and your last day"
+        body: "Left-luggage lockers and services near the cathedral and stations let you stash your pack for a few euros so you can enjoy Santiago unburdened before you leave. Give yourself a buffer on departure day: the airport bus and long-distance coaches don't run as often as in a big city."
+    faq:
+      - q: "How do I get from Santiago city to the airport?"
+        a: "Take the city airport bus, which links the centre and the bus/train stations to the terminal in about 30 minutes for a few euros. A taxi is faster but much more expensive."
+      - q: "How do I get from Santiago to Porto after the Camino?"
+        a: "Direct long-distance coaches (Alsa, FlixBus) reach Porto in around 4 hours. You can also train to Vigo and connect onward. Buses are usually the cheapest option south."
+      - q: "How do I get back to Santiago from Finisterre or Muxía?"
+        a: "Monbus runs regular coaches from both Finisterre and Muxía to Santiago, taking roughly 2–3 hours. Check the last departure the evening before."
+      - q: "Where can I leave my backpack in Santiago?"
+        a: "Left-luggage lockers and services near the cathedral and the stations hold your pack for a few euros, so you can explore Santiago before your departure."
+  es:
+    metaTitle: "Cómo volver a casa desde Santiago (2026): aeropuerto, trenes y autobuses"
+    metaDescription: "Cómo salir de Santiago tras el Camino en 2026: el autobús al aeropuerto, trenes y autobuses a Oporto, Vigo, Madrid y Lisboa, cómo volver desde Finisterre y Muxía, y dónde dejar el equipaje."
+    h1: "Cómo volver a casa desde Santiago"
+    lead: "Caminaste hasta Santiago — ahora tienes que salir. Está bien conectada por aire, tren y carretera, así que irse es fácil cuando conoces las opciones. Aquí tienes cómo llegar al aeropuerto, las principales conexiones y cómo volver si seguiste hasta la costa."
+    sections:
+      - heading: "El aeropuerto de Santiago (SCQ)"
+        body: "El aeropuerto Santiago–Rosalía de Castro (SCQ) está a unos 13 km al este del casco antiguo, en Lavacolla. El autobús urbano al aeropuerto une el centro y las estaciones de bus/tren con la terminal en unos 30 minutos por unos euros; el taxi es más rápido pero mucho más caro. Hay vuelos directos a Madrid, Barcelona y varias ciudades europeas; para otros destinos sueles conectar vía Madrid."
+      - heading: "Trenes y autobuses de salida"
+        body: "La estación de tren (Renfe) y la de autobuses de Santiago conectan con el resto de España y con Portugal. Hay trenes a Vigo, A Coruña, Madrid y más allá. Los autobuses de larga distancia (Alsa, Monbus, FlixBus) suelen ser lo más barato hacia el sur — hay directos a Oporto en unas 4 horas, útil si volaste a Oporto para empezar."
+      - heading: "Volver desde Finisterre o Muxía"
+        body: "💡 Si seguiste hasta la costa, no tienes que volver caminando. Monbus opera autobuses regulares de Finisterre y Muxía a Santiago (unas 2–3 horas), así que puedes terminar en el océano y volver para tu vuelo o tren. Comprueba la última salida la víspera, porque los horarios rurales se reducen."
+      - heading: "Consigna y tu último día"
+        body: "Las consignas y servicios de equipaje cerca de la catedral y las estaciones te guardan la mochila por unos euros para disfrutar Santiago sin carga antes de irte. Deja margen el día de salida: el autobús al aeropuerto y los de larga distancia no son tan frecuentes como en una gran ciudad."
+    faq:
+      - q: "¿Cómo voy de la ciudad de Santiago al aeropuerto?"
+        a: "Toma el autobús urbano al aeropuerto, que une el centro y las estaciones de bus/tren con la terminal en unos 30 minutos por unos euros. El taxi es más rápido pero mucho más caro."
+      - q: "¿Cómo voy de Santiago a Oporto tras el Camino?"
+        a: "Autobuses directos de larga distancia (Alsa, FlixBus) llegan a Oporto en unas 4 horas. También puedes ir en tren a Vigo y conectar. El bus suele ser lo más barato hacia el sur."
+      - q: "¿Cómo vuelvo a Santiago desde Finisterre o Muxía?"
+        a: "Monbus opera autobuses regulares desde Finisterre y Muxía a Santiago, en unas 2–3 horas. Comprueba la última salida la víspera."
+      - q: "¿Dónde puedo dejar la mochila en Santiago?"
+        a: "Consignas y servicios cerca de la catedral y las estaciones guardan tu mochila por unos euros, para que explores Santiago antes de tu salida."
+  pt:
+    metaTitle: "Como voltar para casa desde Santiago (2026): aeroporto, comboios e autocarros"
+    metaDescription: "Como sair de Santiago depois do Caminho em 2026: o autocarro para o aeroporto, comboios e autocarros para o Porto, Vigo, Madrid e Lisboa, como voltar de Finisterra e Muxía, e onde deixar a bagagem."
+    h1: "Como voltar para casa desde Santiago"
+    lead: "Caminhaste até Santiago — agora tens de sair. Está bem ligada por ar, comboio e estrada, por isso partir é fácil quando conheces as opções. Eis como chegar ao aeroporto, as principais ligações e como voltar se seguiste até à costa."
+    sections:
+      - heading: "O aeroporto de Santiago (SCQ)"
+        body: "O aeroporto Santiago–Rosalía de Castro (SCQ) fica a cerca de 13 km a leste do centro histórico, em Lavacolla. O autocarro urbano do aeroporto liga o centro e as estações de autocarro/comboio ao terminal em cerca de 30 minutos por uns euros; o táxi é mais rápido mas muito mais caro. Há voos diretos para Madrid, Barcelona e várias cidades europeias; para outros destinos costumas ligar via Madrid."
+      - heading: "Comboios e autocarros de saída"
+        body: "A estação de comboios (Renfe) e a de autocarros de Santiago ligam ao resto de Espanha e a Portugal. Há comboios para Vigo, A Coruña, Madrid e mais além. Os autocarros de longo curso (Alsa, Monbus, FlixBus) costumam ser o mais barato para sul — há diretos ao Porto em cerca de 4 horas, útil se voaste para o Porto para começar."
+      - heading: "Voltar de Finisterra ou Muxía"
+        body: "💡 Se seguiste até à costa, não tens de voltar a pé. A Monbus opera autocarros regulares de Finisterra e Muxía para Santiago (cerca de 2–3 horas), por isso podes terminar no oceano e voltar para apanhar o voo ou comboio. Confirma a última partida na véspera, porque os horários rurais reduzem-se."
+      - heading: "Depósito de bagagem e o teu último dia"
+        body: "Os cacifos e serviços de bagagem perto da catedral e das estações guardam-te a mochila por uns euros para aproveitares Santiago sem peso antes de partir. Dá-te uma margem no dia da partida: o autocarro do aeroporto e os de longo curso não são tão frequentes como numa grande cidade."
+    faq:
+      - q: "Como vou da cidade de Santiago ao aeroporto?"
+        a: "Apanha o autocarro urbano do aeroporto, que liga o centro e as estações de autocarro/comboio ao terminal em cerca de 30 minutos por uns euros. O táxi é mais rápido mas muito mais caro."
+      - q: "Como vou de Santiago ao Porto depois do Caminho?"
+        a: "Autocarros diretos de longo curso (Alsa, FlixBus) chegam ao Porto em cerca de 4 horas. Também podes ir de comboio a Vigo e ligar. O autocarro costuma ser o mais barato para sul."
+      - q: "Como volto a Santiago desde Finisterra ou Muxía?"
+        a: "A Monbus opera autocarros regulares de Finisterra e Muxía para Santiago, em cerca de 2–3 horas. Confirma a última partida na véspera."
+      - q: "Onde posso deixar a mochila em Santiago?"
+        a: "Cacifos e serviços perto da catedral e das estações guardam a tua mochila por uns euros, para explorares Santiago antes da partida."

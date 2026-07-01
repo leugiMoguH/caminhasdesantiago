@@ -1,0 +1,120 @@
+topic: luggage-transfer
+relatedStageSlugs:
+  - caminha-a-guarda
+relatedTownSlugs:
+  - vigo
+  - baiona
+relatedTopicSlugs:
+  - packing-list
+  - booking-strategy
+  - camino-cost-breakdown
+sourceVerified: true
+lastVerified: "2026-07-01"
+sources:
+  - https://walkthecaminoportugues.com/planning/luggage-transfer-service/
+  - https://alisononfoot.com/complete-guide-to-luggage-transfer-services-on-the-camino-portugues/
+  - https://www.elcaminoconcorreos.com/en/rucksack-transfer
+  - https://caminoways.com/camino-luggage-transfers
+i18n:
+  en:
+    metaTitle: "Luggage Transfer on the Camino Portugués Coastal: Cost & How It Works (2026)"
+    metaDescription: "How backpack transfer works on the Camino Portugués Coastal Route in 2026: what it costs per stage, the main operators, how to book, weight limits, and why you must sleep in private accommodation to use it."
+    h1: "Luggage transfer on the Coastal Camino"
+    lead: "You do not have to carry your full pack. For a few euros a day, a van moves your bag door-to-door to your next accommodation, so you walk with a light daypack. Here is exactly how it works on the Coastal route, what it costs, and the one rule that trips people up."
+    sections:
+      - heading: "How it works, step by step"
+        body: "The night before, you leave your labelled backpack at your accommodation's reception before the morning cut-off (usually 08:00). A courier van collects it and delivers it to your next booked accommodation, normally by early-to-mid afternoon, before you arrive on foot. You walk the whole stage carrying only a small daypack with water, snacks and a rain layer."
+      - heading: "What it costs"
+        body: "💡 Expect roughly €5–8 per bag per stage on the Portuguese Camino. Multi-stage packages are cheaper per day: a full Porto–Santiago block on the Coastal route runs around €85–100 for the whole trip. You pay per bag, not per person, so a couple sharing one large bag pays once."
+      - heading: "The rule that trips people up"
+        body: "⚠️ Luggage transfer only works accommodation-to-accommodation, and municipal (public) albergues generally do NOT accept bag delivery. To use a transfer service you must book private albergues, guesthouses or hotels every night. If you plan to sleep in cheap municipal albergues, you carry your own pack. Decide this before you book beds."
+      - heading: "Who runs it on the Portuguese route"
+        body: "Established operators covering the Camino Portugués include Correos (the Spanish post office 'El Camino con Correos'), Pilbeo, Tuitrans and Caminofácil. Most let you book the whole route online in advance or stage-by-stage; you attach a label and leave payment as instructed. Booking a day or two ahead is enough outside peak summer."
+    howTo:
+      - name: "Book the service"
+        text: "Reserve online for the whole route, or arrange stage-by-stage the evening before. You will get labels or a booking reference."
+      - name: "Label your bag"
+        text: "Write your name and the exact name and address of your next accommodation on the tag. Attach any payment envelope as instructed."
+      - name: "Drop it at reception before 08:00"
+        text: "Leave the bag at your accommodation's agreed pick-up point before the morning cut-off. Keep valuables, water and documents in your daypack."
+      - name: "Walk light and collect on arrival"
+        text: "Walk the stage with only a daypack. Your bag will be waiting at your next accommodation's reception, usually by mid-afternoon."
+    faq:
+      - q: "How much does luggage transfer cost on the Camino Portugués?"
+        a: "Roughly €5–8 per bag per stage. A full Porto–Santiago package on the Coastal route is around €85–100 for the whole trip. You pay per bag, not per person."
+      - q: "Can I use luggage transfer if I sleep in municipal albergues?"
+        a: "No. Municipal (public) albergues generally don't accept bag delivery. To use a transfer service you must book private albergues, guesthouses or hotels each night."
+      - q: "When do I leave my bag and when does it arrive?"
+        a: "Leave it at reception before the morning cut-off (usually 08:00). It's delivered to your next accommodation by early-to-mid afternoon, normally before you arrive on foot."
+      - q: "Is there a weight limit?"
+        a: "Most operators cap bags at around 20 kg per piece. Check your operator's limit; oversized or extra bags may cost more."
+      - q: "Do I need to book it for the whole route?"
+        a: "No. You can book the entire route in advance or arrange it stage-by-stage the evening before. A day or two ahead is enough outside peak summer."
+  es:
+    metaTitle: "Transporte de mochilas en el Camino Portugués de la Costa: precio y cómo funciona (2026)"
+    metaDescription: "Cómo funciona el transporte de mochilas en el Camino Portugués de la Costa en 2026: cuánto cuesta por etapa, los principales operadores, cómo reservar, límites de peso y por qué debes dormir en alojamiento privado para usarlo."
+    h1: "Transporte de mochilas en el Camino de la Costa"
+    lead: "No tienes que cargar toda la mochila. Por unos euros al día, una furgoneta lleva tu bolsa puerta a puerta hasta tu siguiente alojamiento, y caminas con una mochila pequeña. Aquí tienes cómo funciona en la Costa, cuánto cuesta y la única regla que despista a la gente."
+    sections:
+      - heading: "Cómo funciona, paso a paso"
+        body: "La víspera dejas tu mochila etiquetada en la recepción de tu alojamiento antes de la hora límite de la mañana (normalmente las 08:00). Una furgoneta la recoge y la entrega en tu siguiente alojamiento reservado, normalmente a primera o media tarde, antes de que llegues a pie. Caminas toda la etapa solo con una mochila pequeña con agua, comida y un chubasquero."
+      - heading: "Cuánto cuesta"
+        body: "💡 Cuenta con unos €5–8 por bolsa y etapa en el Camino Portugués. Los paquetes de varias etapas salen más baratos por día: un bloque completo Oporto–Santiago por la Costa ronda los €85–100 por todo el viaje. Pagas por bolsa, no por persona, así que una pareja que comparte una bolsa grande paga una vez."
+      - heading: "La regla que despista a la gente"
+        body: "⚠️ El transporte solo funciona de alojamiento a alojamiento, y los albergues municipales (públicos) normalmente NO aceptan la entrega de bolsas. Para usar el servicio debes reservar albergues privados, pensiones u hoteles cada noche. Si piensas dormir en albergues municipales baratos, cargas tu propia mochila. Decídelo antes de reservar camas."
+      - heading: "Quién lo opera en la ruta portuguesa"
+        body: "Operadores consolidados en el Camino Portugués: Correos ('El Camino con Correos'), Pilbeo, Tuitrans y Caminofácil. La mayoría te deja reservar toda la ruta online por adelantado o etapa a etapa; pones una etiqueta y dejas el pago según indiquen. Reservar con uno o dos días basta fuera del verano alto."
+    howTo:
+      - name: "Reserva el servicio"
+        text: "Resérvalo online para toda la ruta, o gestiónalo etapa a etapa la tarde anterior. Recibirás etiquetas o un localizador."
+      - name: "Etiqueta tu bolsa"
+        text: "Escribe tu nombre y el nombre y dirección exactos de tu siguiente alojamiento en la etiqueta. Adjunta el sobre de pago según indiquen."
+      - name: "Déjala en recepción antes de las 08:00"
+        text: "Deja la bolsa en el punto de recogida acordado antes de la hora límite. Guarda objetos de valor, agua y documentos en tu mochila pequeña."
+      - name: "Camina ligero y recógela al llegar"
+        text: "Camina la etapa solo con una mochila pequeña. Tu bolsa te esperará en la recepción de tu siguiente alojamiento, normalmente a media tarde."
+    faq:
+      - q: "¿Cuánto cuesta el transporte de mochilas en el Camino Portugués?"
+        a: "Unos €5–8 por bolsa y etapa. Un paquete completo Oporto–Santiago por la Costa ronda los €85–100 por todo el viaje. Pagas por bolsa, no por persona."
+      - q: "¿Puedo usar el transporte si duermo en albergues municipales?"
+        a: "No. Los albergues municipales (públicos) normalmente no aceptan entrega de bolsas. Para usar el servicio debes reservar albergues privados, pensiones u hoteles cada noche."
+      - q: "¿Cuándo dejo la bolsa y cuándo llega?"
+        a: "Déjala en recepción antes de la hora límite de la mañana (normalmente 08:00). Se entrega en tu siguiente alojamiento a primera o media tarde, normalmente antes de que llegues a pie."
+      - q: "¿Hay límite de peso?"
+        a: "La mayoría de operadores limita las bolsas a unos 20 kg por pieza. Comprueba el límite de tu operador; bolsas extra o con sobrepeso pueden costar más."
+      - q: "¿Tengo que reservarlo para toda la ruta?"
+        a: "No. Puedes reservar toda la ruta por adelantado o gestionarlo etapa a etapa la tarde anterior. Con uno o dos días basta fuera del verano alto."
+  pt:
+    metaTitle: "Transporte de mochilas no Caminho Português da Costa: preço e como funciona (2026)"
+    metaDescription: "Como funciona o transporte de mochilas no Caminho Português da Costa em 2026: quanto custa por etapa, os principais operadores, como reservar, limites de peso e porque tens de dormir em alojamento privado para o usar."
+    h1: "Transporte de mochilas no Caminho da Costa"
+    lead: "Não tens de carregar a mochila toda. Por uns euros por dia, uma carrinha leva o teu saco porta a porta até ao alojamento seguinte, e caminhas com uma mochila pequena. Eis como funciona na Costa, quanto custa e a única regra que baralha as pessoas."
+    sections:
+      - heading: "Como funciona, passo a passo"
+        body: "Na véspera deixas a tua mochila etiquetada na receção do alojamento antes da hora limite da manhã (normalmente as 08:00). Uma carrinha recolhe-a e entrega-a no teu alojamento seguinte já reservado, normalmente ao início ou meio da tarde, antes de chegares a pé. Caminhas a etapa toda só com uma mochila pequena com água, comida e um corta-vento."
+      - heading: "Quanto custa"
+        body: "💡 Conta com cerca de €5–8 por saco e etapa no Caminho Português. Os pacotes de várias etapas saem mais baratos por dia: um bloco completo Porto–Santiago pela Costa ronda os €85–100 pela viagem toda. Pagas por saco, não por pessoa, portanto um casal que partilha um saco grande paga uma vez."
+      - heading: "A regra que baralha as pessoas"
+        body: "⚠️ O transporte só funciona de alojamento para alojamento, e os albergues municipais (públicos) geralmente NÃO aceitam entrega de sacos. Para usar o serviço tens de reservar albergues privados, pensões ou hotéis todas as noites. Se contas dormir em albergues municipais baratos, carregas a tua própria mochila. Decide isto antes de reservares camas."
+      - heading: "Quem o opera na rota portuguesa"
+        body: "Operadores consolidados no Caminho Português: Correos ('El Camino con Correos'), Pilbeo, Tuitrans e Caminofácil. A maioria deixa-te reservar toda a rota online com antecedência ou etapa a etapa; pões uma etiqueta e deixas o pagamento conforme indicado. Reservar com um a dois dias chega fora do verão alto."
+    howTo:
+      - name: "Reserva o serviço"
+        text: "Reserva online para toda a rota, ou trata etapa a etapa na tarde anterior. Vais receber etiquetas ou uma referência de reserva."
+      - name: "Etiqueta o teu saco"
+        text: "Escreve o teu nome e o nome e morada exatos do alojamento seguinte na etiqueta. Junta o envelope de pagamento conforme indicado."
+      - name: "Deixa na receção antes das 08:00"
+        text: "Deixa o saco no ponto de recolha combinado antes da hora limite. Guarda valores, água e documentos na mochila pequena."
+      - name: "Caminha leve e recolhe à chegada"
+        text: "Caminha a etapa só com uma mochila pequena. O teu saco estará à espera na receção do alojamento seguinte, normalmente ao meio da tarde."
+    faq:
+      - q: "Quanto custa o transporte de mochilas no Caminho Português?"
+        a: "Cerca de €5–8 por saco e etapa. Um pacote completo Porto–Santiago pela Costa ronda os €85–100 pela viagem toda. Pagas por saco, não por pessoa."
+      - q: "Posso usar o transporte se dormir em albergues municipais?"
+        a: "Não. Os albergues municipais (públicos) geralmente não aceitam entrega de sacos. Para usar o serviço tens de reservar albergues privados, pensões ou hotéis todas as noites."
+      - q: "Quando deixo o saco e quando chega?"
+        a: "Deixa-o na receção antes da hora limite da manhã (normalmente 08:00). É entregue no alojamento seguinte ao início ou meio da tarde, normalmente antes de chegares a pé."
+      - q: "Há limite de peso?"
+        a: "A maioria dos operadores limita os sacos a cerca de 20 kg por peça. Confirma o limite do teu operador; sacos extra ou com excesso de peso podem custar mais."
+      - q: "Tenho de reservar para toda a rota?"
+        a: "Não. Podes reservar toda a rota com antecedência ou tratar etapa a etapa na tarde anterior. Com um a dois dias chega fora do verão alto."

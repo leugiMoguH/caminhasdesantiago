@@ -1,0 +1,82 @@
+# Way to Santiago Guide
+
+> Independent, source-verified pilgrim guide to the Camino Portugués Coastal Route (Caminho Português da Costa) from Caminha to Santiago de Compostela. Deep, practical coverage of the Caminha–A Guarda river crossing, daily stages, towns, albergues, and route logistics. Content is trilingual (English, Spanish, Portuguese); English is the authoritative version and the URLs below are the English canonical pages.
+
+## Start here
+
+- [Camino Portugués — full planning guide](https://waytosantiagoguide.com/camino-portugues-guide/): Master overview of the Portuguese Way — routes, distances, how many days, where to start, and how to choose.
+- [Coastal Route hub (Caminho da Costa)](https://waytosantiagoguide.com/en/caminho-da-costa/): Index of every coastal stage from Caminha to Santiago with distances and difficulty.
+- [Caminha pilgrim guide](https://waytosantiagoguide.com/en/caminha-guide/): Everything a pilgrim needs in Caminha, the Portuguese border town where the coastal route crosses into Spain.
+
+## Ferry & river crossing (Caminha → A Guarda)
+
+- [Ferry and logistics: timetable, prices, water taxi](https://waytosantiagoguide.com/en/caminha/ferry-and-logistics/): 2026 crossing times, prices, booking (Xacobeo Transfer / Taxi Boat), and the Portugal/Spain +1h time difference.
+- [Live ferry status](https://waytosantiagoguide.com/en/caminha-ferry-status/): Current state of the Caminha–A Guarda crossing (the municipal ferry is suspended due to river silting; pilgrim water taxis operate instead).
+- [Overland detour via Valença–Tui](https://waytosantiagoguide.com/en/logistica/overland-detour/): The all-weather fallback when no boat crosses — train to Valença, walk the international bridge into Tui.
+
+## In Caminha (eat, sleep, services)
+
+- [Where to stay in Caminha](https://waytosantiagoguide.com/en/caminha/where-to-stay/): Albergues, guesthouses and hotels, with the case for sleeping in Caminha the night before the crossing.
+- [Where to eat in Caminha](https://waytosantiagoguide.com/en/caminha/where-to-eat/): Verified restaurants and pilgrim dinners.
+- [Useful services in Caminha](https://waytosantiagoguide.com/en/caminha/useful-services/): ATMs, pharmacy, shops, transport and practical contacts.
+- [Pilgrim guide detail](https://waytosantiagoguide.com/en/caminha/pilgrim-guide/): Orientation for arriving and departing pilgrims.
+- [Seixas](https://waytosantiagoguide.com/en/caminha/seixas/): The village beside Caminha on the route.
+- [Vila Praia de Âncora](https://waytosantiagoguide.com/en/caminha/vila-praia-de-ancora/): The coastal town just south of Caminha.
+
+## Coastal stages (Caminha to Santiago)
+
+- [Viana do Castelo → Caminha](https://waytosantiagoguide.com/en/caminho-da-costa/viana-do-castelo-caminha/)
+- [Caminha → A Guarda](https://waytosantiagoguide.com/en/caminho-da-costa/caminha-a-guarda/)
+- [A Guarda → Oia](https://waytosantiagoguide.com/en/caminho-da-costa/a-guarda-oia/)
+- [Oia → Baiona](https://waytosantiagoguide.com/en/caminho-da-costa/oia-baiona/)
+- [Baiona → Vigo](https://waytosantiagoguide.com/en/caminho-da-costa/baiona-vigo/)
+- [Vigo → Redondela](https://waytosantiagoguide.com/en/caminho-da-costa/vigo-redondela/)
+- [Redondela → Pontevedra](https://waytosantiagoguide.com/en/caminho-da-costa/redondela-pontevedra/)
+- [Pontevedra → Caldas de Reis](https://waytosantiagoguide.com/en/caminho-da-costa/pontevedra-caldas-de-reis/)
+- [Caldas de Reis → Padrón](https://waytosantiagoguide.com/en/caminho-da-costa/caldas-de-reis-padron/)
+- [Padrón → Santiago](https://waytosantiagoguide.com/en/caminho-da-costa/padron-santiago/)
+
+## Towns on the route
+
+- [A Guarda](https://waytosantiagoguide.com/en/destino/a-guarda/)
+- [Oia](https://waytosantiagoguide.com/en/destino/oia/)
+- [Baiona](https://waytosantiagoguide.com/en/destino/baiona/)
+- [Vigo](https://waytosantiagoguide.com/en/destino/vigo/)
+- [Redondela](https://waytosantiagoguide.com/en/destino/redondela/)
+- [Pontevedra](https://waytosantiagoguide.com/en/destino/pontevedra/)
+- [Padrón](https://waytosantiagoguide.com/en/destino/padron/)
+
+## Planning & logistics
+
+- [Coastal vs Central route](https://waytosantiagoguide.com/en/logistica/coastal-vs-central/): How the two branches differ and which to choose.
+- [Senda Litoral vs Coastal](https://waytosantiagoguide.com/en/logistica/senda-litoral/): The seaside boardwalk variant versus the official coastal waymarking.
+- [Variante Espiritual](https://waytosantiagoguide.com/en/logistica/variante-espiritual/): The spiritual detour via Armenteira and the boat to Padrón.
+- [Best time to walk](https://waytosantiagoguide.com/en/logistica/best-time-camino-portugues/): Seasons, weather and crowds.
+- [Stage difficulty](https://waytosantiagoguide.com/en/logistica/stages-difficulty/): Terrain, elevation and how hard each section is.
+- [Getting there](https://waytosantiagoguide.com/en/logistica/getting-there/): How to reach the start by air, train and bus.
+- [Cost breakdown](https://waytosantiagoguide.com/en/logistica/camino-cost-breakdown/): Realistic daily budget.
+- [Pilgrim credential](https://waytosantiagoguide.com/en/logistica/pilgrim-credential/): The passport, stamps, and where to get them.
+- [Is the Camino Portugués safe?](https://waytosantiagoguide.com/en/logistica/is-camino-portugues-safe/): Safety, including solo walkers.
+- [Packing list](https://waytosantiagoguide.com/en/logistica/packing-list/): What to bring and what to leave.
+- [Luggage transfer](https://waytosantiagoguide.com/en/logistica/luggage-transfer/): How backpack transfer works on the Coastal route — cost per stage, operators, and why you must book private accommodation to use it.
+
+## Arriving in Santiago & beyond
+
+- [How to get your Compostela](https://waytosantiagoguide.com/en/logistica/compostela-certificate/): The 100 km rule, credential stamps, the Pilgrim's Office, online queue skip, and the extra certificates.
+- [Finisterre & Muxía](https://waytosantiagoguide.com/en/logistica/finisterre-muxia/): Walking beyond Santiago to the coast — days, route order, and the Finisterrana and Muxiana certificates.
+- [Getting home from Santiago](https://waytosantiagoguide.com/en/logistica/getting-home/): Airport bus, trains and buses to Porto/Vigo/Madrid, getting back from the coast, and left luggage.
+
+## Albergues & booking strategy
+
+- [Booking strategy](https://waytosantiagoguide.com/en/logistica/booking-strategy/): What to reserve, what to leave to chance, and the one-night-ahead system.
+- [Walking without booking](https://waytosantiagoguide.com/en/logistica/walking-without-booking/): How to walk bed-to-bed without reservations.
+- [When albergues fill up](https://waytosantiagoguide.com/en/logistica/when-albergues-fill/): The pinch points and timing.
+- [Summer albergue availability](https://waytosantiagoguide.com/en/logistica/summer-albergues-availability/): Peak-season bed pressure.
+- [Are municipal albergues reliable?](https://waytosantiagoguide.com/en/logistica/municipal-albergues-reliable/): First-come rules and queues.
+- [What to do when albergues are full](https://waytosantiagoguide.com/en/logistica/albergues-full/): Fallbacks when there is no bed.
+
+## Comparison & where-to-stay hubs
+
+- [Coastal Camino — where to stay](https://waytosantiagoguide.com/en/coastal-camino/where-to-stay/): Accommodation overview across the coastal stages.
+- [Best stages to sleep](https://waytosantiagoguide.com/en/coastal-camino/best-stages-to-sleep/): Where to plan overnight stops.
+- [Cheapest albergues](https://waytosantiagoguide.com/en/coastal-camino/cheapest-albergues/): Budget beds along the route.
