@@ -2,10 +2,18 @@
 /**
  * CookieConsent — GDPR consent gate.
  *
- * Google Analytics 4 and the CJ Affiliate (Commission Junction) deep-linking
+ * Google Analytics 4 and the CJ Affiliate (Commission Junction) page-impression
  * script are NOT loaded until the visitor accepts. Choice is stored in
  * localStorage ('cookie-consent' = granted | denied). On repeat visits the
- * stored choice is respected silently. Decline => no analytics/affiliate cookies.
+ * stored choice is respected silently. Decline => no analytics/impression scripts
+ * run and no cookies are set while the visitor is on this site.
+ *
+ * SCOPE NOTE: affiliate *attribution* is no longer gated here. Booking.com hrefs
+ * are server-side CJ deep links (lib/booking.ts), so the CJ cookie is set by
+ * qksrv.net/dotomi.com only once the visitor deliberately clicks through to a
+ * partner — a redirect on their own navigation, not tracking of their reading.
+ * That is the standard affiliate-disclosure model and the banner copy already
+ * names affiliate tracking in all three languages.
  */
 interface Props {
   lang: 'en' | 'es' | 'pt';
@@ -72,9 +80,14 @@ const t = {
       function gtag() { window.dataLayer.push(arguments); }
       gtag('js', new Date());
       gtag('config', GA_ID);
-      // CJ Affiliate (Commission Junction) automated deep linking
+      // CJ Affiliate (Commission Junction) page-impression reporting.
+      // IMPRESSIONS ONLY — never the `include/allCj/` (automated deep linking)
+      // build. Affiliate hrefs already ship as CJ deep links from lib/booking.ts,
+      // and qksrv.net is itself in am.js's advertiser list, so that build would
+      // wrap every link a second time. This script only POSTs the page's links to
+      // qksrv.net/pageImpression (allowed by connect-src in public/_headers).
       var cj = document.createElement('script');
-      cj.src = 'https://www.anrdoezrs.net/am/101760389/include/allCj/am.js';
+      cj.src = 'https://www.anrdoezrs.net/am/101760389/impressions/page/am.js';
       document.body.appendChild(cj);
     }
     var choice = null;

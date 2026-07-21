@@ -628,7 +628,7 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
       </div>
       <div class="flex flex-col sm:flex-row gap-3 shrink-0">
         <a
-          href="https://www.booking.com/searchresults.html?ss=Caminha%2C+Portugal"
+          href={bookingSearch('Caminha, Portugal', 'wtsg-ferry-es-caminha')}
           rel="nofollow noopener noreferrer sponsored"
           target="_blank"
           class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-earth-600 to-earth-700 hover:from-earth-700 hover:to-earth-800 active:scale-[0.98] text-white font-bold text-sm px-6 py-3.5 rounded-xl transition-all duration-200 no-underline shadow-md hover:shadow-lg cursor-pointer group"

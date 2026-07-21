@@ -1,8 +1,12 @@
 # Netlify / Cloudflare Pages header format. A static build can't set headers
 # itself — the host applies these. On Vercel, port to vercel.json `headers`.
 # script-src includes anrdoezrs.net (CJ Affiliate am.js, loaded post-consent);
-# omitting it would let CSP block the affiliate script. connect-src widened to
-# the GA4 regional collection endpoints. form-action allows https: for a future
+# omitting it would let CSP block the affiliate script. connect-src covers the
+# GA4 regional collection endpoints AND www.qksrv.net — am.js POSTs the page's
+# links to qksrv.net/pageImpression, so leaving it out silently kills CJ
+# impression reporting (it did, until 2026-07-21). Affiliate *clicks* are
+# unaffected by CSP: they are plain server-side links, not fetches.
+# form-action allows https: for a future
 # external email provider (signup currently disabled). Fonts are self-hosted, so
 # font-src/style-src no longer need the Google Fonts origins. frame-src allows the
 # OpenStreetMap embed used by the per-stage route map (no API key, no JS).
@@ -12,7 +16,7 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
   Strict-Transport-Security: max-age=31536000; includeSubDomains
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.anrdoezrs.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com; frame-src https://www.openstreetmap.org; object-src 'none'; base-uri 'self'; form-action 'self' https:; frame-ancestors 'none'; upgrade-insecure-requests;
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.anrdoezrs.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.qksrv.net; frame-src https://www.openstreetmap.org; object-src 'none'; base-uri 'self'; form-action 'self' https:; frame-ancestors 'none'; upgrade-insecure-requests;
 
 # Self-hosted fonts are content-hashed by filename stability — cache hard.
 /fonts/*

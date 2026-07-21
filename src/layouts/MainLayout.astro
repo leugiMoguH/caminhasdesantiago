@@ -176,7 +176,15 @@ const htmlLang = lang === 'en' ? 'en' : lang === 'es' ? 'es' : 'pt';
             try { host = new URL(href).hostname; } catch (_) { return; }
             if (host === location.hostname) return;
             var rel = (a.getAttribute('rel') || '').toLowerCase();
-            var isAffiliate = host.indexOf('booking.com') !== -1 || rel.indexOf('sponsored') !== -1;
+            // Affiliate hosts are now CJ click domains, because Booking links
+            // ship pre-wrapped as server-side deep links (lib/booking.ts) — the
+            // clicked host is qksrv.net, never booking.com. booking.com stays in
+            // the test so any direct/unwrapped Booking link still counts, and
+            // rel="sponsored" covers future partners.
+            var isAffiliate =
+              /(^|\.)(qksrv\.net|anrdoezrs\.net|dotomi\.com|emjcd\.com|tkqlhce\.com|jdoqocy\.com|dpbolvw\.net|kqzyfj\.com)$/.test(host) ||
+              host.indexOf('booking.com') !== -1 ||
+              rel.indexOf('sponsored') !== -1;
             // link_position: intro | mid | end — read from data-aff-pos on the
             // anchor (or its closest ancestor that carries it). Falls back to
             // 'unknown' so GA4 conversion segmentation always has a value.

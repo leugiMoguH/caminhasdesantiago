@@ -1,5 +1,6 @@
 ---
 import MainLayout from '../../../layouts/MainLayout.astro';
+import { bookingLink, stayLabel } from '../../../lib/booking';
 
 const restaurants = [
   {
@@ -145,7 +146,7 @@ const hotels = [
             </div>
             <div class="pt-4 border-t border-slate-100">
               <a
-                href={h.bookingUrl}
+                href={bookingLink(h.bookingUrl, stayLabel(h.name, 'es'))}
                 rel="nofollow noopener noreferrer sponsored"
                 target="_blank"
                 class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-earth-600 to-earth-700 hover:from-earth-700 hover:to-earth-800 active:scale-[0.98] text-white font-bold text-sm px-6 py-3.5 rounded-xl transition-all duration-200 no-underline shadow-md hover:shadow-lg cursor-pointer group"
