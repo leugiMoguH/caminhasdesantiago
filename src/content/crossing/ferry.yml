@@ -92,8 +92,14 @@ caminha-a-guarda:
   # ── Translatable structured strings (NOT long-form prose) ────────────────────
   i18n:
     en:
-      metaTitle: "Caminha to A Guarda Ferry Timetable 2026: Water Taxi Times & €6 Fares"
-      metaDescription: "Updated June 2026. Several licensed boats cross the Minho daily: from every 30 minutes, €6 per person (€7–8 with bike), online booking available. New municipal ferry expected this summer — full details, timetables and the overland backup route."
+      # CTR rewrite 2026-07-21. GSC: this page had the site's largest impression
+      # pool (2,848) at 1.86% CTR while the PT twin hit 4.51% from the same
+      # position — a snippet problem, not a ranking one. Fixes applied: front-load
+      # the answer instead of "Updated June 2026", add the verified 10-minute
+      # crossing (crossingMinutes above), and keep the title under ~60 chars so it
+      # survives truncation once " | Way to Santiago Guide" is appended.
+      metaTitle: "Caminha to A Guarda Ferry 2026: Timetable, €6 Fare, 10 Min"
+      metaDescription: "Water taxis cross the Minho every 30 min — €6 per person, 10 minutes bank to bank. 2026 timetable, booking, and the train detour if weather stops the boats."
       breadcrumb:
         - { name: Home, item: "/en/" }
         - { name: Caminha Guide, item: "/en/caminha-guide/" }

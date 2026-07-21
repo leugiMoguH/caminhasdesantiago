@@ -13,8 +13,15 @@ sources:
   - https://www.cp.pt/
 i18n:
   en:
-    metaTitle: "Porto to Caminha by Train (2026): CP Linha do Minho via Viana do Castelo"
-    metaDescription: "Reaching the northern Portuguese Coastal Camino from Porto: the CP Linha do Minho train to Viana do Castelo (~84 min) and on to Caminha, plus Porto Airport connections. Step-by-step."
+    # CTR rewrite 2026-07-21. GSC: 638 impressions at 0.47% CTR from position 8.1
+    # — the worst ratio on the site. The old title spent its visible half on
+    # "CP Linha do Minho via Viana do Castelo", a line name the searcher does not
+    # know; queries here are plain "porto to caminha train". Rewritten to lead
+    # with frequency and duration. Note the ~84 min is Porto→Viana, NOT
+    # Porto→Caminha (no verified Porto→Caminha time exists), so the wording keeps
+    # the two legs distinct rather than implying a single 84-minute journey.
+    metaTitle: "Porto to Caminha by Train 2026: Times, Tickets & Airport Link"
+    metaDescription: "CP Minho line trains leave Porto-Campanhã roughly 12 times a day — about 84 minutes to Viana do Castelo, continuing to Caminha. Tickets, airport link, where to start."
     h1: "Getting to the coastal start: Porto → Viana do Castelo / Caminha"
     lead: "Most pilgrims joining the northern stretch of the Portuguese Coastal Camino arrive from Porto. The simplest link is the CP Linha do Minho railway, which runs up the coast through Viana do Castelo and Caminha to the Spanish border."
     sections:

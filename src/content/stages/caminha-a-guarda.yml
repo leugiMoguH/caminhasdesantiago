@@ -21,8 +21,15 @@ sources:
   - https://oamarense.pt/caminha-espera-retomar-ferry-ate-a-guarda-no-verao-de-2026/
 i18n:
   en:
-    metaTitle: "Caminha to A Guarda: Coastal Camino Stage & Crossing into Spain (2026)"
-    metaDescription: "The final Portuguese stage of the Coastal Camino: a short Minho river crossing from Caminha into A Guarda, Spain, then ~1.5 km on foot to town. Stage overview, what to expect, and where it sits between Viana do Castelo and Oia — full ferry timetable linked."
+    metaTitle: "Caminha to A Guarda 2026: Crossing Day, 2 km Walk, Where to Sleep"
+    # CTR rewrite 2026-07-21. GSC: 720 impressions at 1.94% from position 6.8.
+    # This page was competing with /caminha/ferry-and-logistics/ for the same
+    # timetable queries and losing. Split the intent deliberately: the ferry page
+    # owns times and fares, this one owns how the crossing day is actually
+    # shaped and where to sleep — which also routes booking intent to a page
+    # that carries accommodation CTAs. Figures verified above (distanceKm: 2,
+    # ~1.5 km from the landing, Oia ~13 km on).
+    metaDescription: "The short final Portuguese stage — a 10-minute water taxi over the Minho, then a flat 1.5 km into A Guarda. Planning the day, pushing on to Oia (13 km), and where to stay."
     h1: "Caminha → A Guarda (the Minho crossing)"
     lead: "This short stage is really a river crossing. There is no bridge at Caminha, so you cross the Minho by boat — about 10 minutes on the water — and then walk a little over a kilometre into A Guarda on the Spanish bank. In 2026 the crossing runs daily: several licensed water-taxi services replaced the old ferry, and a new municipal ferry is expected this summer."
     sections:
