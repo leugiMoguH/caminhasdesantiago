@@ -1,0 +1,171 @@
+name: Porto
+country: PT
+region: Porto (Norte)
+onStageSlug: porto-vila-do-conde
+geo:
+  lat: 41.1430
+  lng: -8.6110
+accommodations: []
+services:
+  - Sé do Porto — official start and first credential stamp
+  - Pilgrim albergue plus the full range of hostels and hotels
+  - Francisco Sá Carneiro airport, 30 min by metro
+  - São Bento and Campanhã railway stations
+  - Metro to Matosinhos for the boardwalk start
+  - Outdoor and pharmacy shops for last-minute kit
+  - Left luggage at the main stations
+whereToStay:
+  en:
+    intro: "Porto is where the Camino Portugués starts, and where most pilgrims spend a night or two before walking. The choice that matters is not luxury but geography: sleep near the Sé and you step out of the door onto the route; sleep at the coast and you are positioned for the boardwalk instead. Prices swing hard between the riverside and everywhere else, so the areas below trade location against value."
+    areas:
+      - name: "Sé & Baixa — on the start line"
+        blurb: "The streets around the cathedral put you metres from the official starting point and the first waymarks. You can collect your credential stamp at the Sé and be walking within five minutes of leaving your room — worth a lot on a day where the stage is already 28 km. Central, well served by restaurants, and steeply uphill from the river."
+        bookingQuery: "Porto Sé Cathedral"
+        anchor: "hotels and guesthouses beside Porto Cathedral"
+      - name: "Ribeira & the riverfront"
+        blurb: "The UNESCO-listed riverside under the Ponte Luís I is the Porto everyone pictures: tiled façades, terraces and the Douro at your feet. It is the most atmospheric place to spend the night before you start, and the most expensive. Note that it sits at the bottom of the hill, so the morning begins with a climb."
+        bookingQuery: "Porto Ribeira"
+        anchor: "riverside stays in Ribeira"
+      - name: "Bolhão & Santo Ildefonso"
+        blurb: "The blocks around the Mercado do Bolhão and São Bento station are the practical choice: cheaper than the river, walkable to the Sé, and right on top of the metro and the train if you are arriving late or flying out from here after Santiago. Good cafés, fewer tourists, easier value."
+        bookingQuery: "Porto Bolhao Santo Ildefonso"
+        anchor: "better-value rooms near Bolhão and São Bento"
+      - name: "Foz & Matosinhos — the boardwalk start"
+        blurb: "If you plan to skip the city suburbs and start on the Senda Litoral boardwalks, sleeping at the coast saves you the morning metro. Matosinhos has the seafood restaurants and the tram and metro links; Foz is quieter and smarter. Either puts the Atlantic outside your window on day one."
+        bookingQuery: "Matosinhos Porto beach"
+        anchor: "seafront stays in Matosinhos and Foz"
+  es:
+    intro: "Oporto es donde empieza el Camino Portugués y donde casi todos los peregrinos pasan una o dos noches antes de caminar. Lo que importa no es el lujo sino la geografía: si duermes junto a la Sé, sales por la puerta directo a la ruta; si duermes en la costa, quedas colocado para las pasarelas. Los precios cambian mucho entre la ribera y el resto, así que estas zonas equilibran ubicación y valor."
+    areas:
+      - name: "Sé y Baixa — en la línea de salida"
+        blurb: "Las calles junto a la catedral te dejan a metros del punto de partida oficial y de las primeras flechas. Puedes sellar la credencial en la Sé y estar caminando cinco minutos después de salir de la habitación, algo que se agradece en una etapa de 28 km. Céntrico, con muchos restaurantes y bastante cuesta arriba desde el río."
+        bookingQuery: "Oporto Sé catedral"
+        anchor: "hoteles y pensiones junto a la catedral de Oporto"
+      - name: "Ribeira y la ribera del Duero"
+        blurb: "La ribera declarada Patrimonio de la Humanidad, bajo el Puente Luís I, es el Oporto que todo el mundo imagina: fachadas de azulejo, terrazas y el Duero a tus pies. Es el sitio con más ambiente para la noche previa y también el más caro. Ojo: está abajo del todo, así que la mañana empieza con subida."
+        bookingQuery: "Oporto Ribeira"
+        anchor: "alojamientos junto al río en la Ribeira"
+      - name: "Bolhão y Santo Ildefonso"
+        blurb: "Las manzanas alrededor del Mercado do Bolhão y la estación de São Bento son la opción práctica: más baratas que el río, a pie de la Sé y encima del metro y el tren si llegas tarde o vuelas desde aquí después de Santiago. Buenos cafés, menos turistas y mejor relación calidad-precio."
+        bookingQuery: "Oporto Bolhao Santo Ildefonso"
+        anchor: "habitaciones con mejor precio cerca de Bolhão y São Bento"
+      - name: "Foz y Matosinhos — la salida por la pasarela"
+        blurb: "Si piensas saltarte el extrarradio y empezar por las pasarelas de la Senda Litoral, dormir en la costa te ahorra el metro de la mañana. Matosinhos tiene los restaurantes de marisco y las conexiones de tranvía y metro; Foz es más tranquilo y elegante. Cualquiera de los dos te pone el Atlántico en la ventana el primer día."
+        bookingQuery: "Matosinhos Oporto playa"
+        anchor: "alojamientos frente al mar en Matosinhos y Foz"
+  pt:
+    intro: "O Porto é onde o Caminho Português começa e onde quase todos os peregrinos passam uma ou duas noites antes de caminhar. O que interessa não é o luxo, é a geografia: se dormires junto à Sé, sais porta fora direto para o trilho; se dormires na costa, ficas posicionado para os passadiços. Os preços variam muito entre a ribeira e o resto, por isso estas zonas equilibram localização e valor."
+    areas:
+      - name: "Sé e Baixa — na linha de partida"
+        blurb: "As ruas junto à catedral deixam-te a metros do ponto de partida oficial e das primeiras setas. Podes carimbar a credencial na Sé e estar a caminhar cinco minutos depois de sair do quarto, o que conta muito num dia que já tem 28 km. Central, com restaurantes à mão e bem a subir desde o rio."
+        bookingQuery: "Porto Sé catedral"
+        anchor: "hotéis e pensões junto à Sé do Porto"
+      - name: "Ribeira e a marginal do Douro"
+        blurb: "A ribeira classificada pela UNESCO, sob a Ponte Luís I, é o Porto que toda a gente imagina: fachadas de azulejo, esplanadas e o Douro aos pés. É o sítio com mais ambiente para a noite anterior e também o mais caro. Atenção: fica no fundo da encosta, por isso a manhã começa a subir."
+        bookingQuery: "Porto Ribeira"
+        anchor: "alojamentos à beira-rio na Ribeira"
+      - name: "Bolhão e Santo Ildefonso"
+        blurb: "Os quarteirões à volta do Mercado do Bolhão e da estação de São Bento são a escolha prática: mais baratos do que o rio, a pé da Sé e em cima do metro e do comboio se chegares tarde ou voares daqui depois de Santiago. Bons cafés, menos turistas e melhor relação qualidade-preço."
+        bookingQuery: "Porto Bolhao Santo Ildefonso"
+        anchor: "quartos com melhor preço perto do Bolhão e de São Bento"
+      - name: "Foz e Matosinhos — a partida pelo passadiço"
+        blurb: "Se pensas saltar o subúrbio e começar pelos passadiços da Senda Litoral, dormir na costa poupa-te o metro da manhã. Matosinhos tem os restaurantes de marisco e as ligações de elétrico e metro; a Foz é mais sossegada e mais chique. Qualquer um põe-te o Atlântico à janela no primeiro dia."
+        bookingQuery: "Matosinhos Porto praia"
+        anchor: "alojamentos à beira-mar em Matosinhos e na Foz"
+sourceVerified: true
+lastVerified: "2026-08-10"
+sources:
+  - https://walkthecaminoportugues.com/coastal-route/porto-to-vila-do-conde/
+  - https://followthecamino.com/en/camino-portugues-top-things-to-see-in-porto
+  - https://stingynomads.com/portuguese-coastal-camino-stages/
+i18n:
+  en:
+    metaTitle: "Porto for Pilgrims: Where the Camino Portugués Starts (2026)"
+    metaDescription: "Porto as a Camino starting point: where the route officially begins, your first credential stamp, choosing Coastal or Central, what to see before you walk, and which neighbourhood to sleep in."
+    h1: "Porto — where the Camino Portugués begins"
+    lead: "Every Camino Portugués starts here, at the cathedral on the hill. Before you walk you have three decisions to make: Coastal or Central, official route or boardwalk, and which side of the city to sleep on. Here is what each one means."
+    sections:
+      - heading: "The official starting point"
+        body: "The Camino Portugués begins at the Sé do Porto, the fortress-like 12th-century cathedral above São Bento station. Collect your first credential stamp there. From the cathedral the waymarks head north; a few kilometres on, at the Cruzeiro do Senhor, the Coastal and Central routes divide and you commit to one."
+      - heading: "Coastal or Central: deciding before you leave"
+        body: "💡 The Central route runs inland through Barcelos and Ponte de Lima — older, more historic, more villages, more pilgrims. The Coastal route follows the Atlantic through Vila do Conde, Esposende and Viana do Castelo before crossing into Galicia at Caminha. The Coastal is flatter, cooler in summer and far less crowded on the stretches that matter. Both reach Santiago and both earn the Compostela."
+      - heading: "What to see before you walk"
+        body: "Porto rewards a full day before you start. The Sé itself and its cloister; the Ribeira riverfront under the Ponte Luís I, tiled and terraced and rightly UNESCO-listed; the Igreja de São Francisco with its gilded interior; the Torre dos Clérigos for the view over the whole city; Livraria Lello, the bookshop everybody queues for; the azulejo panels inside São Bento station, which you will walk past anyway; and the Mercado do Bolhão for lunch. The centre is small enough to cover on foot, which doubles as a way to break in your boots."
+      - heading: "Getting your credential"
+        body: "You need a credential before you start collecting stamps, and Porto issues them — the cathedral is the obvious place. Since the 2025 rule change you need two stamps a day for the whole route, not just the final 100 km, so get into the habit from the first café. Albergues, churches, cafés and town halls all stamp."
+      - heading: "Three ways out of the city"
+        body: "⚠️ The first 10 km are suburb: pavement, retail parks and cobbles. Your options are to walk the official waymarked line all the way; to take the metro or a bus to the edge of the city and start from there, which is common and costs you nothing towards the Compostela; or to head for Matosinhos and pick up the Senda Litoral boardwalks along the Atlantic — technically a variant, considerably prettier, and what most pilgrims actually do."
+    faq:
+      - q: "Where does the Camino Portugués start in Porto?"
+        a: "At the Sé do Porto, the cathedral above São Bento station. That is the official starting point and where most pilgrims collect their first credential stamp. The Coastal and Central routes split a few kilometres north, at the Cruzeiro do Senhor."
+      - q: "How many days is Porto to Santiago on the Coastal route?"
+        a: "Around 12 to 14 walking days for roughly 280 km. The first stage to Vila do Conde is the longest at 28.4 km; most of the rest fall between 16 and 27 km."
+      - q: "Should I walk out of Porto or take the metro?"
+        a: "Both are normal. The first 10 km are city suburb on hard pavement, and plenty of pilgrims ride the metro to Matosinhos and start walking at the coast. It has no effect on the Compostela, since the qualifying distance is counted in Spain."
+      - q: "Where should I stay in Porto before starting?"
+        a: "Near the Sé if you want to start walking straight from the door; Ribeira for atmosphere at a price; Bolhão and São Bento for value and transport links; Matosinhos or Foz if you plan to start on the Senda Litoral boardwalks instead of the official line."
+      - q: "Can I get a pilgrim credential in Porto?"
+        a: "Yes. The cathedral issues credentials, and it is the natural place to pick one up since the route starts there. Get it before your first stamp."
+      - q: "Coastal or Central route from Porto?"
+        a: "The Coastal is flatter, follows the Atlantic, is cooler in summer and less crowded; the Central is more historic and passes through Barcelos and Ponte de Lima. Both arrive in Santiago and both qualify for the Compostela — pick on scenery and crowds, not on rules."
+    howTo: []
+  es:
+    metaTitle: "Oporto para peregrinos: dónde empieza el Camino Portugués (2026)"
+    metaDescription: "Oporto como punto de partida del Camino: dónde arranca oficialmente la ruta, el primer sello de la credencial, elegir Costa o Central, qué ver antes de caminar y en qué barrio dormir."
+    h1: "Oporto — donde empieza el Camino Portugués"
+    lead: "Todos los Caminos Portugueses empiezan aquí, en la catedral de lo alto. Antes de caminar tienes tres decisiones: Costa o Central, ruta oficial o pasarela, y en qué parte de la ciudad dormir. Esto es lo que significa cada una."
+    sections:
+      - heading: "El punto de partida oficial"
+        body: "El Camino Portugués empieza en la Sé do Porto, la catedral del siglo XII con aire de fortaleza sobre la estación de São Bento. Sella allí la credencial por primera vez. Desde la catedral las flechas van hacia el norte; unos kilómetros después, en el Cruzeiro do Senhor, se separan la ruta de la Costa y la Central y hay que elegir."
+      - heading: "Costa o Central: decidir antes de salir"
+        body: "💡 La Central va por el interior, por Barcelos y Ponte de Lima — más antigua, más histórica, más pueblos y más peregrinos. La Costa sigue el Atlántico por Vila do Conde, Esposende y Viana do Castelo antes de cruzar a Galicia en Caminha. La Costa es más llana, más fresca en verano y mucho menos concurrida en los tramos que importan. Ambas llegan a Santiago y ambas dan derecho a la Compostela."
+      - heading: "Qué ver antes de caminar"
+        body: "Oporto merece un día entero antes de empezar. La propia Sé y su claustro; la Ribeira bajo el Puente Luís I, de azulejo y terrazas y con razón Patrimonio de la Humanidad; la Igreja de São Francisco y su interior dorado; la Torre dos Clérigos por la vista sobre toda la ciudad; la Livraria Lello, la librería por la que todo el mundo hace cola; los paneles de azulejo de la estación de São Bento, por la que vas a pasar de todas formas; y el Mercado do Bolhão para comer. El centro se recorre a pie, lo que además sirve para domar las botas."
+      - heading: "Conseguir la credencial"
+        body: "Necesitas la credencial antes de empezar a sellar, y en Oporto se expide — la catedral es el sitio obvio. Desde el cambio de normas de 2025 necesitas dos sellos al día durante todo el recorrido, no solo en los últimos 100 km, así que coge la costumbre desde el primer café. Sellan albergues, iglesias, cafés y ayuntamientos."
+      - heading: "Tres maneras de salir de la ciudad"
+        body: "⚠️ Los primeros 10 km son extrarradio: acera, polígonos y adoquín. Puedes hacer todo el trazado oficial andando; tomar el metro o un autobús hasta el borde de la ciudad y empezar allí, algo habitual y que no resta nada para la Compostela; o ir a Matosinhos y engancharte a las pasarelas de la Senda Litoral junto al Atlántico — técnicamente una variante, bastante más bonita y lo que hace en realidad la mayoría."
+    faq:
+      - q: "¿Dónde empieza el Camino Portugués en Oporto?"
+        a: "En la Sé do Porto, la catedral sobre la estación de São Bento. Es el punto de partida oficial y donde casi todos sellan por primera vez. Las rutas de la Costa y la Central se separan unos kilómetros al norte, en el Cruzeiro do Senhor."
+      - q: "¿Cuántos días son de Oporto a Santiago por la Costa?"
+        a: "Entre 12 y 14 jornadas de caminata para unos 280 km. La primera etapa hasta Vila do Conde es la más larga, con 28,4 km; el resto suele quedar entre 16 y 27 km."
+      - q: "¿Salgo de Oporto andando o en metro?"
+        a: "Las dos cosas son normales. Los primeros 10 km son extrarradio sobre pavimento duro y muchos peregrinos van en metro hasta Matosinhos y empiezan a caminar en la costa. No afecta a la Compostela, porque la distancia que cuenta se mide en España."
+      - q: "¿Dónde conviene dormir en Oporto antes de empezar?"
+        a: "Junto a la Sé si quieres salir caminando desde la puerta; en la Ribeira por el ambiente, pagando por ello; en Bolhão y São Bento por precio y transporte; en Matosinhos o Foz si piensas empezar por las pasarelas de la Senda Litoral en vez del trazado oficial."
+      - q: "¿Puedo conseguir la credencial del peregrino en Oporto?"
+        a: "Sí. La catedral expide credenciales y es el sitio natural para recogerla, ya que la ruta arranca allí. Consíguela antes del primer sello."
+      - q: "¿Ruta de la Costa o Central desde Oporto?"
+        a: "La Costa es más llana, sigue el Atlántico, es más fresca en verano y menos concurrida; la Central es más histórica y pasa por Barcelos y Ponte de Lima. Las dos llegan a Santiago y las dos valen para la Compostela — elige por paisaje y gente, no por normas."
+    howTo: []
+  pt:
+    metaTitle: "Porto para peregrinos: onde começa o Caminho Português (2026)"
+    metaDescription: "O Porto como ponto de partida do Caminho: onde a rota começa oficialmente, o primeiro carimbo da credencial, escolher Costa ou Central, o que ver antes de caminhar e em que zona dormir."
+    h1: "Porto — onde começa o Caminho Português"
+    lead: "Todos os Caminhos Portugueses começam aqui, na catedral do alto. Antes de caminhares tens três decisões: Costa ou Central, trilho oficial ou passadiço, e em que lado da cidade dormir. Isto é o que cada uma significa."
+    sections:
+      - heading: "O ponto de partida oficial"
+        body: "O Caminho Português começa na Sé do Porto, a catedral do século XII com ar de fortaleza acima da estação de São Bento. Carimba aí a credencial pela primeira vez. Da catedral as setas seguem para norte; poucos quilómetros depois, no Cruzeiro do Senhor, separam-se o Caminho da Costa e o Central e tens de escolher."
+      - heading: "Costa ou Central: decidir antes de sair"
+        body: "💡 O Central vai pelo interior, por Barcelos e Ponte de Lima — mais antigo, mais histórico, mais aldeias e mais peregrinos. O da Costa segue o Atlântico por Vila do Conde, Esposende e Viana do Castelo antes de entrar na Galiza em Caminha. O da Costa é mais plano, mais fresco no verão e bastante menos concorrido nos troços que interessam. Ambos chegam a Santiago e ambos dão direito à Compostela."
+      - heading: "O que ver antes de caminhar"
+        body: "O Porto merece um dia inteiro antes de começares. A própria Sé e o seu claustro; a Ribeira sob a Ponte Luís I, de azulejo e esplanadas e com razão Património Mundial; a Igreja de São Francisco e o seu interior dourado; a Torre dos Clérigos pela vista sobre a cidade toda; a Livraria Lello, a livraria a que toda a gente faz fila; os painéis de azulejo da estação de São Bento, por onde vais passar de qualquer maneira; e o Mercado do Bolhão para almoçar. O centro faz-se a pé, o que também serve para amaciar as botas."
+      - heading: "Obter a credencial"
+        body: "Precisas da credencial antes de começares a carimbar, e o Porto emite-as — a catedral é o sítio óbvio. Desde a mudança de regras de 2025 precisas de dois carimbos por dia durante todo o percurso, não apenas nos últimos 100 km, por isso ganha o hábito logo no primeiro café. Carimbam albergues, igrejas, cafés e câmaras municipais."
+      - heading: "Três maneiras de sair da cidade"
+        body: "⚠️ Os primeiros 10 km são subúrbio: passeio, parques comerciais e calçada. Podes fazer todo o traçado oficial a pé; apanhar o metro ou um autocarro até ao limite da cidade e começar aí, o que é comum e não tira nada à Compostela; ou ir até Matosinhos e apanhar os passadiços da Senda Litoral junto ao Atlântico — tecnicamente uma variante, bastante mais bonita, e o que a maioria faz na prática."
+    faq:
+      - q: "Onde começa o Caminho Português no Porto?"
+        a: "Na Sé do Porto, a catedral acima da estação de São Bento. É o ponto de partida oficial e onde quase todos carimbam pela primeira vez. Os Caminhos da Costa e Central separam-se poucos quilómetros a norte, no Cruzeiro do Senhor."
+      - q: "Quantos dias são do Porto a Santiago pela Costa?"
+        a: "Cerca de 12 a 14 dias de caminhada para uns 280 km. A primeira etapa até Vila do Conde é a mais longa, com 28,4 km; as restantes ficam quase todas entre 16 e 27 km."
+      - q: "Saio do Porto a pé ou de metro?"
+        a: "As duas coisas são normais. Os primeiros 10 km são subúrbio em piso duro e muitos peregrinos vão de metro até Matosinhos e começam a caminhar na costa. Não afeta a Compostela, porque a distância que conta é medida em Espanha."
+      - q: "Onde devo dormir no Porto antes de começar?"
+        a: "Junto à Sé se quiseres sair a caminhar da porta; na Ribeira pelo ambiente, pagando por isso; no Bolhão e em São Bento por preço e transportes; em Matosinhos ou na Foz se pensares começar pelos passadiços da Senda Litoral em vez do traçado oficial."
+      - q: "Posso obter a credencial do peregrino no Porto?"
+        a: "Sim. A catedral emite credenciais e é o sítio natural para a levantar, já que a rota começa ali. Trata dela antes do primeiro carimbo."
+      - q: "Caminho da Costa ou Central a partir do Porto?"
+        a: "O da Costa é mais plano, segue o Atlântico, é mais fresco no verão e menos concorrido; o Central é mais histórico e passa por Barcelos e Ponte de Lima. Os dois chegam a Santiago e os dois valem para a Compostela — escolhe pela paisagem e pela gente, não por regras."
+    howTo: []

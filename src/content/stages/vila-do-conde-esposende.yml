@@ -1,0 +1,109 @@
+route: coastal
+order: 2
+from: Vila do Conde
+to: Esposende
+distanceKm: 23.7
+ascentM: 167
+difficulty: easy
+terrain: Atlantic boardwalks most of the day, with cobbled town streets through Póvoa de Varzim and Fão
+prevSlug: porto-vila-do-conde
+nextSlug: esposende-viana-do-castelo
+townSlugs:
+  - vila-do-conde
+  - esposende
+logisticsSlugs:
+  - senda-litoral
+  - best-time-camino-portugues
+  - stages-difficulty
+  - walking-without-booking
+sourceVerified: true
+lastVerified: "2026-08-10"
+sources:
+  - https://walkthecaminoportugues.com/coastal-route/vila-do-conde-to-esposende/
+  - https://stingynomads.com/portuguese-coastal-camino-stages/
+  - https://www.pilgrim.es/en/camino-portugues-along-the-coast/
+i18n:
+  en:
+    metaTitle: "Vila do Conde to Esposende (23.7 km): Coastal Camino Stage 2 (2026)"
+    metaDescription: "Stage 2 of the Camino Portugués Coastal: 23.7 km of Atlantic boardwalk from Vila do Conde through Póvoa de Varzim, Apúlia and Fão to Esposende. Distance, terrain, landmarks and what the town offers pilgrims."
+    h1: "Vila do Conde to Esposende"
+    lead: "The easiest day of the whole Coastal route and, for a lot of people, the one they remember. 23.7 km with only 167 m of climbing, most of it on wooden boardwalk with the Atlantic on your left the entire way."
+    sections:
+      - heading: "Distance and difficulty"
+        body: "23.7 km and 167 m of ascent — effectively flat. Five to six hours at a normal pace. There is no climb worth the name and no navigational puzzle: the sea stays on your left and the boardwalk does the work. The only thing that bites is cobbles through the towns, and the fact that a flat day on hard surfaces still tires legs by hour five."
+      - heading: "The stage, section by section"
+        body: "Vila do Conde and the Igreja Matriz de São João Baptista → Póvoa de Varzim, a full-size seaside resort with wide boulevards and cafés → Aguçadoura, a low-key surf village → Apúlia, known for the seaweed-harvesting sheds and a good lunch stop → Fão and the Igreja do Senhor Bom Jesus → the metal bridge over the Rio Cávado → Esposende."
+      - heading: "Boardwalk all the way"
+        body: "💡 This is the stage that sells the Coastal route. Long stretches of raised timber walkway run over the dunes between the towns, with the ocean open beside you and beach bars every few kilometres in season. It is soft underfoot compared to what came before, exposed to wind, and there is very little shade — sun protection matters more here than grip."
+      - heading: "Póvoa de Varzim: stop or push on?"
+        body: "Póvoa arrives after about 5 km and it is tempting, especially if you split the first stage and arrived in Vila do Conde late. It has everything — hotels, restaurants, a casino, a beach. But it is early in the day and Esposende is a nicer place to finish. Push on unless you are deliberately walking short days."
+      - heading: "Arriving in Esposende"
+        body: "You cross the Cávado on the metal bridge at Fão and Esposende opens up on the far bank. The town has two large supermarkets, plenty of restaurants and bars, and a range of pilgrim accommodation. It is a windsurf and kitesurf town, so the seafront has more life than its size suggests, and the 15th-century Forte de São João Baptista guards the river mouth with views along the coast."
+    faq:
+      - q: "How long is Vila do Conde to Esposende?"
+        a: "23.7 km with about 167 m of ascent, usually five to six hours. It is the flattest and easiest stage of the Portuguese Coastal route."
+      - q: "Is this stage really all boardwalk?"
+        a: "Not all, but most. Long raised timber walkways run over the dunes between the towns, with cobbled streets through Póvoa de Varzim, Apúlia and Fão. The Atlantic is beside you for almost the entire day."
+      - q: "Where should I stop for lunch?"
+        a: "Póvoa de Varzim at about 5 km if you want a proper town, or Apúlia around the halfway mark, which is the more natural lunch stop and has cafés on the route. Beach bars along the boardwalk open in season."
+      - q: "What does Esposende have for pilgrims?"
+        a: "Two large supermarkets, a good spread of restaurants and bars, and several accommodation options including hostels and guesthouses. It is also a windsurf and kitesurf town, so the seafront stays busy, and the 15th-century Forte de São João Baptista is worth the short walk."
+      - q: "Is there shade on this stage?"
+        a: "Very little. The boardwalks run over open dunes with the sea on one side and nothing overhead. In summer this is a hat, sunscreen and extra-water day, and the Atlantic wind can mask how much sun you are getting."
+    howTo: []
+  es:
+    metaTitle: "Vila do Conde a Esposende (23,7 km): Camino de la Costa etapa 2 (2026)"
+    metaDescription: "Etapa 2 del Camino Portugués de la Costa: 23,7 km de pasarela atlántica desde Vila do Conde por Póvoa de Varzim, Apúlia y Fão hasta Esposende. Distancia, terreno, puntos de interés y qué ofrece el pueblo al peregrino."
+    h1: "De Vila do Conde a Esposende"
+    lead: "El día más fácil de toda la ruta de la Costa y, para mucha gente, el que recuerdan. 23,7 km con solo 167 m de desnivel, casi todo sobre pasarela de madera con el Atlántico a la izquierda de principio a fin."
+    sections:
+      - heading: "Distancia y dificultad"
+        body: "23,7 km y 167 m de desnivel positivo — prácticamente llano. Cinco o seis horas a ritmo normal. No hay ninguna subida digna de mención ni problema de orientación: el mar se queda a la izquierda y la pasarela hace el trabajo. Lo único que molesta son los adoquines de los pueblos y que un día llano sobre superficie dura también cansa a partir de la quinta hora."
+      - heading: "La etapa, tramo a tramo"
+        body: "Vila do Conde y la Igreja Matriz de São João Baptista → Póvoa de Varzim, un balneario en toda regla con bulevares y cafés → Aguçadoura, pueblo surfero tranquilo → Apúlia, conocida por los almacenes de recogida de algas y buena parada para comer → Fão y la Igreja do Senhor Bom Jesus → el puente metálico sobre el Rio Cávado → Esposende."
+      - heading: "Pasarela casi todo el día"
+        body: "💡 Esta es la etapa que vende la ruta de la Costa. Largos tramos de pasarela elevada de madera cruzan las dunas entre los pueblos, con el océano abierto al lado y chiringuitos cada pocos kilómetros en temporada. Es blanda comparada con lo anterior, está expuesta al viento y apenas hay sombra — aquí importa más la protección solar que el agarre."
+      - heading: "Póvoa de Varzim: ¿parar o seguir?"
+        body: "Póvoa aparece a unos 5 km y tienta, sobre todo si partiste la primera etapa y llegaste tarde a Vila do Conde. Lo tiene todo: hoteles, restaurantes, casino, playa. Pero es muy pronto y Esposende es mejor sitio para terminar. Sigue, salvo que estés haciendo etapas cortas a propósito."
+      - heading: "Llegada a Esposende"
+        body: "Cruzas el Cávado por el puente metálico de Fão y Esposende se abre en la otra orilla. El pueblo tiene dos supermercados grandes, restaurantes y bares de sobra y varias opciones de alojamiento para peregrinos. Es una localidad de windsurf y kitesurf, así que el paseo marítimo tiene más vida de la que su tamaño sugiere, y el Forte de São João Baptista, del siglo XV, vigila la desembocadura con vistas a lo largo de la costa."
+    faq:
+      - q: "¿Cuánto hay de Vila do Conde a Esposende?"
+        a: "23,7 km con unos 167 m de desnivel positivo, normalmente entre cinco y seis horas. Es la etapa más llana y fácil del Camino Portugués de la Costa."
+      - q: "¿De verdad es todo pasarela?"
+        a: "Todo no, pero casi. Largos tramos de pasarela elevada de madera cruzan las dunas entre los pueblos, con calles adoquinadas en Póvoa de Varzim, Apúlia y Fão. El Atlántico te acompaña casi toda la jornada."
+      - q: "¿Dónde conviene parar a comer?"
+        a: "En Póvoa de Varzim hacia el km 5 si quieres un pueblo grande, o en Apúlia sobre la mitad, que es la parada natural y tiene cafés en ruta. Los chiringuitos de la pasarela abren en temporada."
+      - q: "¿Qué ofrece Esposende al peregrino?"
+        a: "Dos supermercados grandes, buena oferta de restaurantes y bares y varias opciones de alojamiento, entre ellas hostels y pensiones. Además es localidad de windsurf y kitesurf, así que el paseo marítimo está animado, y el Forte de São João Baptista del siglo XV merece el pequeño rodeo."
+      - q: "¿Hay sombra en esta etapa?"
+        a: "Muy poca. Las pasarelas cruzan dunas abiertas con el mar a un lado y nada por encima. En verano es día de gorra, protector solar y agua de más, y el viento atlántico disimula el sol que estás recibiendo."
+    howTo: []
+  pt:
+    metaTitle: "Vila do Conde a Esposende (23,7 km): Caminho da Costa etapa 2 (2026)"
+    metaDescription: "Etapa 2 do Caminho Português da Costa: 23,7 km de passadiço atlântico de Vila do Conde pela Póvoa de Varzim, Apúlia e Fão até Esposende. Distância, terreno, pontos de interesse e o que a vila oferece ao peregrino."
+    h1: "De Vila do Conde a Esposende"
+    lead: "O dia mais fácil de todo o Caminho da Costa e, para muita gente, o que fica na memória. 23,7 km com apenas 167 m de subida, quase tudo sobre passadiço de madeira com o Atlântico à esquerda do princípio ao fim."
+    sections:
+      - heading: "Distância e dificuldade"
+        body: "23,7 km e 167 m de subida acumulada — praticamente plano. Cinco a seis horas a ritmo normal. Não há uma única subida digna desse nome nem problema de orientação: o mar fica à esquerda e o passadiço faz o trabalho. O que incomoda é a calçada nas vilas e o facto de um dia plano em piso duro também cansar a partir da quinta hora."
+      - heading: "A etapa, troço a troço"
+        body: "Vila do Conde e a Igreja Matriz de São João Baptista → Póvoa de Varzim, uma estância balnear a sério com avenidas largas e cafés → Aguçadoura, aldeia de surf sossegada → Apúlia, conhecida pelos armazéns da apanha do sargaço e boa paragem para almoço → Fão e a Igreja do Senhor Bom Jesus → a ponte metálica sobre o Rio Cávado → Esposende."
+      - heading: "Passadiço quase todo o dia"
+        body: "💡 Esta é a etapa que vende o Caminho da Costa. Longos troços de passadiço elevado de madeira atravessam as dunas entre as vilas, com o oceano aberto ao lado e bares de praia de poucos em poucos quilómetros na época. É macio comparado com o que veio antes, exposto ao vento e quase sem sombra — aqui a proteção solar conta mais do que a aderência."
+      - heading: "Póvoa de Varzim: parar ou seguir?"
+        body: "A Póvoa aparece ao fim de uns 5 km e é tentadora, sobretudo se partiste a primeira etapa e chegaste tarde a Vila do Conde. Tem tudo: hotéis, restaurantes, casino, praia. Mas é cedo de mais e Esposende é melhor sítio para acabar. Segue, a não ser que estejas a fazer etapas curtas de propósito."
+      - heading: "Chegada a Esposende"
+        body: "Atravessas o Cávado pela ponte metálica de Fão e Esposende abre-se na outra margem. A vila tem dois supermercados grandes, restaurantes e bares com fartura e várias opções de alojamento para peregrinos. É terra de windsurf e kitesurf, por isso a marginal tem mais vida do que o tamanho faz supor, e o Forte de São João Baptista, do século XV, guarda a foz com vistas ao longo da costa."
+    faq:
+      - q: "Qual é a distância de Vila do Conde a Esposende?"
+        a: "23,7 km com cerca de 167 m de subida acumulada, normalmente cinco a seis horas. É a etapa mais plana e fácil do Caminho Português da Costa."
+      - q: "É mesmo tudo passadiço?"
+        a: "Tudo não, mas quase. Longos troços de passadiço elevado de madeira atravessam as dunas entre as vilas, com calçada nas ruas da Póvoa de Varzim, Apúlia e Fão. O Atlântico acompanha-te quase o dia inteiro."
+      - q: "Onde devo parar para almoçar?"
+        a: "Na Póvoa de Varzim por volta do km 5 se quiseres uma vila grande, ou em Apúlia a meio, que é a paragem natural e tem cafés em cima do trilho. Os bares de praia do passadiço abrem na época."
+      - q: "O que tem Esposende para o peregrino?"
+        a: "Dois supermercados grandes, boa oferta de restaurantes e bares e várias opções de alojamento, incluindo hostels e pensões. É também terra de windsurf e kitesurf, por isso a marginal mantém-se animada, e o Forte de São João Baptista do século XV vale o pequeno desvio."
+      - q: "Há sombra nesta etapa?"
+        a: "Muito pouca. Os passadiços atravessam dunas abertas com o mar de um lado e nada por cima. No verão é dia de chapéu, protetor solar e água a mais, e o vento atlântico disfarça o sol que estás a apanhar."
+    howTo: []

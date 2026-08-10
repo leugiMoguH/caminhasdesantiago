@@ -1,0 +1,134 @@
+name: Vila do Conde
+country: PT
+region: Porto (Norte)
+onStageSlug: vila-do-conde-esposende
+geo:
+  lat: 41.3530
+  lng: -8.7430
+accommodations: []
+services:
+  - Pilgrim albergue in the town centre
+  - Credential stamp (carimbo)
+  - Supermarkets and pharmacies
+  - Restaurants and cafés in the old town
+  - Beach and seafront promenade
+  - Metro line B to Porto
+whereToStay:
+  en:
+    intro: "Vila do Conde ends the longest stage on the route, so most pilgrims want somewhere close and horizontal. The town splits neatly into the historic centre by the river and the beach quarter a few minutes west, and the choice mostly comes down to whether you want dinner in the old town or the Atlantic outside the window."
+    areas:
+      - name: "Historic centre & the Rio Ave"
+        blurb: "The streets below the Convento de Santa Clara hold the restaurants, the supermarkets, the pilgrim albergue and the morning waymarks. Arriving off a 28 km day, being able to drop the pack and eat within two streets is worth more than a view. This is also where the aqueduct and the old shipyard are."
+        bookingQuery: "Vila do Conde centro histórico"
+        anchor: "guesthouses in Vila do Conde's historic centre"
+      - name: "Beach & seafront"
+        blurb: "A few minutes west the town meets the Atlantic, with a long beach and a promenade that leads straight onto next morning's boardwalk. Rooms here are often better value than the centre and the sunset is the reward for the day you have just had — at the cost of a short walk back in for dinner."
+        bookingQuery: "Vila do Conde praia"
+        anchor: "seafront rooms near Vila do Conde beach"
+  es:
+    intro: "Vila do Conde cierra la etapa más larga de la ruta, así que casi todos buscan algo cercano y llano. El pueblo se divide entre el centro histórico junto al río y la zona de playa a unos minutos al oeste, y la elección se reduce a si prefieres cenar en el casco antiguo o tener el Atlántico en la ventana."
+    areas:
+      - name: "Centro histórico y el Rio Ave"
+        blurb: "Las calles bajo el Convento de Santa Clara concentran los restaurantes, los supermercados, el albergue de peregrinos y las flechas de la mañana siguiente. Llegando de una jornada de 28 km, poder soltar la mochila y cenar a dos calles vale más que unas vistas. Aquí están también el acueducto y el viejo astillero."
+        bookingQuery: "Vila do Conde centro histórico"
+        anchor: "pensiones en el centro histórico de Vila do Conde"
+      - name: "Playa y paseo marítimo"
+        blurb: "A pocos minutos al oeste el pueblo se encuentra con el Atlántico, con una playa larga y un paseo que enlaza directamente con la pasarela del día siguiente. Aquí las habitaciones suelen salir mejor de precio que en el centro y el atardecer es el premio a la jornada — a cambio de un paseíto de vuelta para cenar."
+        bookingQuery: "Vila do Conde playa"
+        anchor: "habitaciones frente al mar en la playa de Vila do Conde"
+  pt:
+    intro: "Vila do Conde fecha a etapa mais longa do Caminho, por isso quase toda a gente quer algo perto e plano. A vila divide-se entre o centro histórico junto ao rio e a zona da praia a poucos minutos a oeste, e a escolha resume-se a se preferes jantar no centro antigo ou ter o Atlântico à janela."
+    areas:
+      - name: "Centro histórico e o Rio Ave"
+        blurb: "As ruas abaixo do Convento de Santa Clara concentram os restaurantes, os supermercados, o albergue de peregrinos e as setas da manhã seguinte. A chegar de um dia de 28 km, poder largar a mochila e jantar a duas ruas vale mais do que uma vista. É aqui que ficam também o aqueduto e o antigo estaleiro."
+        bookingQuery: "Vila do Conde centro histórico"
+        anchor: "pensões no centro histórico de Vila do Conde"
+      - name: "Praia e marginal"
+        blurb: "A poucos minutos a oeste a vila encontra o Atlântico, com uma praia longa e uma marginal que liga diretamente ao passadiço da manhã seguinte. Aqui os quartos costumam ter melhor preço do que no centro e o pôr do sol é o prémio pelo dia que acabaste de fazer — em troca de um passeio de volta para jantar."
+        bookingQuery: "Vila do Conde praia"
+        anchor: "quartos à beira-mar na praia de Vila do Conde"
+sourceVerified: true
+lastVerified: "2026-08-10"
+sources:
+  - https://walkthecaminoportugues.com/coastal-route/porto-to-vila-do-conde/
+  - https://walkthecaminoportugues.com/coastal-route/vila-do-conde-to-esposende/
+  - https://wisepilgrim.com/en/places/portugal/camino-portugues/vila-do-conde
+i18n:
+  en:
+    metaTitle: "Vila do Conde on the Coastal Camino: Albergue, Aqueduct & Where to Stay"
+    metaDescription: "Vila do Conde for pilgrims on the Camino Portugués Coastal: the end of the 28.4 km first stage, the Santa Clara aqueduct and convent, the town albergue, services and where to sleep."
+    h1: "Vila do Conde"
+    lead: "The end of the longest stage on the Coastal route, and a better reward than most first days give you: a walled convent above the river, a 17th-century aqueduct running out into the countryside, and a beach five minutes from the old town."
+    sections:
+      - heading: "What you arrive to"
+        body: "You cross the Rio Ave and the Convento de Santa Clara rises on your right, a 14th-century foundation set high above the water. Beside it runs the Aqueduto de Santa Clara — an arched line built in the 17th century to carry spring water some four kilometres to the convent. Below, the old town has everything a pilgrim needs within a few streets."
+      - heading: "The albergue"
+        body: "Vila do Conde has a public pilgrim albergue in the heart of town, Santa Clara. It is a plain, functional place — kitchen, dining area, roof terrace — and it works on a first-come, first-served basis with no reservations. If you are arriving late off the 28.4 km stage in high season, have a fallback booked rather than counting on a bed."
+      - heading: "What to see"
+        body: "The aqueduct and the convent are the headline. Below them, the Igreja Matriz de São João Baptista dates from the 15th century and sits on the route out of town. Vila do Conde also has a long shipbuilding history on the Ave, and a lace-making tradition that still has a museum. If you have an afternoon, the beach is a short walk west."
+      - heading: "Services"
+        body: "Supermarkets, pharmacies, cafés and restaurants are all in the centre, and the town is small enough to cover on tired legs. Metro line B connects Vila do Conde to Porto, which makes it a practical place to join or leave the route, or to break the first stage into two if you decide 28.4 km is too much for day one."
+    faq:
+      - q: "Is there a pilgrim albergue in Vila do Conde?"
+        a: "Yes — the public Santa Clara albergue in the town centre. It is basic and functional, with a kitchen, dining area and roof terrace, and it takes pilgrims first-come, first-served with no reservations."
+      - q: "What is the Vila do Conde aqueduct?"
+        a: "The Aqueduto de Santa Clara, a 17th-century arched aqueduct that carried spring water roughly four kilometres to the Convento de Santa Clara. It runs beside the convent above the Rio Ave and is visible as you walk into town."
+      - q: "Can I get to Vila do Conde from Porto by metro?"
+        a: "Yes, metro line B connects the two. That makes Vila do Conde easy to reach if you want to split the long first stage, or to skip the Porto suburbs and start walking from here."
+      - q: "Where should I stay in Vila do Conde?"
+        a: "The historic centre puts restaurants, supermarkets, the albergue and the morning waymarks within two streets — the practical choice after 28.4 km. The beach quarter a few minutes west is often better value and connects straight to the next day's boardwalk."
+      - q: "How far is Vila do Conde from Porto on foot?"
+        a: "28.4 km by the official Coastal waymarks, with about 354 m of ascent. It is the longest stage of the Portuguese Coastal route, and the Senda Litoral boardwalk variant is slightly longer again."
+    howTo: []
+  es:
+    metaTitle: "Vila do Conde en el Camino de la Costa: albergue, acueducto y dónde dormir"
+    metaDescription: "Vila do Conde para peregrinos del Camino Portugués de la Costa: final de la primera etapa de 28,4 km, el acueducto y convento de Santa Clara, el albergue del pueblo, servicios y dónde dormir."
+    h1: "Vila do Conde"
+    lead: "El final de la etapa más larga de la ruta de la Costa, y una recompensa mejor que la de casi cualquier primer día: un convento amurallado sobre el río, un acueducto del siglo XVII que se pierde hacia el campo y una playa a cinco minutos del casco antiguo."
+    sections:
+      - heading: "Lo que te encuentras al llegar"
+        body: "Cruzas el Rio Ave y el Convento de Santa Clara se levanta a la derecha, una fundación del siglo XIV muy por encima del agua. A su lado corre el Acueducto de Santa Clara — una línea de arcos construida en el siglo XVII para llevar agua de manantial unos cuatro kilómetros hasta el convento. Abajo, el casco antiguo tiene todo lo que un peregrino necesita en unas pocas calles."
+      - heading: "El albergue"
+        body: "Vila do Conde tiene un albergue público de peregrinos en pleno centro, el Santa Clara. Es un sitio sencillo y funcional — cocina, comedor, azotea — y funciona por orden de llegada, sin reservas. Si llegas tarde después de los 28,4 km en temporada alta, ten una alternativa reservada en vez de confiar en una plaza."
+      - heading: "Qué ver"
+        body: "El acueducto y el convento son lo principal. Debajo, la Igreja Matriz de São João Baptista es del siglo XV y queda en la salida del pueblo. Vila do Conde tiene además una larga historia de construcción naval en el Ave y una tradición de encaje que conserva museo. Si te sobra la tarde, la playa está a un paseo hacia el oeste."
+      - heading: "Servicios"
+        body: "Supermercados, farmacias, cafés y restaurantes están todos en el centro, y el pueblo es lo bastante pequeño para recorrerlo con las piernas cansadas. La línea B del metro conecta Vila do Conde con Oporto, lo que la convierte en un sitio práctico para entrar o salir de la ruta, o para partir en dos la primera etapa si decides que 28,4 km son demasiados para el primer día."
+    faq:
+      - q: "¿Hay albergue de peregrinos en Vila do Conde?"
+        a: "Sí, el albergue público Santa Clara, en el centro. Es básico y funcional, con cocina, comedor y azotea, y admite peregrinos por orden de llegada, sin reservas."
+      - q: "¿Qué es el acueducto de Vila do Conde?"
+        a: "El Acueducto de Santa Clara, del siglo XVII, que llevaba agua de manantial unos cuatro kilómetros hasta el Convento de Santa Clara. Corre junto al convento sobre el Rio Ave y se ve al entrar en el pueblo."
+      - q: "¿Se puede llegar a Vila do Conde desde Oporto en metro?"
+        a: "Sí, la línea B del metro une ambas. Eso hace fácil llegar a Vila do Conde si quieres partir la larga primera etapa, o saltarte el extrarradio de Oporto y empezar a caminar desde aquí."
+      - q: "¿Dónde conviene dormir en Vila do Conde?"
+        a: "El centro histórico deja restaurantes, supermercados, albergue y las flechas de la mañana a dos calles — la opción práctica después de 28,4 km. La zona de playa, unos minutos al oeste, suele salir mejor de precio y enlaza directamente con la pasarela del día siguiente."
+      - q: "¿Cuánto hay de Oporto a Vila do Conde andando?"
+        a: "28,4 km por las flechas oficiales de la Costa, con unos 354 m de desnivel positivo. Es la etapa más larga del Camino Portugués de la Costa, y la variante de la Senda Litoral es algo más larga todavía."
+    howTo: []
+  pt:
+    metaTitle: "Vila do Conde no Caminho da Costa: albergue, aqueduto e onde dormir"
+    metaDescription: "Vila do Conde para peregrinos do Caminho Português da Costa: fim da primeira etapa de 28,4 km, o aqueduto e convento de Santa Clara, o albergue da vila, serviços e onde dormir."
+    h1: "Vila do Conde"
+    lead: "O fim da etapa mais longa do Caminho da Costa, e uma recompensa melhor do que a de quase qualquer primeiro dia: um convento muralhado sobre o rio, um aqueduto do século XVII que se perde para o campo e uma praia a cinco minutos do centro antigo."
+    sections:
+      - heading: "O que encontras à chegada"
+        body: "Atravessas o Rio Ave e o Convento de Santa Clara ergue-se à direita, uma fundação do século XIV bem acima da água. Ao lado corre o Aqueduto de Santa Clara — uma linha de arcos construída no século XVII para levar água de nascente cerca de quatro quilómetros até ao convento. Em baixo, o centro histórico tem tudo o que um peregrino precisa em poucas ruas."
+      - heading: "O albergue"
+        body: "Vila do Conde tem um albergue público de peregrinos em pleno centro, o Santa Clara. É um sítio simples e funcional — cozinha, sala de refeições, terraço — e funciona por ordem de chegada, sem reservas. Se chegares tarde depois dos 28,4 km em época alta, tem uma alternativa reservada em vez de contares com uma cama."
+      - heading: "O que ver"
+        body: "O aqueduto e o convento são o principal. Por baixo, a Igreja Matriz de São João Baptista é do século XV e fica no caminho de saída da vila. Vila do Conde tem ainda uma longa história de construção naval no Ave e uma tradição de rendas de bilros que mantém museu. Se te sobrar a tarde, a praia fica a um passeio para oeste."
+      - heading: "Serviços"
+        body: "Supermercados, farmácias, cafés e restaurantes estão todos no centro, e a vila é pequena o suficiente para se percorrer com pernas cansadas. A linha B do metro liga Vila do Conde ao Porto, o que faz dela um sítio prático para entrar ou sair do Caminho, ou para partir em duas a primeira etapa se decidires que 28,4 km é demasiado para o primeiro dia."
+    faq:
+      - q: "Há albergue de peregrinos em Vila do Conde?"
+        a: "Sim, o albergue público Santa Clara, no centro. É básico e funcional, com cozinha, sala de refeições e terraço, e recebe peregrinos por ordem de chegada, sem reservas."
+      - q: "O que é o aqueduto de Vila do Conde?"
+        a: "O Aqueduto de Santa Clara, do século XVII, que levava água de nascente cerca de quatro quilómetros até ao Convento de Santa Clara. Corre junto ao convento, sobre o Rio Ave, e vê-se ao entrar na vila."
+      - q: "Dá para chegar a Vila do Conde a partir do Porto de metro?"
+        a: "Sim, a linha B do metro liga as duas. Isso torna fácil chegar a Vila do Conde se quiseres partir a longa primeira etapa, ou saltar o subúrbio do Porto e começar a caminhar daqui."
+      - q: "Onde devo dormir em Vila do Conde?"
+        a: "O centro histórico deixa restaurantes, supermercados, albergue e as setas da manhã a duas ruas — a escolha prática depois de 28,4 km. A zona da praia, a poucos minutos para oeste, costuma ter melhor preço e liga diretamente ao passadiço do dia seguinte."
+      - q: "Qual é a distância do Porto a Vila do Conde a pé?"
+        a: "28,4 km pelas setas oficiais da Costa, com cerca de 354 m de subida acumulada. É a etapa mais longa do Caminho Português da Costa, e a variante da Senda Litoral é ainda um pouco mais longa."
+    howTo: []

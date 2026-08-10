@@ -1,0 +1,108 @@
+route: coastal
+order: 3
+from: Esposende
+to: Viana do Castelo
+distanceKm: 26.3
+ascentM: 503
+difficulty: moderate
+terrain: Inland backroads, eucalyptus forest tracks and two moderate climbs, with cobbles throughout
+prevSlug: vila-do-conde-esposende
+nextSlug: viana-do-castelo-caminha
+townSlugs:
+  - esposende
+logisticsSlugs:
+  - stages-difficulty
+  - senda-litoral
+  - packing-list
+  - luggage-transfer
+sourceVerified: true
+lastVerified: "2026-08-10"
+sources:
+  - https://walkthecaminoportugues.com/coastal-route/esposende-to-viana-do-castelo/
+  - https://stingynomads.com/portuguese-coastal-camino-stages/
+  - https://www.pilgrim.es/en/camino-portugues-along-the-coast/
+i18n:
+  en:
+    metaTitle: "Esposende to Viana do Castelo (26.3 km): Coastal Camino Stage 3 (2026)"
+    metaDescription: "Stage 3 of the Camino Portugués Coastal: 26.3 km inland from Esposende through Marinhas, Belinho and Castelo de Neiva to Viana do Castelo. Two climbs, 503 m of ascent, forest paths and the Eiffel bridge."
+    h1: "Esposende to Viana do Castelo"
+    lead: "The day the Coastal route stops being a beach walk. 26.3 km with 503 m of ascent, most of it inland through eucalyptus forest and over two moderate climbs — the hardest stage since Porto, and the one that ends on the Eiffel bridge into Viana."
+    sections:
+      - heading: "Distance and difficulty"
+        body: "26.3 km with 503 m of ascent and almost the same descent — three times the climbing of the day before. There are two moderate climbs of roughly 100 m each, neither steep, but they arrive on legs that spent yesterday on flat boardwalk. Six to seven hours is normal. Cobbles feature heavily, and the forest sections turn slippery in the wet."
+      - heading: "This stage leaves the coast"
+        body: "⚠️ Do not expect the Atlantic today. The waymarked route turns inland almost immediately out of Esposende and stays there until the final approach. If you specifically want another boardwalk day, the Senda Litoral variant continues up the shoreline instead — but the official line through the forest is quieter, greener and the one most pilgrims walk."
+      - heading: "The stage, section by section"
+        body: "Esposende → Marinhas → Belinho and the Capela de Santo Amaro → a long descent through forest to the River Neiva, crossed at the Ponte do Sebastião → the climb to the Igreja de Santiago de Castelo de Neiva → the ruins of the Mosteiro de São Romão de Neiva → Chafé → Anha → Darque → the Eiffel bridge over the Lima into Viana do Castelo."
+      - heading: "The best and the worst of the route"
+        body: "💡 This stage earns its reputation both ways. The eucalyptus forest above the Neiva, with rocky moss-covered paths and streams, is some of the prettiest walking on the whole Camino Portugués. The cobbled backroads either side of it are some of the least kind to feet. Take the climbs slowly and the day is a pleasure; rush them and it is the day your knees remember."
+      - heading: "Arriving in Viana do Castelo"
+        body: "The Lima estuary opens up and you cross into town on the iron bridge designed by Gustave Eiffel's workshop. Viana is a proper mid-sized town: supermarkets, a wide choice of restaurants, a historic centre worth an evening, and the Santuário de Santa Luzia crowning the hill above with one of the best views in northern Portugal — reachable by funicular if your legs have had enough."
+    faq:
+      - q: "How long is Esposende to Viana do Castelo?"
+        a: "26.3 km with about 503 m of ascent, usually six to seven hours. It is a moderate stage — the climbing is three times the previous day, though no single climb is steep."
+      - q: "Does this stage follow the coast?"
+        a: "No. The waymarked route turns inland out of Esposende and stays inland through forest and villages until the final approach to Viana. The Senda Litoral variant stays on the shoreline if you would rather have another sea day."
+      - q: "Is Esposende to Viana do Castelo hard?"
+        a: "Moderate. Two climbs of roughly 100 m each, plenty of cobbles, and forest paths that get slippery in the rain. It follows the flattest stage on the route, so the change catches people out — go slowly on the climbs."
+      - q: "What is worth seeing on the way?"
+        a: "The Capela de Santo Amaro at Belinho, the forest descent to the River Neiva and the Ponte do Sebastião, the Igreja de Santiago de Castelo de Neiva on its hilltop, and the ruins of the Mosteiro de São Romão de Neiva."
+      - q: "What is there to do in Viana do Castelo?"
+        a: "It is the largest town since Porto: a historic centre, a full range of restaurants and supermarkets, and the Santuário de Santa Luzia on the hill above, which has one of the best views in northern Portugal. A funicular runs up if you would rather not walk it."
+    howTo: []
+  es:
+    metaTitle: "Esposende a Viana do Castelo (26,3 km): Camino de la Costa etapa 3 (2026)"
+    metaDescription: "Etapa 3 del Camino Portugués de la Costa: 26,3 km hacia el interior desde Esposende por Marinhas, Belinho y Castelo de Neiva hasta Viana do Castelo. Dos subidas, 503 m de desnivel, bosque y el puente Eiffel."
+    h1: "De Esposende a Viana do Castelo"
+    lead: "El día en que la ruta de la Costa deja de ser un paseo de playa. 26,3 km con 503 m de desnivel, casi todo por el interior entre eucaliptos y con dos subidas moderadas — la etapa más dura desde Oporto, y la que acaba cruzando el puente Eiffel hacia Viana."
+    sections:
+      - heading: "Distancia y dificultad"
+        body: "26,3 km con 503 m de desnivel positivo y casi otro tanto de bajada — el triple de subida que el día anterior. Hay dos repechos moderados de unos 100 m cada uno, ninguno empinado, pero llegan a unas piernas que ayer solo pisaron pasarela llana. Seis o siete horas es lo normal. Hay mucho adoquín y los tramos de bosque resbalan con lluvia."
+      - heading: "Esta etapa se aleja del mar"
+        body: "⚠️ Hoy no esperes Atlántico. La ruta señalizada gira hacia el interior casi al salir de Esposende y no vuelve hasta la aproximación final. Si quieres otro día de pasarela, la variante de la Senda Litoral sigue por la costa — pero el trazado oficial por el bosque es más tranquilo, más verde y el que hace la mayoría."
+      - heading: "La etapa, tramo a tramo"
+        body: "Esposende → Marinhas → Belinho y la Capela de Santo Amaro → larga bajada entre bosque hasta el río Neiva, que se cruza por la Ponte do Sebastião → subida a la Igreja de Santiago de Castelo de Neiva → ruinas del Mosteiro de São Romão de Neiva → Chafé → Anha → Darque → el puente Eiffel sobre el Lima hasta Viana do Castelo."
+      - heading: "Lo mejor y lo peor de la ruta"
+        body: "💡 Esta etapa se gana su fama por partida doble. El eucaliptal sobre el Neiva, con senderos de roca cubiertos de musgo y regatos, es de lo más bonito de todo el Camino Portugués. Las carreteras adoquinadas de antes y después son de lo menos amable para los pies. Sube despacio y el día es un placer; ve con prisa y es el día que recuerdan tus rodillas."
+      - heading: "Llegada a Viana do Castelo"
+        body: "Se abre el estuario del Lima y entras en la ciudad por el puente de hierro salido del taller de Gustave Eiffel. Viana es una ciudad mediana de verdad: supermercados, mucha oferta de restaurantes, un centro histórico que merece una tarde y el Santuário de Santa Luzia coronando el monte, con una de las mejores vistas del norte de Portugal — accesible en funicular si las piernas ya han tenido bastante."
+    faq:
+      - q: "¿Cuánto hay de Esposende a Viana do Castelo?"
+        a: "26,3 km con unos 503 m de desnivel positivo, normalmente entre seis y siete horas. Es una etapa moderada: se sube el triple que el día anterior, aunque ninguna subida es empinada."
+      - q: "¿Esta etapa va por la costa?"
+        a: "No. La ruta señalizada gira hacia el interior al salir de Esposende y se mantiene tierra adentro entre bosque y aldeas hasta la aproximación final a Viana. La variante de la Senda Litoral sí sigue por la orilla si prefieres otro día de mar."
+      - q: "¿Es dura la etapa de Esposende a Viana do Castelo?"
+        a: "Moderada. Dos subidas de unos 100 m cada una, mucho adoquín y senderos de bosque que resbalan con lluvia. Viene justo después de la etapa más llana de la ruta, así que el cambio pilla desprevenido: sube despacio."
+      - q: "¿Qué merece la pena ver por el camino?"
+        a: "La Capela de Santo Amaro en Belinho, la bajada entre bosque hasta el río Neiva y la Ponte do Sebastião, la Igreja de Santiago de Castelo de Neiva en lo alto y las ruinas del Mosteiro de São Romão de Neiva."
+      - q: "¿Qué hay que hacer en Viana do Castelo?"
+        a: "Es la ciudad más grande desde Oporto: centro histórico, oferta completa de restaurantes y supermercados y el Santuário de Santa Luzia en el monte, con una de las mejores vistas del norte de Portugal. Hay funicular si prefieres no subirlo andando."
+    howTo: []
+  pt:
+    metaTitle: "Esposende a Viana do Castelo (26,3 km): Caminho da Costa etapa 3 (2026)"
+    metaDescription: "Etapa 3 do Caminho Português da Costa: 26,3 km para o interior de Esposende por Marinhas, Belinho e Castelo de Neiva até Viana do Castelo. Duas subidas, 503 m de desnível, floresta e a ponte Eiffel."
+    h1: "De Esposende a Viana do Castelo"
+    lead: "O dia em que o Caminho da Costa deixa de ser um passeio de praia. 26,3 km com 503 m de subida, quase tudo pelo interior entre eucaliptos e com duas subidas moderadas — a etapa mais dura desde o Porto, e a que acaba a atravessar a ponte Eiffel para Viana."
+    sections:
+      - heading: "Distância e dificuldade"
+        body: "26,3 km com 503 m de subida acumulada e quase outro tanto de descida — o triplo do dia anterior. Há duas subidas moderadas de cerca de 100 m cada, nenhuma íngreme, mas chegam a pernas que ontem só pisaram passadiço plano. Seis a sete horas é o normal. Há muita calçada e os troços de floresta ficam escorregadios com chuva."
+      - heading: "Esta etapa afasta-se do mar"
+        body: "⚠️ Hoje não contes com o Atlântico. O trilho sinalizado vira para o interior quase à saída de Esposende e só volta na aproximação final. Se queres mais um dia de passadiço, a variante da Senda Litoral segue pela costa — mas o traçado oficial pela floresta é mais sossegado, mais verde e é o que a maioria faz."
+      - heading: "A etapa, troço a troço"
+        body: "Esposende → Marinhas → Belinho e a Capela de Santo Amaro → longa descida por floresta até ao rio Neiva, atravessado na Ponte do Sebastião → subida à Igreja de Santiago de Castelo de Neiva → ruínas do Mosteiro de São Romão de Neiva → Chafé → Anha → Darque → a ponte Eiffel sobre o Lima até Viana do Castelo."
+      - heading: "O melhor e o pior do Caminho"
+        body: "💡 Esta etapa ganha a fama pelos dois lados. O eucaliptal acima do Neiva, com trilhos de rocha coberta de musgo e regatos, é do mais bonito de todo o Caminho Português. As estradas de calçada antes e depois são das menos amigas dos pés. Sobe devagar e o dia é um prazer; vai com pressa e é o dia de que os teus joelhos se lembram."
+      - heading: "Chegada a Viana do Castelo"
+        body: "O estuário do Lima abre-se e entras na cidade pela ponte de ferro saída da oficina de Gustave Eiffel. Viana é uma cidade média a sério: supermercados, muita escolha de restaurantes, um centro histórico que merece uma tarde e o Santuário de Santa Luzia a coroar o monte, com uma das melhores vistas do norte de Portugal — acessível de funicular se as pernas já chegaram ao limite."
+    faq:
+      - q: "Qual é a distância de Esposende a Viana do Castelo?"
+        a: "26,3 km com cerca de 503 m de subida acumulada, normalmente seis a sete horas. É uma etapa moderada: sobe-se o triplo do dia anterior, embora nenhuma subida seja íngreme."
+      - q: "Esta etapa vai pela costa?"
+        a: "Não. O trilho sinalizado vira para o interior à saída de Esposende e mantém-se pelo interior, entre floresta e aldeias, até à aproximação final a Viana. A variante da Senda Litoral segue pela orla se preferires mais um dia de mar."
+      - q: "A etapa de Esposende a Viana do Castelo é dura?"
+        a: "Moderada. Duas subidas de cerca de 100 m cada, muita calçada e trilhos de floresta que escorregam com chuva. Vem logo a seguir à etapa mais plana do Caminho, por isso a mudança apanha as pessoas desprevenidas: sobe devagar."
+      - q: "O que vale a pena ver pelo caminho?"
+        a: "A Capela de Santo Amaro em Belinho, a descida por floresta até ao rio Neiva e a Ponte do Sebastião, a Igreja de Santiago de Castelo de Neiva no alto e as ruínas do Mosteiro de São Romão de Neiva."
+      - q: "O que há para fazer em Viana do Castelo?"
+        a: "É a maior cidade desde o Porto: centro histórico, oferta completa de restaurantes e supermercados e o Santuário de Santa Luzia no monte, com uma das melhores vistas do norte de Portugal. Há funicular se preferires não o subir a pé."
+    howTo: []

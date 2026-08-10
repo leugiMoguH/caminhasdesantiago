@@ -1,0 +1,134 @@
+name: Esposende
+country: PT
+region: Braga (Norte)
+onStageSlug: esposende-viana-do-castelo
+geo:
+  lat: 41.5350
+  lng: -8.7810
+accommodations: []
+services:
+  - Hostels and guesthouses for pilgrims
+  - Two large supermarkets
+  - Restaurants, bars and cafés
+  - Pharmacy and ATMs
+  - Windsurf and kitesurf schools
+  - Buses along the coast
+whereToStay:
+  en:
+    intro: "Esposende sits on the north bank of the Rio Cávado where the river meets the Atlantic, and it is bigger and busier than pilgrims expect — a surf town as much as a Camino stop. Beds are easier here than in the villages either side, but the next stage is the hardest since Porto, so sleep close to the waymarks and start early."
+    areas:
+      - name: "Town centre & the Cávado"
+        blurb: "The centre holds both large supermarkets, the restaurants and the morning route out towards Marinhas. It is compact, flat and cheap by Portuguese coastal standards, and it puts you in the right position for a stage that climbs 503 m — you want to be walking, not crossing town, at first light."
+        bookingQuery: "Esposende centro"
+        anchor: "guesthouses and hostels in Esposende centre"
+      - name: "Ofir & the beach across the river"
+        blurb: "Over the bridge on the south bank, Ofir has the pine woods, the dunes and the wide beach that draw the windsurfers. It is the nicer place to spend an evening and often the better room for the money, at the cost of recrossing the Cávado in the morning — fine if you are taking a rest day, less ideal before a 26 km stage."
+        bookingQuery: "Ofir Esposende praia"
+        anchor: "beach stays at Ofir, across the Cávado"
+  es:
+    intro: "Esposende está en la orilla norte del Rio Cávado, donde el río se encuentra con el Atlántico, y es más grande y con más vida de lo que el peregrino espera — tanto pueblo surfero como parada del Camino. Aquí hay más camas que en las aldeas de alrededor, pero la etapa siguiente es la más dura desde Oporto, así que duerme cerca de las flechas y madruga."
+    areas:
+      - name: "Centro y el Cávado"
+        blurb: "El centro reúne los dos supermercados grandes, los restaurantes y la salida de la mañana hacia Marinhas. Es compacto, llano y barato para lo que es la costa portuguesa, y te deja bien colocado para una etapa que sube 503 m — al amanecer conviene estar caminando, no cruzando el pueblo."
+        bookingQuery: "Esposende centro"
+        anchor: "pensiones y hostels en el centro de Esposende"
+      - name: "Ofir y la playa al otro lado del río"
+        blurb: "Pasado el puente, en la orilla sur, Ofir tiene los pinares, las dunas y la playa ancha que atrae a los windsurfistas. Es mejor sitio para pasar la tarde y muchas veces mejor habitación por el mismo dinero, a cambio de volver a cruzar el Cávado por la mañana — bien si haces día de descanso, menos ideal antes de 26 km."
+        bookingQuery: "Ofir Esposende playa"
+        anchor: "alojamientos de playa en Ofir, al otro lado del Cávado"
+  pt:
+    intro: "Esposende fica na margem norte do Rio Cávado, onde o rio encontra o Atlântico, e é maior e mais movimentada do que o peregrino espera — tanto terra de surf como paragem do Caminho. Há mais camas aqui do que nas aldeias em redor, mas a etapa seguinte é a mais dura desde o Porto, por isso dorme perto das setas e sai cedo."
+    areas:
+      - name: "Centro e o Cávado"
+        blurb: "O centro junta os dois supermercados grandes, os restaurantes e a saída da manhã em direção a Marinhas. É compacto, plano e barato para o que é a costa portuguesa, e deixa-te bem posicionado para uma etapa que sobe 503 m — ao amanhecer convém estar a caminhar, não a atravessar a vila."
+        bookingQuery: "Esposende centro"
+        anchor: "pensões e hostels no centro de Esposende"
+      - name: "Ofir e a praia do outro lado do rio"
+        blurb: "Passada a ponte, na margem sul, Ofir tem os pinhais, as dunas e o areal largo que atrai os windsurfistas. É melhor sítio para passar a tarde e muitas vezes melhor quarto pelo mesmo dinheiro, em troca de voltar a atravessar o Cávado de manhã — ótimo se fizeres dia de descanso, menos ideal antes de 26 km."
+        bookingQuery: "Ofir Esposende praia"
+        anchor: "alojamentos de praia em Ofir, do outro lado do Cávado"
+sourceVerified: true
+lastVerified: "2026-08-10"
+sources:
+  - https://walkthecaminoportugues.com/coastal-route/vila-do-conde-to-esposende/
+  - https://walkthecaminoportugues.com/coastal-route/esposende-to-viana-do-castelo/
+  - https://stingynomads.com/portuguese-coastal-camino-stages/
+i18n:
+  en:
+    metaTitle: "Esposende on the Coastal Camino: Services, Fort & Where to Stay"
+    metaDescription: "Esposende for pilgrims on the Camino Portugués Coastal: end of the easy 23.7 km boardwalk stage, the 15th-century fort, supermarkets and lodging, and what to expect from the hard day that follows."
+    h1: "Esposende"
+    lead: "The end of the flattest, easiest day on the Coastal route and the start of the hardest since Porto. Esposende is a surf town at the mouth of the Cávado with more life, more shops and more beds than its size suggests — use it well, because tomorrow climbs."
+    sections:
+      - heading: "What you arrive to"
+        body: "You cross the Rio Cávado on the metal bridge at Fão and Esposende opens on the far bank. It is a proper working town rather than a village: two large supermarkets, a full spread of restaurants, bars and cafés, and a range of hostels and guesthouses. After a day of boardwalk and beach cafés it feels almost busy."
+      - heading: "The fort and the river mouth"
+        body: "The Forte de São João Baptista, built in the 15th century, guards the mouth of the Cávado and gives long views up and down the coast. It is a short walk from the centre and the obvious thing to do with a spare hour. The river mouth itself is what makes the town: sheltered water on one side, open Atlantic on the other."
+      - heading: "A windsurf and kitesurf town"
+        body: "Esposende and the beaches around Ofir, across the river, are among the best-known windsurf and kitesurf spots in northern Portugal. That is why the seafront has more restaurants and bars than a town this size would normally carry, and why rooms can tighten in August for reasons that have nothing to do with the Camino."
+      - heading: "Prepare for tomorrow"
+        body: "⚠️ The stage to Viana do Castelo is 26.3 km with 503 m of ascent — three times the climbing you did today, on a route that leaves the coast and goes inland through forest. Stock up here: the villages on the way have less than you would like. Fill water, buy lunch, and start early if it is hot."
+    faq:
+      - q: "What does Esposende offer pilgrims?"
+        a: "Two large supermarkets, plenty of restaurants, bars and cafés, a pharmacy and ATMs, and a range of hostels and guesthouses. It is the biggest town between Vila do Conde and Viana do Castelo."
+      - q: "Is there anything to see in Esposende?"
+        a: "The Forte de São João Baptista, a 15th-century fort guarding the mouth of the Rio Cávado, with views along the coast. Across the river, Ofir has pine woods, dunes and a wide beach popular with windsurfers and kitesurfers."
+      - q: "How hard is the stage after Esposende?"
+        a: "Moderate and the hardest since Porto: 26.3 km to Viana do Castelo with about 503 m of ascent, two climbs of roughly 100 m each, and a long inland section through eucalyptus forest. Stock up in Esposende before you leave."
+      - q: "Where should I stay in Esposende?"
+        a: "The town centre if you want the supermarkets, restaurants and the morning waymarks within a couple of streets — the sensible choice before a 26 km climbing day. Ofir, across the bridge, is nicer for an evening and often better value, but adds a river crossing to your start."
+      - q: "How far is Vila do Conde to Esposende?"
+        a: "23.7 km with only about 167 m of ascent — the flattest and easiest stage on the Portuguese Coastal route, and mostly on boardwalk along the Atlantic."
+    howTo: []
+  es:
+    metaTitle: "Esposende en el Camino de la Costa: servicios, fuerte y dónde dormir"
+    metaDescription: "Esposende para peregrinos del Camino Portugués de la Costa: final de la etapa fácil de 23,7 km por pasarela, el fuerte del siglo XV, supermercados y alojamiento, y qué esperar del día duro que viene."
+    h1: "Esposende"
+    lead: "El final del día más llano y fácil de la ruta de la Costa y el inicio del más duro desde Oporto. Esposende es un pueblo surfero en la desembocadura del Cávado con más vida, más tiendas y más camas de lo que su tamaño sugiere — aprovéchalo, porque mañana se sube."
+    sections:
+      - heading: "Lo que te encuentras al llegar"
+        body: "Cruzas el Rio Cávado por el puente metálico de Fão y Esposende se abre en la otra orilla. Es un pueblo de verdad, no una aldea: dos supermercados grandes, oferta completa de restaurantes, bares y cafés, y varios hostels y pensiones. Después de un día de pasarela y chiringuitos casi parece ajetreado."
+      - heading: "El fuerte y la desembocadura"
+        body: "El Forte de São João Baptista, del siglo XV, vigila la boca del Cávado y ofrece vistas largas a lo largo de la costa. Está a un paseo del centro y es el plan obvio si te sobra una hora. La propia desembocadura es lo que define al pueblo: agua resguardada a un lado y Atlántico abierto al otro."
+      - heading: "Pueblo de windsurf y kitesurf"
+        body: "Esposende y las playas de Ofir, al otro lado del río, están entre los spots de windsurf y kitesurf más conocidos del norte de Portugal. Por eso el paseo marítimo tiene más restaurantes y bares de los que le tocarían por tamaño, y por eso en agosto las habitaciones se aprietan por motivos que no tienen nada que ver con el Camino."
+      - heading: "Prepara el día siguiente"
+        body: "⚠️ La etapa a Viana do Castelo son 26,3 km con 503 m de desnivel — el triple de lo que has subido hoy, y por una ruta que deja la costa y se mete tierra adentro entre bosque. Abastécete aquí: las aldeas del camino tienen menos de lo que te gustaría. Llena agua, compra la comida y sal temprano si aprieta el calor."
+    faq:
+      - q: "¿Qué ofrece Esposende al peregrino?"
+        a: "Dos supermercados grandes, muchos restaurantes, bares y cafés, farmacia y cajeros, y varios hostels y pensiones. Es el pueblo más grande entre Vila do Conde y Viana do Castelo."
+      - q: "¿Hay algo que ver en Esposende?"
+        a: "El Forte de São João Baptista, un fuerte del siglo XV que vigila la desembocadura del Rio Cávado, con vistas a lo largo de la costa. Al otro lado del río, Ofir tiene pinares, dunas y una playa ancha muy popular entre windsurfistas y kitesurfistas."
+      - q: "¿Cómo de dura es la etapa después de Esposende?"
+        a: "Moderada y la más dura desde Oporto: 26,3 km hasta Viana do Castelo con unos 503 m de desnivel, dos subidas de unos 100 m cada una y un largo tramo interior entre eucaliptos. Abastécete en Esposende antes de salir."
+      - q: "¿Dónde conviene dormir en Esposende?"
+        a: "En el centro si quieres supermercados, restaurantes y las flechas de la mañana a dos calles — lo sensato antes de una jornada de 26 km con subidas. Ofir, pasado el puente, es más agradable para la tarde y suele salir mejor de precio, pero añade un cruce de río a tu salida."
+      - q: "¿Cuánto hay de Vila do Conde a Esposende?"
+        a: "23,7 km con solo unos 167 m de desnivel positivo — la etapa más llana y fácil del Camino Portugués de la Costa, y casi toda por pasarela junto al Atlántico."
+    howTo: []
+  pt:
+    metaTitle: "Esposende no Caminho da Costa: serviços, forte e onde dormir"
+    metaDescription: "Esposende para peregrinos do Caminho Português da Costa: fim da etapa fácil de 23,7 km por passadiço, o forte do século XV, supermercados e alojamento, e o que esperar do dia duro que se segue."
+    h1: "Esposende"
+    lead: "O fim do dia mais plano e fácil do Caminho da Costa e o início do mais duro desde o Porto. Esposende é uma terra de surf na foz do Cávado, com mais vida, mais lojas e mais camas do que o tamanho faz supor — aproveita bem, porque amanhã sobe."
+    sections:
+      - heading: "O que encontras à chegada"
+        body: "Atravessas o Rio Cávado pela ponte metálica de Fão e Esposende abre-se na outra margem. É uma vila a sério, não uma aldeia: dois supermercados grandes, oferta completa de restaurantes, bares e cafés, e vários hostels e pensões. Depois de um dia de passadiço e bares de praia, quase parece movimentada."
+      - heading: "O forte e a foz"
+        body: "O Forte de São João Baptista, do século XV, guarda a foz do Cávado e oferece vistas longas ao longo da costa. Fica a um passeio do centro e é o plano óbvio se te sobrar uma hora. A própria foz é o que define a vila: água abrigada de um lado, Atlântico aberto do outro."
+      - heading: "Terra de windsurf e kitesurf"
+        body: "Esposende e as praias de Ofir, do outro lado do rio, estão entre os spots de windsurf e kitesurf mais conhecidos do norte de Portugal. É por isso que a marginal tem mais restaurantes e bares do que lhe caberia pelo tamanho, e é por isso que em agosto os quartos apertam por razões que nada têm a ver com o Caminho."
+      - heading: "Prepara o dia seguinte"
+        body: "⚠️ A etapa até Viana do Castelo são 26,3 km com 503 m de subida — o triplo do que subiste hoje, e por um trilho que deixa a costa e entra pelo interior entre floresta. Abastece-te aqui: as aldeias do caminho têm menos do que gostarias. Enche água, compra o almoço e sai cedo se estiver calor."
+    faq:
+      - q: "O que tem Esposende para o peregrino?"
+        a: "Dois supermercados grandes, muitos restaurantes, bares e cafés, farmácia e multibancos, e vários hostels e pensões. É a maior vila entre Vila do Conde e Viana do Castelo."
+      - q: "Há alguma coisa para ver em Esposende?"
+        a: "O Forte de São João Baptista, um forte do século XV que guarda a foz do Rio Cávado, com vistas ao longo da costa. Do outro lado do rio, Ofir tem pinhais, dunas e um areal largo muito procurado por windsurfistas e kitesurfistas."
+      - q: "Quão dura é a etapa a seguir a Esposende?"
+        a: "Moderada e a mais dura desde o Porto: 26,3 km até Viana do Castelo com cerca de 503 m de subida, duas subidas de uns 100 m cada e um longo troço interior entre eucaliptos. Abastece-te em Esposende antes de sair."
+      - q: "Onde devo dormir em Esposende?"
+        a: "No centro se quiseres supermercados, restaurantes e as setas da manhã a duas ruas — o sensato antes de um dia de 26 km com subidas. Ofir, passada a ponte, é mais agradável para a tarde e costuma ter melhor preço, mas acrescenta uma travessia de rio à tua partida."
+      - q: "Qual é a distância de Vila do Conde a Esposende?"
+        a: "23,7 km com apenas cerca de 167 m de subida acumulada — a etapa mais plana e fácil do Caminho Português da Costa, e quase toda por passadiço junto ao Atlântico."
+    howTo: []

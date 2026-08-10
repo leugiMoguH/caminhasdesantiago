@@ -9,7 +9,17 @@ import { getCollection } from 'astro:content';
 import { LANGS, townPath, type Lang } from '../../../lib/clusterRoutes';
 
 export async function getStaticPaths() {
-  const towns = await getCollection('towns', (e) => e.data.sourceVerified);
+  // Only the seven towns whose best-albergues URLs Google actually indexed
+  // before the 2026-06-29 consolidation need a redirect. Towns added later
+  // never had one, so generating stubs for them would only mint fresh noindex
+  // pages. Declared inside getStaticPaths: Astro hoists it above module scope.
+  const LEGACY_TOWN_SLUGS = [
+    'a-guarda', 'baiona', 'oia', 'padron', 'pontevedra', 'redondela', 'vigo',
+  ];
+  const towns = await getCollection(
+    'towns',
+    (e) => e.data.sourceVerified && LEGACY_TOWN_SLUGS.includes(e.id),
+  );
   return towns.flatMap((town) =>
     LANGS.map((lang) => ({ params: { lang, town: town.id }, props: { lang, town: town.id } })),
   );

@@ -1,0 +1,121 @@
+route: coastal
+order: 1
+from: Porto
+to: Vila do Conde
+distanceKm: 28.4
+ascentM: 354
+difficulty: moderate
+terrain: Pavement and cobbles out of Porto, then boardwalk and quiet lanes north of Matosinhos
+nextSlug: vila-do-conde-esposende
+townSlugs:
+  - porto
+  - vila-do-conde
+logisticsSlugs:
+  - getting-there
+  - senda-litoral
+  - coastal-vs-central
+  - pilgrim-credential
+  - booking-strategy
+sourceVerified: true
+lastVerified: "2026-08-10"
+sources:
+  - https://walkthecaminoportugues.com/coastal-route/porto-to-vila-do-conde/
+  - https://stingynomads.com/portuguese-coastal-camino-stages/
+  - https://www.pilgrim.es/en/camino-portugues-along-the-coast/
+i18n:
+  en:
+    metaTitle: "Porto to Vila do Conde (28.4 km): Coastal Camino Stage 1 (2026)"
+    metaDescription: "The first stage of the Camino Portugués Coastal: 28.4 km from Porto Cathedral to Vila do Conde. How to leave the city, whether to take the metro to Matosinhos, the Senda Litoral boardwalks, and where to break the day."
+    h1: "Porto to Vila do Conde"
+    lead: "The longest day on the Coastal route and the one people most often get wrong. 28.4 km from the Sé do Porto to Vila do Conde, with 354 m of climbing spread thin — the difficulty is not the hills, it is the cobbles and the two hours of city it takes to reach open coast."
+    sections:
+      - heading: "Where the Camino actually starts"
+        body: "The official starting point is the Sé do Porto, the cathedral on the hill above São Bento station. Get your first credential stamp there — the cathedral stamps pilgrims and it is the one everybody wants at the front of the book. From the Sé the waymarks head north through the old streets; at the Cruzeiro do Senhor the Coastal and Central routes split, and from that point the arrows are yours."
+      - heading: "The Porto exit: walk it or skip it?"
+        body: "⚠️ The honest version: the first 10 km out of Porto are suburb — pavement, traffic lights, retail parks, and cobbles that punish feet on day one. Plenty of pilgrims ride the metro or a bus to the edge of the city and start walking there; plenty of others walk every metre on principle. Neither is wrong, and nobody at the Pilgrim's Office asks. If you plan to claim the Compostela, remember the distance that counts is measured in Spain, so skipping Porto suburbs costs you nothing."
+      - heading: "Senda Litoral: the boardwalk alternative"
+        body: "💡 Most pilgrims do not follow the official Coastal waymarks out of Porto at all — they walk the Senda Litoral, the wooden boardwalk that runs along the Atlantic from Matosinhos north. It is technically a variant rather than the official route, and it is slightly longer, but it trades the industrial corridor for sea, dunes and beach cafés. Both lines rejoin further north. If you have a choice, the boardwalk is the better first day."
+      - heading: "The stage, section by section"
+        body: "Sé do Porto → Cruzeiro do Senhor (route split) → Monte dos Burgos → the airport corridor → open country → Vila do Conde Retail Park → the bridge over the Rio Ave → the Convento de Santa Clara and its aqueduct on your right → Vila do Conde old town. On the Senda Litoral variant you swap the middle for Matosinhos, Leça, Vila Chã and Árvore, walking the coast almost the whole way."
+      - heading: "Where to break the day"
+        body: "28.4 km is a lot for a first day on unfamiliar feet. The usual half-way stops are Matosinhos (a short metro ride from Porto, ideal if you want a gentle start), Vila Chã, which sits about 25 minutes off the route and has a well-liked albergue, and Árvore, close to a metro connection. Splitting here turns a hard first day into two easy ones and costs you nothing on the calendar if you have the days."
+      - heading: "Arriving in Vila do Conde"
+        body: "You cross the Rio Ave and the town announces itself: the Convento de Santa Clara sits high on the right, and beside it the Aqueduto de Santa Clara — a 17th-century line of arches that carried water some four kilometres to the convent. The old town below has supermarkets, restaurants, a pilgrim albergue and a beach. It is a genuinely pleasant place to stop rather than just a bed at the end of a slog."
+    faq:
+      - q: "How long is Porto to Vila do Conde?"
+        a: "28.4 km with about 354 m of ascent, usually walked in six to seven hours. It is the longest stage of the Portuguese Coastal route and the ascent is spread out, so the difficulty comes from distance and cobbles rather than climbing."
+      - q: "Should I take the metro out of Porto?"
+        a: "It is a common and perfectly accepted choice. The first 10 km are city suburb on hard pavement, and many pilgrims ride the metro to Matosinhos and start walking from the coast. Nobody checks, and it does not affect your Compostela, since the qualifying distance is counted in Spain."
+      - q: "What is the difference between the Coastal route and the Senda Litoral?"
+        a: "The Coastal route is the officially waymarked line; the Senda Litoral is the boardwalk variant that hugs the Atlantic from Matosinhos northwards. The Litoral is slightly longer and much more scenic, and the two rejoin further north. Most pilgrims use the boardwalks for at least part of the first days."
+      - q: "Where can I break the Porto to Vila do Conde stage?"
+        a: "Matosinhos, Vila Chã or Árvore. Matosinhos is a short metro ride from Porto and makes a very gentle first day; Vila Chã is about 25 minutes off the route with a well-regarded albergue; Árvore sits near a metro connection."
+      - q: "Where do I get my first credential stamp?"
+        a: "At the Sé do Porto, the cathedral where the route officially starts. Since 2025 you need two stamps a day for the whole walk, not just the last 100 km, so start collecting from Porto."
+      - q: "Is the first day hard?"
+        a: "It is long rather than steep. Nearly 30 km on cobbles and pavement is hard on feet that have not walked yet, which is why so many pilgrims either split it or ride out of the city. If you are walking it whole, start early."
+    howTo: []
+  es:
+    metaTitle: "Oporto a Vila do Conde (28,4 km): Camino de la Costa etapa 1 (2026)"
+    metaDescription: "La primera etapa del Camino Portugués de la Costa: 28,4 km de la Catedral de Oporto a Vila do Conde. Cómo salir de la ciudad, si tomar el metro a Matosinhos, las pasarelas de la Senda Litoral y dónde partir la jornada."
+    h1: "De Oporto a Vila do Conde"
+    lead: "La jornada más larga de la ruta de la Costa y la que más gente planifica mal. 28,4 km desde la Sé do Porto hasta Vila do Conde, con 354 m de desnivel muy repartido — la dificultad no son las cuestas, son los adoquines y las dos horas de ciudad hasta llegar a costa abierta."
+    sections:
+      - heading: "Dónde empieza realmente el Camino"
+        body: "El punto de partida oficial es la Sé do Porto, la catedral sobre la estación de São Bento. Sella allí tu credencial por primera vez — la catedral sella a los peregrinos y es el sello que todo el mundo quiere al principio. Desde la Sé las flechas suben hacia el norte por el casco antiguo; en el Cruzeiro do Senhor se separan la ruta de la Costa y la Central, y a partir de ahí las flechas son tuyas."
+      - heading: "La salida de Oporto: ¿andarla o saltarla?"
+        body: "⚠️ La versión honesta: los primeros 10 km de Oporto son extrarradio — acera, semáforos, polígonos y adoquines que castigan los pies el primer día. Muchos peregrinos toman el metro o un autobús hasta el límite de la ciudad y empiezan a caminar allí; otros los hacen enteros por principio. Ninguna opción está mal y en la Oficina del Peregrino nadie pregunta. Si vas a pedir la Compostela, recuerda que la distancia que cuenta se mide en España, así que saltarte el extrarradio no te quita nada."
+      - heading: "Senda Litoral: la alternativa por las pasarelas"
+        body: "💡 La mayoría de peregrinos no sigue las flechas oficiales de la Costa al salir de Oporto: van por la Senda Litoral, la pasarela de madera que recorre el Atlántico desde Matosinhos hacia el norte. Es técnicamente una variante y no la ruta oficial, y es algo más larga, pero cambia el corredor industrial por mar, dunas y chiringuitos. Las dos líneas se reencuentran más al norte. Si puedes elegir, la pasarela es el mejor primer día."
+      - heading: "La etapa, tramo a tramo"
+        body: "Sé do Porto → Cruzeiro do Senhor (bifurcación) → Monte dos Burgos → el corredor del aeropuerto → campo abierto → Vila do Conde Retail Park → el puente sobre el Rio Ave → el Convento de Santa Clara y su acueducto a la derecha → casco antiguo de Vila do Conde. Por la Senda Litoral cambias el tramo central por Matosinhos, Leça, Vila Chã y Árvore, casi siempre junto al mar."
+      - heading: "Dónde partir la jornada"
+        body: "28,4 km son muchos para un primer día con pies sin rodar. Las paradas intermedias habituales son Matosinhos (a un metro de Oporto, ideal para empezar suave), Vila Chã, a unos 25 minutos fuera de ruta y con un albergue muy valorado, y Árvore, cerca de una conexión de metro. Partirla convierte un primer día duro en dos fáciles y no te cuesta nada de calendario si tienes los días."
+      - heading: "Llegada a Vila do Conde"
+        body: "Cruzas el Rio Ave y el pueblo se presenta solo: el Convento de Santa Clara arriba a la derecha y, a su lado, el Acueducto de Santa Clara — una hilera de arcos del siglo XVII que llevaba agua unos cuatro kilómetros hasta el convento. Abajo, el casco antiguo tiene supermercados, restaurantes, albergue de peregrinos y playa. Es un sitio para quedarse, no solo una cama al final de una paliza."
+    faq:
+      - q: "¿Cuánto hay de Oporto a Vila do Conde?"
+        a: "28,4 km con unos 354 m de desnivel positivo, normalmente entre seis y siete horas. Es la etapa más larga del Camino Portugués de la Costa y el desnivel está muy repartido, así que la dificultad viene de la distancia y los adoquines, no de las subidas."
+      - q: "¿Debo tomar el metro para salir de Oporto?"
+        a: "Es una opción habitual y perfectamente aceptada. Los primeros 10 km son extrarradio sobre pavimento duro, y muchos peregrinos van en metro hasta Matosinhos y empiezan a caminar desde la costa. Nadie lo comprueba y no afecta a tu Compostela, porque la distancia que cuenta se mide en España."
+      - q: "¿Qué diferencia hay entre la ruta de la Costa y la Senda Litoral?"
+        a: "La ruta de la Costa es el trazado señalizado oficial; la Senda Litoral es la variante de pasarelas que va pegada al Atlántico desde Matosinhos hacia el norte. La Litoral es algo más larga y mucho más bonita, y ambas se reencuentran más al norte. Casi todos los peregrinos usan las pasarelas al menos parte de los primeros días."
+      - q: "¿Dónde puedo partir la etapa de Oporto a Vila do Conde?"
+        a: "En Matosinhos, Vila Chã o Árvore. Matosinhos está a un metro de Oporto y deja un primer día muy suave; Vila Chã queda a unos 25 minutos fuera de ruta con un albergue muy valorado; Árvore está cerca de una conexión de metro."
+      - q: "¿Dónde sello la credencial por primera vez?"
+        a: "En la Sé do Porto, la catedral donde arranca oficialmente la ruta. Desde 2025 necesitas dos sellos al día durante todo el camino, no solo en los últimos 100 km, así que empieza a reunirlos ya en Oporto."
+      - q: "¿Es dura la primera etapa?"
+        a: "Es larga más que empinada. Casi 30 km sobre adoquín y acera castigan unos pies que aún no han caminado, y por eso tantos peregrinos la parten o salen de la ciudad en transporte. Si la haces entera, madruga."
+    howTo: []
+  pt:
+    metaTitle: "Porto a Vila do Conde (28,4 km): Caminho da Costa etapa 1 (2026)"
+    metaDescription: "A primeira etapa do Caminho Português da Costa: 28,4 km da Sé do Porto a Vila do Conde. Como sair da cidade, se deves apanhar o metro até Matosinhos, os passadiços da Senda Litoral e onde partir o dia."
+    h1: "Do Porto a Vila do Conde"
+    lead: "O dia mais longo do Caminho da Costa e aquele que mais gente planeia mal. 28,4 km da Sé do Porto até Vila do Conde, com 354 m de subida muito diluídos — a dificuldade não são as encostas, são as calçadas e as duas horas de cidade até chegares a costa aberta."
+    sections:
+      - heading: "Onde o Caminho começa mesmo"
+        body: "O ponto de partida oficial é a Sé do Porto, a catedral acima da estação de São Bento. Carimba aí a credencial pela primeira vez — a Sé carimba peregrinos e é o carimbo que toda a gente quer no início. Da Sé as setas seguem para norte pelas ruas antigas; no Cruzeiro do Senhor separam-se o Caminho da Costa e o Central, e a partir daí as setas são tuas."
+      - heading: "A saída do Porto: andar ou saltar?"
+        body: "⚠️ A versão honesta: os primeiros 10 km do Porto são subúrbio — passeio, semáforos, parques comerciais e calçada que castiga pés no primeiro dia. Muitos peregrinos apanham o metro ou um autocarro até ao limite da cidade e começam a caminhar aí; outros fazem tudo a pé por princípio. Nenhuma opção está errada e ninguém pergunta na Oficina do Peregrino. Se vais pedir a Compostela, lembra-te de que a distância que conta é medida em Espanha, por isso saltar o subúrbio não te tira nada."
+      - heading: "Senda Litoral: a alternativa pelos passadiços"
+        body: "💡 A maioria dos peregrinos não segue as setas oficiais da Costa à saída do Porto — vai pela Senda Litoral, o passadiço de madeira que acompanha o Atlântico desde Matosinhos para norte. É tecnicamente uma variante e não a rota oficial, e é ligeiramente mais longa, mas troca o corredor industrial por mar, dunas e cafés de praia. As duas linhas voltam a juntar-se mais a norte. Se puderes escolher, o passadiço é o melhor primeiro dia."
+      - heading: "A etapa, troço a troço"
+        body: "Sé do Porto → Cruzeiro do Senhor (bifurcação) → Monte dos Burgos → o corredor do aeroporto → campo aberto → Vila do Conde Retail Park → a ponte sobre o Rio Ave → o Convento de Santa Clara e o seu aqueduto à direita → centro histórico de Vila do Conde. Pela Senda Litoral trocas o troço do meio por Matosinhos, Leça, Vila Chã e Árvore, quase sempre junto ao mar."
+      - heading: "Onde partir o dia"
+        body: "28,4 km é muito para um primeiro dia com pés por rodar. As paragens intermédias habituais são Matosinhos (a um metro do Porto, ideal para começar devagar), Vila Chã, a uns 25 minutos fora do trilho e com um albergue bem considerado, e Árvore, perto de uma ligação de metro. Partir aqui transforma um primeiro dia duro em dois fáceis e não custa nada de calendário se tiveres os dias."
+      - heading: "Chegada a Vila do Conde"
+        body: "Atravessas o Rio Ave e a vila apresenta-se sozinha: o Convento de Santa Clara no alto à direita e, ao lado, o Aqueduto de Santa Clara — uma fila de arcos do século XVII que levava água cerca de quatro quilómetros até ao convento. Em baixo, o centro histórico tem supermercados, restaurantes, albergue de peregrinos e praia. É um sítio para ficar, não apenas uma cama no fim de uma seca."
+    faq:
+      - q: "Qual é a distância do Porto a Vila do Conde?"
+        a: "28,4 km com cerca de 354 m de subida acumulada, normalmente seis a sete horas. É a etapa mais longa do Caminho Português da Costa e a subida está muito diluída, por isso a dificuldade vem da distância e da calçada, não das encostas."
+      - q: "Devo apanhar o metro para sair do Porto?"
+        a: "É uma escolha comum e perfeitamente aceite. Os primeiros 10 km são subúrbio em piso duro, e muitos peregrinos vão de metro até Matosinhos e começam a caminhar a partir da costa. Ninguém verifica e não afeta a tua Compostela, porque a distância que conta é medida em Espanha."
+      - q: "Qual é a diferença entre o Caminho da Costa e a Senda Litoral?"
+        a: "O Caminho da Costa é o traçado oficialmente sinalizado; a Senda Litoral é a variante de passadiços colada ao Atlântico desde Matosinhos para norte. A Litoral é ligeiramente mais longa e bastante mais bonita, e as duas voltam a juntar-se mais a norte. Quase todos os peregrinos usam os passadiços pelo menos em parte dos primeiros dias."
+      - q: "Onde posso partir a etapa do Porto a Vila do Conde?"
+        a: "Em Matosinhos, Vila Chã ou Árvore. Matosinhos fica a um metro do Porto e deixa um primeiro dia muito suave; Vila Chã fica a uns 25 minutos fora do trilho, com um albergue bem considerado; Árvore fica perto de uma ligação de metro."
+      - q: "Onde carimbo a credencial pela primeira vez?"
+        a: "Na Sé do Porto, a catedral onde a rota começa oficialmente. Desde 2025 precisas de dois carimbos por dia durante todo o caminho, não só nos últimos 100 km, por isso começa a reuni-los logo no Porto."
+      - q: "A primeira etapa é dura?"
+        a: "É longa mais do que íngreme. Quase 30 km de calçada e passeio castigam pés que ainda não caminharam, e é por isso que tantos peregrinos a partem ou saem da cidade de transporte. Se a fizeres inteira, madruga."
+    howTo: []

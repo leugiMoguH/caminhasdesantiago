@@ -1,11 +1,12 @@
 route: coastal
-order: 1
+order: 4
 from: Viana do Castelo
 to: Caminha
 distanceKm: 27.8
 ascentM: 100
 difficulty: moderate
 terrain: "Mostly flat coastal walking on the Senda Litoral boardwalk and minor roads. Surfaces are roughly 16.5 km asphalt, 8.5 km cobblestone and 3 km footpath, with one modest climb of about 100 m mid-stage."
+prevSlug: esposende-viana-do-castelo
 nextSlug: caminha-a-guarda
 townSlugs: []
 logisticsSlugs:
