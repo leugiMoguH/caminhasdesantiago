@@ -15,7 +15,7 @@ services:
   - Metro line B to Porto
 whereToStay:
   en:
-    intro: "Vila do Conde ends the longest stage on the route, so most pilgrims want somewhere close and horizontal. The town splits neatly into the historic centre by the river and the beach quarter a few minutes west, and the choice mostly comes down to whether you want dinner in the old town or the Atlantic outside the window."
+    intro: "Vila do Conde ends the longest stage on the route, so most pilgrims want somewhere close and horizontal. You have four workable choices: the historic centre by the river, the beach quarter a few minutes west, Azurara on the south bank if you would rather not climb the last bridge, or Póvoa de Varzim 5 km further on, which has far more capacity when everything here is full."
     areas:
       - name: "Historic centre & the Rio Ave"
         blurb: "The streets below the Convento de Santa Clara hold the restaurants, the supermarkets, the pilgrim albergue and the morning waymarks. Arriving off a 28 km day, being able to drop the pack and eat within two streets is worth more than a view. This is also where the aqueduct and the old shipyard are."
@@ -25,8 +25,16 @@ whereToStay:
         blurb: "A few minutes west the town meets the Atlantic, with a long beach and a promenade that leads straight onto next morning's boardwalk. Rooms here are often better value than the centre and the sunset is the reward for the day you have just had — at the cost of a short walk back in for dinner."
         bookingQuery: "Vila do Conde praia"
         anchor: "seafront rooms near Vila do Conde beach"
+      - name: "Póvoa de Varzim — 5 km further on"
+        blurb: "A full-size seaside resort with several times Vila do Conde's hotel capacity, which makes it the answer when the albergue is full or August has swallowed the town. Walking the extra 5 km costs you an hour and leaves you that much further along for the easy stage to Esposende."
+        bookingQuery: "Póvoa de Varzim"
+        anchor: "hotels in Póvoa de Varzim, 5 km up the route"
+      - name: "Azurara — before the bridge"
+        blurb: "The parish on the south bank of the Ave, which you walk through just before crossing into Vila do Conde. Quieter and often cheaper than the centre, and if you arrive shattered off the 28.4 km stage it saves you the last bridge and climb. You cross first thing instead."
+        bookingQuery: "Azurara Vila do Conde"
+        anchor: "quieter stays in Azurara, south of the river"
   es:
-    intro: "Vila do Conde cierra la etapa más larga de la ruta, así que casi todos buscan algo cercano y llano. El pueblo se divide entre el centro histórico junto al río y la zona de playa a unos minutos al oeste, y la elección se reduce a si prefieres cenar en el casco antiguo o tener el Atlántico en la ventana."
+    intro: "Vila do Conde cierra la etapa más larga de la ruta, así que casi todos buscan algo cercano y llano. Tienes cuatro opciones viables: el centro histórico junto al río, la zona de playa a unos minutos al oeste, Azurara en la orilla sur si prefieres no subir el último puente, o Póvoa de Varzim 5 km más adelante, con mucha más capacidad cuando aquí está todo lleno."
     areas:
       - name: "Centro histórico y el Rio Ave"
         blurb: "Las calles bajo el Convento de Santa Clara concentran los restaurantes, los supermercados, el albergue de peregrinos y las flechas de la mañana siguiente. Llegando de una jornada de 28 km, poder soltar la mochila y cenar a dos calles vale más que unas vistas. Aquí están también el acueducto y el viejo astillero."
@@ -36,8 +44,16 @@ whereToStay:
         blurb: "A pocos minutos al oeste el pueblo se encuentra con el Atlántico, con una playa larga y un paseo que enlaza directamente con la pasarela del día siguiente. Aquí las habitaciones suelen salir mejor de precio que en el centro y el atardecer es el premio a la jornada — a cambio de un paseíto de vuelta para cenar."
         bookingQuery: "Vila do Conde playa"
         anchor: "habitaciones frente al mar en la playa de Vila do Conde"
+      - name: "Póvoa de Varzim — 5 km más adelante"
+        blurb: "Un balneario en toda regla, con varias veces la capacidad hotelera de Vila do Conde, que es la respuesta cuando el albergue está lleno o agosto se ha comido el pueblo. Caminar esos 5 km de más te cuesta una hora y te deja otro tanto adelantado para la etapa fácil hasta Esposende."
+        bookingQuery: "Póvoa de Varzim"
+        anchor: "hoteles en Póvoa de Varzim, 5 km más adelante"
+      - name: "Azurara — antes del puente"
+        blurb: "La parroquia de la orilla sur del Ave, por la que pasas justo antes de cruzar a Vila do Conde. Más tranquila y a menudo más barata que el centro, y si llegas destrozado de los 28,4 km te ahorra el último puente y la subida. Cruzas a primera hora en su lugar."
+        bookingQuery: "Azurara Vila do Conde"
+        anchor: "alojamientos tranquilos en Azurara, al sur del río"
   pt:
-    intro: "Vila do Conde fecha a etapa mais longa do Caminho, por isso quase toda a gente quer algo perto e plano. A vila divide-se entre o centro histórico junto ao rio e a zona da praia a poucos minutos a oeste, e a escolha resume-se a se preferes jantar no centro antigo ou ter o Atlântico à janela."
+    intro: "Vila do Conde fecha a etapa mais longa do Caminho, por isso quase toda a gente quer algo perto e plano. Tens quatro opções viáveis: o centro histórico junto ao rio, a zona da praia a poucos minutos a oeste, Azurara na margem sul se preferires não subir a última ponte, ou a Póvoa de Varzim 5 km à frente, com muito mais capacidade quando aqui está tudo cheio."
     areas:
       - name: "Centro histórico e o Rio Ave"
         blurb: "As ruas abaixo do Convento de Santa Clara concentram os restaurantes, os supermercados, o albergue de peregrinos e as setas da manhã seguinte. A chegar de um dia de 28 km, poder largar a mochila e jantar a duas ruas vale mais do que uma vista. É aqui que ficam também o aqueduto e o antigo estaleiro."
@@ -47,6 +63,14 @@ whereToStay:
         blurb: "A poucos minutos a oeste a vila encontra o Atlântico, com uma praia longa e uma marginal que liga diretamente ao passadiço da manhã seguinte. Aqui os quartos costumam ter melhor preço do que no centro e o pôr do sol é o prémio pelo dia que acabaste de fazer — em troca de um passeio de volta para jantar."
         bookingQuery: "Vila do Conde praia"
         anchor: "quartos à beira-mar na praia de Vila do Conde"
+      - name: "Póvoa de Varzim — 5 km mais à frente"
+        blurb: "Uma estância balnear a sério, com várias vezes a capacidade hoteleira de Vila do Conde, o que faz dela a resposta quando o albergue está cheio ou agosto engoliu a vila. Caminhar esses 5 km a mais custa-te uma hora e deixa-te outro tanto adiantado para a etapa fácil até Esposende."
+        bookingQuery: "Póvoa de Varzim"
+        anchor: "hotéis na Póvoa de Varzim, 5 km à frente"
+      - name: "Azurara — antes da ponte"
+        blurb: "A freguesia da margem sul do Ave, por onde passas mesmo antes de atravessar para Vila do Conde. Mais sossegada e muitas vezes mais barata do que o centro, e se chegares destroçado dos 28,4 km poupa-te a última ponte e a subida. Atravessas logo de manhã em vez disso."
+        bookingQuery: "Azurara Vila do Conde"
+        anchor: "alojamentos sossegados em Azurara, a sul do rio"
 sourceVerified: true
 lastVerified: "2026-08-10"
 sources:

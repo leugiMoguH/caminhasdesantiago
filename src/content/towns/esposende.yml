@@ -15,7 +15,7 @@ services:
   - Buses along the coast
 whereToStay:
   en:
-    intro: "Esposende sits on the north bank of the Rio Cávado where the river meets the Atlantic, and it is bigger and busier than pilgrims expect — a surf town as much as a Camino stop. Beds are easier here than in the villages either side, but the next stage is the hardest since Porto, so sleep close to the waymarks and start early."
+    intro: "Esposende sits on the north bank of the Rio Cávado where the river meets the Atlantic, and it is bigger and busier than pilgrims expect — a surf town as much as a Camino stop. Because the next stage is the hardest since Porto, where you sleep is really a decision about tomorrow: in town, short of it at Fão or Apúlia, over the river at Ofir, or 4 km ahead at Marinhas to take the edge off the climb."
     areas:
       - name: "Town centre & the Cávado"
         blurb: "The centre holds both large supermarkets, the restaurants and the morning route out towards Marinhas. It is compact, flat and cheap by Portuguese coastal standards, and it puts you in the right position for a stage that climbs 503 m — you want to be walking, not crossing town, at first light."
@@ -25,8 +25,16 @@ whereToStay:
         blurb: "Over the bridge on the south bank, Ofir has the pine woods, the dunes and the wide beach that draw the windsurfers. It is the nicer place to spend an evening and often the better room for the money, at the cost of recrossing the Cávado in the morning — fine if you are taking a rest day, less ideal before a 26 km stage."
         bookingQuery: "Ofir Esposende praia"
         anchor: "beach stays at Ofir, across the Cávado"
+      - name: "Fão & Apúlia — before you cross"
+        blurb: "Both sit on the route a few kilometres short of Esposende, so they cut the day if you have had enough, and both have rooms that rarely fill the way the town centre does in August. You cross the Cávado in the morning instead of the afternoon, which is no loss."
+        bookingQuery: "Fão Esposende"
+        anchor: "rooms in Fão and Apúlia, before the river"
+      - name: "Marinhas — a head start on the climb"
+        blurb: "Four kilometres north and already on tomorrow's waymarks. Sleeping here shortens the 26.3 km climbing stage to Viana do Castelo and gets you into the forest section earlier in the day, which matters in summer. Fewer services than Esposende, so eat before you leave."
+        bookingQuery: "Marinhas Esposende"
+        anchor: "stays in Marinhas, on the next stage"
   es:
-    intro: "Esposende está en la orilla norte del Rio Cávado, donde el río se encuentra con el Atlántico, y es más grande y con más vida de lo que el peregrino espera — tanto pueblo surfero como parada del Camino. Aquí hay más camas que en las aldeas de alrededor, pero la etapa siguiente es la más dura desde Oporto, así que duerme cerca de las flechas y madruga."
+    intro: "Esposende está en la orilla norte del Rio Cávado, donde el río se encuentra con el Atlántico, y es más grande y con más vida de lo que el peregrino espera — tanto pueblo surfero como parada del Camino. Como la etapa siguiente es la más dura desde Oporto, dónde duermes es en realidad una decisión sobre mañana: en el pueblo, antes de llegar en Fão o Apúlia, al otro lado del río en Ofir, o 4 km por delante en Marinhas para quitarle filo a la subida."
     areas:
       - name: "Centro y el Cávado"
         blurb: "El centro reúne los dos supermercados grandes, los restaurantes y la salida de la mañana hacia Marinhas. Es compacto, llano y barato para lo que es la costa portuguesa, y te deja bien colocado para una etapa que sube 503 m — al amanecer conviene estar caminando, no cruzando el pueblo."
@@ -36,8 +44,16 @@ whereToStay:
         blurb: "Pasado el puente, en la orilla sur, Ofir tiene los pinares, las dunas y la playa ancha que atrae a los windsurfistas. Es mejor sitio para pasar la tarde y muchas veces mejor habitación por el mismo dinero, a cambio de volver a cruzar el Cávado por la mañana — bien si haces día de descanso, menos ideal antes de 26 km."
         bookingQuery: "Ofir Esposende playa"
         anchor: "alojamientos de playa en Ofir, al otro lado del Cávado"
+      - name: "Fão y Apúlia — antes de cruzar"
+        blurb: "Ambos quedan en ruta a unos kilómetros de Esposende, así que recortan el día si ya has tenido bastante, y ambos tienen habitaciones que rara vez se llenan como el centro en agosto. Cruzas el Cávado por la mañana en vez de por la tarde, lo cual no es ninguna pérdida."
+        bookingQuery: "Fão Esposende"
+        anchor: "habitaciones en Fão y Apúlia, antes del río"
+      - name: "Marinhas — ventaja para la subida"
+        blurb: "Cuatro kilómetros al norte y ya sobre las flechas de mañana. Dormir aquí acorta la etapa de 26,3 km con subidas hasta Viana do Castelo y te mete en el tramo de bosque más temprano, algo que importa en verano. Menos servicios que Esposende, así que cena antes de salir."
+        bookingQuery: "Marinhas Esposende"
+        anchor: "alojamientos en Marinhas, ya en la etapa siguiente"
   pt:
-    intro: "Esposende fica na margem norte do Rio Cávado, onde o rio encontra o Atlântico, e é maior e mais movimentada do que o peregrino espera — tanto terra de surf como paragem do Caminho. Há mais camas aqui do que nas aldeias em redor, mas a etapa seguinte é a mais dura desde o Porto, por isso dorme perto das setas e sai cedo."
+    intro: "Esposende fica na margem norte do Rio Cávado, onde o rio encontra o Atlântico, e é maior e mais movimentada do que o peregrino espera — tanto terra de surf como paragem do Caminho. Como a etapa seguinte é a mais dura desde o Porto, onde dormes é na verdade uma decisão sobre amanhã: na vila, antes de chegar em Fão ou Apúlia, do outro lado do rio em Ofir, ou 4 km à frente em Marinhas para tirar o gume à subida."
     areas:
       - name: "Centro e o Cávado"
         blurb: "O centro junta os dois supermercados grandes, os restaurantes e a saída da manhã em direção a Marinhas. É compacto, plano e barato para o que é a costa portuguesa, e deixa-te bem posicionado para uma etapa que sobe 503 m — ao amanhecer convém estar a caminhar, não a atravessar a vila."
@@ -47,6 +63,14 @@ whereToStay:
         blurb: "Passada a ponte, na margem sul, Ofir tem os pinhais, as dunas e o areal largo que atrai os windsurfistas. É melhor sítio para passar a tarde e muitas vezes melhor quarto pelo mesmo dinheiro, em troca de voltar a atravessar o Cávado de manhã — ótimo se fizeres dia de descanso, menos ideal antes de 26 km."
         bookingQuery: "Ofir Esposende praia"
         anchor: "alojamentos de praia em Ofir, do outro lado do Cávado"
+      - name: "Fão e Apúlia — antes de atravessar"
+        blurb: "Ambas ficam em cima do trilho a poucos quilómetros de Esposende, por isso encurtam o dia se já chegaste ao limite, e ambas têm quartos que raramente enchem como o centro em agosto. Atravessas o Cávado de manhã em vez de à tarde, o que não é perda nenhuma."
+        bookingQuery: "Fão Esposende"
+        anchor: "quartos em Fão e Apúlia, antes do rio"
+      - name: "Marinhas — avanço para a subida"
+        blurb: "Quatro quilómetros a norte e já sobre as setas de amanhã. Dormir aqui encurta a etapa de 26,3 km com subidas até Viana do Castelo e mete-te no troço de floresta mais cedo, o que conta no verão. Menos serviços do que Esposende, por isso janta antes de sair."
+        bookingQuery: "Marinhas Esposende"
+        anchor: "alojamentos em Marinhas, já na etapa seguinte"
 sourceVerified: true
 lastVerified: "2026-08-10"
 sources:

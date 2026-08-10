@@ -105,6 +105,13 @@ const bestAreasHeading: Record<Lang, string> = {
   es: 'Mejores zonas para peregrinos',
   pt: 'Melhores zonas para peregrinos',
 };
+// Every area link below is a Booking.com affiliate search. rel="sponsored" tells
+// crawlers; this tells the reader.
+const stayDisclosure: Record<Lang, string> = {
+  en: 'Affiliate links — we may earn a commission at no extra cost to you. Which areas we list is our own call.',
+  es: 'Enlaces de afiliado — podemos ganar una comisión sin coste extra para ti. Las zonas que listamos las elegimos nosotros.',
+  pt: 'Links de afiliado — podemos ganhar uma comissão sem custo extra para ti. As zonas que listamos são escolha nossa.',
+};
 const heroCta: Record<Lang, string> = {
   en: `Find a bed in ${data.name} tonight`,
   es: `Encuentra cama en ${data.name} esta noche`,
@@ -278,7 +285,8 @@ const essentials = essentialNav(lang);
       <section data-aff-pos="mid">
         <h2 class="text-2xl font-bold text-forest-900 mb-3 tracking-tight">{stayInHeading[lang]}</h2>
         <p class="text-slate-700 leading-relaxed mb-5">{ws.intro}</p>
-        <h3 class="text-base font-bold text-forest-900 mb-3">{bestAreasHeading[lang]}</h3>
+        <h3 class="text-base font-bold text-forest-900 mb-1">{bestAreasHeading[lang]}</h3>
+        <p class="text-xs text-slate-500 mb-3">{stayDisclosure[lang]}</p>
         <div class="space-y-4">
           {ws.areas.map((area: { name: string; blurb: string; bookingQuery: string; anchor: string }, i: number) => (
             <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">

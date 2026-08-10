@@ -34,6 +34,10 @@ whereToStay:
         blurb: "If you plan to skip the city suburbs and start on the Senda Litoral boardwalks, sleeping at the coast saves you the morning metro. Matosinhos has the seafood restaurants and the tram and metro links; Foz is quieter and smarter. Either puts the Atlantic outside your window on day one."
         bookingQuery: "Matosinhos Porto beach"
         anchor: "seafront stays in Matosinhos and Foz"
+      - name: "Vila Nova de Gaia — across the Douro"
+        blurb: "The south bank looks straight back at the Ribeira postcard and usually costs less for the same standard, with the port lodges at street level. The trade-off is real though: you start the morning by crossing the Ponte Luís I and climbing to the Sé before the Camino has even begun."
+        bookingQuery: "Vila Nova de Gaia Porto"
+        anchor: "better-value rooms in Vila Nova de Gaia"
   es:
     intro: "Oporto es donde empieza el Camino Portugués y donde casi todos los peregrinos pasan una o dos noches antes de caminar. Lo que importa no es el lujo sino la geografía: si duermes junto a la Sé, sales por la puerta directo a la ruta; si duermes en la costa, quedas colocado para las pasarelas. Los precios cambian mucho entre la ribera y el resto, así que estas zonas equilibran ubicación y valor."
     areas:
@@ -53,6 +57,10 @@ whereToStay:
         blurb: "Si piensas saltarte el extrarradio y empezar por las pasarelas de la Senda Litoral, dormir en la costa te ahorra el metro de la mañana. Matosinhos tiene los restaurantes de marisco y las conexiones de tranvía y metro; Foz es más tranquilo y elegante. Cualquiera de los dos te pone el Atlántico en la ventana el primer día."
         bookingQuery: "Matosinhos Oporto playa"
         anchor: "alojamientos frente al mar en Matosinhos y Foz"
+      - name: "Vila Nova de Gaia — al otro lado del Duero"
+        blurb: "La orilla sur mira de frente a la postal de la Ribeira y suele costar menos por la misma categoría, con las bodegas de vino de Oporto a pie de calle. El precio a pagar es real: empiezas la mañana cruzando el Puente Luís I y subiendo hasta la Sé antes de que el Camino haya empezado siquiera."
+        bookingQuery: "Vila Nova de Gaia Oporto"
+        anchor: "habitaciones con mejor precio en Vila Nova de Gaia"
   pt:
     intro: "O Porto é onde o Caminho Português começa e onde quase todos os peregrinos passam uma ou duas noites antes de caminhar. O que interessa não é o luxo, é a geografia: se dormires junto à Sé, sais porta fora direto para o trilho; se dormires na costa, ficas posicionado para os passadiços. Os preços variam muito entre a ribeira e o resto, por isso estas zonas equilibram localização e valor."
     areas:
@@ -72,6 +80,10 @@ whereToStay:
         blurb: "Se pensas saltar o subúrbio e começar pelos passadiços da Senda Litoral, dormir na costa poupa-te o metro da manhã. Matosinhos tem os restaurantes de marisco e as ligações de elétrico e metro; a Foz é mais sossegada e mais chique. Qualquer um põe-te o Atlântico à janela no primeiro dia."
         bookingQuery: "Matosinhos Porto praia"
         anchor: "alojamentos à beira-mar em Matosinhos e na Foz"
+      - name: "Vila Nova de Gaia — do outro lado do Douro"
+        blurb: "A margem sul olha de frente para o postal da Ribeira e costuma custar menos pela mesma categoria, com as caves do vinho do Porto ao nível da rua. O preço a pagar é real: começas a manhã a atravessar a Ponte Luís I e a subir até à Sé antes de o Caminho sequer ter começado."
+        bookingQuery: "Vila Nova de Gaia Porto"
+        anchor: "quartos com melhor preço em Vila Nova de Gaia"
 sourceVerified: true
 lastVerified: "2026-08-10"
 sources:

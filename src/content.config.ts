@@ -138,7 +138,10 @@ const stayArea = z.object({
 });
 const stayBlock = z.object({
   intro: z.string(),
-  areas: z.array(stayArea).min(1).max(4),
+  // Capped at 5. The limit exists to keep affiliate-link density honest; it was
+  // 4 until Porto joined the route, where four areas genuinely under-served a
+  // city that pilgrims arrive in a day or two early.
+  areas: z.array(stayArea).min(1).max(5),
 });
 const whereToStayTrio = z.object({ en: stayBlock, es: stayBlock, pt: stayBlock });
 
