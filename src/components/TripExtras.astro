@@ -6,7 +6,7 @@
  * If a partner is unset its builder returns null and that card is skipped; if
  * none are set the whole block renders nothing — no broken links, no CLS.
  *
- * rel="sponsored nofollow" + a visible disclosure keep it compliant and honest.
+ * rel="sponsored nofollow noopener noreferrer" + a visible disclosure keep it compliant and honest.
  */
 import { tourLink, insuranceLink, transportLink } from '../lib/affiliates';
 
@@ -35,11 +35,11 @@ const t = {
   <section class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10">
     <h2 class="text-xl font-bold text-forest-900 mb-1">{t.title}</h2>
     <p class="text-xs text-slate-500 mb-5">{t.disclosure}</p>
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+    <div class={`grid grid-cols-1 gap-3 ${items.length >= 3 ? 'sm:grid-cols-3' : items.length === 2 ? 'sm:grid-cols-2' : ''}`}>
       {items.map(({ href, key }) => (
         <a
           href={href}
-          rel="sponsored nofollow"
+          rel="sponsored nofollow noopener noreferrer"
           target="_blank"
           class="rounded-2xl border border-slate-200 bg-white px-5 py-4 text-sm font-semibold text-forest-800 no-underline hover:border-forest-300 hover:bg-forest-50/50 transition-colors"
         >

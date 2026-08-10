@@ -14,7 +14,10 @@
  */
 
 // ── Partner configuration (empty = disabled) ────────────────────────────────
-const GETYOURGUIDE_PARTNER_URL = ''; // e.g. https://www.getyourguide.com/...?partner_id=XXXXX
+// Destination is GYG's Camino de Santiago page (l95111) rather than the
+// Santiago city page — it matches why our readers are here. `partner_id` is
+// the account's Cookie ID; tourLink() appends `cmp` for per-placement stats.
+const GETYOURGUIDE_PARTNER_URL = 'https://www.getyourguide.com/camino-de-santiago-l95111/?partner_id=VGNOEEQ';
 const INSURANCE_AFFILIATE_URL = '';  // Heymondo or IATI referral URL
 const OMIO_AFFILIATE_URL = '';       // Omio affiliate deep link
 
