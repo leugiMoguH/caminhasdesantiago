@@ -1,0 +1,160 @@
+---
+/**
+ * OfflineSaver — download the whole route for use without signal.
+ *
+ * The service worker already caches pages as you browse them, which is no help
+ * to a pilgrim: the pages you need on the trail are exactly the ones you have
+ * not opened yet, and by then there is no signal to fetch them. This hands the
+ * SW an explicit list — every stage, every town, every logistics topic, plus
+ * the hub and this planner — and it stores them up front.
+ *
+ * Fails visibly, not silently: no service worker, no connection, or a partial
+ * download each produce a message rather than a dead button.
+ */
+import { getCollection } from 'astro:content';
+import {
+  hubPath,
+  stagePath,
+  townPath,
+  logisticsPath,
+  plannerPath,
+  guidePath,
+  ferryPath,
+  type Lang,
+} from '../lib/clusterRoutes';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+
+const [stages, towns, logistics] = await Promise.all([
+  getCollection('stages', (e) => e.data.sourceVerified),
+  getCollection('towns', (e) => e.data.sourceVerified),
+  getCollection('logistics', (e) => e.data.sourceVerified),
+]);
+
+const URLS = [
+  hubPath(lang),
+  plannerPath(lang),
+  guidePath(lang),
+  ferryPath(lang),
+  ...stages.map((s) => stagePath(lang, s.id)),
+  ...towns.map((t) => townPath(lang, t.id)),
+  ...logistics.map((l) => logisticsPath(lang, l.id)),
+];
+
+const T = {
+  en: {
+    badge: 'Offline',
+    title: 'Download the route for offline use',
+    intro: `Save all ${URLS.length} route pages to this device — every stage, town and logistics guide. Signal on the coastal path is patchy and disappears entirely in the forest above the Neiva, so download before you walk, not when you need it.`,
+    btn: 'Download for offline',
+    working: 'Downloading…',
+    done: '{ok} pages saved. They now open without signal.',
+    partial: '{ok} pages saved, {failed} failed. Try again on a better connection.',
+    unsupported: 'This browser cannot store pages offline. Try Chrome, Edge or Safari.',
+    offline: 'You are offline. Reconnect to download the route.',
+    note: 'Stored by your browser, on your device. Clearing site data removes it.',
+  },
+  es: {
+    badge: 'Sin conexión',
+    title: 'Descarga la ruta para usarla sin conexión',
+    intro: `Guarda en este dispositivo las ${URLS.length} páginas de la ruta — todas las etapas, pueblos y guías de logística. La cobertura en el camino de la costa es irregular y desaparece del todo en el bosque sobre el Neiva, así que descarga antes de caminar, no cuando lo necesites.`,
+    btn: 'Descargar sin conexión',
+    working: 'Descargando…',
+    done: '{ok} páginas guardadas. Ya se abren sin cobertura.',
+    partial: '{ok} páginas guardadas, {failed} fallaron. Inténtalo con mejor conexión.',
+    unsupported: 'Este navegador no puede guardar páginas sin conexión. Prueba Chrome, Edge o Safari.',
+    offline: 'Estás sin conexión. Vuelve a conectarte para descargar la ruta.',
+    note: 'Lo guarda tu navegador, en tu dispositivo. Si borras los datos del sitio, se elimina.',
+  },
+  pt: {
+    badge: 'Offline',
+    title: 'Descarrega o Caminho para usar sem rede',
+    intro: `Guarda neste dispositivo as ${URLS.length} páginas do Caminho — todas as etapas, vilas e guias de logística. A rede no trilho da costa é irregular e desaparece por completo na floresta acima do Neiva, por isso descarrega antes de caminhares, não quando precisares.`,
+    btn: 'Descarregar para offline',
+    working: 'A descarregar…',
+    done: '{ok} páginas guardadas. Já abrem sem rede.',
+    partial: '{ok} páginas guardadas, {failed} falharam. Tenta outra vez com melhor ligação.',
+    unsupported: 'Este navegador não consegue guardar páginas offline. Experimenta Chrome, Edge ou Safari.',
+    offline: 'Estás sem ligação. Liga-te para descarregares o Caminho.',
+    note: 'Guardado pelo teu navegador, no teu dispositivo. Se limpares os dados do site, desaparece.',
+  },
+}[lang];
+---
+
+<section aria-labelledby="os-heading" class="rounded-2xl border border-forest-200 bg-white p-5 sm:p-6 shadow-sm">
+  <div class="flex items-center gap-2 mb-1">
+    <span class="text-[10px] font-bold uppercase tracking-widest text-earth-700 bg-earth-100 px-2 py-0.5 rounded-full border border-earth-200">{T.badge}</span>
+  </div>
+  <h2 id="os-heading" class="text-xl font-bold text-forest-900 tracking-tight">{T.title}</h2>
+  <p class="text-sm text-slate-600 leading-relaxed mt-1 mb-4">{T.intro}</p>
+
+  <button type="button" id="os-go" class="inline-flex items-center justify-center rounded-xl bg-forest-700 px-5 py-2.5 text-sm font-bold text-white no-underline hover:bg-forest-800 transition-colors cursor-pointer disabled:opacity-60 disabled:cursor-default">{T.btn}</button>
+
+  <div id="os-status" class="mt-3 text-sm" role="status" aria-live="polite"></div>
+  <p class="text-[11px] text-slate-400 mt-2">{T.note}</p>
+</section>
+
+<script define:vars={{ URLS, T }}>
+  (function () {
+    var btn = document.getElementById('os-go');
+    var out = document.getElementById('os-status');
+    if (!btn || !out) return;
+
+    function say(msg, tone) {
+      out.textContent = msg;
+      out.className =
+        'mt-3 text-sm ' + (tone === 'bad' ? 'text-red-700' : tone === 'good' ? 'text-forest-800 font-semibold' : 'text-slate-600');
+    }
+
+    if (!('serviceWorker' in navigator) || !('caches' in window)) {
+      btn.disabled = true;
+      say(T.unsupported, 'bad');
+      return;
+    }
+
+    btn.addEventListener('click', function () {
+      if (!navigator.onLine) {
+        say(T.offline, 'bad');
+        return;
+      }
+      btn.disabled = true;
+      say(T.working);
+
+      navigator.serviceWorker.ready
+        .then(function (reg) {
+          if (!reg.active) throw new Error('no active worker');
+          return new Promise(function (resolve, reject) {
+            var channel = new MessageChannel();
+            var timer = setTimeout(function () {
+              reject(new Error('timeout'));
+            }, 120000);
+            channel.port1.onmessage = function (event) {
+              clearTimeout(timer);
+              resolve(event.data || {});
+            };
+            reg.active.postMessage({ type: 'PRECACHE', urls: URLS }, [channel.port2]);
+          });
+        })
+        .then(function (res) {
+          var ok = res.ok || 0;
+          var failed = res.failed || 0;
+          btn.disabled = false;
+          if (failed > 0) {
+            say(T.partial.replace('{ok}', ok).replace('{failed}', failed), 'bad');
+          } else {
+            say(T.done.replace('{ok}', ok), 'good');
+          }
+          window.dataLayer = window.dataLayer || [];
+          function gtag() { window.dataLayer.push(arguments); }
+          gtag('event', 'route_downloaded_offline', { pages_ok: ok, pages_failed: failed });
+        })
+        .catch(function () {
+          btn.disabled = false;
+          say(T.partial.replace('{ok}', 0).replace('{failed}', URLS.length), 'bad');
+        });
+    });
+  })();
+</script>

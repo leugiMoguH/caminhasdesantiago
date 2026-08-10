@@ -4,8 +4,12 @@
  *   - navigations: network-first, cache each visited page, fall back to the
  *     last cached copy, then to /offline.html when nothing is cached.
  *   - hashed/static assets (_astro, fonts, images): cache-first.
+ *   - PRECACHE messages: the page hands over a list of URLs to fetch and store
+ *     up front, so a pilgrim can download the route BEFORE losing signal
+ *     instead of only keeping what they happened to browse.
  * Only same-origin GET requests are handled — affiliate/analytics calls pass
- * through untouched. Bump CACHE_VERSION to invalidate old caches on deploy.
+ * through untouched. Bump CACHE_VERSION to invalidate old caches on deploy;
+ * do not bump it for additive changes, or you wipe pages users already saved.
  */
 const CACHE_VERSION = 'v1';
 const CACHE = 'wtsg-' + CACHE_VERSION;
@@ -51,7 +55,11 @@ self.addEventListener('fetch', (event) => {
           caches.open(CACHE).then((cache) => cache.put(req, copy));
           return res;
         })
-        .catch(() => caches.match(req).then((cached) => cached || caches.match('/offline.html'))),
+        .catch(() =>
+          caches
+            .match(req, { ignoreVary: true })
+            .then((cached) => cached || caches.match('/offline.html')),
+        ),
     );
     return;
   }
@@ -76,4 +84,40 @@ self.addEventListener('fetch', (event) => {
       ),
     );
   }
+});
+
+/*
+ * Explicit pre-caching, driven by the page: {type:'PRECACHE', urls:[...]}.
+ * Each URL is fetched and stored; the caller gets a count back over the
+ * MessagePort it supplied. Failures are counted, never thrown — one dead URL
+ * must not sink the whole download.
+ */
+self.addEventListener('message', (event) => {
+  const data = event.data;
+  if (!data || data.type !== 'PRECACHE' || !Array.isArray(data.urls)) return;
+  const port = event.ports && event.ports[0];
+
+  event.waitUntil(
+    caches.open(CACHE).then((cache) => {
+      let ok = 0;
+      let failed = 0;
+      return Promise.all(
+        data.urls.map((url) =>
+          fetch(url, { credentials: 'same-origin' })
+            .then((res) => {
+              if (!res.ok) throw new Error(String(res.status));
+              return cache.put(url, res);
+            })
+            .then(() => {
+              ok += 1;
+            })
+            .catch(() => {
+              failed += 1;
+            }),
+        ),
+      ).then(() => {
+        if (port) port.postMessage({ type: 'PRECACHE_DONE', ok: ok, failed: failed });
+      });
+    }),
+  );
 });

@@ -1,0 +1,163 @@
+name: Póvoa de Varzim
+country: PT
+region: Porto (Norte)
+onStageSlug: vila-do-conde-esposende
+geo:
+  lat: 41.3800
+  lng: -8.7700
+accommodations:
+  - name: Albergue de Peregrinos São José de Ribamar
+    type: private-albergue
+    beds: 16
+    priceEUR: "donation"
+    openSeason: Check-in 14:00–20:00
+    bookable: false
+    highlight:
+      en: "Parish-run donation albergue in the town centre, 16 beds, open to credential-carrying pilgrims only. No reservations — check-in runs 14:00 to 20:00, so arrive inside that window."
+      es: "Albergue parroquial de donativo en el centro, 16 plazas, solo para peregrinos con credencial. Sin reservas — el check-in es de 14:00 a 20:00, así que llega dentro de esa franja."
+      pt: "Albergue paroquial de donativo no centro, 16 camas, só para peregrinos com credencial. Sem reservas — o check-in é das 14:00 às 20:00, por isso chega dentro dessa janela."
+services:
+  - Donation pilgrim albergue (credential required)
+  - Large hotel and guesthouse capacity
+  - Supermarkets, pharmacies and ATMs
+  - Restaurants, bars and a casino
+  - Nearly 12 km of beaches
+  - Metro line B to Porto
+whereToStay:
+  en:
+    intro: "Póvoa is the capacity valve of this stretch. It is a full-size seaside resort with several times Vila do Conde's bed count, which makes it the answer in August or whenever the albergue 5 km back is full. It sits about 5 km into the Vila do Conde–Esposende stage, so stopping here is a short day, and starting here is a short one too."
+    areas:
+      - name: "Seafront & the casino"
+        blurb: "The promenade is the town: hotels facing nearly 12 km of beach, restaurants behind them, and the casino anchoring the middle. This is where the capacity is and where you will find a room at short notice in high season — usually at resort prices rather than pilgrim ones."
+        bookingQuery: "Póvoa de Varzim beachfront"
+        anchor: "seafront hotels along Póvoa's promenade"
+      - name: "Town centre"
+        blurb: "A block or two back from the sand, the centre holds the donation albergue, the supermarkets and the cheaper guesthouses, and puts you on the morning waymarks without crossing town. The sensible choice if you are walking on to Esposende rather than taking a beach day."
+        bookingQuery: "Póvoa de Varzim centro"
+        anchor: "guesthouses in Póvoa de Varzim centre"
+      - name: "Vila do Conde — 5 km back"
+        blurb: "The two towns effectively share a seafront, and Vila do Conde has the convent, the aqueduct and a quieter old town. If Póvoa is full or feels too much like a resort, walking back or catching the metro one stop is a real option rather than a compromise."
+        bookingQuery: "Vila do Conde centro histórico"
+        anchor: "stays in Vila do Conde, 5 km back down the route"
+  es:
+    intro: "Póvoa es la válvula de capacidad de este tramo. Es un balneario en toda regla con varias veces las plazas de Vila do Conde, lo que la convierte en la respuesta en agosto o cuando el albergue de 5 km atrás está lleno. Queda a unos 5 km del inicio de la etapa Vila do Conde–Esposende, así que parar aquí deja un día corto, y empezar aquí también."
+    areas:
+      - name: "Paseo marítimo y el casino"
+        blurb: "El paseo es el pueblo: hoteles frente a casi 12 km de playa, restaurantes detrás y el casino en el centro. Aquí está la capacidad y aquí encontrarás habitación a última hora en temporada alta — normalmente a precio de balneario, no de peregrino."
+        bookingQuery: "Póvoa de Varzim primera línea de playa"
+        anchor: "hoteles frente al mar en el paseo de Póvoa"
+      - name: "Centro"
+        blurb: "Una o dos manzanas hacia dentro, el centro reúne el albergue de donativo, los supermercados y las pensiones más baratas, y te deja sobre las flechas de la mañana sin cruzar el pueblo. Lo sensato si sigues hasta Esposende en vez de tomarte un día de playa."
+        bookingQuery: "Póvoa de Varzim centro"
+        anchor: "pensiones en el centro de Póvoa de Varzim"
+      - name: "Vila do Conde — 5 km atrás"
+        blurb: "Los dos pueblos comparten prácticamente el paseo marítimo, y Vila do Conde tiene el convento, el acueducto y un casco antiguo más tranquilo. Si Póvoa está llena o te resulta demasiado balneario, volver andando o una parada de metro es una opción real, no un apaño."
+        bookingQuery: "Vila do Conde casco histórico"
+        anchor: "alojamientos en Vila do Conde, 5 km atrás en la ruta"
+  pt:
+    intro: "A Póvoa é a válvula de capacidade deste troço. É uma estância balnear a sério, com várias vezes as camas de Vila do Conde, o que faz dela a resposta em agosto ou sempre que o albergue 5 km atrás está cheio. Fica a uns 5 km do início da etapa Vila do Conde–Esposende, por isso parar aqui deixa um dia curto, e começar aqui também."
+    areas:
+      - name: "Marginal e o casino"
+        blurb: "A marginal é a vila: hotéis virados para quase 12 km de praia, restaurantes atrás e o casino a ancorar o meio. É aqui que está a capacidade e é aqui que arranjas quarto em cima da hora em época alta — normalmente a preço de estância, não de peregrino."
+        bookingQuery: "Póvoa de Varzim primeira linha de praia"
+        anchor: "hotéis à beira-mar na marginal da Póvoa"
+      - name: "Centro"
+        blurb: "Um ou dois quarteirões para dentro, o centro junta o albergue de donativo, os supermercados e as pensões mais baratas, e deixa-te em cima das setas da manhã sem atravessar a vila. O sensato se segues para Esposende em vez de fazeres um dia de praia."
+        bookingQuery: "Póvoa de Varzim centro"
+        anchor: "pensões no centro da Póvoa de Varzim"
+      - name: "Vila do Conde — 5 km atrás"
+        blurb: "As duas vilas partilham praticamente a marginal, e Vila do Conde tem o convento, o aqueduto e um centro antigo mais sossegado. Se a Póvoa estiver cheia ou te souber a estância a mais, voltar a pé ou uma paragem de metro é uma opção a sério, não um remendo."
+        bookingQuery: "Vila do Conde centro histórico"
+        anchor: "alojamentos em Vila do Conde, 5 km atrás no trilho"
+sourceVerified: true
+lastVerified: "2026-08-10"
+sources:
+  - https://www.alberguescaminosantiago.com/camino-portugues-por-la-costa/albergue-peregrinos-povoa-de-varzim/
+  - https://pilgrim8.com/camino-portugues-de-la-costa/povoa-de-varzim/albergue-de-peregrinos-sao-jose-de-ribamar
+  - https://wisepilgrim.com/en/places/portugal/camino-portugues/povoa-de-varzim
+  - https://walkthecaminoportugues.com/coastal-route/vila-do-conde-to-esposende/
+i18n:
+  en:
+    metaTitle: "Póvoa de Varzim on the Coastal Camino: Albergue, Beaches & Where to Stay"
+    metaDescription: "Póvoa de Varzim for pilgrims on the Camino Portugués Coastal: the donation albergue and its 14:00–20:00 check-in, when to stop here instead of Vila do Conde, what to see, and where to sleep."
+    h1: "Póvoa de Varzim"
+    lead: "Five kilometres past Vila do Conde and a completely different town: a working seaside resort with nearly 12 km of beach, a casino, and several times the bed capacity of anywhere else on this stretch. That last part is why it matters in August."
+    sections:
+      - heading: "When to stop here instead"
+        body: "💡 Póvoa arrives about 5 km into the Vila do Conde–Esposende stage, which makes it an odd place to end a normal day and an excellent place to end a bad one. Stop here if the 28.4 km from Porto broke you, if Vila do Conde's albergue was full, or if you are walking short days deliberately. Starting here instead trims the next stage to under 19 km."
+      - heading: "The albergue"
+        body: "The Albergue de Peregrinos São José de Ribamar is a parish-run donation albergue in the town centre with 16 beds, open only to pilgrims carrying a credential. There are no reservations and check-in runs from 14:00 to 20:00 — arrive inside that window or you will find the door shut. Sixteen beds go quickly in summer, so have a fallback."
+      - heading: "Capacity when everywhere else is full"
+        body: "⚠️ This is the practical reason to know Póvoa exists. It is a mainstream Portuguese holiday resort, so it carries hotel capacity on a scale the Camino towns do not, and rooms are usually findable at short notice even in August. You will pay resort rates rather than pilgrim rates, but a bed at a price beats no bed."
+      - heading: "What to see"
+        body: "The Museu de Etnografia e História documents centuries of fishing life here, including the siglas poveiras — a system of geometric marks that Póvoa's fishing families used for generations to identify boats and property, and which you still see around town. About 5 km inland, the Cividade de Terroso is an Iron Age hillfort with ring walls and circular house foundations, one of the best preserved in the region."
+      - heading: "Getting here and away"
+        body: "Metro line B links Póvoa de Varzim to Porto, which makes it easy to join the Camino here and skip the city suburbs entirely, or to bail out if something goes wrong in the first days. Buses run along the coast, and the seafront has the full run of supermarkets, pharmacies and ATMs."
+    faq:
+      - q: "Is there a pilgrim albergue in Póvoa de Varzim?"
+        a: "Yes — the Albergue de Peregrinos São José de Ribamar, a parish-run donation albergue in the town centre with 16 beds. It is open only to pilgrims with a credential, takes no reservations, and checks in between 14:00 and 20:00."
+      - q: "How far is Póvoa de Varzim from Vila do Conde?"
+        a: "About 5 km on foot along the route, roughly an hour. The two towns effectively share a seafront, and metro line B connects both to Porto."
+      - q: "Should I stop in Póvoa de Varzim or push on to Esposende?"
+        a: "Push on if you are walking normal days — Póvoa comes only 5 km into the stage. Stop here if the long first day from Porto hurt, if Vila do Conde was full, or if you want a short day. Starting from Póvoa cuts the stage to Esposende to under 19 km."
+      - q: "Why is Póvoa de Varzim useful in August?"
+        a: "It is a mainstream seaside resort with several times the bed capacity of the Camino towns around it, so rooms are usually findable at short notice when everything else is booked out. Expect resort prices rather than pilgrim prices."
+      - q: "What is there to see in Póvoa de Varzim?"
+        a: "The Museu de Etnografia e História and the siglas poveiras, the geometric marks the local fishing families used to identify boats and property. About 5 km inland, the Cividade de Terroso is a well-preserved Iron Age hillfort. Otherwise it is beaches, the promenade and the casino."
+    howTo: []
+  es:
+    metaTitle: "Póvoa de Varzim en el Camino de la Costa: albergue, playas y dónde dormir"
+    metaDescription: "Póvoa de Varzim para peregrinos del Camino Portugués de la Costa: el albergue de donativo y su check-in de 14:00 a 20:00, cuándo parar aquí en vez de en Vila do Conde, qué ver y dónde dormir."
+    h1: "Póvoa de Varzim"
+    lead: "Cinco kilómetros pasada Vila do Conde y un pueblo completamente distinto: un balneario en activo con casi 12 km de playa, casino y varias veces la capacidad de camas de cualquier otro sitio del tramo. Eso último es lo que importa en agosto."
+    sections:
+      - heading: "Cuándo parar aquí"
+        body: "💡 Póvoa aparece a unos 5 km del inicio de la etapa Vila do Conde–Esposende, lo que la hace un sitio raro para terminar un día normal y excelente para terminar uno malo. Para aquí si los 28,4 km desde Oporto te destrozaron, si el albergue de Vila do Conde estaba lleno o si haces etapas cortas a propósito. Empezar aquí deja la etapa siguiente en menos de 19 km."
+      - heading: "El albergue"
+        body: "El Albergue de Peregrinos São José de Ribamar es un albergue parroquial de donativo en el centro, con 16 plazas, abierto solo a peregrinos con credencial. No admite reservas y el check-in es de 14:00 a 20:00 — llega dentro de esa franja o encontrarás la puerta cerrada. Dieciséis plazas vuelan en verano, así que ten alternativa."
+      - heading: "Capacidad cuando todo lo demás está lleno"
+        body: "⚠️ Esta es la razón práctica para saber que Póvoa existe. Es un destino vacacional portugués de toda la vida, así que tiene capacidad hotelera a una escala que los pueblos del Camino no tienen, y suele haber habitación a última hora incluso en agosto. Pagarás tarifas de balneario y no de peregrino, pero una cama a su precio gana a ninguna cama."
+      - heading: "Qué ver"
+        body: "El Museu de Etnografia e História documenta siglos de vida pesquera, incluidas las siglas poveiras — un sistema de marcas geométricas que las familias pescadoras usaron durante generaciones para identificar barcos y propiedades, y que aún se ven por el pueblo. A unos 5 km hacia el interior, la Cividade de Terroso es un castro de la Edad del Hierro con murallas circulares y cimientos de casas redondas, de los mejor conservados de la zona."
+      - heading: "Cómo llegar y salir"
+        body: "La línea B del metro une Póvoa de Varzim con Oporto, lo que facilita engancharse aquí al Camino y saltarse el extrarradio por completo, o abandonar si algo se tuerce los primeros días. Hay autobuses por la costa, y el paseo marítimo tiene supermercados, farmacias y cajeros de sobra."
+    faq:
+      - q: "¿Hay albergue de peregrinos en Póvoa de Varzim?"
+        a: "Sí, el Albergue de Peregrinos São José de Ribamar, un albergue parroquial de donativo en el centro con 16 plazas. Solo admite peregrinos con credencial, no acepta reservas y el check-in es de 14:00 a 20:00."
+      - q: "¿Cuánto hay de Vila do Conde a Póvoa de Varzim?"
+        a: "Unos 5 km a pie por la ruta, alrededor de una hora. Los dos pueblos comparten prácticamente el paseo marítimo, y la línea B del metro conecta ambos con Oporto."
+      - q: "¿Paro en Póvoa de Varzim o sigo hasta Esposende?"
+        a: "Sigue si haces etapas normales: Póvoa llega a solo 5 km del inicio. Para aquí si el primer día largo desde Oporto te dolió, si Vila do Conde estaba lleno o si quieres un día corto. Saliendo de Póvoa, la etapa hasta Esposende baja de 19 km."
+      - q: "¿Por qué es útil Póvoa de Varzim en agosto?"
+        a: "Es un balneario de masas con varias veces la capacidad de camas de los pueblos del Camino de alrededor, así que suele haber habitación a última hora cuando todo lo demás está reservado. Cuenta con precios de balneario, no de peregrino."
+      - q: "¿Qué hay que ver en Póvoa de Varzim?"
+        a: "El Museu de Etnografia e História y las siglas poveiras, las marcas geométricas con que las familias pescadoras identificaban barcos y propiedades. A unos 5 km hacia el interior, la Cividade de Terroso es un castro de la Edad del Hierro bien conservado. Por lo demás, playas, paseo marítimo y casino."
+    howTo: []
+  pt:
+    metaTitle: "Póvoa de Varzim no Caminho da Costa: albergue, praias e onde dormir"
+    metaDescription: "Póvoa de Varzim para peregrinos do Caminho Português da Costa: o albergue de donativo e o check-in das 14:00 às 20:00, quando parar aqui em vez de Vila do Conde, o que ver e onde dormir."
+    h1: "Póvoa de Varzim"
+    lead: "Cinco quilómetros depois de Vila do Conde e uma vila completamente diferente: uma estância balnear em atividade com quase 12 km de praia, casino e várias vezes a capacidade de camas de qualquer outro sítio do troço. É esta última parte que interessa em agosto."
+    sections:
+      - heading: "Quando parar aqui"
+        body: "💡 A Póvoa aparece a uns 5 km do início da etapa Vila do Conde–Esposende, o que faz dela um sítio estranho para acabar um dia normal e excelente para acabar um dia mau. Para aqui se os 28,4 km desde o Porto te destroçaram, se o albergue de Vila do Conde estava cheio, ou se fazes etapas curtas de propósito. Começar aqui deixa a etapa seguinte em menos de 19 km."
+      - heading: "O albergue"
+        body: "O Albergue de Peregrinos São José de Ribamar é um albergue paroquial de donativo no centro da vila, com 16 camas, aberto apenas a peregrinos com credencial. Não aceita reservas e o check-in é das 14:00 às 20:00 — chega dentro dessa janela ou encontras a porta fechada. Dezasseis camas esgotam depressa no verão, por isso tem alternativa."
+      - heading: "Capacidade quando tudo o resto está cheio"
+        body: "⚠️ É esta a razão prática para saberes que a Póvoa existe. É um destino de férias português de sempre, por isso tem capacidade hoteleira a uma escala que as vilas do Caminho não têm, e costuma haver quarto em cima da hora mesmo em agosto. Vais pagar preço de estância e não de peregrino, mas uma cama ao preço dela ganha a nenhuma cama."
+      - heading: "O que ver"
+        body: "O Museu de Etnografia e História documenta séculos de vida piscatória, incluindo as siglas poveiras — um sistema de marcas geométricas que as famílias de pescadores usaram durante gerações para identificar barcos e bens, e que ainda se veem pela vila. A uns 5 km para o interior, a Cividade de Terroso é um castro da Idade do Ferro com muralhas circulares e alicerces de casas redondas, dos mais bem conservados da região."
+      - heading: "Como chegar e sair"
+        body: "A linha B do metro liga a Póvoa de Varzim ao Porto, o que facilita entrar no Caminho aqui e saltar o subúrbio por completo, ou desistir se algo correr mal nos primeiros dias. Há autocarros pela costa, e a marginal tem supermercados, farmácias e multibancos com fartura."
+    faq:
+      - q: "Há albergue de peregrinos na Póvoa de Varzim?"
+        a: "Sim, o Albergue de Peregrinos São José de Ribamar, um albergue paroquial de donativo no centro com 16 camas. Só aceita peregrinos com credencial, não faz reservas e o check-in é das 14:00 às 20:00."
+      - q: "Qual é a distância de Vila do Conde à Póvoa de Varzim?"
+        a: "Cerca de 5 km a pé pelo trilho, à volta de uma hora. As duas vilas partilham praticamente a marginal, e a linha B do metro liga ambas ao Porto."
+      - q: "Paro na Póvoa de Varzim ou sigo até Esposende?"
+        a: "Segue se fizeres etapas normais: a Póvoa chega a apenas 5 km do início. Para aqui se o primeiro dia longo desde o Porto doeu, se Vila do Conde estava cheio, ou se queres um dia curto. A partir da Póvoa, a etapa até Esposende fica abaixo dos 19 km."
+      - q: "Porque é que a Póvoa de Varzim é útil em agosto?"
+        a: "É uma estância balnear de massas com várias vezes a capacidade de camas das vilas do Caminho em redor, por isso costuma haver quarto em cima da hora quando tudo o resto está esgotado. Conta com preços de estância, não de peregrino."
+      - q: "O que há para ver na Póvoa de Varzim?"
+        a: "O Museu de Etnografia e História e as siglas poveiras, as marcas geométricas com que as famílias de pescadores identificavam barcos e bens. A uns 5 km para o interior, a Cividade de Terroso é um castro da Idade do Ferro bem conservado. De resto, praias, marginal e casino."
+    howTo: []
