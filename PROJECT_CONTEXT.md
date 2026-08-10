@@ -116,7 +116,7 @@ Pages live at:
 
 ### 🟡 Minor Gaps
 
-- [ ] **`site.webmanifest` Missing** — Referenced in `BaseSEO.astro`. Create `/public/site.webmanifest` with `name`, `short_name`, `icons`, `theme_color: "#174d2b"`, `display: "standalone"` for PWA capability.
+- [x] **`site.webmanifest`** — DONE. Exists at `/public/site.webmanifest` (display `minimal-ui`, scope `/`, theme `#174d2b`), linked from `BaseSEO.astro`. The PWA is complete: `public/sw.js` handles network-first navigations, cache-first assets, an `/offline.html` fallback, and a `PRECACHE` message that lets `OfflineSaver.astro` download the whole route up front.
 - [ ] **Root `index.astro` redirect** — `/src/pages/index.astro` currently redirects to `/en/`. Add an HTTP `<meta http-equiv="refresh">` fallback and verify that the 301 redirect is honoured at the CDN/host level for SEO.
 
 ### 🟢 High-Yield Pilgrim Utility Features
