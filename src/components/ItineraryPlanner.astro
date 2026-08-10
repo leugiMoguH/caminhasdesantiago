@@ -25,6 +25,7 @@ const STRINGS = {
     badge: 'Interactive',
     title: 'Itinerary planner',
     intro: 'Pick where you start and how many days you have — we’ll suggest a day-by-day plan across the coastal stages and where to sleep each night.',
+    scope: 'Covers the northern 210 km, Viana do Castelo to Santiago. Walking up from Porto? Those first three stages (about 78 km) are not in the planner yet — plan them separately and start this tool at Viana do Castelo.',
     startLabel: 'Start from',
     daysLabel: 'Days walking',
     btn: 'Build my plan',
@@ -42,6 +43,7 @@ const STRINGS = {
     badge: 'Interactivo',
     title: 'Planificador de itinerario',
     intro: 'Elige desde dónde empiezas y cuántos días tienes — te sugerimos un plan día a día por las etapas de la costa y dónde dormir cada noche.',
+    scope: 'Cubre los 210 km del norte, de Viana do Castelo a Santiago. ¿Subes desde Oporto? Esas tres primeras etapas (unos 78 km) aún no están en el planificador — planifícalas aparte y empieza esta herramienta en Viana do Castelo.',
     startLabel: 'Empezar desde',
     daysLabel: 'Días caminando',
     btn: 'Crear mi plan',
@@ -59,6 +61,7 @@ const STRINGS = {
     badge: 'Interativo',
     title: 'Planeador de itinerário',
     intro: 'Escolhe onde começas e quantos dias tens — sugerimos um plano dia a dia pelas etapas da costa e onde dormir cada noite.',
+    scope: 'Cobre os 210 km do norte, de Viana do Castelo a Santiago. Vens a subir do Porto? Essas três primeiras etapas (cerca de 78 km) ainda não estão no planeador — planeia-as à parte e começa esta ferramenta em Viana do Castelo.',
     startLabel: 'Começar em',
     daysLabel: 'Dias a caminhar',
     btn: 'Criar o meu plano',
@@ -82,7 +85,8 @@ const stayHref = `/${lang}/coastal-camino/where-to-stay/`;
     <span class="text-[10px] font-bold uppercase tracking-widest text-earth-700 bg-earth-100 px-2 py-0.5 rounded-full border border-earth-200">{STRINGS.badge}</span>
   </div>
   <h2 id="ip-heading" class="text-xl font-bold text-forest-900 tracking-tight">{STRINGS.title}</h2>
-  <p class="text-sm text-slate-600 leading-relaxed mt-1 mb-4">{STRINGS.intro}</p>
+  <p class="text-sm text-slate-600 leading-relaxed mt-1 mb-3">{STRINGS.intro}</p>
+  <p class="text-xs text-slate-500 leading-relaxed bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 mb-4">{STRINGS.scope}</p>
 
   <div class="flex flex-col sm:flex-row gap-3 sm:items-end">
     <div class="flex-1">
