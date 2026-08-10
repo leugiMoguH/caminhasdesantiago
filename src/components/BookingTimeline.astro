@@ -1,0 +1,283 @@
+---
+/**
+ * BookingTimeline — "when do I actually need to book?" planner.
+ *
+ * Turns a start date into three dated booking deadlines, counted backwards:
+ *   1. Santiago nights + flights   (hardest to change, so booked first)
+ *   2. The last three stages into Santiago (every route converges there)
+ *   3. The remaining coastal stages
+ *
+ * Lead times switch between a normal year and a Holy Year. 2027 is a Xacobeo
+ * (25 July falls on a Sunday), the busiest Camino year on record is expected,
+ * and the honest lead times roughly double — see logistics/xacobeo-2027.
+ *
+ * Deadlines already in the past render as "book now", which is the whole point:
+ * a pilgrim planning a 2027 July walk in mid-2026 is already late for Santiago.
+ * Inputs persist in localStorage. No backend, no sign-up.
+ */
+import { logisticsPath, whereToStayLpPath } from '../lib/clusterRoutes';
+
+interface Props {
+  lang: 'en' | 'es' | 'pt';
+}
+const { lang } = Astro.props;
+
+/** Months of lead time per season, by year type. Index = JS month (0–11). */
+const CFG = {
+  // Holy Year (2027): demand spikes, especially around the 25 July feast.
+  holy: { peak: 10, shoulder: 7, quiet: 4, winter: 2 },
+  // Any other year.
+  normal: { peak: 4, shoulder: 3, quiet: 2, winter: 1 },
+  // Season band per month index (0 = January).
+  season: [
+    'winter', 'winter', 'winter', 'quiet', 'shoulder', 'shoulder',
+    'peak', 'peak', 'shoulder', 'quiet', 'winter', 'winter',
+  ],
+  holyYear: 2027,
+  // Each milestone's lead as a fraction of the season lead.
+  steps: [
+    { key: 'santiago', factor: 1 },
+    { key: 'final', factor: 0.7 },
+    { key: 'rest', factor: 0.45 },
+  ],
+};
+
+const LINKS = {
+  strategy: logisticsPath(lang, 'booking-strategy'),
+  xacobeo: logisticsPath(lang, 'xacobeo-2027'),
+  stay: whereToStayLpPath(lang),
+};
+
+const STRINGS = {
+  en: {
+    badge: 'Interactive',
+    title: 'When do I need to book?',
+    intro: 'Pick your start date and get three dated deadlines, counted backwards from the day you walk. Lead times double in the 2027 Holy Year — this tool accounts for that.',
+    dateLabel: 'I start walking on',
+    daysLabel: 'Days walking',
+    btn: 'Show my booking deadlines',
+    resultTitle: 'Your booking deadlines',
+    holyBanner: '⚠️ Your walk falls in the 2027 Holy Year (Xacobeo). Expect the busiest Camino on record — these deadlines are already adjusted for it.',
+    holyLink: 'What the Holy Year changes →',
+    overdue: 'Book now',
+    byDate: 'Book by {date}',
+    steps: {
+      santiago: { name: 'Santiago nights + flights', why: 'Hardest to change and first to sell out. Lock your arrival and departure before anything else.' },
+      final: { name: 'The last three stages into Santiago', why: 'Padrón, Teo and the outskirts fill first — every Camino route converges there.' },
+      rest: { name: 'The remaining coastal stages', why: 'More capacity along the coast, so these can wait — but not indefinitely in a Holy Year.' },
+    },
+    ctaStay: 'Compare places to stay on the Coastal route',
+    ctaStrategy: 'Read the full booking strategy',
+    note: 'Municipal albergues never take reservations, so plan the majority of your nights in private albergues, guesthouses or hotels that do.',
+    save: 'Saved on this device.',
+    invalid: 'Pick a start date to see your deadlines.',
+  },
+  es: {
+    badge: 'Interactivo',
+    title: '¿Cuándo tengo que reservar?',
+    intro: 'Elige tu fecha de salida y obtén tres fechas límite, contadas hacia atrás desde el día que caminas. En el Año Santo 2027 los plazos se duplican — esta herramienta ya lo tiene en cuenta.',
+    dateLabel: 'Empiezo a caminar el',
+    daysLabel: 'Días caminando',
+    btn: 'Ver mis fechas límite',
+    resultTitle: 'Tus fechas límite de reserva',
+    holyBanner: '⚠️ Tu camino cae en el Año Santo 2027 (Xacobeo). Se espera el Camino más concurrido de la historia — estas fechas ya están ajustadas.',
+    holyLink: 'Qué cambia el Año Santo →',
+    overdue: 'Reserva ya',
+    byDate: 'Reserva antes de {date}',
+    steps: {
+      santiago: { name: 'Noches en Santiago + vuelos', why: 'Lo más difícil de cambiar y lo primero que se agota. Fija llegada y salida antes que nada.' },
+      final: { name: 'Las tres últimas etapas hasta Santiago', why: 'Padrón, Teo y las afueras se llenan primero — todas las rutas convergen ahí.' },
+      rest: { name: 'Las etapas costeras restantes', why: 'Hay más capacidad en la costa, así que pueden esperar — pero no indefinidamente en Año Santo.' },
+    },
+    ctaStay: 'Comparar alojamientos en la ruta de la Costa',
+    ctaStrategy: 'Leer la estrategia de reserva completa',
+    note: 'Los albergues municipales nunca aceptan reservas, así que planifica la mayoría de las noches en albergues privados, pensiones u hoteles que sí las acepten.',
+    save: 'Guardado en este dispositivo.',
+    invalid: 'Elige una fecha de salida para ver tus plazos.',
+  },
+  pt: {
+    badge: 'Interativo',
+    title: 'Quando é que tenho de reservar?',
+    intro: 'Escolhe a data de partida e recebe três prazos com data, contados para trás a partir do dia em que caminhas. No Ano Santo 2027 os prazos duplicam — esta ferramenta já conta com isso.',
+    dateLabel: 'Começo a caminhar a',
+    daysLabel: 'Dias a caminhar',
+    btn: 'Ver os meus prazos',
+    resultTitle: 'Os teus prazos de reserva',
+    holyBanner: '⚠️ O teu caminho cai no Ano Santo 2027 (Xacobeo). Espera-se o Caminho mais concorrido de sempre — estes prazos já estão ajustados.',
+    holyLink: 'O que muda no Ano Santo →',
+    overdue: 'Reserva já',
+    byDate: 'Reserva até {date}',
+    steps: {
+      santiago: { name: 'Noites em Santiago + voos', why: 'O mais difícil de mudar e o primeiro a esgotar. Fixa chegada e partida antes de tudo o resto.' },
+      final: { name: 'As três últimas etapas até Santiago', why: 'Padrón, Teo e os arredores enchem primeiro — todas as rotas convergem ali.' },
+      rest: { name: 'As restantes etapas costeiras', why: 'Há mais capacidade na costa, por isso podem esperar — mas não indefinidamente num Ano Santo.' },
+    },
+    ctaStay: 'Comparar alojamentos no Caminho da Costa',
+    ctaStrategy: 'Ler a estratégia de reserva completa',
+    note: 'Os albergues municipais nunca aceitam reservas, por isso planeia a maioria das noites em albergues privados, pensões ou hotéis que aceitem.',
+    save: 'Guardado neste dispositivo.',
+    invalid: 'Escolhe uma data de partida para veres os prazos.',
+  },
+}[lang];
+
+const LOCALE = { en: 'en-GB', es: 'es-ES', pt: 'pt-PT' }[lang];
+---
+
+<section aria-labelledby="bt-heading" class="rounded-2xl border border-forest-200 bg-white p-5 sm:p-6 shadow-sm">
+  <div class="flex items-center gap-2 mb-1">
+    <span class="text-[10px] font-bold uppercase tracking-widest text-earth-700 bg-earth-100 px-2 py-0.5 rounded-full border border-earth-200">{STRINGS.badge}</span>
+  </div>
+  <h2 id="bt-heading" class="text-xl font-bold text-forest-900 tracking-tight">{STRINGS.title}</h2>
+  <p class="text-sm text-slate-600 leading-relaxed mt-1 mb-4">{STRINGS.intro}</p>
+
+  <div class="grid sm:grid-cols-2 gap-3">
+    <div>
+      <label for="bt-date" class="block text-xs font-semibold text-forest-900 mb-1.5">{STRINGS.dateLabel}</label>
+      <input type="date" id="bt-date" value="2027-05-15" class="w-full rounded-xl border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 focus:border-forest-500 focus:ring-2 focus:ring-forest-200 focus:outline-none" />
+    </div>
+    <div class="sm:w-32">
+      <label for="bt-days" class="block text-xs font-semibold text-forest-900 mb-1.5">{STRINGS.daysLabel}</label>
+      <input type="number" id="bt-days" min="1" max="30" value="12" class="w-full rounded-xl border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 font-mono focus:border-forest-500 focus:ring-2 focus:ring-forest-200 focus:outline-none" />
+    </div>
+  </div>
+
+  <button type="button" id="bt-go" class="mt-4 inline-flex items-center justify-center rounded-xl bg-forest-700 px-5 py-2.5 text-sm font-bold text-white no-underline hover:bg-forest-800 transition-colors cursor-pointer">{STRINGS.btn}</button>
+
+  <div id="bt-result" class="mt-4" role="status" aria-live="polite"></div>
+</section>
+
+<script define:vars={{ CFG, S: STRINGS, LINKS, LOCALE }}>
+  (function () {
+    var dateEl = document.getElementById('bt-date');
+    var daysEl = document.getElementById('bt-days');
+    var goEl = document.getElementById('bt-go');
+    var out = document.getElementById('bt-result');
+    if (!dateEl || !daysEl || !goEl || !out) return;
+    var KEY = 'wtsg-booking-timeline';
+
+    function esc(s) {
+      return String(s).replace(/[&<>"]/g, function (c) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+      });
+    }
+
+    /** Subtract whole + fractional months, clamping day-of-month overflow. */
+    function minusMonths(date, months) {
+      var whole = Math.floor(months);
+      var d = new Date(date.getTime());
+      var day = d.getDate();
+      d.setDate(1);
+      d.setMonth(d.getMonth() - whole);
+      var last = new Date(d.getFullYear(), d.getMonth() + 1, 0).getDate();
+      d.setDate(Math.min(day, last));
+      var remainder = months - whole;
+      if (remainder > 0) d.setDate(d.getDate() - Math.round(remainder * 30));
+      return d;
+    }
+
+    function fmt(d) {
+      return d.toLocaleDateString(LOCALE, { year: 'numeric', month: 'long' });
+    }
+
+    /** Does the trip touch the Holy Year at any point? */
+    function touchesHolyYear(start, days) {
+      var end = new Date(start.getTime());
+      end.setDate(end.getDate() + days);
+      return start.getFullYear() === CFG.holyYear || end.getFullYear() === CFG.holyYear;
+    }
+
+    function run() {
+      var raw = dateEl.value;
+      if (!raw) {
+        out.innerHTML = '<p class="text-sm text-slate-500">' + esc(S.invalid) + '</p>';
+        return null;
+      }
+      var parts = raw.split('-');
+      var start = new Date(Number(parts[0]), Number(parts[1]) - 1, Number(parts[2]));
+      if (isNaN(start.getTime())) {
+        out.innerHTML = '<p class="text-sm text-slate-500">' + esc(S.invalid) + '</p>';
+        return null;
+      }
+      var days = Math.max(1, Math.min(30, parseInt(daysEl.value, 10) || 1));
+      var holy = touchesHolyYear(start, days);
+      var band = CFG.season[start.getMonth()];
+      var lead = (holy ? CFG.holy : CFG.normal)[band];
+      var today = new Date();
+      today.setHours(0, 0, 0, 0);
+
+      var rows = CFG.steps.map(function (step) {
+        var due = minusMonths(start, lead * step.factor);
+        return { key: step.key, due: due, late: due < today, copy: S.steps[step.key] };
+      });
+
+      try {
+        localStorage.setItem(KEY, JSON.stringify({ date: raw, days: days }));
+      } catch (e) {}
+
+      var html = '<div class="rounded-xl border border-forest-200 bg-forest-50 p-4">';
+      html += '<p class="text-xs font-bold uppercase tracking-wider text-forest-900 mb-3">' + esc(S.resultTitle) + '</p>';
+
+      if (holy) {
+        html +=
+          '<div class="rounded-lg border border-earth-300 bg-earth-50 p-3 mb-3">' +
+          '<p class="text-sm text-earth-900 leading-relaxed">' + esc(S.holyBanner) + '</p>' +
+          '<a href="' + esc(LINKS.xacobeo) + '" class="inline-block mt-1.5 text-sm font-bold text-forest-800 underline">' + esc(S.holyLink) + '</a>' +
+          '</div>';
+      }
+
+      html += '<ol class="space-y-3">';
+      rows.forEach(function (r, i) {
+        var badge = r.late
+          ? '<span class="inline-block rounded-full bg-red-100 border border-red-200 px-2 py-0.5 text-[11px] font-bold uppercase tracking-wide text-red-800">' + esc(S.overdue) + '</span>'
+          : '<span class="inline-block rounded-full bg-white border border-forest-200 px-2 py-0.5 text-[11px] font-bold text-forest-800">' + esc(S.byDate.replace('{date}', fmt(r.due))) + '</span>';
+        html +=
+          '<li class="flex gap-3">' +
+          '<span class="flex-none mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-forest-700 text-xs font-bold text-white">' + (i + 1) + '</span>' +
+          '<div>' +
+          '<p class="text-sm font-bold text-forest-900">' + esc(r.copy.name) + '</p>' +
+          '<p class="mt-0.5">' + badge + '</p>' +
+          '<p class="text-xs text-slate-600 leading-relaxed mt-1">' + esc(r.copy.why) + '</p>' +
+          '</div></li>';
+      });
+      html += '</ol>';
+
+      html +=
+        '<div class="mt-4 flex flex-col sm:flex-row gap-2">' +
+        '<a href="' + esc(LINKS.stay) + '" class="inline-flex items-center justify-center rounded-xl bg-forest-700 px-4 py-2.5 text-sm font-bold text-white no-underline hover:bg-forest-800 transition-colors">' + esc(S.ctaStay) + '</a>' +
+        '<a href="' + esc(LINKS.strategy) + '" class="inline-flex items-center justify-center rounded-xl border border-forest-300 bg-white px-4 py-2.5 text-sm font-bold text-forest-800 no-underline hover:bg-forest-50 transition-colors">' + esc(S.ctaStrategy) + '</a>' +
+        '</div>';
+
+      html += '<p class="text-xs text-slate-500 mt-3">' + esc(S.note) + '</p>';
+      html += '<p class="text-[11px] text-slate-400 mt-2">' + esc(S.save) + '</p>';
+      html += '</div>';
+      out.innerHTML = html;
+
+      return { holy: holy, band: band, lead: lead, days: days, overdue: rows.filter(function (r) { return r.late; }).length };
+    }
+
+    // Restore saved inputs.
+    try {
+      var saved = JSON.parse(localStorage.getItem(KEY) || 'null');
+      if (saved) {
+        if (saved.date) dateEl.value = saved.date;
+        if (saved.days) daysEl.value = String(saved.days);
+      }
+    } catch (e) {}
+
+    goEl.addEventListener('click', function () {
+      var res = run();
+      if (!res) return;
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { window.dataLayer.push(arguments); }
+      gtag('event', 'booking_timeline_planned', {
+        holy_year: res.holy,
+        season: res.band,
+        lead_months: res.lead,
+        days: res.days,
+        deadlines_overdue: res.overdue,
+      });
+    });
+
+    run();
+  })();
+</script>
