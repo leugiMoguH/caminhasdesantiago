@@ -27,6 +27,7 @@ const STATIC_GROUPS = [
   { en: '/en/caminha/vila-praia-de-ancora/', es: '/es/caminha/vila-praia-de-ancora/', pt: '/pt/caminha/vila-praia-de-ancora/' },
   { en: '/en/privacy-policy/',              es: '/es/politica-de-privacidad/',     pt: '/pt/politica-de-privacidade/' },
   { en: '/en/about/',                       es: '/es/sobre/',                      pt: '/pt/sobre/' },
+  { en: '/en/caminha-ferry-status/',        es: '/es/caminha-ferry-status/',       pt: '/pt/caminha-ferry-status/' },
   // Coastal cluster HUB (static index page, not a collection entry).
   { en: '/en/caminho-da-costa/',            es: '/es/caminho-da-costa/',           pt: '/pt/caminho-da-costa/' },
   // Comparison / commercial-intent hub pages (static, identical slugs per lang).
@@ -106,7 +107,8 @@ export default defineConfig({
       },
       filter: (page) =>
         page !== 'https://waytosantiagoguide.com/' &&
-        page !== 'https://waytosantiagoguide.com/en/sitemap/' &&
+        // HTML sitemap is for readers, not crawlers — all three languages out.
+        !page.includes('/sitemap/') &&
         // best-albergues/* now 301-redirect to destino/* — keep redirect URLs out of the sitemap
         !page.includes('/best-albergues/') &&
         // noindex paid-traffic landing pages (EN/ES/PT) — keep out of sitemap/SEO graph
