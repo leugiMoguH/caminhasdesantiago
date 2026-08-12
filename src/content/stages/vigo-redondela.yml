@@ -10,9 +10,13 @@ prevSlug: baiona-vigo
 nextSlug: redondela-pontevedra
 townSlugs: []
 logisticsSlugs: []
+# Beds re-verified 2026-08-12: Casa da Torre is a Xunta public albergue, not
+# municipal (Praza de Ribadavia, ~10 EUR); the parish albergue closes
+# Nov-Mar; A Marisma is a hostal, not an albergue. Route unchanged.
 sourceVerified: true
-lastVerified: "2026-06-15"
+lastVerified: "2026-08-12"
 sources:
+  - https://www.gronze.com/galicia/pontevedra/redondela
   - https://stingynomads.com/portuguese-coastal-camino-stages/
   - https://thenwewalked.com/vigo-to-redondela-camino-portuguese-coastal/
   - https://www.caminodesantiago.gal/en/make-plans/the-ways/portuguese-way/stage-redondela-pontevedra
@@ -32,7 +36,7 @@ i18n:
       - heading: "Arriving in Redondela"
         body: "Redondela is the historic meeting point of the two main Portuguese routes: pilgrims who walked the Coastal Route and those who came inland on the Central Camino from Tui converge here, so from this stage on the path is busier all the way to Santiago. The town is known for its two great railway viaducts striding over the rooftops. It has a full set of services and a strong choice of pilgrim beds, making it a natural and popular overnight."
       - heading: "Where to sleep and eat"
-        body: "Redondela has several pilgrim albergues. The municipal Albergue de Peregrinos Casa da Torre occupies a 16th-century tower house in the centre; the Albergue Parroquial Santiago Apóstol offers bunks, a kitchen and a garden; and there are private options such as A Marisma, which is highly rated and books up quickly. Hostales and guesthouses fill out the range. The town has plenty of bars and restaurants — and because the route is busier from here, it is worth booking a bed ahead in season rather than arriving late."
+        body: "Redondela has several pilgrim albergues. The cheapest bed is the public Casa da Torre, run by the Xunta in a 16th-century tower house on the Praza de Ribadavia, at about €10; the parish albergue Santiago Apóstol has bunks, a kitchen and a garden but closes from November to March; and private albergues such as A Casa da Herba and A Conserveira fill the middle of the range at roughly €16–21. A Marisma is a hostal rather than an albergue — more comfort, from about €14 — and books up quickly. The town has plenty of bars and restaurants — and because the route is busier from here, it is worth booking a bed ahead in season rather than arriving late."
       - heading: "Stage logistics at a glance"
         body: "Distance about 16.6 km; difficulty moderate but short, with one gradual climb; four hours or less for most. Cafés and the Rego Fondón picnic spot break the trail, so resupply is easy. From Redondela the Coastal and Central routes are one; the next stage to Pontevedra (about 19.6 km) crosses the historic Ponte Sampaio. Book ahead from here on, as pilgrim numbers rise sharply after the junction."
     faq:
@@ -63,7 +67,7 @@ i18n:
       - heading: "La llegada a Redondela"
         body: "Redondela es el histórico punto de encuentro de las dos rutas portuguesas principales: los peregrinos que hicieron la Ruta de la Costa y los que vinieron por el interior por el Camino Central desde Tui convergen aquí, así que a partir de esta etapa el camino va más concurrido hasta Santiago. El pueblo es conocido por sus dos grandes viaductos de ferrocarril que cruzan sobre los tejados. Tiene todos los servicios y buena oferta de camas de peregrino, lo que lo hace una parada natural y popular."
       - heading: "Dónde dormir y comer"
-        body: "Redondela tiene varios albergues de peregrinos. El municipal Albergue de Peregrinos Casa da Torre ocupa una casa torre del siglo XVI en el centro; el Albergue Parroquial Santiago Apóstol ofrece literas, cocina y jardín; y hay opciones privadas como A Marisma, muy valorada y que se llena rápido. Hostales y pensiones completan la oferta. El pueblo tiene muchos bares y restaurantes — y como la ruta va más concurrida desde aquí, conviene reservar cama con antelación en temporada en vez de llegar tarde."
+        body: "Redondela tiene varios albergues de peregrinos. La cama más barata es la del albergue público Casa da Torre, gestionado por la Xunta en una casa torre del siglo XVI en la Praza de Ribadavia, por unos 10 €; el albergue parroquial Santiago Apóstol tiene literas, cocina y jardín pero cierra de noviembre a marzo; y albergues privados como A Casa da Herba y A Conserveira cubren la franja media, en torno a 16–21 €. A Marisma es un hostal más que un albergue — más comodidad, desde unos 14 € — y se llena rápido. El pueblo tiene muchos bares y restaurantes — y como la ruta va más concurrida desde aquí, conviene reservar cama con antelación en temporada en vez de llegar tarde."
       - heading: "Logística de la etapa de un vistazo"
         body: "Distancia unos 16,6 km; dificultad moderada pero corta, con una subida gradual; cuatro horas o menos para la mayoría. Cafés y la zona de pícnic de Rego Fondón cortan el sendero, así que el reabastecimiento es fácil. Desde Redondela la Costa y la Central son una sola; la siguiente etapa a Pontevedra (unos 19,6 km) cruza el histórico Ponte Sampaio. Reserva con antelación a partir de aquí, pues el número de peregrinos sube mucho tras la unión."
     faq:
@@ -94,7 +98,7 @@ i18n:
       - heading: "A chegada a Redondela"
         body: "Redondela é o histórico ponto de encontro das duas rotas portuguesas principais: os peregrinos que fizeram a Rota da Costa e os que vieram pelo interior pelo Caminho Central desde Tui convergem aqui, por isso a partir desta etapa o caminho fica mais movimentado até Santiago. A vila é conhecida pelos seus dois grandes viadutos de caminho de ferro que cruzam sobre os telhados. Tem todos os serviços e boa oferta de camas de peregrino, o que a torna paragem natural e popular."
       - heading: "Onde dormir e comer"
-        body: "Redondela tem vários albergues de peregrinos. O municipal Albergue de Peregrinos Casa da Torre ocupa uma casa torre do século XVI no centro; o Albergue Parroquial Santiago Apóstol oferece camaratas, cozinha e jardim; e há opções privadas como A Marisma, muito bem avaliada e que enche depressa. Hostais e pensões completam a oferta. A vila tem muitos bares e restaurantes — e como a rota fica mais movimentada a partir daqui, vale a pena reservar cama com antecedência na época em vez de chegar tarde."
+        body: "Redondela tem vários albergues de peregrinos. A cama mais barata é a do albergue público Casa da Torre, gerido pela Xunta numa casa torre do século XVI na Praza de Ribadavia, por cerca de €10; o albergue paroquial Santiago Apóstol tem camaratas, cozinha e jardim mas fecha de novembro a março; e albergues privados como A Casa da Herba e A Conserveira cobrem a faixa intermédia, à volta de €16–21. O A Marisma é um hostal mais do que um albergue — mais conforto, desde cerca de €14 — e enche depressa. A vila tem muitos bares e restaurantes — e como a rota fica mais movimentada a partir daqui, vale a pena reservar cama com antecedência na época em vez de chegar tarde."
       - heading: "Logística da etapa em resumo"
         body: "Distância cerca de 16,6 km; dificuldade moderada mas curta, com uma subida gradual; quatro horas ou menos para a maioria. Cafés e a zona de piquenique de Rego Fondón cortam o trilho, por isso o reabastecimento é fácil. Desde Redondela a Costa e a Central são uma só; a etapa seguinte até Pontevedra (cerca de 19,6 km) cruza o histórico Ponte Sampaio. Reserve com antecedência a partir daqui, pois o número de peregrinos sobe muito depois da junção."
     faq:

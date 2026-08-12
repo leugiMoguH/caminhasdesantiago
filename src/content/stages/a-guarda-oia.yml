@@ -11,9 +11,15 @@ nextSlug: oia-baiona
 townSlugs:
   - a-guarda
 logisticsSlugs: []
+# Beds re-verified 2026-08-12: Oia village itself has no albergue — the two
+# pilgrim albergues are in Viladesuso (Alojamiento Camino Portugues Oia,
+# 28 beds, year-round; Albergue da Estrela, 15 beds). La Cala still closed.
+# Distance and ascent unchanged.
 sourceVerified: true
-lastVerified: "2026-06-15"
+lastVerified: "2026-08-12"
 sources:
+  - https://www.gronze.com/galicia/pontevedra/viladesuso/alojamiento-camino-portugues-oia
+  - https://alberguedaestrela.com/
   - https://stingynomads.com/portuguese-coastal-camino-stages/
   - https://thenwewalked.com/a-guarda-to-oia-camino-portuguese-coastal/
   - https://www.elcaminoconcorreos.com/en/camino-portugues-the-portuguese-way/a-guarda-oia
@@ -35,7 +41,7 @@ i18n:
       - heading: "Arriving in Oia"
         body: "Oia is a small fishing village wrapped around its harbour and the monastery, not a town — expect a handful of bars and pensions rather than a full service centre. It makes a quiet, atmospheric overnight if you want to keep the stages short, but beds are limited and fill in high season, so book ahead. Many pilgrims instead pause in Oia for a meal and a look at the monastery and walk on toward Baiona the same day."
       - heading: "Where to sleep and eat"
-        body: "Accommodation in Oia is limited and seasonal. The pilgrim option is the Albergue Caminho Portugues; for a private room, Casa Puertas (a casa rural) and Hotel A Raiña are the names that recur in current guides. The cliffside La Cala inn has closed permanently — ignore older listings that still show it. For food, the café at Portecelo is the dependable mid-stage stop, and Oia itself has a few harbour bars. Because supplies are thin, treat A Guarda as your real resupply point before setting out. Always confirm a bed the day before in high season rather than arriving on spec."
+        body: "Accommodation around Oia is limited and seasonal, and the pilgrim beds are not in Oia itself but in Viladesuso, about 2 km before it: the Alojamiento Camino Portugués Oia (28 beds, open all year) and the Albergue da Estrela (15 beds, around €20 in season). For a private room, Casa Puertas (a casa rural) and Hotel A Raíña are the names that recur in current guides. The cliffside La Cala inn has closed permanently — ignore older listings that still show it. For food, the café at Portecelo is the dependable mid-stage stop, and Oia itself has a few harbour bars. Because supplies are thin, treat A Guarda as your real resupply point before setting out. Always confirm a bed the day before in high season rather than arriving on spec."
       - heading: "Stage logistics at a glance"
         body: "Distance about 14.3 km; difficulty easy; roughly three to four hours walking. No bridge, ferry or boat on this stage — it is all on foot. Water and food are scarce between A Guarda and Portecelo, so start stocked. If Oia is full or you still have daylight, the next stage on to Baiona (about 18 km) can be linked, but that makes a long, exposed day of roughly 32 km — most walkers prefer to sleep in Oia or Viladesuso and keep the coastline enjoyable."
     faq:
@@ -68,7 +74,7 @@ i18n:
       - heading: "La llegada a Oia"
         body: "Oia es una pequeña aldea de pescadores en torno a su puerto y al monasterio, no un pueblo — espera un puñado de bares y pensiones, no un centro de servicios completo. Es una parada tranquila y con encanto si quieres etapas cortas, pero las camas son limitadas y se llenan en temporada alta, así que reserva con antelación. Muchos peregrinos hacen en Oia una pausa para comer y ver el monasterio y siguen hacia Baiona el mismo día."
       - heading: "Dónde dormir y comer"
-        body: "El alojamiento en Oia es limitado y estacional. La opción de peregrino es el Albergue Caminho Portugues; para habitación privada, Casa Puertas (una casa rural) y el Hotel A Raiña son los nombres que se repiten en las guías actuales. El antiguo albergue La Cala, sobre el acantilado, ha cerrado de forma permanente — ignora los listados antiguos que aún lo muestran. Para comer, el café de Portecelo es la parada intermedia fiable, y la propia Oia tiene unos pocos bares en el puerto. Como los suministros escasean, trata A Guarda como tu verdadero punto de reabastecimiento antes de salir. Confirma siempre la cama la víspera en temporada alta en vez de llegar a la aventura."
+        body: "El alojamiento en torno a Oia es limitado y estacional, y las camas de peregrino no están en Oia sino en Viladesuso, unos 2 km antes: el Alojamiento Camino Portugués Oia (28 plazas, abierto todo el año) y el Albergue da Estrela (15 plazas, unos 20 € en temporada). Para habitación privada, Casa Puertas (una casa rural) y el Hotel A Raíña son los nombres que se repiten en las guías actuales. El antiguo albergue La Cala, sobre el acantilado, ha cerrado de forma permanente — ignora los listados antiguos que aún lo muestran. Para comer, el café de Portecelo es la parada intermedia fiable, y la propia Oia tiene unos pocos bares en el puerto. Como los suministros escasean, trata A Guarda como tu verdadero punto de reabastecimiento antes de salir. Confirma siempre la cama la víspera en temporada alta en vez de llegar a la aventura."
       - heading: "Logística de la etapa de un vistazo"
         body: "Distancia unos 14,3 km; dificultad fácil; unas tres o cuatro horas de caminata. No hay puente, ferry ni barco en esta etapa — todo es a pie. El agua y la comida escasean entre A Guarda y Portecelo, así que sal con provisiones. Si Oia está llena o aún tienes luz, la siguiente etapa hasta Baiona (unos 18 km) se puede encadenar, pero eso hace un día largo y expuesto de unos 32 km — la mayoría prefiere dormir en Oia o Viladesuso y mantener la costa disfrutable."
     faq:
@@ -101,7 +107,7 @@ i18n:
       - heading: "A chegada a Oia"
         body: "Oia é uma pequena aldeia de pescadores em torno do porto e do mosteiro, não uma vila — conte com um punhado de bares e pensões, não um centro de serviços completo. É uma paragem tranquila e cheia de atmosfera se quiser etapas curtas, mas as camas são limitadas e enchem na época alta, por isso reserve com antecedência. Muitos peregrinos fazem em Oia uma pausa para comer e ver o mosteiro e seguem para Baiona no mesmo dia."
       - heading: "Onde dormir e comer"
-        body: "O alojamento em Oia é limitado e sazonal. A opção de peregrino é o Albergue Caminho Portugues; para quarto privado, a Casa Puertas (uma casa rural) e o Hotel A Raiña são os nomes que se repetem nos guias atuais. O antigo albergue La Cala, sobre a falésia, fechou em definitivo — ignore as listagens antigas que ainda o mostram. Para comer, o café de Portecelo é a paragem intermédia fiável, e a própria Oia tem alguns bares no porto. Como os abastecimentos são escassos, trate A Guarda como o seu verdadeiro ponto de reabastecimento antes de partir. Confirme sempre a cama na véspera na época alta, em vez de chegar à aventura."
+        body: "O alojamento em torno de Oia é limitado e sazonal, e as camas de peregrino não estão em Oia mas em Viladesuso, cerca de 2 km antes: o Alojamiento Camino Portugués Oia (28 camas, aberto todo o ano) e o Albergue da Estrela (15 camas, cerca de €20 na época). Para quarto privado, a Casa Puertas (uma casa rural) e o Hotel A Raíña são os nomes que se repetem nos guias atuais. O antigo albergue La Cala, sobre a falésia, fechou em definitivo — ignore as listagens antigas que ainda o mostram. Para comer, o café de Portecelo é a paragem intermédia fiável, e a própria Oia tem alguns bares no porto. Como os abastecimentos escasseiam, trate A Guarda como o seu verdadeiro ponto de reabastecimento antes de partir. Confirme sempre a cama na véspera na época alta em vez de chegar à sorte."
       - heading: "Logística da etapa em resumo"
         body: "Distância cerca de 14,3 km; dificuldade fácil; cerca de três a quatro horas de caminhada. Não há ponte, ferry nem barco nesta etapa — é tudo a pé. A água e a comida escasseiam entre A Guarda e Portecelo, por isso parta abastecido. Se Oia estiver cheia ou ainda tiver luz, a etapa seguinte até Baiona (cerca de 18 km) pode ser encadeada, mas isso faz um dia longo e exposto de cerca de 32 km — a maioria prefere dormir em Oia ou Viladesuso e manter a costa agradável."
     faq:

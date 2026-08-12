@@ -10,9 +10,14 @@ prevSlug: pontevedra-caldas-de-reis
 nextSlug: padron-santiago
 townSlugs: []
 logisticsSlugs: []
+# Beds re-verified 2026-08-12: Albergue Murgadan has 38 beds, 18-25 EUR, open
+# 1 Mar-15 Nov. The Herbon donativo albergue has 30 beds, no reservations,
+# credential required, 1 Apr-31 Oct. Route and distance unchanged.
 sourceVerified: true
-lastVerified: "2026-06-15"
+lastVerified: "2026-08-12"
 sources:
+  - https://www.gronze.com/galicia/coruna/padron/albergue-murgadan
+  - https://www.gronze.com/galicia/coruna/herbon/hospital-peregrinos-san-antonio-herbon
   - https://thenwewalked.com/caldas-de-reis-to-padron-camino-portuguese/
   - https://www.pilgrim.es/en/portuguese-way/stage-23-pontevedra-caldas-de-reis/
   - https://stingynomads.com/portuguese-coastal-camino-stages/
@@ -32,7 +37,7 @@ i18n:
       - heading: "Arriving in Padrón"
         body: "Padrón is steeped in the founding legend of the Camino. According to tradition, the disciples of Saint James brought his body by sea to Iria Flavia (old Padrón) and moored their stone boat to a rock called the Pedrón — now kept beneath the altar of the church of Santiago in the town, and the source of Padrón's name. The town is also famous for its small green peppers and for its riverside gardens and market. It is a fitting, story-rich place to spend the last night before Santiago."
       - heading: "Where to sleep and eat"
-        body: "Padrón has a good range of pilgrim beds — a budget albergue with dorms and private rooms, plus guesthouses, apartments and hotels (names recurring in current guides include Albergue Murgadán, Villa Galicia, Casa dos Cantares and the Hotel Chef Rivera, known for its restaurant). For food, look for the local pementos de Padrón — fried green peppers, most of them mild, the occasional one hot. Book ahead in season, as Padrón is a popular last stop before the city."
+        body: "Padrón has a good range of pilgrim beds. Albergue Murgadán, beside the church of Santiago in the old centre, is the central budget option — 38 places, bunks from about €18 and three private rooms, open 1 March to 15 November. Guesthouses, apartments and hotels round it out (Villa Galicia, Casa dos Cantares and the Hotel Chef Rivera, known for its restaurant). If you take the Herbón detour, the Franciscan monastery's donativo albergue has 30 beds, takes no reservations, requires a credential and opens 1 April to 31 October. For food, look for the local pementos de Padrón — fried green peppers, most of them mild, the occasional one hot. Book ahead in season, as Padrón is a popular last stop before the city."
       - heading: "Stage logistics at a glance"
         body: "Distance about 18.9 km; difficulty moderate but easy underfoot; five hours or so for most. The main optional decision is the Herbón monastery detour (about 3 km extra) with its donativo albergue. Services are good in Padrón at the end. The final stage, Padrón to Santiago (about 24–25 km), reaches the cathedral and the Praza do Obradoiro."
     faq:
@@ -63,7 +68,7 @@ i18n:
       - heading: "La llegada a Padrón"
         body: "Padrón está impregnada de la leyenda fundacional del Camino. Según la tradición, los discípulos de Santiago trajeron su cuerpo por mar a Iria Flavia (la antigua Padrón) y amarraron su barca de piedra a una roca llamada el Pedrón — hoy guardada bajo el altar de la iglesia de Santiago de la villa, y origen del nombre de Padrón. La villa es también famosa por sus pequeños pimientos verdes y por sus jardines y mercado junto al río. Es un lugar apropiado y lleno de historia para pasar la última noche antes de Santiago."
       - heading: "Dónde dormir y comer"
-        body: "Padrón tiene buena oferta de camas de peregrino — un albergue económico con literas y habitaciones privadas, además de pensiones, apartamentos y hoteles (nombres que se repiten en las guías actuales: Albergue Murgadán, Villa Galicia, Casa dos Cantares y el Hotel Chef Rivera, conocido por su restaurante). Para comer, busca los pementos de Padrón — pimientos verdes fritos, la mayoría suaves, alguno picante. Reserva con antelación en temporada, pues Padrón es una última parada popular antes de la ciudad."
+        body: "Padrón tiene buena oferta de camas de peregrino. El Albergue Murgadán, junto a la iglesia de Santiago en el casco antiguo, es la opción económica céntrica — 38 plazas, literas desde unos 18 € y tres habitaciones privadas, abierto del 1 de marzo al 15 de noviembre. Pensiones, apartamentos y hoteles completan la oferta (Villa Galicia, Casa dos Cantares y el Hotel Chef Rivera, conocido por su restaurante). Si haces el desvío de Herbón, el albergue de donativo del convento franciscano tiene 30 plazas, no admite reservas, exige credencial y abre del 1 de abril al 31 de octubre. Para comer, busca los pementos de Padrón — pimientos verdes fritos, la mayoría suaves, alguno picante. Reserva con antelación en temporada, pues Padrón es una última parada popular antes de la ciudad."
       - heading: "Logística de la etapa de un vistazo"
         body: "Distancia unos 18,9 km; dificultad moderada pero cómoda de firme; unas cinco horas para la mayoría. La principal decisión opcional es el desvío al monasterio de Herbón (unos 3 km extra) con su albergue de donativo. Los servicios son buenos en Padrón al final. La última etapa, Padrón a Santiago (unos 24–25 km), llega a la catedral y a la Praza do Obradoiro."
     faq:
@@ -94,7 +99,7 @@ i18n:
       - heading: "A chegada a Padrón"
         body: "Padrón está impregnada da lenda fundadora do Caminho. Segundo a tradição, os discípulos de Santiago trouxeram o seu corpo por mar até Iria Flavia (a antiga Padrón) e amarraram a sua barca de pedra a uma rocha chamada o Pedrón — hoje guardada sob o altar da igreja de Santiago da vila, e origem do nome de Padrón. A vila é também famosa pelos seus pequenos pimentos verdes e pelos seus jardins e mercado junto ao rio. É um lugar apropriado e cheio de história para passar a última noite antes de Santiago."
       - heading: "Onde dormir e comer"
-        body: "Padrón tem boa oferta de camas de peregrino — um albergue económico com camaratas e quartos privados, além de pensões, apartamentos e hotéis (nomes que se repetem nos guias atuais: Albergue Murgadán, Villa Galicia, Casa dos Cantares e o Hotel Chef Rivera, conhecido pelo restaurante). Para comer, procure os pementos de Padrón — pimentos verdes fritos, a maioria suaves, algum picante. Reserve com antecedência na época, pois Padrón é uma última paragem popular antes da cidade."
+        body: "Padrón tem boa oferta de camas de peregrino. O Albergue Murgadán, junto à igreja de Santiago no centro histórico, é a opção económica central — 38 lugares, camaratas desde cerca de €18 e três quartos privados, aberto de 1 de março a 15 de novembro. Pensões, apartamentos e hotéis completam a oferta (Villa Galicia, Casa dos Cantares e o Hotel Chef Rivera, conhecido pelo restaurante). Se fizer o desvio de Herbón, o albergue de donativo do convento franciscano tem 30 lugares, não aceita reservas, exige credencial e abre de 1 de abril a 31 de outubro. Para comer, procure os pementos de Padrón — pimentos verdes fritos, a maioria suaves, algum picante. Reserve com antecedência na época, pois Padrón é uma última paragem popular antes da cidade."
       - heading: "Logística da etapa em resumo"
         body: "Distância cerca de 18,9 km; dificuldade moderada mas confortável de piso; cerca de cinco horas para a maioria. A principal decisão opcional é o desvio ao mosteiro de Herbón (cerca de 3 km extra) com o seu albergue de donativo. Os serviços são bons em Padrón no fim. A última etapa, Padrón a Santiago (cerca de 24–25 km), chega à catedral e à Praza do Obradoiro."
     faq:

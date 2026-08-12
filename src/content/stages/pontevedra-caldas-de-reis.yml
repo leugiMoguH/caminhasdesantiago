@@ -11,9 +11,14 @@ nextSlug: caldas-de-reis-padron
 townSlugs: []
 logisticsSlugs:
   - variante-espiritual
+# Beds re-verified 2026-08-12: Caldas has no Xunta albergue. The budget bed is
+# La Posada de Dona Urraca (town-hall owned, privately run, 50 beds, ~12 EUR);
+# As Pozas Termais is a 5-bed private albergue at ~25 EUR, Feb-Oct. The
+# unverifiable "Pension de Peregrinos La Moderna" was dropped.
 sourceVerified: true
-lastVerified: "2026-06-15"
+lastVerified: "2026-08-12"
 sources:
+  - https://www.gronze.com/galicia/pontevedra/caldas-reis
   - https://thenwewalked.com/pontevedra-to-caldas-de-reis-camino-portuguese/
   - https://www.pilgrim.es/en/portuguese-way/stage-23-pontevedra-caldas-de-reis/
   - https://stingynomads.com/portuguese-coastal-camino-stages/
@@ -33,7 +38,7 @@ i18n:
       - heading: "Arriving in Caldas de Reis"
         body: "Caldas de Reis is a small spa town built on hot springs that have been used since Roman times — its name literally means the baths of the kings. There is a free public outdoor spot to soak your feet in warm spring water, a welcome ritual at the end of the day; note that the ornamental town fountains are not for bathing, and locals are protective of them. The town has a relaxed riverside centre with bars and restaurants and is a pleasant overnight before the run to Padrón."
       - heading: "Where to sleep and eat"
-        body: "Caldas de Reis has a good spread of pilgrim accommodation, from a public-style albergue to guesthouses and spa hotels — names that recur in current guides include the Albergue As Pozas Termais, the Pensión de Peregrinos La Moderna, and spa hotels such as the Hotel Balneario Dávila. Book ahead in high season, as it is a popular stop. The riverside has bars and restaurants for an evening meal; stock up for the next stage, which passes through smaller villages."
+        body: "Caldas de Reis has a good spread of pilgrim accommodation, but no Xunta albergue: the cheapest bed is La Posada de Doña Urraca, owned by the town hall and privately run, with 50 places at around €12. Private albergues fill in around it — Albergue de Caldas de Reis Urraca, A Queimada, Albor and the small As Pozas Termais — at roughly €14–25, and spa hotels such as the Hotel Balneario Dávila sit at the top end. Book ahead in high season, as it is a popular stop. The riverside has bars and restaurants for an evening meal; stock up for the next stage, which passes through smaller villages."
       - heading: "Stage logistics at a glance"
         body: "Distance about 21 km; difficulty moderate, mostly for length; gentle gradients on a mix of tarmac and forest track; five to six hours for most. The key decision is early: whether to take the multi-day Spiritual Variant at Pontecabras or stay on the main line. The next stage, Caldas de Reis to Padrón (about 18.9 km), brings you to the town of the Pedrón stone."
     faq:
@@ -64,7 +69,7 @@ i18n:
       - heading: "La llegada a Caldas de Reis"
         body: "Caldas de Reis es una pequeña villa balneario sobre aguas termales usadas desde época romana — su nombre significa literalmente los baños de los reyes. Hay un punto público y gratuito al aire libre para remojar los pies en agua termal, un ritual bienvenido al final del día; ten en cuenta que las fuentes ornamentales de la villa no son para baño, y los vecinos las protegen. La villa tiene un relajado centro junto al río con bares y restaurantes y es una grata parada antes del tramo a Padrón."
       - heading: "Dónde dormir y comer"
-        body: "Caldas de Reis tiene una buena oferta de alojamiento de peregrinos, desde un albergue de tipo público hasta pensiones y hoteles balneario — nombres que se repiten en las guías actuales son el Albergue As Pozas Termais, la Pensión de Peregrinos La Moderna y hoteles balneario como el Hotel Balneario Dávila. Reserva con antelación en temporada alta, pues es una parada popular. La orilla del río tiene bares y restaurantes para cenar; abastécete para la siguiente etapa, que pasa por pueblos más pequeños."
+        body: "Caldas de Reis tiene una buena oferta de alojamiento de peregrinos, pero no hay albergue de la Xunta: la cama más barata es La Posada de Doña Urraca, propiedad del ayuntamiento y de gestión privada, con 50 plazas por unos 12 €. Alrededor se reparten los albergues privados — Albergue de Caldas de Reis Urraca, A Queimada, Albor y el pequeño As Pozas Termais — entre unos 14 y 25 €, y hoteles balneario como el Hotel Balneario Dávila ocupan la gama alta. Reserva con antelación en temporada alta, pues es una parada popular. La orilla del río tiene bares y restaurantes para cenar; abastécete para la siguiente etapa, que pasa por pueblos más pequeños."
       - heading: "Logística de la etapa de un vistazo"
         body: "Distancia unos 21 km; dificultad moderada, sobre todo por longitud; pendientes suaves en una mezcla de asfalto y pista de bosque; cinco a seis horas para la mayoría. La decisión clave es temprana: tomar la Variante Espiritual de varios días en Pontecabras o seguir por la línea principal. La siguiente etapa, Caldas de Reis a Padrón (unos 18,9 km), te lleva a la villa de la piedra del Pedrón."
     faq:
@@ -95,7 +100,7 @@ i18n:
       - heading: "A chegada a Caldas de Reis"
         body: "Caldas de Reis é uma pequena vila termal sobre águas usadas desde a época romana — o seu nome significa literalmente os banhos dos reis. Há um ponto público e gratuito ao ar livre para mergulhar os pés em água termal, um ritual bem-vindo no fim do dia; note que as fontes ornamentais da vila não são para banho, e os habitantes protegem-nas. A vila tem um descontraído centro junto ao rio com bares e restaurantes e é uma agradável paragem antes do troço a Padrón."
       - heading: "Onde dormir e comer"
-        body: "Caldas de Reis tem boa oferta de alojamento de peregrinos, de um albergue de tipo público a pensões e hotéis termais — nomes que se repetem nos guias atuais são o Albergue As Pozas Termais, a Pensión de Peregrinos La Moderna e hotéis termais como o Hotel Balneario Dávila. Reserve com antecedência na época alta, pois é uma paragem popular. A margem do rio tem bares e restaurantes para jantar; abasteça-se para a etapa seguinte, que passa por aldeias mais pequenas."
+        body: "Caldas de Reis tem boa oferta de alojamento de peregrinos, mas não há albergue da Xunta: a cama mais barata é La Posada de Doña Urraca, propriedade da câmara e de gestão privada, com 50 lugares por cerca de €12. À volta ficam os albergues privados — Albergue de Caldas de Reis Urraca, A Queimada, Albor e o pequeno As Pozas Termais — entre cerca de €14 e €25, e hotéis termais como o Hotel Balneario Dávila ocupam a gama alta. Reserve com antecedência na época alta, pois é uma paragem popular. A margem do rio tem bares e restaurantes para jantar; abasteça-se para a etapa seguinte, que passa por aldeias mais pequenas."
       - heading: "Logística da etapa em resumo"
         body: "Distância cerca de 21 km; dificuldade moderada, sobretudo por comprimento; declives suaves numa mistura de alcatrão e trilho de floresta; cinco a seis horas para a maioria. A decisão chave é cedo: seguir a Variante Espiritual de vários dias em Pontecabras ou continuar pela linha principal. A etapa seguinte, Caldas de Reis a Padrón (cerca de 18,9 km), leva-o à vila da pedra do Pedrón."
     faq:

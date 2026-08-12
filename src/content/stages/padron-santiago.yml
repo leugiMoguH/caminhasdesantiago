@@ -9,9 +9,14 @@ terrain: "Country lanes, woodland and village roads with rolling gradients and a
 prevSlug: caldas-de-reis-padron
 townSlugs: []
 logisticsSlugs: []
+# Re-verified 2026-08-12: this stage carries no operator or price claims, so the
+# checkable facts are the arrival ones. Pilgrim's Office (Rua das Carretas 33)
+# opens 09:00-19:00 daily except 25 Dec and 1 Jan; Pilgrim's Mass at 07:30,
+# 09:30, 12:00 and 19:30. Distance, ascent and route unchanged.
 sourceVerified: true
-lastVerified: "2026-06-15"
+lastVerified: "2026-08-12"
 sources:
+  - https://oficinadelperegrino.com/ufaq-category/horarios/
   - https://www.pilgrim.es/en/portuguese-way/stage-25-padron-santiago-de-compostela/
   - https://stingynomads.com/portuguese-coastal-camino-stages/
   - https://thenwewalked.com/padron-to-santiago-camino-portuguese/
@@ -31,7 +36,7 @@ i18n:
       - heading: "Arriving in Santiago"
         body: "The route crosses the Sar river by the old bridge at Conxo and climbs through the city, entering the old town through the Porta Faxeira beside the Alameda park. From there the pedestrian streets lead down to the Praza do Obradoiro, the great square in front of the cathedral and the end of the Camino Portugués. Collect your Compostela at the Pilgrim's Office, and aim to catch the Pilgrim's Mass if the timing works — the most fitting close to the walk."
       - heading: "Where to sleep and eat"
-        body: "Santiago is a full city of pilgrims with accommodation at every level, from large albergues to hotels, much of it within walking distance of the cathedral. Beds are plentiful but the most central fill in peak season, so book ahead if you want to be near the Obradoiro. The old town is full of restaurants and tapas bars — celebrate with Galician seafood, pulpo á feira, or a tarta de Santiago. The Pilgrim's Office issues the Compostela to those who qualify."
+        body: "Santiago is a full city of pilgrims with accommodation at every level, from large albergues to hotels, much of it within walking distance of the cathedral. Beds are plentiful but the most central fill in peak season, so book ahead if you want to be near the Obradoiro. The old town is full of restaurants and tapas bars — celebrate with Galician seafood, pulpo á feira, or a tarta de Santiago. The Pilgrim's Office at Rúa das Carretas 33 issues the Compostela to those who qualify and is open daily 09:00–19:00 except 25 December and 1 January; the Pilgrim's Mass is said at 07:30, 09:30, 12:00 and 19:30, and the noon one is by far the busiest."
       - heading: "Stage logistics at a glance"
         body: "Distance about 24.4 km; difficulty moderate for length and rolling gradients; six to seven hours with stops. Services are frequent the whole way, so the priorities are an early start and a steady pace. This is the final stage — the route ends at the Praza do Obradoiro and the cathedral. Remember the Pilgrim's Office for your Compostela and check the day's Pilgrim's Mass time on arrival."
     faq:
@@ -62,7 +67,7 @@ i18n:
       - heading: "La llegada a Santiago"
         body: "La ruta cruza el río Sar por el viejo puente de Conxo y sube por la ciudad, entrando en el casco antiguo por la Porta Faxeira junto al parque de la Alameda. Desde allí las calles peatonales bajan a la Praza do Obradoiro, la gran plaza frente a la catedral y final del Camino Portugués. Recoge tu Compostela en la Oficina del Peregrino y procura llegar a la Misa del Peregrino si el horario lo permite — el cierre más apropiado de la caminata."
       - heading: "Dónde dormir y comer"
-        body: "Santiago es toda una ciudad de peregrinos con alojamiento de todos los niveles, desde grandes albergues hasta hoteles, mucho de ello a poca distancia a pie de la catedral. Las camas abundan, pero las más céntricas se llenan en temporada alta, así que reserva con antelación si quieres estar cerca del Obradoiro. El casco antiguo está lleno de restaurantes y bares de tapas — celebra con marisco gallego, pulpo á feira o una tarta de Santiago. La Oficina del Peregrino expide la Compostela a quienes cumplen los requisitos."
+        body: "Santiago es una ciudad entera de peregrinos, con alojamiento de todos los niveles, desde grandes albergues hasta hoteles, en buena parte a poca distancia a pie de la catedral. Hay camas de sobra, pero las más céntricas se llenan en temporada alta, así que reserva si quieres estar junto al Obradoiro. El casco antiguo está lleno de restaurantes y bares de tapas — celébralo con marisco gallego, pulpo á feira o una tarta de Santiago. La Oficina del Peregrino, en la Rúa das Carretas 33, expide la Compostela a quien cumple los requisitos y abre a diario de 09:00 a 19:00 salvo el 25 de diciembre y el 1 de enero; la Misa del Peregrino se celebra a las 07:30, 09:30, 12:00 y 19:30, y la de mediodía es con diferencia la más concurrida."
       - heading: "Logística de la etapa de un vistazo"
         body: "Distancia unos 24,4 km; dificultad moderada por longitud y desnivel ondulado; seis o siete horas con paradas. Los servicios son frecuentes todo el camino, así que las prioridades son salir temprano y llevar un ritmo constante. Es la última etapa — la ruta acaba en la Praza do Obradoiro y la catedral. Recuerda la Oficina del Peregrino para tu Compostela y consulta el horario de la Misa del Peregrino al llegar."
     faq:
@@ -93,7 +98,7 @@ i18n:
       - heading: "A chegada a Santiago"
         body: "O percurso atravessa o rio Sar pela velha ponte de Conxo e sobe pela cidade, entrando no centro histórico pela Porta Faxeira junto ao parque da Alameda. Dali as ruas pedonais descem à Praza do Obradoiro, a grande praça em frente à catedral e fim do Caminho Português. Recolha a sua Compostela na Oficina do Peregrino e procure chegar à Missa do Peregrino se o horário permitir — o encerramento mais apropriado da caminhada."
       - heading: "Onde dormir e comer"
-        body: "Santiago é toda uma cidade de peregrinos com alojamento de todos os níveis, de grandes albergues a hotéis, muito a curta distância a pé da catedral. As camas abundam, mas as mais centrais enchem na época alta, por isso reserve com antecedência se quiser ficar perto do Obradoiro. O centro histórico está cheio de restaurantes e bares de tapas — celebre com marisco galego, polvo à feira ou uma tarta de Santiago. A Oficina do Peregrino emite a Compostela a quem cumpre os requisitos."
+        body: "Santiago é toda uma cidade de peregrinos, com alojamento de todos os níveis, de grandes albergues a hotéis, muito a curta distância a pé da catedral. As camas abundam, mas as mais centrais enchem na época alta, por isso reserve se quiser ficar junto ao Obradoiro. O centro histórico está cheio de restaurantes e bares de tapas — celebre com marisco galego, polvo à feira ou uma tarta de Santiago. A Oficina do Peregrino, na Rúa das Carretas 33, emite a Compostela a quem cumpre os requisitos e abre diariamente das 09:00 às 19:00 exceto a 25 de dezembro e 1 de janeiro; a Missa do Peregrino celebra-se às 07:30, 09:30, 12:00 e 19:30, e a do meio-dia é de longe a mais concorrida."
       - heading: "Logística da etapa em resumo"
         body: "Distância cerca de 24,4 km; dificuldade moderada por comprimento e desnível ondulado; seis a sete horas com paragens. Os serviços são frequentes todo o caminho, por isso as prioridades são partir cedo e manter um ritmo constante. É a última etapa — o percurso acaba na Praza do Obradoiro e na catedral. Lembre-se da Oficina do Peregrino para a sua Compostela e confirme o horário da Missa do Peregrino à chegada."
     faq:
