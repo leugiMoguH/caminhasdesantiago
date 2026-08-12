@@ -1,5 +1,10 @@
-# Netlify / Cloudflare Pages header format. A static build can't set headers
-# itself — the host applies these. On Vercel, port to vercel.json `headers`.
+# NOT THE LIVE CONFIG. The site is deployed on Vercel, which ignores this file
+# entirely — the headers that actually ship are in /vercel.json at the repo root.
+# This file is kept only so a move back to Netlify or Cloudflare Pages is a
+# one-step change. Any edit here MUST be mirrored in vercel.json or it does
+# nothing in production. (Verified 2026-08-12: before vercel.json existed, the
+# live site sent no CSP, X-Frame-Options, X-Content-Type-Options,
+# Referrer-Policy or Permissions-Policy at all.)
 # script-src includes anrdoezrs.net (CJ Affiliate am.js, loaded post-consent);
 # omitting it would let CSP block the affiliate script. connect-src covers the
 # GA4 regional collection endpoints AND www.qksrv.net — am.js POSTs the page's
