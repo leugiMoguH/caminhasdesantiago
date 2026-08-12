@@ -9,9 +9,12 @@ import yaml from 'js-yaml';
 const SITE_URL = 'https://waytosantiagoguide.com';
 const LANGS = ['en', 'es', 'pt'];
 
-// Static (non-collection) translation groups. EN-only pages (vila-praia-de-ancora,
-// seixas, ferry-status, sitemap) are intentionally ABSENT so they emit NO hreflang
-// in the sitemap — no homepage fallback.
+// Static (non-collection) translation groups. Genuinely EN-only pages
+// (caminha-ferry-status, sitemap) are intentionally ABSENT so they emit NO
+// hreflang in the sitemap — no homepage fallback. seixas and
+// vila-praia-de-ancora used to be EN-only and were listed here as such long
+// after ES and PT versions shipped, which left their <head> hreflang (correct,
+// from MainLayout's PATH_MAP) disagreeing with the XML sitemap (none at all).
 const STATIC_GROUPS = [
   { en: '/en/',                             es: '/es/',                            pt: '/pt/' },
   { en: '/en/caminha-guide/',               es: '/es/guia-de-caminha/',            pt: '/pt/guia-de-caminha/' },
@@ -20,6 +23,8 @@ const STATIC_GROUPS = [
   { en: '/en/caminha/where-to-stay/',       es: '/es/caminha/donde-dormir/',       pt: '/pt/caminha/onde-ficar/' },
   { en: '/en/caminha/ferry-and-logistics/', es: '/es/caminha/ferry-y-logistica/',  pt: '/pt/caminha/ferry-e-logistica/' },
   { en: '/en/caminha/useful-services/',     es: '/es/caminha/servicios-utiles/',   pt: '/pt/caminha/servicos-uteis/' },
+  { en: '/en/caminha/seixas/',               es: '/es/caminha/seixas/',             pt: '/pt/caminha/seixas/' },
+  { en: '/en/caminha/vila-praia-de-ancora/', es: '/es/caminha/vila-praia-de-ancora/', pt: '/pt/caminha/vila-praia-de-ancora/' },
   { en: '/en/privacy-policy/',              es: '/es/politica-de-privacidad/',     pt: '/pt/politica-de-privacidade/' },
   { en: '/en/about/',                       es: '/es/sobre/',                      pt: '/pt/sobre/' },
   // Coastal cluster HUB (static index page, not a collection entry).

@@ -11,7 +11,11 @@
  *   - "warns after 30 days"            → warnIfStale() in src/lib/freshness.ts
  *   - "no paid placements"             → accommodation is ordered by area then
  *     type in the page data, never by commission.
- * Nothing about the author beyond what the site already states is asserted.
+ * Confirmed with the site owner 2026-08-12: he does run the guide alone and
+ * there are no paid placements, so those two statements are his, not inferred.
+ * The page deliberately makes NO claim about how the translations were
+ * produced — they are AI-assisted, so the earlier "not machine translations"
+ * line was false and was removed.
  */
 import { CONTACT_EMAIL } from '../lib/site';
 
@@ -61,7 +65,7 @@ const COPY = {
     errorCta: 'Report a correction',
     langsHeading: 'Languages',
     langsBody:
-      'Everything is published in English, Spanish and Portuguese. The three versions carry the same verified facts; they are not machine translations of each other left to drift.',
+      'The guide is published in English, Spanish and Portuguese. The three versions carry the same verified facts and are updated together — a correction sent in one language is applied to all three.',
   },
   es: {
     breadcrumbHome: 'Inicio',
@@ -103,7 +107,7 @@ const COPY = {
     errorCta: 'Enviar una corrección',
     langsHeading: 'Idiomas',
     langsBody:
-      'Todo se publica en inglés, español y portugués. Las tres versiones llevan los mismos datos verificados; no son traducciones automáticas dejadas a su suerte.',
+      'La guía se publica en inglés, español y portugués. Las tres versiones llevan los mismos datos verificados y se actualizan juntas: una corrección enviada en un idioma se aplica a las tres.',
   },
   pt: {
     breadcrumbHome: 'Início',
@@ -145,7 +149,7 @@ const COPY = {
     errorCta: 'Enviar uma correção',
     langsHeading: 'Idiomas',
     langsBody:
-      'Tudo é publicado em inglês, espanhol e português. As três versões carregam os mesmos factos verificados; não são traduções automáticas deixadas a divergir.',
+      'O guia é publicado em inglês, espanhol e português. As três versões carregam os mesmos factos verificados e são atualizadas em conjunto: uma correção enviada num idioma é aplicada às três.',
   },
 }[lang];
 
