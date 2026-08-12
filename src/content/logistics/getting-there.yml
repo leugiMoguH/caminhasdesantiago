@@ -31,6 +31,8 @@ i18n:
         body: "From Porto Airport (OPO), take the Metro (Line E, violet) toward the city and change to a Linha do Minho train at Porto-Campanhã. Regional buses also serve Viana do Castelo and Caminha from the Porto area."
       - heading: "Where to start walking"
         body: "Start in Viana do Castelo for the classic ~27.8 km coastal stage to Caminha, or start in Caminha itself if you only want the final Portuguese town before the Minho crossing into Spain."
+      - heading: "Going back: Caminha to Porto"
+        body: "The return runs on the same CP Linha do Minho. Southbound trains leave Caminha station down the coast to Porto-Campanhã, from where Metro Line E reaches Porto Airport. Roughly 12 services a day cover the line, so gaps between trains can exceed an hour — check cp.pt or the station board before walking down, and remember weekend and holiday timetables differ from weekdays."
     howTo:
       - name: "Get to Porto-Campanhã station"
         text: "From central Porto or Porto Airport (Metro Line E), make your way to Porto-Campanhã, the main station for northbound regional trains."
@@ -47,6 +49,8 @@ i18n:
         a: "From Porto Airport, take Metro Line E toward the city and change to a Linha do Minho train at Porto-Campanhã for Viana do Castelo or Caminha."
       - q: "Should I start in Viana do Castelo or Caminha?"
         a: "Start in Viana do Castelo for the full ~27.8 km coastal stage to Caminha, or start in Caminha if you only want the last Portuguese town before crossing the Minho to A Guarda."
+      - q: "How do I get from Caminha back to Porto by train?"
+        a: "Take a southbound CP Linha do Minho train from Caminha station to Porto-Campanhã — the same line you came up on. For Porto Airport, change at Campanhã onto Metro Line E. With roughly 12 services a day, check cp.pt for the next departure before heading to the station."
   es:
     metaTitle: "Oporto a Caminha en Tren (2026): CP Linha do Minho vía Viana do Castelo"
     metaDescription: "Llegar al tramo norte del Camino Portugués de la Costa desde Oporto: tren CP Linha do Minho a Viana do Castelo (~84 min) y hasta Caminha, más conexiones del aeropuerto de Oporto. Paso a paso."
@@ -59,6 +63,8 @@ i18n:
         body: "Desde el aeropuerto de Oporto (OPO), toma el Metro (Línea E, violeta) hacia la ciudad y cambia a un tren de la Linha do Minho en Oporto-Campanhã. También hay autobuses regionales a Viana do Castelo y Caminha desde la zona de Oporto."
       - heading: "Dónde empezar a caminar"
         body: "Empieza en Viana do Castelo para la clásica etapa costera de ~27,8 km hasta Caminha, o empieza en la propia Caminha si solo quieres el último pueblo portugués antes del cruce del Miño a España."
+      - heading: "La vuelta: de Caminha a Oporto"
+        body: "El regreso usa la misma CP Linha do Minho. Los trenes en dirección sur salen de la estación de Caminha bajando por la costa hasta Oporto-Campanhã, desde donde el Metro Línea E llega al aeropuerto de Oporto. La línea tiene unas 12 frecuencias diarias, así que los huecos entre trenes pueden superar la hora — consulta cp.pt o el panel de la estación antes de bajar, y ten en cuenta que fines de semana y festivos tienen horarios distintos."
     howTo:
       - name: "Llega a la estación de Oporto-Campanhã"
         text: "Desde el centro de Oporto o el aeropuerto (Metro Línea E), dirígete a Oporto-Campanhã, la estación principal de trenes regionales hacia el norte."
@@ -75,6 +81,8 @@ i18n:
         a: "Desde el aeropuerto, toma el Metro Línea E hacia la ciudad y cambia a un tren de la Linha do Minho en Oporto-Campanhã hacia Viana do Castelo o Caminha."
       - q: "¿Debo empezar en Viana do Castelo o en Caminha?"
         a: "Empieza en Viana do Castelo para la etapa costera completa de ~27,8 km hasta Caminha, o en Caminha si solo quieres el último pueblo portugués antes de cruzar el Miño hasta A Guarda."
+      - q: "¿Cómo vuelvo de Caminha a Oporto en tren?"
+        a: "Toma un tren CP Linha do Minho en dirección sur desde la estación de Caminha hasta Oporto-Campanhã — la misma línea por la que subiste. Para el aeropuerto de Oporto, cambia en Campanhã al Metro Línea E. Con unas 12 frecuencias diarias, consulta cp.pt antes de ir a la estación."
   pt:
     metaTitle: "Porto a Caminha de Comboio (2026): CP Linha do Minho via Viana do Castelo"
     metaDescription: "Chegar ao troço norte do Caminho Português da Costa a partir do Porto: comboio CP Linha do Minho para Viana do Castelo (~84 min) e até Caminha, mais ligações do aeroporto do Porto. Passo a passo."
@@ -87,6 +95,8 @@ i18n:
         body: "Do aeroporto do Porto (OPO), apanhe o Metro (Linha E, violeta) em direção à cidade e mude para um comboio da Linha do Minho no Porto-Campanhã. Há também autocarros regionais para Viana do Castelo e Caminha a partir da zona do Porto."
       - heading: "Onde começar a caminhar"
         body: "Comece em Viana do Castelo para a clássica etapa costeira de ~27,8 km até Caminha, ou comece na própria Caminha se quiser apenas a última vila portuguesa antes da travessia do Minho para Espanha."
+      - heading: "O regresso: de Caminha para o Porto"
+        body: "O regresso faz-se pela mesma Linha do Minho da CP. Os comboios para sul saem da estação de Caminha pela costa até ao Porto-Campanhã, de onde o Metro Linha E chega ao aeroporto do Porto. A linha tem cerca de 12 frequências diárias, pelo que os intervalos entre comboios podem passar de uma hora — confirme em cp.pt ou no painel da estação antes de descer, e lembre-se de que fins de semana e feriados têm horários diferentes."
     howTo:
       - name: "Chegue à estação do Porto-Campanhã"
         text: "Do centro do Porto ou do aeroporto (Metro Linha E), dirija-se ao Porto-Campanhã, a principal estação de comboios regionais para norte."
@@ -103,3 +113,5 @@ i18n:
         a: "Do aeroporto, apanhe o Metro Linha E em direção à cidade e mude para um comboio da Linha do Minho no Porto-Campanhã para Viana do Castelo ou Caminha."
       - q: "Devo começar em Viana do Castelo ou em Caminha?"
         a: "Comece em Viana do Castelo para a etapa costeira completa de ~27,8 km até Caminha, ou em Caminha se quiser apenas a última vila portuguesa antes de atravessar o Minho até A Guarda."
+      - q: "Como regresso de Caminha ao Porto de comboio?"
+        a: "Apanhe um comboio CP da Linha do Minho em direção a sul, da estação de Caminha até ao Porto-Campanhã — a mesma linha por onde subiu. Para o aeroporto do Porto, mude no Campanhã para o Metro Linha E. Com cerca de 12 frequências diárias, confirme em cp.pt antes de ir para a estação."
