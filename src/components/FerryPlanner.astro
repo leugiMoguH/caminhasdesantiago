@@ -2,10 +2,15 @@
 /**
  * FerryPlanner — client-side "arrive-by" planner for the Caminha → A Guarda
  * crossing. Solves the two real pilgrim pains: is a boat running at my time,
- * and what is that in Spanish local time (+1h). Facts mirror
- * src/content/crossing/ferry.yml (high-season window 07:00–17:00, ~every 30
- * min, ~10 min crossing, €6). Honest by design — it frames departures as
- * approximate and always points to the operators table + overland backup.
+ * and what is that in Spanish local time (+1h).
+ *
+ * Departures are the nine Xacobeo Transfer publishes for Caminha (Portuguese
+ * time), verified 2026-08-12 against their own timetable page. They are NOT
+ * synthesised from a cadence: the older version generated a boat every 30
+ * minutes until 17:00, which produced departure times that do not exist.
+ * Xacobeo is the only operator with a fixed published timetable; Taxi Mar and
+ * Taxi Boat Peregrinos run on request, which is what the planner tells you once
+ * the published boats have gone.
  */
 import { bookingSearch } from '../lib/booking';
 import { caminhaStayPath } from '../lib/clusterRoutes';
@@ -26,9 +31,9 @@ const LINKS = {
 };
 
 const CFG = {
-  start: 420, // 07:00 in minutes
-  end: 1020, // 17:00
-  cadence: 30, // minutes between departures in season
+  // Xacobeo Transfer's published departures from Caminha, in minutes past
+  // midnight, Portuguese time: 07:00 07:30 08:30 09:30 10:30 11:30 12:30 14:30 15:30
+  departures: [420, 450, 510, 570, 630, 690, 750, 870, 930],
   crossing: 10, // minutes on the water
   tz: 60, // Spain is +1h vs Portugal
 };
@@ -46,9 +51,9 @@ const STRINGS = {
     resultTitle: 'Your crossing options',
     lineTpl: 'Depart ≈{d} · arrive A Guarda ≈{a} — that’s {s} Spanish local time',
     beforeFirst: 'Boats start around 07:00. Your first crossings:',
-    afterLast: 'The last boat (≈17:00) has already gone. Use the overland detour: train Caminha → Valença, then walk across the bridge to Tui.',
+    afterLast: 'The last published departure (15:30) has gone. Taxi Mar Caminha and Taxi Boat Peregrinos still cross on request — Taxi Boat Peregrinos runs day and night in fair weather. Call ahead, or take the overland detour: train Caminha → Valença, then walk across the bridge to Tui.',
     lowSeasonMsg: 'Off-season crossings are scarce (often about one a day) and weather-dependent. Confirm by phone the day before, and keep the overland detour as your backup.',
-    noteFare: 'Fare €6 (bike €7–8). Book the day before in busy months; departures flex with tide and weather.',
+    noteFare: 'Fares from €6 (Taxi Mar) to €9 (Xacobeo, bookable online); bikes €7–€10. Times shown are Xacobeo\u2019s published departures — other operators cross on request. Book the day before in busy months; departures flex with tide and weather.',
     tzNote: 'Spain is 1 hour ahead of Portugal.',
     linkOperators: 'See operator hours ↓',
     linkOverland: 'Overland backup ↓',
@@ -73,9 +78,9 @@ const STRINGS = {
     resultTitle: 'Tus opciones de travesía',
     lineTpl: 'Salida ≈{d} · llegada a A Guarda ≈{a} — son las {s} hora local española',
     beforeFirst: 'Los barcos empiezan hacia las 07:00. Tus primeras travesías:',
-    afterLast: 'El último barco (≈17:00) ya ha salido. Usa el desvío por tierra: tren Caminha → Valença y cruza el puente a pie hasta Tui.',
+    afterLast: 'La última salida publicada (15:30) ya ha ido. Taxi Mar Caminha y Taxi Boat Peregrinos siguen cruzando a demanda — Taxi Boat Peregrinos opera día y noche con buen tiempo. Llama antes, o usa el desvío terrestre: tren Caminha → Valença y cruza a pie el puente hasta Tui.',
     lowSeasonMsg: 'Fuera de temporada las travesías son escasas (a menudo una al día) y dependen del tiempo. Confirma por teléfono la víspera y ten el desvío por tierra como respaldo.',
-    noteFare: 'Tarifa 6 € (bici 7–8 €). Reserva la víspera en meses de mucha gente; las salidas varían con la marea y el tiempo.',
+    noteFare: 'Tarifas desde 6 € (Taxi Mar) hasta 9 € (Xacobeo, con reserva online); bicis 7–10 €. Los horarios mostrados son las salidas publicadas de Xacobeo — los demás operadores cruzan a demanda. Reserva la víspera en meses de mucha gente; las salidas varían con la marea y el tiempo.',
     tzNote: 'España va 1 hora por delante de Portugal.',
     linkOperators: 'Ver horarios de operadores ↓',
     linkOverland: 'Alternativa por tierra ↓',
@@ -100,9 +105,9 @@ const STRINGS = {
     resultTitle: 'As tuas opções de travessia',
     lineTpl: 'Partida ≈{d} · chegada a A Guarda ≈{a} — são {s} hora local espanhola',
     beforeFirst: 'Os barcos começam por volta das 07:00. As tuas primeiras travessias:',
-    afterLast: 'O último barco (≈17:00) já partiu. Usa o desvio por terra: comboio Caminha → Valença e atravessa a ponte a pé até Tui.',
+    afterLast: 'A última partida publicada (15:30) já foi. A Taxi Mar Caminha e a Taxi Boat Peregrinos continuam a atravessar a pedido — a Taxi Boat Peregrinos opera dia e noite com bom tempo. Liga antes, ou usa a alternativa terrestre: comboio Caminha → Valença e atravessa a pé a ponte até Tui.',
     lowSeasonMsg: 'Fora de época as travessias são escassas (muitas vezes uma por dia) e dependem do tempo. Confirma por telefone na véspera e guarda o desvio por terra como recurso.',
-    noteFare: 'Tarifa 6 € (bicicleta 7–8 €). Reserva na véspera nos meses cheios; as partidas variam com a maré e o tempo.',
+    noteFare: 'Tarifas desde €6 (Taxi Mar) até €9 (Xacobeo, com reserva online); bicicletas €7–€10. Os horários mostrados são as partidas publicadas do Xacobeo — os outros operadores atravessam a pedido. Reserva na véspera nos meses cheios; as partidas variam com a maré e o tempo.',
     tzNote: 'A Espanha está 1 hora à frente de Portugal.',
     linkOperators: 'Ver horários dos operadores ↓',
     linkOverland: 'Alternativa por terra ↓',
@@ -233,8 +238,8 @@ const STRINGS = {
         return;
       }
 
-      var first = t <= CFG.start ? CFG.start : Math.ceil(t / CFG.cadence) * CFG.cadence;
-      if (first > CFG.end) {
+      var upcoming = CFG.departures.filter(function (d) { return d >= t; });
+      if (upcoming.length === 0) {
         out.innerHTML =
           '<div class="rounded-xl border border-amber-300/70 bg-amber-50 p-4">' +
           '<p class="text-sm text-amber-800 leading-relaxed">' + esc(S.afterLast) + '</p>' +
@@ -242,10 +247,9 @@ const STRINGS = {
         return;
       }
 
-      var slots = [];
-      for (var s = first; s <= CFG.end && slots.length < 3; s += CFG.cadence) slots.push(s);
+      var slots = upcoming.slice(0, 3);
 
-      var lead = t <= CFG.start ? '<p class="text-sm text-slate-700 mb-2">' + esc(S.beforeFirst) + '</p>' : '';
+      var lead = t <= CFG.departures[0] ? '<p class="text-sm text-slate-700 mb-2">' + esc(S.beforeFirst) + '</p>' : '';
       var items = slots
         .map(function (s) {
           return '<li class="flex items-start gap-2 text-sm text-slate-800"><span class="text-forest-600 font-bold mt-0.5">⚓</span><span>' + esc(slotLine(s)) + '</span></li>';
