@@ -12,6 +12,7 @@ import {
   hubPath,
   ferryPath,
   caminhaGuidePath,
+  stayLinksForStage,
   essentialNav,
   i18nUrlsFor,
   type Lang,
@@ -24,6 +25,7 @@ import { bookingSearch } from '../../../lib/booking';
 
 type Link = { url: string; label: string };
 
+
 export async function getStaticPaths() {
   const [stages, towns, logistics] = await Promise.all([
     getCollection('stages', (e) => e.data.sourceVerified),
@@ -32,6 +34,7 @@ export async function getStaticPaths() {
   ]);
   const stageById = new Map(stages.map((s) => [s.id, s]));
   const townById = new Map(towns.map((t) => [t.id, t]));
+  const townNameById = new Map(towns.map((t) => [t.id, t.data.name]));
   const logById = new Map(logistics.map((l) => [l.id, l]));
 
   // Freshness guard (R1) — warn at build if any stage's data is stale (>30 days).
@@ -61,19 +64,21 @@ export async function getStaticPaths() {
           next: d.nextSlug ? stageLink(d.nextSlug) : null,
           towns: d.townSlugs.map(townLink).filter((x): x is Link => x !== null),
           logistics: d.logisticsSlugs.map(logLink).filter((x): x is Link => x !== null),
+          stayLinks: stayLinksForStage(lang, d, townNameById),
         },
       };
     }),
   );
 }
 
-const { lang, data, prev, next, towns, logistics } = Astro.props as {
+const { lang, data, prev, next, towns, logistics, stayLinks } = Astro.props as {
   lang: Lang;
   data: any;
   prev: Link | null;
   next: Link | null;
   towns: Link[];
   logistics: Link[];
+  stayLinks: Link[];
 };
 const t = data.i18n[lang];
 const ui = UI[lang];
@@ -106,15 +111,6 @@ const hub = hubPath(lang);
 // Internal-link flow (Phase 5 STEP 4) — guide + two logistics pages, every page.
 const essentials = essentialNav(lang);
 
-// Slug → display name for town links (works before a town page exists).
-const humanize = (s: string): string =>
-  s.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
-const slugify = (s: string): string =>
-  s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-// Always surface the destination town (even before its page exists), plus any
-// explicit townSlugs from the stage data.
-const stayTownSlugs: string[] = Array.from(new Set<string>([...data.townSlugs, slugify(data.to)]));
-const stayIn: Record<Lang, string> = { en: 'Where to stay in', es: 'Dónde dormir en', pt: 'Onde ficar em' };
 const stayCta: Record<Lang, string> = {
   en: `Find a place to stay in ${data.to} tonight`,
   es: `Encuentra dónde dormir en ${data.to} esta noche`,
@@ -245,14 +241,14 @@ const ferryAuthority = {
     </nav>
 
     <!-- Where to stay (stage → town) -->
-    {stayTownSlugs.length > 0 && (
+    {stayLinks.length > 0 && (
       <section class="bg-white border border-slate-200 rounded-2xl p-6">
         <h2 class="text-base font-bold text-forest-900 mb-3">{ui.stayHeading}</h2>
         <ul class="space-y-2 text-sm">
-          {stayTownSlugs.map((s: string) => (
+          {stayLinks.map((x) => (
             <li>
-              <a href={townPath(lang, s)} class="text-forest-700 hover:underline no-underline font-medium">
-                {stayIn[lang]} {humanize(s)} →
+              <a href={x.url} class="text-forest-700 hover:underline no-underline font-medium">
+                {x.label} →
               </a>
             </li>
           ))}

@@ -27,6 +27,56 @@ export const ferryPath = (lang: Lang): string =>
 export const caminhaGuidePath = (lang: Lang): string =>
   lang === 'en' ? '/en/caminha-guide/' : lang === 'es' ? '/es/guia-de-caminha/' : '/pt/guia-de-caminha/';
 
+// Caminha has a bespoke accommodation page instead of a /destino/ town page, so
+// stage pages must link there rather than to a /destino/caminha/ URL that has
+// never existed.
+export const caminhaStayPath = (lang: Lang): string =>
+  lang === 'en'
+    ? '/en/caminha/where-to-stay/'
+    : lang === 'es'
+      ? '/es/caminha/donde-dormir/'
+      : '/pt/caminha/onde-ficar/';
+
+const STAY_IN: Record<Lang, string> = {
+  en: 'Where to stay in',
+  es: 'Dónde dormir en',
+  pt: 'Onde ficar em',
+};
+
+const townSlugify = (s: string): string =>
+  s
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
+
+/**
+ * "Where to stay" links for a stage, resolved against pages that actually exist.
+ * A town is linked only when it has an entry in the towns collection; Caminha is
+ * the one exception, because its accommodation lives on a bespoke page rather
+ * than under /destino/. Anything else is dropped rather than emitting a 404 —
+ * the previous version linked /destino/{slugify(stage.to)}/ unconditionally and
+ * produced 12 dead links across the site.
+ */
+export function stayLinksForStage(
+  lang: Lang,
+  stage: { townSlugs: string[]; to: string },
+  townNameById: Map<string, string>,
+): { url: string; label: string }[] {
+  const slugs = Array.from(new Set<string>([...stage.townSlugs, townSlugify(stage.to)]));
+  const links: { url: string; label: string }[] = [];
+  for (const s of slugs) {
+    if (s === 'caminha') {
+      links.push({ url: caminhaStayPath(lang), label: `${STAY_IN[lang]} Caminha` });
+    } else {
+      const name = townNameById.get(s);
+      if (name) links.push({ url: townPath(lang, s), label: `${STAY_IN[lang]} ${name}` });
+    }
+  }
+  return links;
+}
+
 interface UIStrings {
   home: string;
   routeHub: string;
