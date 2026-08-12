@@ -21,6 +21,7 @@ const STATIC_GROUPS = [
   { en: '/en/caminha/ferry-and-logistics/', es: '/es/caminha/ferry-y-logistica/',  pt: '/pt/caminha/ferry-e-logistica/' },
   { en: '/en/caminha/useful-services/',     es: '/es/caminha/servicios-utiles/',   pt: '/pt/caminha/servicos-uteis/' },
   { en: '/en/privacy-policy/',              es: '/es/politica-de-privacidad/',     pt: '/pt/politica-de-privacidade/' },
+  { en: '/en/about/',                       es: '/es/sobre/',                      pt: '/pt/sobre/' },
   // Coastal cluster HUB (static index page, not a collection entry).
   { en: '/en/caminho-da-costa/',            es: '/es/caminho-da-costa/',           pt: '/pt/caminho-da-costa/' },
   // Comparison / commercial-intent hub pages (static, identical slugs per lang).

@@ -1,0 +1,69 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import AboutContent from '../../components/AboutContent.astro';
+import { SOCIAL_LINKS } from '../../lib/social';
+import { AUTHOR_NAME, CONTACT_EMAIL } from '../../lib/site';
+
+const PAGE_URL = 'https://waytosantiagoguide.com/pt/sobre/';
+const LANG = 'pt';
+
+// schemaType="none": this page supplies its own graph so it can declare an
+// AboutPage plus the Person behind the guide, which the shared 'webpage' node
+// has no slot for. Do not also pass schemaType="webpage" — that would emit a
+// duplicate WebPage entity.
+const graph = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      '@id': `${PAGE_URL}#author`,
+      name: AUTHOR_NAME,
+      description: 'Escreve e mantém um guia independente do Caminho Português da Costa por Caminha.',
+      email: `mailto:${CONTACT_EMAIL}`,
+      url: PAGE_URL,
+      worksFor: { '@id': 'https://waytosantiagoguide.com/#organization' },
+    },
+    {
+      '@type': 'Organization',
+      '@id': 'https://waytosantiagoguide.com/#organization',
+      name: 'Way to Santiago Guide',
+      url: 'https://waytosantiagoguide.com',
+      logo: { '@type': 'ImageObject', url: 'https://waytosantiagoguide.com/logo.png' },
+      email: `mailto:${CONTACT_EMAIL}`,
+      founder: { '@id': `${PAGE_URL}#author` },
+      sameAs: [SOCIAL_LINKS.instagram, SOCIAL_LINKS.facebook],
+    },
+    {
+      '@type': 'AboutPage',
+      '@id': `${PAGE_URL}#webpage`,
+      url: PAGE_URL,
+      name: 'Sobre Este Guia',
+      description: 'Quem está por trás do Guia Caminho de Santiago, como cada horário, preço e albergue é verificado e datado, como o site é financiado e como enviar uma correção.',
+      inLanguage: 'pt-PT',
+      isPartOf: { '@id': 'https://waytosantiagoguide.com/#website' },
+      about: { '@id': 'https://waytosantiagoguide.com/#organization' },
+      author: { '@id': `${PAGE_URL}#author` },
+      publisher: { '@id': 'https://waytosantiagoguide.com/#organization' },
+      breadcrumb: { '@id': `${PAGE_URL}#breadcrumb` },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${PAGE_URL}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Início', item: 'https://waytosantiagoguide.com/pt/' },
+        { '@type': 'ListItem', position: 2, name: 'Sobre este guia', item: PAGE_URL },
+      ],
+    },
+  ],
+};
+---
+
+<MainLayout
+  title="Sobre Este Guia: Quem o Escreve e Como os Dados São Verificados"
+  description="Quem está por trás do Guia Caminho de Santiago, como cada horário, preço e albergue é verificado e datado, como o site é financiado e como enviar uma correção."
+  lang={LANG}
+  schemaType="none"
+>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(graph)} />
+  <AboutContent lang={LANG} />
+</MainLayout>

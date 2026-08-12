@@ -22,3 +22,18 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Analytics exports and screenshots — internal, private data.
+# GA4 / Search Console CSVs and dashboard screenshots are dropped into docs/ to
+# be read locally. They are never part of the site and must never be committed
+# or published. Only hand-written .md documentation belongs in docs/.
+docs/*.csv
+docs/*.CSV
+docs/*.tsv
+docs/*.xlsx
+docs/*.png
+docs/*.jpg
+docs/*.jpeg
+docs/*.JPG
+docs/*.JPEG
+docs/*.pdf

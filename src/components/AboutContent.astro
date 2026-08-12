@@ -1,0 +1,221 @@
+---
+/**
+ * AboutContent — the shared body of the About / Sobre page in all three
+ * languages (E-E-A-T: who stands behind the guide, how the facts get checked,
+ * how the site is paid for, how to report an error).
+ *
+ * Every claim here is checkable against the repository:
+ *   - "sources listed on every entry"  → the `verification` block in
+ *     src/content.config.ts makes sourceVerified + lastVerified + sources[]
+ *     mandatory; an entry without them fails the build.
+ *   - "warns after 30 days"            → warnIfStale() in src/lib/freshness.ts
+ *   - "no paid placements"             → accommodation is ordered by area then
+ *     type in the page data, never by commission.
+ * Nothing about the author beyond what the site already states is asserted.
+ */
+import { CONTACT_EMAIL } from '../lib/site';
+
+interface Props {
+  lang: 'en' | 'es' | 'pt';
+}
+const { lang } = Astro.props;
+
+const COPY = {
+  en: {
+    breadcrumbHome: 'Home',
+    breadcrumbHere: 'About',
+    h1: 'About this guide',
+    lead:
+      'This is an independent guide to the Portuguese Coastal Camino around Caminha and the river crossing into Spain. It is written and maintained by one person, Hugo. No Camino association, tourism board, albergue or transport operator has any say in what appears here.',
+    whyHeading: 'Why this guide exists',
+    whyBody:
+      'Most Camino guides cover the whole route from Porto to Santiago in a few paragraphs each. The one place that trips pilgrims up — the Minho crossing from Caminha to A Guarda — usually gets a sentence, and often an out-of-date one. The official ferry has not run since 2020; what actually operates is a set of licensed water taxis with their own timetables and their own phone numbers. This guide starts from that crossing and works outwards.',
+    verifyHeading: 'How the facts get checked',
+    verifySteps: [
+      {
+        t: 'Every entry names its sources',
+        d: 'Each route stage, town and logistics topic on this site carries the date it was last checked and a list of the sources it was checked against. This is not a promise — the site literally cannot be built if an entry is missing them.',
+      },
+      {
+        t: 'Nothing is invented',
+        d: 'No business, price, phone number or timetable appears here unless it came from a verifiable source. Where a figure is not verified, this guide says so rather than filling the gap with a plausible number.',
+      },
+      {
+        t: 'Stale data is flagged automatically',
+        d: 'Anything not re-checked for 30 days raises a warning when the site is rebuilt, so decay is visible instead of silent.',
+      },
+      {
+        t: 'The limits are stated too',
+        d: 'Water-taxi departures move with the tide, the weather and the season. This guide gives you the operators and their direct contacts precisely so you can confirm the day before, rather than trusting any website — including this one.',
+      },
+    ],
+    moneyHeading: 'How this site is paid for',
+    moneyBody:
+      'Some links to accommodation and experiences are affiliate links. If you book through one, this site earns a commission and you pay exactly the same price. That is the only revenue: there are no paid placements, no sponsored listings, and nobody can buy their way onto a page. Accommodation is ordered by area and by type — albergues first, then guesthouses, then hotels — never by what it pays.',
+    trustHeading: 'What that means for you',
+    trustBody:
+      'The municipal albergue in Caminha pays nothing and cannot be booked online, and it is still listed first, because for most pilgrims it is the right answer. That is the test this guide tries to pass on every page.',
+    errorHeading: 'Found something wrong?',
+    errorBody:
+      'Timetables change, places close, prices move. If something here is out of date or plain wrong, tell me and it gets fixed — corrections from pilgrims on the ground are the fastest source this guide has.',
+    errorCta: 'Report a correction',
+    langsHeading: 'Languages',
+    langsBody:
+      'Everything is published in English, Spanish and Portuguese. The three versions carry the same verified facts; they are not machine translations of each other left to drift.',
+  },
+  es: {
+    breadcrumbHome: 'Inicio',
+    breadcrumbHere: 'Sobre esta guía',
+    h1: 'Sobre esta guía',
+    lead:
+      'Esta es una guía independiente del Camino Portugués de la Costa alrededor de Caminha y del cruce del río hacia España. La escribe y mantiene una sola persona, Hugo. Ninguna asociación del Camino, junta de turismo, albergue u operador de transporte decide lo que aparece aquí.',
+    whyHeading: 'Por qué existe esta guía',
+    whyBody:
+      'La mayoría de las guías del Camino resuelven todo el recorrido de Oporto a Santiago con unos párrafos por etapa. El único punto que de verdad complica al peregrino — el cruce del Miño de Caminha a A Guarda — suele quedarse en una frase, y muchas veces desactualizada. El ferry oficial no navega desde 2020; lo que funciona de verdad son taxis-barco con licencia, con sus propios horarios y sus propios teléfonos. Esta guía parte de ese cruce y se construye hacia fuera.',
+    verifyHeading: 'Cómo se comprueban los datos',
+    verifySteps: [
+      {
+        t: 'Cada ficha cita sus fuentes',
+        d: 'Cada etapa, localidad y tema de logística de este sitio lleva la fecha en que se comprobó por última vez y la lista de fuentes contra las que se comprobó. No es una promesa: el sitio no se puede construir si a una ficha le faltan.',
+      },
+      {
+        t: 'No se inventa nada',
+        d: 'Ningún establecimiento, precio, teléfono u horario aparece aquí si no procede de una fuente verificable. Cuando un dato no está verificado, esta guía lo dice en vez de rellenar el hueco con una cifra verosímil.',
+      },
+      {
+        t: 'Los datos viejos se marcan solos',
+        d: 'Todo lo que lleve 30 días sin revisar genera un aviso al reconstruir el sitio, para que el desgaste se vea en vez de pasar desapercibido.',
+      },
+      {
+        t: 'También se dicen los límites',
+        d: 'Las salidas de los taxis-barco cambian con la marea, el tiempo y la temporada. Esta guía te da los operadores y sus contactos directos precisamente para que confirmes la víspera, en lugar de fiarte de cualquier web — incluida esta.',
+      },
+    ],
+    moneyHeading: 'Cómo se financia este sitio',
+    moneyBody:
+      'Algunos enlaces a alojamiento y experiencias son enlaces de afiliado. Si reservas por uno de ellos, este sitio gana una comisión y tú pagas exactamente el mismo precio. Ese es todo el ingreso: no hay ubicaciones pagadas, no hay listados patrocinados y nadie puede comprar su sitio en una página. El alojamiento se ordena por zona y por tipo — primero albergues, luego pensiones, luego hoteles — nunca por lo que paga.',
+    trustHeading: 'Qué significa esto para ti',
+    trustBody:
+      'El albergue municipal de Caminha no paga nada y ni siquiera se puede reservar online, y aun así aparece el primero, porque para la mayoría de los peregrinos es la respuesta correcta. Esa es la prueba que esta guía intenta superar en cada página.',
+    errorHeading: '¿Has visto algo mal?',
+    errorBody:
+      'Los horarios cambian, los sitios cierran, los precios se mueven. Si algo aquí está desactualizado o directamente mal, dímelo y se corrige — las correcciones de peregrinos sobre el terreno son la fuente más rápida que tiene esta guía.',
+    errorCta: 'Enviar una corrección',
+    langsHeading: 'Idiomas',
+    langsBody:
+      'Todo se publica en inglés, español y portugués. Las tres versiones llevan los mismos datos verificados; no son traducciones automáticas dejadas a su suerte.',
+  },
+  pt: {
+    breadcrumbHome: 'Início',
+    breadcrumbHere: 'Sobre este guia',
+    h1: 'Sobre este guia',
+    lead:
+      'Este é um guia independente do Caminho Português da Costa à volta de Caminha e da travessia do rio para Espanha. É escrito e mantido por uma só pessoa, o Hugo. Nenhuma associação do Caminho, junta de turismo, albergue ou operador de transporte decide o que aparece aqui.',
+    whyHeading: 'Porque existe este guia',
+    whyBody:
+      'A maioria dos guias do Caminho despacha o percurso todo do Porto a Santiago com uns parágrafos por etapa. O único ponto que realmente complica a vida ao peregrino — a travessia do Minho de Caminha para A Guarda — fica-se normalmente por uma frase, e muitas vezes desatualizada. O ferry oficial não navega desde 2020; o que funciona mesmo são táxis fluviais licenciados, com horários próprios e telefones próprios. Este guia parte dessa travessia e cresce a partir dela.',
+    verifyHeading: 'Como os dados são verificados',
+    verifySteps: [
+      {
+        t: 'Cada ficha indica as suas fontes',
+        d: 'Cada etapa, localidade e tema de logística deste site traz a data em que foi verificado pela última vez e a lista de fontes contra as quais foi verificado. Não é uma promessa: o site não chega sequer a compilar se faltarem a uma ficha.',
+      },
+      {
+        t: 'Não se inventa nada',
+        d: 'Nenhum estabelecimento, preço, telefone ou horário aparece aqui sem vir de uma fonte verificável. Quando um número não está verificado, este guia di-lo em vez de tapar o buraco com um valor plausível.',
+      },
+      {
+        t: 'Os dados velhos são assinalados sozinhos',
+        d: 'Tudo o que passe 30 dias sem nova verificação levanta um aviso quando o site é reconstruído, para que o desgaste seja visível em vez de silencioso.',
+      },
+      {
+        t: 'Os limites também são ditos',
+        d: 'As partidas dos táxis fluviais mudam com a maré, o tempo e a época. Este guia dá-te os operadores e os contactos diretos precisamente para confirmares na véspera, em vez de confiares em qualquer site — incluindo este.',
+      },
+    ],
+    moneyHeading: 'Como este site é financiado',
+    moneyBody:
+      'Alguns links para alojamento e experiências são links de afiliado. Se reservares por um deles, este site ganha uma comissão e tu pagas exatamente o mesmo preço. É essa a única receita: não há colocações pagas, não há listagens patrocinadas e ninguém pode comprar um lugar numa página. O alojamento é ordenado por zona e por tipo — primeiro albergues, depois pensões, depois hotéis — nunca pelo que paga.',
+    trustHeading: 'O que isso significa para ti',
+    trustBody:
+      'O albergue municipal de Caminha não paga nada e nem sequer aceita reserva online, e mesmo assim aparece em primeiro lugar, porque para a maioria dos peregrinos é a resposta certa. É esse o teste que este guia tenta passar em cada página.',
+    errorHeading: 'Encontraste algo errado?',
+    errorBody:
+      'Os horários mudam, os sítios fecham, os preços alteram-se. Se alguma coisa aqui estiver desatualizada ou simplesmente errada, diz-me e é corrigida — as correções de peregrinos no terreno são a fonte mais rápida que este guia tem.',
+    errorCta: 'Enviar uma correção',
+    langsHeading: 'Idiomas',
+    langsBody:
+      'Tudo é publicado em inglês, espanhol e português. As três versões carregam os mesmos factos verificados; não são traduções automáticas deixadas a divergir.',
+  },
+}[lang];
+
+const homeHref = `/${lang}/`;
+const mailto = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('Correction — Way to Santiago Guide')}`;
+---
+
+<div class="bg-gradient-to-b from-forest-50 to-white border-b border-forest-100/60">
+  <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+    <nav aria-label={COPY.breadcrumbHere} class="mb-5">
+      <ol class="flex items-center gap-2 text-sm text-slate-500">
+        <li><a href={homeHref} class="hover:text-forest-700 no-underline hover:underline transition-colors">{COPY.breadcrumbHome}</a></li>
+        <li aria-hidden="true" class="text-slate-300">›</li>
+        <li aria-current="page" class="text-slate-700 font-medium">{COPY.breadcrumbHere}</li>
+      </ol>
+    </nav>
+    <h1 class="text-3xl sm:text-4xl font-bold text-forest-900 mb-5 tracking-tight">{COPY.h1}</h1>
+    <p class="text-slate-700 text-lg leading-relaxed">{COPY.lead}</p>
+  </div>
+</div>
+
+<div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 space-y-14">
+
+  <section>
+    <h2 class="text-2xl font-bold text-forest-900 mb-3 tracking-tight">{COPY.whyHeading}</h2>
+    <p class="text-slate-700 leading-relaxed">{COPY.whyBody}</p>
+  </section>
+
+  <section>
+    <h2 class="text-2xl font-bold text-forest-900 mb-6 tracking-tight">{COPY.verifyHeading}</h2>
+    <ol class="space-y-5" role="list">
+      {COPY.verifySteps.map((step, i) => (
+        <li class="flex gap-4">
+          <span
+            class="shrink-0 flex h-9 w-9 items-center justify-center rounded-xl bg-forest-100 border border-forest-200 text-forest-800 font-bold text-sm"
+            aria-hidden="true"
+          >{i + 1}</span>
+          <div>
+            <h3 class="font-bold text-forest-900 mb-1">{step.t}</h3>
+            <p class="text-slate-700 text-sm leading-relaxed">{step.d}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="rounded-2xl border border-earth-200 bg-earth-50/60 p-6 sm:p-8">
+    <h2 class="text-2xl font-bold text-earth-900 mb-3 tracking-tight">{COPY.moneyHeading}</h2>
+    <p class="text-slate-700 leading-relaxed mb-5">{COPY.moneyBody}</p>
+    <h3 class="font-bold text-earth-900 mb-2">{COPY.trustHeading}</h3>
+    <p class="text-slate-700 text-sm leading-relaxed">{COPY.trustBody}</p>
+  </section>
+
+  <section>
+    <h2 class="text-2xl font-bold text-forest-900 mb-3 tracking-tight">{COPY.langsHeading}</h2>
+    <p class="text-slate-700 leading-relaxed">{COPY.langsBody}</p>
+  </section>
+
+  <section class="rounded-2xl border border-forest-200 bg-forest-50 p-6 sm:p-8">
+    <h2 class="text-2xl font-bold text-forest-900 mb-3 tracking-tight">{COPY.errorHeading}</h2>
+    <p class="text-slate-700 leading-relaxed mb-5">{COPY.errorBody}</p>
+    <a
+      href={mailto}
+      class="inline-flex items-center gap-2 rounded-xl bg-forest-700 px-5 py-3 text-sm font-bold text-white no-underline hover:bg-forest-800 transition-colors"
+    >
+      {COPY.errorCta}
+      <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+      </svg>
+    </a>
+  </section>
+
+</div>

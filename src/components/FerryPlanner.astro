@@ -7,10 +7,23 @@
  * min, ~10 min crossing, €6). Honest by design — it frames departures as
  * approximate and always points to the operators table + overland backup.
  */
+import { bookingSearch } from '../lib/booking';
+import { caminhaStayPath } from '../lib/clusterRoutes';
+
 interface Props {
   lang: 'en' | 'es' | 'pt';
 }
 const { lang } = Astro.props;
+
+// Built at build time: the Booking search is a server-side CJ deep link, so it
+// cannot be assembled in the browser.
+const LINKS = {
+  aGuarda: bookingSearch(
+    lang === 'es' ? 'A Guarda, España' : lang === 'pt' ? 'A Guarda, Espanha' : 'A Guarda, Spain',
+    `wtsg-planner-${lang}-aguarda`,
+  ),
+  caminhaStay: caminhaStayPath(lang),
+};
 
 const CFG = {
   start: 420, // 07:00 in minutes
@@ -40,6 +53,13 @@ const STRINGS = {
     linkOperators: 'See operator hours ↓',
     linkOverland: 'Overland backup ↓',
     invalid: 'Enter the time you expect to reach the dock.',
+    ctaArriveTitle: 'You land in A Guarda around {a}',
+    ctaArriveBody: 'Albergues on the Spanish side fill up from mid-afternoon in season. See what still has beds tonight.',
+    ctaArriveBtn: 'Places to stay in A Guarda',
+    ctaStayTitle: 'You are sleeping in Caminha tonight',
+    ctaStayBody: 'Cross in the morning instead. These are the albergues, guesthouses and hotels in Caminha, closest to the dock first.',
+    ctaStayBtn: 'Where to stay in Caminha',
+    ctaDisclosure: 'Affiliate link — we may earn a commission at no extra cost to you.',
   },
   es: {
     badge: 'Interactivo',
@@ -60,6 +80,13 @@ const STRINGS = {
     linkOperators: 'Ver horarios de operadores ↓',
     linkOverland: 'Alternativa por tierra ↓',
     invalid: 'Introduce la hora a la que llegarás al muelle.',
+    ctaArriveTitle: 'Llegas a A Guarda sobre las {a}',
+    ctaArriveBody: 'Los albergues del lado español se llenan desde media tarde en temporada. Mira lo que aún tiene camas para esta noche.',
+    ctaArriveBtn: 'Alojamiento en A Guarda',
+    ctaStayTitle: 'Esta noche duermes en Caminha',
+    ctaStayBody: 'Cruza mañana por la mañana. Estos son los albergues, pensiones y hoteles de Caminha, primero los más cercanos al embarcadero.',
+    ctaStayBtn: 'Dónde dormir en Caminha',
+    ctaDisclosure: 'Enlace de afiliado — podemos ganar una comisión sin coste extra para ti.',
   },
   pt: {
     badge: 'Interativo',
@@ -80,6 +107,13 @@ const STRINGS = {
     linkOperators: 'Ver horários dos operadores ↓',
     linkOverland: 'Alternativa por terra ↓',
     invalid: 'Indica a hora a que chegas ao cais.',
+    ctaArriveTitle: 'Chegas a A Guarda por volta das {a}',
+    ctaArriveBody: 'Os albergues do lado espanhol enchem a partir do meio da tarde em época alta. Vê o que ainda tem camas para esta noite.',
+    ctaArriveBtn: 'Alojamento em A Guarda',
+    ctaStayTitle: 'Esta noite dormes em Caminha',
+    ctaStayBody: 'Atravessa de manhã. Estes são os albergues, pensões e hotéis de Caminha, primeiro os mais perto do cais.',
+    ctaStayBtn: 'Onde ficar em Caminha',
+    ctaDisclosure: 'Link de afiliado — podemos ganhar uma comissão sem custo extra para ti.',
   },
 }[lang];
 ---
@@ -123,7 +157,7 @@ const STRINGS = {
   <div id="fp-result" class="mt-4" role="status" aria-live="polite"></div>
 </section>
 
-<script define:vars={{ CFG, S: STRINGS }}>
+<script define:vars={{ CFG, S: STRINGS, L: LINKS }}>
   (function () {
     var timeEl = document.getElementById('fp-time');
     var seasonEl = document.getElementById('fp-season');
@@ -141,6 +175,29 @@ const STRINGS = {
       return String(s).replace(/[&<>"]/g, function (c) {
         return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
       });
+    }
+    function ctaBlock(kind, arrivalLabel) {
+      var isArrive = kind === 'arrive';
+      var title = isArrive ? S.ctaArriveTitle.replace('{a}', arrivalLabel) : S.ctaStayTitle;
+      var body = isArrive ? S.ctaArriveBody : S.ctaStayBody;
+      var href = isArrive ? L.aGuarda : L.caminhaStay;
+      var label = isArrive ? S.ctaArriveBtn : S.ctaStayBtn;
+      // Only the A Guarda link is an affiliate link; the Caminha one is internal.
+      var anchor = isArrive
+        ? '<a href="' + esc(href) + '" rel="sponsored nofollow noopener noreferrer" target="_blank" ' +
+          'class="inline-flex items-center gap-2 rounded-xl bg-earth-700 px-5 py-3 text-sm font-bold text-white no-underline hover:bg-earth-800 transition-colors">' +
+          esc(label) + ' <span aria-hidden="true">&rarr;</span></a>' +
+          '<p class="text-xs text-slate-500 mt-2">' + esc(S.ctaDisclosure) + '</p>'
+        : '<a href="' + esc(href) + '" ' +
+          'class="inline-flex items-center gap-2 rounded-xl bg-forest-700 px-5 py-3 text-sm font-bold text-white no-underline hover:bg-forest-800 transition-colors">' +
+          esc(label) + ' <span aria-hidden="true">&rarr;</span></a>';
+      return (
+        '<div data-aff-pos="planner" class="mt-4 rounded-xl border border-forest-200 bg-forest-50 p-4">' +
+          '<p class="font-bold text-forest-900 text-sm mb-1">' + esc(title) + '</p>' +
+          '<p class="text-sm text-slate-700 leading-relaxed mb-3">' + esc(body) + '</p>' +
+          anchor +
+        '</div>'
+      );
     }
     function noteBlock() {
       return (
@@ -172,7 +229,7 @@ const STRINGS = {
         out.innerHTML =
           '<div class="rounded-xl border border-amber-300/70 bg-amber-50 p-4">' +
           '<p class="text-sm text-amber-800 leading-relaxed">' + esc(S.lowSeasonMsg) + '</p>' +
-          noteBlock() + '</div>';
+          noteBlock() + '</div>' + ctaBlock('stay');
         return;
       }
 
@@ -181,7 +238,7 @@ const STRINGS = {
         out.innerHTML =
           '<div class="rounded-xl border border-amber-300/70 bg-amber-50 p-4">' +
           '<p class="text-sm text-amber-800 leading-relaxed">' + esc(S.afterLast) + '</p>' +
-          noteBlock() + '</div>';
+          noteBlock() + '</div>' + ctaBlock('stay');
         return;
       }
 
@@ -200,7 +257,8 @@ const STRINGS = {
         '<p class="text-xs font-bold uppercase tracking-wider text-forest-900 mb-2">' + esc(S.resultTitle) + '</p>' +
         lead +
         '<ul class="space-y-1.5">' + items + '</ul>' +
-        noteBlock() + '</div>';
+        noteBlock() + '</div>' +
+        ctaBlock('arrive', fmt(slots[0] + CFG.crossing + CFG.tz));
     }
 
     goEl.addEventListener('click', function () {

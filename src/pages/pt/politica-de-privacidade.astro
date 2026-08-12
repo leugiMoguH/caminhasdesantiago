@@ -1,5 +1,6 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
+import { CONTACT_EMAIL } from '../../lib/site';
 ---
 
 <MainLayout
@@ -141,7 +142,7 @@ import MainLayout from '../../layouts/MainLayout.astro';
           Se estiver localizado no Espaço Económico Europeu, tem direitos ao abrigo do RGPD, incluindo o direito de aceder, retificar e apagar dados sobre si. Como este Site não recolhe dados pessoais diretamente, estes direitos aplicam-se principalmente aos dados detidos pelos nossos prestadores de serviços terceiros (Google, Booking.com).
         </p>
         <p class="mt-3">
-          Para questões sobre esta política de privacidade, contacte-nos em: <strong>info@waytosantiagoguide.com</strong>
+          Para questões sobre esta política de privacidade, contacte-nos em: <strong>{CONTACT_EMAIL}</strong>
         </p>
       </section>
 

@@ -29,6 +29,7 @@ const t = {
     spanish: 'Español',
     portuguese: 'Português',
     legal: 'Legal',
+    about: 'About this guide',
     privacy: 'Privacy Policy',
     disclaimer: 'Disclaimer',
     copyright: `© ${year} Caminha Guide. All rights reserved.`,
@@ -55,6 +56,7 @@ const t = {
     spanish: 'Español',
     portuguese: 'Português',
     legal: 'Legal',
+    about: 'Sobre esta guía',
     privacy: 'Política de Privacidad',
     disclaimer: 'Aviso Legal',
     copyright: `© ${year} Guía de Caminha. Todos los derechos reservados.`,
@@ -81,6 +83,7 @@ const t = {
     spanish: 'Español',
     portuguese: 'Português',
     legal: 'Legal',
+    about: 'Sobre este guia',
     privacy: 'Política de Privacidade',
     disclaimer: 'Aviso Legal',
     copyright: `© ${year} Guia de Caminha. Todos os direitos reservados.`,
@@ -271,6 +274,11 @@ const navLinks =
             {text.legal}
           </h2>
           <ul class="space-y-3" role="list">
+            <li>
+              <a href={lang === 'en' ? '/en/about/' : `/${lang}/sobre/`} class="text-sm text-slate-400 hover:text-white transition-colors duration-200 no-underline cursor-pointer">
+                {text.about}
+              </a>
+            </li>
             <li>
               <a href={lang === 'en' ? '/en/privacy-policy/' : lang === 'es' ? '/es/politica-de-privacidad/' : '/pt/politica-de-privacidade/'} class="text-sm text-slate-400 hover:text-white transition-colors duration-200 no-underline cursor-pointer">
                 {text.privacy}
