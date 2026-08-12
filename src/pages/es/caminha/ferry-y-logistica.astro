@@ -17,6 +17,14 @@ const entry = await getEntry('crossing', 'caminha-a-guarda');
 const f = entry!.data;
 const t = f.i18n[LANG];
 
+// Derived from the single source of truth (ferry.yml lastVerified) so the
+// visible "Actualizado …" label can never drift from the data.
+const UPDATED_MONTH = new Date(`${f.lastVerified}T00:00:00Z`).toLocaleString('es-ES', {
+  month: 'long',
+  year: 'numeric',
+  timeZone: 'UTC',
+});
+
 const ol = t.operatorLabels;
 const operadores = f.scheduledOperators.map((op) => ({
   nombre: op.name,
@@ -76,10 +84,10 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
         </div>
         <h1 class="text-3xl sm:text-4xl font-bold mb-4 text-white leading-tight">Caminha → A Guarda: Ferry y Taxi-Barco — Qué Funciona en 2026</h1>
         <p class="text-slate-300 text-base leading-relaxed">
-          El cruce del río Miño entre Caminha (Portugal) y A Guarda (España) funciona a diario. Varios servicios de taxi-barco autorizados sustituyeron al antiguo ferry: hay salidas cada 30 minutos en temporada, la travesía dura unos 10 minutos y hay un nuevo ferry municipal previsto para el verano de 2026. Esta página cubre operadores, precios, reservas y la alternativa terrestre.
+          El cruce del río Miño entre Caminha (Portugal) y A Guarda (España) funciona a diario. Varios servicios de taxi-barco autorizados sustituyeron al antiguo ferry: Xacobeo Transfer publica nueve salidas fijas al día, Taxi Boat Peregrinos navega a demanda las 24 horas, la travesía dura unos 10 minutos y hay un nuevo ferry municipal previsto para el verano de 2026. Esta página cubre operadores, precios, reservas y la alternativa terrestre.
         </p>
         <p class="mt-3 text-sm text-slate-300">
-          Actualizado en junio de 2026 ·
+          Actualizado en {UPDATED_MONTH} ·
           <a href="#timetable" class="text-earth-300 hover:text-earth-200 font-semibold no-underline hover:underline">Ir al horario 2026 ↓</a>
         </p>
       </div>
@@ -364,8 +372,8 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
                     <svg class="h-3.5 w-3.5 text-earth-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                     Llegada — España
                   </p>
-                  <p class="text-xs text-slate-700 leading-relaxed"><strong>Camposancos</strong>, municipio de A Guarda, Galicia, España. Los taxis acuáticos desembarcan en Camposancos — una pequeña aldea pesquera en la orilla española del Miño, a unos 1,5 km al sur del centro de A Guarda. Las flechas amarillas del Camino retoman desde el punto de desembarco hacia el norte.</p>
-                  <p class="text-xs text-slate-600 mt-2">Desde el desembarco: ~20 min a pie hasta el centro de A Guarda</p>
+                  <p class="text-xs text-slate-700 leading-relaxed"><strong>Camposancos</strong>, municipio de A Guarda, Galicia, España. Los taxis acuáticos desembarcan en Camposancos — una pequeña aldea pesquera en la orilla española del Miño, a unos 3,8 km al sur del centro de A Guarda por la ruta señalizada. Las flechas amarillas del Camino retoman desde el punto de desembarco hacia el norte.</p>
+                  <p class="text-xs text-slate-600 mt-2">Desde el desembarco: ~45 min a pie hasta el centro de A Guarda (~3 km directo por la Avenida Paseo Portugal)</p>
                 </div>
               </div>
 

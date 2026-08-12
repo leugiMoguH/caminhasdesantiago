@@ -11,9 +11,14 @@ nextSlug: caminha-a-guarda
 townSlugs: []
 logisticsSlugs:
   - getting-there
+# Re-verified 2026-08-12: the crossing paragraph still carried the June figures
+# ("every 30 minutes, EUR 6"). Corrected against the operators' own sites — see
+# src/content/crossing/ferry.yml, the single source of truth for the crossing.
+# Walking facts (27.8 km, ascent, Caminha services) unchanged.
 sourceVerified: true
-lastVerified: "2026-06-12"
+lastVerified: "2026-08-12"
 sources:
+  - https://xacobeotransfer.com/en/how-does-the-ferry-boat-between-caminha-a-guarda-work/
   - https://walkthecaminoportugues.com/coastal-route/viana-do-castelo-to-caminha/
   - https://stingynomads.com/portuguese-coastal-camino-stages/
   - https://www.alltrails.com/trail/portugal/viana-do-castelo/camino-portugues-coastal-viana-do-castelo-to-vila-praia-de-ancora
@@ -36,7 +41,7 @@ i18n:
       - heading: "Breaking the stage at Vila Praia de Âncora"
         body: "If 28 km is more than you want, Vila Praia de Âncora splits the day cleanly: about 19 km from Viana, with a beach, restaurants, accommodation and a train station on the Minho line. Stopping there leaves a short 8–9 km morning into Caminha — and puts you at the dock early enough to catch a morning boat across to A Guarda the same day."
       - heading: "Arriving in Caminha: plan the crossing first"
-        body: "The stage ends in Caminha at the mouth of the Minho river, facing A Guarda (Spain) across the water. Before you settle in, sort tomorrow's crossing: licensed water taxis run daily — roughly every 30 minutes in season, €6, about 10 minutes — but boats are small and high-season demand is real. Book online with Xacobeo Transfer or call Taxi Boat Peregrinos, then enjoy the town. Caminha rewards the evening: a compact medieval centre, the Igreja Matriz, and dinner on the square."
+        body: "The stage ends in Caminha at the mouth of the Minho river, facing A Guarda (Spain) across the water. Before you settle in, sort tomorrow's crossing: licensed water taxis run daily — from €6, about 10 minutes — but boats are small and high-season demand is real. Xacobeo Transfer publishes nine fixed departures and sells tickets online (€9); Taxi Boat Peregrinos crosses on request around the clock, weather permitting, then enjoy the town. Caminha rewards the evening: a compact medieval centre, the Igreja Matriz, and dinner on the square."
       - heading: "Where to sleep and eat in Caminha"
         body: "Caminha has a municipal albergue plus private hostels, guesthouses and hotels — enough beds that walk-ins work outside July and August, though the albergue fills first. Our Caminha where-to-stay and where-to-eat guides cover verified options with prices; pilgrim menus in town start around €8."
       - heading: "GPX and waymarking"
@@ -51,7 +56,7 @@ i18n:
       - q: "Can I split the stage somewhere?"
         a: "Yes — Vila Praia de Âncora, about 19 km from Viana do Castelo, has accommodation, restaurants and a train station. Stopping there leaves an easy 8–9 km into Caminha the next morning."
       - q: "What happens at the end of the stage in Caminha?"
-        a: "Caminha sits on the Minho river opposite A Guarda, Spain. The crossing runs daily by licensed water taxi (~€6, about 10 minutes) — book ahead in season — or you can take the overland detour via Valença and Tui."
+        a: "Caminha sits on the Minho river opposite A Guarda, Spain. The crossing runs daily by licensed water taxi (from €6, about 10 minutes) — book ahead in season — or you can take the overland detour via Valença and Tui."
   es:
     metaTitle: "Viana do Castelo a Caminha (27,8 km): Guía de la Etapa + Variantes (2026)"
     metaDescription: "La etapa Viana do Castelo–Caminha del Camino Portugués de la Costa: 27,8 km, las dos variantes (oficial interior vs pasarelas de playa), la única subida, superficies, dónde partir la etapa en Vila Praia de Âncora y cómo planificar el cruce del Miño que espera al final."
@@ -69,7 +74,7 @@ i18n:
       - heading: "Partir la etapa en Vila Praia de Âncora"
         body: "Si 28 km son demasiados, Vila Praia de Âncora divide el día limpiamente: a unos 19 km de Viana, con playa, restaurantes, alojamiento y estación de tren en la línea del Miño. Parar allí deja una mañana corta de 8–9 km hasta Caminha — y te pone en el muelle lo bastante pronto para tomar un barco matinal a A Guarda el mismo día."
       - heading: "Llegada a Caminha: planifica primero el cruce"
-        body: "La etapa termina en Caminha, en la desembocadura del Miño, frente a A Guarda (España). Antes de instalarte, resuelve el cruce de mañana: los taxi-barco autorizados operan a diario — cada 30 minutos en temporada, 6 €, unos 10 minutos — pero los barcos son pequeños y la demanda en temporada alta es real. Reserva online con Xacobeo Transfer o llama a Taxi Boat Peregrinos, y luego disfruta del pueblo: centro medieval compacto, la Igreja Matriz y cena en la plaza."
+        body: "La etapa termina en Caminha, en la desembocadura del Miño, frente a A Guarda (España). Antes de instalarte, resuelve el cruce de mañana: los taxi-barco autorizados operan a diario — desde 6 €, unos 10 minutos — pero los barcos son pequeños y la demanda en temporada alta es real. Xacobeo Transfer publica nueve salidas fijas y vende billetes online (9 €); Taxi Boat Peregrinos cruza a demanda las 24 horas, si el tiempo lo permite, y luego disfruta del pueblo: centro medieval compacto, la Igreja Matriz y cena en la plaza."
       - heading: "Dónde dormir y comer en Caminha"
         body: "Caminha tiene un albergue municipal además de hostales privados, pensiones y hoteles — suficientes camas para llegar sin reserva fuera de julio y agosto, aunque el albergue se llena primero. Nuestras guías de dónde dormir y dónde comer en Caminha cubren opciones verificadas con precios; los menús del peregrino parten de unos 8 €."
       - heading: "GPX y señalización"
@@ -84,7 +89,7 @@ i18n:
       - q: "¿Puedo partir la etapa en algún punto?"
         a: "Sí — Vila Praia de Âncora, a unos 19 km de Viana do Castelo, tiene alojamiento, restaurantes y estación de tren. Parar allí deja unos 8–9 km fáciles hasta Caminha a la mañana siguiente."
       - q: "¿Qué ocurre al final de la etapa en Caminha?"
-        a: "Caminha está en el río Miño, frente a A Guarda (España). El cruce funciona a diario en taxi-barco autorizado (~6 €, unos 10 minutos) — reserva en temporada — o puedes tomar el desvío terrestre por Valença y Tui."
+        a: "Caminha está en el río Miño, frente a A Guarda (España). El cruce funciona a diario en taxi-barco autorizado (desde 6 €, unos 10 minutos) — reserva en temporada — o puedes tomar el desvío terrestre por Valença y Tui."
   pt:
     metaTitle: "Viana do Castelo a Caminha (27,8 km): Guia da Etapa + Variantes (2026)"
     metaDescription: "A etapa Viana do Castelo–Caminha do Caminho Português da Costa: 27,8 km, as duas variantes (oficial interior vs passadiços de praia), a única subida, pisos, onde dividir a etapa em Vila Praia de Âncora e como planear a travessia do Minho que espera no fim."
@@ -102,7 +107,7 @@ i18n:
       - heading: "Dividir a etapa em Vila Praia de Âncora"
         body: "Se 28 km forem demasiados, Vila Praia de Âncora divide o dia de forma limpa: a cerca de 19 km de Viana, com praia, restaurantes, alojamento e estação de comboio na Linha do Minho. Parar aí deixa uma manhã curta de 8–9 km até Caminha — e coloca-o no cais cedo o suficiente para apanhar um barco matinal para A Guarda no mesmo dia."
       - heading: "Chegada a Caminha: planeie primeiro a travessia"
-        body: "A etapa termina em Caminha, na foz do rio Minho, em frente a A Guarda (Espanha). Antes de se instalar, resolva a travessia de amanhã: os táxis fluviais licenciados operam diariamente — de 30 em 30 minutos na época alta, €6, cerca de 10 minutos — mas os barcos são pequenos e a procura na época alta é real. Reserve online com a Xacobeo Transfer ou ligue à Taxi Boat Peregrinos, e depois aproveite a vila: centro medieval compacto, a Igreja Matriz e jantar na praça."
+        body: "A etapa termina em Caminha, na foz do rio Minho, em frente a A Guarda (Espanha). Antes de se instalar, resolva a travessia de amanhã: os táxis fluviais licenciados operam diariamente — desde €6, cerca de 10 minutos — mas os barcos são pequenos e a procura na época alta é real. A Xacobeo Transfer publica nove partidas fixas e vende bilhetes online (€9); a Taxi Boat Peregrinos atravessa a pedido 24 horas por dia, se o tempo permitir, e depois aproveite a vila: centro medieval compacto, a Igreja Matriz e jantar na praça."
       - heading: "Onde dormir e comer em Caminha"
         body: "Caminha tem um albergue municipal além de hostels privados, pensões e hotéis — camas suficientes para chegar sem reserva fora de julho e agosto, embora o albergue encha primeiro. Os nossos guias de onde ficar e onde comer em Caminha cobrem opções verificadas com preços; os menus do peregrino partem de cerca de €8."
       - heading: "GPX e sinalização"
@@ -117,4 +122,4 @@ i18n:
       - q: "Posso dividir a etapa nalgum ponto?"
         a: "Sim — Vila Praia de Âncora, a cerca de 19 km de Viana do Castelo, tem alojamento, restaurantes e estação de comboio. Parar aí deixa 8–9 km fáceis até Caminha na manhã seguinte."
       - q: "O que acontece no fim da etapa, em Caminha?"
-        a: "Caminha fica no rio Minho, em frente a A Guarda (Espanha). A travessia funciona diariamente em táxi fluvial licenciado (~€6, cerca de 10 minutos) — reserve na época alta — ou pode fazer o desvio terrestre via Valença e Tui."
+        a: "Caminha fica no rio Minho, em frente a A Guarda (Espanha). A travessia funciona diariamente em táxi fluvial licenciado (desde €6, cerca de 10 minutos) — reserve na época alta — ou pode fazer o desvio terrestre via Valença e Tui."
