@@ -5,6 +5,11 @@
       "source": "/:lang(en|es|pt)/best-albergues/:town",
       "destination": "/:lang/destino/:town/",
       "permanent": true
+    },
+    {
+      "source": "/:lang(en|es|pt)/best-albergues/:town/",
+      "destination": "/:lang/destino/:town/",
+      "permanent": true
     }
   ],
   "headers": [
