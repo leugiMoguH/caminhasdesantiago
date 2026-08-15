@@ -90,7 +90,7 @@ caminha-a-guarda:
 
   # Announced municipal replacement (Câmara de Caminha, Dec 2025 / May 2026).
   upcomingFerry:
-    expectedSeason: "Summer 2026"
+    expectedSeason: "Summer 2026 (announced; no vessel or tender as of 2026-08-15)"
     capacityPassengers: "50–60"
     status: announced
     note: Shallow-draught vessel suited to the silted river mouth. Municipality budgeted dock repair and dredging (~€30–40k). The Santa Rita de Cássia will be dismantled, not returned to service.
@@ -127,7 +127,7 @@ caminha-a-guarda:
         - { value: "~10 min", label: "Crossing time" }
         - { value: "from €6", label: "Per person (one-way)" }
         - { value: "Daily", label: "Water taxis, every 30 min" }
-        - { value: "Summer 2026", label: "New ferry expected" }
+        - { value: "No date", label: "New municipal ferry" }
       operatorLabels:
         operator: "Operator"
         frequency: "Frequency"
@@ -137,6 +137,8 @@ caminha-a-guarda:
         booking: "Booking"
         every-30-min: "Every 30 minutes"
         hourly: "Hourly"
+        nine-daily: "Nine departures daily"
+        on-request: "On request"
         daily: "Daily (reduced in winter)"
         online: "Online (website)"
         phone-or-dock: "Phone or at the dock"
@@ -171,7 +173,7 @@ caminha-a-guarda:
         - q: "Can I take a bike across from Caminha to A Guarda?"
           a: "Yes. The operators carry bicycles for a surcharge — €7 with Taxi Mar Caminha or Taxi Boat Peregrinos, €10 with Xacobeo Transfer (that fare includes the rider). An electric bike is €10 with Taxi Mar."
         - q: "What is the new Caminha ferry planned for 2026?"
-          a: "The Câmara Municipal de Caminha announced a new shallow-draught ferry with capacity for roughly 50–60 passengers, expected for summer 2026. The municipality has budgeted dock repair and dredging. Until it launches, the water taxis remain the operating crossing."
+          a: "The Câmara Municipal de Caminha announced a new shallow-draught ferry with capacity for roughly 50–60 passengers, announced for summer 2026. As of mid-August 2026 no vessel has been bought and no tender has been reported, so do not count on it this season. The municipality has budgeted dock repair and dredging. Until it launches, the water taxis remain the operating crossing."
         - q: "What are the alternatives if no boat is crossing?"
           a: "Take the overland detour: the CP Minho line train from Caminha to Valença (~35 min, ~€3.60), then walk 1.5 km across the international Tui–Valença bridge into Spain. This switches you from the Coastal Route to the Camino Portugués Interior."
       trainDetour:
@@ -188,7 +190,7 @@ caminha-a-guarda:
         - { value: "~10 min", label: "Tiempo de travesía" }
         - { value: "desde 6 €", label: "Por persona (ida)" }
         - { value: "Diario", label: "Taxi-barco, cada 30 min" }
-        - { value: "Verano 2026", label: "Nuevo ferry previsto" }
+        - { value: "Sin fecha", label: "Nuevo ferry municipal" }
       operatorLabels:
         operator: "Operador"
         frequency: "Frecuencia"
@@ -198,6 +200,8 @@ caminha-a-guarda:
         booking: "Reserva"
         every-30-min: "Cada 30 minutos"
         hourly: "Cada hora"
+        nine-daily: "Nueve salidas diarias"
+        on-request: "A demanda"
         daily: "Diario (reducido en invierno)"
         online: "Online (web)"
         phone-or-dock: "Teléfono o en el muelle"
@@ -232,7 +236,7 @@ caminha-a-guarda:
         - q: "¿Puedo cruzar con bicicleta de Caminha a A Guarda?"
           a: "Sí. Los operadores llevan bicicletas con suplemento — 7 € con Taxi Mar Caminha o Taxi Boat Peregrinos, 10 € con Xacobeo Transfer (esa tarifa ya incluye a la persona). La bicicleta eléctrica cuesta 10 € con Taxi Mar."
         - q: "¿Qué es el nuevo ferry de Caminha previsto para 2026?"
-          a: "La Câmara Municipal de Caminha anunció un nuevo ferry de poco calado con capacidad para unos 50–60 pasajeros, previsto para el verano de 2026. El municipio ha presupuestado la reparación del muelle y el dragado. Hasta su estreno, los taxi-barco son el cruce operativo."
+          a: "La Câmara Municipal de Caminha anunció un nuevo ferry de poco calado con capacidad para unos 50–60 pasajeros, anunciado para el verano de 2026. A mediados de agosto de 2026 no consta ninguna embarcación comprada ni licitación publicada, así que no cuentes con él esta temporada. El municipio ha presupuestado la reparación del muelle y el dragado. Hasta su estreno, los taxi-barco son el cruce operativo."
         - q: "¿Qué alternativas hay si no cruza ningún barco?"
           a: "El desvío terrestre: tren de la línea del Miño de Caminha a Valença (~35 min, ~3,60 €) y cruzar a pie el puente internacional Tui–Valença (1,5 km). Esto te cambia de la Ruta de la Costa al Camino Portugués Interior."
       trainDetour:
@@ -249,7 +253,7 @@ caminha-a-guarda:
         - { value: "~10 min", label: "Tempo de travessia" }
         - { value: "desde €6", label: "Por pessoa (ida)" }
         - { value: "Diário", label: "Táxi fluvial, de 30 em 30 min" }
-        - { value: "Verão 2026", label: "Novo ferry previsto" }
+        - { value: "Sem data", label: "Novo ferry municipal" }
       operatorLabels:
         operator: "Operador"
         frequency: "Frequência"
@@ -259,6 +263,8 @@ caminha-a-guarda:
         booking: "Reserva"
         every-30-min: "De 30 em 30 minutos"
         hourly: "De hora em hora"
+        nine-daily: "Nove partidas por dia"
+        on-request: "A pedido"
         daily: "Diário (reduzido no inverno)"
         online: "Online (site)"
         phone-or-dock: "Telefone ou no cais"
@@ -293,7 +299,7 @@ caminha-a-guarda:
         - q: "Posso atravessar com bicicleta de Caminha para A Guarda?"
           a: "Sim. Os operadores transportam bicicletas com suplemento — €7 com a Taxi Mar Caminha ou a Taxi Boat Peregrinos, €10 com o Xacobeo Transfer (essa tarifa já inclui a pessoa). A bicicleta elétrica custa €10 na Taxi Mar."
         - q: "O que é o novo ferry de Caminha previsto para 2026?"
-          a: "A Câmara Municipal de Caminha anunciou um novo ferry de calado reduzido com capacidade para cerca de 50–60 passageiros, previsto para o verão de 2026. O município orçamentou a reparação do cais e a dragagem. Até ao lançamento, os táxis fluviais são a travessia em funcionamento."
+          a: "A Câmara Municipal de Caminha anunciou um novo ferry de calado reduzido com capacidade para cerca de 50–60 passageiros, anunciado para o verão de 2026. Em meados de agosto de 2026 não há notícia de embarcação comprada nem de concurso lançado, por isso não conte com ele esta época. O município orçamentou a reparação do cais e a dragagem. Até ao lançamento, os táxis fluviais são a travessia em funcionamento."
         - q: "Quais são as alternativas se nenhum barco atravessar?"
           a: "O desvio terrestre: comboio da Linha do Minho de Caminha para Valença (~35 min, ~€3,60) e atravessar a pé a ponte internacional Tui–Valença (1,5 km). Isto muda-o da Rota da Costa para o Caminho Português Interior."
       trainDetour:

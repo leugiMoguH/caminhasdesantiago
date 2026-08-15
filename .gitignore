@@ -37,3 +37,7 @@ docs/*.jpeg
 docs/*.JPG
 docs/*.JPEG
 docs/*.pdf
+
+# Personal/financial notes dropped into docs/ — internal only, never committed.
+docs/*fiscal*
+docs/*Análise fiscal*
