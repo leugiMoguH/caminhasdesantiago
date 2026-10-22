@@ -8,6 +8,7 @@ import { buildFerryGraph } from '../../../lib/ferrySchema';
 import FerryPlanner from '../../../components/FerryPlanner.astro';
 import TripExtras from '../../../components/TripExtras.astro';
 import EmailSignup from '../../../components/EmailSignup.astro';
+import SeasonNotice from '../../../components/SeasonNotice.astro';
 
 const LANG = 'en' as const;
 const PAGE_PATH = '/en/caminha/ferry-and-logistics/';
@@ -157,6 +158,8 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
             </p>
           </div>
         </div>
+
+        <SeasonNotice notice={t.seasonNotice} />
 
         <!-- Interactive crossing planner -->
         <FerryPlanner lang="en" />

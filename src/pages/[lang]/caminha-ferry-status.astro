@@ -18,6 +18,7 @@ import { getEntry } from 'astro:content';
 import { warnIfStale } from '../../lib/freshness';
 import { bookingSearch } from '../../lib/booking';
 import EmailSignup from '../../components/EmailSignup.astro';
+import SeasonNotice from '../../components/SeasonNotice.astro';
 import { LANGS, ferryPath, stagePath, hubPath, caminhaStayPath, SITE_URL, type Lang } from '../../lib/clusterRoutes';
 
 export function getStaticPaths() {
@@ -210,21 +211,21 @@ const CHANGELOG = {
 
 const FAQ = {
   en: [
-    { q: 'Is the Caminha to A Guarda ferry running right now?', a: 'The old official ferry is not running (stopped 2020, being dismantled), but the crossing itself operates daily via several licensed water-taxi services: Xacobeo Transfer with nine published departures and online booking, Taxi Mar Caminha from Bar do Ferry, Taxi Boat Peregrinos on request around the clock, and Popeye the Sailor Man. A new municipal ferry is expected in summer 2026.' },
+    { q: 'Is the Caminha to A Guarda ferry running right now?', a: 'The old official ferry is not running (stopped 2020, being dismantled), but the crossing itself operates daily via several licensed water-taxi services: Xacobeo Transfer with nine published departures and online booking, Taxi Mar Caminha from Bar do Ferry, Taxi Boat Peregrinos on request around the clock, and Popeye the Sailor Man (seasonal, roughly April to mid-October). A new municipal ferry is expected in summer 2026.' },
     { q: 'How much does it cost?', a: `From €${FROM_EUR} per person one-way with Taxi Mar Caminha; Xacobeo Transfer, the one you can book online, is €9. See the operator table for current fares.` },
     { q: 'Can I cross with a bike?', a: 'Yes. Bicycles cost €7 with Taxi Mar Caminha or Taxi Boat Peregrinos and €10 with Xacobeo Transfer, where the fare already includes the rider. An electric bike is €10 with Taxi Mar.' },
     { q: 'Do I need a booking?', a: 'Not strictly, but recommended April–October — some boats carry only about six passengers. Xacobeo Transfer sells tickets online and its bookings are flexible; Taxi Boat Peregrinos takes bookings on +351 913 254 110 or at the dock.' },
     { q: 'What happens if no boat crosses on my day?', a: 'Use the overland detour: CP Minho line train from Caminha to Valença (~35 min, ~€3.60), then walk across the Tui–Valença international bridge into Spain. This connects to the Camino Portugués Interior.' },
   ],
   es: [
-    { q: '¿Está funcionando ahora el ferry de Caminha a A Guarda?', a: 'El antiguo ferry oficial no opera (parado en 2020, en desguace), pero el cruce sí funciona a diario con varios taxis-barco autorizados: Xacobeo Transfer con nueve salidas publicadas y reserva online, Taxi Mar Caminha desde el Bar do Ferry, Taxi Boat Peregrinos a demanda las 24 horas, y Popeye the Sailor Man. Se espera un nuevo ferry municipal en el verano de 2026.' },
+    { q: '¿Está funcionando ahora el ferry de Caminha a A Guarda?', a: 'El antiguo ferry oficial no opera (parado en 2020, en desguace), pero el cruce sí funciona a diario con varios taxis-barco autorizados: Xacobeo Transfer con nueve salidas publicadas y reserva online, Taxi Mar Caminha desde el Bar do Ferry, Taxi Boat Peregrinos a demanda las 24 horas, y Popeye the Sailor Man (de temporada, aprox. de abril a mediados de octubre). Se espera un nuevo ferry municipal en el verano de 2026.' },
     { q: '¿Cuánto cuesta?', a: `Desde ${FROM_EUR} € por persona (ida) con Taxi Mar Caminha; Xacobeo Transfer, el que se reserva online, cuesta 9 €. Consulta la tabla de operadores para las tarifas actuales.` },
     { q: '¿Puedo cruzar con bicicleta?', a: 'Sí. La bicicleta cuesta 7 € con Taxi Mar Caminha o Taxi Boat Peregrinos y 10 € con Xacobeo Transfer, tarifa que ya incluye a la persona. La bicicleta eléctrica son 10 € con Taxi Mar.' },
     { q: '¿Hace falta reservar?', a: 'No es obligatorio, pero sí recomendable de abril a octubre — algunos barcos llevan solo unos seis pasajeros. Xacobeo Transfer vende billetes online y su reserva es flexible; Taxi Boat Peregrinos acepta reservas en el +351 913 254 110 o en el embarcadero.' },
     { q: '¿Y si el día que voy no cruza ningún barco?', a: 'Usa el desvío terrestre: tren de la línea CP do Minho de Caminha a Valença (~35 min, ~3,60 €) y luego cruza a pie el puente internacional Tui–Valença hacia España. Enlaza con el Camino Portugués Interior.' },
   ],
   pt: [
-    { q: 'O ferry de Caminha para A Guarda está a funcionar agora?', a: 'O antigo ferry oficial não opera (parado em 2020, a ser desmantelado), mas a travessia funciona diariamente com vários táxis fluviais licenciados: Xacobeo Transfer com nove partidas publicadas e reserva online, Taxi Mar Caminha a partir do Bar do Ferry, Taxi Boat Peregrinos a pedido 24 horas, e Popeye the Sailor Man. Espera-se um novo ferry municipal no verão de 2026.' },
+    { q: 'O ferry de Caminha para A Guarda está a funcionar agora?', a: 'O antigo ferry oficial não opera (parado em 2020, a ser desmantelado), mas a travessia funciona diariamente com vários táxis fluviais licenciados: Xacobeo Transfer com nove partidas publicadas e reserva online, Taxi Mar Caminha a partir do Bar do Ferry, Taxi Boat Peregrinos a pedido 24 horas, e Popeye the Sailor Man (sazonal, aprox. de abril a meados de outubro). Espera-se um novo ferry municipal no verão de 2026.' },
     { q: 'Quanto custa?', a: `Desde €${FROM_EUR} por pessoa (ida) com a Taxi Mar Caminha; o Xacobeo Transfer, o que se reserva online, custa €9. Consulte a tabela de operadores para as tarifas atuais.` },
     { q: 'Posso atravessar com bicicleta?', a: 'Sim. A bicicleta custa €7 na Taxi Mar Caminha ou na Taxi Boat Peregrinos e €10 no Xacobeo Transfer, tarifa que já inclui a pessoa. A bicicleta elétrica custa €10 na Taxi Mar.' },
     { q: 'É preciso reservar?', a: 'Não é obrigatório, mas é recomendável de abril a outubro — alguns barcos levam apenas cerca de seis passageiros. O Xacobeo Transfer vende bilhetes online e a reserva é flexível; a Taxi Boat Peregrinos aceita reservas pelo +351 913 254 110 ou no cais.' },
@@ -329,6 +330,8 @@ const graph = {
   </div>
 
   <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 space-y-12">
+
+    <SeasonNotice notice={t.seasonNotice} />
 
     <!-- Status overview -->
     <section>

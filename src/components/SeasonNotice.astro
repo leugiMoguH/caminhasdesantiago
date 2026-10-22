@@ -1,0 +1,14 @@
+---
+/** Amber callout for an operator's off-season closure. Data: ferry.yml i18n.<lang>.seasonNotice. */
+interface Props {
+  notice?: { heading: string; body: string };
+}
+const { notice } = Astro.props;
+---
+
+{notice && (
+  <div class="bg-amber-50 border border-amber-300 rounded-2xl p-5" role="note">
+    <h2 class="font-bold text-amber-900 mb-1.5">{notice.heading}</h2>
+    <p class="text-sm text-amber-800 leading-relaxed">{notice.body}</p>
+  </div>
+)}

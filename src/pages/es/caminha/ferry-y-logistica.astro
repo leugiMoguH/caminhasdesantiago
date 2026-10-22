@@ -7,6 +7,7 @@ import { getEntry } from 'astro:content';
 import { buildFerryGraph } from '../../../lib/ferrySchema';
 import FerryPlanner from '../../../components/FerryPlanner.astro';
 import EmailSignup from '../../../components/EmailSignup.astro';
+import SeasonNotice from '../../../components/SeasonNotice.astro';
 import TripExtras from '../../../components/TripExtras.astro';
 
 const LANG = 'es' as const;
@@ -154,6 +155,8 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
             </div>
           </div>
         </div>
+
+        <SeasonNotice notice={t.seasonNotice} />
 
         <!-- Operadores -->
         <FerryPlanner lang="es" />

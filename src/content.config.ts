@@ -5,6 +5,8 @@ import { file, glob } from 'astro/loaders';
 const i18nBlock = z.object({
   metaTitle: z.string(),
   metaDescription: z.string(),
+  // Evergreen seasonal-operator callout (no year-specific dates).
+  seasonNotice: z.object({ heading: z.string(), body: z.string() }).optional(),
   breadcrumb: z.array(z.object({ name: z.string(), item: z.string() })),
   keyFacts: z.array(z.object({ value: z.string(), label: z.string() })),
   operatorLabels: z.record(z.string()),
