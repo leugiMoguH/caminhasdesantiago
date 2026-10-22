@@ -6,6 +6,7 @@ import assoreamentoPhoto from '../../../assets/photos/caminha-rio-assoreamento.j
 import { getEntry } from 'astro:content';
 import { buildFerryGraph } from '../../../lib/ferrySchema';
 import FerryPlanner from '../../../components/FerryPlanner.astro';
+import HelpfulPoll from '../../../components/HelpfulPoll.astro';
 import TripExtras from '../../../components/TripExtras.astro';
 import EmailSignup from '../../../components/EmailSignup.astro';
 import SeasonNotice from '../../../components/SeasonNotice.astro';
@@ -511,6 +512,8 @@ const ferryGraph = buildFerryGraph(f, LANG, PAGE_PATH);
         </section>
 
         <!-- ── FAQ ACCORDION ──────────────────────────────────────────────────── -->
+        <HelpfulPoll lang="en" />
+
         <section id="faq" aria-labelledby="faq-heading">
           <h2 id="faq-heading" class="text-2xl font-bold text-forest-900 mb-6 tracking-tight">Frequently Asked Questions</h2>
           <div class="space-y-3" id="faq-list">

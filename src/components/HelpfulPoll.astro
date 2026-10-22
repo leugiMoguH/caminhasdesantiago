@@ -1,0 +1,109 @@
+---
+/**
+ * HelpfulPoll — in-content "was this helpful?" poll for the high-traffic pages.
+ *
+ * The footer widget (ShareFeedback) sat below the fold and got 1 vote in 10
+ * months, so this one lives mid-page. Each answer fires its OWN event name
+ * (feedback_yes / feedback_no / feedback_no_<reason>) so the result is readable
+ * in GA4 by event name alone — no custom dimension has to be registered. It also
+ * fires the legacy `feedback_helpful` event, so history stays comparable.
+ * GA only transmits after cookie consent; the per-page answer is remembered in
+ * localStorage under the same key as ShareFeedback.
+ */
+interface Props {
+  lang: 'en' | 'es' | 'pt';
+}
+const { lang } = Astro.props;
+
+const S = {
+  en: {
+    q: 'Was this page helpful?', yes: 'Yes', no: 'No',
+    thanks: 'Thanks — this helps us improve.',
+    why: 'What was wrong?',
+    reasons: { outdated: 'Out of date', missing: 'Missing something', confusing: 'Confusing' },
+  },
+  es: {
+    q: '¿Te ha sido útil esta página?', yes: 'Sí', no: 'No',
+    thanks: 'Gracias — nos ayuda a mejorar.',
+    why: '¿Qué falló?',
+    reasons: { outdated: 'Desactualizado', missing: 'Falta información', confusing: 'Confuso' },
+  },
+  pt: {
+    q: 'Esta página foi útil?', yes: 'Sim', no: 'Não',
+    thanks: 'Obrigado — ajuda-nos a melhorar.',
+    why: 'O que correu mal?',
+    reasons: { outdated: 'Desatualizado', missing: 'Falta informação', confusing: 'Confuso' },
+  },
+}[lang];
+
+const btn =
+  'cursor-pointer rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:border-forest-400 hover:text-forest-800 transition-colors';
+---
+
+<aside id="hp" aria-label={S.q} class="rounded-2xl border border-forest-200 bg-forest-50/60 p-5">
+  <div id="hp-ask" class="flex flex-wrap items-center gap-3">
+    <span class="text-sm font-semibold text-forest-900">{S.q}</span>
+    <button type="button" data-hp="yes" class={btn}>👍 {S.yes}</button>
+    <button type="button" data-hp="no" class={btn}>👎 {S.no}</button>
+  </div>
+  <div id="hp-why" class="hidden flex-wrap items-center gap-3">
+    <span class="text-sm font-semibold text-forest-900">{S.why}</span>
+    {Object.entries(S.reasons).map(([key, label]) => (
+      <button type="button" data-hp-reason={key} class={btn}>{label}</button>
+    ))}
+  </div>
+  <p id="hp-thanks" class="hidden text-sm font-medium text-forest-700">{S.thanks}</p>
+</aside>
+
+<script>
+  (function () {
+    var KEY = 'wtsg-feedback:' + location.pathname;
+    var ask = document.getElementById('hp-ask');
+    var why = document.getElementById('hp-why');
+    var thanks = document.getElementById('hp-thanks');
+    if (!ask || !why || !thanks) return;
+
+    function show(el: HTMLElement | null) {
+      if (!el) return;
+      el.classList.remove('hidden');
+      el.classList.add('flex');
+    }
+    function hide(el: HTMLElement | null) {
+      if (!el) return;
+      el.classList.add('hidden');
+      el.classList.remove('flex');
+    }
+    function send(name: string, params: Record<string, string>) {
+      // gtag.js only accepts the `arguments` object, never a plain array.
+      var w = window as unknown as { dataLayer?: unknown[] };
+      w.dataLayer = w.dataLayer || [];
+      function gtag(..._a: unknown[]) { w.dataLayer!.push(arguments); }
+      gtag('event', name, params);
+    }
+    function done() {
+      hide(ask);
+      hide(why);
+      thanks!.classList.remove('hidden');
+    }
+
+    try { if (localStorage.getItem(KEY)) { done(); return; } } catch (e) {}
+
+    ask.querySelectorAll('[data-hp]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var val = (b as HTMLElement).getAttribute('data-hp') as string;
+        var base = { page_path: location.pathname, placement: 'inline' };
+        try { localStorage.setItem(KEY, val); } catch (e) {}
+        send('feedback_helpful', Object.assign({ helpful: val }, base));
+        send('feedback_' + val, base);
+        if (val === 'no') { hide(ask); show(why); } else { done(); }
+      });
+    });
+    why.querySelectorAll('[data-hp-reason]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var r = (b as HTMLElement).getAttribute('data-hp-reason') as string;
+        send('feedback_no_' + r, { page_path: location.pathname, placement: 'inline' });
+        done();
+      });
+    });
+  })();
+</script>
