@@ -81,12 +81,12 @@ import MainLayout from '../../layouts/MainLayout.astro';
       </div>
       <div class="flex-1 min-w-0">
         <p class="font-bold text-sm mb-1 flex flex-wrap items-center gap-2">
-          <span class="bg-white/20 text-white text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border border-white/30">Live Ferry Status</span>
-          Siltation Warning — Check Before You Go
+          <span class="bg-white/20 text-white text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border border-white/30">Crossing Status</span>
+          Water Taxis Only — Confirm Before You Go
         </p>
         <p class="text-sm text-white/90 leading-relaxed">
-          The Caminha ferry (Santa Rita de Cássia) is subject to seasonal <strong>assoreamento</strong> (river siltation) that can suspend service without notice — even in peak season.
-          <strong>Verify crossing status the night before</strong> and ask your albergue about water taxi (Xávegas) alternatives.
+          The old Caminha ferry (Santa Rita de Cássia) has not run since 2020 because of river <strong>siltation</strong>; the crossing is done by licensed water taxis, and tide and weather can still cancel a boat.
+          <strong>Confirm with the operator the day before</strong> and ask your albergue for a backup.
           <a href="/en/caminha/ferry-and-logistics/#assoreamento" class="underline font-semibold ml-1 hover:text-white/80">Full details →</a>
         </p>
       </div>
@@ -211,6 +211,21 @@ import MainLayout from '../../layouts/MainLayout.astro';
         </div>
       </a>
 
+    </div>
+  </section>
+
+  <!-- ── Planner promo (tools were under-discovered: ~6 planner views in 10 months) ── -->
+  <section class="bg-forest-50 border-y border-forest-100">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
+      <div class="max-w-2xl">
+        <p class="text-earth-600 text-xs font-bold uppercase tracking-widest mb-1.5">Free tools</p>
+        <h2 class="text-xl sm:text-2xl font-bold text-forest-900 mb-2">Plan your whole Camino in minutes</h2>
+        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">Day-by-day itinerary, budget estimate, packing checklist, dated booking deadlines for the 2027 Holy Year, and an offline download of the whole route. No sign-up, all on your device.</p>
+      </div>
+      <a href="/en/planner/" class="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-forest-700 px-6 py-3.5 text-sm font-bold text-white no-underline hover:bg-forest-800 transition-colors">
+        Open the trip planner
+        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </a>
     </div>
   </section>
 

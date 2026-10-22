@@ -11,6 +11,7 @@ import {
   logisticsPath,
   hubPath,
   ferryPath,
+  plannerPath,
   caminhaGuidePath,
   stayLinksForStage,
   essentialNav,
@@ -260,6 +261,7 @@ const ferryAuthority = {
     <section class="bg-forest-50 border border-forest-200 rounded-2xl p-6">
       <h2 class="text-base font-bold text-forest-900 mb-3">{ui.relatedLinks}</h2>
       <ul class="space-y-2 text-sm">
+        <li><a href={plannerPath(lang)} class="text-forest-700 hover:underline no-underline font-bold">{{ en: 'Plan the whole route: free itinerary, budget & checklist →', es: 'Planifica toda la ruta: itinerario, presupuesto y lista gratis →', pt: 'Planeia toda a rota: itinerário, orçamento e lista grátis →' }[lang]}</a></li>
         {towns.map((x) => (
           <li><a href={x.url} class="text-forest-700 hover:underline no-underline font-medium">{x.label}</a></li>
         ))}

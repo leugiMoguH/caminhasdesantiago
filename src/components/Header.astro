@@ -1,4 +1,6 @@
 ---
+import { plannerPath } from '../lib/clusterRoutes';
+
 interface Props {
   lang: 'en' | 'es' | 'pt';
   enUrl: string;
@@ -17,6 +19,7 @@ const t = {
     ferry: 'Ferry & Logistics',
     usefulServices: 'Useful Services',
     coastalRoute: 'Coastal Route',
+    planner: 'Trip Planner',
     menuLabel: 'Open navigation menu',
     skipNav: 'Skip to main content',
   },
@@ -28,6 +31,7 @@ const t = {
     ferry: 'Ferry y Logística',
     usefulServices: 'Servicios Útiles',
     coastalRoute: 'Camino de la Costa',
+    planner: 'Planificador',
     menuLabel: 'Abrir menú de navegación',
     skipNav: 'Saltar al contenido principal',
   },
@@ -39,6 +43,7 @@ const t = {
     ferry: 'Ferry e Logística',
     usefulServices: 'Serviços Úteis',
     coastalRoute: 'Caminho da Costa',
+    planner: 'Planeador',
     menuLabel: 'Abrir menu de navegação',
     skipNav: 'Saltar para o conteúdo principal',
   },
@@ -56,6 +61,7 @@ const baseNav =
         { href: '/en/caminha/ferry-and-logistics/', label: text.ferry },
         { href: '/en/caminho-da-costa/', label: text.coastalRoute },
         { href: '/en/caminha/useful-services/', label: text.usefulServices },
+        { href: plannerPath(lang), label: text.planner },
       ]
     : lang === 'es'
     ? [
@@ -66,6 +72,7 @@ const baseNav =
         { href: '/es/caminha/ferry-y-logistica/', label: text.ferry },
         { href: '/es/caminho-da-costa/', label: text.coastalRoute },
         { href: '/es/caminha/servicios-utiles/', label: text.usefulServices },
+        { href: plannerPath(lang), label: text.planner },
       ]
     : [
         { href: '/pt/', label: text.home },
@@ -75,6 +82,7 @@ const baseNav =
         { href: '/pt/caminha/ferry-e-logistica/', label: text.ferry },
         { href: '/pt/caminho-da-costa/', label: text.coastalRoute },
         { href: '/pt/caminha/servicos-uteis/', label: text.usefulServices },
+        { href: plannerPath(lang), label: text.planner },
       ];
 
 const currentPath = Astro.url.pathname;
@@ -126,15 +134,15 @@ const langOptions = [
         </span>
       </a>
 
-      <nav aria-label="Main navigation" class="hidden lg:flex items-center gap-0.5">
-        {baseNav.map(({ href, label }) => {
+      <nav aria-label="Main navigation" class="hidden xl:flex items-center gap-0.5">
+        {baseNav.filter((n) => n.href !== `/${lang}/`).map(({ href, label }) => {
           const isActive = currentPath === href || (currentPath.startsWith(href) && href !== `/${lang}/`);
           return (
             <a
               href={href}
               aria-current={isActive ? 'page' : undefined}
               class={[
-                'relative px-3 py-2 rounded-xl text-sm font-medium transition-all duration-200 no-underline cursor-pointer group',
+                'relative px-3 py-2 rounded-xl text-sm font-medium whitespace-nowrap transition-all duration-200 no-underline cursor-pointer group',
                 isActive
                   ? 'text-forest-800 bg-forest-50/80'
                   : 'text-slate-600 hover:text-forest-800 hover:bg-forest-50/60',
@@ -180,7 +188,7 @@ const langOptions = [
           aria-controls="mobile-menu"
           aria-expanded="false"
           aria-label={text.menuLabel}
-          class="lg:hidden flex items-center justify-center h-9 w-9 rounded-xl text-slate-600 hover:text-forest-700 hover:bg-forest-50 transition-colors cursor-pointer"
+          class="xl:hidden flex items-center justify-center h-9 w-9 rounded-xl text-slate-600 hover:text-forest-700 hover:bg-forest-50 transition-colors cursor-pointer"
         >
           <svg id="icon-menu" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
@@ -195,7 +203,7 @@ const langOptions = [
     <nav
       id="mobile-menu"
       aria-label="Mobile navigation"
-      class="hidden lg:hidden border-t border-slate-100/80"
+      class="hidden xl:hidden border-t border-slate-100/80"
     >
       <div class="px-3 py-3 flex flex-col gap-1">
         {baseNav.map(({ href, label }) => {
