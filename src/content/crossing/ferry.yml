@@ -118,7 +118,7 @@ caminha-a-guarda:
       # crossing (crossingMinutes above), and keep the title under ~60 chars so it
       # survives truncation once " | Way to Santiago Guide" is appended.
       metaTitle: "Caminha to A Guarda Ferry 2026: Timetable, Fares from €6, 10 Min"
-      metaDescription: "Licensed water taxis cross the Minho daily — from €6 per person, 10 minutes bank to bank. Verified August 2026: full timetable, fares by operator, booking, and the train detour if weather stops the boats."
+      metaDescription: "Licensed water taxis cross the Minho daily — from €6 per person, 10 minutes bank to bank. Verified August 2026: full timetable, prices and fares by operator, booking, and the train detour if weather stops the boats."
       # Evergreen on purpose: seasonal pattern, no year-specific dates. Source: Popeye's own
       # announcement (Oct 2026: 2026 season ended 15 Oct, reopens in April). Re-check the pattern each autumn.
       seasonNotice:
@@ -187,7 +187,7 @@ caminha-a-guarda:
         - { from: "Valença", to: "Tui (walk)", duration: "~25 min on foot", fare: "Free", frequency: "Bridge open 24/7" }
     es:
       metaTitle: "Horario del Ferry Caminha–A Guarda 2026: Taxi-Barco y Tarifas desde 6 €"
-      metaDescription: "Verificado en agosto de 2026. Varios barcos autorizados cruzan el Miño a diario: desde 6 € por persona (7–10 € con bici), con reserva online. Horarios completos por operador, tarifas y la ruta alternativa terrestre."
+      metaDescription: "Verificado en agosto de 2026. Varios barcos autorizados cruzan el Miño a diario: desde 6 € por persona (7–10 € con bici), con reserva online. Horarios completos por operador, precios, tarifas y la ruta alternativa terrestre."
       seasonNotice:
         heading: "Popeye the Sailor Man es un operador de temporada (aprox. de abril a mediados de octubre)"
         body: "Popeye no cruza en invierno: su temporada 2026 terminó el 15 de octubre y su web de reservas se cerró con ella. Las webs de reserva que siguen abiertas pueden vender billetes para las fechas de la próxima primavera, y algunos viajeros los han comprado por error pensando cruzar ahora. Un billete para una fecha en la que Popeye está cerrado no sirve para cruzar hoy. El operador puede reembolsarlo, pero sin las comisiones bancarias de la transferencia internacional, que se descuentan. Comprueba las fechas antes de pagar. En invierno, confirma qué operadores cruzan en la tabla de abajo."
@@ -253,7 +253,7 @@ caminha-a-guarda:
         - { from: "Valença", to: "Tui (a pie)", duration: "~25 min a pie", fare: "Gratis", frequency: "Puente abierto 24h" }
     pt:
       metaTitle: "Horário do Ferry Caminha–A Guarda 2026: Táxi Fluvial e Tarifas desde 6 €"
-      metaDescription: "Verificado em agosto de 2026. Vários barcos licenciados atravessam o Minho diariamente: desde €6 por pessoa (€7–10 com bicicleta), com reserva online. Horários completos por operador, tarifas e a alternativa terrestre."
+      metaDescription: "Verificado em agosto de 2026. Vários barcos licenciados atravessam o Minho diariamente: desde €6 por pessoa (€7–10 com bicicleta), com reserva online. Horários completos por operador, preços, tarifas e a alternativa terrestre."
       seasonNotice:
         heading: "Popeye the Sailor Man é um operador sazonal (aprox. de abril a meados de outubro)"
         body: "O Popeye não atravessa no inverno: a época de 2026 terminou a 15 de outubro e o site de reservas fechou com ela. Sites de reserva que continuam abertos podem vender bilhetes para as datas da próxima primavera, e alguns viajantes compraram-nos por engano a pensar atravessar agora. Um bilhete para uma data em que o Popeye está fechado não é válido para atravessar hoje. O operador pode reembolsar, mas sem as taxas bancárias da transferência internacional, que são descontadas. Confirme as datas antes de pagar. No inverno, confirme na tabela abaixo que operadores estão a atravessar."
