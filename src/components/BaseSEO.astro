@@ -49,7 +49,7 @@ const SITE_NAME_EN = 'Way to Santiago Guide';
 const SITE_NAME_ES = 'Guía Camino de Santiago';
 const SITE_NAME_PT = 'Guia Caminho de Santiago';
 const siteName = language === 'en' ? SITE_NAME_EN : language === 'es' ? SITE_NAME_ES : SITE_NAME_PT;
-const fullTitle = (title === siteName || title.startsWith(siteName + ' |') || title.startsWith(siteName + '|'))
+const fullTitle = (title.length > 45 || title === siteName || title.startsWith(siteName + ' |') || title.startsWith(siteName + '|'))
   ? title
   : `${title} | ${siteName}`;
 const ogImageAbsolute = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogImage}`;

@@ -77,8 +77,8 @@ sources:
   - https://wisepilgrim.com/en/accommodations/camino-portugues/a-guarda/albergue-o-peirao
 i18n:
   en:
-    metaTitle: "Where to Stay in A Guarda (2026): 2 Pilgrim Albergues, Beds & Services"
-    metaDescription: "A Guarda, Galicia: the first Spanish town on the Portuguese Coastal Camino after the Minho crossing. Pilgrim albergues (municipal 36 beds €10, O Peirao 16 beds), services, and onward route."
+    metaTitle: "Where to Stay in A Guarda 2026: Albergues & Services"
+    metaDescription: "Find pilgrim albergues in A Guarda after the Minho crossing: the municipal albergue and O Peirao, plus services and the onward Coastal Camino route."
     h1: "A Guarda"
     lead: "A Guarda is the first Spanish town on the Portuguese Coastal Camino, reached by crossing the Minho river from Caminha. A working fishing town in Pontevedra, Galicia, it is the natural overnight stop after the crossing."
     sections:
@@ -96,8 +96,8 @@ i18n:
       - q: "Does A Guarda have shops and ATMs?"
         a: "Yes. A Guarda is a town of roughly 10,000 with restaurants, supermarkets, ATMs and a pharmacy, plus credential stamps at the pilgrim albergue."
   es:
-    metaTitle: "Dónde Dormir en A Guarda (2026): 2 Albergues de Peregrinos, Plazas y Servicios"
-    metaDescription: "A Guarda, Galicia: el primer pueblo español del Camino Portugués de la Costa tras el cruce del Miño. Albergues (municipal 36 plazas 10 €, O Peirao 16 plazas), servicios y ruta de continuación."
+    metaTitle: "Dónde dormir en A Guarda 2026: albergues y servicios"
+    metaDescription: "Encuentra albergues en A Guarda tras cruzar el Miño: el municipal y O Peirao, además de servicios y la siguiente etapa del Camino de la Costa."
     h1: "A Guarda"
     lead: "A Guarda es el primer pueblo español del Camino Portugués de la Costa, al que se llega cruzando el río Miño desde Caminha. Villa pesquera de Pontevedra (Galicia), es la parada natural para pernoctar tras el cruce."
     sections:
@@ -115,8 +115,8 @@ i18n:
       - q: "¿Tiene A Guarda tiendas y cajeros?"
         a: "Sí. A Guarda es un pueblo de unos 10.000 habitantes con restaurantes, supermercados, cajeros y farmacia, además de sellos en el albergue de peregrinos."
   pt:
-    metaTitle: "Onde Ficar em A Guarda (2026): 2 Albergues de Peregrinos, Camas e Serviços"
-    metaDescription: "A Guarda, Galiza: a primeira vila espanhola do Caminho Português da Costa após a travessia do Minho. Albergues (municipal 36 camas 10 €, O Peirao 16 camas), serviços e percurso seguinte."
+    metaTitle: "Onde ficar em A Guarda 2026: albergues e serviços"
+    metaDescription: "Encontre albergues em A Guarda após atravessar o Minho: o municipal e O Peirao, além de serviços e da próxima etapa do Caminho da Costa."
     h1: "A Guarda"
     lead: "A Guarda é a primeira vila espanhola do Caminho Português da Costa, alcançada atravessando o rio Minho a partir de Caminha. Vila piscatória de Pontevedra (Galiza), é a paragem natural para pernoitar após a travessia."
     sections:

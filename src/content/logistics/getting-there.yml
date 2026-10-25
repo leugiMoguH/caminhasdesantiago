@@ -20,8 +20,8 @@ i18n:
     # with frequency and duration. Note the ~84 min is Porto→Viana, NOT
     # Porto→Caminha (no verified Porto→Caminha time exists), so the wording keeps
     # the two legs distinct rather than implying a single 84-minute journey.
-    metaTitle: "Porto to Caminha by Train 2026: Times, Tickets & Airport Link"
-    metaDescription: "CP Minho line trains leave Porto-Campanhã roughly 12 times a day — about 84 minutes to Viana do Castelo, continuing to Caminha. Tickets, airport link, where to start."
+    metaTitle: "Porto to Caminha by Train 2026: Tickets & Airport Link"
+    metaDescription: "Reach Caminha by CP Minho line train from Porto-Campanhã via Viana do Castelo. Plan tickets, the airport connection and where to start walking."
     h1: "Getting to the coastal start: Porto → Viana do Castelo / Caminha"
     lead: "Most pilgrims joining the northern stretch of the Portuguese Coastal Camino arrive from Porto. The simplest link is the CP Linha do Minho railway, which runs up the coast through Viana do Castelo and Caminha to the Spanish border."
     sections:
@@ -52,8 +52,8 @@ i18n:
       - q: "How do I get from Caminha back to Porto by train?"
         a: "Take a southbound CP Linha do Minho train from Caminha station to Porto-Campanhã — the same line you came up on. For Porto Airport, change at Campanhã onto Metro Line E. With roughly 12 services a day, check cp.pt for the next departure before heading to the station."
   es:
-    metaTitle: "Oporto a Caminha en Tren (2026): CP Linha do Minho vía Viana do Castelo"
-    metaDescription: "Llegar al tramo norte del Camino Portugués de la Costa desde Oporto: tren CP Linha do Minho a Viana do Castelo (~84 min) y hasta Caminha, más conexiones del aeropuerto de Oporto. Paso a paso."
+    metaTitle: "Oporto a Caminha en tren 2026: billetes y aeropuerto"
+    metaDescription: "Llega a Caminha en tren CP Linha do Minho desde Porto-Campanhã vía Viana do Castelo. Prepara billetes, conexión del aeropuerto y dónde empezar."
     h1: "Llegar al inicio costero: Oporto → Viana do Castelo / Caminha"
     lead: "La mayoría de los peregrinos que se incorporan al tramo norte del Camino Portugués de la Costa llegan desde Oporto. El enlace más sencillo es el ferrocarril CP Linha do Minho, que sube por la costa pasando por Viana do Castelo y Caminha hasta la frontera española."
     sections:
@@ -84,8 +84,8 @@ i18n:
       - q: "¿Cómo vuelvo de Caminha a Oporto en tren?"
         a: "Toma un tren CP Linha do Minho en dirección sur desde la estación de Caminha hasta Oporto-Campanhã — la misma línea por la que subiste. Para el aeropuerto de Oporto, cambia en Campanhã al Metro Línea E. Con unas 12 frecuencias diarias, consulta cp.pt antes de ir a la estación."
   pt:
-    metaTitle: "Porto a Caminha de Comboio (2026): CP Linha do Minho via Viana do Castelo"
-    metaDescription: "Chegar ao troço norte do Caminho Português da Costa a partir do Porto: comboio CP Linha do Minho para Viana do Castelo (~84 min) e até Caminha, mais ligações do aeroporto do Porto. Passo a passo."
+    metaTitle: "Porto a Caminha de comboio 2026: bilhetes e aeroporto"
+    metaDescription: "Chegue a Caminha de comboio CP Linha do Minho desde Porto-Campanhã via Viana do Castelo. Prepare bilhetes, ligação ao aeroporto e onde começar."
     h1: "Chegar ao início costeiro: Porto → Viana do Castelo / Caminha"
     lead: "A maioria dos peregrinos que se juntam ao troço norte do Caminho Português da Costa chega a partir do Porto. A ligação mais simples é a Linha do Minho da CP, que sobe pela costa passando por Viana do Castelo e Caminha até à fronteira espanhola."
     sections:

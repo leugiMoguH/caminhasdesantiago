@@ -25,8 +25,8 @@ sources:
   - https://galiwonders.com/en/camino-de-santiago/portuguese-coastal/stage-5-viana-do-castelo-caminha/
 i18n:
   en:
-    metaTitle: "Viana do Castelo to Caminha (27.8 km): Coastal Route Stage Guide + Variants (2026)"
-    metaDescription: "The Viana do Castelo to Caminha stage of the Portuguese Coastal Camino: 27.8 km, both route variants (official inland vs beach boardwalks), the one climb, surfaces, where to break the stage at Vila Praia de Âncora, and how to plan the Minho crossing waiting at the end."
+    metaTitle: "Viana do Castelo to Caminha 2026: Route & Variants"
+    metaDescription: "Walk 27.8 km from Viana do Castelo to Caminha. Compare the inland route and beach boardwalks, split the stage at Âncora and plan the Minho crossing."
     h1: "Viana do Castelo → Caminha"
     lead: "One of the longest flat days on the Portuguese Coastal Camino — about 27.8 km following the Atlantic shoreline north from Viana do Castelo to Caminha, the last Portuguese town before the crossing into Spain. Long but never hard: one modest climb, ocean views most of the day, and a decision to make at the end about how you cross the Minho."
     sections:
@@ -58,8 +58,8 @@ i18n:
       - q: "What happens at the end of the stage in Caminha?"
         a: "Caminha sits on the Minho river opposite A Guarda, Spain. The crossing runs daily by licensed water taxi (from €6, about 10 minutes) — book ahead in season — or you can take the overland detour via Valença and Tui."
   es:
-    metaTitle: "Viana do Castelo a Caminha (27,8 km): Guía de la Etapa + Variantes (2026)"
-    metaDescription: "La etapa Viana do Castelo–Caminha del Camino Portugués de la Costa: 27,8 km, las dos variantes (oficial interior vs pasarelas de playa), la única subida, superficies, dónde partir la etapa en Vila Praia de Âncora y cómo planificar el cruce del Miño que espera al final."
+    metaTitle: "Viana do Castelo a Caminha 2026: ruta y variantes"
+    metaDescription: "Camina 27,8 km de Viana do Castelo a Caminha. Compara la ruta interior y las pasarelas, divide la etapa en Âncora y prepara el cruce del Miño."
     h1: "Viana do Castelo → Caminha"
     lead: "Uno de los días llanos más largos del Camino Portugués de la Costa — unos 27,8 km siguiendo la costa atlántica hacia el norte desde Viana do Castelo hasta Caminha, el último pueblo portugués antes del cruce a España. Largo pero nunca duro: una subida moderada, vistas al océano casi todo el día y una decisión al final sobre cómo cruzar el Miño."
     sections:
@@ -91,8 +91,8 @@ i18n:
       - q: "¿Qué ocurre al final de la etapa en Caminha?"
         a: "Caminha está en el río Miño, frente a A Guarda (España). El cruce funciona a diario en taxi-barco autorizado (desde 6 €, unos 10 minutos) — reserva en temporada — o puedes tomar el desvío terrestre por Valença y Tui."
   pt:
-    metaTitle: "Viana do Castelo a Caminha (27,8 km): Guia da Etapa + Variantes (2026)"
-    metaDescription: "A etapa Viana do Castelo–Caminha do Caminho Português da Costa: 27,8 km, as duas variantes (oficial interior vs passadiços de praia), a única subida, pisos, onde dividir a etapa em Vila Praia de Âncora e como planear a travessia do Minho que espera no fim."
+    metaTitle: "Viana do Castelo a Caminha 2026: percurso e variantes"
+    metaDescription: "Caminhe 27,8 km de Viana do Castelo a Caminha. Compare o percurso interior e os passadiços, divida a etapa em Âncora e prepare a travessia do Minho."
     h1: "Viana do Castelo → Caminha"
     lead: "Um dos dias planos mais longos do Caminho Português da Costa — cerca de 27,8 km seguindo a costa atlântica para norte, de Viana do Castelo até Caminha, a última vila portuguesa antes da travessia para Espanha. Longo mas nunca duro: uma subida moderada, vistas de oceano quase todo o dia e uma decisão no fim sobre como atravessar o Minho."
     sections:

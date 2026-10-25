@@ -22,8 +22,8 @@ sources:
   - https://www.alltrails.com/trail/spain/pontevedra/camino-de-la-costa-portuguesa-oia-baiona
 i18n:
   en:
-    metaTitle: "Baiona to Vigo (27 km): Coastal Camino Stage Guide (2026)"
-    metaDescription: "The Baiona to Vigo stage of the Portuguese Coastal Camino: a long, mostly flat 26.9 km along the Bay of Vigo past the Ramallosa Roman bridge, Playa América and Samil beach into the city. Route, variants, waymarking warning, and a stage FAQ."
+    metaTitle: "Baiona to Vigo 2026: Coastal Camino Route & Stops"
+    metaDescription: "Walk 26.9 km from Baiona to Vigo via Ramallosa, Playa América and Samil. Plan this mostly flat stage with route variants and waymarking advice."
     h1: "Baiona → Vigo"
     lead: "This is the long day of the northern coast: about 27 km around the great Bay of Vigo, from the seaside calm of Baiona into Galicia's largest city. On the litoral variant it is almost flat — promenades, beaches and seafront road most of the way — so the difficulty is distance and, near Vigo, some of the patchiest waymarking on the whole route. Start early, and have a maps app ready for the urban approach."
     sections:
@@ -53,8 +53,8 @@ i18n:
       - q: "Where can I sleep in Vigo?"
         a: "Vigo is a city with beds at every level — a pilgrim hostel plus many hotels around the centre and port. Choose somewhere near where you will rejoin the route for Redondela the next morning."
   es:
-    metaTitle: "Baiona a Vigo (27 km): Guía de la Etapa del Camino de la Costa (2026)"
-    metaDescription: "La etapa Baiona–Vigo del Camino Portugués de la Costa: una larga jornada casi llana de 26,9 km por la ría de Vigo, pasando el puente románico de Ramallosa, Playa América y la playa de Samil hasta la ciudad. Ruta, variantes, aviso de señalización y preguntas frecuentes."
+    metaTitle: "Baiona a Vigo 2026: etapa del Camino de la Costa"
+    metaDescription: "Recorre 26,9 km de Baiona a Vigo por Ramallosa, Playa América y Samil. Prepara esta etapa casi llana con variantes y consejos de señalización."
     h1: "Baiona → Vigo"
     lead: "Es la jornada larga de la costa norte: unos 27 km en torno a la gran ría de Vigo, desde la calma marinera de Baiona hasta la mayor ciudad de Galicia. Por la variante litoral es casi llana — paseos marítimos, playas y carretera costera casi todo el rato — así que la dificultad está en la distancia y, cerca de Vigo, en una de las señalizaciones más pobres de toda la ruta. Sal temprano y ten lista una app de mapas para la entrada urbana."
     sections:
@@ -84,8 +84,8 @@ i18n:
       - q: "¿Dónde puedo dormir en Vigo?"
         a: "Vigo es una ciudad con camas de todos los niveles — un albergue de peregrinos y muchos hoteles por el centro y el puerto. Elige un lugar cercano a donde retomarás la ruta hacia Redondela a la mañana siguiente."
   pt:
-    metaTitle: "Baiona a Vigo (27 km): Guia da Etapa do Caminho da Costa (2026)"
-    metaDescription: "A etapa Baiona–Vigo do Caminho Português da Costa: uma longa jornada quase plana de 26,9 km pela ria de Vigo, passando a ponte românica da Ramallosa, a Playa América e a praia de Samil até à cidade. Percurso, variantes, aviso de sinalização e perguntas frequentes."
+    metaTitle: "Baiona a Vigo 2026: guia da etapa do Caminho da Costa"
+    metaDescription: "Percorra 26,9 km de Baiona a Vigo pela Ramallosa, Playa América e Samil. Prepare esta etapa quase plana com variantes e conselhos de sinalização."
     h1: "Baiona → Vigo"
     lead: "É a jornada longa da costa norte: cerca de 27 km à volta da grande ria de Vigo, da calma marítima de Baiona até à maior cidade da Galiza. Pela variante litoral é quase plana — passeios marítimos, praias e estrada costeira quase todo o trajeto — por isso a dificuldade está na distância e, perto de Vigo, numa das sinalizações mais fracas de toda a rota. Parta cedo e tenha pronta uma app de mapas para a entrada urbana."
     sections:

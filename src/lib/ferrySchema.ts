@@ -11,17 +11,17 @@ const TOURIST_TYPE: Record<Lang, string> = { en: 'Pilgrim', es: 'Peregrino', pt:
 
 const STATUS_TEXT: Record<Lang, (f: FerryData) => string> = {
   en: (f) =>
-    `The Caminha–A Guarda crossing operates daily via licensed water taxis: ${f.currentCrossing.operator} (nine fixed departures, online booking, €${f.currentCrossing.adultEUR} per adult one-way) and Taxi Boat Peregrinos (on request, 24/7 weather permitting, from €6). The ride takes ~${f.crossingMinutes} minutes. The historical ${f.officialFerry.vessel} ferry stopped in ${f.officialFerry.stoppedSince}; a new municipal ferry (${f.upcomingFerry.capacityPassengers} passengers) is announced for ${f.upcomingFerry.expectedSeason}. Departure point: ${f.route.fromDock}, ${f.route.fromPostalCode} ${f.route.fromTown}, Portugal.`,
+    `The Caminha–A Guarda crossing operates daily via licensed water taxis: ${f.currentCrossing.operator} (nine fixed departures, online booking, €${f.currentCrossing.adultEUR} per adult one-way) and Taxi Boat Peregrinos (on request, 24/7 weather permitting, from €6). The ride takes ~${f.crossingMinutes} minutes. The historical ${f.officialFerry.vessel} ferry stopped in ${f.officialFerry.stoppedSince}; a new municipal ferry (${f.upcomingFerry.capacityPassengers} passengers) has been announced by Câmara de Caminha, with no confirmed launch date; it is not operating, so do not count on it. Departure point: ${f.route.fromDock}, ${f.route.fromPostalCode} ${f.route.fromTown}, Portugal.`,
   es: (f) =>
-    `El cruce Caminha–A Guarda funciona a diario mediante taxi-barco autorizado: ${f.currentCrossing.operator} (nueve salidas fijas, reserva online, ${f.currentCrossing.adultEUR} € por adulto ida) y Taxi Boat Peregrinos (a demanda, 24 horas si el tiempo lo permite, desde 6 €). La travesía dura ~${f.crossingMinutes} minutos. El ferry histórico ${f.officialFerry.vessel} dejó de operar en ${f.officialFerry.stoppedSince}; hay un nuevo ferry municipal (${f.upcomingFerry.capacityPassengers} pasajeros) anunciado para el verano de 2026. Punto de salida: ${f.route.fromDock}, ${f.route.fromPostalCode} ${f.route.fromTown}, Portugal.`,
+    `El cruce Caminha–A Guarda funciona a diario mediante taxi-barco autorizado: ${f.currentCrossing.operator} (nueve salidas fijas, reserva online, ${f.currentCrossing.adultEUR} € por adulto ida) y Taxi Boat Peregrinos (a demanda, 24 horas si el tiempo lo permite, desde 6 €). La travesía dura ~${f.crossingMinutes} minutos. El ferry histórico ${f.officialFerry.vessel} dejó de operar en ${f.officialFerry.stoppedSince}; hay un nuevo ferry municipal (${f.upcomingFerry.capacityPassengers} pasajeros) anunciado por la Câmara de Caminha sin fecha de inicio confirmada; no cuentes con él. Punto de salida: ${f.route.fromDock}, ${f.route.fromPostalCode} ${f.route.fromTown}, Portugal.`,
   pt: (f) =>
-    `A travessia Caminha–A Guarda funciona diariamente através de táxis fluviais licenciados: ${f.currentCrossing.operator} (nove partidas fixas, reserva online, €${f.currentCrossing.adultEUR} por adulto ida) e Taxi Boat Peregrinos (a pedido, 24 horas se o tempo permitir, desde €6). A viagem demora ~${f.crossingMinutes} minutos. O ferry histórico ${f.officialFerry.vessel} parou em ${f.officialFerry.stoppedSince}; está anunciado um novo ferry municipal (${f.upcomingFerry.capacityPassengers} passageiros) para o verão de 2026. Ponto de partida: ${f.route.fromDock}, ${f.route.fromPostalCode} ${f.route.fromTown}, Portugal.`,
+    `A travessia Caminha–A Guarda funciona diariamente através de táxis fluviais licenciados: ${f.currentCrossing.operator} (nove partidas fixas, reserva online, €${f.currentCrossing.adultEUR} por adulto ida) e Taxi Boat Peregrinos (a pedido, 24 horas se o tempo permitir, desde €6). A viagem demora ~${f.crossingMinutes} minutos. O ferry histórico ${f.officialFerry.vessel} parou em ${f.officialFerry.stoppedSince}; a Câmara de Caminha anunciou um novo ferry municipal (${f.upcomingFerry.capacityPassengers} passageiros), sem data confirmada de arranque; não conte com ele. Ponto de partida: ${f.route.fromDock}, ${f.route.fromPostalCode} ${f.route.fromTown}, Portugal.`,
 };
 
 const ANNOUNCE_NAME: Record<Lang, string> = {
-  en: 'Caminha–A Guarda Crossing: Water Taxis Operating Daily — New Ferry Expected Summer 2026',
-  es: 'Cruce Caminha–A Guarda: Taxi-Barco Diario en Funcionamiento — Nuevo Ferry Previsto Verano 2026',
-  pt: 'Travessia Caminha–A Guarda: Táxis Fluviais Diários em Funcionamento — Novo Ferry Previsto Verão 2026',
+  en: 'Caminha–A Guarda Crossing: Water Taxis Operating Daily — Municipal Ferry Without Confirmed Launch Date',
+  es: 'Cruce Caminha–A Guarda: Taxi-Barco Diario en Funcionamiento — Nuevo Ferry Sin Fecha Confirmada',
+  pt: 'Travessia Caminha–A Guarda: Táxis Fluviais Diários em Funcionamento — Novo Ferry Sem Data Confirmada',
 };
 
 /**
@@ -52,7 +52,7 @@ export function buildFerryGraph(f: FerryData, lang: Lang, pagePath: string) {
         '@type': 'WebPage',
         '@id': `${pageUrl}#webpage`,
         url: pageUrl,
-        name: `${t.metaTitle} | ${SITE_NAME}`,
+        name: t.metaTitle.length > 45 ? t.metaTitle : `${t.metaTitle} | ${SITE_NAME}`,
         description: t.metaDescription,
         inLanguage: LANG_TAG[lang],
         isPartOf: { '@id': `${SITE_URL}/#website` },

@@ -19,8 +19,8 @@ sources:
   - https://alisononfoot.com/accommodation-on-the-camino-portugues-coastal-route/
 i18n:
   en:
-    metaTitle: "What Time Do Albergues Fill Up on the Camino Portugués? (2026)"
-    metaDescription: "What time do albergues fill up on the Camino Portugués? The real check-in and sell-out times by season and town size, the hour to aim for, and how to never arrive too late. Practical 2026 timings."
+    metaTitle: "When Do Camino Portugués Albergues Fill Up? (2026)"
+    metaDescription: "Plan your arrival at Camino Portugués albergues by season and town size. Check check-in times and learn how to avoid arriving after beds fill up."
     h1: "What time do albergues fill up on the Camino Portugués?"
     lead: "Knowing the clock is half the battle. Municipal albergues open early afternoon and fill in arrival order, so the question is simple: what time is too late? Here are the real timings by season and town size."
     sections:
@@ -40,8 +40,8 @@ i18n:
       - q: "When do albergues open for check-in?"
         a: "Most municipal and Xunta albergues open for check-in between 13:00 and 14:00. Private albergues often check in a little earlier and hold reserved beds regardless of your arrival time."
   es:
-    metaTitle: "¿A qué hora se llenan los albergues en el Camino Portugués? (2026)"
-    metaDescription: "¿A qué hora se llenan los albergues en el Camino Portugués? Las horas reales de registro y de llenado por temporada y tamaño de pueblo, la hora a la que apuntar y cómo no llegar tarde. Tiempos prácticos 2026."
+    metaTitle: "Cuándo se llenan los albergues del Camino Portugués 2026"
+    metaDescription: "Planifica tu llegada a los albergues del Camino Portugués según la temporada y el pueblo. Consulta horarios de entrada y evita llegar sin plaza."
     h1: "¿A qué hora se llenan los albergues en el Camino Portugués?"
     lead: "Conocer el reloj es media batalla. Los albergues municipales abren a primera hora de la tarde y se llenan por orden de llegada, así que la pregunta es simple: ¿qué hora es demasiado tarde? Estos son los tiempos reales por temporada y tamaño de pueblo."
     sections:
@@ -61,8 +61,8 @@ i18n:
       - q: "¿A qué hora abren los albergues para registro?"
         a: "La mayoría de albergues municipales y de la Xunta abren para registro entre las 13:00 y las 14:00. Los privados suelen registrar un poco antes y guardan las camas reservadas sin importar tu hora de llegada."
   pt:
-    metaTitle: "A que horas enchem os albergues no Caminho Português? (2026)"
-    metaDescription: "A que horas enchem os albergues no Caminho Português? As horas reais de registo e de esgotamento por época e tamanho da vila, a hora a que apontar e como nunca chegar tarde. Tempos práticos 2026."
+    metaTitle: "Quando enchem os albergues do Caminho Português? 2026"
+    metaDescription: "Planeie a chegada aos albergues do Caminho Português conforme a época e a localidade. Consulte horários de entrada e evite chegar sem cama."
     h1: "A que horas enchem os albergues no Caminho Português?"
     lead: "Conhecer o relógio é meia batalha. Os albergues municipais abrem ao início da tarde e enchem por ordem de chegada, por isso a pergunta é simples: que hora é tarde demais? Eis os tempos reais por época e tamanho da vila."
     sections:

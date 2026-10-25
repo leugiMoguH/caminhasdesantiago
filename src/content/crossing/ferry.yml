@@ -2,8 +2,8 @@ caminha-a-guarda:
   # ── Language-neutral facts (single source of truth) ──────────────────────────
   # Crossing operates daily via several licensed water-taxi services. The official
   # Santa Rita de Cássia ferry stopped in 2020; a new municipal ferry is
-  # announced for summer 2026 but, as of August 2026, not yet operating —
-  # water taxis remain the crossing.
+  # anunciado pela Câmara de Caminha, sem data confirmada de arranque.
+  # Não opera; não conte com ele. A travessia faz-se de táxi fluvial.
   #
   # Re-verified 2026-08-12 against the operators' own sites:
   #   xacobeotransfer.com/en/caminha-a-guarda-ferry-timetable/  (fares + full timetable)
@@ -90,7 +90,7 @@ caminha-a-guarda:
 
   # Announced municipal replacement (Câmara de Caminha, Dec 2025 / May 2026).
   upcomingFerry:
-    expectedSeason: "Summer 2026 (announced; no vessel or tender as of 2026-08-15)"
+    expectedSeason: "Announced by Câmara de Caminha; no confirmed launch date; do not count on it"
     capacityPassengers: "50–60"
     status: announced
     note: Shallow-draught vessel suited to the silted river mouth. Municipality budgeted dock repair and dredging (~€30–40k). The Santa Rita de Cássia will be dismantled, not returned to service.
@@ -116,9 +116,9 @@ caminha-a-guarda:
       # position — a snippet problem, not a ranking one. Fixes applied: front-load
       # the answer instead of "Updated June 2026", add the verified 10-minute
       # crossing (crossingMinutes above), and keep the title under ~60 chars so it
-      # survives truncation once " | Way to Santiago Guide" is appended.
-      metaTitle: "Caminha to A Guarda Ferry 2026: Timetable, Fares from €6, 10 Min"
-      metaDescription: "Licensed water taxis cross the Minho daily — from €6 per person, 10 minutes bank to bank. Verified August 2026: full timetable, prices and fares by operator, booking, and the train detour if weather stops the boats."
+      # evita truncar; títulos com mais de 45 caracteres não recebem o sufixo.
+      metaTitle: "Caminha–A Guarda Ferry 2026: Times, Fares & Booking"
+      metaDescription: "Water taxis cross daily from €6 in about 10 minutes. Compare operators, fares and booking options, with a train detour if boats stop."
       # Evergreen on purpose: seasonal pattern, no year-specific dates. Source: Popeye's own
       # announcement (Oct 2026: 2026 season ended 15 Oct, reopens in April). Re-check the pattern each autumn.
       seasonNotice:
@@ -172,13 +172,13 @@ caminha-a-guarda:
         - q: "Is the Caminha ferry running?"
           a: "The old Santa Rita de Cássia ferry stopped in 2020 and will be dismantled, but the crossing itself operates daily. Several licensed water-taxi services run it: Xacobeo Transfer (nine fixed departures, online booking, year-round; only 08:00–09:00 from November to March), Taxi Boat Peregrinos / Capitão Mário (two boats on request, 24 hours a day, weather permitting), Taxi Mar Caminha and Popeye the Sailor Man (seasonal, roughly April to mid-October)."
         - q: "How much does the Caminha to A Guarda crossing cost?"
-          a: "It depends on the operator. Taxi Mar Caminha is €6 per person one-way and Taxi Boat Peregrinos is around the same; Xacobeo Transfer, the online-bookable service, is €9. With a bicycle it is €7 with Taxi Mar and €10 with Xacobeo, which includes the rider. Xacobeo gives 50% off a same-day return. The crossing takes about 10 minutes."
+          a: "It depends on the operator. Taxi Mar Caminha is €6 per person one-way and Taxi Boat Peregrinos does not publish fares online — confirm by phone or WhatsApp (indicative fare ~€6, to be confirmed); Xacobeo Transfer, the online-bookable service, is €9. With a bicycle it is €7 with Taxi Mar and €10 with Xacobeo, which includes the rider. Xacobeo gives 50% off a same-day return. The crossing takes about 10 minutes."
         - q: "Do I need to book the Caminha boat in advance?"
           a: "Not strictly, but it is recommended in high season — some boats carry only around six passengers. Xacobeo Transfer sells tickets online; Taxi Boat Peregrinos takes bookings by phone (+351 913 254 110) or at the dock."
         - q: "Can I take a bike across from Caminha to A Guarda?"
-          a: "Yes. The operators carry bicycles for a surcharge — €7 with Taxi Mar Caminha or Taxi Boat Peregrinos, €10 with Xacobeo Transfer (that fare includes the rider). An electric bike is €10 with Taxi Mar."
-        - q: "What is the new Caminha ferry planned for 2026?"
-          a: "The Câmara Municipal de Caminha announced a new shallow-draught ferry with capacity for roughly 50–60 passengers, announced for summer 2026. As of mid-August 2026 no vessel has been bought and no tender has been reported, so do not count on it this season. The municipality has budgeted dock repair and dredging. Until it launches, the water taxis remain the operating crossing."
+          a: "Yes. The operators carry bicycles for a surcharge — €7 with Taxi Mar Caminha, €10 with Xacobeo Transfer (that fare includes the rider). An electric bike is €10 with Taxi Mar. Taxi Boat Peregrinos does not publish fares online — confirm the bicycle fare by phone or WhatsApp."
+        - q: "What is the announced new Caminha ferry?"
+          a: "The Câmara Municipal de Caminha announced a new shallow-draught ferry with capacity for roughly 50–60 passengers. It is not operating and has no confirmed launch date; do not count on it. The municipality has budgeted dock repair and dredging. Until it launches, water taxis remain the operating crossing."
         - q: "What are the alternatives if no boat is crossing?"
           a: "Take the overland detour: the CP Minho line train from Caminha to Valença (~35 min, ~€3.60), then walk 1.5 km across the international Tui–Valença bridge into Spain. This switches you from the Coastal Route to the Camino Portugués Interior."
       trainDetour:
@@ -186,8 +186,8 @@ caminha-a-guarda:
         - { from: "Viana do Castelo", to: "Valença", duration: "~55 min", fare: "€3.60 (Caminha→Valença direct)", frequency: "Roughly hourly on weekdays; reduced weekends" }
         - { from: "Valença", to: "Tui (walk)", duration: "~25 min on foot", fare: "Free", frequency: "Bridge open 24/7" }
     es:
-      metaTitle: "Horario del Ferry Caminha–A Guarda 2026: Taxi-Barco y Tarifas desde 6 €"
-      metaDescription: "Verificado en agosto de 2026. Varios barcos autorizados cruzan el Miño a diario: desde 6 € por persona (7–10 € con bici), con reserva online. Horarios completos por operador, precios, tarifas y la ruta alternativa terrestre."
+      metaTitle: "Ferry Caminha–A Guarda 2026: horarios, tarifas y reservas"
+      metaDescription: "Taxis-barco diarios desde 6 € en unos 10 minutos. Compara operadores, tarifas y reservas, con alternativa en tren si no hay barcos."
       seasonNotice:
         heading: "Popeye the Sailor Man es un operador de temporada (aprox. de abril a mediados de octubre)"
         body: "Popeye no cruza en invierno: su temporada 2026 terminó el 15 de octubre y su web de reservas se cerró con ella. Las webs de reserva que siguen abiertas pueden vender billetes para las fechas de la próxima primavera, y algunos viajeros los han comprado por error pensando cruzar ahora. Un billete para una fecha en la que Popeye está cerrado no sirve para cruzar hoy. El operador puede reembolsarlo, pero sin las comisiones bancarias de la transferencia internacional, que se descuentan. Comprueba las fechas antes de pagar. En invierno, confirma qué operadores cruzan en la tabla de abajo."
@@ -238,13 +238,13 @@ caminha-a-guarda:
         - q: "¿Está funcionando el ferry de Caminha?"
           a: "El antiguo ferry Santa Rita de Cássia dejó de operar en 2020 y será desguazado, pero el cruce funciona a diario. Varios taxi-barco autorizados lo cubren: Xacobeo Transfer (nueve salidas fijas, reserva online, todo el año; de noviembre a marzo solo de 08:00 a 09:00), Taxi Boat Peregrinos / Capitão Mário (dos barcos a demanda, 24 horas al día si el tiempo lo permite), Taxi Mar Caminha y Popeye the Sailor Man (de temporada, aprox. de abril a mediados de octubre)."
         - q: "¿Cuánto cuesta el cruce de Caminha a A Guarda?"
-          a: "Depende del operador. Taxi Mar Caminha cuesta 6 € por persona (ida) y Taxi Boat Peregrinos ronda lo mismo; Xacobeo Transfer, el que se reserva online, cuesta 9 €. Con bicicleta son 7 € con Taxi Mar y 10 € con Xacobeo, tarifa que ya incluye a la persona. Xacobeo descuenta el 50% en la vuelta el mismo día. La travesía dura unos 10 minutos."
+          a: "Depende del operador. Taxi Mar Caminha cuesta 6 € por persona (ida) y Taxi Boat Peregrinos no publica tarifas online — confirma por teléfono o WhatsApp (precio orientativo ~6 €, por confirmar); Xacobeo Transfer, el que se reserva online, cuesta 9 €. Con bicicleta son 7 € con Taxi Mar y 10 € con Xacobeo, tarifa que ya incluye a la persona. Xacobeo descuenta el 50% en la vuelta el mismo día. La travesía dura unos 10 minutos."
         - q: "¿Hay que reservar el barco de Caminha con antelación?"
           a: "No es obligatorio, pero sí recomendable en temporada alta — algunos barcos solo llevan unos seis pasajeros. Xacobeo Transfer vende billetes online; Taxi Boat Peregrinos acepta reservas por teléfono (+351 913 254 110) o en el muelle."
         - q: "¿Puedo cruzar con bicicleta de Caminha a A Guarda?"
-          a: "Sí. Los operadores llevan bicicletas con suplemento — 7 € con Taxi Mar Caminha o Taxi Boat Peregrinos, 10 € con Xacobeo Transfer (esa tarifa ya incluye a la persona). La bicicleta eléctrica cuesta 10 € con Taxi Mar."
-        - q: "¿Qué es el nuevo ferry de Caminha previsto para 2026?"
-          a: "La Câmara Municipal de Caminha anunció un nuevo ferry de poco calado con capacidad para unos 50–60 pasajeros, anunciado para el verano de 2026. A mediados de agosto de 2026 no consta ninguna embarcación comprada ni licitación publicada, así que no cuentes con él esta temporada. El municipio ha presupuestado la reparación del muelle y el dragado. Hasta su estreno, los taxi-barco son el cruce operativo."
+          a: "Sí. Los operadores llevan bicicletas con suplemento — 7 € con Taxi Mar Caminha, 10 € con Xacobeo Transfer (esa tarifa ya incluye a la persona). La bicicleta eléctrica cuesta 10 € con Taxi Mar. Taxi Boat Peregrinos no publica tarifas online — confirma la tarifa con bicicleta por teléfono o WhatsApp."
+        - q: "¿Qué es el nuevo ferry de Caminha anunciado?"
+          a: "La Câmara Municipal de Caminha anunció un nuevo ferry de poco calado con capacidad para unos 50–60 pasajeros. No opera y no tiene fecha de inicio confirmada; no cuentes con él. El municipio ha presupuestado la reparación del muelle y el dragado. Hasta su estreno, los taxis-barco son el cruce operativo."
         - q: "¿Qué alternativas hay si no cruza ningún barco?"
           a: "El desvío terrestre: tren de la línea del Miño de Caminha a Valença (~35 min, ~3,60 €) y cruzar a pie el puente internacional Tui–Valença (1,5 km). Esto te cambia de la Ruta de la Costa al Camino Portugués Interior."
       trainDetour:
@@ -252,8 +252,8 @@ caminha-a-guarda:
         - { from: "Viana do Castelo", to: "Valença", duration: "~55 min", fare: "~3,60 € (Caminha→Valença directo)", frequency: "Aprox. cada hora; reducido fines de semana" }
         - { from: "Valença", to: "Tui (a pie)", duration: "~25 min a pie", fare: "Gratis", frequency: "Puente abierto 24h" }
     pt:
-      metaTitle: "Horário do Ferry Caminha–A Guarda 2026: Táxi Fluvial e Tarifas desde 6 €"
-      metaDescription: "Verificado em agosto de 2026. Vários barcos licenciados atravessam o Minho diariamente: desde €6 por pessoa (€7–10 com bicicleta), com reserva online. Horários completos por operador, preços, tarifas e a alternativa terrestre."
+      metaTitle: "Ferry Caminha–A Guarda 2026: horários, tarifas e reservas"
+      metaDescription: "Táxis fluviais diários desde €6 em cerca de 10 minutos. Compare operadores, tarifas e reservas, com alternativa de comboio se não houver barcos."
       seasonNotice:
         heading: "Popeye the Sailor Man é um operador sazonal (aprox. de abril a meados de outubro)"
         body: "O Popeye não atravessa no inverno: a época de 2026 terminou a 15 de outubro e o site de reservas fechou com ela. Sites de reserva que continuam abertos podem vender bilhetes para as datas da próxima primavera, e alguns viajantes compraram-nos por engano a pensar atravessar agora. Um bilhete para uma data em que o Popeye está fechado não é válido para atravessar hoje. O operador pode reembolsar, mas sem as taxas bancárias da transferência internacional, que são descontadas. Confirme as datas antes de pagar. No inverno, confirme na tabela abaixo que operadores estão a atravessar."
@@ -304,13 +304,13 @@ caminha-a-guarda:
         - q: "O ferry de Caminha está a funcionar?"
           a: "O antigo ferry Santa Rita de Cássia parou em 2020 e vai ser desmantelado, mas a travessia funciona diariamente. Vários táxis fluviais licenciados asseguram-na: Xacobeo Transfer (nove partidas fixas, reserva online, todo o ano; de novembro a março apenas das 08:00 às 09:00), Taxi Boat Peregrinos / Capitão Mário (dois barcos a pedido, 24 horas por dia se o tempo permitir), Taxi Mar Caminha e Popeye the Sailor Man (sazonal, aprox. de abril a meados de outubro)."
         - q: "Quanto custa a travessia de Caminha para A Guarda?"
-          a: "Depende do operador. A Taxi Mar Caminha custa €6 por pessoa (ida) e a Taxi Boat Peregrinos ronda o mesmo; o Xacobeo Transfer, o que se reserva online, custa €9. Com bicicleta são €7 na Taxi Mar e €10 no Xacobeo, tarifa que já inclui a pessoa. O Xacobeo dá 50% de desconto no regresso no mesmo dia. A travessia demora cerca de 10 minutos."
+          a: "Depende do operador. A Taxi Mar Caminha custa €6 por pessoa (ida) e a Taxi Boat Peregrinos não publica tarifas online — confirme por telefone ou WhatsApp (valor indicativo ~€6, a confirmar); o Xacobeo Transfer, o que se reserva online, custa €9. Com bicicleta são €7 na Taxi Mar e €10 no Xacobeo, tarifa que já inclui a pessoa. O Xacobeo dá 50% de desconto no regresso no mesmo dia. A travessia demora cerca de 10 minutos."
         - q: "É preciso reservar o barco de Caminha com antecedência?"
           a: "Não é obrigatório, mas é recomendável na época alta — alguns barcos levam apenas cerca de seis passageiros. A Xacobeo Transfer vende bilhetes online; a Taxi Boat Peregrinos aceita reservas por telefone (+351 913 254 110) ou no cais."
         - q: "Posso atravessar com bicicleta de Caminha para A Guarda?"
-          a: "Sim. Os operadores transportam bicicletas com suplemento — €7 com a Taxi Mar Caminha ou a Taxi Boat Peregrinos, €10 com o Xacobeo Transfer (essa tarifa já inclui a pessoa). A bicicleta elétrica custa €10 na Taxi Mar."
-        - q: "O que é o novo ferry de Caminha previsto para 2026?"
-          a: "A Câmara Municipal de Caminha anunciou um novo ferry de calado reduzido com capacidade para cerca de 50–60 passageiros, anunciado para o verão de 2026. Em meados de agosto de 2026 não há notícia de embarcação comprada nem de concurso lançado, por isso não conte com ele esta época. O município orçamentou a reparação do cais e a dragagem. Até ao lançamento, os táxis fluviais são a travessia em funcionamento."
+          a: "Sim. Os operadores transportam bicicletas com suplemento — €7 com a Taxi Mar Caminha, €10 com o Xacobeo Transfer (essa tarifa já inclui a pessoa). A bicicleta elétrica custa €10 na Taxi Mar. A Taxi Boat Peregrinos não publica tarifas online — confirme a tarifa com bicicleta por telefone ou WhatsApp."
+        - q: "O que é o novo ferry de Caminha anunciado?"
+          a: "A Câmara Municipal de Caminha anunciou um novo ferry de calado reduzido com capacidade para cerca de 50–60 passageiros. Não opera e não tem data confirmada de arranque; não conte com ele. O município orçamentou a reparação do cais e a dragagem. Até ao arranque, os táxis fluviais são a travessia em funcionamento."
         - q: "Quais são as alternativas se nenhum barco atravessar?"
           a: "O desvio terrestre: comboio da Linha do Minho de Caminha para Valença (~35 min, ~€3,60) e atravessar a pé a ponte internacional Tui–Valença (1,5 km). Isto muda-o da Rota da Costa para o Caminho Português Interior."
       trainDetour:
