@@ -10,6 +10,26 @@
       "source": "/:lang(en|es|pt)/best-albergues/:town/",
       "destination": "/:lang/destino/:town/",
       "permanent": true
+    },
+    {
+      "source": "/en/caminha/ferry-e-logistica",
+      "destination": "/en/caminha/ferry-and-logistics/",
+      "permanent": true
+    },
+    {
+      "source": "/en/caminha/ferry-e-logistica/",
+      "destination": "/en/caminha/ferry-and-logistics/",
+      "permanent": true
+    },
+    {
+      "source": "/es/camino-de-la-costa/viana-do-castelo-caminha",
+      "destination": "/es/caminho-da-costa/viana-do-castelo-caminha/",
+      "permanent": true
+    },
+    {
+      "source": "/es/camino-de-la-costa/viana-do-castelo-caminha/",
+      "destination": "/es/caminho-da-costa/viana-do-castelo-caminha/",
+      "permanent": true
     }
   ],
   "headers": [
