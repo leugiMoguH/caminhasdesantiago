@@ -3,6 +3,11 @@ relatedStageSlugs:
   - viana-do-castelo-caminha
   - caminha-a-guarda
   - redondela-pontevedra
+  - pontevedra-caldas-de-reis
+  - esposende-viana-do-castelo
+  - porto-vila-do-conde
+  - baiona-vigo
+  - vila-do-conde-esposende
 relatedTownSlugs:
   - a-guarda
   - pontevedra
@@ -10,6 +15,7 @@ relatedTopicSlugs:
   - best-time-camino-portugues
   - packing-list
   - coastal-vs-central
+  - variante-espiritual
 sourceVerified: true
 lastVerified: "2026-06-24"
 sources:

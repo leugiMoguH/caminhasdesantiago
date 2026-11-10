@@ -272,9 +272,7 @@ const ferryAuthority = {
           <li><a href={e.url} class="text-forest-700 hover:underline no-underline font-medium">{e.label}</a></li>
         ))}
         <li><a href={ferry} class="text-forest-700 hover:underline no-underline font-medium">{ui.crossingLink}</a></li>
-        {lang === 'en' && (
-          <li><a href="/en/caminha-ferry-status/" class="text-forest-700 hover:underline no-underline font-medium">Live crossing status (updated monthly)</a></li>
-        )}
+        <li><a href={`/${lang}/caminha-ferry-status/`} class="text-forest-700 hover:underline no-underline font-medium">{{ en: 'Live crossing status (updated monthly)', es: 'Estado actual de la travesía (actualizado mensualmente)', pt: 'Estado atual da travessia (atualizado mensalmente)' }[lang]}</a></li>
         <li><a href={guide} class="text-forest-700 hover:underline no-underline font-medium">{ui.caminhaGuide}</a></li>
         <li><a href={hub} class="text-slate-600 hover:underline no-underline">{ui.backToRoute}</a></li>
       </ul>
