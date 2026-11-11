@@ -5,7 +5,8 @@ relatedStageSlugs:
   - esposende-viana-do-castelo
   - porto-vila-do-conde
   - vila-do-conde-esposende
-relatedTownSlugs: []
+relatedTownSlugs:
+  - povoa-de-varzim
 relatedTopicSlugs:
   - coastal-vs-central
   - getting-there

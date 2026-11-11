@@ -8,6 +8,10 @@ relatedStageSlugs:
   - porto-vila-do-conde
   - baiona-vigo
   - vila-do-conde-esposende
+  - a-guarda-oia
+  - caldas-de-reis-padron
+  - oia-baiona
+  - padron-santiago
 relatedTownSlugs:
   - a-guarda
   - pontevedra
@@ -16,6 +20,7 @@ relatedTopicSlugs:
   - packing-list
   - coastal-vs-central
   - variante-espiritual
+  - luggage-transfer
 sourceVerified: true
 lastVerified: "2026-06-24"
 sources:
